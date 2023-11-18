@@ -24,7 +24,7 @@ public class Ejercicios_iniciales_13 {
 		}
 		sc.close();*/
 		
-/*		 System.out.println("Introduce un número posivo y entero: ");
+		 System.out.println("Introduce un número posivo y entero: ");
 		entradaUsuario = sc.nextInt();
 			
 		do { 
@@ -33,9 +33,9 @@ public class Ejercicios_iniciales_13 {
 		}
 		while (contador <= 10);
 		sc.close();
-*/		
 		
-		System.out.println("Introduce un número posivo y entero: ");
+		
+/*		System.out.println("Introduce un número posivo y entero: ");
 		entradaUsuario = sc.nextInt();
 		
 		for (int i = 0; i <= 10; i++) {
@@ -43,7 +43,7 @@ public class Ejercicios_iniciales_13 {
 		}
 		
 		sc.close();		
-		
+*/		
 	}
 
 }

@@ -3,7 +3,7 @@ Realizar un programa que pregunte por el año de nacimiento del usuario. Según 
 indique, mostrarle por consola a qué generación pertenece según este cuadro:
 Por ejemplo, los nacidos en 1994 serían generación Y o milennials. */
 
-package tema2_ejerciciospracticos1;
+package tema2_ejerciciospracticos;
 import java.util.Scanner;
 public class T2_Ejerciciospracticos1 {
 	public static void main(String[] args) {
