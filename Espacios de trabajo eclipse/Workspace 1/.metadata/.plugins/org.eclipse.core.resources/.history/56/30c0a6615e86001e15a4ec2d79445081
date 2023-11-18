@@ -1,0 +1,36 @@
+/* 13.- Dado un número positivo, escribir la tabla de multiplicar de dicho número: 
+A) con un bucle while
+B) con un bucle do while
+C) con un bucle for */
+
+package tema2;
+import java.util.Scanner;
+
+public class Ejercicios_iniciales_13 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Integer entradaUsuario;
+		Integer contador = 1;
+		boolean check = true;
+		
+		/*System.out.println("Introduce un número posivo y entero: ");
+		entradaUsuario = sc.nextInt();
+		
+		while (contador <= 10) {
+			System.out.println(entradaUsuario + " x " + contador + " = " + (entradaUsuario * contador));
+			contador++;
+		}
+		sc.close();*/
+		
+		do { 
+			System.out.println("Introduce un número posivo y entero: ");
+			entradaUsuario = sc.nextInt();
+			check = false;
+			
+		} while (check == true);
+		
+	}
+
+}
