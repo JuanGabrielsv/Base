@@ -5,7 +5,7 @@ Por ejemplo, los nacidos en 1994 serían generación Y o milennials. */
 
 package tema2_ejerciciospracticos;
 import java.util.Scanner;
-public class T2_Ejerciciospracticos1 {
+public class T2_Ejerciciospracticos_1 {
 	public static void main(String[] args) {
 		
 		Long año;
