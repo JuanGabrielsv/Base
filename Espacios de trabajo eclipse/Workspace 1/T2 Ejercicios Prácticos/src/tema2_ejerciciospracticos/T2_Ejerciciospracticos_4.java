@@ -24,6 +24,7 @@ public class T2_Ejerciciospracticos_4 {
 			}
 			else {
 				suma += entradaUsuario;
+				check = true;
 			}
 			
 		} while (check == true);
