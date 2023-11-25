@@ -61,6 +61,8 @@ public class T2_ejercicios_practicos_repaso4 {
 			System.out.println("- Total = " + calculoPrecio + "€ - " + calculoDescuento + "€ = " + calculoTotal + "€");			
 		}
 		
+		SC.close();
+		
 	}
 
 }
