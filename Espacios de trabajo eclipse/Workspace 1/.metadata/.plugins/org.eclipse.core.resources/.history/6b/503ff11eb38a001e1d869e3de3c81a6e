@@ -1,0 +1,13 @@
+/* EJERCICIO 18
+Realiza un programa que solicite un número del 1 al 12 y muestre por consola a qué mes del
+año corresponde. Realizar el programa utilizando una estructura SWITCH. */
+package t2_ejercicios_practicos;
+
+public class T2_ejercicios_practicos18 {
+
+	public static void main(String[] args) {
+
+
+	}
+
+}

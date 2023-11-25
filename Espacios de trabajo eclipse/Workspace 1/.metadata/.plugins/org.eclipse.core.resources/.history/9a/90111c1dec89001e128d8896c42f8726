@@ -1,0 +1,20 @@
+package t2_ejercicios_practicos;
+
+import java.util.Scanner;
+
+public class T2_ejercicios_practicos10 {
+	
+	public static final Boolean CHECK = true;
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		do {
+			
+		} while (CHECK);
+
+
+	}
+
+}

@@ -1,0 +1,21 @@
+/* EJERCICIO 19
+Repetir el ejercicio 3 utilizando una estructura SWITCH. */
+
+/* EJERCICIO 3
+Realizar un programa que calcule el IVA de un producto. Para ello tendremos que solicitar dos
+datos al usuario: el precio sin IVA y el tipo de IVA. El tipo de IVA puede ser de cuatro tipos:
+ Normal: 21%
+ Reducido: 10%
+ Superreducido: 4%
+ Exento: 0%  */
+
+package t2_ejercicios_practicos;
+
+public class T2_ejercicios_practicos19 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

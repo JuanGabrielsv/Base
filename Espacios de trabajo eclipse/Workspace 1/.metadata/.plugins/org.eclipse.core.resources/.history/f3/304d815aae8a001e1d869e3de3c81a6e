@@ -1,0 +1,12 @@
+/* EJERCICIO 15
+Repetir el ejercicio anterior con una estructura FOR. */
+package t2_ejercicios_practicos; 
+
+public class T2_ejercicios_practicos15 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
