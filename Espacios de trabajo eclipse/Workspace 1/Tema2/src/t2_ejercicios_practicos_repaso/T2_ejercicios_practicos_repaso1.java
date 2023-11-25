@@ -14,17 +14,27 @@ import java.util.Scanner;
 public class T2_ejercicios_practicos_repaso1 {
 	
 	public static final Scanner SC = new Scanner(System.in);
+	public static final Integer ANO = 2030;
 
 	public static void main(String[] args) {
 		
 		String entradaNombre = "";
-		String entradaNacimiento = "";
+		Integer entradaNacimiento = 0;
+		Integer calculo = 0;
 		
 		System.out.println("Introduce tu nombre: ");
 		entradaNombre = SC.nextLine();
+		System.out.println();
 		
 		System.out.println("Introduce tu año de nacimiento: ");
-		entradaNacimiento =SC.nextLine();
+		entradaNacimiento = SC.nextInt();
+		System.out.println();
+		
+		calculo = (ANO - entradaNacimiento);
+		
+		System.out.println("Hola " + entradaNombre + ", en el año 2030 tendrás " + calculo + " .");
+		
+		SC.close();
 
 	}
 
