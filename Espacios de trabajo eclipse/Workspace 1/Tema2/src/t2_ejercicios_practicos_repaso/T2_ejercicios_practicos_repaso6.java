@@ -47,6 +47,18 @@ public class T2_ejercicios_practicos_repaso6 {
 /* CON UN DO WHILE */
 		
 		Integer suma = 0;
+		Integer contador = 1;
+		
+		do {
+			System.out.print(contador * 3 + " + ");
+			suma += contador * 3;
+			contador++;
+			
+		} while (contador < 10);
+		
+		suma += contador * 3;
+		
+		System.out.println(contador * 3 + " = " + suma);
 
 	}
 
