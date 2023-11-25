@@ -21,18 +21,38 @@ public class T2_ejercicios_practicos_repaso7 {
 		
 		Integer entradaUsuario = 0;
 		Boolean check = true;
+		Integer suma = 0;
 		
 		do {
 			System.out.println("Introduce un número entre 1 y 10: ");
 			entradaUsuario = SC.nextInt();
 			
-			if (entradaUsuario <= 10 && entradaUsuario != 0) {
+			if (entradaUsuario <= 10 && entradaUsuario > 0) {
+				for (int i = 1; i <= 10; i++) {
+					
+					if (i == 10) {
+						System.out.print(i * entradaUsuario);
+						suma += (i * entradaUsuario);
+						break;
+					}
+					
+					suma += i * entradaUsuario;
+					System.out.print(i * entradaUsuario + " + ");
+								
+				}
 				
+				System.out.print(" = " + suma);
+				check = false;
 			}
-			
+			else if (entradaUsuario > 10 || entradaUsuario < 0) {
+				System.out.println("El número no es correcto, vuelve a intentarlo: ");
+			}
+			else {
+				System.out.println("Hasta luego");
+				check = false;
+			}
 		} while (check);
-		
-
+	
 	}
 
 }
