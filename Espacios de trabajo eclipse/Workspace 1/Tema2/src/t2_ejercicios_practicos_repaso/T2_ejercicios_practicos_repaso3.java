@@ -56,7 +56,7 @@ public class T2_ejercicios_practicos_repaso3 {
 		}
 		while (check);
 		
-		
+		SC.close();
 
 	}
 
