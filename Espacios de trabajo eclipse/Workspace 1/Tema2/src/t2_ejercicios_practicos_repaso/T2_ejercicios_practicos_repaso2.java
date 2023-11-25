@@ -38,10 +38,24 @@ public class T2_ejercicios_practicos_repaso2 {
 		nombreCiudad3 = SC.nextLine();		
 		longitudCiudad3 = nombreCiudad3.length();
 		
-		if (longitudCiudad1 > longitudCiudad2)
-		
-		
-		
+		if (longitudCiudad1 <= longitudCiudad2 && longitudCiudad2 <= longitudCiudad3 && longitudCiudad1 <= longitudCiudad3) {
+			System.out.println(nombreCiudad1 + " " + nombreCiudad2 + " " +  nombreCiudad3);
+		}
+		else if (longitudCiudad1 <= longitudCiudad2 && longitudCiudad3 <= longitudCiudad2 && longitudCiudad1 <= longitudCiudad3) {
+			System.out.println(nombreCiudad1 + " " + nombreCiudad3 + " " + nombreCiudad2);
+		}
+		else if (longitudCiudad2 <= longitudCiudad1 && longitudCiudad1 <= longitudCiudad3 && longitudCiudad2 <= longitudCiudad3) {
+			System.out.println(nombreCiudad2 + " " + nombreCiudad1 + " " + nombreCiudad3);
+		}
+		else if (longitudCiudad2 <= longitudCiudad1 && longitudCiudad3 <= longitudCiudad1 && longitudCiudad2 <= longitudCiudad3) {
+			System.out.println(nombreCiudad2 + " " + nombreCiudad3 + " " + nombreCiudad1);
+		}
+		else if (longitudCiudad3 <= longitudCiudad1 && longitudCiudad1 <= longitudCiudad2 && longitudCiudad3 <= longitudCiudad2) {
+			System.out.println(nombreCiudad3 + " " + nombreCiudad1 + " " + nombreCiudad2);
+		}
+		else if (longitudCiudad3 <= longitudCiudad1 && longitudCiudad2 <= longitudCiudad1 && longitudCiudad3 <= longitudCiudad2) {
+			System.out.println(nombreCiudad3 + " " + nombreCiudad2 + " " + nombreCiudad1);
+		}	
 
 	}
 
