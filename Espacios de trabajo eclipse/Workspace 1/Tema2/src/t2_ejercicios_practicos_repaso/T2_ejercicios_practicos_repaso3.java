@@ -45,11 +45,14 @@ public class T2_ejercicios_practicos_repaso3 {
 			case 3:
 				System.out.println("Has elegido 'Modificar'");
 				System.out.println();
-			}
-			
-			
-			
-			
+				break;
+			case 4:
+				System.out.println("Bye Bye");
+				check = false;
+				break;
+			default:
+				System.out.println("Opción incorrecta vuelva a intentarlo");
+			}				
 		}
 		while (check);
 		
