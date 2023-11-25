@@ -9,10 +9,22 @@ nacimiento */
 
 package t2_ejercicios_practicos_repaso;
 
+import java.util.Scanner;
+
 public class T2_ejercicios_practicos_repaso1 {
+	
+	public static final Scanner SC = new Scanner(System.in);
 
 	public static void main(String[] args) {
-
+		
+		String entradaNombre = "";
+		String entradaNacimiento = "";
+		
+		System.out.println("Introduce tu nombre: ");
+		entradaNombre = SC.nextLine();
+		
+		System.out.println("Introduce tu año de nacimiento: ");
+		entradaNacimiento =SC.nextLine();
 
 	}
 
