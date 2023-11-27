@@ -56,7 +56,14 @@ public class T2_ejercicios_practicos_repaso11 {
 				
 				System.out.println(calculo);
 				break;
-			
+			case 2:
+				System.out.println("Has elegido RESTAR: ");
+				System.out.println("Introduce el primer número (entero): ");
+				entradaUsuario1 = SC.nextInt();
+				System.out.println("Introduce el segundo número (entero): ");
+				entradaUsuario2 = SC.nextInt();
+				
+				calculo = (entradaUsuario1 - entradaUsuario2)
 			default:
 				
 			}
