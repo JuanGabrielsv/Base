@@ -22,31 +22,33 @@ import java.util.Scanner;
 public class T2_ejercicios_practicos_repaso10 {
 	
 	public static final Scanner SC = new Scanner(System.in);
+	public static final String PUNTO = ".";
+	public static final String BARRAS = "://";
 
 	public static void main(String[] args) {
 		
 		String entradaUsuario = "";
 		String entradaUsuariominusculas = "";
-		Boolean check = true;
-		
-		do {
-			System.out.println("Introduce una dirección WEB: ");
-			entradaUsuario = SC.nextLine();
-			entradaUsuariominusculas = entradaUsuario.toLowerCase().trim();
-			check = false;
-			
-			if (entradaUsuariominusculas.startsWith("https://") || entradaUsuariominusculas.startsWith("http://")) {
 				
-			}
+		System.out.println("Introduce una dirección WEB: ");
+		entradaUsuario = SC.nextLine();
+		entradaUsuariominusculas = entradaUsuario.toLowerCase().trim();
+		
+		Integer indiceProtocolo = entradaUsuariominusculas.indexOf(BARRAS);
+		Integer indicePPunto = entradaUsuariominusculas.indexOf(PUNTO);
+		Integer indiceUPunto = entradaUsuariominusculas.lastIndexOf(PUNTO);
+		
+		if (indiceProtocolo != -1 && indicePPunto != -1 && indiceUPunto != indicePPunto) {
 			
-		} while (check);
-		
-		
-		
-		
-		
-	
-
+			System.out.println(entradaUsuariominusculas.substring(0, indiceProtocolo +3));
+			System.out.println(entradaUsuariominusculas.substring(indiceProtocolo +3, indicePPunto));
+			System.out.println(entradaUsuariominusculas.substring(indicePPunto +1, indiceUPunto));
+			System.out.println(entradaUsuariominusculas.substring(indiceUPunto +1));
+		}
+		else {
+			System.out.println("El formato no es el correcto: ");
+		}
+		SC.close();
 	}
 
 }
