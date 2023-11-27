@@ -13,16 +13,22 @@ public class T3_ejercicios_repaso_8 {
 
 	public static void main(String[] args) {
 		
-		String[] arrayTexto = TEXTO.split("");
-		Integer inicio = 0;
-		Integer fin = 0;
+		Boolean etiquetaAbierta = true;
 		
-		for (int i = 0; i < arrayTexto.length; i++) {
-			if (arrayTexto[i].equals("<")) {
-				
+		String[] arrayTexto = TEXTO.split("");
+		
+		for (String caracter : arrayTexto) {
+			if (caracter.equals("<")) {
+				etiquetaAbierta = true;
+			}
+			else if (caracter.equals(">")) {
+				etiquetaAbierta = false;
+			}
+			else if (etiquetaAbierta == false) {
+				System.out.print(caracter);
 			}
 			
-		}		
+		}				
 				
 	}
 
