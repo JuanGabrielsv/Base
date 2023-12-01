@@ -29,7 +29,7 @@ LISTADO DE NOTAS
 Media de los alumnos: 6 */
 package t3_ejercicios_repaso;
 
-/*import java.util.Scanner;*/
+import java.util.Scanner;
 
 public class T3_ejercicios_repaso_10 {
 	
@@ -37,10 +37,10 @@ public class T3_ejercicios_repaso_10 {
 
 	public static void main(String[] args) {
 		
-		/*Scanner SC = new Scanner(System.in);*/
+		Scanner SC = new Scanner(System.in);
 		
-		/*String nombreAlumno1 = "";*/
-		/*Integer entradaNumAlumnos = 0;*/
+		String nombreAlumno1 = "";
+		Integer entradaNumAlumnos = 0;
 		
 		for (int i = 0; i < args.length; i++) {
 			System.out.println("Cuántos alumnos hay");
