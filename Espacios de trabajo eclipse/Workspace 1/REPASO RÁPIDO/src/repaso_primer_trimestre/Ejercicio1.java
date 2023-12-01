@@ -18,12 +18,7 @@ public class Ejercicio1 {
 			
 			for (int j = 1; j <= entradaUsuario; j++) {
 				
-				if (i == 1)	{
-					System.out.print("*");
-				} 
-				else {
-					
-					if (j == 1 || j == entradaUsuario) {
+				if (j == 1 || j == entradaUsuario) {
 						System.out.print("*");
 					}
 					
@@ -35,9 +30,7 @@ public class Ejercicio1 {
 			}		
 			
 			System.out.println();			
-		}
-		
-		
+				
 	}
 
 }
