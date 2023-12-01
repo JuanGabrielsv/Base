@@ -63,7 +63,7 @@ public class T2_ejercicios_practicos_repaso11 {
 				System.out.println("Introduce el segundo número (entero): ");
 				entradaUsuario2 = SC.nextInt();
 				
-				calculo = (entradaUsuario1 - entradaUsuario2)
+				calculo = (entradaUsuario1 - entradaUsuario2);
 			default:
 				
 			}
