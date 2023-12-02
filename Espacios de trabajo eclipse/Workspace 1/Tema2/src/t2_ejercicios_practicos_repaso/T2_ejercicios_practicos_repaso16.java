@@ -23,7 +23,7 @@ public class T2_ejercicios_practicos_repaso16 {
 		Scanner sc = new Scanner(System.in);
 
 		String entradaUsuario = "";
-		Integer contador = 0;
+		/*Integer contador = 0;*/
 
 		System.out.println("Introduce tu palabra: ");
 		entradaUsuario = sc.nextLine();
@@ -38,6 +38,8 @@ public class T2_ejercicios_practicos_repaso16 {
 			System.out.println(entradaUsuario.substring(i, i +1));
 
 		}
+		
+		sc.close();
 
 	}
 
