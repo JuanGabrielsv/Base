@@ -20,14 +20,18 @@ public class T3_ejercicios_practicos_2 {
 		System.out.println("Introduce un número entero: ");
 		entradaUsuario = sc.nextInt();
 
-		for (int i = 0; i < 5; i++) {
+		arrayCuadrados = new Integer[6];
+
+		for (int i = 0; i < 6; i++) {
 			calculoCuadrado = (entradaUsuario + i) * (entradaUsuario + i);
-			System.out.println(calculoCuadrado);
-			arrayCuadrados[i] = new Integer[] {calculoCuadrado};
-			
-			
+			arrayCuadrados[i] = calculoCuadrado;
 		}
-		
+
+		for (int i = 0; i < arrayCuadrados.length; i++) {
+			System.out.print(arrayCuadrados[i] + " ");
+		}
+
+		sc.close();
 
 	}
 
