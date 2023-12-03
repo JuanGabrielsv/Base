@@ -16,6 +16,7 @@ public class T2_ejercicios_practicos_repaso24 {
 		Integer entradaUsuario = 0;
 		Boolean check = true;
 		Integer numero = 0;
+		Integer suma = 0;
 		
 		do {
 			System.out.println("Introduce un número entero mayor que '0': ");
@@ -33,9 +34,12 @@ public class T2_ejercicios_practicos_repaso24 {
 			numero = i % 2;
 			
 			if (numero != 0) {
-				System.out.println(numero);
+				System.out.print(i + " ");
+				suma = suma + i;
 			}			
 		}
+		System.out.println();
+		System.out.println("El resultado de la suma de los números impares comprendidos entre 1 y " + entradaUsuario + " es " + suma);
 
 
 	}
