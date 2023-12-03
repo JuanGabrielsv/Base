@@ -36,7 +36,7 @@ public class T3_ejercicios_practicos_5 {
 		Integer menor = arrayNumeros[0];
 
 		for (int i = 0; i <= arrayNumeros.length - 1; i++) {
-			
+
 			if (arrayNumeros[i] > mayor) {
 				mayor = arrayNumeros[i];
 				posicionMayor = i;
@@ -55,6 +55,8 @@ public class T3_ejercicios_practicos_5 {
 		System.out.println("Mayor: " + mayor + " Posicion en Array: " + posicionMayor);
 		System.out.println("Menor: " + menor + " Posicion en Array: " + posicionMenor);
 		System.out.println("Media: " + media);
+
+		sc.close();
 
 	}
 
