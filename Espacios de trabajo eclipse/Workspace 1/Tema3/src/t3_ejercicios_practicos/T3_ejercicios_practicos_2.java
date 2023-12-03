@@ -9,22 +9,26 @@ package t3_ejercicios_practicos;
 import java.util.Scanner;
 
 public class T3_ejercicios_practicos_2 {
-	
-	public static void main(String[]args) {
-		
+
+	public static void main(String[] args) {
+
 		Scanner sc = new Scanner(System.in);
 		Integer entradaUsuario = 0;
 		Integer[] arrayCuadrados;
 		Integer calculoCuadrado = 0;
-		
+
+		System.out.println("Introduce un número entero: ");
+		entradaUsuario = sc.nextInt();
+
 		for (int i = 0; i < 5; i++) {
-			calculoCuadrado = entradaUsuario *
+			calculoCuadrado = (entradaUsuario + i) * (entradaUsuario + i);
+			System.out.println(calculoCuadrado);
+			arrayCuadrados[i] = new Integer[] {calculoCuadrado};
+			
+			
 		}
 		
-		
-		
-		
-		
+
 	}
 
 }
