@@ -11,7 +11,6 @@ public class T3_ejercicios_practicos_6 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		String entradaUsuario = "";
 		String[] array1 = new String[1];
 		String[] array2 = new String[1];
 		String[] array3 = new String[1];
@@ -30,6 +29,7 @@ public class T3_ejercicios_practicos_6 {
 			System.out.println(array1[i] + array2[i] + array3[i]);
 
 		}
+		sc.close();
 
 	}
 
