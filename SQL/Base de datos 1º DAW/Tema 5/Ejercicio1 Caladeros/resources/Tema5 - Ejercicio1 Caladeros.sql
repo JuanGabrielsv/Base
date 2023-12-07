@@ -1,3 +1,5 @@
+// CREAMOS LAS TABLAS
+
 CREATE TABLE barcos (
     matricula_barcos VARCHAR2(100) PRIMARY KEY,
     nombre VARCHAR2(100),
@@ -24,8 +26,21 @@ CREATE TABLE especies (
     cupo_barco NUMBER(9,2),
     caladero_ppal VARCHAR2(100)
     );
+
+CREATE TABLE caladeros (
+    codigo_caladeros INT PRIMARY KEY,
+    nombre_caladeros VARCHAR2(100),
+    ubicacion VARCHAR2(100),
+    especie_ppal VARCHAR2(100)
+    );
+    
+CREATE TABLE fechas_capturas (
+    codigo_especies INT,
+    codigo_caladeros INT,
+    fecha_inicio DATE,
+    fecha_fin DATE,
+    PRIMARY KEY (codigo_especies, codigo_caladeros)
+    );
     
 // FUNCIONAL HASTA AQUÍ.
-
-
     
