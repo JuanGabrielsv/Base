@@ -98,5 +98,16 @@ ALTER TABLE lotes
 ALTER TABLE lotes
     ADD CHECK (precio_kg_salida > 0);
     
- // FUNCIONAL HASTA AQUÍ.
+ALTER TABLE caladeros
+    ADD CHECK (nombre_caladero LIKE UPPER(nombre_caladero));
+
+ALTER TABLE caladeros
+    ADD CHECK (ubicacion LIKE UPPER (ubicacion));
     
+ALTER TABLE fechas_capturas
+    ADD CHECK (fecha_inicio NOT BETWEEN DATE '2023-02-02' AND DATE '2023-03-28');
+    
+ALTER TABLE fechas_capturas
+    ADD CHECK (fecha_fin NOT BETWEEN DATE '2023-02-02' AND DATE '2023-03-28');
+    
+ // FUNCIONAL HASTA AQUÍ.
