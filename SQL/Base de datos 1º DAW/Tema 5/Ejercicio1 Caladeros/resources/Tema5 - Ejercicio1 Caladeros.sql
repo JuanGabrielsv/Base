@@ -1,10 +1,3 @@
-DROP TABLE barcos CASCADE CONSTRAINTS;
-DROP TABLE caladeros CASCADE CONSTRAINTS;
-DROP TABLE especies CASCADE CONSTRAINTS;
-DROP TABLE fechas_capturas CASCADE CONSTRAINTS;
-DROP TABLE lotes CASCADE CONSTRAINTS;
-// CREAMOS LAS TABLAS
-
 CREATE TABLE barcos (
     matricula_barco VARCHAR2(100) PRIMARY KEY,
     nombre VARCHAR2(100),
@@ -110,4 +103,33 @@ ALTER TABLE fechas_capturas
 ALTER TABLE fechas_capturas
     ADD CHECK (fecha_fin NOT BETWEEN DATE '2023-02-02' AND DATE '2023-03-28');
     
- // FUNCIONAL HASTA AQUÍ.
+ALTER TABLE caladeros    
+    ADD nombre_cientifico VARCHAR2(100);
+    
+INSERT INTO especies (codigo_especie,tipo) VALUES (1,'europea');
+INSERT INTO especies VALUES(2,'esturion','peninsular',250,null);
+
+INSERT INTO barcos (matricula_barco, nombre) VALUES ('FG-3465', 'calipso');
+INSERT INTO barcos VALUES ('TR-6745','la rumiante','corveta','naval company',1700,'española');
+
+INSERT INTO caladeros (codigo_caladero, nombre_caladero) VALUES (1,'LUBINAS B');
+INSERT INTO caladeros VALUES (2,'SARDINAS C','LAS SALINAS','2','sardina pilchardus');
+
+INSERT INTO fechas_capturas VALUES (2,2, DATE'2023-01-21', DATE'2023-02-01');
+INSERT INTO fechas_capturas (codigo_especie, codigo_caladero) VALUES (1,1);
+
+INSERT INTO lotes VALUES (1,'FG-3465',500,45.3,52.22,DATE'2023-04-11',2);
+INSERT INTO lotes VALUES (2,'TR-6745',250,62.20,88.40,DATE'2023-04-12',1);
+
+ALTER TABLE barcos
+DROP COLUMN armador;
+
+DROP TABLE barcos CASCADE CONSTRAINTS;
+DROP TABLE caladeros CASCADE CONSTRAINTS;
+DROP TABLE especies CASCADE CONSTRAINTS;
+DROP TABLE fechas_capturas CASCADE CONSTRAINTS;
+DROP TABLE lotes CASCADE CONSTRAINTS;
+
+
+
+    
