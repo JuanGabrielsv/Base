@@ -29,6 +29,16 @@ CREATE TABLE partidos (
     PRIMARY KEY(id_partido)
     );
     
+ALTER TABLE futbolistas
+    ADD id_equipo INT
+    ADD FOREIGN KEY (id_equipo)
+    REFERENCES equipos(id_equipo);
+    
+ALTER TABLE partidos
+    ADD id_equipo INT
+    ADD FOREIGN KEY (id_equipo)
+    REFERENCES equipos(id_equipo);
+    
 ALTER TABLE futbolistas 
     ADD CHECK (posicion IN ('portero','delantero','mediocentro','defensa'));
     
@@ -44,6 +54,8 @@ ALTER TABLE futbolistas
 INSERT INTO equipos VALUES (1,'sevilla','ramon sanchez pizjuan',500000000);
 INSERT INTO equipos VALUES (2,'betis','benito villamarin',550000000);
 INSERT INTO equipos VALUES (3,'barcelona','camp nou',800000000);
+
+
     
 
     
