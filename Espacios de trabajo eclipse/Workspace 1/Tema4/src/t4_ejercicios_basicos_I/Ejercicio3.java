@@ -22,15 +22,15 @@ public class Ejercicio3 {
 		
 	}
 
-	private static String getMayMin(Integer num, String texto) {
+	private static String getMayMin(Integer num, String cadena) {
 		
 		if (num == 1) {
-			texto = texto.trim().toUpperCase();
+			cadena = cadena.trim().toUpperCase();
 		}
 		else {
-			texto = texto.trim().toLowerCase();
+			cadena = cadena.trim().toLowerCase();
 		}		
-		return texto;
+		return cadena;
 	}
 
 }
