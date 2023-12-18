@@ -14,7 +14,7 @@ public class Ejercicio2 {
 		
 	}
 
-	private static String getMinusculas(String resultado) {		
+	public static String getMinusculas(String resultado) {		
 		return resultado.trim().toLowerCase();		
 		
 	}

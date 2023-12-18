@@ -22,7 +22,7 @@ public class Ejercicio3 {
 		
 	}
 
-	private static String getMayMin(Integer num, String cadena) {
+	public static String getMayMin(Integer num, String cadena) {
 		
 		if (num == 1) {
 			cadena = cadena.trim().toUpperCase();
