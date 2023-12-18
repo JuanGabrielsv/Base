@@ -40,6 +40,8 @@ public class T2_ejercicios_practicos_repaso24 {
 		}
 		System.out.println();
 		System.out.println("El resultado de la suma de los números impares comprendidos entre 1 y " + entradaUsuario + " es " + suma);
+		
+		sc.close();
 
 
 	}
