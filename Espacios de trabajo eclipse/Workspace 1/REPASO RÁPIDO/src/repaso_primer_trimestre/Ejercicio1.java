@@ -29,7 +29,9 @@ public class Ejercicio1 {
 				
 			}		
 			
-			System.out.println();			
+			System.out.println();	
+			
+			sc.close();
 				
 	}
 

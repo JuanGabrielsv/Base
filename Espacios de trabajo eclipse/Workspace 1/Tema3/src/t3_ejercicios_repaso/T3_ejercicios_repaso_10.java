@@ -46,8 +46,9 @@ public class T3_ejercicios_repaso_10 {
 			System.out.println("Cuántos alumnos hay");
 			
 			
-		}		
-
+		}
+		
+		SC.close();
 
 	}
 
