@@ -3,7 +3,7 @@ Repite el ejercicio anterior, pero reutilizando (llamando a) los métodos creado
 
 package t4_ejercicios_basicos_I;
 
-import java.util.Random;
+import java.util.Random; 
 
 public class Ejercicio4 {
 
@@ -20,13 +20,14 @@ public class Ejercicio4 {
 	public static String getMayMin(Integer num, String cadena) {
 		
 		if (num == 1) {
-			cadena = cadena.trim().toUpperCase();
+			cadena = Ejercicio1.getMayusculas(cadena);
+			
 		}
 		else {
-			cadena = cadena.trim().toLowerCase();
+			cadena = Ejercicio2.getMinusculas(cadena);
+			
 		}		
 		return cadena;
-
 	}
 
 }
