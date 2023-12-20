@@ -6,9 +6,13 @@ package t4_ejercicios_basicos_I;
 
 public class Ejercicio5 {
 
-	public static void main(String[] args) {
-		
+	public static Integer sumar(Integer num1, Integer num2) {
+		return num1 + num2;
+	}
 
+	public static void main(String[] args) {
+		System.out.println(sumar(3, 4));
+		System.out.println(sumar(3, 0));
 	}
 
 }
