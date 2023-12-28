@@ -92,4 +92,11 @@ INSERT INTO nombretabla (nonullcolumna, nombrecolumna) VALUES (dato, dato);
 Con fecha:
 INSERT INTO nombretabla VALUES (DATE'xxxx-xx-xx', DATE'xxxx-xx-xx');
 ```
+Modificar datos de columna:
+```
+Si no ponemos WHERE los datos se cambiarán en todas las filas.
+UPDATE nombretabla
+SET nombrecolumna = nuevodato, nombrecolumna2 = nuevodato, etc
+WHERE nombrecolumna = datounicoactual;
+```
 
