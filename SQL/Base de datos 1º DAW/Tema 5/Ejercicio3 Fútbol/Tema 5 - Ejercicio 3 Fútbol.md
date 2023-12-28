@@ -1,4 +1,4 @@
-######  *EJERCICIO 1 FÚTBOL - Juan Gabriel Sánchez - 1º desarrollo de aplicaciones WEB.*<hr>
+######  *EJERCICIO 3 FÚTBOL - Juan Gabriel Sánchez - 1º desarrollo de aplicaciones WEB.*<hr>
 <br>
 
 <span style="display: flex; justify-content: center;">![Imagen peliculas](./img/Oliver%20y%20Benji.png)</span>
