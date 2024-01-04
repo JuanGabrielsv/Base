@@ -1,5 +1,12 @@
 <h1 style="font-size:12px">Comandos SQL</h1>
 
+Comandos SQL:
+```
+- Cómo establecer una cuota en el tablespace y poder insertar datos -
+
+ALTER USER nombreusuario QUOTA UNLIMITED ON nombretablespace;
+Ej: alter user daw quota unlimited on users;
+```
 Crear tabla:
 ```
 CREATE TABLE nombreTabla (
