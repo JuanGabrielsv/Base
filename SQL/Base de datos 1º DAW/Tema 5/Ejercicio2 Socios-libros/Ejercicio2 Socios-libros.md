@@ -1,10 +1,10 @@
-######  *EJERCICIO 3 FÚTBOL - Juan Gabriel Sánchez - 1º desarrollo de aplicaciones WEB.*<hr>
+######  *EJERCICIO 2 SOCIOS - LIBROS - Juan Gabriel Sánchez - 1º desarrollo de aplicaciones WEB.*<hr>
 <br>
 
 <span style="display: flex; justify-content: center;">![Imagen peliculas](img/imagen_libros.png)</span>
 
 ## ENUNCIADO
-Ejercicio 3 - Fútbol [PDF](resources/Enunciado.pdf)
+Ejercicio 3 - Socios - Libros [PDF](resources/Enunciado.pdf)
 ## RECURSOS
 Archivo SQL [DESCARGAR](resources/Ejercicio2%20Socios-libros.sql)
 ## CÓDIGO
