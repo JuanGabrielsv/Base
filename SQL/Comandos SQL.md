@@ -60,6 +60,10 @@ ALTER TABLE nombretabla
 ```
 Añadir restricción:
 ```
+Mayor que fecha 15 días:
+ALTER TABLE nombretabla
+    ADD CHECK (nombrecolumnadate = nombrecolumnadate + 15);
+
 ALTER TABLE nombretabla
     ADD CHECK (REGEXP_LIKE(nombre_columna,'[A-Z]-[0-9][0-9]'));
 
@@ -72,7 +76,7 @@ ALTER TABLE nombretabla
 ALTER TABLE nombretabla
     ADD CHECK (nombrecolumna NOT BETWEEN DATE 'xxxx-xx-xx' AND DATE 'xxxx-xx-xx');
 
-Que se pueda introducir equis palabras.
+Que se pueda introducir equis palabras:
 ALTER TABLE nombretabla 
     ADD CHECK (nombrecolumna IN ('portero','delantero','mediocentro','defensa'));
 ```
@@ -86,7 +90,7 @@ Insertar Datos:
 Insertar en todos los campos respetando el orden:
 INSERT INTO nombretabla VALUES (datocolumna1, datocolumna2, datocolumna3);
 
-Insertar en campo específico, campo no null obligatorio;
+Insertar en campo específico, campo no null obligatorio:
 INSERT INTO nombretabla (nonullcolumna, nombrecolumna) VALUES (dato, dato);
 
 Con fecha:
@@ -94,7 +98,7 @@ INSERT INTO nombretabla VALUES (DATE'xxxx-xx-xx', DATE'xxxx-xx-xx');
 ```
 Modificar datos de columna:
 ```
-Si no ponemos WHERE los datos se cambiarán en todas las filas.
+Si no ponemos WHERE los datos se cambiarán en todas las filas:
 UPDATE nombretabla
 SET nombrecolumna = nuevodato, nombrecolumna2 = nuevodato, etc
 WHERE nombrecolumna = datounicoactual;
