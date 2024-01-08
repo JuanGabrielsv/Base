@@ -1,28 +1,23 @@
-/* EJERCICIO 18
-Crea una clase llamada Alumno que tenga como atributos privados el dni, nombre, edad y
-nota. Además, tendrá métodos get y set para todos los atributos. Luego crea un programa que
-lea por consola los datos de un alumno y los registre en un objeto de la clase que acabas de
-crear. */
+/* EJERCICIO 19
+Añade a la clase del ejercicio anterior un método público aprobar() que establecerá la nota en
+un 5. Úsalo desde el programa que has creado para probar. */
 
 package t4_ejercicios_basicos_I;
 
-public class Ejercicio18Alumno {
-
-	
-
+public class Ejercicio19Alumno {
 	private String dni;
 	private String nombre;
 	private Integer edad;
 	private Double nota;
-	
-	public Ejercicio18Alumno() {
+
+	public Ejercicio19Alumno() {
 		this.dni = "";
-		this.nombre ="";
+		this.nombre = "";
 		this.edad = 0;
 		this.nota = 0.0;
 	}
-	
-	public Ejercicio18Alumno(String dni, String nombre, Integer edad, Double nota) {
+
+	public Ejercicio19Alumno(String dni, String nombre, Integer edad, Double nota) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
@@ -30,14 +25,18 @@ public class Ejercicio18Alumno {
 		this.nota = nota;
 	}
 
+	public void aprobar() {
+		nota = 5.0; // this.nota = 5.0;
+	}
+
 	public String getDni() {
 		return dni;
 	}
-	
+
 	public void setDni(String dniNuevo) {
 		this.dni = dniNuevo;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}

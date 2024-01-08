@@ -1,28 +1,25 @@
-/* EJERCICIO 18
-Crea una clase llamada Alumno que tenga como atributos privados el dni, nombre, edad y
-nota. Además, tendrá métodos get y set para todos los atributos. Luego crea un programa que
-lea por consola los datos de un alumno y los registre en un objeto de la clase que acabas de
-crear. */
+/* EJERCICIO 20
+Cambia el constructor de la clase para que reciba un parámetro String que sea el dni del
+alumno. Es decir, cuando queramos crear un objeto Alumno, habrá que indicar
+obligatoriamente su DNI. Modifica el programa que has creado para probar para que funcione
+con este nuevo constructor. */
 
 package t4_ejercicios_basicos_I;
 
-public class Ejercicio18Alumno {
-
-	
-
+public class Ejercicio20Alumno {
 	private String dni;
 	private String nombre;
 	private Integer edad;
 	private Double nota;
-	
-	public Ejercicio18Alumno() {
+
+	public Ejercicio20Alumno() {
 		this.dni = "";
-		this.nombre ="";
+		this.nombre = "";
 		this.edad = 0;
 		this.nota = 0.0;
 	}
-	
-	public Ejercicio18Alumno(String dni, String nombre, Integer edad, Double nota) {
+
+	public Ejercicio20Alumno(String dni, String nombre, Integer edad, Double nota) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
@@ -30,14 +27,18 @@ public class Ejercicio18Alumno {
 		this.nota = nota;
 	}
 
+	public void aprobar() {
+		nota = 5.0; // this.nota = 5.0;
+	}
+
 	public String getDni() {
 		return dni;
 	}
-	
+
 	public void setDni(String dniNuevo) {
 		this.dni = dniNuevo;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
