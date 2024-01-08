@@ -97,7 +97,8 @@ Insertar Datos:
 Insertar en todos los campos respetando el orden:
 INSERT INTO nombretabla VALUES (datocolumna1, datocolumna2, datocolumna3);
 
-Insertar en campo específico, campo no null obligatorio:
+Insertar en campo específico, campo no null obligatorio y seguir el orden de las columnas a la hora
+de introducir los datos:
 INSERT INTO nombretabla (nonullcolumna, nombrecolumna) VALUES (dato, dato);
 
 Con fecha:
