@@ -1,109 +1,105 @@
-######  *EJERCICIO 2 SOCIOS - LIBROS - Juan Gabriel Sánchez - 1º desarrollo de aplicaciones WEB.*<hr>
+######  *EJERCICIO 4 PLANTAS - Juan Gabriel Sánchez - 1º desarrollo de aplicaciones WEB.*<hr>
 <br>
 
-<span style="display: flex; justify-content: center;">![Imagen peliculas](img/imagen_libros.png)</span>
+<span style="display: flex; justify-content: center;">![Imagen peliculas](img/plantas.png)</span>
 
 ## ENUNCIADO
-Ejercicio 3 - Socios - Libros [PDF](resources/Enunciado.pdf)
+Ejercicio 4 Plantas [PDF](resources/Enunciado.pdf)
 ## RECURSOS
-Archivo SQL [DESCARGAR](resources/Ejercicio2%20Socios-libros.sql)
+Archivo SQL [DESCARGAR](resources/Ejercicio4%20Plantas.sql)
 ## CÓDIGO
 
 ```
+DROP TABLE plantas CASCADE CONSTRAINTS;
 DROP TABLE socios CASCADE CONSTRAINTS;
-DROP TABLE libros CASCADE CONSTRAINTS;
-DROP TABLE prestamos CASCADE CONSTRAINTS;
+DROP TABLE compras CASCADE CONSTRAINTS;
+
+
+CREATE TABLE plantas (
+    referencia CHAR(9) PRIMARY KEY CHECK (REGEXP_LIKE(referencia,'R[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]')),
+    nombre VARCHAR2(100) NOT NULL,
+    familia VARCHAR2(100),
+    flor CHAR(2) CHECK(flor IN('si','no')),
+    proveedor VARCHAR2(100) NOT NULL,
+    precio NUMBER(*,2) CHECK (precio >= 0),
+    stock INT CHECK (stock >= 0)
+);
 
 CREATE TABLE socios (
-    cod_socio CHAR(8) PRIMARY KEY CHECK(REGEXP_LIKE(cod_socio,'S[0-9][0-9][0-9][0-9][0-9]24')),
-    dni CHAR(9) CHECK(REGEXP_LIKE(DNI,'[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z]')),
+    numero VARCHAR2(100) PRIMARY KEY CHECK (REGEXP_LIKE(numero,'SOC[0-9][0-9][0-9][0-9][0-9]') OR (REGEXP_LIKE(numero,'NOSOCIO'))),
     nombre VARCHAR2(100),
     apellidos VARCHAR2(100),
-    direccion VARCHAR2(300),
-    telefono NUMBER(9)
+    direccion VARCHAR2(200),
+    codigo_postal INT,
+    localidad VARCHAR2(100),
+    provincia VARCHAR2(100),
+    telefono CHAR(9),
+    email VARCHAR2(100)
 );
 
-CREATE TABLE libros (
-    isbn CHAR(17) PRIMARY KEY CHECK(REGEXP_LIKE(isbn,'[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]isbn')),
-    titulo VARCHAR2(200),
-    editorial VARCHAR2(50),
-    ano_publicacion INT,
-    autores VARCHAR2(300),
-    ano_edicion INT,
-    deteriorado CHAR(2) CHECK(deteriorado LIKE 'si' OR deteriorado LIKE 'no')
+CREATE TABLE compras (
+    referencia VARCHAR2(100) PRIMARY KEY CHECK (REGEXP_LIKE(referencia,'REF[0-9][0-9][0-9][0-9][0-9]')),
+    identificador_cliente VARCHAR2(100) CHECK (REGEXP_LIKE(identificador_cliente,'SOC[0-9][0-9][0-9][0-9][0-9]') OR (REGEXP_LIKE(identificador_cliente,'NOSOCIO'))),
+    identificador_planta CHAR(9),
+    fecha_compra DATE,
+    forma_de_pago VARCHAR2(100)
 );
 
-CREATE TABLE prestamos (
-    cod_socio CHAR(8) CHECK(REGEXP_LIKE(cod_socio,'S[0-9][0-9][0-9][0-9][0-9]24')),
-    isbn CHAR(17) CHECK(REGEXP_LIKE(isbn,'[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]isbn')),
-    fecha_prestamo DATE,
-    fecha_devolucion DATE,
-    fecha_real_devolucion DATE,
-    PRIMARY KEY(cod_socio, isbn)
-);
-
-ALTER TABLE prestamos
-    ADD FOREIGN KEY(cod_socio)
-    REFERENCES socios(cod_socio) ON DELETE SET NULL; 
+ALTER TABLE compras
+    ADD FOREIGN KEY (identificador_cliente)
+    REFERENCES socios(numero);
     
-ALTER TABLE prestamos
-    ADD FOREIGN KEY(isbn)
-    REFERENCES libros(isbn) ON DELETE SET NULL;
+ALTER TABLE compras
+    ADD FOREIGN KEY (identificador_planta)
+    REFERENCES plantas(referencia);
+
+// Incluye 3 plantas con todos sus campos rellenos.
     
-//La fecha de devolución tiene que ser mayor que la fecha de préstamo exactamente en 15 días.
+INSERT INTO plantas VALUES ('R001-2024','Margarita','Asteráceas','si','Flor company',12.50,25);
+INSERT INTO plantas VALUES ('R002-2024','Rosa','Rosaceae','si','Flor company',18.50,20);
+INSERT INTO plantas VALUES ('R003-2024','Tulipán','Liliaceae','si','Tulipa corp',9.50,30);
 
-ALTER TABLE prestamos
-    ADD CHECK (fecha_devolucion = fecha_prestamo + 15);
+// El socio A realizará una compra de una planta.
+
+INSERT INTO socios VALUES ('SOC00001','Mauricio','Sánchez','Calle Paco','54852','Guillena','Sevilla','654987321','malacatones@yugu.es');
+INSERT INTO compras VALUES ('REF00001','SOC00001','R001-2024',DATE'2024-01-09','Efectivo');
+UPDATE plantas
+    SET stock = 24
+    WHERE referencia = 'R001-2024';
     
-//La fecha real devolución puede ser mayor o igual que la fecha de préstamo.
+// El socio B realizará dos compras de la misma planta en días distintos (diferente planta que la comprada por el socio A).
 
-ALTER TABLE prestamos
-    ADD CHECK (fecha_real_devolucion >= fecha_prestamo);
+INSERT INTO socios VALUES ('SOC00002','Pepito','López','Calle Laurel','41950','Castilleja de la Cuesta','Sevilla','258963147','wakafote@gmail.com');
+INSERT INTO compras VALUES ('REF00002','SOC00002','R002-2024',DATE'2024-01-04','Transferencia');
+UPDATE plantas
+    SET stock = 19
+    WHERE referencia = 'R002-2024';
     
-// La fecha real devolución puede ser mayor que la fecha de devolución.
-// Aquí no ponemos CHECK ya que el libro lo puede devolver antes de la fecha de devolución.
+INSERT INTO compras VALUES ('REF00003','SOC00002','R002-2024',DATE'2024-01-06','Transferencia');
+UPDATE plantas
+    SET stock = 18
+    WHERE referencia = 'R002-2024';
+    
+// Un cliente no socio realizará una compra de una planta.
 
-// Crea un par de socios.
+INSERT INTO socios VALUES ('NOSOCIO','Lorena','Díaz','Calle Rockero Silvio','41110','Sevilla','Sevilla','667258654','Lorena1998@gmail.com');
+INSERT INTO compras VALUES ('REF00004','NOSOCIO','R003-2024',DATE'2024-01-05','Tarjeta');
+UPDATE plantas
+    SET stock = 29
+    WHERE referencia = 'R003-2024';
 
-INSERT INTO socios VALUES ('S0000124','45852145F','Pedro','Almodóvar','41950 c\Blas Infante 20',987654321);
-INSERT INTO socios VALUES ('S0000224','74125895F','Alberto','Martín','41110 c\Cloud 2',123456789);
+// Modifica el campo flor de un producto y el email del socio A.
 
-// Incluye tres libros en su tabla correspondiente.
-
-INSERT INTO libros VALUES ('1234567891012isbn','El Señor de los anillos','Trompa',1954,'J.R Tolkien',1955,'no');
-INSERT INTO libros VALUES ('1234554891012isbn','Harry Potter','Lucider',1988,'J.K Rowling',1991,'si');
-INSERT INTO libros VALUES ('9934567891012isbn','Como agua para chocolate','Mandor',1977,'Laura Esquivel',1978,'no');
-
-// El primer socio hace lo siguiente: Saca un libro y lo entrega tarde.
-
-INSERT INTO prestamos VALUES ('S0000124','9934567891012isbn',DATE'2024-01-02',DATE'2024-01-17',DATE'2024-01-20');
-
-//  Saca otro libro un mes después (ya que ha tenido suspensión por retraso) y lo devuelve un día antes de la fecha de devolución.
-
-INSERT INTO prestamos VALUES ('S0000124','1234567891012isbn',DATE'2024-02-02',DATE'2024-02-17',DATE'2024-02-16');
-
-// El segundo socio saca un libro y lo devuelve correctamente en fecha.
-
-INSERT INTO prestamos VALUES ('S0000224','1234554891012isbn',DATE'2024-02-02',DATE'2024-02-17',DATE'2024-02-17');
-
-// Modifica el nombre y apellidos de los dos socios.
-
+UPDATE plantas
+    SET flor = 'no'
+    WHERE referencia = 'R001-2024';
 UPDATE socios
-    SET nombre = 'Manolo', apellidos = 'Ruiz'
-    WHERE cod_socio = 'S0000124';
+    SET email = 'maracuya@yahoo.com'
+    WHERE numero = 'SOC00001';
     
-UPDATE socios
-    SET nombre = 'Fernando', apellidos = 'Sánchez'
-    WHERE cod_socio = 'S0000224';
-    
-// Cambia el año de edición de los tres libros por 2018.
+// Borrar todas las compras de los no socios.
 
-UPDATE libros
-    SET ano_edicion = 2018;
+DELETE FROM compras
+        WHERE identificador_cliente = 'NOSOCIO';
 
-// Uno de los préstamos a acabado deteriorando uno de los libros.
-
-UPDATE libros
-    SET deteriorado = 'si'
-    WHERE isbn = '1234567891012isbn';
 ```
