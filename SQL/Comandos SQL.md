@@ -5,7 +5,7 @@ Comandos SQL:
 - Cómo establecer una cuota en el tablespace y poder insertar datos -
 
 ALTER USER nombreusuario QUOTA UNLIMITED ON nombretablespace;
-Ej: alter user daw quota unlimited on users;
+Ej: ALTER USER daw QUOTA UNLIMITED ON users;
 ```
 Crear tabla:
 ```
@@ -67,7 +67,6 @@ ALTER TABLE nombretabla
 ```
 Añadir restricción:
 ```
-Mayor que fecha 15 días:
 ALTER TABLE nombretabla
     ADD CHECK (nombrecolumnadate = nombrecolumnadate + 15);
 
@@ -86,30 +85,34 @@ ALTER TABLE nombretabla
 ALTER TABLE nombretabla 
     ADD CHECK (nombrecolumna IN ('portero','delantero','mediocentro','defensa'));
 
-nombrecolumna tipodato CHECK(nombrecolumna LIKE 'xx' OR nombrecolumna LIKE 'xx')
+nombrecolumna tipodato 
+    CHECK(nombrecolumna LIKE 'xx' OR nombrecolumna LIKE 'xx')
+
+nombrecolumna tipodato
+    CHECK(REGEXP_LIKE(nombrecolumna,'xxx[x-x][x-x][x-x]') OR (REGEXP_LIKE(nombrecolumna,'xxxxxx')))
 ```
 Borrar restricción:
 ```
 ALTER TABLE nombretabla
-    DROP CONSTRAINTS constraint_name;
+    DROP CONSTRAINTS constraintname;
 ```
 Insertar Datos:
 ```
-Insertar en todos los campos respetando el orden:
 INSERT INTO nombretabla VALUES (datocolumna1, datocolumna2, datocolumna3);
 
-Insertar en campo específico, campo no null obligatorio y seguir el orden de las columnas a la hora
-de introducir los datos:
 INSERT INTO nombretabla (nonullcolumna, nombrecolumna) VALUES (dato, dato);
 
-Con fecha:
 INSERT INTO nombretabla VALUES (DATE'xxxx-xx-xx', DATE'xxxx-xx-xx');
 ```
 Modificar datos de columna:
 ```
-Si no ponemos WHERE los datos se cambiarán en todas las filas:
 UPDATE nombretabla
-SET nombrecolumna = nuevodato, nombrecolumna2 = nuevodato, etc
-WHERE nombrecolumna = datounicoactual;
+    SET nombrecolumna = nuevodato, nombrecolumna2 = nuevodato, etc
+    WHERE nombrecolumna = datounicoactual;
+```
+Borrar filas/registros de una tabla:
+```
+DELETE FROM nombratabla
+        WHERE nombrecolumna = referenciafila;
 ```
 
