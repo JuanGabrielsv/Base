@@ -6,6 +6,15 @@ Comandos SQL:
 
 ALTER USER nombreusuario QUOTA UNLIMITED ON nombretablespace;
 Ej: ALTER USER daw QUOTA UNLIMITED ON users;
+
+- Borrado de datos -
+
+BEGIN
+FOR cur_rec IN (SELECT table_name FROM user_tables)
+LOOP
+EXECUTE IMMEDIATE 'DROP TABLE ' || cur_rec.table_name || ' CASCADE CONSTRAINTS';
+END LOOP;
+END;
 ```
 Crear tabla:
 ```
