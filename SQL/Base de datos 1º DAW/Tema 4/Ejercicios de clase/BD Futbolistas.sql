@@ -180,12 +180,14 @@ futbolistas cuya posición sea
 DEFENSA o DELANTERO. */
 
 SELECT posicion FROM futbolistas WHERE posicion IN ('DEFENSA', 'DELANTERO');
+SELECT posicion FROM futbolistas WHERE posicion = 'DEFENSA' OR posicion = 'DELANTERO';
 
 /* Obtén el nombre de los futbolistas
 que cobran entre 100.000 y 200.000
 euros (SALARIO). */
 
 SELECT nombre, salario FROM futbolistas WHERE salario BETWEEN 100000 AND 200000;
+SELECT nombre, salario FROM futbolistas WHERE salario >= 100000 AND salario <= 200000;
 
 SELECT 4+4*3 FROM dual; //sólo un campo y una fila para hacer pruebas.
 SELECT 4+4*3 || 'a' FROM dual; //concatenar
