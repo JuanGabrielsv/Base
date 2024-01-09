@@ -113,3 +113,82 @@ SELECT * FROM futbolistas;
 SELECT * FROM equipos,futbolistas WHERE id_equipo = equipos.id;
 //INNER JOIN
 
+// EJERCICIO 3
+/* Devuelve los apellidos de los
+futbolistas que su posición sea
+DEFENSA. Aplica un alias a apellidos
+para que se muestre “Futbolista” y
+asigna el alias F a la tabla futbolistas. */
+
+SELECT apellidos Futbolista FROM futbolistas F
+    WHERE posicion = 'DEFENSA';
+
+SELECT e.id, f.nombre FROM equipos e, futbolistas f;
+
+//OBLIGATORIO
+SELECT columnas FROM tabla;
+//OPCIONALES
+SELECT columnas FROM tablas WHERE condicion ORDER BY columnas;
+
+//ORDENAR
+SELECT nombre, apellidos, salario FROM futbolistas ORDER BY salario ASC;
+SELECT nombre, apellidos, salario FROM futbolistas ORDER BY salario DESC;
+SELECT nombre, apellidos, salario FROM futbolistas ORDER BY nombre DESC;
+SELECT nombre, apellidos, salario FROM futbolistas ORDER BY salario ASC;
+SELECT nombre, apellidos, salario FROM futbolistas ORDER BY apellidos DESC, salario DESC;
+
+UPDATE futbolistas SET apellidos='GALVEZ' WHERE nombre='PABLO';
+
+SELECT nombre, apellidos, salario FROM futbolistas ORDER BY 1 DESC, 3 DESC;
+
+SELECT nombre, fecha_nacimiento FROM futbolistas;
+SELECT nombre, fecha_nacimiento FROM futbolistas ORDER BY fecha_nacimiento DESC;
+
+//EJERCICIO 4
+/* Devuelve los apellidos de los
+futbolistas que su posición sea
+DEFENSA ordenador de la Z a la A. */
+
+SELECT apellidos FROM futbolistas WHERE posicion = 'DEFENSA' ORDER BY apellidos DESC;
+
+//EJERCICIO 5
+/* Devuelve todos los datos de
+futbolistas ordenados primero por
+posición y luego por apellidos. */
+
+SELECT * FROM futbolistas ORDER BY posicion, apellidos;
+
+//EJERCICIO 6
+/* Obtén el nombre de los futbolistas
+que cobran más de 150.000 euros
+(SALARIO). */
+
+SELECT nombre, salario FROM futbolistas WHERE salario > 150000;
+
+/* Muestra el ID de los futbolistas cuyo
+apellido sea GÓMEZ. */
+
+SELECT id, apellidos FROM futbolistas WHERE apellidos = 'GOMEZ';
+
+/* Indica los apellidos de los futbolistas
+que empiezan por G. */
+
+SELECT apellidos FROM futbolistas WHERE apellidos LIKE 'G%';
+
+/* Devuelve todos los datos de los
+futbolistas cuya posición sea
+DEFENSA o DELANTERO. */
+
+SELECT posicion FROM futbolistas WHERE posicion IN ('DEFENSA', 'DELANTERO');
+
+/* Obtén el nombre de los futbolistas
+que cobran entre 100.000 y 200.000
+euros (SALARIO). */
+
+SELECT nombre, salario FROM futbolistas WHERE salario BETWEEN 100000 AND 200000;
+
+SELECT 4+4*3 FROM dual; //sólo un campo y una fila para hacer pruebas.
+SELECT 4+4*3 || 'a' FROM dual; //concatenar
+SELECT to_char (sysdate, 'dd/mm/yy hh:mi:ss') FROM dual;
+
+SELECT COUNT(nombre) FROM futbolistas; //contar
