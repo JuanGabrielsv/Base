@@ -83,9 +83,10 @@ ALTER TABLE nombretabla
 ALTER TABLE nombretabla
     ADD CHECK (nombrecolumna NOT BETWEEN DATE 'xxxx-xx-xx' AND DATE 'xxxx-xx-xx');
 
-Que se pueda introducir equis palabras:
 ALTER TABLE nombretabla 
     ADD CHECK (nombrecolumna IN ('portero','delantero','mediocentro','defensa'));
+
+nombrecolumna tipodato CHECK(nombrecolumna LIKE 'xx' OR nombrecolumna LIKE 'xx')
 ```
 Borrar restricción:
 ```
