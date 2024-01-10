@@ -42,7 +42,7 @@ public class Ejercicio18 {
 
 		System.out.println(alumno.getDni()+ "\n" + alumno.getNombre() + "\n" + alumno.getEdad() + "\n" + alumno.getNota());
 		
-		Ejercicio18Alumno alumno2 = new Ejercicio18Alumno(dni,nombre,edad,nota);
+		//Ejercicio18Alumno alumno2 = new Ejercicio18Alumno(dni,nombre,edad,nota);
 				
 		sc.close();
 		
