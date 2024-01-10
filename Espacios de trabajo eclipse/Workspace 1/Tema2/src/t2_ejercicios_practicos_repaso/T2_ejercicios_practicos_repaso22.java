@@ -14,11 +14,9 @@ public class T2_ejercicios_practicos_repaso22 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		String entradaUsuario = "";
-
 		for (int i = 1; i <= 10; i++) {
 			System.out.print(i);
-			entradaUsuario = sc.nextLine();
+			sc.nextLine();
 		}
 		sc.close();
 	}
