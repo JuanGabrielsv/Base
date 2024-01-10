@@ -4,9 +4,7 @@ que la clase Alumno herede de ella. Borra todo lo que sea duplicado. ¿Tienes qu
 en tu programa de pruebas? */
 
 package t4_ejercicios_basicos_I;
-
 import java.util.Scanner;
-
 public class Ejercicio21 {
 
 	public static void main(String[] args) {

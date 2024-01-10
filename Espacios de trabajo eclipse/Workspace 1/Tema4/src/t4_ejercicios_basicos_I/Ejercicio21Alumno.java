@@ -5,7 +5,7 @@ en tu programa de pruebas? */
 
 package t4_ejercicios_basicos_I;
 
-public class Ejercicio21Alumno {
+public class Ejercicio21Alumno extends Ejercicio21Persona {
 	private String dni;
 	private String nombre;
 	private Integer edad;
