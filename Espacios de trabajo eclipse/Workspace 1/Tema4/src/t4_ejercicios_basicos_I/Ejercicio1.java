@@ -12,12 +12,12 @@ public class Ejercicio1{
 		
 		String frase = " hola que pasa ";
 		
-		String frase2 = getMayusculas(frase);		
-		System.out.println(frase2);
+		getMayusculas(frase);		
+		System.out.println(frase);
 	}
 	
-	public static String getMayusculas (String sinEspacio) {		
-		return sinEspacio.trim().toUpperCase();
+	public static void getMayusculas (String sinEspacio) {		
+		sinEspacio.trim().toUpperCase();
 	}
 
 }
