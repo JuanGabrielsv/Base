@@ -16,6 +16,7 @@ public class App {
 				
 				System.out.println("Dame una frase: ");
 				System.out.println(getMayusculas(sc.nextLine()));
+				sc.close();
 		
 //FORMA 2: Pedimos los datos al usuario, guardamos en variable y directamente le pasamos el método.
 /*

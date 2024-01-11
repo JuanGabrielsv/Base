@@ -8,15 +8,17 @@ import java.util.Scanner;
 
 public class App {
 	
-//Declaramos el método fuera de la clase main.	
-	
-		public static String getMayusculas(String cadena) {
-			return cadena.trim().toUpperCase();
-		}
-	
 	public static void main(String[] args) {
 
-//FORMA 1: Pedimos los datos al usuario y directamente le pasamos el método.
+//FORMA 1: Pedimos los datos al usuario y directamente imprimimos pasándole el método.
+		
+				Scanner sc = new Scanner(System.in);
+				
+				System.out.println("Dame una frase: ");
+				System.out.println(getMayusculas(sc.nextLine()));
+				sc.close();
+		
+//FORMA 2: Pedimos los datos al usuario, guardamos en variable y directamente le pasamos el método.
 /*
 		String resultado = "";
 		Scanner sc = new Scanner(System.in);
@@ -27,7 +29,7 @@ public class App {
 		sc.close();
 */
 
-//FORMA 2: Pedimos los datos al usuario y lo guardamos en una variable, después le aplicamos el método.
+//FORMA 3: Pedimos los datos al usuario y lo guardamos en una variable, después le aplicamos el método.
 /*
 		String resultado = null;
 		String entradaUsuario = null;
@@ -40,16 +42,22 @@ public class App {
 		sc.close();
 */
 		
-//FORMA 3: Le pasamos el método directamente a una cadena (frase, palabra) e imprimimos;
+//FORMA 4: Le pasamos el método directamente a una cadena (frase, palabra) e imprimimos a la vez;
 /*		
 		System.out.println(getMayusculas(" que pasa tomasaa "));
 */
 
-//FORMA 4: Le pasamos el método a una cadena (frase, palabra) y la guardamos en una variable e imprimimos.
+//FORMA 5: Le pasamos el método a una cadena (frase, palabra) y la guardamos en una variable e imprimimos.
 /*
-		String resultado = null;		
+		String resultado = null;
+				
 		resultado = getMayusculas(" que pasa tomasas ");		
 		System.out.println(resultado);
 */
+	}
+//Declaramos el método fuera de la clase main.	
+	
+	public static String getMayusculas(String cadena) {
+		return cadena.trim().toUpperCase();
 	}
 }
