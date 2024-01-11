@@ -1,6 +1,6 @@
 /* EJERCICIO 4
 Repite el ejercicio anterior, pero reutilizando (llamando a) los métodos creados en el Ejercicio 1 y 2. */
-
+/*
 package t4_ejercicios_basicos_I;
 
 import java.util.Random;
@@ -29,3 +29,4 @@ public class Ejercicio4 {
 	}
 
 }
+*/
