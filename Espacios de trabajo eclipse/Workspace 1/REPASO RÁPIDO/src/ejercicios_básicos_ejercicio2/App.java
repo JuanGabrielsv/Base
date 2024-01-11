@@ -14,13 +14,13 @@ public class App {
 	public static void main(String[] args) {
 		
 //FORMA 1: Pedimos los datos al usuario y directamente imprimimos pasándole el método.
-/*		
+		
 		Scanner sc = new Scanner(System.in);
 				
 		System.out.println("Dame una frase: ");
 		System.out.println(getMinusculas(sc.nextLine()));
 		sc.close();
-*/
+
 		
 //FORMA 2: Pedimos los datos al usuario, guardamos en variable y directamente le pasamos el método.
 /*		
