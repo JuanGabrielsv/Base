@@ -20,7 +20,7 @@ public class Ejercicio4 {
 	public static String getMayMin(Integer num, String cadena) {
 
 		if (num == 1) {
-			cadena = Ejercicio1.getMayusculas(cadena);
+			cadena = Ejercicio1.getMayusculas(cadena); 
 		} else {
 			cadena = Ejercicio2.getMinusculas(cadena);
 		}

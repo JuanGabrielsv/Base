@@ -16,8 +16,8 @@ public class Ejercicio1{
 		System.out.println(frase);
 	}
 	
-	public static void getMayusculas (String sinEspacio) {		
-		sinEspacio.trim().toUpperCase();
+	public static String getMayusculas (String sinEspacio) {		
+		return sinEspacio.trim().toUpperCase();
 	}
 
 }
