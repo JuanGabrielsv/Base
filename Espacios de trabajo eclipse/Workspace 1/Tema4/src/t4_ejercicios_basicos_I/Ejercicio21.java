@@ -35,15 +35,13 @@ public class Ejercicio21 {
 
 		System.out.println();
 
-		Ejercicio20Alumno alumno2 = new Ejercicio20Alumno(dni, nombre, edad, nota);
+		Ejercicio21Alumno alumno2 = new Ejercicio21Alumno(dni,nombre,edad,nota);
 
 		alumno.aprobar();
 		alumno2.aprobar();
 
-		System.out.println(
-				alumno.getDni() + "\n" + alumno.getNombre() + "\n" + alumno.getEdad() + "\n" + alumno.getNota());
-		System.out.println(
-				alumno2.getDni() + "\n" + alumno2.getNombre() + "\n" + alumno2.getEdad() + "\n" + alumno2.getNota());
+		System.out.println(alumno.getDni() + "\n" + alumno.getNombre() + "\n" + alumno.getEdad() + "\n" + alumno.getNota());
+		System.out.println("\n" + alumno2.getDni() + "\n" + alumno2.getNombre() + "\n" + alumno2.getEdad() + "\n" + alumno2.getNota());
 
 		sc.close();
 
