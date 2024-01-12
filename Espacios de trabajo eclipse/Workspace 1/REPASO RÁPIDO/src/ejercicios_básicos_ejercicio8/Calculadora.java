@@ -10,6 +10,23 @@ Prueba el método nuevo con varias pruebas desde el main (usa las constantes).
 */
 package ejercicios_básicos_ejercicio8;
 
-public class Calculadora {	
+public class Calculadora {
+	
+	public static final String SUMAR = "ADD";
+	public static final String RESTAR = "SUB";
+	public static final String MULTIPLICAR = "MUL";
+	public static final String DIVIDIR = "DIV";
+	
+	public static Integer calcular(String operacion, Integer num1, Integer num2) {
+		
+		switch (operacion) {
+		case SUMAR:
+			return num1 + num2;
+			
+
+		default:
+			break;
+		}
+	}
 	
 }
