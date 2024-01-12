@@ -6,9 +6,26 @@ operación.
 */
 package ejercicios_básicos_ejercicio7;
 
+import java.util.Scanner;
+
 public class App {
 
-	public static void main(String[] args) {		
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Integer num1 = null;
+		Integer num2 = null;
+		
+		System.out.println("Dame un número: ");
+		num1 = sc.nextInt();
+		System.out.println("Dame un número: ");
+		num2 = sc.nextInt();		
+		System.out.println("\nDIVISIÓN: " + Calculadora.dividir(num1, num2));
+		System.out.println("SUMA: " + Calculadora.sumar(num1, num2));
+		System.out.println("MULTIPLICACIÓN: " + Calculadora.multiplicar(num1, num2));
+		System.out.println("RESTA: " + Calculadora.restar(num1, num2));		
+		sc.close();
+		
 		
 	}	
 }
