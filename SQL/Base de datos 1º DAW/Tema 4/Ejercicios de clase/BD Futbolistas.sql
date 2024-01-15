@@ -191,6 +191,106 @@ SELECT nombre, salario FROM futbolistas WHERE salario >= 100000 AND salario <= 2
 
 SELECT 4+4*3 FROM dual; //sólo un campo y una fila para hacer pruebas.
 SELECT 4+4*3 || 'a' FROM dual; //concatenar
+SELECT 4+4*3+null FROM dual; //Será siempre null las operaciones con null
 SELECT to_char (sysdate, 'dd/mm/yy hh:mi:ss') FROM dual;
 
 SELECT COUNT(nombre) FROM futbolistas; //contar
+SELECT presupuesto + 50 FROM equipos; //operador entre valor y campos.
+SELECT presupuesto + presupuesto FROM equipos; //operador entre dos campos
+
+/* EJERCICIO 7
+Se va a hacer un aumento de sueldo
+de los PORTEROS. Para ello obtén el
+nombre, apellido y el nuevo salario
+de los PORTEROS si se aumenta un
+10% el que tienen actualmente. La
+lista debe estar ordenada
+alfabéticamente por los apellidos. */
+
+SELECT nombre, apellidos, salario * 1.10 FROM futbolistas WHERE posicion = 'PORTERO' ORDER BY apellidos;
+
+//CONCATENACIONES
+
+SELECT 'lo que sea ' || 'lo que sea' FROM dual;
+SELECT 'lo que sea ' || salario FROM futbolistas;
+SELECT apellidos || ', ' || nombre FROM futbolistas;
+
+//MÉTODOS - FUNCIONES
+
+nombredelafuncion()
+SELECT LOWER(apellidos) || ', ' || nombre FROM futbolistas;
+SELECT LOWER(apellidos || ', ' || nombre) FROM futbolistas;
+SELECT INITCAP(apellidos || ', ' || nombre) "Futbolista" FROM futbolistas;
+
+/* EJERCICIO 8
+Devuelve en una única columna el
+nombre del futbolista seguido de la
+palabra “es” y a continuación la
+posición que ocupa. La columna
+debe llamarse “Posiciones”.*/
+
+SELECT nombre || ' es', posicion "Posiciones" FROM futbolistas;
+
+/* EJERCICIO 9
+Queremos saber todos los datos de
+los futbolistas que ganen más de
+150.000 euros y sean defensas. */
+
+SELECT * FROM futbolistas WHERE NOT (salario > 150000 AND posicion = 'DEFENSA');
+SELECT * FROM futbolistas WHERE NOT salario > 150000 AND posicion = 'DEFENSA';
+
+SELECT apellidos FROM futbolistas WHERE apellidos LIKE 'G%E%';
+SELECT apellidos FROM futbolistas WHERE apellidos LIKE 'G__E%';
+SELECT apellidos FROM futbolistas WHERE apellidos LIKE 'G__EZ';
+SELECT * FROM futbolistas;
+
+/* EJERCICIO 11
+Realiza una consulta que te devuelva
+los campos Nombre, Salario, Salario
+bruto terminado en la palabra “euros”
+y llamando a esa columna “Salario
+bruto”.
+Nota: el salario bruto de un futbolista se obtiene
+añadiéndole el 50% de impuestos, es decir
+multiplicando por 1,5.
+*/
+
+SELECT INITCAP(nombre), salario, salario * 1.50 || ' Euros' "Salario bruto" FROM futbolistas WHERE LOWER (posicion) = 'mediocentro' ORDER BY nombre;
+
+/* Ejercicio 12
+Realiza las siguientes operaciones
+utilizando funciones numéricas:*/
+//1. Calcula el valor absoluto de -10.
+SELECT ABS (-10) FROM dual;
+
+//2. Obtén el exponente en base e de 4.
+SELECT EXP (3) FROM dual;
+
+//3. Redondea el número 15,3 a 16.
+SELECT CEIL (15.3) FROM dual;
+
+//4. Redondea el número anterior (15,3) a 15.
+SELECT FLOOR (15.3) FROM dual;
+
+//5. Calcula el resto de 15 entre 3 (15/3).
+SELECT MOD (15,3) FROM dual;
+
+//6. Eleva 15 al exponente 2 (152). 
+SELECT POWER (15,2) FROM dual;
+
+/* Ejercicio 13
+Realiza las siguientes operaciones
+utilizando funciones numéricas:
+1. Redondea 15,789 con un decimal.
+2. Obtén la raíz cuadrada de 128.
+3. Trunca 15,789 a 1 decimal.
+4. Trunca 15,789 para dejarlo sin
+decimales (15).
+5. Trunca 157,89 para dejarlo en 100.
+6. Obtén el signo de -15 (es decir -1). */
+
+
+
+
+
+
