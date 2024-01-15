@@ -7,7 +7,20 @@ Pruébalo desde el método main con algún test.
 */
 package ejercicios_básicos_ejercicio10;
 
-public class ArrayUtils {	
+public class ArrayUtils {
+	
+	public static String obtenerPalabra(String array[], Integer num) {
+		if (num > array.length + 1) {
+			System.out.println("no data");
+		}
+		else {
+			for (int i = 0; i < array.length; i++) {
+				if (i == num) {
+					System.out.println(array[i]);
+				}
+			}						
+		}
+		return null;
 		
 	}
-
+}
