@@ -299,3 +299,10 @@ SELECT TRUNC(157.89, -2) FROM dual;
 //6. Obtén el signo de -15 (es decir -1).
 SELECT SIGN(-15) FROM dual;
 
+//FUNCIONES DE CADENAS DE CARÁCTERES
+
+SELECT CHR(124) FROM dual;
+SELECT ASCII('A') FROM dual;
+SELECT CONCAT(CONCAT (nombre,estadio), presupuesto) FROM equipos;
+SELECT LPAD('nombre',10,' ') FROM dual; //quiero una cadena con 10 carácteres, si la cadena no llega a 10 lo rellena por la izq hasta 10
+
