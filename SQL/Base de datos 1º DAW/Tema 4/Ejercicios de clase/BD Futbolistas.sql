@@ -280,17 +280,22 @@ SELECT POWER (15,2) FROM dual;
 
 /* Ejercicio 13
 Realiza las siguientes operaciones
-utilizando funciones numéricas:
-1. Redondea 15,789 con un decimal.
-2. Obtén la raíz cuadrada de 128.
-3. Trunca 15,789 a 1 decimal.
-4. Trunca 15,789 para dejarlo sin
-decimales (15).
-5. Trunca 157,89 para dejarlo en 100.
-6. Obtén el signo de -15 (es decir -1). */
+utilizando funciones numéricas:*/
+//1. Redondea 15,789 con un decimal.
+SELECT ROUND(15.789, 1) FROM dual;
 
+//2. Obtén la raíz cuadrada de 128.
+SELECT SQRT(128) FROM dual;
 
+//3. Trunca 15,789 a 1 decimal.
+SELECT TRUNC(15.789, 1) FROM dual;
 
+//4. Trunca 15,789 para dejarlo sin decimales (15).
+SELECT TRUNC(15.789) FROM dual;
 
+//5. Trunca 157,89 para dejarlo en 100.
+SELECT TRUNC(157.89, -2) FROM dual;
 
+//6. Obtén el signo de -15 (es decir -1).
+SELECT SIGN(-15) FROM dual;
 
