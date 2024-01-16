@@ -305,4 +305,25 @@ SELECT CHR(124) FROM dual;
 SELECT ASCII('A') FROM dual;
 SELECT CONCAT(CONCAT (nombre,estadio), presupuesto) FROM equipos;
 SELECT LPAD('nombre',10,' ') FROM dual; //quiero una cadena con 10 carácteres, si la cadena no llega a 10 lo rellena por la izq hasta 10
+SELECT RPAD('nombre',10,' ') FROM dual; //Igual que LPAD pero del revés
+SELECT INITCAP('nombre') FROM dual;
+SELECT LOWER('NOMBRE') FROM dual;
+SELECT UPPER('nombre') FROM dual;
+SELECT REPLACE(nombre, 'QUI','KI') FROM equipos;
+SELECT REPLACE(nombre, 'E','-') FROM futbolistas;
+SELECT SUBSTR('holacar',2,4) FROM dual;
+SELECT SUBSTR(nombre,7,4) FROM futbolistas;
+SELECT LENGTH(nombre) FROM futbolistas;
+SELECT TRIM (' hola ')  FROM dual;
+SELECT LTRIM (' hola ')  FROM dual;
+SELECT RTRIM (' hola ')  FROM dual;
+SELECT nombre, INSTR(nombre,'E') "Primera E", INSTR(nombre, 'E',1,2) "Segunda E", INSTR(nombre, 'E',5,1) "Trampa" FROM futbolistas;
+SELECT INSTR('la b no la d','a',3) FROM dual;
+SELECT INSTR('la b no la d','a',-2,3) FROM dual;
+
+//FUNCIONES PARA TRATAR FECHAS
+
+SELECT SYSTIMESTAMP from dual;
+
+
 
