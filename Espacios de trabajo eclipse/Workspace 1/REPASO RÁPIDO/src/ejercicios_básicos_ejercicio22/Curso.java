@@ -7,25 +7,6 @@ Adapta el programa que has creado para probar para que también solicite el curs
 */
 package ejercicios_básicos_ejercicio22;
 
-public class Persona {
-
-	private String nombre;
-	private Integer edad;
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public Integer getEdad() {
-		return edad;
-	}
-
-	public void setEdad(Integer edad) {
-		this.edad = edad;
-	}
+public class Curso {
 
 }
