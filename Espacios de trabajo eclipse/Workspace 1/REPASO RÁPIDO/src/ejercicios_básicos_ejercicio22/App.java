@@ -17,16 +17,17 @@ public class App {
 		Alumno alumno = new Alumno();
 		Curso curso = new Curso();
 
-		System.out.println("1/4 - Dime el nombre del Alumno: ");
+		System.out.println("1/6 - Dime el nombre del Alumno: ");
 		alumno.setNombre(sc.nextLine());
-		System.out.println("2/4 - Introduce su DNI: ");
+		System.out.println("2/6 - Introduce su DNI: ");
 		alumno.setDni(sc.nextLine());
-		System.out.println("3/4 - ¿Cuántos años tiene?");
+		System.out.println("3/6 - ¿Cuántos años tiene?");
 		alumno.setEdad(sc.nextInt());
-		System.out.println("4/4 - Dime la nota:");
+		System.out.println("4/6 - Dime la nota:");
 		alumno.setNota(sc.nextDouble());
 		System.out.println("5/6 - Dime la identificador del curso");
 		curso.setIdentificador(sc.nextInt());
+		sc.nextLine();
 		System.out.println("6/6 - Introduce una descripción del curso");
 		curso.setDescripcion(sc.nextLine());
 		sc.close();
@@ -36,7 +37,7 @@ public class App {
 		System.out.println("DNI: " + alumno.getDni());
 		System.out.println("EDAD: " + alumno.getEdad());
 		System.out.println("NOTA: " + alumno.getNota());
-		System.err.println("CURSO IDENTIFICADOR: " + curso.getIdentificador());
+		System.out.println("CURSO IDENTIFICADOR: " + curso.getIdentificador());
 		System.out.println("CURSO DESCRIPCION: " + curso.getDescripcion());
 
 	}
