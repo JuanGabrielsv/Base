@@ -1,9 +1,11 @@
 /*
-EJERCICIO 19
-Añade a la clase del ejercicio anterior un método público aprobar() que establecerá la nota en
-un 5. Úsalo desde el programa que has creado para probar.       
+EJERCICIO 20
+Cambia el constructor de la clase para que reciba un parámetro String que sea el dni del
+alumno. Es decir, cuando queramos crear un objeto Alumno, habrá que indicar
+obligatoriamente su DNI. Modifica el programa que has creado para probar para que funcione
+con este nuevo constructor.        
 */
-package ejercicios_básicos_ejercicio19;
+package ejercicios_básicos_ejercicio20;
 
 import java.util.Scanner;
 
