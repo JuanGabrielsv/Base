@@ -15,7 +15,6 @@ public class Persona {
 	public String getNombre() {
 		return nombre;
 	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -23,7 +22,6 @@ public class Persona {
 	public Integer getEdad() {
 		return edad;
 	}
-
 	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
