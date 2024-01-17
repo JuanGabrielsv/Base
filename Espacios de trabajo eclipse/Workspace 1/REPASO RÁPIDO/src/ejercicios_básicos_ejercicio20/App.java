@@ -26,8 +26,6 @@ public class App {
 		alumno.setNota(sc.nextDouble());
 		sc.close();
 		
-		alumno.aprobar();
-
 		System.out.println("\nLos datos introducidos son los siguientes: \n ");
 		System.out.println("NOMBRE: " + alumno.getNombre());
 		System.out.println("DNI: " + alumno.getDni());
