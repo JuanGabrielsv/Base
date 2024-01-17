@@ -23,6 +23,8 @@ public class App {
 		System.out.println("4/4 - Dime la nota:");
 		alumno.setNota(sc.nextDouble());
 		sc.close();
+		
+		alumno.aprobar();
 
 		System.out.println("\nLos datos introducidos son los siguientes: \n ");
 		System.out.println("NOMBRE: " + alumno.getNombre());

@@ -11,6 +11,10 @@ public class Alumno {
 	private String nombre;
 	private Integer edad;
 	private Double nota;
+	
+	public void aprobar() {
+		this.nota = 10.0;
+	}
 
 	public String getDni() {
 		return dni;
