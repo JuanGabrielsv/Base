@@ -13,7 +13,7 @@ public class App {
 		
 		String[] array = new String[] {"AB","CD","E","FG","H","I"};
 		
-		ArrayUtils.obtenerPalabra(array, 3);
+		ArrayUtils.obtenerPalabra(array, 8);
 		
 	}	
 }

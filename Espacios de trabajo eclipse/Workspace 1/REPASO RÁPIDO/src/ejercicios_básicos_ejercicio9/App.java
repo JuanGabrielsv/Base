@@ -10,7 +10,7 @@ public class App {
 	
 	public static void main(String[] args) {
 		
-		String[] array1 = new String[] {"A","B","C","D","E","F"};
+		String[] array1 = new String[] {"A","I","C","D","E","F"};
 		
 		ArrayUtils.imprimirArray(array1);
 		
