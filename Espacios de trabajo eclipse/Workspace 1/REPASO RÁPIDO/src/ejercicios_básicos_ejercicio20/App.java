@@ -14,12 +14,10 @@ public class App {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		Alumno alumno = new Alumno(null);
+		Alumno alumno = new Alumno("53279139F");
 
 		System.out.println("1/4 - Dime el nombre del Alumno: ");
-		alumno.setNombre(sc.nextLine());
-		System.out.println("2/4 - Introduce su DNI: ");
-		alumno.setDni(sc.nextLine());
+		alumno.setNombre(sc.nextLine());		
 		System.out.println("3/4 - ¿Cuántos años tiene?");
 		alumno.setEdad(sc.nextInt());
 		System.out.println("4/4 - Dime la nota:");
