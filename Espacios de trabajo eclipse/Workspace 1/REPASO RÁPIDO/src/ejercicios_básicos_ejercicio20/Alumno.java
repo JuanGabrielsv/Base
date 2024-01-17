@@ -14,6 +14,10 @@ public class Alumno {
 	private Integer edad;
 	private Double nota;
 	
+	public Alumno(String dni) {
+		this.dni = dni;
+	}
+	
 	public String getDni() {
 		return dni;
 	}

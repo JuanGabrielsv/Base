@@ -14,7 +14,7 @@ public class App {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		Alumno alumno = new Alumno();
+		Alumno alumno = new Alumno(null);
 
 		System.out.println("1/4 - Dime el nombre del Alumno: ");
 		alumno.setNombre(sc.nextLine());
