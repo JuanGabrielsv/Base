@@ -11,11 +11,11 @@ public class Alumno extends Persona {
 
 	private String dni;
 	private Double nota;
+	private Curso identificador;
 
 	public String getDni() {
 		return dni;
 	}
-
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
@@ -23,9 +23,15 @@ public class Alumno extends Persona {
 	public Double getNota() {
 		return nota;
 	}
-
 	public void setNota(Double nota) {
 		this.nota = nota;
+	}
+	
+	public Curso getIdentificador() {
+		return identificador;
+	}
+	public void setIdentificador(Curso identificador) {
+		this.identificador = identificador;
 	}
 
 }
