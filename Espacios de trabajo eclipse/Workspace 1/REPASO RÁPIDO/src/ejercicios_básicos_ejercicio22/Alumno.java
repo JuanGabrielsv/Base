@@ -34,12 +34,5 @@ public class Alumno extends Persona {
 	public void setIdentificador(Curso curso) {
 		this.curso = curso;
 	}	
-	
-	/*public Curso getDescripcion() {
-		return descripcion;
-	}
-	public void setDescripcion(Curso descripcion) {
-		this.descripcion = descripcion;
-	}*/
 
 }
