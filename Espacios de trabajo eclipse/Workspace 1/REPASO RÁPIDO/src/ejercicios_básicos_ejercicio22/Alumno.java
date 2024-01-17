@@ -28,10 +28,10 @@ public class Alumno extends Persona {
 		this.nota = nota;
 	}
 	
-	public Curso getIdentificador() {
+	public Curso getCurso() {
 		return curso;
 	}
-	public void setIdentificador(Curso curso) {
+	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}	
 
