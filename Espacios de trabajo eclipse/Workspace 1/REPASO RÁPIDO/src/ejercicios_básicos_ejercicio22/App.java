@@ -42,6 +42,6 @@ public class App {
 		System.out.println("CURSO IDENTIFICADOR: " + curso.getIdentificador());
 		System.out.println("CURSO DESCRIPCION: " + curso.getDescripcion());
 		
-
+		
 	}
 }
