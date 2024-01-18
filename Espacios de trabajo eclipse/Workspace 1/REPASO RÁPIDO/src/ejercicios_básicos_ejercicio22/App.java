@@ -31,14 +31,17 @@ public class App {
 		System.out.println("6/6 - Introduce una descripción del curso");
 		curso.setDescripcion(sc.nextLine());
 		sc.close();
+		
+		alumno.setCurso(curso);
 
-		System.out.println("\nLos datos introducidos son los siguientes: \n ");
+		/*System.out.println("\nLos datos introducidos son los siguientes: \n ");
 		System.out.println("NOMBRE: " + alumno.getNombre());
 		System.out.println("DNI: " + alumno.getDni());
 		System.out.println("EDAD: " + alumno.getEdad());
 		System.out.println("NOTA: " + alumno.getNota());
 		System.out.println("CURSO IDENTIFICADOR: " + curso.getIdentificador());
-		System.out.println("CURSO DESCRIPCION: " + curso.getDescripcion());
+		System.out.println("CURSO DESCRIPCION: " + curso.getDescripcion());*/
+		System.out.println(alumno);
 
 	}
 }

@@ -25,11 +25,14 @@ public class App {
 		alumno.setNota(sc.nextDouble());
 		sc.close();
 
-		System.out.println("\nLos datos introducidos son los siguientes: \n ");
-		System.out.println("NOMBRE: " + alumno.getNombre());
-		System.out.println("DNI: " + alumno.getDni());
-		System.out.println("EDAD: " + alumno.getEdad());
-		System.out.println("NOTA: " + alumno.getNota());
+		/*
+		 * System.out.println("\nLos datos introducidos son los siguientes: \n ");
+		 * System.out.println("NOMBRE: " + alumno.getNombre());
+		 * System.out.println("DNI: " + alumno.getDni()); System.out.println("EDAD: " +
+		 * alumno.getEdad()); System.out.println("NOTA: " + alumno.getNota());
+		 */
+
+		System.out.println(alumno);
 
 	}
 }
