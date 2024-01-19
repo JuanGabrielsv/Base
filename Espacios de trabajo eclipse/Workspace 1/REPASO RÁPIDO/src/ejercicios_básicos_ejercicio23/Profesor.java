@@ -6,19 +6,6 @@ Profesor y meter todos esos datos que el usuario le proporciona.
 */
 package ejercicios_básicos_ejercicio23;
 
-import java.util.Scanner;
+public class Profesor extends Persona{
 
-public class App {
-
-	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		Profesor profesor1 = new Profesor();
-		
-		
-		
-		
-
-		
-	}
 }
