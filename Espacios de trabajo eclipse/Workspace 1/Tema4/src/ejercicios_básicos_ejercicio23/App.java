@@ -21,7 +21,8 @@ public class App {
 		profesor1.setEdad(sc.nextInt());
 		sc.close();
 		
-		System.out.println(profesor1);
+		System.out.println(profesor1.getNombre());
+		System.out.println(profesor1.getEdad());
 		
 	}
 }
