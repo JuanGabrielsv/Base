@@ -1,6 +1,6 @@
 package repasorepaso;
 
-public class Repaso {
+public class App {
 
 	public static void main(String[] args) {
 		
