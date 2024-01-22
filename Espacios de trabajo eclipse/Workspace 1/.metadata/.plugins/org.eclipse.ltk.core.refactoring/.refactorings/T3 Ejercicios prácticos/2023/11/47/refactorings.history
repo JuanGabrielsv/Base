@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy 2 elements to &apos;Tema3/src/t3_ejercicios_practicos&apos;&#x0D;&#x0A;- Original project: &apos;T3 Ejercicios prácticos&apos;&#x0D;&#x0A;- Destination element: &apos;Tema3/src/t3_ejercicios_practicos&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     t3_Ejercicios_Prácticos.T3_ejercicios_practicos_2.java&#x0D;&#x0A;     t3_Ejercicios_Prácticos.T3_ejercicios_practicos_1.java" description="Copy compilation units" destination="=Tema3/src&lt;t3_ejercicios_practicos" element1="/src&lt;t3_Ejercicios_Prácticos{T3_ejercicios_practicos_2.java" element2="/src&lt;t3_Ejercicios_Prácticos{T3_ejercicios_practicos_1.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1700732799955" units="2" version="1.0"/>
-</session>
