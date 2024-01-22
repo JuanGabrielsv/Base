@@ -321,9 +321,37 @@ SELECT nombre, INSTR(nombre,'E') "Primera E", INSTR(nombre, 'E',1,2) "Segunda E"
 SELECT INSTR('la b no la d','a',3) FROM dual;
 SELECT INSTR('la b no la d','a',-2,3) FROM dual;
 
-//FUNCIONES PARA TRATAR FECHAS
+// EJERCICIO 4 SEMANAL 2
+SELECT nombre FROM futbolistas;
+SELECT INSTR(nombre,' ') FROM futbolistas;
+SELECT SUBSTR(nombre || ' ', 1, INSTR(nombre || ' ', ' ')) AS "SÓLO NOMBRE" FROM futbolistas;
 
+//FUNCIONES PARA TRATAR FECHAS
 SELECT SYSTIMESTAMP from dual;
+SELECT SYSDATE FROM dual;
+SELECT EXTRACT(DAY FROM fecha_nacimiento) FROM futbolistas;
+
+// Ejercicio 15
+// 1. Obtén en tres columnas independientes, el día, el mes y la fecha de hoy.
+SELECT EXTRACT(DAY FROM SYSDATE), EXTRACT(MONTH FROM SYSDATE), EXTRACT(YEAR FROM SYSDATE) FROM dual;
+
+// 2. Muestra por pantalla la fecha que será dentro de 6 meses utilizando ADD_MONTHS.
+SELECT ADD_MONTHS(SYSDATE, 6) FROM dual;
+
+// 3. Muestra el número de meses que hay entre hoy y la fecha de nacimiento de todos los futbolistas.
+SELECT FLOOR(MONTHS_BETWEEN(SYSDATE, fecha_nacimiento))FROM futbolistas;
+
+// 4. ¿Cuál es el último día de este mes? Muéstralo.
+SELECT LAST_DAY(SYSDATE) FROM dual;
+
+// 5. ¿Qué día será el próximo lunes? Ponlo por pantalla mediante una petición.
+SELECT NEXT_DAY(SYSDATE, 'LUNES') FROM dual;
+
+// 6. Muestra el día que era hace 4 días. ¿Y el día demañana? 
+SELECT SYSDATE - 4 "HACE 4D", SYSDATE + 1 "MAÑANA" FROM dual;
+
+//FUNCIONES DE CONVERSIÓN
+
 
 
 
