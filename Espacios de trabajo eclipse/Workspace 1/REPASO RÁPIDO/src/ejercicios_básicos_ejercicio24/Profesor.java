@@ -1,8 +1,7 @@
 /*
-EJERCICIO 23
-Crea una clase Profesor vacía que herede de Persona. Crea un programa que solicite por
-pantalla todos los datos de un profesor nuevo. El programa tendrá que crear un objeto
-Profesor y meter todos esos datos que el usuario le proporciona.
+EJERCICIO 24
+Crea métodos toString() para las clases que has creado. Úsalos en tus programas para imprimir
+al final el objeto que has creado (tanto el profesor como el alumno)
 */
 package ejercicios_básicos_ejercicio24;
 
