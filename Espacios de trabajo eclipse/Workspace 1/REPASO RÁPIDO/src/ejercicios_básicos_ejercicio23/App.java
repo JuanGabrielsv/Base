@@ -15,10 +15,12 @@ public class App {
 		Scanner sc = new Scanner(System.in);
 		Profesor profesor1 = new Profesor();
 		
+		System.out.println("Introduce el nombre del profesor: ");
+		profesor1.setNombre(sc.nextLine());
+		System.out.println("Introduce la edad del Profesor: ");
+		profesor1.setEdad(sc.nextInt());
 		
-		
-		
-
+		System.out.println(profesor1);
 		
 	}
 }

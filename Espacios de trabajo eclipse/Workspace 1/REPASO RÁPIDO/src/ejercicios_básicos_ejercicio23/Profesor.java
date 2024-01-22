@@ -6,6 +6,6 @@ Profesor y meter todos esos datos que el usuario le proporciona.
 */
 package ejercicios_básicos_ejercicio23;
 
-public class Profesor extends Persona{
+public class Profesor extends Persona {
 
 }
