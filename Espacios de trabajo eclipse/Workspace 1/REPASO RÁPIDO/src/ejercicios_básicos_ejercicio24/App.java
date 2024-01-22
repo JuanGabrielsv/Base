@@ -14,7 +14,7 @@ public class App {
 		Scanner sc = new Scanner(System.in);
 		Profesor profesor1 = new Profesor();
 		Alumno alumno1 = new Alumno();
-		
+		Curso curso = new Curso();		
 		
 		System.out.println("Introduce el nombre del profesor: ");
 		profesor1.setNombre(sc.nextLine());
@@ -31,8 +31,9 @@ public class App {
 		System.out.println("Introduce la nota del Alumno: ");
 		alumno1.setNota(sc.nextDouble());
 		System.out.println("Introduce el identificacdor del curso del Alumno: ");
-		
-		
+		curso.setIdentificador(sc.nextInt());
+		System.out.println("Introduce la descripción del curso del Alumno: ");
+		curso.setDescripcion(sc.nextLine());		
 		
 		System.out.println(profesor1.getNombre());
 		System.out.println(profesor1.getEdad());
