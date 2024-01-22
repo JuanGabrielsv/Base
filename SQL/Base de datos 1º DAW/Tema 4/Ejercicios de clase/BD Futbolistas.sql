@@ -352,6 +352,54 @@ SELECT SYSDATE - 4 "HACE 4D", SYSDATE + 1 "MAÑANA" FROM dual;
 
 //FUNCIONES DE CONVERSIÓN
 
+SELECT ADD_MONTHS(TO_DATE('24/05/2024'), 6) FROM dual;
+SELECT TO_DATE ('25/06/24') + 1 FROM dual;
 
+TO_CHAR(),TO_NUMBER(),TO_DATE()
 
+SELECT TO_NUMBER ('75.83€','99.99L') * 5 + 54 - salario FROM futbolistas;
+SELECT TO_NUMBER ('$75.83','$99.99') * 5 + 54 - salario FROM futbolistas;
+SELECT TO_NUMBER ('-$75.83','S$99.99') * 5 + 54 - salario FROM futbolistas;
 
+SELECT TO_CHAR(sysdate, 'HH:mm') FROM dual;
+SELECT sysdate FROM dual;
+
+SELECT TO_DATE('01/' || TO_CHAR(sysdate,'mm') || '/23') FROM dual; // dd/mm/yy hh:mm:ss
+
+// Ejercicio 16
+// 1. Convierte ‘1000.45’ a un número.
+SELECT TO_NUMBER('1000.45','9999.99') FROM dual;
+
+// 2. Convierte ‘1000.45€’ a un número.
+SELECT TO_NUMBER('1000.45€','9999.99L') FROM dual;
+
+// 3. Convierte ‘-$1000.45’ a un número.
+SELECT TO_NUMBER('-$1,000.45','S$9999.99') FROM dual;
+
+// 4. Muestra el día de hoy con los siguientes formatos: 12/02/2021, 12/02/21, 12-feb-2021, 12 de febrero de 2021
+SELECT TO_CHAR(SYSDATE, 'DD/MM/YYYY') FROM DUAL;
+SELECT TO_CHAR(SYSDATE, 'DD/MM/YY') FROM DUAL;
+SELECT TO_CHAR(SYSDATE, 'DD-mon-YYYY') FROM DUAL;
+SELECT TO_CHAR(SYSDATE, 'DD') || ' de ' ||
+REPLACE(TO_CHAR(SYSDATE, 'month'),' ','') || ' de ' || TO_CHAR(SYSDATE, 'YYYY') FROM DUAL;
+
+// 5. Convierte el ID de la tabla FUTBOLISTAS en un número de tres cifras.
+SELECT TO_NUMBER(SUBSTR(ID,2,LENGTH(ID)-1),'99999')FROM FUTBOLISTAS;
+
+// 6. Muestra todos los años de nacimiento de los futbolistas (solo el año, ej.: 1990, 1991, etc.). Ordénalos de menor a mayor año.
+SELECT TO_CHAR(FECHA_NACIMIENTO,'YYYY') FROM FUTBOLISTAS ORDER BY 1;
+
+//
+
+UPDATE partidos SET arbitro = NULL WHERE ID = 6;
+
+SELECT arbitro FROM partidos;
+SELECT NVL(arbitro,'sin ánimo de lucro, algeciras') FROM partidos;
+
+/*Ejercicio 17
+1. Utiliza la función DECODE para mostrar, respecto de los
+EQUIPOS, el valor 1000k si el presupuesto es de 1000000,
+2000k si el presupuesto es de 2000000, o 3000k si el
+presupuesto asciende a 3000000. Y si no es ninguna que ponga "ok"*/
+
+SELECT decode(presupuesto,1000000,'1000K',2000000,'2000K',3000000,'3000K','ok') FROM equipos;
