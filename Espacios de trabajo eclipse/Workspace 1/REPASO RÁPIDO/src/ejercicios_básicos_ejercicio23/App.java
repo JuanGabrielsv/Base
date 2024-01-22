@@ -19,6 +19,7 @@ public class App {
 		profesor1.setNombre(sc.nextLine());
 		System.out.println("Introduce la edad del Profesor: ");
 		profesor1.setEdad(sc.nextInt());
+		sc.close();
 		
 		System.out.println(profesor1);
 		
