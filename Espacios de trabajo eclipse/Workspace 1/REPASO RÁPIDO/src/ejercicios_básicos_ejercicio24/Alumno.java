@@ -31,12 +31,11 @@ public class Alumno extends Persona {
 	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
+	
 	@Override
 	public String toString() {
 		return "Alumno [dni=" + dni + ", nota=" + nota + ", curso=" + curso + ", getNombre()=" + getNombre()
 				+ ", getEdad()=" + getEdad() + "]";
-	}
-	
-	
+	}	
 
 }
