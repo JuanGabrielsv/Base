@@ -1,4 +1,4 @@
-/*ALTER SESSION SET nls_date_format='DD-MM-YYYY HH24:MI:SS';
+ALTER SESSION SET nls_date_format='DD-MM-YYYY HH24:MI:SS';
 DROP TABLE FUTBOLISTAS CASCADE CONSTRAINTS;
 DROP TABLE EQUIPOS CASCADE CONSTRAINTS;
 DROP TABLE PARTIDOS CASCADE CONSTRAINTS;
@@ -403,3 +403,83 @@ EQUIPOS, el valor 1000k si el presupuesto es de 1000000,
 presupuesto asciende a 3000000. Y si no es ninguna que ponga "ok"*/
 
 SELECT decode(presupuesto,1000000,'1000K',2000000,'2000K',3000000,'3000K','ok') FROM equipos;
+
+// AGRUPAMIENTO O AGREGADO
+
+SELECT dlfkgj FROM sdlkfjg WHERE ____ GROUP BY _____ HAVING _____;
+
+SELECT * FROM futbolistas;
+SELECT count(*),posicion FROM futbolistas GROUP BY posicion HAVING posicion LIKE 'DE%';
+
+//Quiero saber la suma total de los presupuestos de los equipos
+SELECT * FROM equipos;
+SELECT SUM(presupuesto) FROM equipos;
+SELECT SUM(presupuesto) FROM equipos WHERE ID IN (1,2);
+SELECT COUNT(*) FROM equipos;
+SELECT COUNT(id) FROM equipos;
+SELECT COUNT(id) FROM partidos;
+SELECT COUNT(arbitro) FROM partidos;
+SELECT COUNT(*) FROM partidos;
+
+//MIN, MAX, AVG
+SELECT MAX(presupuesto) FROM equipos;
+SELECT MIN(presupuesto) FROM equipos;
+SELECT AVG(presupuesto) FROM equipos;
+
+//Cuantos futbolistas con delanteros?
+SELECT COUNT(id) FROM futbolistas WHERE posicion='DELANTERO';
+//Dame una lista con el número de futbolistas que hay por cada posicion
+SELECT posicion, COUNT(*) FROM futbolistas GROUP BY posicion;
+select count(*),posicion from futbolistas group by posicion having posicion like 'DE%';
+
+ALTER TABLE FUTBOLISTAS
+ADD ALTURA INT;
+ALTER TABLE FUTBOLISTAS
+ADD PESO NUMBER(4,1);
+ 
+UPDATE FUTBOLISTAS SET ALTURA = 179, PESO = 76 WHERE NOMBRE LIKE 'PEDRO LUIS';
+UPDATE FUTBOLISTAS SET ALTURA = 174, PESO = 71.5 WHERE NOMBRE LIKE 'LUIS';
+UPDATE FUTBOLISTAS SET ALTURA = 169, PESO = 66 WHERE NOMBRE LIKE 'JESUS';
+UPDATE FUTBOLISTAS SET ALTURA = 189, PESO = 82 WHERE NOMBRE LIKE 'DIEGO';
+UPDATE FUTBOLISTAS SET ALTURA = 183, PESO = 84 WHERE NOMBRE LIKE 'PABLO';
+UPDATE FUTBOLISTAS SET ALTURA = 180, PESO = 81.5 WHERE NOMBRE LIKE 'ESTEBAN';
+UPDATE FUTBOLISTAS SET ALTURA = 162, PESO = 60 WHERE NOMBRE LIKE 'ENRIQUE';
+
+SELECT * FROM futbolistas;
+
+//Ejercicio 1 - Calcula:
+//Obtén el nombre del futbolista más alto.
+SELECT nombre FROM futbolistas WHERE altura = (SELECT MAX(altura) FROM futbolistas);
+
+//Indica los apellidos del futbolista más delgado.
+SELECT apellidos, peso FROM futbolistas WHERE peso = (SELECT MIN(peso) FROM
+futbolistas);
+SELECT CONCAT('peso: ',CONCAT(MIN(peso),' Kg')) FROM futbolistas;
+
+//¿Cuántos futbolistas miden entre 1,75 y 1,82?
+SELECT COUNT(*) FROM futbolistas WHERE altura BETWEEN 175 AND 182;
+SELECT COUNT(*) FROM futbolistas WHERE altura >= 175 AND altura <= 182;
+
+//¿Cuál es la media de altura de los futbolistas con dos decimales?
+SELECT ROUND(AVG(altura),2) FROM futbolistas;
+
+//¿Cuál es la media de peso de los futbolistas con un decimal?
+SELECT ROUND(AVG(peso),1) FROM futbolistas;
+
+//Ejercicio 2 Calcula:
+//¿Cuál es el futbolista que cobra más dinero?
+SELECT nombre FROM futbolistas WHERE salario = (SELECT MAX(salario) FROM futbolistas);
+
+//¿En qué año nació el futbolista que cobra menos dinero?
+SELECT fecha_nacimiento FROM futbolistas WHERE salario = (SELECT MIN(salario) FROM futbolistas);
+
+--Ejercicio 3
+--Calcula la media del sueldo de los futbolistas (con dos decimales) agrupado por la posición que ocupan.
+select posicion,trunc(avg(salario),2) from futbolistas group by posicion;
+--Obtén el número de futbolistas en cada equipo.
+select id_equipo equipo,count(*) "total de futbolistas" from futbolistas group by id_equipo;
+--Obtén ahora el número de futbolistas de cada equipo cuyo ID sea 1 o 2.
+select id_equipo,count(*) from futbolistas group by id_equipo having id_equipo = 1 or id_equipo = 2; --in...
+
+
+
