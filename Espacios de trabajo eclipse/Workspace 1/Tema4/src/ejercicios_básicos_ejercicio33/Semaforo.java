@@ -64,6 +64,24 @@ public class Semaforo {
 			return;
 		}
 		this.parpadeando = parpadeando;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		
+		String dev = "Semáforo en " + color;
+		
+		if(color.equals(AMBAR) && parpadeando) {
+			return dev + " parpadeando";
+		}
+		return "Semáforo en " + color;
+	}
+	
+	public void cambiarEstado() {
+		if (color.equals(VERDE)) {
+			color = AMBAR;
+		}
+	}
+	
 
 }
