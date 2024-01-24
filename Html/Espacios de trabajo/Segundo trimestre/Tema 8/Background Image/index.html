@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<!-- FONDO A NIVEL DE HEAD -->
+    <style>
+        p {
+            background-image: url(img/fondodemadera.jpg);
+        }
+/* FONDO A NIVEL DE BODY */
+        body {
+            background-image: url(img/fondoimagen.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
+<!-- FONDO EN UN PÁRRAFO -->
     <p style="background-image: url(img/fondobackgroundimagen.jpg); color: white;">
-        Hola que pasa tomasa        
+        Hola que pasa tomasa. <br> que hace rayos lase.       
     </p>
-    
+    <br>
+<!---->
+    <p style="color: white;">
+        Esto es otro parrafo 
+        <br> 
+        individual sino a nivel de elemento html en el Head.        
+    </p>
+    <br><br>
+    <p style="color: white;">
+        Como podemos observar al poner el atrivuto en el head sobre los
+        <br>
+        párrafos, afecta a todos los párrafos de nuestro html.
+    </p>
 </body>
 </html>
