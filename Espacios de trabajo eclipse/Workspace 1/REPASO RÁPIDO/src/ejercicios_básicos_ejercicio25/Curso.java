@@ -15,6 +15,11 @@ public class Curso {
 
 	private Integer identificador;
 	private String descripcion;
+	
+	public Curso(Integer identificador, String descripcion) {
+		this.identificador = identificador;
+		this.descripcion = descripcion;		
+	}
 
 	public Integer getIdentificador() {
 		return identificador;

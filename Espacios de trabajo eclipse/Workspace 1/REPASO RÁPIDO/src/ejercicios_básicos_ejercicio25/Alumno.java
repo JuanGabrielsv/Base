@@ -11,6 +11,8 @@ el método equals). Si hay alumnos repetidos, muestra un mensaje de error al usu
 */
 package ejercicios_básicos_ejercicio25;
 
+import java.util.Objects;
+
 public class Alumno extends Persona {
 
 	private String dni;
@@ -41,6 +43,18 @@ public class Alumno extends Persona {
 	public String toString() {
 		return "Alumno [dni=" + dni + ", nota=" + nota + ", curso=" + curso + ", getNombre()=" + getNombre()
 				+ ", getEdad()=" + getEdad() + "]";
-	}	
-
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alumno other = (Alumno) obj;
+		return Objects.equals(dni, other.dni);
+	}
+	
 }
