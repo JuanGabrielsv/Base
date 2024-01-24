@@ -19,8 +19,10 @@ public class App {
 		
 		Scanner sc = new Scanner(System.in);		
 		Alumno alumno1 = new Alumno();
+		Alumno alumno2 = new Alumno();
+		Alumno alumno3 = new Alumno();
 		Curso curso = new Curso(1,"DAM-DAW");
-		Alumno[] alumnos;
+		Alumno[] alumnos = new Alumno[3];
 		
 		System.out.println("Dime el nombre del Alumno1: ");
 		alumno1.setNombre(sc.nextLine());
@@ -33,9 +35,57 @@ public class App {
 		
 		System.out.println("Dime la edad del Alumno1: ");
 		alumno1.setEdad(sc.nextInt());
+		sc.nextLine();
 		
-				
+		alumno1.setCurso(curso);
+		alumnos[0] = alumno1;
 		
+		System.out.println("Dime el nombre del Alumno2: ");
+		alumno2.setNombre(sc.nextLine());
+		
+		System.out.println("Dime el DNI del Alumno2: ");
+		alumno2.setDni(sc.nextLine());
+		
+		System.out.println("Dime la nota del Alumno2: ");
+		alumno2.setNota(sc.nextDouble());
+		
+		System.out.println("Dime la edad del Alumno2: ");
+		alumno2.setEdad(sc.nextInt());
+		sc.nextLine();
+		
+		alumno2.setCurso(curso);
+		alumnos[1] = alumno1;
+		
+		System.out.println("Dime el nombre del Alumno3: ");
+		alumno3.setNombre(sc.nextLine());
+		
+		System.out.println("Dime el DNI del Alumno3: ");
+		alumno3.setDni(sc.nextLine());
+		
+		System.out.println("Dime la nota del Alumno3: ");
+		alumno3.setNota(sc.nextDouble());
+		
+		System.out.println("Dime la edad del Alumno3: ");
+		alumno3.setEdad(sc.nextInt());
+		sc.nextLine();
+		
+		sc.close();
+		
+		alumno3.setCurso(curso);
+		alumnos[2] = alumno3;
+		
+		for (Alumno alumno : alumnos) {
+			System.out.println(alumno);
+		}
+		
+		for (int i = 0; i < alumnos.length; i++) {
+			for (int j = 0; j < alumnos.length; j++) {
+				if (alumnos[i].equals(alumnos[j])) {
+					System.err.println("ERROR");
+					break;
+				}								
+			}
+		}
 		
 		
 		
