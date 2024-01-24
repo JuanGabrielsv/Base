@@ -3,7 +3,7 @@ EJERCICIO 24
 Crea métodos toString() para las clases que has creado. Úsalos en tus programas para imprimir
 al final el objeto que has creado (tanto el profesor como el alumno)
 */
-package ejercicios_básicos_ejercicio24;
+package ejercicios_básicos_ejercicio25;
 
 public class Curso {
 
@@ -22,6 +22,10 @@ public class Curso {
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	
+	public String toString() {
+		return "Curso [identificador=" + identificador + ", descripcion=" + descripcion + "]";
 	}
 	
 }

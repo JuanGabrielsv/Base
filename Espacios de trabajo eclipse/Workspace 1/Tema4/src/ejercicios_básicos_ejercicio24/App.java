@@ -20,25 +20,29 @@ public class App {
 		profesor1.setNombre(sc.nextLine());
 		System.out.println("Introduce la edad del Profesor: ");
 		profesor1.setEdad(sc.nextInt());
-				
+		sc.nextLine();	
+		
 		System.out.println("Introduce el nombre del Alumno: ");
 		alumno1.setNombre(sc.nextLine());
-		sc.next();
+		//sc.next();
 		System.out.println("Introduce la edad del Alumno: ");
 		alumno1.setEdad(sc.nextInt());
-		sc.next();
+		sc.nextLine();
 		System.out.println("Introduce el DNI del Alumno: ");
 		alumno1.setDni(sc.nextLine());
 		System.out.println("Introduce la nota del Alumno: ");
 		alumno1.setNota(sc.nextDouble());
 		System.out.println("Introduce el identificacdor del curso del Alumno: ");
 		curso.setIdentificador(sc.nextInt());
+		sc.nextLine();
 		System.out.println("Introduce la descripción del curso del Alumno: ");
 		curso.setDescripcion(sc.nextLine());
 		sc.close();
 		
-		System.out.println(profesor1.getNombre());
-		System.out.println(profesor1.getEdad());
+		alumno1.setCurso(curso);
+		
+		System.out.println(alumno1);
+		System.out.println(profesor1);
 		
 	}
 }

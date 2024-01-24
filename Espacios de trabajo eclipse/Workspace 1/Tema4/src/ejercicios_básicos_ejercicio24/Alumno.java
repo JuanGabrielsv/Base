@@ -32,7 +32,6 @@ public class Alumno extends Persona {
 		this.curso = curso;
 	}
 	
-	@Override
 	public String toString() {
 		return "Alumno [dni=" + dni + ", nota=" + nota + ", curso=" + curso + ", getNombre()=" + getNombre()
 				+ ", getEdad()=" + getEdad() + "]";

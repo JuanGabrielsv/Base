@@ -3,7 +3,7 @@ EJERCICIO 24
 Crea métodos toString() para las clases que has creado. Úsalos en tus programas para imprimir
 al final el objeto que has creado (tanto el profesor como el alumno)
 */
-package ejercicios_básicos_ejercicio24;
+package ejercicios_básicos_ejercicio25;
 
 public class Persona {
 
@@ -22,6 +22,6 @@ public class Persona {
 	}
 	public void setEdad(Integer edad) {
 		this.edad = edad;
-	}
-	
+	}	
+		
 }
