@@ -82,7 +82,7 @@ public class App {
 			for (int j = 0; j < alumnos.length; j++) {
 				if (alumnos[i].equals(alumnos[j])) {
 					System.err.println("ERROR");
-					break;
+					break; 
 				}								
 			}
 		}
