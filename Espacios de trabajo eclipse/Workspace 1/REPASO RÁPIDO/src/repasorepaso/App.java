@@ -7,7 +7,7 @@ public class App {
 		String mensaje = "Hola ¿Cómo estás?";
 		//Boolean haceSol = true;
 		//Integer dias = 7;
-		Caballo caballo1 = new Caballo();
+		Caballo caballo1 = new Caballo(); 
 				
 		System.out.println(mensaje);
 		
