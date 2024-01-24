@@ -58,13 +58,12 @@ public class Semaforo {
 	public Boolean getParpadeando() {
 		return parpadeando;
 	}
+	
 	public void setParpadeando(Boolean parpadeando) {
 		if (parpadeando && !color.equals(AMBAR)) {
 			return;
 		}
 		this.parpadeando = parpadeando;
-	}
-	
-	
+	}	
 
 }
