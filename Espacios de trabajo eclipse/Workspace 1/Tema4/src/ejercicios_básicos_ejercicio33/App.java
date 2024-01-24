@@ -1,0 +1,41 @@
+package ejercicios_básicos_ejercicio33;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		Semaforo semaforo = new Semaforo();
+		System.out.println(semaforo);
+		
+		semaforo.setColor("azul");
+		System.out.println(semaforo);
+		
+		semaforo.setColor(Semaforo.VERDE);
+		System.out.println(semaforo);
+		
+		semaforo.setParpadeando(true);
+		System.out.println(semaforo);
+		
+		semaforo.setColor(Semaforo.AMBAR);
+		System.out.println(semaforo);
+		
+		semaforo.setParpadeando(true);
+		System.out.println(semaforo);
+		
+		for (int i = 0; i < 5; i++) {
+			semaforo.cambiarEstado();
+		}
+		
+		System.out.println(semaforo);
+		
+		Semaforo copia = new Semaforo();
+		copia.setColor(semaforo.getColor());
+		copia.setParpadeando(semaforo.getParpadeando());
+		System.out.println(copia);
+		
+		
+		
+
+	}
+
+}

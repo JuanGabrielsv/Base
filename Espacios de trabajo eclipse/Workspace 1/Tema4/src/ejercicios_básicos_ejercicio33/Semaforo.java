@@ -74,12 +74,22 @@ public class Semaforo {
 		if(color.equals(AMBAR) && parpadeando) {
 			return dev + " parpadeando";
 		}
-		return "Semáforo en " + color;
+		return dev;
 	}
 	
 	public void cambiarEstado() {
 		if (color.equals(VERDE)) {
 			color = AMBAR;
+			parpadeando = true;
+		}
+		else if (color.equals(AMBAR) && parpadeando) {
+			parpadeando = false;
+		}
+		else if (color.equals(AMBAR)) {
+			color = ROJO;
+		}
+		else {
+			color = VERDE;
 		}
 	}
 	
