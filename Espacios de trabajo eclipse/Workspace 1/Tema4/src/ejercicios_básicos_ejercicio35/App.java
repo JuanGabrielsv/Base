@@ -18,8 +18,7 @@ public class App {
 		Alumno alumno2 = new Alumno();
 		Alumno alumno3 = new Alumno();
 		Curso curso = new Curso(1,"DAM-DAW");
-		List<Alumno> listaAlumnos = new ArrayList<>();
-		//Alumno[] alumnos = new Alumno[3];
+		List<Alumno> listaAlumnos = new ArrayList<>();		
 		Integer posicion = 65424546;
 		
 		System.out.println("Dime el nombre del Alumno1: ");
