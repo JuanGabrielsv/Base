@@ -16,7 +16,11 @@ public class Alumno extends Persona {
 	private String dni;
 	private Double nota;
 	private Curso curso;
-	
+//MÉTODO PARA VALIDAR DNI
+	public Boolean validarDNI() {		
+		return (dni != null && dni.length() == 9);
+	}
+//MÉTODOS GET Y SET
 	public String getDni() {
 		return dni;
 	}
@@ -37,12 +41,12 @@ public class Alumno extends Persona {
 	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
-	
+//MÉTODO TO STRING	
 	public String toString() {
 		return "Alumno [dni=" + dni + ", nota=" + nota + ", curso=" + curso + ", getNombre()=" + getNombre()
 				+ ", getEdad()=" + getEdad() + "]";
 	}
-	
+//MÉTODO EQUALS	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
