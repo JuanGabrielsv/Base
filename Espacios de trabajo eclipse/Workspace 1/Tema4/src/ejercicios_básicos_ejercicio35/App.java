@@ -5,6 +5,8 @@ Vuele a hacer el ejercicio 25 utilizando List en lugar de arrays.
 
 package ejercicios_básicos_ejercicio35;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -16,7 +18,8 @@ public class App {
 		Alumno alumno2 = new Alumno();
 		Alumno alumno3 = new Alumno();
 		Curso curso = new Curso(1,"DAM-DAW");
-		Alumno[] alumnos = new Alumno[3];
+		List<Alumno> listaAlumnos = new ArrayList<>();
+		//Alumno[] alumnos = new Alumno[3];
 		Integer posicion = 65424546;
 		
 		System.out.println("Dime el nombre del Alumno1: ");
@@ -30,7 +33,7 @@ public class App {
 		sc.nextLine();
 		
 		alumno1.setCurso(curso);
-		alumnos[0] = alumno1;
+		listaAlumnos.add(alumno1);
 		
 		System.out.println("Dime el nombre del Alumno2: ");
 		alumno2.setNombre(sc.nextLine());		
@@ -43,7 +46,7 @@ public class App {
 		sc.nextLine();
 		
 		alumno2.setCurso(curso);
-		alumnos[1] = alumno2;
+		listaAlumnos.add(alumno2);
 		
 		System.out.println("Dime el nombre del Alumno3: ");
 		alumno3.setNombre(sc.nextLine());		
@@ -58,15 +61,15 @@ public class App {
 		sc.close();
 		
 		alumno3.setCurso(curso);
-		alumnos[2] = alumno3;
+		listaAlumnos.add(alumno3);
 		
-		for (Alumno alumno : alumnos) {
+		for (Alumno alumno : listaAlumnos) {
 			System.out.println(alumno);
 		}
 		
-		for (int i = 0; i < alumnos.length; i++) {
-			for (int j = 0; j < alumnos.length; j++) {
-				if (alumnos[i].equals(alumnos[j]) && alumnos[i] != alumnos[j] && posicion != i) {
+		for (int i = 0; i < listaAlumnos.size(); i++) {
+			for (int j = 0; j < listaAlumnos.size(); j++) {
+				if (listaAlumnos.get(i).equals(listaAlumnos.get(j)) && listaAlumnos.get(i) != listaAlumnos.get(j) && posicion != i) {
 					System.err.println("ERROR - Los alumnos de las posiciones " + i + " y " + j + " tienen el mismo DNI");
 					posicion = j;
 				}				
