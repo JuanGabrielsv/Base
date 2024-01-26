@@ -1,5 +1,6 @@
 /*
 EJERCICIO 37
+
 Una cola es una especie de lista donde entran y salen objetos. Cuando entra un objeto, se
 añade al final. Cuando sale un objeto, sale el que más tiempo lleve esperando dentro. Igual
 que cuando hacemos cola para entrar en algún lugar.
