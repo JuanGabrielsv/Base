@@ -7,7 +7,7 @@ b) El dni tiene que tener una longitud total de 9.
 Modifica el programa del ejercicio 25 para validar el DNI de los alumnos que vas creando. Si
 alguno no es correcto, vuelve a solicitarlo. 
 */
-package ejercicios_básicos_ejercicio27;
+package ejercicios_básicos_ejercicio28;
 
 import java.util.Scanner;
 
