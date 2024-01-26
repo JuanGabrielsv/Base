@@ -35,17 +35,25 @@ public class ColaCadenas {
 	Integer tamaño;
 	
 //AñadirCadena(): recibe una cadena y no devuelve nada. Se tendrá que añadir esa cadena a la cola de espera.
+	
 	public void añadirCadena(String cadena) {
 		colaDeEspera = cadena;
 	}
+	
+//sacarCadena(): no recibe nada y devuelve una cadena. Tendrá que devolver la cadena que hace más tiempo que se añadió.	
 	
 	public String sacarCadena() {
 		return cadena;
 	}
 	
 //MÉTODOS GET Y SET
+	
 	public Integer getTamaño() {
+		
+		tamaño = listaCola.size();
 		return tamaño;
-	}	
+	}
+	
+//
 
 }
