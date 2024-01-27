@@ -124,4 +124,15 @@ Borrar filas/registros de una tabla:
 DELETE FROM nombratabla
         WHERE nombrecolumna = referenciafila;
 ```
+<hr>
+CONSULTAS
+<hr>
 
+Buscar un valor mínimo o máximo entre fechas:
+```
+SELECT nombrecolumna FROM nombretabla WHERE nombrecolumna BETWEEN 'fecha' AND 'fecha' ORDER BY nombrecolumna FETCH FIRST numeroderesultados ROWS ONLY;
+```
+Contar cuanto de nombrecolumna que no sea "x" y termine en "algo";
+```
+SELECT COUNT(nombrecolumna) FROM nombretabla WHERE nombrecolumna NOT IN ('nombredato') AND nombrecolumna LIKE 'xxxx';
+```
