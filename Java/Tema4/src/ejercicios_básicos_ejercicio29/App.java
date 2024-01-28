@@ -31,7 +31,7 @@ public class App {
 			Boolean dniCorrecto = false;		
 			
 			do {
-				System.out.println("Dime el DNI del Alumno1: ");
+				System.out.println("Dime el DNI del Alumno" + numAlumno + ": ");
 				String dni = sc.nextLine();
 				alumno = new Alumno(dni);
 				if (!alumno.validarDNI()) {
@@ -56,9 +56,26 @@ public class App {
 		}
 		sc.close();
 		
+		System.out.println();
+		
+		System.out.println("Recorremos los alumnos:");
+		for (Alumno alumno : alumnos) {
+			System.out.println(alumno);
+			if (alumno.validar()) {
+				System.out.println("Este alumno cumple las validaciones.");
+			}
+			else {
+				System.out.println("Este alumno NO cumple las validaciones");
+			}
+		}
+		
+		System.out.println();
+		
 		for (Alumno alumno : alumnos) {
 			System.out.println(alumno);
 		}
+		
+		System.out.println();
 		
 		for (int i = 0; i < alumnos.length; i++) {
 			for (int j = 0; j < alumnos.length; j++) {

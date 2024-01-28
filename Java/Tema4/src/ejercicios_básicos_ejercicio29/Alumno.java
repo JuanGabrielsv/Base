@@ -86,4 +86,26 @@ public Alumno(String dni) {
 		return Objects.equals(dni, other.dni);
 	}
 	
+/* 
+- El DNI debe ser válido de acuerdo con el método validarDni() que ya tenemos.
+- El curso no puede ser null
+- El nombre no puede ser null y tiene que tener una longitud mínima de 10 caracteres.
+- La edad no puede ser null y tendrá que estar comprendida entre 12 y 65 (ambas inclusive).	
+*/	
+	public Boolean validar() {
+		if (curso == null) {
+			return false;
+		}
+		if (getNombre() == null || getNombre().length() < 10) {
+			return false;
+		}
+		if (getEdad() == null || getEdad() < 12 || getEdad() > 65) {
+			return false;
+		}
+		if(!validarDNI()) {
+			return false;
+		}
+		return true;
+	}
+	
 }
