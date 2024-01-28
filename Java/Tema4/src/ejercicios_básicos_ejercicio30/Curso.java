@@ -16,12 +16,24 @@ public class Curso {
 
 	private Integer identificador;
 	private String descripcion;
-	private Alumno alumnos[];
+	private Alumno[] alumnos;
+	private Integer indiceAlumnos;
 	
 	public Curso(Integer identificador, String descripcion) {
 		this.identificador = identificador;
 		this.descripcion = descripcion;
 		alumnos = new Alumno[3];
+		indiceAlumnos = 0;
+	}
+	
+	public void addAlumno(Alumno alumno) {
+		if (indiceAlumnos < alumnos.length) {
+			alumnos[indiceAlumnos] = alumno;
+			indiceAlumnos++;
+		}
+		else {
+			System.out.println("No hay sitio para más alumnos");
+		}
 	}
 	
 	public Alumno[] getAlumnos() {

@@ -23,7 +23,7 @@ public class App {
 		Alumno[] alumnos = new Alumno[3];
 		Integer posicion = 99999999;
 		Integer numAlumno = 1;
-		
+				
 		for (int i = 0; i < alumnos.length; i++) {
 			
 			Alumno alumno = null;
@@ -52,6 +52,7 @@ public class App {
 			
 			alumno.setCurso(curso);
 			alumnos[i] = alumno;
+			curso.addAlumno(alumno);
 		}
 		sc.close();
 		
@@ -84,6 +85,8 @@ public class App {
 				}				
 			}			
 		}
+		
+		System.out.println(alumnos);
 		
 	}
 }
