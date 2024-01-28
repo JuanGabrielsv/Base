@@ -1,0 +1,44 @@
+/* EJERCICIO 29
+Crea un método validar() en la clase Alumno que devuelva un Boolean indicando si todos los
+datos del alumno son válidos o no. Para que los datos de un alumno sean correctos se deben
+dar estas circunstancias:
+
+- El DNI debe ser válido de acuerdo con el método validarDni() que ya tenemos.
+- El curso no puede ser null
+- El nombre no puede ser null y tiene que tener una longitud mínima de 10 caracteres.
+- La edad no puede ser null y tendrá que estar comprendida entre 12 y 65 (ambas inclusive).
+
+Modifica el programa del ejercicio 25 para que al final del todo recorra el array de alumnos y
+compruebe uno a uno si son válidos. Si alguno no lo es, avisa al usuario por consola. 
+*/
+package ejercicios_básicos_ejercicio29;
+
+public class Curso {
+
+	private Integer identificador;
+	private String descripcion;
+	
+	public Curso(Integer identificador, String descripcion) {
+		this.identificador = identificador;
+		this.descripcion = descripcion;		
+	}
+
+	public Integer getIdentificador() {
+		return identificador;
+	}
+	public void setIdentificador(Integer identificador) {
+		this.identificador = identificador;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	public String toString() {
+		return "Curso [identificador=" + identificador + ", descripcion=" + descripcion + "]";
+	}
+	
+}

@@ -1,13 +1,17 @@
-/*
-EJERCICIO 27
-Crea un método validarDNI() en la clase Alumno que devuelva un Boolean indicando si el dni
-que tiene establecido el alumno es correcto o no. Para ello, tendrás que validar lo siguiente:
-a) El dni no puede ser null ni vacío
-b) El dni tiene que tener una longitud total de 9.
-Modifica el programa del ejercicio 25 para validar el DNI de los alumnos que vas creando. Si
-alguno no es correcto, vuelve a solicitarlo. 
+/* EJERCICIO 29
+Crea un método validar() en la clase Alumno que devuelva un Boolean indicando si todos los
+datos del alumno son válidos o no. Para que los datos de un alumno sean correctos se deben
+dar estas circunstancias:
+
+- El DNI debe ser válido de acuerdo con el método validarDni() que ya tenemos.
+- El curso no puede ser null
+- El nombre no puede ser null y tiene que tener una longitud mínima de 10 caracteres.
+- La edad no puede ser null y tendrá que estar comprendida entre 12 y 65 (ambas inclusive).
+
+Modifica el programa del ejercicio 25 para que al final del todo recorra el array de alumnos y
+compruebe uno a uno si son válidos. Si alguno no lo es, avisa al usuario por consola.  
 */
-package ejercicios_básicos_ejercicio28;
+package ejercicios_básicos_ejercicio29;
 
 import java.util.Scanner;
 
@@ -18,7 +22,8 @@ public class App {
 		Scanner sc = new Scanner(System.in);		
 		Curso curso = new Curso(1,"DAM-DAW");
 		Alumno[] alumnos = new Alumno[3];
-		Integer posicion = 65424546;		
+		Integer posicion = 99999999;
+		Integer numAlumno = 1;
 		
 		for (int i = 0; i < alumnos.length; i++) {
 			
@@ -37,13 +42,14 @@ public class App {
 				}				
 			} while (!dniCorrecto);
 			
-			System.out.println("Dime el nombre del Alumno1: ");
+			System.out.println("Dime el nombre del Alumno" + numAlumno + ": ");
 			alumno.setNombre(sc.nextLine());					
-			System.out.println("Dime la nota del Alumno1: ");
+			System.out.println("Dime la nota del Alumno" + numAlumno + ": ");
 			alumno.setNota(sc.nextDouble());		
-			System.out.println("Dime la edad del Alumno1: ");
+			System.out.println("Dime la edad del Alumno" + numAlumno + ": ");
 			alumno.setEdad(sc.nextInt());
 			sc.nextLine();
+			numAlumno++;
 			
 			alumno.setCurso(curso);
 			alumnos[i] = alumno;

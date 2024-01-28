@@ -1,15 +1,26 @@
-/*
-EJERCICIO 27
-Crea un método validarDNI() en la clase Alumno que devuelva un Boolean indicando si el dni
-que tiene establecido el alumno es correcto o no. Para ello, tendrás que validar lo siguiente:
-a) El dni no puede ser null ni vacío
-b) El dni tiene que tener una longitud total de 9.
-Modifica el programa del ejercicio 25 para validar el DNI de los alumnos que vas creando. Si
-alguno no es correcto, vuelve a solicitarlo. 
+/* EJERCICIO 28
+Buscando en internet, nos encontramos este trozo de código que asegura validar un DNI que
+no sea null:
+
+String ejemploDni = "00000000T";
+Pattern patron = Pattern.compile("[0-9]{7,8}[A-Z a-z]");
+Matcher match = patron.matcher(ejemploDni);
+if(match.matches()) {
+ System.out.println("El dni es correcto");
+}
+else {
+ System.out.println("El dni es incorrecto");
+}
+
+Cambia tu método validarDNI() para que realice la segunda parte de la validación (b) utilizando
+el código que hemos encontrado. Tendrás que adaptarlo, ya que nosotros no queremos
+imprimir nada. El método tiene que seguir devolviendo un Boolean.  
 */
 package ejercicios_básicos_ejercicio28;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Alumno extends Persona {
 
@@ -26,7 +37,17 @@ public Alumno(String dni) {
 	}
 //MÉTODO PARA VALIDAR DNI
 	public Boolean validarDNI() {		
-		return (dni != null && dni.length() == 9);
+		if (dni == null) {
+			return false;
+		}
+		
+		Pattern patron = Pattern.compile("[0-9]{7,8}[A-Z a-z]");
+		Matcher match = patron.matcher(dni);
+		if (match.matches()) {
+			return true;
+		} 
+		return false;
+
 	}
 //MÉTODOS GET Y SET
 	public String getDni() {
