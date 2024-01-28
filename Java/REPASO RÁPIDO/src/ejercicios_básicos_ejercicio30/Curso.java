@@ -16,10 +16,16 @@ public class Curso {
 
 	private Integer identificador;
 	private String descripcion;
+	private Alumno alumnos[];
 	
 	public Curso(Integer identificador, String descripcion) {
 		this.identificador = identificador;
-		this.descripcion = descripcion;		
+		this.descripcion = descripcion;
+		alumnos = new Alumno[3];
+	}
+	
+	public Alumno[] getAlumnos() {
+		return alumnos;
 	}
 
 	public Integer getIdentificador() {
