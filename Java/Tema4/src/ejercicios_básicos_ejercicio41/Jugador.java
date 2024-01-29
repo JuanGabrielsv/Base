@@ -60,14 +60,21 @@ partido.
 5. Añade al equipo visitante un jugador con el dorsal 99 y nombre “Blas infiltrado”. Imprime el equipo visitante.
 6. Cambia el capitán del equipo local para que sea el último jugador de la lista de sus jugadores. Imprime el equipo local. 
 */
-
 package ejercicios_básicos_ejercicio41;
 
-public class App {
-
-	public static void main(String[] args) {
+public class Jugador {
+	private String nombre;
+	private Integer dorsal;
+	
+	public Jugador(String nombre, Integer dorsal) {
+		this.nombre = nombre;
+		this.dorsal = dorsal;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
 		// TODO Auto-generated method stub
-
+		return super.equals(obj);
 	}
 
 }
