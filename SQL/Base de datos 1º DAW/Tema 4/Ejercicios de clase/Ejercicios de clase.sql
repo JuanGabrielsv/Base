@@ -490,7 +490,6 @@ SELECT SYSDATE-TO_DATE('03/07/1970') FROM dual;
 SELECT SYSDATE-TO_DATE('03071970') FROM dual;
 SELECT FLOOR(SYSDATE-TO_DATE('03071970')) FROM dual;
 
-
 //MULTITABLAS
 
 SELECT * FROM equipos,partidos;
@@ -501,3 +500,35 @@ SELECT * FROM equipos,partidos WHERE id_equipo_casa = equipos.id;
 SELECT * FROM futbolistas WHERE;
 SELECT * FROM equipos;
 SELECT futbolistas.nombre "Futbolistas", equipos.nombre "Equipo" FROM futbolistas,equipos WHERE futbolistas.id_equipo = equipos.id;
+
+SELECT * FROM futbolistas CROSS JOIN equipos;
+
+SELECT * FROM emp NATURAL JOIN dept;
+
+/*
+INNER JOIN
+LEFT JOIN
+RIGHT JOIN
+FULL OUTER JOIN
+*/
+
+/* Ejercicio 6
+Muestra el nombre de los futbolistas
+seguido del nombre del equipo en el
+que juega utilizando JOIN … ON. */
+
+SELECT futbolistas.nombre, equipos.nombre FROM futbolistas JOIN equipos ON futbolistas.id_equipo = equipos.id;
+SELECT futbolistas.nombre, equipos.nombre FROM futbolistas JOIN equipos ON equipos.id = futbolistas.id_equipo;
+
+SELECT * FROM futbolistas JOIN equipos ON equipos.id = futbolistas.id_equipo; //megatabla
+
+SELECT * FROM futbolistas INNER JOIN equipos ON futbolistas.id_equipo = equipos.id;
+
+INSERT INTO futbolistas VALUES ('F11120','NOMBRE','APELL',null,'PORTERO',3000000,null,180,83);
+INSERT INTO equipos VALUES (4,'REAL BETIS BALOMPIE','BENITO VILLAMARIN',80000000);
+SELECT * FROM futbolistas;
+SELECT * FROM equipos;
+
+SELECT * FROM futbolistas LEFT JOIN equipos ON futbolistas.id_equipo = equipos.id;
+
+SELECT * FROM futbolistas RIGHT JOIN equipos ON futbolistas.id_equipo = equipos.id;
