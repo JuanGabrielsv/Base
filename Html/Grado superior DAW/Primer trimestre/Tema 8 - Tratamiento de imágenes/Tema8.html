@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 8 html</title>
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico">
+    <!-- Ponemos estilos a los párrafos y al body -->
+    <style>
+        p {
+            background-image: url(imagenes/fondodemadera.jpg);
+        }
+
+        body {
+            background-image: url(imagenes/fondoimagen.jpg);
+            background-repeat: no-repeat;
+            /* background-size: cover; */
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Uso de Image Maps "map" áreas de enlace sobre imágenes -->
+    <img src="imagenes/workplace.jpg"
+        alt="En la imagen se ve un escritorio que contiene un ordenador portátil, un teléfono y una taza de café."
+        usemap="#workmap">
+    <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" href="computer.htm" alt="Pantalla del portátil" title="portátil">
+        <area shape="rect" coords="290,172,333,250" href="phone.htm" alt="teléfono móvil" title="teléfono móvil">
+        <area shape="circle" coords="337,300,44" href="coffe.htm" alt="taza de café" title="taza de café">
+    </map>
+    <!-- Imagen de fondo sobre párrafo -->
+    <p style="background-image: url(imagenes/fondobackgroundimagen.jpg); color: white;">
+        Este es el párrafo sobre el que hemos añadido una imagen de fondo
+        <br>
+        Para ver su impacto en el párrafo
+    </p>
+    <br>
+    <p style="color: white;">
+        Este es un párrafo que no tiene color de fondo de forma
+        <br>
+        individual sino a nivel de elemento html en el Head.
+    </p>
+    <br><br>
+    <p style="color: white;">
+        Como podemos observar al poner el atributo en el head sobre los
+        <br>
+        párrafos, afecta a todos los párrafos de nuestra página html.
+    </p>
+    <hr>
+    <!-- Elemento <picture> -->
+    <h2>ELEMENTO PICTURE</h2>
+    <picture>
+        <source media="(min-width: 650px)" srcset="imagenes/fondodemadera.jpg">
+        <source media="(min-width: 465px)" srcset="imagenes/fondoimagen.jpg">
+        <img src="imagenes/fondobackgroundimagen.jpg" alt="Es un fondo de imagen de color predominate azúl y abstracto">
+    </picture>
+
+</body>
+
+</html>
