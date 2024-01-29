@@ -33,10 +33,7 @@ import java.util.List;
 
 public class ColaCadenas {
 
-	private List<String> cola;
-
-	String cadena;
-	String colaDeEspera;
+	private List<String> cola;	
 
 	public ColaCadenas() {
 		cola = new ArrayList<>();
