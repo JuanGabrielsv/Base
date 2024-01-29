@@ -76,5 +76,6 @@ public class Jugador {
 		// TODO Auto-generated method stub
 		return super.equals(obj);
 	}
+	
 
 }
