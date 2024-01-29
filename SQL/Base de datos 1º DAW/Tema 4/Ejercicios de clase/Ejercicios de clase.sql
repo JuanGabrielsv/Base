@@ -481,5 +481,23 @@ select id_equipo equipo,count(*) "total de futbolistas" from futbolistas group b
 --Obtén ahora el número de futbolistas de cada equipo cuyo ID sea 1 o 2.
 select id_equipo,count(*) from futbolistas group by id_equipo having id_equipo = 1 or id_equipo = 2; --in...
 
+/* 1. Devuelve el nombre del futbolista cuyo salario es el más bajo posible de todos los futbolistas nacidos entre 1985 y 1990. */
+
+-- Esta es la forma lógica que he hecho pero no funciona porque siempre busca el valor mínimo de salario, si cambiamos la fecha el resultado sale en blanco lo he intentado de dos formas.
+select nombre from futbolistas where to_char(fecha_nacimiento,'yyyy') between 1985 and 1990 and salario = (select min(salario) from futbolistas where to_char(fecha_nacimiento,'yyyy') between 1985 and 1990);
+
+SELECT SYSDATE-TO_DATE('03/07/1970') FROM dual;
+SELECT SYSDATE-TO_DATE('03071970') FROM dual;
+SELECT FLOOR(SYSDATE-TO_DATE('03071970')) FROM dual;
 
 
+//MULTITABLAS
+
+SELECT * FROM equipos,partidos;
+SELECT * FROM equipos,partidos WHERE id_equipo_casa = equipos.id;
+
+/* Ejercicio 2 Muestra los datos de los nombres de los futbolistas junto al nombre de su equipo. */
+
+SELECT * FROM futbolistas WHERE;
+SELECT * FROM equipos;
+SELECT futbolistas.nombre "Futbolistas", equipos.nombre "Equipo" FROM futbolistas,equipos WHERE futbolistas.id_equipo = equipos.id;
