@@ -28,32 +28,46 @@ imprime la cola):
 */
 package ejercicios_básicos_ejercicio37;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ColaCadenas {
-	
-	String cadena;
-	String colaDeEspera;
-	Integer tamaño;
-	
-//AñadirCadena(): recibe una cadena y no devuelve nada. Se tendrá que añadir esa cadena a la cola de espera.
-	
-	public void añadirCadena(String cadena) {
-		colaDeEspera = cadena;
+
+	private List<String> cola;	
+
+	public ColaCadenas() {
+		cola = new ArrayList<>();
 	}
-	
+
+//AñadirCadena(): recibe una cadena y no devuelve nada. Se tendrá que añadir esa cadena a la cola de espera.
+
+	public void añadirCadena(String cadena) {
+		cola.add(cadena);
+	}
+
 //sacarCadena(): no recibe nada y devuelve una cadena. Tendrá que devolver la cadena que hace más tiempo que se añadió.	
-	
+
 	public String sacarCadena() {
+		if (cola.isEmpty()) {
+			return null;
+		}
+		String cadena = cola.get(0);
+		cola.remove(0);
 		return cadena;
 	}
-	
+
 //MÉTODOS GET Y SET
-	
+
 	public Integer getTamaño() {
-		
-		tamaño = listaCola.size();
-		return tamaño;
+		return cola.size();
+
 	}
-	
+
+	@Override
+	public String toString() {
+		return cola.toString();
+	}
+
 //
 
 }

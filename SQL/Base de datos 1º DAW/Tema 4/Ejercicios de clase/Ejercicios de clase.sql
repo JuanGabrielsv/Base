@@ -481,5 +481,164 @@ select id_equipo equipo,count(*) "total de futbolistas" from futbolistas group b
 --Obtén ahora el número de futbolistas de cada equipo cuyo ID sea 1 o 2.
 select id_equipo,count(*) from futbolistas group by id_equipo having id_equipo = 1 or id_equipo = 2; --in...
 
+/* 1. Devuelve el nombre del futbolista cuyo salario es el más bajo posible de todos los futbolistas nacidos entre 1985 y 1990. */
 
+-- Esta es la forma lógica que he hecho pero no funciona porque siempre busca el valor mínimo de salario, si cambiamos la fecha el resultado sale en blanco lo he intentado de dos formas.
+select nombre from futbolistas where to_char(fecha_nacimiento,'yyyy') between 1985 and 1990 and salario = (select min(salario) from futbolistas where to_char(fecha_nacimiento,'yyyy') between 1985 and 1990);
 
+SELECT SYSDATE-TO_DATE('03/07/1970') FROM dual;
+SELECT SYSDATE-TO_DATE('03071970') FROM dual;
+SELECT FLOOR(SYSDATE-TO_DATE('03071970')) FROM dual;
+
+//MULTITABLAS
+
+SELECT * FROM equipos,partidos;
+SELECT * FROM equipos,partidos WHERE id_equipo_casa = equipos.id;
+
+/* Ejercicio 2 Muestra los datos de los nombres de los futbolistas junto al nombre de su equipo. */
+
+SELECT * FROM futbolistas WHERE;
+SELECT * FROM equipos;
+SELECT futbolistas.nombre "Futbolistas", equipos.nombre "Equipo" FROM futbolistas,equipos WHERE futbolistas.id_equipo = equipos.id;
+
+SELECT * FROM futbolistas CROSS JOIN equipos;
+
+SELECT * FROM emp NATURAL JOIN dept;
+
+/*
+INNER JOIN
+LEFT JOIN
+RIGHT JOIN
+FULL OUTER JOIN
+*/
+
+/* Ejercicio 6
+Muestra el nombre de los futbolistas
+seguido del nombre del equipo en el
+que juega utilizando JOIN … ON. */
+
+SELECT futbolistas.nombre, equipos.nombre FROM futbolistas JOIN equipos ON futbolistas.id_equipo = equipos.id;
+SELECT futbolistas.nombre, equipos.nombre FROM futbolistas JOIN equipos ON equipos.id = futbolistas.id_equipo;
+
+SELECT * FROM futbolistas JOIN equipos ON equipos.id = futbolistas.id_equipo; //megatabla
+
+SELECT * FROM futbolistas INNER JOIN equipos ON futbolistas.id_equipo = equipos.id;
+
+INSERT INTO futbolistas VALUES ('F11120','NOMBRE','APELL',null,'PORTERO',3000000,null,180,83);
+INSERT INTO equipos VALUES (4,'REAL BETIS BALOMPIE','BENITO VILLAMARIN',80000000);
+SELECT * FROM futbolistas;
+SELECT * FROM equipos;
+
+SELECT * FROM futbolistas LEFT JOIN equipos ON futbolistas.id_equipo = equipos.id;
+
+SELECT * FROM futbolistas RIGHT JOIN equipos ON futbolistas.id_equipo = equipos.id;
+
+SELECT * FROM futbolistas FULL OUTER JOIN equipos ON futbolistas.id_equipo = equipos.id;
+
+--28 Calcular el numero de segundos transcurridos desde la ultima madianoche (máscara 'sssss' en to_char
+SELECT TO_CHAR(SYSDATE,'sssss') FROM dual;
+
+/* Ejercicio 8
+Obtén el nombre, apellidos y nombre del equipo
+de los futbolistas que sean defensas. */
+SELECT futbolistas.nombre, futbolistas.apellidos, equipos.nombre FROM futbolistas JOIN equipos ON futbolistas.id_equipo = equipos.id WHERE posicion = 'DEFENSA';
+
+/* 1. Devuelve el nombre del futbolista cuyo salario es el más bajo posible de todos los futbolistas nacidos 
+entre 1985 y 1990.
+
+--Obtener el salario más bajo posible 
+
+select * from futbolistas;
+select min(salario) from futbolistas;
+select nombre 
+    from futbolistas 
+    where to_char(fecha_nacimiento,'yyyy') between 1985 and 1990
+        and salario = (
+            select min(salario) 
+                from futbolistas 
+                where to_char(fecha_nacimiento,'yyyy') between 1985 and 1990
+            );
+/*
+25. Seleccionar la fecha del sistema (nombre del día, día, nombre del mes, año, horas (24):minutos:segundos).
+No debe haber espacios sobrantes en el nombre del día o del mes.
+
+select  replace(to_char(sysdate,'DAY'),' '), 
+        to_number(to_char(sysdate,'dd')),
+        replace(to_char(sysdate,'month'),' ',''),
+        to_number(to_char(sysdate,'yyyy')),
+        to_char(sysdate,'hh24:mi:ss')
+            from dual;
+--TO_CHAR
+to_char(valorquesequieremostraroconvertir,máscara)
+ 
+--27. Calcular el número de días vividos hasta hoy por una persona nacida el día 3 de julio de 1970.
+select sysdate-'03/07/1970' from dual;
+select round((sysdate-to_date('03/07/1970'))*salario,2) from futbolistas;
+select floor(sysdate-to_date('03071970')) from dual;
+ 
+--10. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan asignada comisión.
+is not null
+ 
+select * from equipos,partidos;
+select * from equipos,partidos
+    where id_equipo_casa = equipos.id;
+ 
+/*    
+Ejercicio 2
+Muestra los datos de los nombres de los futbolistas junto al nombre de su equipo.
+Necesitas multitablas, futbolistas y equipos. EMPLEA WHERE para relacionar FK de futbolistas y PK de equipos.
+
+select * from futbolistas;
+select * from equipos;
+select futbolistas.nombre "Futbolista",equipos.nombre "Equipo" 
+    from futbolistas,equipos 
+    where futbolistas.id_equipo = equipos.id;
+select * from futbolistas cross join equipos;
+ 
+select * from emp natural join dept;
+ 
+select futbolistas.nombre, equipos.nombre from futbolistas join equipos on equipos.id =  futbolistas.id_equipo;
+select * from futbolistas join equipos on equipos.id =  futbolistas.id_equipo;
+select * from futbolistas;
+ 
+insert into equipos values (4,'REAL BETIS BALOMPIE','BENITO VILLAMARIN',80000000);
+ 
+    
+insert into futbolistas values ('F11120','NOMBRE','APELL',null,'PORTERO',3000000,null,180,83);
+insert into equipos values (4,'REAL BETIS BALOMPIE','BENITO VILLAMARIN',80000000);
+select * from futbolistas;
+select * from equipos;
+ 
+select * 
+    from futbolistas
+    left join equipos
+    on futbolistas.id_equipo = equipos.id;
+select * 
+    from futbolistas
+    right join equipos
+    on futbolistas.id_equipo = equipos.id;
+select * 
+    from equipos
+    left join futbolistas
+    on futbolistas.id_equipo = equipos.id;
+select * 
+    from equipos
+    full outer join futbolistas
+    on futbolistas.id_equipo = equipos.id;
+--28. Calcular el número de segundos transcurridos desde la última medianoche (máscara 'sssss' en to_char).
+select to_char(sysdate,'sssss') from dual;
+ 
+/*
+Ejercicio 8
+Obtén el nombre, apellidos y nombre del equipo de los futbolistas que sean defensas.
+
+select f.nombre,f.apellidos,e.nombre from futbolistas f join equipos e on f.id_equipo = e.id where f.posicion = 'DEFENSA';
+select futbolistas.nombre,futbolistas.apellidos,equipos.nombre from futbolistas join equipos on futbolistas.id_equipo = equipos.id where futbolistas.posicion = 'DEFENSA'; */
+
+/*Ejercicio 9
+Obtén el nombre, apellidos y nombre del equipo
+de los futbolistas con un LEFT JOIN y un RIGHT
+JOIN. ¿Cuál es la diferencia?*/
+
+SELECT futbolistas.nombre, futbolistas.apellidos, equipos.nombre FROM futbolistas LEFT JOIN equipos ON futbolistas.id_equipo = equipos.id;
+SELECT futbolistas.nombre, futbolistas.apellidos, equipos.nombre FROM futbolistas RIGHT JOIN equipos ON futbolistas.id_equipo = equipos.id;
