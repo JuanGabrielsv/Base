@@ -642,3 +642,248 @@ JOIN. ¿Cuál es la diferencia?*/
 
 SELECT futbolistas.nombre, futbolistas.apellidos, equipos.nombre FROM futbolistas LEFT JOIN equipos ON futbolistas.id_equipo = equipos.id;
 SELECT futbolistas.nombre, futbolistas.apellidos, equipos.nombre FROM futbolistas RIGHT JOIN equipos ON futbolistas.id_equipo = equipos.id;
+
+SELECT * FROM futbolistas;
+
+SELECT * FROM futbolistas WHERE salario > 1500000;
+
+SELECT * FROM futbolistas WHERE posicion = 'PORTERO';
+
+//UNION
+
+/*DROP TABLE FUTBOLISTAS_2023 CASCADE CONSTRAINTS;
+DROP TABLE EQUIPOS_2023 CASCADE CONSTRAINTS;
+DROP TABLE PARTIDOS_2023 CASCADE CONSTRAINTS;
+
+CREATE TABLE FUTBOLISTAS_2023(
+ID CHAR(6) PRIMARY KEY CHECK( REGEXP_LIKE( ID, 'F[0-9][0-9][0-9]20' )),
+NOMBRE VARCHAR(100),
+APELLIDOS VARCHAR(300),
+FECHA_NACIMIENTO DATE,
+POSICION VARCHAR(50) CHECK( POSICION LIKE 'PORTERO' OR POSICION LIKE 'DEFENSA' OR POSICION LIKE 'MEDIOCENTRO' OR POSICION LIKE 'DELANTERO' ),
+SALARIO NUMBER(12,2) CHECK( SALARIO > 50000),
+ID_EQUIPO INT
+);
+
+CREATE TABLE EQUIPOS_2023(
+ID INT PRIMARY KEY,
+NOMBRE VARCHAR(100),
+ESTADIO VARCHAR(100),
+PRESUPUESTO NUMBER(20,2)
+);
+
+CREATE TABLE PARTIDOS_2023(
+ID INT PRIMARY KEY,
+ARBITRO VARCHAR(200),
+RESULTADO VARCHAR(5) CHECK( REGEXP_LIKE( RESULTADO, '[0-9][0-9]-[0-9][0-9]' )),
+ESTADIO VARCHAR(100),
+FECHA DATE,
+ID_EQUIPO_CASA INT,
+ID_EQUIPO_FUERA INT
+);
+
+ALTER TABLE FUTBOLISTAS_2023
+ADD CHECK (FECHA_NACIMIENTO > '31/DEC/1974');
+ALTER TABLE FUTBOLISTAS_2023
+ADD FOREIGN KEY (ID_EQUIPO) REFERENCES EQUIPOS_2023(ID);
+
+ALTER TABLE PARTIDOS_2023
+ADD FOREIGN KEY (ID_EQUIPO_CASA) REFERENCES EQUIPOS_2023(ID);
+ALTER TABLE PARTIDOS_2023
+ADD FOREIGN KEY (ID_EQUIPO_FUERA) REFERENCES EQUIPOS_2023(ID);
+
+DELETE FROM EQUIPOS_2023;
+INSERT INTO EQUIPOS_2023 VALUES (1,'EQUIPO A', 'ESTADIO A',1000000);
+INSERT INTO EQUIPOS_2023 VALUES (2,'EQUIPO B', 'ESTADIO B',2000000);
+INSERT INTO EQUIPOS_2023 VALUES (3,'EQUIPO C', 'ESTADIO C',3000000);
+
+DELETE FROM FUTBOLISTAS_2023;
+INSERT INTO FUTBOLISTAS_2023 VALUES ('F00120','PEDRO','GOMEZ','22/01/1980','PORTERO',100000,1);
+INSERT INTO FUTBOLISTAS_2023 VALUES ('F00220','PEDRO LUIS','GOMEZ','20/04/1985','DEFENSA',110000,1);
+INSERT INTO FUTBOLISTAS_2023 VALUES ('F00320','LUIS','GALVEZ','12/01/1990','DELANTERO',80000,1);
+INSERT INTO FUTBOLISTAS_2023 VALUES ('F00420','ANTONIO','DOMINGUEZ','25/06/1981','PORTERO',340000,2);
+INSERT INTO FUTBOLISTAS_2023 VALUES ('F00520','JESUS','FERNANDEZ','02/01/1995','MEDIOCENTRO',140000,2);
+INSERT INTO FUTBOLISTAS_2023 VALUES ('F00620','PABLO','GOMEZ','05/04/1987','PORTERO',160000,2);
+INSERT INTO FUTBOLISTAS_2023 VALUES ('F00720','PABLO','GUTIERREZ','27/01/1988','DEFENSA',200000,3);
+INSERT INTO FUTBOLISTAS_2023 VALUES ('F00820','PEPE','ALVAREZ','29/09/2000','DEFENSA',300000,3);
+INSERT INTO FUTBOLISTAS_2023 VALUES ('F00920','LUIS ANTONIO','ANTUNEZ','30/09/2001','MEDIOCENTRO',120000,3);
+
+DELETE FROM PARTIDOS_2023;
+INSERT INTO PARTIDOS_2023 VALUES (1,'ARBITRO A','00-00','ESTADIO A','01/01/2023',1,2);
+INSERT INTO PARTIDOS_2023 VALUES (2,'ARBITRO B','01-00','ESTADIO A','08/01/2023',1,3);
+INSERT INTO PARTIDOS_2023 VALUES (3,'ARBITRO C','01-01','ESTADIO B','15/01/2023',2,3);
+INSERT INTO PARTIDOS_2023 VALUES (4,'ARBITRO B','02-00','ESTADIO B','22/01/2023',2,1);
+INSERT INTO PARTIDOS_2023 VALUES (5,'ARBITRO A','04-01','ESTADIO C','29/01/2023',3,1);
+INSERT INTO PARTIDOS_2023 VALUES (6,'ARBITRO A','03-03','ESTADIO C','05/02/2023',3,2);
+
+UPDATE FUTBOLISTAS_2023 SET ID_EQUIPO = 2 WHERE ID LIKE 'F00120';
+UPDATE FUTBOLISTAS_2023 SET ID_EQUIPO = 3 WHERE ID LIKE 'F00420';
+UPDATE FUTBOLISTAS_2023 SET ID_EQUIPO = 1 WHERE ID LIKE 'F00920';
+
+DELETE FROM FUTBOLISTAS_2023 WHERE ID LIKE 'F00120' OR ID LIKE 'F00420';*/
+
+//UNION
+
+SELECT nombre, apellidos FROM futbolistas;
+SELECT nombre, apellidos FROM futbolistas_2023;
+
+SELECT nombre, apellidos FROM futbolistas UNION SELECT nombre, apellidos FROM futbolistas_2023;
+
+SELECT nombre, apellidos FROM futbolistas INTERSECT SELECT nombre, apellidos FROM futbolistas_2023;
+
+SELECT nombre, apellidos FROM futbolistas MINUS SELECT nombre, apellidos FROM futbolistas_2023; // hay 5
+
+SELECT nombre, apellidos FROM futbolistas_2023 MINUS SELECT nombre, apellidos FROM futbolistas; // hay 4
+
+/*create table dept(
+  deptno number(2,0),
+  dname  varchar2(14),
+  loc    varchar2(13),
+  constraint pk_dept primary key (deptno)
+);
+ 
+create table emp(
+  empno    number(4,0),
+  ename    varchar2(10),
+  job      varchar2(9),
+  mgr      number(4,0),
+  hiredate date,
+  sal      number(7,2),
+  comm     number(7,2),
+  deptno   number(2,0),
+  constraint pk_emp primary key (empno),
+  constraint fk_deptno foreign key (deptno) references dept (deptno)
+);
+
+insert into dept
+values(10, 'ACCOUNTING', 'NEW YORK');
+insert into dept
+values(20, 'RESEARCH', 'DALLAS');
+insert into dept
+values(30, 'SALES', 'CHICAGO');
+insert into dept
+values(40, 'OPERATIONS', 'BOSTON');
+ 
+insert into emp
+values(
+ 7839, 'KING', 'PRESIDENT', null,
+ to_date('17-11-1981','dd-mm-yyyy'),
+ 5000, null, 10
+);
+insert into emp
+values(
+ 7698, 'BLAKE', 'MANAGER', 7839,
+ to_date('1-5-1981','dd-mm-yyyy'),
+ 2850, null, 30
+);
+insert into emp
+values(
+ 7782, 'CLARK', 'MANAGER', 7839,
+ to_date('9-6-1981','dd-mm-yyyy'),
+ 2450, null, 10
+);
+insert into emp
+values(
+ 7566, 'JONES', 'MANAGER', 7839,
+ to_date('2-4-1981','dd-mm-yyyy'),
+ 2975, null, 20
+);
+insert into emp
+values(
+ 7788, 'SCOTT', 'ANALYST', 7566,
+ to_date('13-JUL-87','dd-mm-rr') - 85,
+ 3000, null, 20
+);
+insert into emp
+values(
+ 7902, 'FORD', 'ANALYST', 7566,
+ to_date('3-12-1981','dd-mm-yyyy'),
+ 3000, null, 20
+);
+insert into emp
+values(
+ 7369, 'SMITH', 'CLERK', 7902,
+ to_date('17-12-1980','dd-mm-yyyy'),
+ 800, null, 20
+);
+insert into emp
+values(
+ 7499, 'ALLEN', 'SALESMAN', 7698,
+ to_date('20-2-1981','dd-mm-yyyy'),
+ 1600, 300, 30
+);
+insert into emp
+values(
+ 7521, 'WARD', 'SALESMAN', 7698,
+ to_date('22-2-1981','dd-mm-yyyy'),
+ 1250, 500, 30
+);
+insert into emp
+values(
+ 7654, 'MARTIN', 'SALESMAN', 7698,
+ to_date('28-9-1981','dd-mm-yyyy'),
+ 1250, 1400, 30
+);
+insert into emp
+values(
+ 7844, 'TURNER', 'SALESMAN', 7698,
+ to_date('8-9-1981','dd-mm-yyyy'),
+ 1500, 0, 30
+);
+insert into emp
+values(
+ 7876, 'ADAMS', 'CLERK', 7788,
+ to_date('13-JUL-87', 'dd-mm-rr') - 51,
+ 1100, null, 20
+);
+insert into emp
+values(
+ 7900, 'JAMES', 'CLERK', 7698,
+ to_date('3-12-1981','dd-mm-yyyy'),
+ 950, null, 30
+);
+insert into emp
+values(
+ 7934, 'MILLER', 'CLERK', 7782,
+ to_date('23-1-1982','dd-mm-yyyy'),
+ 1300, null, 10
+);*/
+ 
+ 
+--REPASO
+--1. Indica el nombre y sueldo de los empleados que pertenezcan al departamento ubicado en Seatle.
+SELECT * FROM emp;
+SELECT * FROM dept;
+SELECT * FROM emp JOIN dept ON emp.deptno = dept.deptno;
+SELECT * FROM dept JOIN emp ON emp.deptno = dept.deptno; 
+SELECT emp.ename, emp.sal FROM emp INNER JOIN dept ON emp.deptno = dept.deptno WHERE dept.loc = 'DALLAS';
+--2. Indica el id, nombre y sueldo de los empleados que estén en departamentos donde haya otros compañeros 
+--empleados con una letra 'u' en su nombre, y que además ganen sueldos mayores que la media de los sueldos 
+--de la empresa.
+SELECT empno, ename, sal FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE ename LIKE '%U%') and sal > (SELECT AVG(sal) FROM emp);
+
+--3. Devuelve el id del departamento, nombre y puesto de los empleados que pertenezcan al departamento Executive.
+SELECT dept.deptno, emp.ename, emp.job FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE dname = 'SALES';
+ 
+--4. Muestra el nombre y salario de los empleados que tengan a KING como jefe directo.
+SELECT ename, sal FROM emp WHERE mgr = (SELECT empno FROM emp WHERE ename = 'KING');
+
+--4.1 Muestra el no mbre y salario de los empleados que estén en el mismo departamento de KING.
+SELECT ename, sal FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE ename = 'KING') and MGR IS NOT NULL;
+ 
+--5. Devuelve el nombre y sueldo de los empleados que ganen más dinero que la media de la empresa, ordenado 
+--por sueldo de mayor a menor.
+SELECT emp.ename, emp.sal FROM emp WHERE sal > (SELECT AVG(sal) FROM emp) ORDER BY sal DESC;
+
+-- 1. Mostrar los nombres de los empleados que tengan un salario mayor que el de JAMES.
+SELECT ename FROM emp WHERE sal > (SELECT sal FROM emp WHERE ename = 'JAMES');
+-- 2. Mostrar los nombres de los empleados que trabajan en el mismo departamento que SMITH. Ordena el resultado.
+SELECT ename FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE ename = 'SMITH') AND ename != 'SMITH' ORDER BY ename DESC;
+-- 5. Mostrar qué empleados del departamento donde trabaja FORD, ganan más que lo que gana JAMES. 
+SELECT * FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE ename = 'FORD') AND sal > (SELECT sal FROM emp WHERE ename = 'JAMES');
+-- 7. ¿Cuántos empleados ganan menos que MILLER?
+SELECT COUNT(*) FROM emp WHERE sal < (SELECT sal FROM emp WHERE ename = 'MILLER');
+
+/* 34.Calcular cuanto debería haber cobrado cada empleado en su primer año de trabajo (desde la fecha de contrato hasta el 31 de diciembre de ese año).*/
+SELECT ename, hiredate,sal, ROUND(MONTHS_BETWEEN(TO_DATE('31/12/' || TO_CHAR(hiredate, 'yyyy')),hiredate)*sal,2)"cuantía a cobrar el primer año" FROM emp;
+select ename,round(months_between(to_date('31/12/' || to_char(hiredate,'yyyy')),hiredate) * sal,2) "Cuantía a cobrar el primer año" from emp;
