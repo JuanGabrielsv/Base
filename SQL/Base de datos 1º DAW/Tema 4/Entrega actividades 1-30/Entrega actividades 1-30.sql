@@ -126,15 +126,16 @@ SELECT ename, ROUND((SYSDATE - hiredate)/7, 0) AS "semanas trabajadas" FROM emp;
 
 /* 5. Calcular el sueldo neto de cada empleado, y la retencion iRPF mensual, sabiendo que la retención es del 19% para el sueldo y de un 10% de la comisión, (redondear a 2 decimales).
 Si el empleado no tiene comisión, se debe mostrar el valor 0. */
-SELECT * FROM emp;
-SELECT ename, sal, comm FROM emp;
-SELECT ename, sal, NVL(comm, 0) FROM emp;
-SELECT ename, sal, NVL(comm, 0), sal - ((sal * 1.19)) AS "Retención de 19% mensual", sal - ((sal * 1.19) - sal) AS "SUELDO NETO = sueldo bruto menos 19% retención" FROM emp;
-
-
-
+SELECT ename, CONCAT(sal, ' €') AS "SALARIO MENSUAL",
+    NVL(comm, 0) || ' €' AS "COMISIÓN",
+    ROUND((sal * 1.19) - sal, 2) || ' €' AS "Retención de 19% mensual",
+    NVL((comm * 1.10) - comm, 0) || ' €' AS "Retención del 10% a la comisión",
+    ROUND(sal - ((sal * 1.19) - sal),2) || ' €' AS "SUELDO NETO = sueldo bruto menos 19% retención",
+    nvl(comm - (comm * 1.10) + comm,0) || ' €' AS "COMISION NETO = comison bruto menos 10 %" FROM emp;
 
 /* 6. Hacer un listado de empleados (nombre y salario) con sueldo superior a 1000. */
+
+
 /* 7. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto igual a CLERK. */
 /* 8. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto distinto a CLERK. */
 /* 9. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto distinto a CLERK y sueldo superior a 1500. */
