@@ -23,16 +23,20 @@ nacionalidad. Cada una de estas clases tendrá que tener:
 		
 Crea las clases necesarias para gestionar esta aplicación. Cuando termines, realiza un
 programa que haga lo siguiente:
+
 1. Crea 4 actores:
-a. Blas Blau de España nacido en 1983
-b. Laura Pozo de Italia nacida en 1981
-c. Marcel Cade de Suiza nacido en 2001
-d. Violeta Volo de Rusia nacida en 1999
+	a. Blas Blau de España nacido en 1983
+	b. Laura Pozo de Italia nacida en 1981
+	c. Marcel Cade de Suiza nacido en 2001
+	d. Violeta Volo de Rusia nacida en 1999
+	
 2. Crea 1 directora:
-a. Sara Marea de Portugal nacida en 1994
+	a. Sara Marea de Portugal nacida en 1994
+	
 3. Crea 2 guionistas:
-a. Marco Smith de Reino Unido nacido en 1988
-b. Cheng Shu de China nacido en 1977
+	a. Marco Smith de Reino Unido nacido en 1988
+	b. Cheng Shu de China nacido en 1977
+	
 4. Crea una película que se estrena en 2027 dirigida por Sara y con Marco como guionista. Actuarán Blas y Laura. Su título es “Do you know Joe Blas?”
 5. Crea otra película con el mismo año de estreno y directora. El guionista es el chino, y participan todos los actores. Su título es “Muerte en la sombra”
 6. Imprime la lista de actores de la primera película
@@ -47,5 +51,27 @@ public class Guionistas {
 	String nombre = "";
 	Integer anoNacimiento = 0;
 	String nacionalidad = "";
+	
+//MÉTODOS GET Y SET
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public Integer getAnoNacimiento() {
+		return anoNacimiento;
+	}
+	public void setAnoNacimiento(Integer anoNacimiento) {
+		this.anoNacimiento = anoNacimiento;
+	}
+	public String getNacionalidad() {
+		return nacionalidad;
+	}
+	public void setNacionalidad(String nacionalidad) {
+		this.nacionalidad = nacionalidad;
+	}
 
+	
 }
