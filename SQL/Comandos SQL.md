@@ -136,3 +136,7 @@ Contar cuanto de nombrecolumna que no sea "x" y termine en "algo";
 ```
 SELECT COUNT(nombrecolumna) FROM nombretabla WHERE nombrecolumna NOT IN ('nombredato') AND nombrecolumna LIKE 'xxxx';
 ```
+Mostrar en minusculas
+```
+SELECT LOWER(nombrecolumna) FROM nombretabla; 
+```

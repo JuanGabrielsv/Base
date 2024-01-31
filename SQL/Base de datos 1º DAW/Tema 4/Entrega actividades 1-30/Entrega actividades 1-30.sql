@@ -113,10 +113,27 @@ values(
 ); */ 
 
 /* 1. Obtener el nombre de todos los departamentos en minúsculas. */
+SELECT LOWER(dname) FROM dept;
+
 /* 2. Seleccionar todos los datos de la tabla empleados (todas las columnas). */
+SELECT * FROM emp;
+
 /* 3. Devuelve ename, job, sal y comm de los empleando usando los siguientes alias de columnas: nombre, puesto, salario y comisión. */
+SELECT ename AS "nombre", job AS "puesto", sal AS "salario", comm AS "comisión" FROM emp;
+
 /* 4. Calcula cuántas semanas completas (de lunes a domingo) ha trabajado cada empleado, y devuelve dicho valor y el nombre del empleado. El número de */
-/* 5. Calcular el sueldo neto de cada empleado, y la retencion iRPF mensual, sabiendo que la retención es del 19% para el sueldo y de un 10% de la comisión, (redondear a 2 decimales). Si el empleado no tiene comisión, se debe mostrar el valor 0. */
+SELECT ename, ROUND((SYSDATE - hiredate)/7, 0) AS "semanas trabajadas" FROM emp;
+
+/* 5. Calcular el sueldo neto de cada empleado, y la retencion iRPF mensual, sabiendo que la retención es del 19% para el sueldo y de un 10% de la comisión, (redondear a 2 decimales).
+Si el empleado no tiene comisión, se debe mostrar el valor 0. */
+SELECT * FROM emp;
+SELECT ename, sal, comm FROM emp;
+SELECT ename, sal, NVL(comm, 0) FROM emp;
+SELECT ename, sal, NVL(comm, 0), sal - ((sal * 1.19)) AS "Retención de 19% mensual", sal - ((sal * 1.19) - sal) AS "SUELDO NETO = sueldo bruto menos 19% retención" FROM emp;
+
+
+
+
 /* 6. Hacer un listado de empleados (nombre y salario) con sueldo superior a 1000. */
 /* 7. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto igual a CLERK. */
 /* 8. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto distinto a CLERK. */
