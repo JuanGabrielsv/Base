@@ -50,8 +50,7 @@ import ejercicios_básicos_ejercicio22.Creditos;
 
 public class Actores extends Creditos {
 	
-
-	
+		
 	
 
 }

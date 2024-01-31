@@ -51,11 +51,11 @@ import java.util.List;
 
 public class Peliculas {
 
-	Integer anoEstreno = 0;
-	String titulo = "";
-	List<String> actores = new ArrayList<>();
-	String guionista = "";
-	String director = "";
+	private Integer anoEstreno = 0;
+	private String titulo = "";
+	private List<String> actores = new ArrayList<>();
+	private String guionista = "";
+	private String director = "";
 	
 //MÉTODOS GET Y SET
 	
