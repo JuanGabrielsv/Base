@@ -50,11 +50,9 @@ son las siguiente:
 		
 Cuando tengas todas las clases terminadas, crea un programa que haga lo siguiente:
 
-1. Crea dos equipos con al menos 3 jugadores cada uno. Solicitando los datos al usuario.
-Designa al capitán de cada equipo (será el primer jugador indicado). Cuando los
-tengas, imprime los equipos por consola.
-2. Crea un partido para estos dos equipos. Establece el resultado en 0 a 0. Imprime el
-partido.
+1. Crea dos equipos con al menos 3 jugadores cada uno. Solicitando los datos al usuario. Designa al capitán de cada equipo (será el primer jugador indicado). Cuando los
+   tengas, imprime los equipos por consola.
+2. Crea un partido para estos dos equipos. Establece el resultado en 0 a 0. Imprime el partido.
 3. Pregunta al usuario por el resultado y cámbialo. Imprime el partido.
 4. Imprime el equipo ganador.
 5. Añade al equipo visitante un jugador con el dorsal 99 y nombre “Blas infiltrado”. Imprime el equipo visitante.
