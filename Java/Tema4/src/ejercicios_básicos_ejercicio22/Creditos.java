@@ -2,9 +2,9 @@ package ejercicios_básicos_ejercicio22;
 
 public class Creditos {
 	
-	String nombre = "";
-	Integer anoNacimiento = 0;
-	String nacionalidad = "";
+	private String nombre = "";
+	private Integer anoNacimiento = 0;
+	private String nacionalidad = "";
 	
 //MÉTODO GET Y SET	
 	
