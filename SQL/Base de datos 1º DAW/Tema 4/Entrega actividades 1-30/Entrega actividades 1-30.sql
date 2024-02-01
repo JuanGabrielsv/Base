@@ -183,13 +183,24 @@ SELECT ename, (SELECT MAX(sal) FROM emp) FROM emp;
 SELECT ename, sal FROM emp WHERE sal IN ((5000 / 2) + 500, 5000-1000, (SELECT MAX(sal) FROM emp));
 
 /* 21. Seleccionar nombre, sueldo y sueldo formateado (ej.: 1,000.00) de todos los empleados. Se puede usar las máscaras de to_number en to_char. */
-SELECT ename, sal, TO_CHAR(sal,'9999,9999.99') FROM emp;
+SELECT ename, sal, TO_CHAR(sal,'9,9999.99') FROM emp;
 
 /* 22. Seleccionar nombre, sueldo y sueldo formateado con el simbolo 'Dólar' (ej.: $1,000.00) de todos los empleados. Se puede usar las máscaras de to_number en to_char. */
+SELECT ename, sal, TO_CHAR(sal, '9,9999.99$') FROM emp;
+
 /* 23. Seleccionar nombre, sueldo y sueldo formateado con el simbolo 'Euro' (ej.: 1,000.00€ de todos los empleados. Se puede usar las máscaras de to_number en to_char. */
+SELECT ename, sal, TO_CHAR(sal, '9,9999.99L') FROM emp;
+
 /* 24. Seleccionar la fecha del sistema (día, mes, año, horas (24):minutos:segundos). */
+SELECT TO_CHAR(SYSDATE, 'DD/MM/YYYY hh24:mi:ss') FROM dual;
+
 /* 25. Seleccionar la fecha del sistema (nombre del día, día, nombre del mes, año, horas (24):minutos:segundos). No debe haber espacios sobrantes en el nombre del día o del mes. */
+SELECT REPLACE(TO_CHAR(SYSDATE, 'DAY_DD_MONTH_ YYYY_HH24:MI:SS'),' ') FROM dual;
+SELECT REPLACE(TO_CHAR(SYSDATE,'DAY'),' '), TO_NUMBER(TO_CHAR(SYSDATE,'dd')), REPLACE(TO_CHAR(SYSDATE,'MONTH'),' ',''), TO_NUMBER(TO_CHAR(SYSDATE,'YYYY')), to_char(sysdate,'hh24:mi:ss') from dual;
+
 /* 26. Seleccionar la fecha del día 1 de enero de 2005, medíante una tira de caracteres y su máscara de formato (ej.: 01012021). */
+SELECT (TO_DATE('01012005')) FROM dual;
+
 /* 27. Calcular el número de días vividos hasta hoy por una persona nacida el día 3 de julio de 1970. */
 /* 28. Calcular el número de segundos transcurridos desde la última medianoche (máscara 'sssss' en to_char). */
 /* 29. Calcular el número horas completas transcurridas desde la última medianoche. */

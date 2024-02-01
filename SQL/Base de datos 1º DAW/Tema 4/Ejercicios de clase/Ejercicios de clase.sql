@@ -178,67 +178,46 @@ SELECT apellidos FROM futbolistas WHERE apellidos LIKE 'G%';
 /* Devuelve todos los datos de los
 futbolistas cuya posición sea
 DEFENSA o DELANTERO. */
-
 SELECT posicion FROM futbolistas WHERE posicion IN ('DEFENSA', 'DELANTERO');
 SELECT posicion FROM futbolistas WHERE posicion = 'DEFENSA' OR posicion = 'DELANTERO';
 
 /* Obtén el nombre de los futbolistas
 que cobran entre 100.000 y 200.000
 euros (SALARIO). */
-
 SELECT nombre, salario FROM futbolistas WHERE salario BETWEEN 100000 AND 200000;
 SELECT nombre, salario FROM futbolistas WHERE salario >= 100000 AND salario <= 200000;
-
 SELECT 4+4*3 FROM dual; //sólo un campo y una fila para hacer pruebas.
 SELECT 4+4*3 || 'a' FROM dual; //concatenar
 SELECT 4+4*3+null FROM dual; //Será siempre null las operaciones con null
 SELECT to_char (sysdate, 'dd/mm/yy hh:mi:ss') FROM dual;
-
 SELECT COUNT(nombre) FROM futbolistas; //contar
 SELECT presupuesto + 50 FROM equipos; //operador entre valor y campos.
 SELECT presupuesto + presupuesto FROM equipos; //operador entre dos campos
 
 /* EJERCICIO 7
-Se va a hacer un aumento de sueldo
-de los PORTEROS. Para ello obtén el
-nombre, apellido y el nuevo salario
-de los PORTEROS si se aumenta un
-10% el que tienen actualmente. La
-lista debe estar ordenada
-alfabéticamente por los apellidos. */
-
+Se va a hacer un aumento de sueldo de los PORTEROS. Para ello obtén el nombre, apellido y el nuevo salario de los PORTEROS si se aumenta un 10% el que tienen actualmente.
+La lista debe estar ordenada alfabéticamente por los apellidos. */
 SELECT nombre, apellidos, salario * 1.10 FROM futbolistas WHERE posicion = 'PORTERO' ORDER BY apellidos;
 
 //CONCATENACIONES
-
 SELECT 'lo que sea ' || 'lo que sea' FROM dual;
 SELECT 'lo que sea ' || salario FROM futbolistas;
 SELECT apellidos || ', ' || nombre FROM futbolistas;
 
 //MÉTODOS - FUNCIONES
-
 nombredelafuncion()
 SELECT LOWER(apellidos) || ', ' || nombre FROM futbolistas;
 SELECT LOWER(apellidos || ', ' || nombre) FROM futbolistas;
 SELECT INITCAP(apellidos || ', ' || nombre) "Futbolista" FROM futbolistas;
 
 /* EJERCICIO 8
-Devuelve en una única columna el
-nombre del futbolista seguido de la
-palabra “es” y a continuación la
-posición que ocupa. La columna
-debe llamarse “Posiciones”.*/
-
+Devuelve en una única columna el nombre del futbolista seguido de la palabra “es” y a continuación la posición que ocupa. La columna debe llamarse “Posiciones”.*/
 SELECT nombre || ' es', posicion "Posiciones" FROM futbolistas;
 
 /* EJERCICIO 9
-Queremos saber todos los datos de
-los futbolistas que ganen más de
-150.000 euros y sean defensas. */
-
+Queremos saber todos los datos de los futbolistas que ganen más de 150.000 euros y sean defensas. */
 SELECT * FROM futbolistas WHERE NOT (salario > 150000 AND posicion = 'DEFENSA');
 SELECT * FROM futbolistas WHERE NOT salario > 150000 AND posicion = 'DEFENSA';
-
 SELECT apellidos FROM futbolistas WHERE apellidos LIKE 'G%E%';
 SELECT apellidos FROM futbolistas WHERE apellidos LIKE 'G__E%';
 SELECT apellidos FROM futbolistas WHERE apellidos LIKE 'G__EZ';
@@ -250,8 +229,7 @@ bruto”. Nota: el salario bruto de un futbolista se obtiene añadiéndole el 50% de
 SELECT INITCAP(nombre), salario, salario * 1.50 || ' Euros' "Salario bruto" FROM futbolistas WHERE LOWER (posicion) = 'mediocentro' ORDER BY nombre;
 
 /* Ejercicio 12
-Realiza las siguientes operaciones
-utilizando funciones numéricas:*/
+Realiza las siguientes operaciones utilizando funciones numéricas:*/
 //1. Calcula el valor absoluto de -10.
 SELECT ABS (-10) FROM dual;
 
@@ -271,8 +249,7 @@ SELECT MOD (15,3) FROM dual;
 SELECT POWER (15,2) FROM dual;
 
 /* Ejercicio 13
-Realiza las siguientes operaciones
-utilizando funciones numéricas:*/
+Realiza las siguientes operaciones utilizando funciones numéricas:*/
 //1. Redondea 15,789 con un decimal.
 SELECT ROUND(15.789, 1) FROM dual;
 
@@ -292,7 +269,6 @@ SELECT TRUNC(157.89, -2) FROM dual;
 SELECT SIGN(-15) FROM dual;
 
 //FUNCIONES DE CADENAS DE CARÁCTERES
-
 SELECT CHR(124) FROM dual;
 SELECT ASCII('A') FROM dual;
 SELECT CONCAT(CONCAT (nombre,estadio), presupuesto) FROM equipos;
@@ -343,22 +319,18 @@ SELECT NEXT_DAY(SYSDATE, 'LUNES') FROM dual;
 SELECT SYSDATE - 4 "HACE 4D", SYSDATE + 1 "MAÑANA" FROM dual;
 
 //FUNCIONES DE CONVERSIÓN
-
 SELECT ADD_MONTHS(TO_DATE('24/05/2024'), 6) FROM dual;
 SELECT TO_DATE ('25/06/24') + 1 FROM dual;
 
-TO_CHAR(),TO_NUMBER(),TO_DATE()
-
+// TO_CHAR(),TO_NUMBER(),TO_DATE()
 SELECT TO_NUMBER ('75.83€','99.99L') * 5 + 54 - salario FROM futbolistas;
 SELECT TO_NUMBER ('$75.83','$99.99') * 5 + 54 - salario FROM futbolistas;
 SELECT TO_NUMBER ('-$75.83','S$99.99') * 5 + 54 - salario FROM futbolistas;
-
 SELECT TO_CHAR(sysdate, 'HH:mm') FROM dual;
 SELECT sysdate FROM dual;
-
 SELECT TO_DATE('01/' || TO_CHAR(sysdate,'mm') || '/23') FROM dual; // dd/mm/yy hh:mm:ss
 
-// Ejercicio 16
+// EJERCICIO 16
 // 1. Convierte ‘1000.45’ a un número.
 SELECT TO_NUMBER('1000.45','9999.99') FROM dual;
 
@@ -381,23 +353,17 @@ SELECT TO_NUMBER(SUBSTR(ID,2,LENGTH(ID)-1),'99999')FROM FUTBOLISTAS;
 // 6. Muestra todos los años de nacimiento de los futbolistas (solo el año, ej.: 1990, 1991, etc.). Ordénalos de menor a mayor año.
 SELECT TO_CHAR(FECHA_NACIMIENTO,'YYYY') FROM FUTBOLISTAS ORDER BY 1;
 
-//
-
 UPDATE partidos SET arbitro = NULL WHERE ID = 6;
 
 SELECT arbitro FROM partidos;
 SELECT NVL(arbitro,'sin ánimo de lucro, algeciras') FROM partidos;
 
 /*Ejercicio 17
-1. Utiliza la función DECODE para mostrar, respecto de los
-EQUIPOS, el valor 1000k si el presupuesto es de 1000000,
-2000k si el presupuesto es de 2000000, o 3000k si el
-presupuesto asciende a 3000000. Y si no es ninguna que ponga "ok"*/
-
+1. Utiliza la función DECODE para mostrar, respecto de los EQUIPOS, el valor 1000k si el presupuesto es de 1000000,
+2000k si el presupuesto es de 2000000, o 3000k si el presupuesto asciende a 3000000. Y si no es ninguna que ponga "ok"*/
 SELECT decode(presupuesto,1000000,'1000K',2000000,'2000K',3000000,'3000K','ok') FROM equipos;
 
 // AGRUPAMIENTO O AGREGADO
-
 SELECT dlfkgj FROM sdlkfjg WHERE ____ GROUP BY _____ HAVING _____;
 
 SELECT * FROM futbolistas;
@@ -420,6 +386,7 @@ SELECT AVG(presupuesto) FROM equipos;
 
 //Cuantos futbolistas con delanteros?
 SELECT COUNT(id) FROM futbolistas WHERE posicion='DELANTERO';
+
 //Dame una lista con el número de futbolistas que hay por cada posicion
 SELECT posicion, COUNT(*) FROM futbolistas GROUP BY posicion;
 select count(*),posicion from futbolistas group by posicion having posicion like 'DE%';
@@ -468,8 +435,10 @@ SELECT fecha_nacimiento FROM futbolistas WHERE salario = (SELECT MIN(salario) FR
 --Ejercicio 3
 --Calcula la media del sueldo de los futbolistas (con dos decimales) agrupado por la posición que ocupan.
 select posicion,trunc(avg(salario),2) from futbolistas group by posicion;
+
 --Obtén el número de futbolistas en cada equipo.
 select id_equipo equipo,count(*) "total de futbolistas" from futbolistas group by id_equipo;
+
 --Obtén ahora el número de futbolistas de cada equipo cuyo ID sea 1 o 2.
 select id_equipo,count(*) from futbolistas group by id_equipo having id_equipo = 1 or id_equipo = 2; --in...
 
@@ -483,12 +452,10 @@ SELECT SYSDATE-TO_DATE('03071970') FROM dual;
 SELECT FLOOR(SYSDATE-TO_DATE('03071970')) FROM dual;
 
 //MULTITABLAS
-
 SELECT * FROM equipos,partidos;
 SELECT * FROM equipos,partidos WHERE id_equipo_casa = equipos.id;
 
 /* Ejercicio 2 Muestra los datos de los nombres de los futbolistas junto al nombre de su equipo. */
-
 SELECT * FROM futbolistas WHERE;
 SELECT * FROM equipos;
 SELECT futbolistas.nombre "Futbolistas", equipos.nombre "Equipo" FROM futbolistas,equipos WHERE futbolistas.id_equipo = equipos.id;
@@ -524,9 +491,7 @@ SELECT * FROM futbolistas;
 SELECT * FROM equipos;
 
 SELECT * FROM futbolistas LEFT JOIN equipos ON futbolistas.id_equipo = equipos.id;
-
 SELECT * FROM futbolistas RIGHT JOIN equipos ON futbolistas.id_equipo = equipos.id;
-
 SELECT * FROM futbolistas FULL OUTER JOIN equipos ON futbolistas.id_equipo = equipos.id;
 
 --28 Calcular el numero de segundos transcurridos desde la ultima madianoche (máscara 'sssss' en to_char
@@ -546,7 +511,6 @@ select nombre from futbolistas where to_char(fecha_nacimiento,'yyyy') between 19
 
 /*25. Seleccionar la fecha del sistema (nombre del día, día, nombre del mes, año, horas (24):minutos:segundos).
 No debe haber espacios sobrantes en el nombre del día o del mes.*/
-
 select  replace(to_char(sysdate,'DAY'),' '), 
         to_number(to_char(sysdate,'dd')),
         replace(to_char(sysdate,'month'),' ',''),
