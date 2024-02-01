@@ -134,23 +134,57 @@ SELECT ename, CONCAT(sal, ' €') AS "SALARIO MENSUAL",
     nvl(comm - (comm * 1.10) + comm,0) || ' €' AS "COMISION NETO = comison bruto menos 10 %" FROM emp;
 
 /* 6. Hacer un listado de empleados (nombre y salario) con sueldo superior a 1000. */
-
+SELECT ename AS "NOMBRE", sal || ' €' AS "SALARIO" FROM emp WHERE sal > 1000;
 
 /* 7. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto igual a CLERK. */
+SELECT ename, job, CONCAT(sal,' €'), CONCAT(NVL(comm, 0), ' €') FROM emp WHERE job = 'CLERK';
+
 /* 8. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto distinto a CLERK. */
+SELECT ename, job, CONCAT(sal, ' €'), NVL(comm, 0) || ' €' AS "COMISIÓN" FROM emp WHERE job != 'CLERK';
+
 /* 9. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto distinto a CLERK y sueldo superior a 1500. */
+SELECT ename, job, sal, comm FROM emp WHERE job != 'CLERK' AND sal > 1500;
+
 /* 10. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan asignada comisión. */
+SELECT ename, job, sal, comm FROM emp WHERE comm IS NOT NULL AND comm > 0;
+
 /* 11. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que NO tengan asignada comisión. */
+SELECT ename, job, sal, comm FROM emp WHERE comm IS NULL OR comm <= 0;
+
 /* 12. Seleccionar los empleados cuyo nombre empieza por 'A'. */
+SELECT ename FROM emp WHERE ename LIKE 'A%';
+
 /* 13. Seleccionar los empleados cuyo nombre tienen una A en cualquier posición. */
+SELECT ename FROM emp WHERE ename LIKE '%A%';
+
 /* 14. Seleccionar los empleados cuyo nombre no contiene ninguna 'A'. */
+SELECT ename FROM emp WHERE ename NOT LIKE '%A%';
+
 /* 15. Seleccionar los empleados cuyo nombre empieza por una vocal. */
+SELECT ename FROM emp WHERE SUBSTR(ename,1,1) IN ('A','E','I','O','U');
+SELECT ename FROM emp WHERE ename LIKE 'A%' OR ename LIKE 'E%' OR ename LIKE 'I%' OR ename LIKE 'O%' OR ename LIKE 'U%';
+
 /* 16. Seleccionar los empleados con sueldo entre 1000 y 2000 (ambos inclusive). */
+SELECT ename, sal FROM emp WHERE sal BETWEEN 1000 AND 2000;
+
 /* 17. Seleccionar los empleados con sueldo igual a 1000, 2000, 3000, 4000 o 5000. */
+SELECT ename, sal FROM emp WHERE sal = 1000 OR sal = 2000 OR sal = 3000 OR sal = 4000 OR sal = 5000;
+
 /* 18. Seleccionar los empleados cuyo nombre comienza por A,B,C,J,K,M. */
+SELECT ename FROM emp WHERE SUBSTR(ename,1,1) IN ('A','B','C','J','K','M');
+SELECT ename FROM emp WHERE ename LIKE 'A%' OR ename LIKE 'B%' OR ename LIKE 'C%' OR ename LIKE 'J%' OR ename LIKE 'K%' OR ename LIKE 'M%';
+
 /* 19. Seleccionar los empleados cuyo sueldo es la 5000/2 + 500 o 5000-1000. */
+SELECT ename, sal FROM emp WHERE sal IN ((5000 / 2) + 500) OR sal IN 5000-1000;
+SELECT ename, sal FROM emp WHERE sal IN ((5000 / 2) + 500, 5000-1000);
+
 /* 20. Seleccionar los empleados cuyo sueldo es la 5000/2 + 500 ,5000-1000 o el salario máximo de todos los empleados. */
+SELECT ename, (SELECT MAX(sal) FROM emp) FROM emp;
+SELECT ename, sal FROM emp WHERE sal IN ((5000 / 2) + 500, 5000-1000, (SELECT MAX(sal) FROM emp));
+
 /* 21. Seleccionar nombre, sueldo y sueldo formateado (ej.: 1,000.00) de todos los empleados. Se puede usar las máscaras de to_number en to_char. */
+SELECT ename, sal, TO_CHAR(sal,'9999,9999.99') FROM emp;
+
 /* 22. Seleccionar nombre, sueldo y sueldo formateado con el simbolo 'Dólar' (ej.: $1,000.00) de todos los empleados. Se puede usar las máscaras de to_number en to_char. */
 /* 23. Seleccionar nombre, sueldo y sueldo formateado con el simbolo 'Euro' (ej.: 1,000.00€ de todos los empleados. Se puede usar las máscaras de to_number en to_char. */
 /* 24. Seleccionar la fecha del sistema (día, mes, año, horas (24):minutos:segundos). */
