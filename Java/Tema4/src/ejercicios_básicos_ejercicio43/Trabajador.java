@@ -48,6 +48,10 @@ package ejercicios_básicos_ejercicio43;
 
 public class Trabajador {
 	
+	protected static final Integer SUELDO_ACTOR = 100000;
+	protected static final Integer SUELDO_GUIONISTA = 50000;
+	protected static final Integer SUELDO_DIRECTOR = 200000;
+	
 	private String nombre = "";
 	private Integer anoNacimiento = 0;
 	private String nacionalidad = "";

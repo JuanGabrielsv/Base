@@ -48,7 +48,7 @@ package ejercicios_básicos_ejercicio43;
 
 import ejercicios_básicos_ejercicio22.Creditos;
 
-public class Actor extends Creditos {
+public class Actor extends Trabajador {
 	
 		
 	
