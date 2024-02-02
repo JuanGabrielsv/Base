@@ -54,8 +54,8 @@ public class Pelicula {
 	private Integer anoEstreno = 0;
 	private String titulo = "";
 	private List<String> actores = new ArrayList<>();
-	private String guionista = "";
-	private String director = "";
+	private Guionista guionista;
+	private Director director;
 	
 //MÉTODOS GET Y SET
 	
@@ -77,16 +77,16 @@ public class Pelicula {
 	public void setActores(List<String> actores) {
 		this.actores = actores;
 	}
-	public String getGuionista() {
+	public Guionista getGuionista() {
 		return guionista;
 	}
-	public void setGuionista(String guionista) {
+	public void setGuionista(Guionista guionista) {
 		this.guionista = guionista;
 	}
-	public String getDirector() {
+	public Director getDirector() {
 		return director;
 	}
-	public void setDirector(String director) {
+	public void setDirector(Director director) {
 		this.director = director;
 	}
 
