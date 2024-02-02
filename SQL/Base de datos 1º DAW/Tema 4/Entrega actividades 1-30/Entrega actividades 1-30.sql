@@ -202,7 +202,14 @@ SELECT REPLACE(TO_CHAR(SYSDATE,'DAY'),' '), TO_NUMBER(TO_CHAR(SYSDATE,'dd')), RE
 SELECT (TO_DATE('01012005')) FROM dual;
 
 /* 27. Calcular el número de días vividos hasta hoy por una persona nacida el día 3 de julio de 1970. */
+SELECT FLOOR(sysdate - TO_DATE('03071970')) FROM dual;
+
 /* 28. Calcular el número de segundos transcurridos desde la última medianoche (máscara 'sssss' en to_char). */
+SELECT TO_CHAR(SYSDATE,'sssss') FROM dual;
+
 /* 29. Calcular el número horas completas transcurridas desde la última medianoche. */
+SELECT TO_NUMBER(TO_CHAR(sysdate,'hh')) FROM dual;
+
 /* 30. Calcular el número de meses transcurridos entre la fecha de contratación de cada empleado y hoy. */
+SELECT ename, FLOOR(MONTHS_BETWEEN(sysdate, hiredate)) FROM emp;
  
