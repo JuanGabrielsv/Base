@@ -46,9 +46,49 @@ programa que haga lo siguiente:
 */
 package ejercicios_básicos_ejercicio43;
 
-public class Directores {
-	
+import java.util.ArrayList;
+import java.util.List;
 
+public class Pelicula {
+
+	private Integer anoEstreno = 0;
+	private String titulo = "";
+	private List<String> actores = new ArrayList<>();
+	private String guionista = "";
+	private String director = "";
 	
+//MÉTODOS GET Y SET
+	
+	public Integer getAnoEstreno() {
+		return anoEstreno;
+	}
+	public void setAnoEstreno(Integer anoEstreno) {
+		this.anoEstreno = anoEstreno;
+	}
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public List<String> getActores() {
+		return actores;
+	}
+	public void setActores(List<String> actores) {
+		this.actores = actores;
+	}
+	public String getGuionista() {
+		return guionista;
+	}
+	public void setGuionista(String guionista) {
+		this.guionista = guionista;
+	}
+	public String getDirector() {
+		return director;
+	}
+	public void setDirector(String director) {
+		this.director = director;
+	}
+
 
 }
