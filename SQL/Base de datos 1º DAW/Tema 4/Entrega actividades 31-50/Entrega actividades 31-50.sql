@@ -121,7 +121,7 @@ values(
 SELECT last_day(sysdate) FROM dual;
 
 // 32. Calcular el último dia del mes (fecha) del mes actual, con horas, minutos y segundos.
-
+--select to_char(last_day(sysdate),'dd hh24:mi:ss') from dual;
 
 // 33. Calcular en qué MES (cifras) se ha contratado cada empleado.
 SELECT ename, hiredate, EXTRACT(MONTH FROM hiredate) FROM emp;
@@ -134,7 +134,11 @@ SELECT ename, hiredate, sal, ROUND(MONTHS_BETWEEN(TO_DATE('31/12/' || TO_CHAR(hi
 SELECT COUNT(DISTINCT(job)) AS "TIPOS TRABAJOS DISTINTOS" FROM emp;
 
 // 36. Calcular el IRPF de cada empleado, teniendo en cuenta que para los 'CLERK' se les retiene un 15%, y a los 'ANALYST" un 20%. Al resto se les retiene un 19%.
+SELECT ename, job, sal FROM emp;
+SELECT job, sal, sal * 0.15 FROM emp WHERE job = 'CLERK';
 
+SELECT job, sal FROM emp WHERE sal = (SELECT sal * 0.15 FROM emp WHERE job IN 'CLERK');
+SELECT ename FROM emp WHERE sal > (SELECT sal FROM emp WHERE ename = 'JAMES');
 
 // 37. Efectuar una propuesta de aumento salarial: Para los empleados del Dept. 10 un 5%, Dept. 20 un 7%, Dept 30 un 8% y al resto un 3% del salario.
 // 38. Listar los nombres de los empleados, identificando como 'Vendedor' si cobra comisión, y 'No vendedor' si no la cobra.
