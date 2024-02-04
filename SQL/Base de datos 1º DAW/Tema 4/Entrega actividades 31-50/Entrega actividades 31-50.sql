@@ -137,17 +137,36 @@ SELECT COUNT(DISTINCT(job)) AS "TIPOS TRABAJOS DISTINTOS" FROM emp;
 SELECT ename, job, sal, DECODE(job, 'CLERK', sal * 0.15, 'ANALYST', sal * 0.20, sal * 0.19) AS "IRPF", DECODE(job, 'CLERK', '15% Retención', 'ANALYST', '20% Retención', '19% Retención') AS "% Retención"  FROM emp;
 
 // 37. Efectuar una propuesta de aumento salarial: Para los empleados del Dept. 10 un 5%, Dept. 20 un 7%, Dept 30 un 8% y al resto un 3% del salario.
-SELECT ename, sal, deptno, DECODE(deptno, '10', '5% de aumento', '20', '7% de aumento' ) FROM emp;
+SELECT ename, sal, deptno, DECODE(deptno, '10', '5% de aumento', '20', '7% de aumento', '30', '8% de aumento','3% de aumento') AS "Propuesta de aumento",
+    DECODE(deptno, '10', sal * 1.05, '20', sal * 1.07, '30', sal * 1.08, sal * 1.03) AS "Total con aumento" FROM emp;
 
 // 38. Listar los nombres de los empleados, identificando como 'Vendedor' si cobra comisión, y 'No vendedor' si no la cobra.
+SELECT ename, DECODE(comm, NULL, 'NO VENDEDOR', 'SI VENDEDOR') FROM emp;
+
 // 39. Calcular cuánto se paga mensualmente a todos los empleados.
+SELECT SUM(sal) FROM emp;
+
 // 40. Calcular cuantos empleados hay.
+SELECT COUNT(*) AS "Número de empleados" FROM emp;
+
 // 41. Calcular el sueldo medio de todos los empleados.
+SELECT ROUND(AVG(sal), 2) FROM emp;
+
 // 42. Calcular la comisión media de todos los empleados (teniendo en cuenta aquellos que no tienen comisión).
+SELECT ROUND(SUM(comm)/COUNT(*), 2) FROM emp;
+
 // 43. Calcular la comisión media de los empleados que sí tienen comisión.
+SELECT ROUND(AVG(comm), 2 ) FROM emp WHERE comm > 0;
+
 // 44. Calcular la suma de los sueldos de los empleados del Departamento 20.
+SELECT SUM(sal) FROM emp WHERE deptno = '20';
+
 // 45. Calcular el sueldo medio de los empleados que pertenezcan al Dept 10 o 30.
+SELECT ROUND(AVG(sal), 2) FROM emp WHERE deptno = '10' OR deptno = '30';
+
 // 46. Calcular la suma de sueldos que se pagan en cada uno de los departamentos 10 y 30 (por separado).
+
+
 // 47. Calcular cuantos empleados se han contratado cada año.
 // 48. Calcular el sueldo máximo y mínimo de cada departamento.
 // 49. Calcular cuanto se gana de media por cada oficio. Redondear a 2 decimales.
