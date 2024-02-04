@@ -134,13 +134,11 @@ SELECT ename, hiredate, sal, ROUND(MONTHS_BETWEEN(TO_DATE('31/12/' || TO_CHAR(hi
 SELECT COUNT(DISTINCT(job)) AS "TIPOS TRABAJOS DISTINTOS" FROM emp;
 
 // 36. Calcular el IRPF de cada empleado, teniendo en cuenta que para los 'CLERK' se les retiene un 15%, y a los 'ANALYST" un 20%. Al resto se les retiene un 19%.
-SELECT ename, job, sal FROM emp;
-SELECT job, sal, sal * 0.15 FROM emp WHERE job = 'CLERK';
-
-SELECT job, sal FROM emp WHERE sal = (SELECT sal * 0.15 FROM emp WHERE job IN 'CLERK');
-SELECT ename FROM emp WHERE sal > (SELECT sal FROM emp WHERE ename = 'JAMES');
+SELECT ename, job, sal, DECODE(job, 'CLERK', sal * 0.15, 'ANALYST', sal * 0.20, sal * 0.19) AS "IRPF", DECODE(job, 'CLERK', '15% Retención', 'ANALYST', '20% Retención', '19% Retención') AS "% Retención"  FROM emp;
 
 // 37. Efectuar una propuesta de aumento salarial: Para los empleados del Dept. 10 un 5%, Dept. 20 un 7%, Dept 30 un 8% y al resto un 3% del salario.
+SELECT ename, sal, deptno, DECODE(deptno, '10', '5% de aumento', '20', '7% de aumento' ) FROM emp;
+
 // 38. Listar los nombres de los empleados, identificando como 'Vendedor' si cobra comisión, y 'No vendedor' si no la cobra.
 // 39. Calcular cuánto se paga mensualmente a todos los empleados.
 // 40. Calcular cuantos empleados hay.
