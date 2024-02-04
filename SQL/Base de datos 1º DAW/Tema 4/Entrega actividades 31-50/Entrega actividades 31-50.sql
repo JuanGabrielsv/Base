@@ -122,6 +122,7 @@ SELECT last_day(sysdate) FROM dual;
 
 // 32. Calcular el último dia del mes (fecha) del mes actual, con horas, minutos y segundos.
 --select to_char(last_day(sysdate),'dd hh24:mi:ss') from dual;
+SELECT TO_CHAR(last_day(sysdate),'dd HH24:MI:SS') FROM dual;
 
 // 33. Calcular en qué MES (cifras) se ha contratado cada empleado.
 SELECT ename, hiredate, EXTRACT(MONTH FROM hiredate) FROM emp;
@@ -165,9 +166,16 @@ SELECT SUM(sal) FROM emp WHERE deptno = '20';
 SELECT ROUND(AVG(sal), 2) FROM emp WHERE deptno = '10' OR deptno = '30';
 
 // 46. Calcular la suma de sueldos que se pagan en cada uno de los departamentos 10 y 30 (por separado).
-
+SELECT deptno, SUM(sal) FROM emp WHERE DEPTNO IN(10, 30) GROUP BY deptno;
 
 // 47. Calcular cuantos empleados se han contratado cada año.
+SELECT TO_CHAR(hiredate, 'YYYY'), COUNT(*) FROM emp GROUP BY TO_CHAR(hiredate,'YYYY');
+
 // 48. Calcular el sueldo máximo y mínimo de cada departamento.
+SELECT deptno, MAX(sal), MIN(sal) FROM emp GROUP BY deptno;
+
 // 49. Calcular cuanto se gana de media por cada oficio. Redondear a 2 decimales.
+SELECT job, ROUND(AVG(sal), 2) FROM emp GROUP BY job;
+
 // 50. Cuántos dias de vacaciones correspondieron a cada empleado el primer año de trabajo (contando 1 día por semana entera trabajada).
+SELECT ename, FLOOR((TO_DATE('3112' || TO_CHAR(hiredate, 'YYYY')) - hiredate) / 7) FROM emp;
