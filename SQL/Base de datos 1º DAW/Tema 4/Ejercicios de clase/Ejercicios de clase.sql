@@ -482,14 +482,13 @@ SELECT futbolistas.nombre, equipos.nombre FROM futbolistas JOIN equipos ON futbo
 SELECT futbolistas.nombre, equipos.nombre FROM futbolistas JOIN equipos ON equipos.id = futbolistas.id_equipo;
 
 SELECT * FROM futbolistas JOIN equipos ON equipos.id = futbolistas.id_equipo; //megatabla
-
 SELECT * FROM futbolistas INNER JOIN equipos ON futbolistas.id_equipo = equipos.id;
 
 INSERT INTO futbolistas VALUES ('F11120','NOMBRE','APELL',null,'PORTERO',3000000,null,180,83);
 INSERT INTO equipos VALUES (4,'REAL BETIS BALOMPIE','BENITO VILLAMARIN',80000000);
+
 SELECT * FROM futbolistas;
 SELECT * FROM equipos;
-
 SELECT * FROM futbolistas LEFT JOIN equipos ON futbolistas.id_equipo = equipos.id;
 SELECT * FROM futbolistas RIGHT JOIN equipos ON futbolistas.id_equipo = equipos.id;
 SELECT * FROM futbolistas FULL OUTER JOIN equipos ON futbolistas.id_equipo = equipos.id;
