@@ -46,9 +46,6 @@ programa que haga lo siguiente:
 */
 package ejercicios_básicos_ejercicio43;
 
-public class Actor extends Trabajador {
-	
-		
-	
+public class Actor extends Trabajador {	
 
 }

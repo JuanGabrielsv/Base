@@ -47,6 +47,5 @@ programa que haga lo siguiente:
 package ejercicios_básicos_ejercicio43;
 
 public class Guionista {
-
 	
 }
