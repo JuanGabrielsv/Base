@@ -162,7 +162,7 @@ UPDATE FUTBOLISTAS SET ALTURA = 162, PESO = 60 WHERE NOMBRE LIKE 'ENRIQUE';
 SELECT equipos.nombre, COUNT(partidos.id_equipo_casa) FROM equipos, partidos WHERE equipos.id = partidos.id_equipo_casa AND equipos.nombre = 'EQUIPO A' GROUP BY equipos.nombre, partidos.id_equipo_casa;
 
 // 2. ¿Cuál es el nombre del equipo en el que juega el futbolista de menor peso?
-SELECT equipos.nombre, futbolistas.peso FROM futbolistas JOIN equipos ON futbolistas.id_equipo = equipos.id WHERE futbolistas.peso = (SELECT MIN(peso) FROM futbolistas);
+SELECT futbolistas.nombre, equipos.nombre, futbolistas.peso FROM futbolistas JOIN equipos ON futbolistas.id_equipo = equipos.id WHERE futbolistas.peso = (SELECT MIN(peso) FROM futbolistas);
 
 // 3. Devuelve en una única columna la fase: El futbolista NOMBRE juega en el equipo NOMBRE, correspondiendo al campo nombre de futbolista y de equipo
 SELECT 'El futbolista ' || futbolistas.nombre || ' juega en el equipo ' || equipos.nombre FROM futbolistas JOIN equipos ON futbolistas.id_equipo = equipos.id;
