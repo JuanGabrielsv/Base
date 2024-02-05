@@ -834,3 +834,64 @@ SELECT COUNT(*) FROM emp WHERE sal < (SELECT sal FROM emp WHERE ename = 'MILLER'
 /* 34.Calcular cuanto debería haber cobrado cada empleado en su primer año de trabajo (desde la fecha de contrato hasta el 31 de diciembre de ese año).*/
 SELECT ename, hiredate,sal, ROUND(MONTHS_BETWEEN(TO_DATE('31/12/' || TO_CHAR(hiredate, 'yyyy')),hiredate)*sal,2)"cuantía a cobrar el primer año" FROM emp;
 select ename,round(months_between(to_date('31/12/' || to_char(hiredate,'yyyy')),hiredate) * sal,2) "Cuantía a cobrar el primer año" from emp;
+
+-- 1. Mostrar todos los datos de los empleados de aquellos que trabajan en el mismo departamento que SCOTT, 
+--ganen más que lo que gana SMITH y tenga el mismo oficio que MILLER.
+SELECT * FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE ename = 'SCOTT') AND sal > (SELECT sal FROM emp WHERE ename = 'SMITH') and job = (SELECT job FROM emp WHERE ename = 'MILLER');
+ 
+-- 2. Mostrar nombre y el salario de los empleados que trabajan en el mismo departamento que FORD y tengan 
+--su mismo sueldo. Ordenar primero por el nombre ascendentemente y luego por el salario descendentemente.
+SELECT ename, sal FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE ename = 'FORD') AND sal = (SELECT sal FROM emp WHERE ename = 'FORD') ORDER BY ename, sal DESC;
+ 
+-- 3. Obtener el nombre del futbolista más mayor que jugó en el equipo de casa el 01/01/20 
+--y el nombre de su equipo
+
+select futbolistas.nombre,equipos.nombre 
+    from partidos join equipos on equipos.id = partidos.id_equipo_casa 
+    join futbolistas on futbolistas.id_equipo = equipos.id
+    where fecha = '01/01/2020' and fecha_nacimiento = (select min(fecha_nacimiento) 
+        from partidos 
+            join equipos on equipos.id = partidos.id_equipo_casa 
+            join futbolistas on futbolistas.id_equipo = equipos.id
+            where fecha = '01/01/2020');
+ 
+-- 4. Obtener los apellidos del futbolista de menor edad que jugó en el equipo de fuera el 08/01/20 
+--y el nombre de su equipo
+
+select futbolistas.apellidos,equipos.nombre 
+    from partidos join equipos on equipos.id = partidos.id_equipo_fuera 
+    join futbolistas on futbolistas.id_equipo = equipos.id
+    where fecha = '08/01/2020' and fecha_nacimiento = (select max(fecha_nacimiento) 
+        from partidos 
+            join equipos on equipos.id = partidos.id_equipo_fuera 
+            join futbolistas on futbolistas.id_equipo = equipos.id
+            where fecha = '08/01/2020');
+            
+-- 5. Devuelve el equipo y resultado del partido jugado el 15/01/20 con este formato "EQUIPO A 00-00 
+--EQUIPO B" en una única columna.
+SELECT ecasa.nombre || ' ' || resultado || ' ' || efuera.nombre "Partido disputado" FROM partidos
+    JOIN equipos ecasa ON id_equipo_casa = ecasa.id JOIN equipos efuera ON id_equipo_fuera = efuera.id WHERE fecha = '15/01/2020';
+ 
+-- 6. ¿En qué ciudad trabaja el empleado que más cobra de la empresa?
+SELECT loc FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE sal = (SELECT MAX(sal) FROM emp);
+ 
+-- 7. ¿Cómo se llama el departamento del empleado que tiene menor salario?
+SELECT dname FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE sal = (SELECT MIN(sal) FROM emp);
+ 
+-- 8. ¿Cómo se llama el futbolista de más altura que jugó el día 22/01/20?
+select futbolistas.nombre from futbolistas where id_equipo = (select id_equipo_casa from partidos where fecha = '22/01/20') or
+    id_equipo = (select id_equipo_fuera from partidos where fecha = '22/01/2020')
+    and altura = (select max(altura) from futbolistas where id_equipo = (select id_equipo_casa from partidos where fecha = '22/01/20') or
+    id_equipo = (select id_equipo_fuera from partidos where fecha = '22/01/2020'));
+ 
+-- 9. Se quiere saber el nombre del departamento y el nombre del empleado que tiene comisión y esta 
+--es mayor de 500
+select 'El futbolista ' || futbolistas.nombre || ' juega en el equipo ' || equipos.nombre from futbolistas join equipos on equipos.id = futbolistas.id_equipo;
+ 
+--10. Devuelve el nombre del empleado y el nombre del departamento de aquel que haya sido 
+--contratado antes en el año 1981.
+ 
+--11. Devuelve el nombre del empleado junto al nombre de su jefe con este formato en una columna: 
+--"El jefe de SMITH es JACOB".
+ 
+--12. Devuelve el nombre del departamento que tiene más trabajadores junto al número de trabajadores.
