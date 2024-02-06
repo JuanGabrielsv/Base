@@ -397,6 +397,14 @@ insert into comandas values (30,1,3,3,'COBRADO','02-03-2021','21:55');
 insert into comandas values (31,1,3,2,'COBRADO','02-03-2021','21:55');
 insert into comandas values (32,1,3,5,'COBRADO','02-03-2021','21:55');
 
+/* 1. Obtén todas las posiciones posibles (diferentes) de los futbolistas bajo el encabezado “Demarcaciones”. */
+/* 2. Muestra todos los datos almacenados de todos los futbolistas. */
+/* 3. Se quieren todos los datos de los futbolistas pero con los siguientes alias de columna: "id", "nombre", "apellidos", "fecha de nacimiento", "posición", "salario actual", "identificador equipo actual" */
+/* 4. Devuelve los apellidos de los futbolistas que su posición sea DEFENSA. Aplica un alias a apellidos para que se muestre “Futbolista” y asigna el alias F a la tabla futbolistas. */
+
+
+
+
 /* 1. Se quieren saber todos los campos/datos de los partidos que se hayan disputado entre el 01-01-2020 y el 31-01-2020. */
 /* 2. Devuelve todos los árbitros de los partidos sin repetir resultados. */
 /* 3. Se quiere saber el id y resultado de la tabla partidos en los que el resultado haya terminado en -00. Debes usar un alias de tabla para partidos, que sea p, y debes usarlo en tus columnas id y resultado. */

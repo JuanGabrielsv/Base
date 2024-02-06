@@ -397,6 +397,57 @@ insert into comandas values (30,1,3,3,'COBRADO','02-03-2021','21:55');
 insert into comandas values (31,1,3,2,'COBRADO','02-03-2021','21:55');
 insert into comandas values (32,1,3,5,'COBRADO','02-03-2021','21:55');
 
+/* 1. Obtén todas las posiciones posibles (diferentes) de los futbolistas bajo el encabezado “Demarcaciones”. */
+/* 2. Muestra todos los datos almacenados de todos los futbolistas. */
+/* 3. Se quieren todos los datos de los futbolistas pero con los siguientes alias de columna: "id", "nombre", "apellidos", "fecha de nacimiento", "posición", "salario actual", "identificador equipo actual" */
+/* 4. Devuelve los apellidos de los futbolistas que su posición sea DEFENSA. Aplica un alias a apellidos para que se muestre “Futbolista” y asigna el alias F a la tabla futbolistas. */
+/* 5. Devuelve los apellidos de los futbolistas que su posición sea DEFENSA ordenador de la Z a la A. */
+/* 6. Devuelve todos los datos de futbolistas ordenados primero por posición y luego por apellidos. */
+/* 7. Obtén el nombre de los futbolistas que cobran más de 150.000 euros (SALARIO). */
+/* 8. Muestra el ID de los futbolistas cuyo apellido sea GÓMEZ. */
+/* 9. Indica los apellidos de los futbolistas que empiezan por G. */
+/* 10.Devuelve todos los datos de los futbolistas cuya posición sea DEFENSA o DELANTERO. */
+/* 11.Obtén el nombre de los futbolistas que cobran entre 100.000 y 200.000 euros (SALARIO). */
+/* 12.Se va a hacer un aumento de sueldo de los PORTEROS. Para ello obtén el nombre, apellido y el nuevo salario de los PORTEROS si se aumenta un 10% el que tienen actualmente.
+      La lista debe estar ordenada alfabéticamente por los apellidos. */
+/* 13.Devuelve en una única columna el nombre del futbolista seguido de la palabra “es” y a continuación la posición que ocupa. La columna debe llamarse “Posiciones”. */      
+/* 14.Queremos saber todos los datos de los futbolistas que ganen más de 150.000 euros y sean defensas. */
+/* 15.Realiza una consulta que te devuelva los campos Nombre, Salario, Salario bruto terminado en la palabra “euros” y llamando a esa columna “Salario
+      bruto”. Nota: el salario bruto de un futbolista se obtiene añadiéndole el 50% de impuestos, es decir multiplicando por 1,5. */
+/* 16.Calcula el valor absoluto de -10. */
+/* 17.Obtén el exponente en base e de 4. */
+/* 18.Redondea el número 15,3 a 16. */
+/* 19.Redondea el número anterior (15,3) a 15. */
+/* 20.Calcula el resto de 15 entre 3 (15/3). */
+/* 21.Eleva 15 al exponente 2 (152). */
+/* 22.Redondea 15,789 con un decimal. */
+/* 23.Obtén la raíz cuadrada de 128. */
+/* 24.Trunca 15,789 a 1 decimal. */
+/* 25.Trunca 15,789 para dejarlo sin decimales (15). */
+/* 26.Trunca 157,89 para dejarlo en 100. */
+/* 27.Obtén el signo de -15 (es decir -1). */
+/* 28.Obtén en tres columnas independientes, el día, el mes y la fecha de hoy. */
+/* 29.Muestra por pantalla la fecha que será dentro de 6 meses utilizando ADD_MONTHS. */
+/* 30.Muestra el número de meses que hay entre hoy y la fecha de nacimiento de todos los futbolistas. */
+/* 31.¿Cuál es el último día de este mes? Muéstralo. */
+/* 32.¿Qué día será el próximo lunes? Ponlo por pantalla mediante una petición. */
+/* 33.Muestra el día que era hace 4 días. ¿Y el día demañana? */
+/* 34.Convierte ‘1000.45’ a un número. */
+/* 35.Convierte ‘1000.45€’ a un número. */
+/* 36.Convierte ‘-$1000.45’ a un número. */
+/* 37.Muestra el día de hoy con los siguientes formatos: 12/02/2021, 12/02/21, 12-feb-2021, 12 de febrero de 2021 */
+/* 38.Convierte el ID de la tabla FUTBOLISTAS en un número de tres cifras. */
+/* 39.Muestra todos los años de nacimiento de los futbolistas (solo el año, ej.: 1990, 1991, etc.). Ordénalos de menor a mayor año. */
+/* 40.Utiliza la función DECODE para mostrar, respecto de los EQUIPOS, el valor 1000k si el presupuesto es de 1000000, 
+      2000k si el presupuesto es de 2000000, o 3000k si el presupuesto asciende a 3000000. Y si no es ninguna que ponga "ok" */
+
+
+
+
+
+
+
+
 /* 1. Se quieren saber todos los campos/datos de los partidos que se hayan disputado entre el 01-01-2020 y el 31-01-2020. */
 /* 2. Devuelve todos los árbitros de los partidos sin repetir resultados. */
 /* 3. Se quiere saber el id y resultado de la tabla partidos en los que el resultado haya terminado en -00. Debes usar un alias de tabla para partidos, que sea p, y debes usarlo en tus columnas id y resultado. */
