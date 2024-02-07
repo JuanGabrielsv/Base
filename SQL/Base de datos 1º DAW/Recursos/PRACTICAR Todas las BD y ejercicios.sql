@@ -440,9 +440,26 @@ insert into comandas values (32,1,3,5,'COBRADO','02-03-2021','21:55');
 /* 39.Muestra todos los años de nacimiento de los futbolistas (solo el año, ej.: 1990, 1991, etc.). Ordénalos de menor a mayor año. */
 /* 40.Utiliza la función DECODE para mostrar, respecto de los EQUIPOS, el valor 1000k si el presupuesto es de 1000000, 
       2000k si el presupuesto es de 2000000, o 3000k si el presupuesto asciende a 3000000. Y si no es ninguna que ponga "ok" */
-
-
-
+/* 41.¿Cuántos futbolistas son delanteros? */
+/* 42.Dame una lista con el número de futbolistas que hay por cada posicion */
+/* 43.Obtén el nombre del futbolista más alto. */
+/* 44.Indica los apellidos del futbolista más delgado. */
+/* 45.¿Cuántos futbolistas miden entre 1,75 y 1,82? */
+/* 46.¿Cuál es la media de altura de los futbolistas con dos decimales? */
+/* 47.¿Cuál es la media de peso de los futbolistas con un decimal? */
+/* 48.¿Cuál es el futbolista que cobra más dinero? */
+/* 49.¿En qué año nació el futbolista que cobra menos dinero? */
+/* 50.Calcula la media del sueldo de los futbolistas (con dos decimales) agrupado por la posición que ocupan. */
+/* 51.Obtén el número de futbolistas en cada equipo. */
+/* 52.Obtén ahora el número de futbolistas de cada equipo cuyo ID sea 1 o 2. */
+/* 53.Devuelve el nombre del futbolista cuyo salario es el más bajo posible de todos los futbolistas nacidos entre 1985 y 1990. */
+/* 54.Muestra los datos de los nombres de los futbolistas junto al nombre de su equipo. */
+/* 55.Muestra el nombre de los futbolistas seguido del nombre del equipo en el que juega utilizando JOIN … ON. */
+/* 56.Calcular el numero de segundos transcurridos desde la ultima madianoche (máscara 'sssss' en to_char). */
+/* 57.Obtén el nombre, apellidos y nombre del equipo de los futbolistas que sean defensas. */
+/* 58.Seleccionar la fecha del sistema (nombre del día, día, nombre del mes, año, horas (24):minutos:segundos). No debe haber espacios sobrantes en el nombre del día o del mes. */
+/* 59.Calcular el número de días vividos hasta hoy por una persona nacida el día 3 de julio de 1970. */
+/* 60.Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan asignada comisión. */
 
 
 

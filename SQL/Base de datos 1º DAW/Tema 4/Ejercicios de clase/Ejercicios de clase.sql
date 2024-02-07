@@ -454,11 +454,6 @@ select id_equipo equipo,count(*) "total de futbolistas" from futbolistas group b
 --Obtén ahora el número de futbolistas de cada equipo cuyo ID sea 1 o 2.
 select id_equipo,count(*) from futbolistas group by id_equipo having id_equipo = 1 or id_equipo = 2; --in...
 
-/* 1. Devuelve el nombre del futbolista cuyo salario es el más bajo posible de todos los futbolistas nacidos entre 1985 y 1990. */
-
--- Esta es la forma lógica que he hecho pero no funciona porque siempre busca el valor mínimo de salario, si cambiamos la fecha el resultado sale en blanco lo he intentado de dos formas.
-select nombre from futbolistas where to_char(fecha_nacimiento,'yyyy') between 1985 and 1990 and salario = (select min(salario) from futbolistas where to_char(fecha_nacimiento,'yyyy') between 1985 and 1990);
-
 SELECT SYSDATE-TO_DATE('03/07/1970') FROM dual;
 SELECT SYSDATE-TO_DATE('03071970') FROM dual;
 SELECT FLOOR(SYSDATE-TO_DATE('03071970')) FROM dual;
@@ -505,7 +500,7 @@ SELECT * FROM futbolistas LEFT JOIN equipos ON futbolistas.id_equipo = equipos.i
 SELECT * FROM futbolistas RIGHT JOIN equipos ON futbolistas.id_equipo = equipos.id;
 SELECT * FROM futbolistas FULL OUTER JOIN equipos ON futbolistas.id_equipo = equipos.id;
 
---28 Calcular el numero de segundos transcurridos desde la ultima madianoche (máscara 'sssss' en to_char
+--28 Calcular el numero de segundos transcurridos desde la ultima madianoche (máscara 'sssss' en to_char).
 SELECT TO_CHAR(SYSDATE,'sssss') FROM dual;
 
 /* Ejercicio 8
@@ -513,12 +508,8 @@ Obtén el nombre, apellidos y nombre del equipo
 de los futbolistas que sean defensas. */
 SELECT futbolistas.nombre, futbolistas.apellidos, equipos.nombre FROM futbolistas JOIN equipos ON futbolistas.id_equipo = equipos.id WHERE posicion = 'DEFENSA';
 
-/* 1. Devuelve el nombre del futbolista cuyo salario es el más bajo posible de todos los futbolistas nacidos 
-entre 1985 y 1990.*/
-select * from futbolistas;
-select min(salario) from futbolistas;
-select nombre from futbolistas where to_char(fecha_nacimiento,'yyyy') between 1985 and 1990 and salario = (select min(salario)
-    from futbolistas where to_char(fecha_nacimiento,'yyyy') between 1985 and 1990);
+/* 1. Devuelve el nombre del futbolista cuyo salario es el más bajo posible de todos los futbolistas nacidos entre 1985 y 1990.*/
+select nombre from futbolistas where to_char(fecha_nacimiento,'yyyy') between 1985 and 1990 and salario = (select min(salario) from futbolistas where to_char(fecha_nacimiento,'yyyy') between 1985 and 1990);
 
 /*25. Seleccionar la fecha del sistema (nombre del día, día, nombre del mes, año, horas (24):minutos:segundos).
 No debe haber espacios sobrantes en el nombre del día o del mes.*/
