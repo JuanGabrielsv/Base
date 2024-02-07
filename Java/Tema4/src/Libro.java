@@ -46,7 +46,11 @@ Realiza un programa que haga lo siguiente:
 import ejercicios_básicos_ejercicio47.Articulo;
 
 public class Libro extends Articulo {
-	
+
 	private String autor;
+
+	public String getAutor() {
+		return autor;
+	}
 
 }

@@ -48,10 +48,26 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Carrito {
-	
+
 	private LocalDate fechaCreacion;
 	private LocalDate fechaModificion;
 	private String Cliente;
-	private List<String>articulos;
+	private List<String> articulos;
+
+	public LocalDate getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public LocalDate getFechaModificion() {
+		return fechaModificion;
+	}
+
+	public String getCliente() {
+		return Cliente;
+	}
+
+	public List<String> getArticulos() {
+		return articulos;
+	}
 
 }
