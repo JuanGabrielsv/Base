@@ -523,59 +523,59 @@ insert into comandas values (32,1,3,5,'COBRADO','02-03-2021','21:55');
 /* 112.Hacer un listado de empleados (nombre, puesto, sueldo, comision) que NO tengan asignada comisión. */
 /* 113.Seleccionar los empleados cuyo nombre empieza por 'A'. */
 /* 114.Seleccionar los empleados cuyo nombre tienen una A en cualquier posición. */
-/* 28. Seleccionar los empleados cuyo nombre no contiene ninguna 'A'. */
-/* 29. Seleccionar los empleados cuyo nombre empieza por una vocal. */
-/* 30. Seleccionar los empleados con sueldo entre 1000 y 2000 (ambos inclusive). */
-/* 31. Seleccionar los empleados con sueldo igual a 1000, 2000, 3000, 4000 o 5000. */
-/* 32. Seleccionar los empleados cuyo nombre comienza por A,B,C,J,K,M. */
-/* 33. Seleccionar los empleados cuyo sueldo es la 5000/2 + 500 o 5000-1000. */
-/* 34. Seleccionar los empleados cuyo sueldo es la 5000/2 + 500 ,5000-1000 o el salario máximo de todos los empleados. */
-/* 35. Seleccionar nombre, sueldo y sueldo formateado (ej.: 1,000.00) de todos los empleados. Se puede usar las máscaras de to_number en to_char. */
-/* 36. Seleccionar nombre, sueldo y sueldo formateado con el simbolo 'Dólar' (ej.: $1,000.00) de todos los empleados. Se puede usar las máscaras de to_number en to_char. */
-/* 37. Seleccionar nombre, sueldo y sueldo formateado con el simbolo 'Euro' (ej.: 1,000.00€ de todos los empleados. Se puede usar las máscaras de to_number en to_char. */
-/* 38. Seleccionar la fecha del sistema (día, mes, año, horas (24):minutos:segundos). */
-/* 39. Seleccionar la fecha del sistema (nombre del día, día, nombre del mes, año, horas (24):minutos:segundos). No debe haber espacios sobrantes en el nombre del día o del mes. */
-/* 40. Seleccionar la fecha del día 1 de enero de 2005, medíante una tira de caracteres y su máscara de formato (ej.: 01012021). */
-/* 41. Calcular el número de días vividos hasta hoy por una persona nacida el día 3 de julio de 1970. */
-/* 42. Calcular el número de segundos transcurridos desde la última medianoche (máscara 'sssss' en to_char). */
-/* 43. Calcular el número horas completas transcurridas desde la última medianoche. */
-/* 44. Calcular el número de meses transcurridos entre la fecha de contratación de cada empleado y hoy. */
-/* 45. Calcular el último dia del mes (fecha) del mes actual. */
-/* 46. Calcular el último dia del mes (fecha) del mes actual, con horas, minutos y segundos. */
-/* 47. Calcular en qué MES (cifras) se ha contratado cada empleado. */
-/* 48. Calcular cuanto debería haber cobrado cada empleado en su primer año de trabajo (desde la fecha de contrato hasta el 31 de diciembre de ese año). */
-/* 49. Cuantos oficios distintos hay en la tabla de empleados. */
-/* 50. Calcular el IRPF de cada empleado, teniendo en cuenta que para los 'CLERK' se les retiene un 15%, y a los 'ANALYST" un 20%. Al resto se les retiene un 19%. */
-/* 51. Efectuar una propuesta de aumento salarial: Para los empleados del Dept. 10 un 5%, Dept. 20 un 7%, Dept 30 un 8% y al resto un 3% del salario. */
-/* 52. Listar los nombres de los empleados, identificando como 'Vendedor' si cobra comisión, y 'No vendedor' si no la cobra. */
-/* 53. Calcular cuánto se paga mensualmente a todos los empleados. */
-/* 54. Calcular cuantos empleados hay. */
-/* 55. Calcular el sueldo medio de todos los empleados. */
-/* 56. Calcular la comisión media de todos los empleados (teniendo en cuenta aquellos que no tienen comisión). */
-/* 57. Calcular la comisión media de los empleados que sí tienen comisión. */
-/* 58. Calcular la suma de los sueldos de los empleados del Departamento 20. */
-/* 59. Calcular el sueldo medio de los empleados que pertenezcan al Dept 10 o 30. */
-/* 60. Calcular la suma de sueldos que se pagan en cada uno de los departamentos 10 y 30 (por separado). */
-/* 61. Calcular cuantos empleados se han contratado cada año. */
-/* 62. Calcular el sueldo máximo y mínimo de cada departamento. */
-/* 63. Calcular cuanto se gana de media por cada oficio. Redondear a 2 decimales. */
-/* 64. Cuántos dias de vacaciones correspondieron a cada empleado el primer año de trabajo (contando 1 día por semana entera trabajada). */
-/* 65. Indica el nombre y sueldo de los empleados que pertenezcan al departamento ubicado en Seatle. */
-/* 66. Indica el id, nombre y sueldo de los empleados que estén en departamentos donde haya otros compañeros empleados con una letra 'u' en su nombre,
+/* 115.Seleccionar los empleados cuyo nombre no contiene ninguna 'A'. */
+/* 116.Seleccionar los empleados cuyo nombre empieza por una vocal. */
+/* 117.Seleccionar los empleados con sueldo entre 1000 y 2000 (ambos inclusive). */
+/* 118.Seleccionar los empleados con sueldo igual a 1000, 2000, 3000, 4000 o 5000. */
+/* 119.Seleccionar los empleados cuyo nombre comienza por A,B,C,J,K,M. */
+/* 120.Seleccionar los empleados cuyo sueldo es la 5000/2 + 500 o 5000-1000. */
+/* 121.Seleccionar los empleados cuyo sueldo es la 5000/2 + 500 ,5000-1000 o el salario máximo de todos los empleados. */
+/* 123.Seleccionar nombre, sueldo y sueldo formateado (ej.: 1,000.00) de todos los empleados. Se puede usar las máscaras de to_number en to_char. */
+/* 124.Seleccionar nombre, sueldo y sueldo formateado con el simbolo 'Dólar' (ej.: $1,000.00) de todos los empleados. Se puede usar las máscaras de to_number en to_char. */
+/* 125.Seleccionar nombre, sueldo y sueldo formateado con el simbolo 'Euro' (ej.: 1,000.00€ de todos los empleados. Se puede usar las máscaras de to_number en to_char. */
+/* 126.Seleccionar la fecha del sistema (día, mes, año, horas (24):minutos:segundos). */
+/* 127.Seleccionar la fecha del sistema (nombre del día, día, nombre del mes, año, horas (24):minutos:segundos). No debe haber espacios sobrantes en el nombre del día o del mes. */
+/* 128.Seleccionar la fecha del día 1 de enero de 2005, medíante una tira de caracteres y su máscara de formato (ej.: 01012021). */
+/* 129.Calcular el número de días vividos hasta hoy por una persona nacida el día 3 de julio de 1970. */
+/* 130.Calcular el número de segundos transcurridos desde la última medianoche (máscara 'sssss' en to_char). */
+/* 131.Calcular el número horas completas transcurridas desde la última medianoche. */
+/* 132.Calcular el número de meses transcurridos entre la fecha de contratación de cada empleado y hoy. */
+/* 133.Calcular el último dia del mes (fecha) del mes actual. */
+/* 134.Calcular el último dia del mes (fecha) del mes actual, con horas, minutos y segundos. */
+/* 135.Calcular en qué MES (cifras) se ha contratado cada empleado. */
+/* 136.Calcular cuanto debería haber cobrado cada empleado en su primer año de trabajo (desde la fecha de contrato hasta el 31 de diciembre de ese año). */
+/* 137.Cuantos oficios distintos hay en la tabla de empleados. */
+/* 138.Calcular el IRPF de cada empleado, teniendo en cuenta que para los 'CLERK' se les retiene un 15%, y a los 'ANALYST" un 20%. Al resto se les retiene un 19%. */
+/* 139.Efectuar una propuesta de aumento salarial: Para los empleados del Dept. 10 un 5%, Dept. 20 un 7%, Dept 30 un 8% y al resto un 3% del salario. */
+/* 138.Listar los nombres de los empleados, identificando como 'Vendedor' si cobra comisión, y 'No vendedor' si no la cobra. */
+/* 139.Calcular cuánto se paga mensualmente a todos los empleados. */
+/* 140.Calcular cuantos empleados hay. */
+/* 141.Calcular el sueldo medio de todos los empleados. */
+/* 142.Calcular la comisión media de todos los empleados (teniendo en cuenta aquellos que no tienen comisión). */
+/* 143.Calcular la comisión media de los empleados que sí tienen comisión. */
+/* 144.Calcular la suma de los sueldos de los empleados del Departamento 20. */
+/* 145.Calcular el sueldo medio de los empleados que pertenezcan al Dept 10 o 30. */
+/* 146.Calcular la suma de sueldos que se pagan en cada uno de los departamentos 10 y 30 (por separado). */
+/* 147.Calcular cuantos empleados se han contratado cada año. */
+/* 148.Calcular el sueldo máximo y mínimo de cada departamento. */
+/* 149.Calcular cuanto se gana de media por cada oficio. Redondear a 2 decimales. */
+/* 150.Cuántos dias de vacaciones correspondieron a cada empleado el primer año de trabajo (contando 1 día por semana entera trabajada). */
+/* 151.Indica el nombre y sueldo de los empleados que pertenezcan al departamento ubicado en Seatle. */
+/* 152.Indica el id, nombre y sueldo de los empleados que estén en departamentos donde haya otros compañeros empleados con una letra 'u' en su nombre,
        y que además ganen sueldos mayores que la media de los sueldos de la empresa. */
-/* 65. Devuelve el id del departamento, nombre y puesto de los empleados que pertenezcan al departamento Executive. */
-/* 66. Muestra el nombre y salario de los empleados que tengan a KING como jefe directo. */
-/* 67. Devuelve el nombre y sueldo de los empleados que ganen más dinero que la media de la empresa, ordenado por sueldo de mayor a menor. */
-/* 68. Mostrar todos los datos de los empleados de aquellos que trabajan en el mismo departamento que SCOTT, ganen más que lo que gana SMITH y tenga el mismo oficio que MILLER. */
-/* 69. Mostrar nombre y el salario de los empleados que trabajan en el mismo departamento que FORD y tengan su mismo sueldo.
+/* 153.Devuelve el id del departamento, nombre y puesto de los empleados que pertenezcan al departamento Executive. */
+/* 154.Muestra el nombre y salario de los empleados que tengan a KING como jefe directo. */
+/* 155.Devuelve el nombre y sueldo de los empleados que ganen más dinero que la media de la empresa, ordenado por sueldo de mayor a menor. */
+/* 156.Mostrar todos los datos de los empleados de aquellos que trabajan en el mismo departamento que SCOTT, ganen más que lo que gana SMITH y tenga el mismo oficio que MILLER. */
+/* 157.Mostrar nombre y el salario de los empleados que trabajan en el mismo departamento que FORD y tengan su mismo sueldo.
        Ordenar primero por el nombre ascendentemente y luego por el salario descendentemente. */
-/* 70. Obtener el nombre del futbolista más mayor que jugó en el equipo de casa el 01/01/20 y el nombre de su equipo. */
-/* 71. Obtener los apellidos del futbolista de menor edad que jugó en el equipo de fuera el 08/01/20 y el nombre de su equipo */
-/* 72. Devuelve el equipo y resultado del partido jugado el 15/01/20 con este formato "EQUIPO A 00-00 EQUIPO B" en una única columna. */
-/* 73. ¿En qué ciudad trabaja el empleado que más cobra de la empresa? */
-/* 74. ¿Cómo se llama el departamento del empleado que tiene menor salario? */
-/* 75. ¿Cómo se llama el futbolista de más altura que jugó el día 22/01/20? */
-/* 76. Se quiere saber el nombre del departamento y el nombre del empleado que tiene comisión y esta es mayor de 500. */
-/* 77. Devuelve el nombre del empleado y el nombre del departamento de aquel que haya sido contratado antes en el año 1981. */
-/* 78. Devuelve el nombre del empleado junto al nombre de su jefe con este formato en una columna: "El jefe de SMITH es JACOB". */
-/* 79. Devuelve el nombre del departamento que tiene más trabajadores junto al número de trabajadores. */
+/* 158.Obtener el nombre del futbolista más mayor que jugó en el equipo de casa el 01/01/20 y el nombre de su equipo. */
+/* 159.Obtener los apellidos del futbolista de menor edad que jugó en el equipo de fuera el 08/01/20 y el nombre de su equipo */
+/* 160.Devuelve el equipo y resultado del partido jugado el 15/01/20 con este formato "EQUIPO A 00-00 EQUIPO B" en una única columna. */
+/* 161.¿En qué ciudad trabaja el empleado que más cobra de la empresa? */
+/* 162.¿Cómo se llama el departamento del empleado que tiene menor salario? */
+/* 163.¿Cómo se llama el futbolista de más altura que jugó el día 22/01/20? */
+/* 164.Se quiere saber el nombre del departamento y el nombre del empleado que tiene comisión y esta es mayor de 500. */
+/* 165.Devuelve el nombre del empleado y el nombre del departamento de aquel que haya sido contratado antes en el año 1981. */
+/* 166.Devuelve el nombre del empleado junto al nombre de su jefe con este formato en una columna: "El jefe de SMITH es JACOB". */
+/* 167.Devuelve el nombre del departamento que tiene más trabajadores junto al número de trabajadores. */
