@@ -655,3 +655,4 @@ INSERT INTO equipos VALUES (4,'REAL BETIS BALOMPIE','BENITO VILLAMARIN',80000000
 /* 165.Devuelve el nombre del empleado y el nombre del departamento de aquel que haya sido contratado antes en el año 1981. */
 /* 166.Devuelve el nombre del empleado junto al nombre de su jefe con este formato en una columna: "El jefe de SMITH es JACOB". */
 /* 167.Devuelve el nombre del departamento que tiene más trabajadores junto al número de trabajadores. */
+/* 168.Quiero saber la suma total de los presupuestos de los equipos
