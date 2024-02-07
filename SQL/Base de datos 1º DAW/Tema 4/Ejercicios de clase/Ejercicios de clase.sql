@@ -536,18 +536,11 @@ select * from equipos,partidos
  
 /*    
 Ejercicio 2
-Muestra los datos de los nombres de los futbolistas junto al nombre de su equipo.
-Necesitas multitablas, futbolistas y equipos. EMPLEA WHERE para relacionar FK de futbolistas y PK de equipos.*/
+Muestra los datos de los nombres de los futbolistas junto al nombre de su equipo. Necesitas multitablas, futbolistas y equipos. EMPLEA WHERE para relacionar FK de futbolistas y PK de equipos.*/
+select futbolistas.nombre "Futbolista",equipos.nombre "Equipo" from futbolistas,equipos where futbolistas.id_equipo = equipos.id;
 
-select * from futbolistas;
-select * from equipos;
-select futbolistas.nombre "Futbolista",equipos.nombre "Equipo" 
-    from futbolistas,equipos 
-    where futbolistas.id_equipo = equipos.id;
-select * from futbolistas cross join equipos;
- 
-select * from emp natural join dept;
- 
+select * from futbolistas cross join equipos; 
+select * from emp natural join dept; 
 select futbolistas.nombre, equipos.nombre from futbolistas join equipos on equipos.id =  futbolistas.id_equipo;
 select * from futbolistas join equipos on equipos.id =  futbolistas.id_equipo;
 select * from futbolistas;
@@ -581,7 +574,6 @@ select to_char(sysdate,'sssss') from dual;
 /*
 Ejercicio 8
 Obtén el nombre, apellidos y nombre del equipo de los futbolistas que sean defensas.*/
-
 select f.nombre,f.apellidos,e.nombre from futbolistas f join equipos e on f.id_equipo = e.id where f.posicion = 'DEFENSA';
 select futbolistas.nombre,futbolistas.apellidos,equipos.nombre from futbolistas join equipos on futbolistas.id_equipo = equipos.id where futbolistas.posicion = 'DEFENSA';
 
