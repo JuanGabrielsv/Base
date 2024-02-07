@@ -43,6 +43,10 @@ Realiza un programa que haga lo siguiente:
 9. Vacía la cesta e imprímela.
 10.Obtén e imprime el precio medio del artículo. */
 
-public class Libro {
+import ejercicios_básicos_ejercicio47.Articulo;
+
+public class Libro extends Articulo {
+	
+	private String autor;
 
 }

@@ -44,6 +44,14 @@ Realiza un programa que haga lo siguiente:
 
 package ejercicios_básicos_ejercicio47;
 
+import java.time.LocalDate;
+import java.util.List;
+
 public class Carrito {
+	
+	private LocalDate fechaCreacion;
+	private LocalDate fechaModificion;
+	private String Cliente;
+	private List<String>articulos;
 
 }
