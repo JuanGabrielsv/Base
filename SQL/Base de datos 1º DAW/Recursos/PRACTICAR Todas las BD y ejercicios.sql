@@ -397,137 +397,132 @@ insert into comandas values (30,1,3,3,'COBRADO','02-03-2021','21:55');
 insert into comandas values (31,1,3,2,'COBRADO','02-03-2021','21:55');
 insert into comandas values (32,1,3,5,'COBRADO','02-03-2021','21:55');
 
-/* 1. Obtén todas las posiciones posibles (diferentes) de los futbolistas bajo el encabezado “Demarcaciones”. */
-/* 2. Muestra todos los datos almacenados de todos los futbolistas. */
-/* 3. Se quieren todos los datos de los futbolistas pero con los siguientes alias de columna: "id", "nombre", "apellidos", "fecha de nacimiento", "posición", "salario actual", "identificador equipo actual" */
-/* 4. Devuelve los apellidos de los futbolistas que su posición sea DEFENSA. Aplica un alias a apellidos para que se muestre “Futbolista” y asigna el alias F a la tabla futbolistas. */
-/* 5. Devuelve los apellidos de los futbolistas que su posición sea DEFENSA ordenador de la Z a la A. */
-/* 6. Devuelve todos los datos de futbolistas ordenados primero por posición y luego por apellidos. */
-/* 7. Obtén el nombre de los futbolistas que cobran más de 150.000 euros (SALARIO). */
-/* 8. Muestra el ID de los futbolistas cuyo apellido sea GÓMEZ. */
-/* 9. Indica los apellidos de los futbolistas que empiezan por G. */
-/* 10.Devuelve todos los datos de los futbolistas cuya posición sea DEFENSA o DELANTERO. */
-/* 11.Obtén el nombre de los futbolistas que cobran entre 100.000 y 200.000 euros (SALARIO). */
-/* 12.Se va a hacer un aumento de sueldo de los PORTEROS. Para ello obtén el nombre, apellido y el nuevo salario de los PORTEROS si se aumenta un 10% el que tienen actualmente.
-      La lista debe estar ordenada alfabéticamente por los apellidos. */
-/* 13.Devuelve en una única columna el nombre del futbolista seguido de la palabra “es” y a continuación la posición que ocupa. La columna debe llamarse “Posiciones”. */      
-/* 14.Queremos saber todos los datos de los futbolistas que ganen más de 150.000 euros y sean defensas. */
-/* 15.Realiza una consulta que te devuelva los campos Nombre, Salario, Salario bruto terminado en la palabra “euros” y llamando a esa columna “Salario
-      bruto”. Nota: el salario bruto de un futbolista se obtiene añadiéndole el 50% de impuestos, es decir multiplicando por 1,5. */
-/* 16.Calcula el valor absoluto de -10. */
-/* 17.Obtén el exponente en base e de 4. */
-/* 18.Redondea el número 15,3 a 16. */
-/* 19.Redondea el número anterior (15,3) a 15. */
-/* 20.Calcula el resto de 15 entre 3 (15/3). */
-/* 21.Eleva 15 al exponente 2 (152). */
-/* 22.Redondea 15,789 con un decimal. */
-/* 23.Obtén la raíz cuadrada de 128. */
-/* 24.Trunca 15,789 a 1 decimal. */
-/* 25.Trunca 15,789 para dejarlo sin decimales (15). */
-/* 26.Trunca 157,89 para dejarlo en 100. */
-/* 27.Obtén el signo de -15 (es decir -1). */
-/* 28.Obtén en tres columnas independientes, el día, el mes y la fecha de hoy. */
-/* 29.Muestra por pantalla la fecha que será dentro de 6 meses utilizando ADD_MONTHS. */
-/* 30.Muestra el número de meses que hay entre hoy y la fecha de nacimiento de todos los futbolistas. */
-/* 31.¿Cuál es el último día de este mes? Muéstralo. */
-/* 32.¿Qué día será el próximo lunes? Ponlo por pantalla mediante una petición. */
-/* 33.Muestra el día que era hace 4 días. ¿Y el día demañana? */
-/* 34.Convierte ‘1000.45’ a un número. */
-/* 35.Convierte ‘1000.45€’ a un número. */
-/* 36.Convierte ‘-$1000.45’ a un número. */
-/* 37.Muestra el día de hoy con los siguientes formatos: 12/02/2021, 12/02/21, 12-feb-2021, 12 de febrero de 2021 */
-/* 38.Convierte el ID de la tabla FUTBOLISTAS en un número de tres cifras. */
-/* 39.Muestra todos los años de nacimiento de los futbolistas (solo el año, ej.: 1990, 1991, etc.). Ordénalos de menor a mayor año. */
-/* 40.Utiliza la función DECODE para mostrar, respecto de los EQUIPOS, el valor 1000k si el presupuesto es de 1000000, 
-      2000k si el presupuesto es de 2000000, o 3000k si el presupuesto asciende a 3000000. Y si no es ninguna que ponga "ok" */
-/* 41.¿Cuántos futbolistas son delanteros? */
-/* 42.Dame una lista con el número de futbolistas que hay por cada posicion */
-/* 43.Obtén el nombre del futbolista más alto. */
-/* 44.Indica los apellidos del futbolista más delgado. */
-/* 45.¿Cuántos futbolistas miden entre 1,75 y 1,82? */
-/* 46.¿Cuál es la media de altura de los futbolistas con dos decimales? */
-/* 47.¿Cuál es la media de peso de los futbolistas con un decimal? */
-/* 48.¿Cuál es el futbolista que cobra más dinero? */
-/* 49.¿En qué año nació el futbolista que cobra menos dinero? */
-/* 50.Calcula la media del sueldo de los futbolistas (con dos decimales) agrupado por la posición que ocupan. */
-/* 51.Obtén el número de futbolistas en cada equipo. */
-/* 52.Obtén ahora el número de futbolistas de cada equipo cuyo ID sea 1 o 2. */
-/* 53.Devuelve el nombre del futbolista cuyo salario es el más bajo posible de todos los futbolistas nacidos entre 1985 y 1990. */
-/* 54.Muestra los datos de los nombres de los futbolistas junto al nombre de su equipo. */
-/* 55.Muestra el nombre de los futbolistas seguido del nombre del equipo en el que juega utilizando JOIN … ON. */
-/* 56.Calcular el numero de segundos transcurridos desde la ultima madianoche (máscara 'sssss' en to_char). */
-/* 57.Obtén el nombre, apellidos y nombre del equipo de los futbolistas que sean defensas. */
-/* 58.Seleccionar la fecha del sistema (nombre del día, día, nombre del mes, año, horas (24):minutos:segundos). No debe haber espacios sobrantes en el nombre del día o del mes. */
-/* 59.Calcular el número de días vividos hasta hoy por una persona nacida el día 3 de julio de 1970. */
-/* 60.Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan asignada comisión. */
-/* 61.Muestra los datos de los nombres de los futbolistas junto al nombre de su equipo. Necesitas multitablas, futbolistas y equipos. EMPLEA WHERE para relacionar FK de futbolistas y PK de equipos.*/
-/* 62.Calcular el número de segundos transcurridos desde la última medianoche (máscara 'sssss' en to_char). */
-/* 63.Obtén el nombre, apellidos y nombre del equipo de los futbolistas que sean defensas. */
-/* 64.Obtén el nombre, apellidos y nombre del equipo de los futbolistas con un LEFT JOIN y un RIGHT JOIN. ¿Cuál es la diferencia? */
-/* 65.Indica el nombre y sueldo de los empleados que pertenezcan al departamento ubicado en Seatle. */
-
-/* 66.Indica el id, nombre y sueldo de los empleados que estén en departamentos donde haya otros compañeros 
-      empleados con una letra 'u' en su nombre, y que además ganen sueldos mayores que la media de los sueldos de la empresa. */
-/* 67.Devuelve el id del departamento, nombre y puesto de los empleados que pertenezcan al departamento Executive. */ 
-/* 68.Muestra el nombre y salario de los empleados que tengan a KING como jefe directo. */
-/* 69.Muestra el no mbre y salario de los empleados que estén en el mismo departamento de KING. */ 
-/* 70.Devuelve el nombre y sueldo de los empleados que ganen más dinero que la media de la empresa, ordenado por sueldo de mayor a menor. */
-/* 71.Mostrar los nombres de los empleados que tengan un salario mayor que el de JAMES. */
-/* 72.Mostrar los nombres de los empleados que trabajan en el mismo departamento que SMITH. Ordena el resultado. */
-/* 73.Mostrar qué empleados del departamento donde trabaja FORD, ganan más que lo que gana JAMES. */
-/* 74.¿Cuántos empleados ganan menos que MILLER? */
-/* 75.Calcular cuanto debería haber cobrado cada empleado en su primer año de trabajo (desde la fecha de contrato hasta el 31 de diciembre de ese año).*/
-/* 76.Mostrar todos los datos de los empleados de aquellos que trabajan en el mismo departamento que SCOTT, ganen más que lo que gana SMITH y tenga el mismo oficio que MILLER. */ 
-/* 77.Mostrar nombre y el salario de los empleados que trabajan en el mismo departamento que FORD y tengan 
-      su mismo sueldo. Ordenar primero por el nombre ascendentemente y luego por el salario descendentemente. */ 
-/* 78.Obtener el nombre del futbolista más mayor que jugó en el equipo de casa el 01/01/20 y el nombre de su equipo */ 
-/* 79.Obtener los apellidos del futbolista de menor edad que jugó en el equipo de fuera el 08/01/20 y el nombre de su equipo. */            
-/* 80.Devuelve el equipo y resultado del partido jugado el 15/01/20 con este formato "EQUIPO A 00-00 EQUIPO B" en una única columna. */ 
-/* 81.¿En qué ciudad trabaja el empleado que más cobra de la empresa? */ 
-/* 82.¿Cómo se llama el departamento del empleado que tiene menor salario? */ 
-/* 83.¿Cómo se llama el futbolista de más altura que jugó el día 22/01/20? */ 
-/* 84.Se quiere saber el nombre del departamento y el nombre del empleado que tiene comisión y esta es mayor de 500 */ 
-/* 85.Devuelve el nombre del empleado y el nombre del departamento de aquel que haya sido contratado antes en el año 1981. */
-/* 86.Devuelve el nombre del empleado junto al nombre de su jefe con este formato en una columna: "El jefe de SMITH es JACOB". */
-/* 87.Devuelve el nombre del departamento que tiene más trabajadores junto al número de trabajadores. */
-
-
-
-
-/* 1. Se quieren saber todos los campos/datos de los partidos que se hayan disputado entre el 01-01-2020 y el 31-01-2020. */
-/* 2. Devuelve todos los árbitros de los partidos sin repetir resultados. */
-/* 3. Se quiere saber el id y resultado de la tabla partidos en los que el resultado haya terminado en -00. Debes usar un alias de tabla para partidos, que sea p, y debes usarlo en tus columnas id y resultado. */
-/* 4. Devuelve el id, árbitro y estadio de los partidos pero ordenado de la siguiente forma: 1º por estadio en orden descendente, luego por árbitro y finalmente por id descendente. */
-/* 5. Devuelve el nombre (solo mayúscula la primera letra), el presupuesto reducido en 250000 seguido por un espacio y la palabra euros,
-      el presupuesto actual seguido por un espacio y la palabra euros, y el presupuesto más el 10% del mismo seguido de un espacio y la palabra euros,
-      correspondiente a los equipos y ordenados por el presupuesto en orden descendente. Utiliza los siguientes alias de columna en este orden para los presupuestos: "2022-23", "2023-24", "2024-25". */
-/* 6. Se quiere el nombre en minúsculas, la fecha de nacimiento y el salario dividido entre 12. Este salario debe redondearse para que tenga solo dos decimales,
-      y concatenar usando la función CONCAT con un espacio y la palabra euros. Los resultados deben estar ordenados por orden descendete de salario de futbolista. */
-/* 7. Devuelve el nombre (con tres caracteres) seguido de un "-" y el apellido de los fubtolistas en una columna que tenga por alias "NOM-APELLIDO" (emplea la función CONCAT),
-      y en otra columna el tamaño/número de caracteres del campo apellido de los futbolistas,
-      usando el alias de columna "CARACTERES APELLIDO". Debe ordenarse descendentemente por ese tamaño de caracteres de apellido. */
-/* 8. Queremos un listado de los nombres de los futbolistas quitando los segundos nombres (nombres compuestos, por ejemplo, borrar LUIS de PEDRO LUIS, quedando solo PEDRO) y poner como alias de columna "SOLO NOMBRE". */
-/* 9. Devuelve el nombre del futbolista cuyo salario es el más bajo posible de todos los futbolistas nacidos entre 1985 y 1990. */
-/* 10. Indica cuántos futbolistas que no juegan de portero tienen un apellido que termina en ez. */
-/* 11. Devuelve el id del equipo con alias "id equipo", el número de futbolistas con alias "Número de futbolistas" y
-   el salario medio redondeado a 2 decimales con alias "Salario medio" de los futbolistas agrupado por el equipo en el que juegan. */
-/* 12. ¿Cuántos partitos ha jugado como local EQUIPO A? Debes usar el campo nombre de equipos. */
-/* 13. ¿Cuál es el nombre del equipo en el que juega el futbolista de menor peso? */
-/* 14. Devuelve en una única columna la fase: El futbolista NOMBRE juega en el equipo NOMBRE, correspondiendo al campo nombre de futbolista y de equipo */
-/* 15. Obtener el nombre de todos los departamentos en minúsculas. */
-/* 16. Seleccionar todos los datos de la tabla empleados (todas las columnas). */
-/* 17. Devuelve ename, job, sal y comm de los empleando usando los siguientes alias de columnas: nombre, puesto, salario y comisión. */
-/* 18. Calcula cuántas semanas completas (de lunes a domingo) ha trabajado cada empleado, y devuelve dicho valor y el nombre del empleado.
-/* 19. Calcular el sueldo neto de cada empleado, y la retencion iRPF mensual, sabiendo que la retención es del 19% para el sueldo y de un 10% de la comisión,
-   (redondear a 2 decimales). Si el empleado no tiene comisión, se debe mostrar el valor 0.*/
-/* 20. Hacer un listado de empleados (nombre y salario) con sueldo superior a 1000. */
-/* 21. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto igual a CLERK. */
-/* 22. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto distinto a CLERK. */
-/* 23. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto distinto a CLERK y sueldo superior a 1500. */
-/* 24. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan asignada comisión. */
-/* 25. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que NO tengan asignada comisión. */
-/* 26. Seleccionar los empleados cuyo nombre empieza por 'A'. */
-/* 27. Seleccionar los empleados cuyo nombre tienen una A en cualquier posición. */
+/* 1.  Obtén todas las posiciones posibles (diferentes) de los futbolistas bajo el encabezado “Demarcaciones”. */
+/* 2.  Muestra todos los datos almacenados de todos los futbolistas. */
+/* 3.  Se quieren todos los datos de los futbolistas pero con los siguientes alias de columna: "id", "nombre", "apellidos", "fecha de nacimiento", "posición", "salario actual", "identificador equipo actual" */
+/* 4.  Devuelve los apellidos de los futbolistas que su posición sea DEFENSA. Aplica un alias a apellidos para que se muestre “Futbolista” y asigna el alias F a la tabla futbolistas. */
+/* 5.  Devuelve los apellidos de los futbolistas que su posición sea DEFENSA ordenador de la Z a la A. */
+/* 6.  Devuelve todos los datos de futbolistas ordenados primero por posición y luego por apellidos. */
+/* 7.  Obtén el nombre de los futbolistas que cobran más de 150.000 euros (SALARIO). */
+/* 8.  Muestra el ID de los futbolistas cuyo apellido sea GÓMEZ. */
+/* 9.  Indica los apellidos de los futbolistas que empiezan por G. */
+/* 10. Devuelve todos los datos de los futbolistas cuya posición sea DEFENSA o DELANTERO. */
+/* 11. Obtén el nombre de los futbolistas que cobran entre 100.000 y 200.000 euros (SALARIO). */
+/* 12. Se va a hacer un aumento de sueldo de los PORTEROS. Para ello obtén el nombre, apellido y el nuevo salario de los PORTEROS si se aumenta un 10% el que tienen actualmente.
+       La lista debe estar ordenada alfabéticamente por los apellidos. */
+/* 13. Devuelve en una única columna el nombre del futbolista seguido de la palabra “es” y a continuación la posición que ocupa. La columna debe llamarse “Posiciones”. */      
+/* 14. Queremos saber todos los datos de los futbolistas que ganen más de 150.000 euros y sean defensas. */
+/* 15. Realiza una consulta que te devuelva los campos Nombre, Salario, Salario bruto terminado en la palabra “euros” y llamando a esa columna “Salario
+       bruto”. Nota: el salario bruto de un futbolista se obtiene añadiéndole el 50% de impuestos, es decir multiplicando por 1,5. */
+/* 16. Calcula el valor absoluto de -10. */
+/* 17. Obtén el exponente en base e de 4. */
+/* 18. Redondea el número 15,3 a 16. */
+/* 19. Redondea el número anterior (15,3) a 15. */
+/* 20. Calcula el resto de 15 entre 3 (15/3). */
+/* 21. Eleva 15 al exponente 2 (152). */
+/* 22. Redondea 15,789 con un decimal. */
+/* 23. Obtén la raíz cuadrada de 128. */
+/* 24. Trunca 15,789 a 1 decimal. */
+/* 25. Trunca 15,789 para dejarlo sin decimales (15). */
+/* 26. Trunca 157,89 para dejarlo en 100. */
+/* 27. Obtén el signo de -15 (es decir -1). */
+/* 28. Obtén en tres columnas independientes, el día, el mes y la fecha de hoy. */
+/* 29. Muestra por pantalla la fecha que será dentro de 6 meses utilizando ADD_MONTHS. */
+/* 30. Muestra el número de meses que hay entre hoy y la fecha de nacimiento de todos los futbolistas. */
+/* 31. ¿Cuál es el último día de este mes? Muéstralo. */
+/* 32. ¿Qué día será el próximo lunes? Ponlo por pantalla mediante una petición. */
+/* 33. Muestra el día que era hace 4 días. ¿Y el día demañana? */
+/* 34. Convierte ‘1000.45’ a un número. */
+/* 35. Convierte ‘1000.45€’ a un número. */
+/* 36. Convierte ‘-$1000.45’ a un número. */
+/* 37. Muestra el día de hoy con los siguientes formatos: 12/02/2021, 12/02/21, 12-feb-2021, 12 de febrero de 2021 */
+/* 38. Convierte el ID de la tabla FUTBOLISTAS en un número de tres cifras. */
+/* 39. Muestra todos los años de nacimiento de los futbolistas (solo el año, ej.: 1990, 1991, etc.). Ordénalos de menor a mayor año. */
+/* 40. Utiliza la función DECODE para mostrar, respecto de los EQUIPOS, el valor 1000k si el presupuesto es de 1000000, 
+       2000k si el presupuesto es de 2000000, o 3000k si el presupuesto asciende a 3000000. Y si no es ninguna que ponga "ok" */
+/* 41. ¿Cuántos futbolistas son delanteros? */
+/* 42. Dame una lista con el número de futbolistas que hay por cada posicion */
+/* 43. Obtén el nombre del futbolista más alto. */
+/* 44. Indica los apellidos del futbolista más delgado. */
+/* 45. ¿Cuántos futbolistas miden entre 1,75 y 1,82? */
+/* 46. ¿Cuál es la media de altura de los futbolistas con dos decimales? */
+/* 47. ¿Cuál es la media de peso de los futbolistas con un decimal? */
+/* 48. ¿Cuál es el futbolista que cobra más dinero? */
+/* 49. ¿En qué año nació el futbolista que cobra menos dinero? */
+/* 50. Calcula la media del sueldo de los futbolistas (con dos decimales) agrupado por la posición que ocupan. */
+/* 51. Obtén el número de futbolistas en cada equipo. */
+/* 52. Obtén ahora el número de futbolistas de cada equipo cuyo ID sea 1 o 2. */
+/* 53. Devuelve el nombre del futbolista cuyo salario es el más bajo posible de todos los futbolistas nacidos entre 1985 y 1990. */
+/* 54. Muestra los datos de los nombres de los futbolistas junto al nombre de su equipo. */
+/* 55. Muestra el nombre de los futbolistas seguido del nombre del equipo en el que juega utilizando JOIN … ON. */
+/* 56. Calcular el numero de segundos transcurridos desde la ultima madianoche (máscara 'sssss' en to_char). */
+/* 57. Obtén el nombre, apellidos y nombre del equipo de los futbolistas que sean defensas. */
+/* 58. Seleccionar la fecha del sistema (nombre del día, día, nombre del mes, año, horas (24):minutos:segundos). No debe haber espacios sobrantes en el nombre del día o del mes. */
+/* 59. Calcular el número de días vividos hasta hoy por una persona nacida el día 3 de julio de 1970. */
+/* 60. Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan asignada comisión. */
+/* 61. Muestra los datos de los nombres de los futbolistas junto al nombre de su equipo. Necesitas multitablas, futbolistas y equipos. EMPLEA WHERE para relacionar FK de futbolistas y PK de equipos.*/
+/* 62. Calcular el número de segundos transcurridos desde la última medianoche (máscara 'sssss' en to_char). */
+/* 63. Obtén el nombre, apellidos y nombre del equipo de los futbolistas que sean defensas. */
+/* 64. Obtén el nombre, apellidos y nombre del equipo de los futbolistas con un LEFT JOIN y un RIGHT JOIN. ¿Cuál es la diferencia? */
+/* 65. Indica el nombre y sueldo de los empleados que pertenezcan al departamento ubicado en Seatle. */
+/* 66. Indica el id, nombre y sueldo de los empleados que estén en departamentos donde haya otros compañeros 
+       empleados con una letra 'u' en su nombre, y que además ganen sueldos mayores que la media de los sueldos de la empresa. */
+/* 67. Devuelve el id del departamento, nombre y puesto de los empleados que pertenezcan al departamento Executive. */ 
+/* 68. Muestra el nombre y salario de los empleados que tengan a KING como jefe directo. */
+/* 69. Muestra el no mbre y salario de los empleados que estén en el mismo departamento de KING. */ 
+/* 70. Devuelve el nombre y sueldo de los empleados que ganen más dinero que la media de la empresa, ordenado por sueldo de mayor a menor. */
+/* 71. Mostrar los nombres de los empleados que tengan un salario mayor que el de JAMES. */
+/* 72. Mostrar los nombres de los empleados que trabajan en el mismo departamento que SMITH. Ordena el resultado. */
+/* 73. Mostrar qué empleados del departamento donde trabaja FORD, ganan más que lo que gana JAMES. */
+/* 74. ¿Cuántos empleados ganan menos que MILLER? */
+/* 75. Calcular cuanto debería haber cobrado cada empleado en su primer año de trabajo (desde la fecha de contrato hasta el 31 de diciembre de ese año).*/
+/* 76. Mostrar todos los datos de los empleados de aquellos que trabajan en el mismo departamento que SCOTT, ganen más que lo que gana SMITH y tenga el mismo oficio que MILLER. */ 
+/* 77. Mostrar nombre y el salario de los empleados que trabajan en el mismo departamento que FORD y tengan 
+       su mismo sueldo. Ordenar primero por el nombre ascendentemente y luego por el salario descendentemente. */ 
+/* 78. Obtener el nombre del futbolista más mayor que jugó en el equipo de casa el 01/01/20 y el nombre de su equipo */ 
+/* 79. Obtener los apellidos del futbolista de menor edad que jugó en el equipo de fuera el 08/01/20 y el nombre de su equipo. */            
+/* 80. Devuelve el equipo y resultado del partido jugado el 15/01/20 con este formato "EQUIPO A 00-00 EQUIPO B" en una única columna. */ 
+/* 81. ¿En qué ciudad trabaja el empleado que más cobra de la empresa? */ 
+/* 82. ¿Cómo se llama el departamento del empleado que tiene menor salario? */ 
+/* 83. ¿Cómo se llama el futbolista de más altura que jugó el día 22/01/20? */ 
+/* 84. Se quiere saber el nombre del departamento y el nombre del empleado que tiene comisión y esta es mayor de 500 */ 
+/* 85. Devuelve el nombre del empleado y el nombre del departamento de aquel que haya sido contratado antes en el año 1981. */
+/* 86. Devuelve el nombre del empleado junto al nombre de su jefe con este formato en una columna: "El jefe de SMITH es JACOB". */
+/* 87. Devuelve el nombre del departamento que tiene más trabajadores junto al número de trabajadores. */
+/* 88. Se quieren saber todos los campos/datos de los partidos que se hayan disputado entre el 01-01-2020 y el 31-01-2020. */
+/* 89. Devuelve todos los árbitros de los partidos sin repetir resultados. */
+/* 90. Se quiere saber el id y resultado de la tabla partidos en los que el resultado haya terminado en -00. Debes usar un alias de tabla para partidos, que sea p, y debes usarlo en tus columnas id y resultado. */
+/* 91. Devuelve el id, árbitro y estadio de los partidos pero ordenado de la siguiente forma: 1º por estadio en orden descendente, luego por árbitro y finalmente por id descendente. */
+/* 92. Devuelve el nombre (solo mayúscula la primera letra), el presupuesto reducido en 250000 seguido por un espacio y la palabra euros,
+       el presupuesto actual seguido por un espacio y la palabra euros, y el presupuesto más el 10% del mismo seguido de un espacio y la palabra euros,
+       correspondiente a los equipos y ordenados por el presupuesto en orden descendente. Utiliza los siguientes alias de columna en este orden para los presupuestos: "2022-23", "2023-24", "2024-25". */
+/* 93. Se quiere el nombre en minúsculas, la fecha de nacimiento y el salario dividido entre 12. Este salario debe redondearse para que tenga solo dos decimales,
+       y concatenar usando la función CONCAT con un espacio y la palabra euros. Los resultados deben estar ordenados por orden descendete de salario de futbolista. */
+/* 94. Devuelve el nombre (con tres caracteres) seguido de un "-" y el apellido de los fubtolistas en una columna que tenga por alias "NOM-APELLIDO" (emplea la función CONCAT),
+       y en otra columna el tamaño/número de caracteres del campo apellido de los futbolistas,
+       usando el alias de columna "CARACTERES APELLIDO". Debe ordenarse descendentemente por ese tamaño de caracteres de apellido. */
+/* 95. Queremos un listado de los nombres de los futbolistas quitando los segundos nombres (nombres compuestos, por ejemplo, borrar LUIS de PEDRO LUIS, quedando solo PEDRO) y poner como alias de columna "SOLO NOMBRE". */
+/* 96. Devuelve el nombre del futbolista cuyo salario es el más bajo posible de todos los futbolistas nacidos entre 1985 y 1990. */
+/* 97. Indica cuántos futbolistas que no juegan de portero tienen un apellido que termina en ez. */
+/* 98. Devuelve el id del equipo con alias "id equipo", el número de futbolistas con alias "Número de futbolistas" y
+       el salario medio redondeado a 2 decimales con alias "Salario medio" de los futbolistas agrupado por el equipo en el que juegan. */
+/* 99. ¿Cuántos partitos ha jugado como local EQUIPO A? Debes usar el campo nombre de equipos. */
+/* 100.¿Cuál es el nombre del equipo en el que juega el futbolista de menor peso? */
+/* 101.Devuelve en una única columna la fase: El futbolista NOMBRE juega en el equipo NOMBRE, correspondiendo al campo nombre de futbolista y de equipo */
+/* 102.Obtener el nombre de todos los departamentos en minúsculas. */
+/* 103.Seleccionar todos los datos de la tabla empleados (todas las columnas). */
+/* 104.Devuelve ename, job, sal y comm de los empleando usando los siguientes alias de columnas: nombre, puesto, salario y comisión. */
+/* 105.Calcula cuántas semanas completas (de lunes a domingo) ha trabajado cada empleado, y devuelve dicho valor y el nombre del empleado.
+/* 106.Calcular el sueldo neto de cada empleado, y la retencion iRPF mensual, sabiendo que la retención es del 19% para el sueldo y de un 10% de la comisión,
+       (redondear a 2 decimales). Si el empleado no tiene comisión, se debe mostrar el valor 0.*/
+/* 107.Hacer un listado de empleados (nombre y salario) con sueldo superior a 1000. */
+/* 108.Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto igual a CLERK. */
+/* 109.Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto distinto a CLERK. */
+/* 110.Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan puesto distinto a CLERK y sueldo superior a 1500. */
+/* 111.Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan asignada comisión. */
+/* 112.Hacer un listado de empleados (nombre, puesto, sueldo, comision) que NO tengan asignada comisión. */
+/* 113.Seleccionar los empleados cuyo nombre empieza por 'A'. */
+/* 114.Seleccionar los empleados cuyo nombre tienen una A en cualquier posición. */
 /* 28. Seleccionar los empleados cuyo nombre no contiene ninguna 'A'. */
 /* 29. Seleccionar los empleados cuyo nombre empieza por una vocal. */
 /* 30. Seleccionar los empleados con sueldo entre 1000 y 2000 (ambos inclusive). */
@@ -567,7 +562,7 @@ insert into comandas values (32,1,3,5,'COBRADO','02-03-2021','21:55');
 /* 64. Cuántos dias de vacaciones correspondieron a cada empleado el primer año de trabajo (contando 1 día por semana entera trabajada). */
 /* 65. Indica el nombre y sueldo de los empleados que pertenezcan al departamento ubicado en Seatle. */
 /* 66. Indica el id, nombre y sueldo de los empleados que estén en departamentos donde haya otros compañeros empleados con una letra 'u' en su nombre,
-   y que además ganen sueldos mayores que la media de los sueldos de la empresa. */
+       y que además ganen sueldos mayores que la media de los sueldos de la empresa. */
 /* 65. Devuelve el id del departamento, nombre y puesto de los empleados que pertenezcan al departamento Executive. */
 /* 66. Muestra el nombre y salario de los empleados que tengan a KING como jefe directo. */
 /* 67. Devuelve el nombre y sueldo de los empleados que ganen más dinero que la media de la empresa, ordenado por sueldo de mayor a menor. */
