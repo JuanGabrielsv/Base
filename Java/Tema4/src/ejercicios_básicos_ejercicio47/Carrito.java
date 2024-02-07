@@ -3,8 +3,7 @@ Nos han encargado que programemos unas clases para gestionar el Carrito de compr
 tienda online. El carrito tendrá que guardar esta información:
 
 	o Fecha de creación
-	o Fecha de última actualización (se debe actualizar cada vez que se haga un cambio
-	  en la cesta)
+	o Fecha de última actualización (se debe actualizar cada vez que se haga un cambio en la cesta)
 	o Cliente
 		• DNI
 		• Nombre
