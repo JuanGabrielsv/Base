@@ -1,6 +1,7 @@
 /* EJERCICIO 47
 Nos han encargado que programemos unas clases para gestionar el Carrito de compra de una
 tienda online. El carrito tendrá que guardar esta información:
+
 	o Fecha de creación
 	o Fecha de última actualización (se debe actualizar cada vez que se haga un cambio
 	  en la cesta)
