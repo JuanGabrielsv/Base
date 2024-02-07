@@ -460,7 +460,36 @@ insert into comandas values (32,1,3,5,'COBRADO','02-03-2021','21:55');
 /* 58.Seleccionar la fecha del sistema (nombre del día, día, nombre del mes, año, horas (24):minutos:segundos). No debe haber espacios sobrantes en el nombre del día o del mes. */
 /* 59.Calcular el número de días vividos hasta hoy por una persona nacida el día 3 de julio de 1970. */
 /* 60.Hacer un listado de empleados (nombre, puesto, sueldo, comision) que tengan asignada comisión. */
+/* 61.Muestra los datos de los nombres de los futbolistas junto al nombre de su equipo. Necesitas multitablas, futbolistas y equipos. EMPLEA WHERE para relacionar FK de futbolistas y PK de equipos.*/
+/* 62.Calcular el número de segundos transcurridos desde la última medianoche (máscara 'sssss' en to_char). */
+/* 63.Obtén el nombre, apellidos y nombre del equipo de los futbolistas que sean defensas. */
+/* 64.Obtén el nombre, apellidos y nombre del equipo de los futbolistas con un LEFT JOIN y un RIGHT JOIN. ¿Cuál es la diferencia? */
+/* 65.Indica el nombre y sueldo de los empleados que pertenezcan al departamento ubicado en Seatle. */
 
+/* 66.Indica el id, nombre y sueldo de los empleados que estén en departamentos donde haya otros compañeros 
+      empleados con una letra 'u' en su nombre, y que además ganen sueldos mayores que la media de los sueldos de la empresa. */
+/* 67.Devuelve el id del departamento, nombre y puesto de los empleados que pertenezcan al departamento Executive. */ 
+/* 68.Muestra el nombre y salario de los empleados que tengan a KING como jefe directo. */
+/* 69.Muestra el no mbre y salario de los empleados que estén en el mismo departamento de KING. */ 
+/* 70.Devuelve el nombre y sueldo de los empleados que ganen más dinero que la media de la empresa, ordenado por sueldo de mayor a menor. */
+/* 71.Mostrar los nombres de los empleados que tengan un salario mayor que el de JAMES. */
+/* 72.Mostrar los nombres de los empleados que trabajan en el mismo departamento que SMITH. Ordena el resultado. */
+/* 73.Mostrar qué empleados del departamento donde trabaja FORD, ganan más que lo que gana JAMES. */
+/* 74.¿Cuántos empleados ganan menos que MILLER? */
+/* 75.Calcular cuanto debería haber cobrado cada empleado en su primer año de trabajo (desde la fecha de contrato hasta el 31 de diciembre de ese año).*/
+/* 76.Mostrar todos los datos de los empleados de aquellos que trabajan en el mismo departamento que SCOTT, ganen más que lo que gana SMITH y tenga el mismo oficio que MILLER. */ 
+/* 77.Mostrar nombre y el salario de los empleados que trabajan en el mismo departamento que FORD y tengan 
+      su mismo sueldo. Ordenar primero por el nombre ascendentemente y luego por el salario descendentemente. */ 
+/* 78.Obtener el nombre del futbolista más mayor que jugó en el equipo de casa el 01/01/20 y el nombre de su equipo */ 
+/* 79.Obtener los apellidos del futbolista de menor edad que jugó en el equipo de fuera el 08/01/20 y el nombre de su equipo. */            
+/* 80.Devuelve el equipo y resultado del partido jugado el 15/01/20 con este formato "EQUIPO A 00-00 EQUIPO B" en una única columna. */ 
+/* 81.¿En qué ciudad trabaja el empleado que más cobra de la empresa? */ 
+/* 82.¿Cómo se llama el departamento del empleado que tiene menor salario? */ 
+/* 83.¿Cómo se llama el futbolista de más altura que jugó el día 22/01/20? */ 
+/* 84.Se quiere saber el nombre del departamento y el nombre del empleado que tiene comisión y esta es mayor de 500 */ 
+/* 85.Devuelve el nombre del empleado y el nombre del departamento de aquel que haya sido contratado antes en el año 1981. */
+/* 86.Devuelve el nombre del empleado junto al nombre de su jefe con este formato en una columna: "El jefe de SMITH es JACOB". */
+/* 87.Devuelve el nombre del departamento que tiene más trabajadores junto al número de trabajadores. */
 
 
 
