@@ -45,25 +45,33 @@ Realiza un programa que haga lo siguiente:
 package ejercicios_básicos_ejercicio47;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Carrito {
 
 	private LocalDate fechaCreacion;
-	private LocalDate fechaModificion;
-	private String Cliente;
+	private LocalDate fechaModificacion;
+	private Cliente cliente;
 	private List<String> articulos;
+	
+	public Carrito(Cliente cliente) {
+		this.cliente = cliente;
+		fechaCreacion = LocalDate.now();
+		fechaModificacion = LocalDate.now();
+		articulos = new ArrayList<>();
+	}
 
 	public LocalDate getFechaCreacion() {
 		return fechaCreacion;
 	}
 
 	public LocalDate getFechaModificion() {
-		return fechaModificion;
+		return fechaModificacion;
 	}
 
-	public String getCliente() {
-		return Cliente;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
 	public List<String> getArticulos() {

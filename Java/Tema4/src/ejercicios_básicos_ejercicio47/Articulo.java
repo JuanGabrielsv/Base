@@ -48,13 +48,13 @@ package ejercicios_básicos_ejercicio47;
 public class Articulo {
 
 	private String descripcion;
-	private Integer precio;
+	private Double precio;
 
 	public String getDescripcion() {
 		return descripcion;
 	}
 
-	public Integer getPrecio() {
+	public Double getPrecio() {
 		return precio;
 	}
 
@@ -62,7 +62,7 @@ public class Articulo {
 		this.descripcion = descripcion;
 	}
 
-	public void setPrecio(Integer precio) {
+	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
 	

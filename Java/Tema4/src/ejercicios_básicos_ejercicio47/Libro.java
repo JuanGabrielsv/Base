@@ -45,12 +45,13 @@ Realiza un programa que haga lo siguiente:
 package ejercicios_básicos_ejercicio47;
 
 public class Libro extends Articulo {
-	
+
 	String autor;
-	
+
 	public String getAutor() {
 		return autor;
 	}
+
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
