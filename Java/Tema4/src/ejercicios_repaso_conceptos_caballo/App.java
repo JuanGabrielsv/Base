@@ -1,4 +1,4 @@
-package repasorepaso;
+package ejercicios_repaso_conceptos_caballo;
 
 public class App {
 
