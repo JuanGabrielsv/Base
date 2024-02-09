@@ -57,9 +57,9 @@ public class Carrito {
 	
 	public Carrito(Cliente cliente) {
 		this.cliente = cliente;
-		fechaCreacion = LocalDate.now();
-		fechaModificacion = LocalDate.now();
-		articulos = new ArrayList<>();
+		this.fechaCreacion = LocalDate.now();
+		this.fechaModificacion = LocalDate.now();
+		this.articulos = new ArrayList<>();
 	}
 
 	public LocalDate getFechaCreacion() {
