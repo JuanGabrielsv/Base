@@ -53,8 +53,8 @@ public class Carrito {
 	private LocalDate fechaCreacion;
 	private LocalDate fechaModificacion;
 	private Cliente cliente;
-	private List<String> articulos;
-	
+	private List<Articulo> articulos;
+
 	public Carrito(Cliente cliente) {
 		this.cliente = cliente;
 		this.fechaCreacion = LocalDate.now();
@@ -66,7 +66,7 @@ public class Carrito {
 		return fechaCreacion;
 	}
 
-	public LocalDate getFechaModificion() {
+	public LocalDate getFechaModificacion() {
 		return fechaModificacion;
 	}
 
@@ -74,8 +74,28 @@ public class Carrito {
 		return cliente;
 	}
 
-	public List<String> getArticulos() {
+	public List<Articulo> getArticulos() {
 		return articulos;
+	}
+
+	public Integer getCantidad() {
+		return articulos.size();
+	}
+
+	public Double getTotal() {		
+		Double total = 0D;		
+		for (Articulo articulo : articulos) {
+			total = total + articulo.getPrecio();
+		}		
+		return total;
+	}
+
+	public Double getPrecioMedio() {
+		if (getCantidad() == 0) {
+			return 0D;
+
+		}
+		return getTotal() / getCantidad();
 	}
 
 }
