@@ -10,5 +10,15 @@ public class Calculadora {
 		Integer resta = num1 - num2;
 		return resta;
 	}
+	
+	public static Integer multiplicar(Integer num1, Integer num2) {
+		Integer multiplicar = num1 * num2;
+		return multiplicar;
+	}
+	
+	public static Integer dividir(Integer num1, Integer num2) {
+		Integer dividir = num1 / num2;
+		return dividir;
+	}
 
 }
