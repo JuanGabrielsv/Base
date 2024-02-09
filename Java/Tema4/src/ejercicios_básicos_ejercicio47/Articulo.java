@@ -58,4 +58,14 @@ public class Articulo {
 		return precio;
 	}
 
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public void setPrecio(Integer precio) {
+		this.precio = precio;
+	}
+	
+	
+
 }

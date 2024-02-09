@@ -58,4 +58,12 @@ public class Ropa extends Articulo {
 		return color;
 	}
 
+	public void setTalla(String talla) {
+		this.talla = talla;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
 }
