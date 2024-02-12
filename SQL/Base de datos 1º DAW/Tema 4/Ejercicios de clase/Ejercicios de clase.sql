@@ -890,3 +890,39 @@ select 'El futbolista ' || futbolistas.nombre || ' juega en el equipo ' || equip
 --"El jefe de SMITH es JACOB".
  
 --12. Devuelve el nombre del departamento que tiene más trabajadores junto al número de trabajadores.
+
+// 1 Indica el nombre de todos los productos
+SELECT nombre FROM productos;
+
+// 2 ¿Cuántos productos son del tipo PENDIENTE?
+SELECT COUNT(*) FROM productos WHERE tipo = 'PENDIENTE';
+
+// 3 Indica el nombre y el precio de los productos cuyo precio está entre 100 y 500 euros.
+SELECT nombre, precio FROM productos WHERE precio BETWEEN 100 AND 500;
+
+// 4 Indica los diferentes tipos de productos que hay, sin repetir, y ordenados de la Z a la A.
+SELECT DISTINCT tipo FROM productos ORDER BY tipo DESC;
+
+// 5 ¿Cuál es el precio medio (AVG) de los productos cuyo nombre empieza por la letra M?
+SELECT AVG(precio) FROM productos WHERE nombre like 'M%';
+
+// 6 ¿Cuál es el CP de los clientes que se apellidan ALVAREZ?
+SELECT cp FROM clientes WHERE nombre LIKE '%ALVAREZ';
+
+// 7 Indica solo el nombre (sin el apellido) de los clientes donde esté en mayúsculas solo la primera letra.
+SELECT INITCAP(SUBSTR(nombre, 1, INSTR(nombre, ' '))) FROM clientes;
+
+// 8 ¿Cuántos clientes viven en Bormujos? (Son los que tienen el CP igual a 41930).
+SELECT COUNT(*) FROM clientes WHERE cp = 41930;
+
+// 9 Queremos saber el nombre y el teléfono de los proveedores que si tienen teléfono (no es null).
+SELECT nombre, tfno FROM proveedores WHERE tfno IS NOT NULL;
+
+// 10 ¿A cuántos proveedores les falta el teléfono?
+SELECT COUNT(*) FROM proveedores WHERE tfno IS NULL;
+
+// 11 ¿Cuál es la suma total de las ventas de productos hasta ahora (registros de la tabla compras)?
+SELECT SUM(precio) FROM compras JOIN productos ON compras.producto = productos.ref;
+
+// 12 Se quiere saber el nombre de los productos, sin repetir, que ha comprado PEDRO ALVAREZ (utiliza el nombre del cliente, no su id).
+SELECT 

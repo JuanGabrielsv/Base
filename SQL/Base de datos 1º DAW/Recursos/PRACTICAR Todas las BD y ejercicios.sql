@@ -473,6 +473,71 @@ DELETE FROM FUTBOLISTAS_2023 WHERE ID LIKE 'F00120' OR ID LIKE 'F00420';
 INSERT INTO futbolistas VALUES ('F11120','NOMBRE','APELL',null,'PORTERO',3000000,null,180,83);
 INSERT INTO equipos VALUES (4,'REAL BETIS BALOMPIE','BENITO VILLAMARIN',80000000);
 
+// BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL
+
+DROP TABLE PRODUCTOS CASCADE CONSTRAINTS;
+DROP TABLE CLIENTES CASCADE CONSTRAINTS;
+DROP TABLE PROVEEDORES CASCADE CONSTRAINTS;
+DROP TABLE COMPRAS CASCADE CONSTRAINTS;
+
+CREATE TABLE PRODUCTOS(
+    REF INT PRIMARY KEY,
+    NOMBRE VARCHAR(50),
+    TIPO VARCHAR(50) CHECK (TIPO IN ('ANILLO','PULSERA','COLGANTE','PENDIENTE')),
+    PRECIO NUMBER(6,2),
+    PROVEEDOR INT
+);
+CREATE TABLE CLIENTES(
+    ID INT PRIMARY KEY,
+    NOMBRE VARCHAR(100),
+    CP INT
+);
+CREATE TABLE PROVEEDORES(
+    ID INT PRIMARY KEY,
+    NOMBRE VARCHAR(100),
+    TFNO INT
+);
+CREATE TABLE COMPRAS(
+    REF INT PRIMARY KEY,
+    CLIENTE INT,
+    PRODUCTO INT,
+    FECHA DATE,
+    PAGO VARCHAR(50) CHECK (PAGO IN ('METALICO','TARJETA'))
+);
+ALTER TABLE PRODUCTOS
+ADD FOREIGN KEY (PROVEEDOR) REFERENCES PROVEEDORES(ID);
+ALTER TABLE COMPRAS
+ADD FOREIGN KEY (CLIENTE) REFERENCES CLIENTES(ID);
+ALTER TABLE COMPRAS
+ADD FOREIGN KEY (PRODUCTO) REFERENCES PRODUCTOS(REF);
+
+INSERT INTO PROVEEDORES VALUES (1,'METALES S.L.',123456789);
+INSERT INTO PROVEEDORES VALUES (2,'TODO PLATA',111111222);
+INSERT INTO PROVEEDORES VALUES (3,'AROS',NULL);
+INSERT INTO PRODUCTOS VALUES (1,'MOON','ANILLO',50,1);
+INSERT INTO PRODUCTOS VALUES (2,'MARTE','PULSERA',75,1);
+INSERT INTO PRODUCTOS VALUES (3,'MOON','COLGANTE',45.49,3);
+INSERT INTO PRODUCTOS VALUES (4,'JUPITER','PENDIENTE',179.99,2);
+INSERT INTO PRODUCTOS VALUES (5,'ESTRELLAS','PENDIENTE',15.50,1);
+INSERT INTO PRODUCTOS VALUES (6,'COMETA','PENDIENTE',79.99,2);
+INSERT INTO PRODUCTOS VALUES (7,'FUGAZ','ANILLO',399.99,2);
+INSERT INTO CLIENTES VALUES (1,'PEDRO ALVAREZ',41110);
+INSERT INTO CLIENTES VALUES (2,'GRACIA GOMEZ',41930);
+INSERT INTO CLIENTES VALUES (3,'LUISA GUTIERREZ',41930);
+INSERT INTO CLIENTES VALUES (4,'ANTONIO ALVAREZ',41927);
+INSERT INTO CLIENTES VALUES (5,'ANA GARCIA',41930);
+INSERT INTO CLIENTES VALUES (6,'MARIO GARCIA',41010);
+INSERT INTO COMPRAS VALUES (1,1,1,'02/09/2022','METALICO');
+INSERT INTO COMPRAS VALUES (2,2,4,'11/11/2022','METALICO');
+INSERT INTO COMPRAS VALUES (3,3,4,'01/01/2023','TARJETA');
+INSERT INTO COMPRAS VALUES (4,5,5,'22/06/2023','METALICO');
+INSERT INTO COMPRAS VALUES (5,1,2,'02/09/2023','METALICO');
+INSERT INTO COMPRAS VALUES (6,1,3,'12/10/2023','TARJETA');
+INSERT INTO COMPRAS VALUES (7,5,6,'15/10/2023','TARJETA');
+INSERT INTO COMPRAS VALUES (8,4,7,'07/11/2023','METALICO');
+INSERT INTO COMPRAS VALUES (9,6,2,'28/12/2023','METALICO');
+INSERT INTO COMPRAS VALUES (10,2,3,'02/02/2024','TARJETA');
+
 /* 1.  Obtén todas las posiciones posibles (diferentes) de los futbolistas bajo el encabezado “Demarcaciones”. */
 /* 2.  Muestra todos los datos almacenados de todos los futbolistas. */
 /* 3.  Se quieren todos los datos de los futbolistas pero con los siguientes alias de columna: "id", "nombre", "apellidos", "fecha de nacimiento", "posición", "salario actual", "identificador equipo actual" */
@@ -655,4 +720,47 @@ INSERT INTO equipos VALUES (4,'REAL BETIS BALOMPIE','BENITO VILLAMARIN',80000000
 /* 165.Devuelve el nombre del empleado y el nombre del departamento de aquel que haya sido contratado antes en el año 1981. */
 /* 166.Devuelve el nombre del empleado junto al nombre de su jefe con este formato en una columna: "El jefe de SMITH es JACOB". */
 /* 167.Devuelve el nombre del departamento que tiene más trabajadores junto al número de trabajadores. */
-/* 168.Quiero saber la suma total de los presupuestos de los equipos
+/* 168.Quiero saber la suma total de los presupuestos de los equipos. */
+/* 169.Indica el nombre de todos los productos. */
+/* 170.¿Cuántos productos son del tipo PENDIENTE?. */
+/* 171.Indica el nombre y el precio de los productos cuyo precio está entre 100 y 500 euros. */
+/* 172.Indica los diferentes tipos de productos que hay, sin repetir, y ordenados de la Z a la A. */
+/* 173.¿Cuál es el precio medio (AVG) de los productos cuyo nombre empieza por la letra M?. */
+/* 174.¿Cuál es el CP de los clientes que se apellidan ALVAREZ?. */
+/* 175.Indica solo el nombre (sin el apellido) de los clientes donde esté en mayúsculas solo la primera letra. */
+/* 176.¿Cuántos clientes viven en Bormujos? (Son los que tienen el CP igual a 41930). */
+/* 177.Queremos saber el nombre y el teléfono de los proveedores que si tienen teléfono (no es null). */
+/* 178.¿A cuántos proveedores les falta el teléfono?. */
+/* 179.¿Cuál es la suma total de las ventas de productos hasta ahora (registros de la tabla compras)?. */
+/* 180.Se quiere saber el nombre de los productos, sin repetir, que ha comprado PEDRO ALVAREZ (utiliza el nombre del cliente, no su id). */
+/* 181.Indica el nombre y el precio del producto más caro (solo el más caro) que ha comprado GRACIA GOMEZ. */
+/* 182.¿Cuál es el nombre del proveedor del producto que ha comprado ANTONIO ALVAREZ?. */
+/* 183.¿Cuántas compras ha hecho ANA GARCÍA? Indica solo el número. */
+/* 184.Indica el nombre del producto más caro del tipo ANILLO. */
+/* 185.Indica el nombre del prodcuto más barato del tipo PENDIENTE. */
+/* 186.Indica el nombre y el código postal de los clientes de Bormujos (41930) y Mairena del Aljarafe (41927). Para ello emplea UNION de ambos select. */
+/* 187.Di todos los datos de los proveedore que tengan al menos una vocal O en su nombre. */
+/* 188.Devuelve el precio del producto cuyo nombre es JUPITER redondeado a un único decimal. */
+/* 189.¿Cuántas compras se hicieron en 2022? */
+/* 190.Muestra en una lista agrupada los años y los números de compras hechas en cada uno de esos años (una fila por año). */
+/* 191.Se quiere mostrar lo que ha comprado Mario con este formato: "El día DD/MM/YYYY, Mario compró PRODUCTO en metalico". 
+       Es importante respetar la mayúscula inicial y las minúsculas indicadas en el ejemplo, mostranto los datos de la compra de MARIO GARCIA. */
+/* 192.Se quiere saber el nombre de los productos que se han comprado sin repetir el nombre. */
+/* 193.¿Qué día de la semana fue cuando se hizo la primera compra (Ej: lunes, martes, etc ?. */
+/* 194.Indica el nombre de los futbolistas y el nombre del equipo en el que juegan. */
+/* 195.¿Cuál es el nombre del equipo donde juega el jugador más alto?. */
+/* 196.¿Cómo se llama el jugador más alto?. */
+/* 197.¿Cuánto mide el jugador más alto?. */
+/* 198.Utiliza UNION para mostrar el nombre de los futbolistas del equipo A, y los del equipo B. */
+/* 199.¿Cuántos futbolistas han nacido antes de 1995?. */
+/* 200.Devuelve una lista agrupada por posición y número de jugadores que juegan en dicha posición. POSICION NUM_JUGADORES Ej.: MEDIOCENTRO 3 DEFENSA 2 PORTERO 1. */
+/* 201.¿Cuántos partidos se han jugado en enero?. */
+/* 202.Devuelve una lista agrupada con los nombres de los equipos y el salario medio de los futbolistas de dichos equipos. */
+/* 203.¿Cuántos meses han pasado entre el primer partido disputado y el último partido jugado?. */
+/* 204.Se quiere el nombre y los apellidos de los futbolistas y tengan un salario superior a 130000. 
+       Debe devolverse una única columna con este formato: apellidos, nombre (todo en minúsculas). */
+/* 205.Devuelve el nombre del estadio, junto al nombre del árbitro (la primera letra en mayúsculas y el resto 
+       en minúsculas para ambos campos) de aquellos partidos que se hayan jugado en domingo. */
+/* 206.Devuelve el nombre de los árbitros sin repetir. */
+/* 207.Se quiere cambiar el formato de los resultados de los partidos, se quiere que en lugar de ser 01-00, se muestre 1-0. */
+/* 208.¿Cuántos goles en total se han marcado hasta ahora? */
