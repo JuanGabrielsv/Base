@@ -480,13 +480,28 @@ SELECT DISTINCT posicion "Demarcaciones" FROM futbolistas;
 SELECT * FROM futbolistas;
 
 /* 3.  Se quieren todos los datos de los futbolistas pero con los siguientes alias de columna: "id", "nombre", "apellidos", "fecha de nacimiento", "posición", "salario actual", "identificador equipo actual" */
-
+SELECT id "id", nombre "Nombre", apellidos "Apellidos", fecha_nacimiento "Fecha de nacimiento", posicion "Posición", salario "Salario actual", id_equipo "Identificador equipo actual" FROM futbolistas;
 
 /* 4.  Devuelve los apellidos de los futbolistas que su posición sea DEFENSA. Aplica un alias a apellidos para que se muestre “Futbolista” y asigna el alias F a la tabla futbolistas. */
+SELECT f.apellidos "Futbolista" FROM futbolistas f WHERE posicion IN 'DEFENSA';
+SELECT f.apellidos "Futbolista" FROM futbolistas f WHERE posicion LIKE 'DEFENSA';
+SELECT f.apellidos "Futbolista" FROM futbolistas f WHERE posicion = 'DEFENSA';
+
 /* 5.  Devuelve los apellidos de los futbolistas que su posición sea DEFENSA ordenador de la Z a la A. */
+SELECT apellidos FROM futbolistas;
+SELECT apellidos FROM futbolistas WHERE posicion = 'DEFENSA' ORDER BY posicion DESC;
+
 /* 6.  Devuelve todos los datos de futbolistas ordenados primero por posición y luego por apellidos. */
+SELECT * FROM futbolistas ORDER BY posicion, apellidos;
+SELECT * FROM futbolistas ORDER BY posicion ASC;
+SELECT * FROM futbolistas ORDER BY apellidos ASC;
+
 /* 7.  Obtén el nombre de los futbolistas que cobran más de 150.000 euros (SALARIO). */
+SELECT nombre, salario FROM futbolistas WHERE salario > 150000;
+
 /* 8.  Muestra el ID de los futbolistas cuyo apellido sea GÓMEZ. */
+SELECT id, apellidos FROM futbolistas WHERE apellidos = 'GOMEZ';
+
 /* 9.  Indica los apellidos de los futbolistas que empiezan por G. */
 /* 10. Devuelve todos los datos de los futbolistas cuya posición sea DEFENSA o DELANTERO. */
 /* 11. Obtén el nombre de los futbolistas que cobran entre 100.000 y 200.000 euros (SALARIO). */
