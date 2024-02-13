@@ -473,6 +473,71 @@ DELETE FROM FUTBOLISTAS_2023 WHERE ID LIKE 'F00120' OR ID LIKE 'F00420';
 INSERT INTO futbolistas VALUES ('F11120','NOMBRE','APELL',null,'PORTERO',3000000,null,180,83);
 INSERT INTO equipos VALUES (4,'REAL BETIS BALOMPIE','BENITO VILLAMARIN',80000000);
 
+// BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL BD EXAMEN EN PAPEL
+
+DROP TABLE PRODUCTOS CASCADE CONSTRAINTS;
+DROP TABLE CLIENTES CASCADE CONSTRAINTS;
+DROP TABLE PROVEEDORES CASCADE CONSTRAINTS;
+DROP TABLE COMPRAS CASCADE CONSTRAINTS;
+
+CREATE TABLE PRODUCTOS(
+    REF INT PRIMARY KEY,
+    NOMBRE VARCHAR(50),
+    TIPO VARCHAR(50) CHECK (TIPO IN ('ANILLO','PULSERA','COLGANTE','PENDIENTE')),
+    PRECIO NUMBER(6,2),
+    PROVEEDOR INT
+);
+CREATE TABLE CLIENTES(
+    ID INT PRIMARY KEY,
+    NOMBRE VARCHAR(100),
+    CP INT
+);
+CREATE TABLE PROVEEDORES(
+    ID INT PRIMARY KEY,
+    NOMBRE VARCHAR(100),
+    TFNO INT
+);
+CREATE TABLE COMPRAS(
+    REF INT PRIMARY KEY,
+    CLIENTE INT,
+    PRODUCTO INT,
+    FECHA DATE,
+    PAGO VARCHAR(50) CHECK (PAGO IN ('METALICO','TARJETA'))
+);
+ALTER TABLE PRODUCTOS
+ADD FOREIGN KEY (PROVEEDOR) REFERENCES PROVEEDORES(ID);
+ALTER TABLE COMPRAS
+ADD FOREIGN KEY (CLIENTE) REFERENCES CLIENTES(ID);
+ALTER TABLE COMPRAS
+ADD FOREIGN KEY (PRODUCTO) REFERENCES PRODUCTOS(REF);
+
+INSERT INTO PROVEEDORES VALUES (1,'METALES S.L.',123456789);
+INSERT INTO PROVEEDORES VALUES (2,'TODO PLATA',111111222);
+INSERT INTO PROVEEDORES VALUES (3,'AROS',NULL);
+INSERT INTO PRODUCTOS VALUES (1,'MOON','ANILLO',50,1);
+INSERT INTO PRODUCTOS VALUES (2,'MARTE','PULSERA',75,1);
+INSERT INTO PRODUCTOS VALUES (3,'MOON','COLGANTE',45.49,3);
+INSERT INTO PRODUCTOS VALUES (4,'JUPITER','PENDIENTE',179.99,2);
+INSERT INTO PRODUCTOS VALUES (5,'ESTRELLAS','PENDIENTE',15.50,1);
+INSERT INTO PRODUCTOS VALUES (6,'COMETA','PENDIENTE',79.99,2);
+INSERT INTO PRODUCTOS VALUES (7,'FUGAZ','ANILLO',399.99,2);
+INSERT INTO CLIENTES VALUES (1,'PEDRO ALVAREZ',41110);
+INSERT INTO CLIENTES VALUES (2,'GRACIA GOMEZ',41930);
+INSERT INTO CLIENTES VALUES (3,'LUISA GUTIERREZ',41930);
+INSERT INTO CLIENTES VALUES (4,'ANTONIO ALVAREZ',41927);
+INSERT INTO CLIENTES VALUES (5,'ANA GARCIA',41930);
+INSERT INTO CLIENTES VALUES (6,'MARIO GARCIA',41010);
+INSERT INTO COMPRAS VALUES (1,1,1,'02/09/2022','METALICO');
+INSERT INTO COMPRAS VALUES (2,2,4,'11/11/2022','METALICO');
+INSERT INTO COMPRAS VALUES (3,3,4,'01/01/2023','TARJETA');
+INSERT INTO COMPRAS VALUES (4,5,5,'22/06/2023','METALICO');
+INSERT INTO COMPRAS VALUES (5,1,2,'02/09/2023','METALICO');
+INSERT INTO COMPRAS VALUES (6,1,3,'12/10/2023','TARJETA');
+INSERT INTO COMPRAS VALUES (7,5,6,'15/10/2023','TARJETA');
+INSERT INTO COMPRAS VALUES (8,4,7,'07/11/2023','METALICO');
+INSERT INTO COMPRAS VALUES (9,6,2,'28/12/2023','METALICO');
+INSERT INTO COMPRAS VALUES (10,2,3,'02/02/2024','TARJETA');
+
 /* 1.  Obtén todas las posiciones posibles (diferentes) de los futbolistas bajo el encabezado “Demarcaciones”. */
 SELECT DISTINCT posicion "Demarcaciones" FROM futbolistas;
 
@@ -480,54 +545,97 @@ SELECT DISTINCT posicion "Demarcaciones" FROM futbolistas;
 SELECT * FROM futbolistas;
 
 /* 3.  Se quieren todos los datos de los futbolistas pero con los siguientes alias de columna: "id", "nombre", "apellidos", "fecha de nacimiento", "posición", "salario actual", "identificador equipo actual" */
-SELECT id "id", nombre "Nombre", apellidos "Apellidos", fecha_nacimiento "Fecha de nacimiento", posicion "Posición", salario "Salario actual", id_equipo "Identificador equipo actual" FROM futbolistas;
+SELECT id "id", nombre "Nombre", apellidos "Apellidos", fecha_nacimiento "Fecha de nacimiento", posicion "Posición", salario "Salario actual", id_equipo "identificador equipo actual" FROM futbolistas;
 
 /* 4.  Devuelve los apellidos de los futbolistas que su posición sea DEFENSA. Aplica un alias a apellidos para que se muestre “Futbolista” y asigna el alias F a la tabla futbolistas. */
-SELECT f.apellidos "Futbolista" FROM futbolistas f WHERE posicion IN 'DEFENSA';
-SELECT f.apellidos "Futbolista" FROM futbolistas f WHERE posicion LIKE 'DEFENSA';
-SELECT f.apellidos "Futbolista" FROM futbolistas f WHERE posicion = 'DEFENSA';
+SELECT apellidos "FUTBOLISTA" FROM futbolistas f WHERE posicion = 'DEFENSA';
 
-/* 5.  Devuelve los apellidos de los futbolistas que su posición sea DEFENSA ordenador de la Z a la A. */
-SELECT apellidos FROM futbolistas;
-SELECT apellidos FROM futbolistas WHERE posicion = 'DEFENSA' ORDER BY posicion DESC;
+/* 5.  Devuelve los apellidos de los futbolistas que su posición sea DEFENSA ordenado de la Z a la A. */
+SELECT apellidos FROM futbolistas WHERE posicion = 'DEFENSA' ORDER BY apellidos DESC;
 
 /* 6.  Devuelve todos los datos de futbolistas ordenados primero por posición y luego por apellidos. */
 SELECT * FROM futbolistas ORDER BY posicion, apellidos;
-SELECT * FROM futbolistas ORDER BY posicion ASC;
-SELECT * FROM futbolistas ORDER BY apellidos ASC;
 
 /* 7.  Obtén el nombre de los futbolistas que cobran más de 150.000 euros (SALARIO). */
 SELECT nombre, salario FROM futbolistas WHERE salario > 150000;
 
 /* 8.  Muestra el ID de los futbolistas cuyo apellido sea GÓMEZ. */
-SELECT id, apellidos FROM futbolistas WHERE apellidos = 'GOMEZ';
+SELECT id FROM futbolistas WHERE apellidos = 'GOMEZ';
 
 /* 9.  Indica los apellidos de los futbolistas que empiezan por G. */
+SELECT apellidos FROM futbolistas WHERE apellidos LIKE 'G%';
+
 /* 10. Devuelve todos los datos de los futbolistas cuya posición sea DEFENSA o DELANTERO. */
+SELECT * FROM futbolistas WHERE posicion = 'DEFENSA' OR posicion = 'DELANTERO';
+
 /* 11. Obtén el nombre de los futbolistas que cobran entre 100.000 y 200.000 euros (SALARIO). */
-/* 12. Se va a hacer un aumento de sueldo de los PORTEROS. Para ello obtén el nombre, apellido y el nuevo salario de los PORTEROS si se aumenta un 10% el que tienen actualmente.
+SELECT nombre FROM futbolistas WHERE salario BETWEEN 100000 AND 200000;
+
+/* 12. Se va a hacer un aumento de sueldo de los PORTEROS. Para ello obtén el nombre, apellido y el nuevo salario de los PORTEROS si se aumenta un 10% del que tienen actualmente.
        La lista debe estar ordenada alfabéticamente por los apellidos. */
-/* 13. Devuelve en una única columna el nombre del futbolista seguido de la palabra “es” y a continuación la posición que ocupa. La columna debe llamarse “Posiciones”. */      
+SELECT nombre, apellidos, salario * 1.10 FROM futbolistas WHERE posicion = 'PORTERO' ORDER BY apellidos;
+       
+/* 13. Devuelve en una única columna el nombre del futbolista seguido de la palabra “es” y a continuación la posición que ocupa. La columna debe llamarse “Posiciones”. */
+SELECT nombre || ' es ' || posicion "Posiciones" FROM futbolistas;
+
 /* 14. Queremos saber todos los datos de los futbolistas que ganen más de 150.000 euros y sean defensas. */
+SELECT * FROM futbolistas WHERE salario > 150000 AND posicion = 'DEFENSA';
+
 /* 15. Realiza una consulta que te devuelva los campos Nombre, Salario, Salario bruto terminado en la palabra “euros” y llamando a esa columna “Salario
        bruto”. Nota: el salario bruto de un futbolista se obtiene añadiéndole el 50% de impuestos, es decir multiplicando por 1,5. */
+SELECT nombre, salario, salario * 1.5 || ' euros' "Salario bruto" FROM futbolistas;
+       
 /* 16. Calcula el valor absoluto de -10. */
+SELECT ABS(-10) FROM dual;
+
 /* 17. Obtén el exponente en base e de 4. */
+SELECT EXP(4) FROM dual;
+
 /* 18. Redondea el número 15,3 a 16. */
+SELECT CEIL(15.3) FROM dual;
+
 /* 19. Redondea el número anterior (15,3) a 15. */
+SELECT FLOOR(15.3) FROM dual;
+
 /* 20. Calcula el resto de 15 entre 3 (15/3). */
+SELECT MOD(15, 3) FROM dual;
+
 /* 21. Eleva 15 al exponente 2 (152). */
+SELECT POWER(15, 2) FROM dual;
+
 /* 22. Redondea 15,789 con un decimal. */
+SELECT ROUND(15.789, 1) FROM dual;
+
 /* 23. Obtén la raíz cuadrada de 128. */
+SELECT SQRT(128) FROM dual;
+
 /* 24. Trunca 15,789 a 1 decimal. */
+SELECT TRUNC(15.789, 1) FROM dual;
+
 /* 25. Trunca 15,789 para dejarlo sin decimales (15). */
+SELECT TRUNC(15.789, 0) FROM dual;
+
 /* 26. Trunca 157,89 para dejarlo en 100. */
+SELECT TRUNC(157.89, -2) FROM dual;
+
 /* 27. Obtén el signo de -15 (es decir -1). */
+SELECT SIGN(-15) FROM dual;
+
 /* 28. Obtén en tres columnas independientes, el día, el mes y la fecha de hoy. */
+SELECT EXTRACT(DAY FROM SYSDATE), EXTRACT(MONTH FROM SYSDATE), EXTRACT(YEAR FROM SYSDATE) FROM dual;
+
 /* 29. Muestra por pantalla la fecha que será dentro de 6 meses utilizando ADD_MONTHS. */
+SELECT ADD_MONTHS(SYSDATE, 6) FROM dual;
+
 /* 30. Muestra el número de meses que hay entre hoy y la fecha de nacimiento de todos los futbolistas. */
+SELECT FLOOR(MONTHS_BETWEEN(SYSDATE, fecha_nacimiento)) FROM futbolistas;
+
 /* 31. ¿Cuál es el último día de este mes? Muéstralo. */
+SELECT LAST_DAY(SYSDATE) FROM dual;
+
 /* 32. ¿Qué día será el próximo lunes? Ponlo por pantalla mediante una petición. */
+
+
 /* 33. Muestra el día que era hace 4 días. ¿Y el día demañana? */
 /* 34. Convierte ‘1000.45’ a un número. */
 /* 35. Convierte ‘1000.45€’ a un número. */
@@ -676,4 +784,47 @@ SELECT id, apellidos FROM futbolistas WHERE apellidos = 'GOMEZ';
 /* 165.Devuelve el nombre del empleado y el nombre del departamento de aquel que haya sido contratado antes en el año 1981. */
 /* 166.Devuelve el nombre del empleado junto al nombre de su jefe con este formato en una columna: "El jefe de SMITH es JACOB". */
 /* 167.Devuelve el nombre del departamento que tiene más trabajadores junto al número de trabajadores. */
-/* 168.Quiero saber la suma total de los presupuestos de los equipos
+/* 168.Quiero saber la suma total de los presupuestos de los equipos. */
+/* 169.Indica el nombre de todos los productos. */
+/* 170.¿Cuántos productos son del tipo PENDIENTE?. */
+/* 171.Indica el nombre y el precio de los productos cuyo precio está entre 100 y 500 euros. */
+/* 172.Indica los diferentes tipos de productos que hay, sin repetir, y ordenados de la Z a la A. */
+/* 173.¿Cuál es el precio medio (AVG) de los productos cuyo nombre empieza por la letra M?. */
+/* 174.¿Cuál es el CP de los clientes que se apellidan ALVAREZ?. */
+/* 175.Indica solo el nombre (sin el apellido) de los clientes donde esté en mayúsculas solo la primera letra. */
+/* 176.¿Cuántos clientes viven en Bormujos? (Son los que tienen el CP igual a 41930). */
+/* 177.Queremos saber el nombre y el teléfono de los proveedores que si tienen teléfono (no es null). */
+/* 178.¿A cuántos proveedores les falta el teléfono?. */
+/* 179.¿Cuál es la suma total de las ventas de productos hasta ahora (registros de la tabla compras)?. */
+/* 180.Se quiere saber el nombre de los productos, sin repetir, que ha comprado PEDRO ALVAREZ (utiliza el nombre del cliente, no su id). */
+/* 181.Indica el nombre y el precio del producto más caro (solo el más caro) que ha comprado GRACIA GOMEZ. */
+/* 182.¿Cuál es el nombre del proveedor del producto que ha comprado ANTONIO ALVAREZ?. */
+/* 183.¿Cuántas compras ha hecho ANA GARCÍA? Indica solo el número. */
+/* 184.Indica el nombre del producto más caro del tipo ANILLO. */
+/* 185.Indica el nombre del prodcuto más barato del tipo PENDIENTE. */
+/* 186.Indica el nombre y el código postal de los clientes de Bormujos (41930) y Mairena del Aljarafe (41927). Para ello emplea UNION de ambos select. */
+/* 187.Di todos los datos de los proveedore que tengan al menos una vocal O en su nombre. */
+/* 188.Devuelve el precio del producto cuyo nombre es JUPITER redondeado a un único decimal. */
+/* 189.¿Cuántas compras se hicieron en 2022? */
+/* 190.Muestra en una lista agrupada los años y los números de compras hechas en cada uno de esos años (una fila por año). */
+/* 191.Se quiere mostrar lo que ha comprado Mario con este formato: "El día DD/MM/YYYY, Mario compró PRODUCTO en metalico". 
+       Es importante respetar la mayúscula inicial y las minúsculas indicadas en el ejemplo, mostranto los datos de la compra de MARIO GARCIA. */
+/* 192.Se quiere saber el nombre de los productos que se han comprado sin repetir el nombre. */
+/* 193.¿Qué día de la semana fue cuando se hizo la primera compra (Ej: lunes, martes, etc ?. */
+/* 194.Indica el nombre de los futbolistas y el nombre del equipo en el que juegan. */
+/* 195.¿Cuál es el nombre del equipo donde juega el jugador más alto?. */
+/* 196.¿Cómo se llama el jugador más alto?. */
+/* 197.¿Cuánto mide el jugador más alto?. */
+/* 198.Utiliza UNION para mostrar el nombre de los futbolistas del equipo A, y los del equipo B. */
+/* 199.¿Cuántos futbolistas han nacido antes de 1995?. */
+/* 200.Devuelve una lista agrupada por posición y número de jugadores que juegan en dicha posición. POSICION NUM_JUGADORES Ej.: MEDIOCENTRO 3 DEFENSA 2 PORTERO 1. */
+/* 201.¿Cuántos partidos se han jugado en enero?. */
+/* 202.Devuelve una lista agrupada con los nombres de los equipos y el salario medio de los futbolistas de dichos equipos. */
+/* 203.¿Cuántos meses han pasado entre el primer partido disputado y el último partido jugado?. */
+/* 204.Se quiere el nombre y los apellidos de los futbolistas y tengan un salario superior a 130000. 
+       Debe devolverse una única columna con este formato: apellidos, nombre (todo en minúsculas). */
+/* 205.Devuelve el nombre del estadio, junto al nombre del árbitro (la primera letra en mayúsculas y el resto 
+       en minúsculas para ambos campos) de aquellos partidos que se hayan jugado en domingo. */
+/* 206.Devuelve el nombre de los árbitros sin repetir. */
+/* 207.Se quiere cambiar el formato de los resultados de los partidos, se quiere que en lugar de ser 01-00, se muestre 1-0. */
+/* 208.¿Cuántos goles en total se han marcado hasta ahora? */
