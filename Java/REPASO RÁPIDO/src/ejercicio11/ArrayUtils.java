@@ -6,14 +6,17 @@ Pruébalo desde el método main con algún test. */
 
 package ejercicio11;
 
-public class Main {
+public class ArrayUtils {
 
-	public static void main(String[] args) {
+	public static Integer buscarPalabra(String[] array, String palabra) {
 
-		String[] arrayCadenas = new String[] { "Pera", "Tomate", "Filete", "Sandía", "Melocotón" };
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] == palabra) {
+				return i;
+			}
+		}
 
-		System.out.println(ArrayUtils.buscarPalabra(arrayCadenas, "Filete"));
-
+		return -1;
 	}
 
 }
