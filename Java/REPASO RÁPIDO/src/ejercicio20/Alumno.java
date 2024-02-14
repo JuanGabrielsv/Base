@@ -12,7 +12,11 @@ public class Alumno {
 	private String nombre;
 	private Integer edad;
 	private Double nota;
-
+	
+	public Alumno(dni); 
+	
+	
+/////////////////////////// GET AND SET ////////////////////////////////
 	public String getDni() {
 		return dni;
 	}
@@ -44,5 +48,5 @@ public class Alumno {
 	public void setNota(Double nota) {
 		this.nota = nota;
 	}
-
+/////////////////////////// FIN GET AND SET ////////////////////////////////
 }
