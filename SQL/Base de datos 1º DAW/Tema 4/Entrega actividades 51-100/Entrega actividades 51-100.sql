@@ -541,8 +541,14 @@ INSERT INTO COMPRAS VALUES (10,2,3,'02/02/2024','TARJETA');
 // Entrega actividades 51-100 
 
 /* 51.Qué día de la semana se contrató a cada empleado. */
+SELECT ename, TO_CHAR(hiredate, 'Day') FROM emp;
+
 /* 52.Calcular la paga de beneficios que corresponde a cada empleado (3 salarios mensuales incrementados un: 10% para PRESIDENT, 20% para los MANAGER, 30% para el resto). */
+SELECT job, sal, DECODE(job, 'PRESIDENT', sal * 1.10 * 3, 'MANAGER', sal * 1.20 * 3, sal * 1.30 * 3) "Beneficio" FROM emp;
+
 /* 53.Cuantos días han pasado desde el 25 julio de 1992. */
+SELECT ROUND(SYSDATE - TO_DATE('25071992', 'ddmmyyyy')) FROM dual;
+
 /* 54.Seleccionar el nombre de cada empleado junto al nombre del departamento en el que está. */
 /* 55.Seleccionar el nombre y puesto de cada empleado junto al nombre del departamento al que pertenece y la localización del departamento. */
 /* 56.Seleccionar el nombre de cada empleado, el nombre de! departamento al que pertenece, y el codigo de departamento del empleado. */
