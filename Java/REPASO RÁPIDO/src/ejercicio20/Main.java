@@ -1,10 +1,10 @@
-/* EJERCICIO 18
-Crea una clase llamada Alumno que tenga como atributos privados el dni, nombre, edad y
-nota. Además, tendrá métodos get y set para todos los atributos. Luego crea un programa que
-lea por consola los datos de un alumno y los registre en un objeto de la clase que acabas de
-crear. */
+/* EJERCICIO 20
+Cambia el constructor de la clase para que reciba un parámetro String que sea el dni del
+alumno. Es decir, cuando queramos crear un objeto Alumno, habrá que indicar
+obligatoriamente su DNI. Modifica el programa que has creado para probar para que funcione
+con este nuevo constructor.  */
 
-package ejercicio18;
+package ejercicio20;
 
 import java.util.Scanner;
 

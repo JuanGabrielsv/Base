@@ -1,10 +1,8 @@
-/* EJERCICIO 18
-Crea una clase llamada Alumno que tenga como atributos privados el dni, nombre, edad y
-nota. Además, tendrá métodos get y set para todos los atributos. Luego crea un programa que
-lea por consola los datos de un alumno y los registre en un objeto de la clase que acabas de
-crear. */
+/* EJERCICIO 19
+Añade a la clase del ejercicio anterior un método público aprobar() que establecerá la nota en
+un 5. Úsalo desde el programa que has creado para probar. */
 
-package ejercicio18;
+package ejercicio19;
 
 import java.util.Scanner;
 
@@ -33,6 +31,8 @@ public class Main {
 		entradaUsuario = sc.nextLine();
 		alumno1.setNota(Double.parseDouble(entradaUsuario));
 		sc.close();
+
+		alumno1.aprobar();
 
 		System.out.println(alumno1);
 
