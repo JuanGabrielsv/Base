@@ -1,10 +1,9 @@
-/* EJERCICIO 20
-Cambia el constructor de la clase para que reciba un parámetro String que sea el dni del
-alumno. Es decir, cuando queramos crear un objeto Alumno, habrá que indicar
-obligatoriamente su DNI. Modifica el programa que has creado para probar para que funcione
-con este nuevo constructor.  */
+/* EJERCICIO 21
+Crea una clase Persona que tenga los atributos nombre y edad privados con sus get y set. Haz
+que la clase Alumno herede de ella. Borra todo lo que sea duplicado. ¿Tienes que cambiar algo
+en tu programa de pruebas? */
 
-package ejercicio20;
+package ejercicio21;
 
 import java.util.Scanner;
 
@@ -15,11 +14,11 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		String entradaUsuario;
-		Alumno alumno1 = new Alumno("53279139F");
+		Alumno alumno1 = new Alumno();
 
-		/*System.out.println("1/4 Introduce el dni del Alumno: ");
+		System.out.println("1/4 Introduce el dni del Alumno: ");
 		entradaUsuario = sc.nextLine();
-		alumno1.setDni(entradaUsuario);*/
+		alumno1.setDni(entradaUsuario);
 
 		System.out.println("2/4 Introduce el nombre del Alumno: ");
 		entradaUsuario = sc.nextLine();
@@ -34,7 +33,10 @@ public class Main {
 		alumno1.setNota(Double.parseDouble(entradaUsuario));
 		sc.close();
 
-		System.out.println(alumno1);
+		System.out.println(alumno1.getDni());
+		System.out.println(alumno1.getNombre());
+		System.out.println(alumno1.getEdad());
+		System.out.println(alumno1.getNota());
 
 	}
 

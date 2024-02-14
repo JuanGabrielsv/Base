@@ -12,10 +12,11 @@ public class Alumno {
 	private String nombre;
 	private Integer edad;
 	private Double nota;
-	
-	public Alumno(dni); 
-	
-	
+
+	public Alumno(String d) {
+		this.dni = d;
+	}
+
 /////////////////////////// GET AND SET ////////////////////////////////
 	public String getDni() {
 		return dni;
@@ -49,4 +50,10 @@ public class Alumno {
 		this.nota = nota;
 	}
 /////////////////////////// FIN GET AND SET ////////////////////////////////
+
+	@Override
+	public String toString() {
+		return "Alumno [dni=" + dni + ", nombre=" + nombre + ", edad=" + edad + ", nota=" + nota + "]";
+	}
+
 }
