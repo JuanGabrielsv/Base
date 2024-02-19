@@ -39,5 +39,8 @@ Crea un programa que haga lo siguiente:
 package ejercicios_básicos_ejercicio54;
 
 public class CuentaAhorros {
+	
+	private Integer numero;
+	private List<Movimiento>;
 
 }
