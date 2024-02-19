@@ -34,17 +34,44 @@ imprime siempre la hucha):
 package ejercicios_básicos_ejercicio53;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Hucha {
 
 	private BigDecimal dinero;
 
+	public Hucha() {
+		this.dinero = BigDecimal.ZERO;
+	}
+
 	public BigDecimal sacarDinero() {
 		return dinero;
 	}
 
-	public void meterDinero(BigDecimal dinero) {
-		this.dinero = dinero;
+	public BigDecimal meterDinero(BigDecimal dinero) {
+		this.dinero = this.dinero.add(dinero).setScale(2, RoundingMode.HALF_DOWN);
+		return this.dinero;
 	}
+
+	public BigDecimal sacarDinero(BigDecimal sacar) {
+		if (sacar.compareTo(dinero) > 0) {
+			BigDecimal sacado = dinero;
+			dinero = BigDecimal.ZERO;
+			return sacado;
+		}
+		dinero = dinero.subtract(sacar).setScale(2, RoundingMode.HALF_DOWN);
+		return sacar;
+	}
+	
+	public BigDecimal contarDinero() {
+		return dinero;
+	}
+	public BigDecimal romperHucha() {
+		return sacarDinero(dinero);
+	}
+
+	
+	
+	
 
 }

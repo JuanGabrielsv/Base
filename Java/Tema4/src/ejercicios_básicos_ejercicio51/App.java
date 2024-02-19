@@ -25,13 +25,6 @@ public class App {
 		
 		do {
 			
-			for (int i = 0; i < 5; i++) {
-				System.out.println(i + " de 5 Introduce un número;");
-				decimal.add(sc.nextBigDecimal());
-				if (1 =) {
-					
-				}
-			}
 			
 			
 			
@@ -39,6 +32,7 @@ public class App {
 		
 		
 		System.out.println(decimal);
+		sc.close();
 		
 		
 	}	
