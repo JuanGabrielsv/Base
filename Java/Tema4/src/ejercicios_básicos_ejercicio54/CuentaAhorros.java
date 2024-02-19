@@ -38,9 +38,11 @@ Crea un programa que haga lo siguiente:
 */
 package ejercicios_básicos_ejercicio54;
 
+import java.util.List;
+
 public class CuentaAhorros {
 	
 	private Integer numero;
-	private List<Movimiento>;
+	private List<Movimiento> movimientos;
 
 }
