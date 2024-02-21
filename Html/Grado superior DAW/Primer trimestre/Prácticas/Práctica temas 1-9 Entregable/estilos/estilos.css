@@ -1,0 +1,49 @@
+body {
+    background-image: url(../imagenes/backgroundsnails.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.h2title {
+    font-family: Verdana;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.tabla {
+    margin: auto;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(241, 216, 216, 0.7);
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(246, 204, 204, 0.7);
+}
+
+.tdflex {
+    display: flex;
+    
+}
+.tdd{
+    transition: .4s;
+}
+
+.margenizq10px {
+    margin-left: 10px;
+}
+
+.tdd:hover {
+    transform: scale(1.02);
+    transition: transform .4s;
+    cursor: pointer;
+}
+
+.tabla:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
