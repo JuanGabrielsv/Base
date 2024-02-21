@@ -48,10 +48,31 @@ public class Smartphone {
 	
 	public Smartphone() {
 		
+		this.activo = true;
+		this.precio = BigDecimal.ZERO;
+		
 	}
-	public void SmartphoneImei(String inputImei) {
+	
+// Constructor que reciba e inicialice el imei
+	
+	public Smartphone(String inputImei) {
+		
 		this.imei = inputImei;
+		this.activo = true;
+		this.precio = BigDecimal.ZERO;
 	}
+	
+// Constructor que reciba e inicialice el imei, la marca y el modelo
+	
+	public Smartphone(String inputImei, String inputMarca, String inputModelo) {
+		this.imei = inputImei;
+		this.activo = true;
+		this.precio = BigDecimal.ZERO;
+		this.marca = inputMarca;
+		this.modelo = inputModelo;
+	}
+	
+	
 	
 
 }
