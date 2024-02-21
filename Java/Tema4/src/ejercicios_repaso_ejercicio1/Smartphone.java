@@ -72,6 +72,31 @@ public class Smartphone {
 		this.modelo = inputModelo;
 	}
 	
+// setPrecio() -> permite cambiar el precio del Smartphone
+	
+	public void setPrecio(BigDecimal precio) {
+		this.precio = precio;
+	}
+	
+// activar -> activa el Smartphone
+	
+	public void activar() {
+		this.activo = true;
+	}
+	
+// desactivar -> inactiva el Smartphone
+	
+	public void desactivar() {
+		this.activo = false;
+	}
+	
+//  getEdad() -> devuelve los años transcurridos desde el 1 de abril del 2000 hasta la fecha de fabricación del Smartphone.
+	
+	public LocalDate getEdad() {
+		return null;
+
+	}
+	
 	
 	
 
