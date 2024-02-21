@@ -34,6 +34,24 @@ Añade los siguientes métodos:
 */
 package ejercicios_repaso_ejercicio1;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 public class Smartphone {
+	
+	private String marca;
+	private String modelo;
+	private String imei;
+	private BigDecimal precio;
+	private LocalDate fechaFabricacion;
+	private Boolean activo;
+	
+	public Smartphone() {
+		
+	}
+	public void SmartphoneImei(String inputImei) {
+		this.imei = inputImei;
+	}
+	
 
 }
