@@ -11,14 +11,19 @@ body {
     color: rgb(0, 0, 0);
 }
 
+.verdanared {
+    font-family: Verdana;
+    color: rgb(255, 0, 0);
+}
+
 .tabla {
     margin: auto;
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
 }
 
 tr:nth-child(even) {
-    background-color: rgb(241, 216, 216, 0.7);
+    background-color: rgb(241, 216, 216, 0.9);
 }
 
 tr:nth-child(odd) {
@@ -29,18 +34,9 @@ tr:nth-child(odd) {
     display: flex;
     
 }
-.tdd{
-    transition: .4s;
-}
 
 .margenizq10px {
     margin-left: 10px;
-}
-
-.tdd:hover {
-    transform: scale(1.02);
-    transition: transform .4s;
-    cursor: pointer;
 }
 
 .tabla:first-child{
