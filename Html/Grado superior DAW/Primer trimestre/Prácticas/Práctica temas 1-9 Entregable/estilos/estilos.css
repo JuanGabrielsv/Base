@@ -19,7 +19,7 @@ body {
 .tabla {
     margin: auto;
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse;    
 }
 
 tr:nth-child(even) {
@@ -31,8 +31,7 @@ tr:nth-child(odd) {
 }
 
 .tdflex {
-    display: flex;
-    
+    display: flex;    
 }
 
 .margenizq10px {
@@ -42,4 +41,8 @@ tr:nth-child(odd) {
 .tabla:first-child{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+.bbottom {
+    border-bottom: 1px solid black;
 }
