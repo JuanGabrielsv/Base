@@ -550,14 +550,29 @@ SELECT job, sal, DECODE(job, 'PRESIDENT', sal * 1.10 * 3, 'MANAGER', sal * 1.20 
 SELECT ROUND(SYSDATE - TO_DATE('25071992', 'ddmmyyyy')) FROM dual;
 
 /* 54.Seleccionar el nombre de cada empleado junto al nombre del departamento en el que está. */
- 5cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc--*/
- r+++
+SELECT emp.ename, dept.dname FROM emp JOIN dept ON dept.deptno = emp.deptno;
+
 /* 55.Seleccionar el nombre y puesto de cada empleado junto al nombre del departamento al que pertenece y la localización del departamento. */
+SELECT emp.ename, emp.job, dept.dname, dept.loc FROM emp JOIN dept ON dept.deptno = emp.deptno;
+
 /* 56.Seleccionar el nombre de cada empleado, el nombre de! departamento al que pertenece, y el codigo de departamento del empleado. */
+SELECT emp.ename, dept.dname, dept.deptno FROM emp JOIN dept ON dept.deptno = emp.deptno;
+
 /* 57.Listar el nombre del empleado y el nombre de su jefe. */
+SELECT a.ename, b.ename FROM emp a, emp b WHERE a.mgr = b.empno;
+SELECT a.ename, b.ename FROM emp a JOIN emp b ON a.mgr = b.empno;
+
 /* 58.Listar el nombre del empleado y el nombre de su jefe. Incluir empleados que no tengan jefe. */
+SELECT a.ename, b.ename FROM emp a JOIN emp b ON a.mgr = b.empno(+);
+SELECT a.ename, b.ename FROM emp a, emp b WHERE a.mgr = b.empno(+);
+
 /* 59.Seleccionar nombre del empleado, nombre del jefe, fechas contrato del trabajador y del jefe, de forma que la fecha de contrato del empleado sea anterior a la de su jefe. */
+SELECT a.ename AS "NOMBRE EMPLEADO", a.hiredate AS "FECHA EMPLEADO", b.ename AS "JEFE", b.hiredate AS "FECHA JEFE" FROM emp a JOIN emp b ON a.mgr = b.empno WHERE a.hiredate < b.hiredate;
+
 /* 60.Seleccionar nombre del empleado, nombre del jefe, salarios del trabajador y del jefe, de forma que el sueldo del empleado sea inferior a la mitad del salario de su jefe. */
+SELECT * FROM emp JOIN dept ON dept.deptno = emp.deptno;
+
+
 /* 61.Seleccionar las distintas ubicaciones de los departamentos. */
 /* 62.Seleccionar la ubicación y el nombre empleado. Incluir también las ubicaciones de departamentos sin empleados. */
 /* 63.Seleccionar el nombre de los empleados, y el departamento al que pertenecen, para los empleados que ganan menos de 1000$. */
