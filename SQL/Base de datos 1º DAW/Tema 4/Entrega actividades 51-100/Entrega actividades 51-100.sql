@@ -550,6 +550,8 @@ SELECT job, sal, DECODE(job, 'PRESIDENT', sal * 1.10 * 3, 'MANAGER', sal * 1.20 
 SELECT ROUND(SYSDATE - TO_DATE('25071992', 'ddmmyyyy')) FROM dual;
 
 /* 54.Seleccionar el nombre de cada empleado junto al nombre del departamento en el que está. */
+ 5cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc--*/
+ r+++
 /* 55.Seleccionar el nombre y puesto de cada empleado junto al nombre del departamento al que pertenece y la localización del departamento. */
 /* 56.Seleccionar el nombre de cada empleado, el nombre de! departamento al que pertenece, y el codigo de departamento del empleado. */
 /* 57.Listar el nombre del empleado y el nombre de su jefe. */
