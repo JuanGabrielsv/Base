@@ -615,20 +615,45 @@ SELECT ename, sal FROM emp WHERE sal > 2000;
 SELECT emp.ename, dept.dname, dept.deptno FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE dept.deptno = 30;
 
 /* 74.Listar el nombre y sueldo de los empleados que NO ganan entre 5000 y 12000 dólares. Muestra el sueldo con el símbolo de $ delante de la cifra. */
-
+SELECT emp.ename, '$' || emp.sal FROM emp WHERE sal < 5000 OR sal > 12000;
 
 /* 75.Listar el nombre, puesto y fecha contrato de los empleados contratados entre el 20 febrero 1981 y el 1 de mayo de 1981. Ordenar por fecha descendente. */
+SELECT emp.ename, emp.job, emp.hiredate FROM emp WHERE hiredate BETWEEN '20/02/81' AND '01/05/81' ORDER BY 'DESC';
+
 /* 76.Listar el nombre y el cod departamento de los empleados pertenecientes a los departamentos 20 o 40. */
+SELECT emp.ename, emp.deptno, dept.dname FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE emp.deptno = 20 OR emp.deptno = 40;
+
 /* 77.Listar el nombre (alias: Empleado) y sueldo (alias: Salario mensual) de los empleados pertenecientes a los departamentos 20 o 40, que ganen entre 2000 y 4000 dólares. */
+SELECT emp.ename AS "EMPLEADO", emp.sal AS "SALARIO MENSUAL" FROM emp WHERE (emp.deptno = 20 OR emp.deptno = 40) AND emp.sal < 4000 AND emp.sal > 2000;
+
 /* 78.Listar el nombre y fecha contrato de empleados contratados el año 1984. */
+SELECT emp.ename, emp.hiredate FROM emp WHERE hiredate < '31/12/84' AND hiredate > '01/01/84';
+SELECT emp.ename, emp.hiredate FROM emp WHERE hiredate LIKE '%/84';
+
 /* 79.Listar el nombre y el puesto de los empleados que no tengan jefe asignado. */
-/* 80.Listar el nombre, sueldo y % comisión de los empleados que cobran comisión. Ordenar por salario y comisión, de forma que los más altos salgan primero. */
+SELECT emp.ename, emp.job, emp.mgr FROM emp WHERE emp.mgr IS NULL;
+
+/* 80.Listar el nombre, sueldo y comisión de los empleados que cobran comisión. Ordenar por salario y comisión, de forma que los más altos salgan primero. */
+SELECT emp.ename, emp.sal, emp.comm FROM emp WHERE emp.comm >= 0 ORDER BY emp.sal DESC, emp.comm DESC;
+
 /* 81.Listar el nombre de los empleados que tengan una 'a' en la 3a letra del nombre. */
+SELECT emp.ename FROM emp WHERE emp.ename LIKE '__A%' OR emp.ename LIKE '__a%';
+
 /* 82.Listar el nombre de los empleados que tengan una 'a' y una 'e' en el nombre. */
+SELECT emp.ename FROM emp WHERE emp.ename LIKE '%A%' AND emp.ename LIKE '%E%';
+
 /* 83.Listar el nombre, puesto y sueldo de los empleados 'CLERK' o 'SALESMAN', y con salario distinto de: 2500, 3500 y 7000. */
+SELECT emp.ename, emp.job, emp.sal FROM emp WHERE (job = 'CLERK' OR job = 'SALESMAN') AND sal != 2500 AND sal != 3500 AND sal != 7000;
+
 /* 84.Listar el nombre (alias: Empleado), sueldo (alias: Salario mensual) y nombre del departamento de todos los empleados cuya comisión sea mayor de 400. */
+SELECT emp.ename AS "EMPLEADO", emp.sal AS "SALARIO MENSUAL", dept.dname FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE emp.comm > 400;
+
 /* 85.Listar el nombre y salario de los empleados, de forma que estén separados por una línea de puntos, y que de extremo a extremo haya 30 caracteres (por ejemplo: "KING......................5000"). */
+SELECT emp.ename || LPAD(sal, 30, '.') FROM emp;
+
 /* 86.Listar los nombres de los empleados, reemplazando la letra 'a' por un '1'. */
+SELECT emp.ename
+
 /* 87.Obtener la fecha del sistema (hoy) con alias: Fecha en el formato por defecto (sin tocar nada). */
 /* 88.Listar el id, nombre, salario de los empleados, y además otra columna con el salario incrementado un 15% su valor y redondeado (alias: Nuevo salario). */
 /* 89.Listar el id, nombre, salario de los empleados, el salario incrementado un 15% redondeado (alias: Nuevo salario) y además otra columna con la cuantía del incremento (alias: Incremento). */
