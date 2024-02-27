@@ -652,12 +652,20 @@ SELECT emp.ename AS "EMPLEADO", emp.sal AS "SALARIO MENSUAL", dept.dname FROM em
 SELECT emp.ename || LPAD(sal, 30, '.') FROM emp;
 
 /* 86.Listar los nombres de los empleados, reemplazando la letra 'a' por un '1'. */
-SELECT emp.ename
+SELECT REPLACE(emp.ename,'A','1') FROM emp;
 
 /* 87.Obtener la fecha del sistema (hoy) con alias: Fecha en el formato por defecto (sin tocar nada). */
+SELECT SYSDATE AS "FECHA EN EL FORMATO POR DEFECTO (SIN TOCAR NADA)" FROM dual;
+
 /* 88.Listar el id, nombre, salario de los empleados, y además otra columna con el salario incrementado un 15% su valor y redondeado (alias: Nuevo salario). */
+SELECT emp.empno, emp.ename, emp.sal, ROUND(emp.sal * 1.15) AS "NUEVO SALARIO" FROM emp;
+
 /* 89.Listar el id, nombre, salario de los empleados, el salario incrementado un 15% redondeado (alias: Nuevo salario) y además otra columna con la cuantía del incremento (alias: Incremento). */
+SELECT emp.empno, emp.ename, emp.sal, ROUND(emp.sal * 1.15) AS "NUEVO SALARIO", ROUND((1.15 * emp.sal) - emp.sal) AS "INCREMENTO" FROM emp;
+
 /* 90.Listar el nombre y longitud del nombre de los empleados que empiecen por A, o M. (Los nombres tendrán la inicial en mayúscula y el resto en minúsculas). */
+
+
 /* 91.Listar el nombre y número de meses trabajados, redondeando al entero superior. Ordenar por número de meses trabajados, de menor a mayor. */
 /* 92.Componer una frase con el nombre, salario actual y el triple del salario de los empleados. Por ejemplo: "KING gana 5000 mensuales, pero querría ganar 15000" (alias: Sueldos soñados). */
 /* 93.Listar el nombre y salario de los empleados, rellenando por la izquierda hasta 15 caracteres con el símbolo "$". */
