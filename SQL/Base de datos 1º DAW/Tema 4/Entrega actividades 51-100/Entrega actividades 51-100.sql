@@ -649,7 +649,7 @@ SELECT emp.ename, emp.job, emp.sal FROM emp WHERE (job = 'CLERK' OR job = 'SALES
 SELECT emp.ename AS "EMPLEADO", emp.sal AS "SALARIO MENSUAL", dept.dname FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE emp.comm > 400;
 
 /* 85.Listar el nombre y salario de los empleados, de forma que estén separados por una línea de puntos, y que de extremo a extremo haya 30 caracteres (por ejemplo: "KING......................5000"). */
-SELECT emp.ename || LPAD(sal, 30, '.') FROM emp;
+SELECT emp.ename || LPAD('.', 30, '.') || emp.sal FROM emp;
 
 /* 86.Listar los nombres de los empleados, reemplazando la letra 'a' por un '1'. */
 SELECT REPLACE(emp.ename,'A','1') FROM emp;
@@ -664,18 +664,37 @@ SELECT emp.empno, emp.ename, emp.sal, ROUND(emp.sal * 1.15) AS "NUEVO SALARIO" F
 SELECT emp.empno, emp.ename, emp.sal, ROUND(emp.sal * 1.15) AS "NUEVO SALARIO", ROUND((1.15 * emp.sal) - emp.sal) AS "INCREMENTO" FROM emp;
 
 /* 90.Listar el nombre y longitud del nombre de los empleados que empiecen por A, o M. (Los nombres tendrán la inicial en mayúscula y el resto en minúsculas). */
-
+SELECT INITCAP(emp.ename), LENGTH(emp.ename) FROM emp WHERE emp.ename LIKE 'A%' OR emp.ename LIKE 'M%';
 
 /* 91.Listar el nombre y número de meses trabajados, redondeando al entero superior. Ordenar por número de meses trabajados, de menor a mayor. */
+SELECT emp.ename, emp.hiredate, SYSDATE, CEIL(MONTHS_BETWEEN(SYSDATE, emp.hiredate)) AS "MESES" FROM emp ORDER BY meses DESC;
+
 /* 92.Componer una frase con el nombre, salario actual y el triple del salario de los empleados. Por ejemplo: "KING gana 5000 mensuales, pero querría ganar 15000" (alias: Sueldos soñados). */
+SELECT emp.ename || ' gana ' || emp.sal || ' mensuales, pero quería ganar ' || emp.sal * 3 AS "SUELDOS SOÑADOS" FROM emp;
+
 /* 93.Listar el nombre y salario de los empleados, rellenando por la izquierda hasta 15 caracteres con el símbolo "$". */
+SELECT emp.ename || LPAD('$',15, '$') || emp.sal FROM emp;
+
 /* 94.Listar nombre, fecha contrato y fecha revisión contrato de los empleados, sabiendo que la revisión será el lunes siguiente a la fecha que cumple 6 meses de trabajo en la empresa.
       Formatear esta fecha de acuerdo con el ejemplo: 'Lunes, 12th de noviembre de 2005'. */
+SELECT emp.ename, TO_CHAR(hiredate, 'DAY, DD"th" "de" MONTH "de" YYYY'), TO_CHAR(NEXT_DAY(ADD_MONTHS(hiredate, 6), 'LUNES'), 'DAY, DD"th" "de" MONTH "de" YYYY') FROM emp;
+      
 /* 95.Listar nombre, fecha contrato y día de la semana en que fueron contratados los empleados, ordenando por día de la semana, 
       de forma que queden ordenados por lunes, martes, miércoles, jueves, viernes, sábado y domingo. */
+SELECT emp.ename, emp.hiredate, TO_CHAR(hiredate, 'DAY') FROM emp ORDER BY TO_CHAR(hiredate, 'D');      
+
 /* 96.Listar nombre y comisión de los empleados. En el caso de que no gane comisión, sacar la frase "Sin comisión". */
+SELECT emp.ename, DECODE(emp.comm, NULL, 'Sin comisión', emp.comm) FROM emp;
+
 /* 97.Listar nombre de los empleados, y una tira de asteriscos, de forma que haya un asterisco por cada 1000$ (redondeada) que gana el empleado. Titula la columna 'Empleado y su salario'. Ordenar esta 
    columna de forma que los que más ganan aparezcan primero. Los nombres deben quedar ajustados a la longitud del nombre más largo. Ej.: "KING..:  *****" */
+SELECT emp.ename || LPAD('*', ROUND(sal / 1000)) FROM emp; -- Este no ha llegado a salirme.
+   
 /* 98.Listar los distintos nombres de puestos de los empleados, de forma que : PRESIDENT se traduzca por A, MANAGER por B, ANALYST por C, CLERK por D y el resto por E. */
+SELECT emp.ename, emp.job, DECODE(emp.job, 'PRESIDENT', 'A', 'MANAGER', 'B', 'ANALYST', 'C', 'CLERK', 'D', 'E') FROM emp;
+
 /* 99.Listar todos los campos de la tabla DEPT. */
+SELECT * FROM dept;
+
 /* 100.Seleccionar el nombre de departamento, y el nombre de la ciudad donde está. */
+SELECT dept.dname, dept.loc FROM dept;
