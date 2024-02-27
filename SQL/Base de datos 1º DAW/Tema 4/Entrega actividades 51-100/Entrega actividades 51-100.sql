@@ -570,14 +570,23 @@ SELECT a.ename, b.ename FROM emp a, emp b WHERE a.mgr = b.empno(+);
 SELECT a.ename AS "NOMBRE EMPLEADO", a.hiredate AS "FECHA EMPLEADO", b.ename AS "JEFE", b.hiredate AS "FECHA JEFE" FROM emp a JOIN emp b ON a.mgr = b.empno WHERE a.hiredate < b.hiredate;
 
 /* 60.Seleccionar nombre del empleado, nombre del jefe, salarios del trabajador y del jefe, de forma que el sueldo del empleado sea inferior a la mitad del salario de su jefe. */
-SELECT * FROM emp JOIN dept ON dept.deptno = emp.deptno;
-
+SELECT a.ename AS "NOMBRE EMPLEADO", a.sal AS "SUELDO EMPLEADO", b.ename AS "NOMBRE JEFE", b.sal AS "SUELDO JEFE" FROM emp a JOIN emp b ON a.mgr = b.empno WHERE a.sal < b.sal / 2;
 
 /* 61.Seleccionar las distintas ubicaciones de los departamentos. */
+SELECT DISTINCT loc FROM dept;
+
 /* 62.Seleccionar la ubicación y el nombre empleado. Incluir también las ubicaciones de departamentos sin empleados. */
+SELECT dept.loc, emp.ename FROM emp JOIN dept ON dept.deptno = emp.deptno(+);
+
 /* 63.Seleccionar el nombre de los empleados, y el departamento al que pertenecen, para los empleados que ganan menos de 1000$. */
+SELECT emp.ename, dept.dname, emp.sal FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE emp.sal < 1000;
+
 /* 64.Seleccionar el nombre del empleado, y el departamento al que pertenecen, para los empleados que ganan más de 1000$. */
+SELECT emp.ename, dept.dname, emp.sal FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE emp.sal > 1000;
+
 /* 65.Consultar todos los valores de la tabla emp. */
+DESC emp;
+
 /* 66.Listar el nombre, el oficio y sueldo de los empleados. */
 /* 67.Calcular el sueldo anual que percibe cada empleado. */
 /* 68.Consultar los datos de la tabla DEPTS. */
