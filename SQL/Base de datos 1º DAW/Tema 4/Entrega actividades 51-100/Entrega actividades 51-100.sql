@@ -586,16 +586,37 @@ SELECT emp.ename, dept.dname, emp.sal FROM emp JOIN dept ON dept.deptno = emp.de
 
 /* 65.Consultar todos los valores de la tabla emp. */
 DESC emp;
+SELECT * FROM emp;
 
 /* 66.Listar el nombre, el oficio y sueldo de los empleados. */
+SELECT ename, job, sal FROM emp;
+
 /* 67.Calcular el sueldo anual que percibe cada empleado. */
+SELECT ename, sal * 12 FROM emp;
+
 /* 68.Consultar los datos de la tabla DEPTS. */
+SELECT * FROM dept;
+
 /* 69.Listar los diferentes puestos de los empleados sin repetir. */
+SELECT DISTINCT(job) FROM emp;
+
 /* 70.Listar en una sola columna el nombre y el puesto de cada empleado. */
+SELECT ename || ' ' || job AS "NOMBRE + PUESTO " FROM emp;
+
 /* 71.Listar todas las columnas de la tabla EMP en una única columna, separando cada campo por comas. */
+SELECT * FROM emp;
+SELECT empno || ', ' || ename || job || ', ' || mgr || ', ' || hiredate || ', ' || sal || ', ' || comm || ', ' || deptno
+AS "NÚMERO EMPLEADO, NOMBRE, PUESTO, JEFE, FECHA CONTRATO, SALARIO, COMISIÓN, DEPARTAMENTO" FROM emp;
+
 /* 72.Listar el nombre y sueldo de los empleados que ganan más de 2000$. */
+SELECT ename, sal FROM emp WHERE sal > 2000;
+
 /* 73.Listar el nombre y código de de departamento del empleado con id=30. */
+SELECT emp.ename, dept.dname, dept.deptno FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE dept.deptno = 30;
+
 /* 74.Listar el nombre y sueldo de los empleados que NO ganan entre 5000 y 12000 dólares. Muestra el sueldo con el símbolo de $ delante de la cifra. */
+
+
 /* 75.Listar el nombre, puesto y fecha contrato de los empleados contratados entre el 20 febrero 1981 y el 1 de mayo de 1981. Ordenar por fecha descendente. */
 /* 76.Listar el nombre y el cod departamento de los empleados pertenecientes a los departamentos 20 o 40. */
 /* 77.Listar el nombre (alias: Empleado) y sueldo (alias: Salario mensual) de los empleados pertenecientes a los departamentos 20 o 40, que ganen entre 2000 y 4000 dólares. */
