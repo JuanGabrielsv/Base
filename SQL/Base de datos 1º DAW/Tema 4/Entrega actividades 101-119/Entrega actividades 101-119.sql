@@ -559,14 +559,21 @@ SELECT emp.ename, emp.job, dept.dname, dept.loc FROM emp JOIN dept ON dept.deptn
 SELECT emp.ename, emp.deptno, dept.dname FROM emp JOIN dept ON dept.deptno = emp.deptno;
 
 /* 107. Seleccionar el nombre de los empleados que trabajan en el departamento cuyo código es el más bajo de todos los existentes (utiliza subconsultas). */
-SELECT * FROM emp JOIN dept ON dept.deptno = emp.deptno;
-
-SELECT emp.ename FROM emp WHERE emp.deptno = MIN(emp.deptno);
+SELECT emp.ename, emp.deptno FROM emp WHERE emp.deptno = (SELECT MIN(emp.deptno) FROM emp);
 
 /* 108. Seleccionar nombre de empleado, nombre de departamento y ubicación del departamento para los empleados que tienen comisión. */
+SELECT emp.ename, dept.dname, dept.loc FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE emp.comm >= 0;
+SELECT emp.ename, dept.dname, dept.loc FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE emp.comm IS NOT NULL;
+
 /* 109. Seleccionar nombre de empleado, nombre de departamento y localización, para los empleados que no tienen comisión (o esta vale cero). */
+SELECT emp.ename, dept.dname, dept.loc FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE emp.comm IS NULL OR emp.comm = 0;
+
 /* 110. Seleccionar nombre de empleado y nombre de departamento para los empleados que tengan una 'a' en su nombre. */
+SELECT emp.ename, dept.dname FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE emp.ename LIKE '%A%';
+
 /* 111. Seleccionar nombre de empleado y nombre departamento para los empleados que tengan una vocal al menos (a, e, i, o, u) en su nombre. */
+SELECT emp.ename, dept.dname FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE REGEXP_LIKE(emp.ename,'[AEIOU]'); 
+
 /* 112. Seleccionar nombre y puesto de empleado, código de departamento y nombre de departamento de los empleados cuyo departamento está ubicado en 'Chicago'. Todos los valores deben devolverse en minúsculas. */
 /* 113. Seleccionar nombre, código de empleado, nombre de su jefe y código de empleado de su jefe para todos los empleados (no se deben mostrar los que no tienen jefe). */
 /* 114. Seleccionar nombre, código de empleado, nombre de su jefe y código de empleado de su jefe para todos los empleados (se deben mostrar TODOS, incluso los que no tienen jefe). */
