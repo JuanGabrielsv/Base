@@ -575,11 +575,24 @@ SELECT emp.ename, dept.dname FROM emp JOIN dept ON dept.deptno = emp.deptno WHER
 SELECT emp.ename, dept.dname FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE REGEXP_LIKE(emp.ename,'[AEIOU]'); 
 
 /* 112. Seleccionar nombre y puesto de empleado, código de departamento y nombre de departamento de los empleados cuyo departamento está ubicado en 'Chicago'. Todos los valores deben devolverse en minúsculas. */
+SELECT LOWER(emp.ename), LOWER(emp.job), dept.deptno, LOWER(dept.dname) FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE dept.loc = 'CHICAGO';
+
 /* 113. Seleccionar nombre, código de empleado, nombre de su jefe y código de empleado de su jefe para todos los empleados (no se deben mostrar los que no tienen jefe). */
+SELECT a.ename, a.empno, b.ename, a.mgr FROM emp a JOIN emp b ON a.mgr = b.empno;
+
 /* 114. Seleccionar nombre, código de empleado, nombre de su jefe y código de empleado de su jefe para todos los empleados (se deben mostrar TODOS, incluso los que no tienen jefe). */
+SELECT a.ename, a.empno, b.ename, a.mgr FROM emp a JOIN emp b ON a.mgr = b.empno(+);
+
 /* 115. Seleccionar código departamento, nombre de empleado y nombre de jefe de cada empleado del departamento que está en Boston. */
+SELECT a.deptno, a.ename, b.ename,c.loc FROM emp a JOIN emp b ON a.mgr = b.empno JOIN dept c ON c.deptno = a.deptno WHERE c.loc = 'BOSTON';
+
 /* 116. Seleccionar nombre y fecha contrato de los empleados contratados posteriormente al empleado 'WARD'. */
-/* 118. Seleccionar nombre y fecha de contrato de los empleados, además del nombre y fecha de contrato de su jefe, siempre y cuando la fecha del contrato del empleado fuera anterior a la fecha de contrato de su jefe. */
+SELECT emp.ename, emp.hiredate FROM emp WHERE hiredate > '22/02/81';
+
+/* 118. Seleccionar nombre y fecha de contrato de los empleados, además del nombre y fecha de contrato de su jefe, 
+        siempre y cuando la fecha del contrato del empleado fuera anterior a la fecha de contrato de su jefe. */
+SELECT a.ename, a.hiredate, b.ename, b.hiredate FROM emp a JOIN emp b ON a.mgr = b.empno WHERE a.hiredate < b.hiredate;
+        
 /* 119. Listar todos los nombres cuya longitud sea menor que la media de todas las longitudes de nombres de empleados redondeado al entero superior. */
 /* 120. Seleccionar el nombre de los empleados y el nombre del departamento al que pertenecen, siempre y cuando el nombre del departamento comience por la letra 'S'. */
 
