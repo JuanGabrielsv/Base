@@ -594,6 +594,10 @@ SELECT emp.ename, emp.hiredate FROM emp WHERE hiredate > '22/02/81';
 SELECT a.ename, a.hiredate, b.ename, b.hiredate FROM emp a JOIN emp b ON a.mgr = b.empno WHERE a.hiredate < b.hiredate;
         
 /* 119. Listar todos los nombres cuya longitud sea menor que la media de todas las longitudes de nombres de empleados redondeado al entero superior. */
+SELECT emp.ename FROM emp WHERE LENGTH(emp.ename) < CEIL((SELECT AVG(LENGTH(emp.ename)) FROM emp));
+
 /* 120. Seleccionar el nombre de los empleados y el nombre del departamento al que pertenecen, siempre y cuando el nombre del departamento comience por la letra 'S'. */
+SELECT emp.ename, dept.dname FROM emp JOIN dept ON dept.deptno = emp.deptno WHERE dept.dname LIKE 'S%';
+
 
 
