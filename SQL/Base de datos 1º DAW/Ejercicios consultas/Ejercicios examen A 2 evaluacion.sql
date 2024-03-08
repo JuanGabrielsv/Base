@@ -9,11 +9,6 @@ END;*/
 
 /* BD RESTAURANTE */
 
-drop table platos cascade constraints;
-drop table ingredientes cascade constraints;
-drop table ingredientes_platos cascade constraints;
-drop table clientes cascade constraints;
-drop table comandas cascade constraints;
 create table platos (
     id int primary key,
     nombre varchar(100) not null,
@@ -249,7 +244,12 @@ SELECT ROUND(SUM(precio), 2) FROM platos JOIN comandas ON comandas.id_plato = pl
 SELECT TO_CHAR(SUM(precio), 'FM999.90') FROM platos JOIN comandas ON comandas.id_plato = platos.id WHERE estado = 'COBRADO';
 
 /* 23. ¿Cuál es el NOMBRE del ingrediente que se usa en más platos? */
+SELECT nombre FROM ingredientes i JOIN ingredientes_platos ip ON i.id = ip.id_ingrediente 
+WHERE cantidad = (SELECT MAX(SUM(CANTIDAD)) FROM ingredientes i JOIN ingredientes_platos ip ON i.id = ip.id_ingrediente GROUP BY i.nombre);
+
 /* 24. ¿En el NOMBRE de qué platos se usa el ingrediente "Aceite de oliva virgen extra"?. */
+
+
 /* 25. ¿Cuál es el nombre del plato que entró por comanda en COCINA el 01/03/21 a las 21:16?. */
 /* 26. ¿Cuántas comandas, independientemente del estado de la comanda, hay registradas hasta ahora del plato "Entrante Crema de zanahorias"?. */
 /* 27. Indica el nombre de los platos cuyo precio sea superior a 4 euros pero se tarde menos de 15 minutos en prepararse. */
