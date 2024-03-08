@@ -9,3 +9,29 @@ body {
     margin-left: 50px;
     margin-right: 50px;
 }
+.global {
+    border-color: #c9c9ff;
+    background-color: #e7e7ff;
+    padding-bottom: 5px;
+}
+.h1 {
+    margin-top: 0px;
+    color: white;
+    font-weight: bold;
+    background-color: #c9c9ff;
+    padding: 10px;
+    font-size: 125%;
+}
+.ancho100 {
+    width: 100%;
+    
+}
+.ancho9 {
+    width: 8%;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    margin-right: 40px;
+    display: inline-block;    
+}
