@@ -8,10 +8,60 @@
     <link rel="stylesheet" href="estilos/listado.css">    
 </head>
 <body>
-    <table>
+    <table class="tabla">
         <caption class="caption">Listado de Notas de Alumnos</caption>
+        <thead>
+            <tr>
+                <th rowspan="2">Alumno</th>
+                <th colspan="2">Notas</th>
+                <th rowspan="2">Asignatura</th>                
+            </tr>
+            <tr>
+                <th>Primer Trimestre</th>
+                <th>Segundo Trimestre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3" class="subrayado">Juan Pérez</td>
+                <td>8.5</td>
+                <td class="negrita">9.0</td>
+                <td class="fondoAmarillo">Matemáticas<sup>1</sup></td>
+            </tr>
+            <tr>
+                <td>7.5</td>
+                <td>8.0</td>
+                <td>Historia<sub>2</sub></td>
+            </tr>
+            <tr>
+                <td class="negrita">9.0</td>
+                <td>9.5</td>
+                <td>Lengua</td>
+            </tr>
+            <tr>
+                <td class="subrayado">María López</td>
+                <td>6.0</td>
+                <td>6.5</td>
+                <td class="fondoAmarillo">Matemáticas<sup>1</sup></td>
+            </tr>
+            <tr>
+                <td class="subrayado">Carlos García</td>
+                <td>7.0</td>
+                <td>6.5</td>
+                <td class="fondoAmarillo">Matemáticas<sup>1</sup></td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="subrayado">Carla Rufini</td>
+                <td>8.5</td>
+                <td class="negrita">9.0</td>
+                <td class="fondoAmarillo">Matemáticas<sup>1</sup></td>
+            </tr>
+            <tr>
+                <td>7.5</td>
+                <td>8.0</td>
+                <td>Historia<sub>2</sub></td>
+            </tr>
+        </tbody>
     </table>
-    
-    
 </body>
 </html>

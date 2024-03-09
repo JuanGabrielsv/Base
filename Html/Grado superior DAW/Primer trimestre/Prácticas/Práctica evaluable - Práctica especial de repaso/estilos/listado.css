@@ -2,10 +2,36 @@ body {
     background-image: url(../imágenes/imagen_aula_fondo_web.jpg);    
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed;    
 }
 .caption {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 32px;
-    text-align: center;
+    padding: 120px 0 120px 0;
+    text-align: center;  /* Este estilo de texto no hace nada realmente ya que el caption tiene nativamente centrado, lo pongo porque lo pide el ejercicio */ 
+}
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid;
+    border-color: #ddd;
+    padding: 8px;
+    text-align: left;        
+}
+th {
+    background-color: rgb(146, 144, 238);
+}
+td {
+    background-color: rgb(240, 128, 128);
+}
+.subrayado {
+    text-decoration: underline;
+}
+.negrita {
+    font-weight: bold;
+}
+.fondoAmarillo {
+    background-color: yellow;
 }
