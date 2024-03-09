@@ -124,28 +124,12 @@ values(
 ); 
 
 /* 1. Mostrar los nombres de los empleados tengan un salario mayor que el de JAMES. */
-SELECT ename FROM emp WHERE sal > (SELECT sal FROM emp WHERE LOWER(ename) = 'james');
-
 /* 2. Mostrar los nombres de los empleados que trabajan en el mismo departamento que SMITH. Ordena el resultado por nombre. */
-SELECT ename FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE LOWER(ename) = 'smith');
-
 /* 3. Mostrar los nombres de los empleados que trabajan en el mismo departamento que SMITH. Ordena el resultado. */
-SELECT ename FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE LOWER(ename) = 'smith') ORDER BY ename;
-
 /* 4. Mostrar qué empleados fueron contratados antes que MILLER. */
-SELECT ename FROM emp WHERE hiredate < (SELECT hiredate FROM emp WHERE LOWER(ename) = 'miller');
-
 /* 5. Mostrar qué empleados del departamento donde trabaja FORD, ganan más que lo que gana JAMES. */
-SELECT ename, sal FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE LOWER(ename) = 'ford') AND sal > (SELECT sal FROM emp WHERE LOWER(ename) = 'james');
-
 /* 6. Mostrar cómo se llama el departamento donde trabaja SCOTT. */
-SELECT dname FROM dept JOIN emp ON emp.deptno = dept.deptno WHERE LOWER(ename) = 'scott';
-
 /* 7. ¿Cuántos empleados ganan menos que MILLER? */
-SELECT COUNT(empno) FROM emp WHERE sal < (SELECT sal FROM emp WHERE LOWER(ename) = 'miller');
-
 /* 8. ¿En qué localidad trabaja KING? */
-SELECT loc FROM dept JOIN emp ON emp.deptno = dept.deptno WHERE LOWER(emp.ename) = 'king';
-
 /* 9. ¿Cómo se llaman los departamentos en los que hay algún CLERK? */
 /* 10. ¿Cómo se llaman los departamentos en los que no hay ningún ANALYST? */
