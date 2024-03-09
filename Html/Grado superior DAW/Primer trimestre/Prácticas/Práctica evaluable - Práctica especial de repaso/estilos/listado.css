@@ -1,0 +1,11 @@
+body {
+    background-image: url(../imágenes/imagen_aula_fondo_web.jpg);    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.caption {
+    color: rgb(0, 0, 0);
+    font-size: 32px;
+    text-align: center;
+}
