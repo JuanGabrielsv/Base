@@ -124,30 +124,28 @@ values(
 ); 
 
 /* 1. Mostrar los nombres de los empleados tengan un salario mayor que el de JAMES. */
-SELECT ename, sal FROM emp WHERE sal > (SELECT sal FROM emp WHERE LOWER(ename) = 'james');
+SELECT ename, sal FROM emp WHERE sal > (SELECT sal FROM emp WHERE ename = 'JAMES');
 
 /* 2. Mostrar los nombres de los empleados que trabajan en el mismo departamento que SMITH. Ordena el resultado por nombre. */
-SELECT ename, deptno FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE LOWER(ename) = 'smith') ORDER BY ename;
+SELECT ename FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE ename = 'SMITH') ORDER BY ename;
 
 /* 3. Mostrar los nombres de los empleados que trabajan en el mismo departamento que SMITH. Ordena el resultado. */
-SELECT ename, deptno FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE LOWER(ename) = 'smith') ORDER BY ename DESC;
+SELECT ename FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE ename = 'SMITH') ORDER BY ename DESC;
 
 /* 4. Mostrar qué empleados fueron contratados antes que MILLER. */
-SELECT e.ename, e.hiredate FROM emp e JOIN dept d ON e.deptno = d.deptno WHERE e.hiredate < (SELECT hiredate FROM emp WHERE LOWER(ename) = 'miller');
+SELECT ename, hiredate FROM emp WHERE hiredate < (SELECT hiredate FROM emp WHERE ename = 'MILLER');
 
 /* 5. Mostrar qué empleados del departamento donde trabaja FORD, ganan más que lo que gana JAMES. */
-SELECT e.ename, e.sal, d.dname FROM emp e JOIN dept d ON e.deptno = d.deptno WHERE e.deptno = (SELECT deptno FROM emp WHERE LOWER(ename) = 'ford') AND e.sal > (SELECT sal FROM emp WHERE LOWER(ename) = 'james');
+SELECT ename, sal, deptno FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE ename = 'FORD') AND sal > (SELECT sal FROM emp WHERE ename = 'JAMES');
 
 /* 6. Mostrar cómo se llama el departamento donde trabaja SCOTT. */
-SELECT d.dname FROM emp e JOIN dept d ON e.deptno = d.deptno WHERE e.deptno = (SELECT deptno FROM emp WHERE LOWER(ename) = 'scott') GROUP BY dname;
-SELECT d.dname FROM emp e JOIN dept d ON e.deptno = d.deptno WHERE e.ename = 'SCOTT';
 SELECT dname FROM dept WHERE deptno = (SELECT deptno FROM emp WHERE ename = 'SCOTT');
 
 /* 7. ¿Cuántos empleados ganan menos que MILLER? */
-SELECT COUNT(*) FROM emp WHERE sal < (SELECT sal FROM emp WHERE LOWER(ename) = 'miller');
+SELECT COUNT(*) FROM emp WHERE sal < (SELECT sal FROM emp WHERE ename = 'MILLER');
 
 /* 8. ¿En qué localidad trabaja KING? */
-SELECT loc FROM dept WHERE deptno = (SELECT deptno FROM emp WHERE LOWER(ename) = 'king');
+SELECT loc FROM dept WHERE deptno = (SELECT deptno FROM emp WHERE ename = 'KING');
 
 /* 9. ¿Cómo se llaman los departamentos en los que hay algún CLERK? */
 SELECT dname FROM dept WHERE deptno IN (SELECT deptno FROM emp WHERE job = 'CLERK');
