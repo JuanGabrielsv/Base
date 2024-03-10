@@ -1,4 +1,4 @@
-package ejercicio_22;
+package ejercicio_23;
 
 public class Alumno extends Persona {
 
