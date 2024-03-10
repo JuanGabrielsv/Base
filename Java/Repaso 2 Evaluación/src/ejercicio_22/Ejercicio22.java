@@ -1,58 +1,39 @@
-package ejercicio_21;
+package ejercicio_22;
 
 import java.util.Scanner;
 
-public class Ejercicio21 {
+public class Ejercicio22 {
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
-		/*Alumno alumno1 = new Alumno();
-		Alumno alumno2 = new Alumno("53279139G");
-		
-		System.out.print("DNI: ");
-		alumno1.setDni(sc.nextLine());
-		System.out.print("NOMBRE: ");
-		alumno1.setNombre(sc.nextLine());
-		System.out.print("EDAD: ");
-		alumno1.setEdad(Integer.parseInt(sc.nextLine()));
-		System.out.print("NOTA: ");
-		alumno1.setNota(Double.parseDouble(sc.nextLine()));
-		sc.close();
-		
-		alumno1.aprobar();
-		
-		System.out.println(alumno1);
-		System.out.println(alumno2);*/
-		
+
 		System.out.println("Dime el dni");
 		String dni = sc.nextLine();
 		Alumno alumno = new Alumno(dni);
-		//System.out.println("Edad: " + alumno.getEdad());
-		
+		// System.out.println("Edad: " + alumno.getEdad());
+
 		System.out.println("Dime el nombre");
 		String nombre = sc.nextLine();
 		alumno.setNombre(nombre);
-		
+
 		System.out.println("Dime la edad");
 		Integer edad = sc.nextInt();
 		alumno.setEdad(edad);
 		System.out.println("Dime la nota");
 		Double nota = sc.nextDouble();
 		alumno.setNota(nota);
-		sc.close();		
-		
+		sc.close();
+
 		System.out.println("DNI: " + alumno.getDni());
 		System.out.println("NOMBRE: " + alumno.getNombre());
 		System.out.println("EDAD: " + alumno.getEdad());
-		System.out.println("NOTA: " + alumno.getNota());		
-		
+		System.out.println("NOTA: " + alumno.getNota());
+
 		alumno.aprobar();
-		
+
 		System.out.println("Nueva NOTA: " + alumno.getNota());
 
-		
 	}
 
 }

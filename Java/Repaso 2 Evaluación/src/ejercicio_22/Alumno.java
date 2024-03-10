@@ -1,8 +1,8 @@
-package ejercicio_21;
+package ejercicio_22;
 
 public class Alumno extends Persona {
 
-	private String dni;	
+	private String dni;
 	private Double nota;
 
 	// CONSTRUCTORES
@@ -35,5 +35,5 @@ public class Alumno extends Persona {
 
 	public void aprobar() {
 		this.nota = 5.0;
-	}	
+	}
 }
