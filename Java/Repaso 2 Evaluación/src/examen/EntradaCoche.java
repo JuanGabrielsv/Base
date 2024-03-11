@@ -83,12 +83,12 @@ public abstract class EntradaCoche {
 	}
 
 	public abstract BigDecimal getPrecioTrabajo();
-	
+
 	public Integer getDiasTaller() {
-		
+
 		LocalDate now = LocalDate.now();
-		
-		if (this.fecha.isBefore(now)) {		
+
+		if (this.fecha.isBefore(now)) {
 			return this.fecha.until(now).getDays();
 		}
 		return 0;
@@ -113,24 +113,23 @@ public abstract class EntradaCoche {
 
 	@Override
 	public String toString() {
+
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		
 		String sinoGarantia;
+		String sinoTerminado;
+
 		if (this.garantia) {
 			sinoGarantia = "EN GARANTIA";
-		}
-		else {
+		} else {
 			sinoGarantia = "SIN GARANTIA";
 		}
-		
-		String sinoTerminado;
+
 		if (this.terminado) {
 			sinoTerminado = "TERMIANDO";
-		}
-		else {
+		} else {
 			sinoTerminado = "PENDIENTE";
 		}
-		
+
 		return matricula.toUpperCase() + " - " + fecha.format(formato) + " - " + sinoGarantia + " - " + sinoTerminado;
 	}
 
