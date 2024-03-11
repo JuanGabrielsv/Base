@@ -968,37 +968,10 @@ INSERT INTO pago VALUES (30,'PayPal','ak-std-000024','2009-01-16',7863);
 INSERT INTO pago VALUES (35,'PayPal','ak-std-000025','2007-10-06',3321);
 INSERT INTO pago VALUES (38,'PayPal','ak-std-000026','2006-05-26',1171);
 
-/* 1. ¿Cuántos clientes tienen por nombre de contacto Maria?. */
-SELECT * FROM cliente;
-SELECT nombre_contacto FROM cliente WHERE nombre_contacto = 'Maria';
-
-/* 2. Devuelve la línea de dirección 1 de los clientes, sustituyendo C/ por la palabra CALLE, cuando sea necesario y la ciudad sea Fuenlabrada. */
-SELECT linea_direccion1 FROM cliente;
-SELECT REPLACE(linea_direccion1,'C/','Calle ') FROM cliente WHERE ciudad = 'Fuenlabrada';
-
-/* 3. Indica el país, con todas sus letras en mayúsculas, que tiene más clientes. */
-SELECT * FROM cliente;
-SELECT UPPER(pais) FROM cliente GROUP BY pais HAVING COUNT(*) = (SELECT MAX(COUNT(*)) FROM cliente GROUP BY pais);
-
-/* 4. Indica el nombre del cliente con todas las letras en minúsculas de aquellos cuyo fax termina en 16. */
-SELECT LOWER(nombre_cliente) FROM cliente WHERE fax LIKE '%16';
-
-/* 5. Se quiere sustituir todas las vocales por el caracter - en el nombre de contacto, y mostrarlo (tabla cliente). */
-SELECT REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(LOWER(nombre_contacto),'a','-'),'e','-'),'i','-'),'o','-'),'u','-') FROM cliente;
-
-/* 6. Devuelve en una columna el nombre de contacto, en otra el apellido de contacto y en una tercera el número de palabras que hay
-      en el apellido del contacto en la tabla cliente (se debe suponer que solo es posible 1 o 2 apellidos a lo sumo, separados por un espacio siempre). */
-SELECT nombre_contacto, apellido_contacto, DECODE(INSTR(apellido_contacto, ' '),0,'1','2') FROM cliente;
-SELECT nombre_contacto, apellido_contacto, DECODE(SUBSTR(apellido_contacto, 1, INSTR(apellido_contacto, ' ')), NULL, '1') FROM cliente;      
-
-/* 7. Devuelve el nombre de los cliente junto al caracter : y el campo limite_credito de aquellos clientes cuyo límite de crédito está entre 10000 y 50000. 
-      La cadena debe mostrarse en una única columna y terminar con la palabra "euros". */
-
-      
-
-/* 8. Se quiere saber el nombre del empleado y el número de clientes que representa como ventas, ordenados primero por el que tiene
-      más clientes representados (de mayor a menor), y luego por el nombre del empleado en orden alfabético (A a Z). */
-
-/* 9. ¿Cuántos códigos postales de clientes tienen un 8 o un 9 entre sus cifras?. */
-
-/* 10. Se quiere saber el nombre de aquellos clientes que no tienen línea de dirección 2, su ciudad es Madrid y su línea de dirección 1 acaba en 4. */
+/* 1. Se quiere saber la segunda palabra del nombre de los clientes y mostrarla en mayúsculas. En caso de que no tenga, no debe aparecer en la lista. 
+      No deben aparecer espacios ni antes ni después de esta segunda palabra. Se entiende que la segunda palabra es aquella que está entre el primer espacio y el segundo espacio. */
+/* 2. Se quiere mostrar en una única columna y fila una frase que contenga el nombre del cliente que hizo el último pago, 
+      el nombre del cliente que hizo el primer pago y la diferencia en meses (entero inferior, sin decimales) entre ambos pagos. 
+      El resultado debería ser tal que así tras las concatenaciones de dichos tres campos: 'Sotogrande y Tendo Garden. Han pasado 38 meses'. */
+/* 3. Empleando IN, obtén el nombre y gama de todos los productos que sean de la gama Ornamentales, Frutales y Aromáticas, y el tamaño/número de caracteres del nombre sea inferior o igual a 10 caracteres. */
+/* 4. Se quiere saber el código de los pedidos que no tienen comentarios y además la fecha del pedido se encuentra entre enero de 2008 y febrero de 2009. */
