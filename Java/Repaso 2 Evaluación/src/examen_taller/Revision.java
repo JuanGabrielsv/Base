@@ -1,4 +1,4 @@
-package examen;
+package examen_taller;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
