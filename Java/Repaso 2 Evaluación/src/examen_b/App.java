@@ -1,4 +1,4 @@
-package examen_taller;
+package examen_b;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;
