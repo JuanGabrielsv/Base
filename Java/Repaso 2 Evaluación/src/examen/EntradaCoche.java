@@ -125,7 +125,7 @@ public abstract class EntradaCoche {
 		}
 
 		if (this.terminado) {
-			sinoTerminado = "TERMIANDO";
+			sinoTerminado = "TERMINADO";
 		} else {
 			sinoTerminado = "PENDIENTE";
 		}

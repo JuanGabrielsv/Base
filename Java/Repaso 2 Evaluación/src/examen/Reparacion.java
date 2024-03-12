@@ -13,6 +13,7 @@ public class Reparacion extends EntradaCoche {
 		super(fecha, matricula, garantia);
 	}
 
+	@Override
 	public BigDecimal getPrecioTrabajo() {
 
 		if (this.getGarantia()) {

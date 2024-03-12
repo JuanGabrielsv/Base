@@ -40,7 +40,9 @@ public class App {
 		entradaDeCoche2.setTerminado(true);
 		
 		DecimalFormat formato = new DecimalFormat("#,###.00 €");
-		System.out.println(formato.format(miTaller.getImporteParaCobrar()));		
+		System.out.println(formato.format(miTaller.getImporteParaCobrar()));
+		
+		System.out.println(entradaDeCoche1);
 		
 	}
 

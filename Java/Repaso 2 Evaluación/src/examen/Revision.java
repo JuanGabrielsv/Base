@@ -15,6 +15,7 @@ public class Revision extends EntradaCoche {
 		super(fecha, matricula, garantia);
 	}
 
+	@Override
 	public BigDecimal getPrecioTrabajo() {
 		return new BigDecimal(200);
 	}
