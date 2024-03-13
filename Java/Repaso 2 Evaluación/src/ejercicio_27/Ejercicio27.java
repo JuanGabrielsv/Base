@@ -11,7 +11,7 @@ package ejercicio_27;
 
 import java.util.Scanner;
 
-public class Ejercicio26 {
+public class Ejercicio27 {
 
 	public static void main(String[] args) {
 
@@ -24,9 +24,27 @@ public class Ejercicio26 {
 		curso.setDescripcion("DAM/DAW");
 
 		for (int i = 0; i < alumnos.length; i++) {
-			System.out.print("NOMBRE: ");
+
 			Alumno alumno = new Alumno();
+			Boolean check;
+
+			System.out.print("NOMBRE: ");
 			alumno.setNombre(sc.nextLine());
+
+			do {
+
+				System.out.print("DNI: ");
+				alumno.setDni(sc.nextLine());
+
+				if (alumno.validarDNI()) {					
+					check = false;					
+				} 
+				else {					
+					check = true;					
+				}
+
+			} while (check);
+
 			System.out.print("DNI: ");
 			alumno.setDni(sc.nextLine());
 			System.out.print("EDAD: ");

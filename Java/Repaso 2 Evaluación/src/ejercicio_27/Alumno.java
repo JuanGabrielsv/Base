@@ -39,11 +39,9 @@ public class Alumno extends Persona {
 	}
 
 	public void setDni(String dni) {
-
 		if (dni != null) {
 			this.dni = dni.toUpperCase();
 		}
-
 		this.dni = dni;
 	}
 
@@ -67,6 +65,10 @@ public class Alumno extends Persona {
 
 	public void aprobar() {
 		this.nota = 5.0;
+	}
+	
+	public Boolean validarDNI() {
+		return (this.dni != null && this.dni.length() == 9); 
 	}
 
 	@Override
