@@ -2,6 +2,7 @@ package examen_a;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public abstract class Cita {
@@ -19,6 +20,18 @@ public abstract class Cita {
 
 	public Cita(LocalDate fecha, Integer hora, String nombrePaciente, Boolean seguroMedico) {
 		this.facturado = false;
+	}
+
+	public abstract BigDecimal getImporteFactura();
+
+	public Integer getDiasHastaCita() {		
+		LocalDate date = LocalDate.now();
+		
+		if (getFecha().isAfter(date)) {
+			return date.until(this.fecha).getDays();
+		} else {
+			return -1;
+		}
 	}
 
 	public LocalDate getFecha() {
@@ -78,6 +91,18 @@ public abstract class Cita {
 		return Objects.equals(fecha, other.fecha) && Objects.equals(hora, other.hora);
 	}
 
-	public abstract BigDecimal getImporteFactura();
+	@Override
+	public String toString() {
+
+		DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String snSeguro;
+
+		if (getSeguroPrivado()) {
+			snSeguro = "CON SEGURO";
+		}
+		snSeguro = "SIN SEGURO";
+
+		return nombrePaciente + " - " + fecha.format(formatoFecha) + " - " + hora + " horas - " + snSeguro;
+	}
 
 }

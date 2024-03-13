@@ -24,7 +24,7 @@ public class Taller {
 	public Boolean addEntradaCoche(EntradaCoche entradaCoche) {
 
 		for (EntradaCoche entradaAuto : entradas) {
-
+			
 			LocalDate date = LocalDate.now();
 
 			if (entradaAuto.getFecha().isAfter(date)
@@ -56,11 +56,9 @@ public class Taller {
 		BigDecimal precioTotal = new BigDecimal(0);
 
 		for (EntradaCoche entradaCoche : entradas) {
-
 			if (entradaCoche.getTerminado()) {
 				precioTotal = precioTotal.add(entradaCoche.getPrecioTrabajo());
 			}
-
 		}
 		return precioTotal.setScale(2, RoundingMode.HALF_UP);
 	}
