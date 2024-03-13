@@ -29,9 +29,9 @@ public abstract class Cita {
 
 	public abstract BigDecimal getImporteFactura();
 
-	public Integer getDiasHastaCita() {		
+	public Integer getDiasHastaCita() {
 		LocalDate date = LocalDate.now();
-		
+
 		if (getFecha().isAfter(date)) {
 			return date.until(this.fecha).getDays();
 		} else {

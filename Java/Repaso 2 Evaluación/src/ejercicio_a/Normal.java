@@ -18,9 +18,9 @@ public class Normal extends Cita {
 		if (this.getSeguroPrivado()) {
 			return new BigDecimal(100);
 		} else {
-			return new BigDecimal(150);			
+			return new BigDecimal(150);
 		}
-		
+
 	}
 
 }
