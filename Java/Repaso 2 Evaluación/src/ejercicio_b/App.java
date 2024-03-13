@@ -44,6 +44,8 @@ public class App {
 		
 		System.out.println(entradaDeCoche1);
 		
+		sc.close();
+		
 	}
 
 }
