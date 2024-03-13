@@ -7,15 +7,15 @@ public class Ejercicio26 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		
+
 		Alumno[] alumnos = new Alumno[3];
-		
+
 		Curso curso = new Curso();
 		curso.setIdentificador(1L);
 		curso.setDescripcion("DAM/DAW");
-		
+
 		for (int i = 0; i < alumnos.length; i++) {
-			System.out.print("NOMBRE: ");			
+			System.out.print("NOMBRE: ");
 			Alumno alumno = new Alumno();
 			alumno.setNombre(sc.nextLine());
 			System.out.print("DNI: ");
@@ -25,23 +25,20 @@ public class Ejercicio26 {
 			System.out.print("NOTA: ");
 			alumno.setNota(Double.parseDouble(sc.nextLine()));
 			alumno.setCurso(curso);
-			alumnos[i] = alumno;			
+			alumnos[i] = alumno;
 		}
-		
+
 		for (Alumno alumno : alumnos) {
 			System.out.println(alumno);
 		}
-		
+
 		if (alumnos[0].equals(alumnos[1]) || alumnos[0].equals(alumnos[2]) || alumnos[1].equals(alumnos[2])) {
-			System.err.println("*** ERROR: Hay alumnos iguales ***");			
-		}
-		else {
+			System.err.println("*** ERROR: Hay alumnos iguales ***");
+		} else {
 			System.out.println("No hay alumnos iguales");
 		}
-		
-		sc.close();
 
-		
+		sc.close();
 
 	}
 }

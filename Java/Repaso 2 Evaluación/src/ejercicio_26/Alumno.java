@@ -15,7 +15,7 @@ public class Alumno extends Persona {
 
 	public Alumno(String dni) {
 		super();
-		this.dni = dni;
+		this.dni = dni.toUpperCase();
 	}
 
 	// MÉTODOS GET AND SET
@@ -25,7 +25,7 @@ public class Alumno extends Persona {
 	}
 
 	public void setDni(String dni) {
-		this.dni = dni;
+		this.dni = dni.toUpperCase();
 	}
 
 	public Double getNota() {
