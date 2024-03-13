@@ -26,7 +26,7 @@ public class Ejercicio27 {
 		for (int i = 0; i < alumnos.length; i++) {
 
 			Alumno alumno = new Alumno();
-			Boolean check;
+			Boolean check = false;
 
 			System.out.print("NOMBRE: ");
 			alumno.setNombre(sc.nextLine());
@@ -36,17 +36,15 @@ public class Ejercicio27 {
 				System.out.print("DNI: ");
 				alumno.setDni(sc.nextLine());
 
-				if (alumno.validarDNI()) {					
-					check = false;					
-				} 
-				else {					
-					check = true;					
+				if (!alumno.validarDNI()) {					
+					System.err.println("\nDNI NO VALIDO INTRODÚZCALO DE NUEVO");					
+				}
+				else {
+					check = true;
 				}
 
-			} while (check);
-
-			System.out.print("DNI: ");
-			alumno.setDni(sc.nextLine());
+			} while (!check);
+			
 			System.out.print("EDAD: ");
 			alumno.setEdad(Integer.parseInt(sc.nextLine()));
 			System.out.print("NOTA: ");
