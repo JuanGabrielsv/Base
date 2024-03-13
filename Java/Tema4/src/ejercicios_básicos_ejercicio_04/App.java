@@ -3,7 +3,7 @@ EJERCICIO 4
 Repite el ejercicio anterior, pero reutilizando (llamando a) los métodos creados en el Ejercicio
 1 y 2. 
 */
-package ejercicios_básicos_ejercicio04;
+package ejercicios_básicos_ejercicio_04;
 import java.util.Random;
 
 public class App {
@@ -19,10 +19,10 @@ public class App {
 	
 	public static String getMinMay(Integer num, String cadena) {
 		if (num == 1) {
-			cadena = ejercicios_básicos_ejercicio01.App.getMayusculas(cadena);
+			cadena = ejercicios_básicos_ejercicio_01.App.getMayusculas(cadena);
 		}
 		else if (num == 2) {
-			cadena = ejercicios_básicos_ejercicio02.App.getMinusculas(cadena);
+			cadena = ejercicios_básicos_ejercicio_02.App.getMinusculas(cadena);
 		}
 		return cadena;
 	}
