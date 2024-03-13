@@ -3,7 +3,7 @@ Crea un método llamado getMayusculas que reciba una cadena por parámetro y dev
 cadena que será el resultado de quitar los espacios en blanco de los extremos de la primera y
 de pasarla luego todo a mayúsculas.
 Pruébalo desde el método main con algún test. */
-package ejercicios_básicos_ejercicio1;
+package ejercicios_básicos_ejercicio01;
 import java.util.Scanner;
 
 public class App {

@@ -8,7 +8,7 @@ recibidos. Reutiliza los métodos ya creados en los ejercicios anteriores.
 Declara las cadenas “ADD”, “SUB”, “MUL” o “DIV” como constantes.
 Prueba el método nuevo con varias pruebas desde el main (usa las constantes).    
 */
-package ejercicios_básicos_ejercicio8;
+package ejercicios_básicos_ejercicio08;
 
 public class Calculadora {
 	

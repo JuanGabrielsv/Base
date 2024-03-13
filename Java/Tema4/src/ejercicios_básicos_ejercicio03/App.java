@@ -8,7 +8,7 @@ Luego, si el número recibido es 1, devolverá esa cadena en mayúsculas. Si el 
 es 2, devolverá esa cadena en minúsculas.
 Pruébalo desde el método main con algún test. 
 */
-package ejercicios_básicos_ejercicio3;
+package ejercicios_básicos_ejercicio03;
 
 import java.util.Random;
 

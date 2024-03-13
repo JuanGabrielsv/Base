@@ -3,7 +3,7 @@ EJERCICIO 6
 Lleva el método realizado en el ejercicio anterior a una nueva clase llamada “Calculadora”.
 Prueba su funcionamiento desde el método main con algún test.   
 */
-package ejercicios_básicos_ejercicio6;
+package ejercicios_básicos_ejercicio06;
 import java.util.Scanner;
 
 public class App {

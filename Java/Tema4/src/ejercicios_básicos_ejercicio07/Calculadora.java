@@ -4,7 +4,7 @@ Crea un nuevo método en la clase “Calculadora” que sea restar, otro multipl
 Todos reciben por parámetro dos enteros y deben devolver un entero con el resultado de la
 operación.   
 */
-package ejercicios_básicos_ejercicio7;
+package ejercicios_básicos_ejercicio07;
 
 public class Calculadora {
 	

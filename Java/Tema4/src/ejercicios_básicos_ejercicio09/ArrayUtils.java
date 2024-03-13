@@ -4,7 +4,7 @@ Crea un método llamado imprimirArray en una clase llamada ArrayUtils que reciba
 cadenas y lo imprima por completo.
 Pruébalo desde el método main con algún test. 
 */
-package ejercicios_básicos_ejercicio9;
+package ejercicios_básicos_ejercicio09;
 
 public class ArrayUtils {
 	

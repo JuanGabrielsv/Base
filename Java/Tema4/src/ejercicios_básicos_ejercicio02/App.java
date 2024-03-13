@@ -5,7 +5,7 @@ cadena que será el resultado de quitar los espacios en blanco de los extremos d
 de pasarla luego todo a minúsculas.
 Pruébalo desde el método main con algún test. 
 */
-package ejercicios_básicos_ejercicio2;
+package ejercicios_básicos_ejercicio02;
 
 import java.util.Scanner;
 
