@@ -27,8 +27,4 @@ public class Revision extends EntradaCoche {
 	public void setKilometros(Integer kilometros) {
 		this.kilometros = kilometros;
 	}
-	
-	
-	
-
 }

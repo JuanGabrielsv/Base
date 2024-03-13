@@ -22,13 +22,12 @@ public class Taller {
 	}
 
 	public Boolean addEntradaCoche(EntradaCoche entradaCoche) {
+		
+		LocalDate date = LocalDate.now();
 
-		for (EntradaCoche entradaAuto : entradas) {
+		for (EntradaCoche entradaAuto : entradas) {			
 			
-			LocalDate date = LocalDate.now();
-
-			if (entradaAuto.getFecha().isAfter(date)
-					&& entradaCoche.getMatricula().equals(entradaAuto.getMatricula())) {
+			if (entradaAuto.getFecha().isAfter(date) && entradaCoche.getMatricula().contains(entradaAuto.getMatricula())) {
 				return false;
 			}
 		}
@@ -39,12 +38,11 @@ public class Taller {
 	public List<EntradaCoche> getHistorialReparacionesCoche(String matricula) {
 
 		List<EntradaCoche> resultado = new ArrayList<>();
+		LocalDate date = LocalDate.now();
 
-		for (EntradaCoche entradaAuto : entradas) {
+		for (EntradaCoche entradaAuto : entradas) {	
 
-			LocalDate date = LocalDate.now();
-
-			if (entradaAuto.getFecha().isBefore(date) && entradaAuto.getMatricula().equals(matricula)) {
+			if (entradaAuto.getFecha().isBefore(date) && entradaAuto.getMatricula().contains(matricula)) {
 				resultado.add(entradaAuto);
 			}
 		}

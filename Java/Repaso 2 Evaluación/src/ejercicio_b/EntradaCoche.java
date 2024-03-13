@@ -30,6 +30,18 @@ public abstract class EntradaCoche {
 		this.entregado = false;
 	}
 
+	public abstract BigDecimal getPrecioTrabajo();
+
+	public Integer getDiasTaller() {
+
+		LocalDate now = LocalDate.now();
+
+		if (this.fecha.isBefore(now)) {
+			return this.fecha.until(now).getDays();
+		}
+		return 0;
+	}
+
 	// MÉTODOS GET AND SET
 
 	public LocalDate getFecha() {
@@ -79,19 +91,7 @@ public abstract class EntradaCoche {
 	public void setEntregado(Boolean entregado) {
 		this.entregado = entregado;
 	}
-
-	public abstract BigDecimal getPrecioTrabajo();
-
-	public Integer getDiasTaller() {
-
-		LocalDate now = LocalDate.now();
-
-		if (this.fecha.isBefore(now)) {
-			return this.fecha.until(now).getDays();
-		}
-		return 0;
-	}
-
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(fecha, matricula);
