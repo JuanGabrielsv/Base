@@ -5,8 +5,8 @@ import java.time.LocalDate;
 
 public class Normal extends Cita {
 
-	public Normal(LocalDate fecha, Integer hora, String nombrePaciente, Boolean seguroMedico) {
-		super(fecha, hora, nombrePaciente, seguroMedico);
+	public Normal(LocalDate fecha, Integer hora, String nombrePaciente, Boolean seguroPrivado) {
+		super(fecha, hora, nombrePaciente, seguroPrivado);
 	}
 
 	public Normal(String nombrePaciente) {
@@ -15,10 +15,12 @@ public class Normal extends Cita {
 
 	@Override
 	public BigDecimal getImporteFactura() {
-		if (getSeguroPrivado()) {
+		if (this.getSeguroPrivado()) {
 			return new BigDecimal(100);
+		} else {
+			return new BigDecimal(150);			
 		}
-		return new BigDecimal(150);
+		
 	}
 
 }

@@ -14,11 +14,16 @@ public abstract class Cita {
 	private Boolean facturado;
 
 	public Cita(String nombrePaciente) {
+		this.nombrePaciente = nombrePaciente;
 		this.seguroPrivado = false;
 		this.facturado = false;
 	}
 
-	public Cita(LocalDate fecha, Integer hora, String nombrePaciente, Boolean seguroMedico) {
+	public Cita(LocalDate fecha, Integer hora, String nombrePaciente, Boolean seguroPrivado) {
+		this.fecha = fecha;
+		this.hora = hora;
+		this.nombrePaciente = nombrePaciente;
+		this.seguroPrivado = seguroPrivado;
 		this.facturado = false;
 	}
 
@@ -62,8 +67,8 @@ public abstract class Cita {
 		return seguroPrivado;
 	}
 
-	public void setSeguroMedico(Boolean seguroMedico) {
-		this.seguroPrivado = seguroMedico;
+	public void setSeguroPrivado(Boolean seguroPrivado) {
+		this.seguroPrivado = seguroPrivado;
 	}
 
 	public Boolean getFacturado() {

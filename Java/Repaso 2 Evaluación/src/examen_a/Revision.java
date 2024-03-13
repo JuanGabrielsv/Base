@@ -7,8 +7,8 @@ public class Revision extends Cita {
 
 	private Integer numeroRevision;
 
-	public Revision(LocalDate fecha, Integer hora, String nombrePaciente, Boolean seguroMedico) {
-		super(fecha, hora, nombrePaciente, seguroMedico);
+	public Revision(LocalDate fecha, Integer hora, String nombrePaciente, Boolean seguroPrivado) {
+		super(fecha, hora, nombrePaciente, seguroPrivado);
 	}
 
 	public Revision(String nombrePaciente) {
