@@ -13,4 +13,26 @@ package ejercicio_31;
 
 public class Fecha {
 
+	private Integer dia;
+	private Integer mes;
+	private Integer ano;
+
+	// CONSTRUCORES
+
+	public Fecha(Integer dia, Integer mes, Integer ano) {
+
+		super();
+		this.dia = dia;
+		this.mes = mes;
+		this.ano = ano;
+
+	}	
+	
+	// TO STRING
+	
+	@Override
+	public String toString() {
+		return "Fecha [dia=" + dia + ", mes=" + mes + ", ano=" + ano + "]";
+	}
+
 }

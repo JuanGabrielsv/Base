@@ -15,6 +15,9 @@ public class App {
 
 	public static void main(String[] args) {
 		
+		Fecha fecha1 = new Fecha(14,2,2024);
+		
+		System.out.println(fecha1);
 
 	}
 
