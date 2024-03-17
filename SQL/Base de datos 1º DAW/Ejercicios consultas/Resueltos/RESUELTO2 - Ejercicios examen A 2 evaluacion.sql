@@ -252,6 +252,11 @@ select count(*) from comandas where trim(to_char(fecha,'DAY')) = 'MARTES';
 
 /* 14. Se quiere saber cuántos platos se preparan en 10 minutos, cuántos en 15 y cuantos en 25. Muestra una lista agrupada con el tiempo de preparación y el número de platos
        que tardan ese tiempo. El resultado debe estar ordenado por el tiempo de preparación de menor a mayor. */
+SELECT tiempo_preparacion, COUNT(*) FROM platos GROUP BY tiempo_preparacion ORDER BY tiempo_preparacion;
+
+--SOLUCION PROFESOR
+select tiempo_preparacion,count(*) from platos group by tiempo_preparacion order by tiempo_preparacion;
+
 /* 15. Necesitamos una lista con el NOMBRE y la LOCALIDAD de los clientes, pero el NOMBRE debe tener todas las letras en mayúsculas y que no haya ningún espacio
        entre nombres compuestos. Ej: PEDROJUAN. */
 /* 16. Indica el valor medio del PRECIO de los platos con REDONDEO de dos decimales. */
