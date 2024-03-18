@@ -26,6 +26,18 @@ public class App {
 			System.out.println("Clave: " + key + " --> valor: " + jugadores.get(key));			
 		}
 		
+		System.out.println("Números de elementos: " + jugadores.size());
+		System.out.println("¿Está vacio?: " + jugadores.isEmpty());
+		System.out.println("Valor de la clave 6 : " + jugadores.get(6));
+		System.out.println("Borramos a Pedrito: " + jugadores.remove(18));		
+		System.out.println("Obtenemos 18 : " + jugadores.get(18));
+		System.out.println("¿Existe la key 18?: " + jugadores.containsKey(18));		
+		System.out.println("¿Existe la key 1?: " + jugadores.containsKey(1));
+		
+		jugadores.clear();
+		
+		System.out.println(jugadores.size());
+		System.out.println("¿Está vacio?: " + jugadores.isEmpty());
 		
 
 	}
