@@ -32,10 +32,8 @@ public class App {
 		System.out.println("Borramos a Pedrito: " + jugadores.remove(18));		
 		System.out.println("Obtenemos 18 : " + jugadores.get(18));
 		System.out.println("¿Existe la key 18?: " + jugadores.containsKey(18));		
-		System.out.println("¿Existe la key 1?: " + jugadores.containsKey(1));
-		
-		jugadores.clear();
-		
+		System.out.println("¿Existe la key 1?: " + jugadores.containsKey(1));		
+		jugadores.clear();		
 		System.out.println(jugadores.size());
 		System.out.println("¿Está vacio?: " + jugadores.isEmpty());
 		
