@@ -166,7 +166,6 @@ insert into comandas values (32,1,3,5,'COBRADO','02-03-2021','21:55');
 
 /* 1. ¿Cuál es la categoría de ingrediente [carne, pescado, etc.] que se usa en mayor cantidad en los platos del restaurante? */
 SELECT ingredientes.categoria, SUM(cantidad) FROM ingredientes_platos JOIN ingredientes ON ingredientes.id = ingredientes_platos.id_ingrediente GROUP BY categoria ORDER BY SUM(cantidad) DESC;
-
 --SOLUCIÓN PROFESOR
 select categoria,sum(cantidad) from ingredientes_platos join ingredientes on ingredientes.id = ingredientes_platos.id_ingrediente group by categoria
     having sum(cantidad) = (select max(sum(cantidad)) from ingredientes_platos join ingredientes on ingredientes.id = ingredientes_platos.id_ingrediente group by categoria);
@@ -325,10 +324,25 @@ select count(*) from comandas where estado = 'SERVIDO' and mesa = 1 and hora bet
 
 /* 30. Indica la CATEGORIA del ingrediente Perejil. Debes mostrar dicha categoria con el tamaño/número de caracteres que sea el tamaño de la categoría que tenga menos letras.
        En este caso, es OTRO, que tiene 4 caracteres, pero no puedes usar el número 4, debes calcular en tu query ese tamaño mínimo. */
-SELECT ingredientes.categoria FROM ingredientes WHERE ingredientes.nombre = 'Perejil';
+SELECT SUBSTR(ingredientes.categoria, 1, (SELECT MIN(LENGTH(categoria)) FROM ingredientes)) FROM ingredientes WHERE nombre = 'Perejil';
+--SOLUCION PROFESOR
+select substr(categoria, 1, (select min(length(categoria)) from ingredientes)) from ingredientes where nombre = 'Perejil';
+
 /* 31. Se quiere saber el nombre del cliente, el tiempo de preparación del plato que pidió, el nombre del ingrediente que se usa en mayor cantidad en dicho plato que pidió
-       y la categoría de dicho ingrediente, para aquella comanda realizada en la mesa 1 que fue DEVUELTO. */      
+       y la categoría de dicho ingrediente, para aquella comanda realizada en la mesa 1 que fue DEVUELTO. */
+SELECT c.nombre, p.tiempo_preparacion, i.nombre, i.categoria FROM clientes c JOIN comandas co ON c.id = co.id_cliente JOIN platos p ON co.id_plato = p.id JOIN ingredientes_platos ip ON p.id = ip.id_plato 
+JOIN ingredientes i ON ip.id_ingrediente = i.id WHERE co.estado = 'DEVUELTO' AND co.mesa = 1 AND ip.cantidad = (SELECT MAX(ip.cantidad) FROM platos p JOIN ingredientes_platos ip ON p.id = ip.id_plato 
+JOIN ingredientes i ON ip.id_ingrediente = i.id WHERE p.id = 1);
+--SOLUCION PROFESOR
+select clientes.nombre, platos.tiempo_preparacion, ingredientes.nombre, ingredientes.categoria from comandas join clientes on clientes.id = comandas.id_cliente
+    join platos on platos.id = comandas.id_plato join ingredientes_platos on ingredientes_Platos.id_plato = comandas.id_plato join ingredientes on ingredientes.id = ingredientes_platos.id_ingrediente
+    where mesa = 1 and comandas.estado = 'DEVUELTO' and cantidad = (select max(cantidad) from comandas join ingredientes_platos on ingredientes_Platos.id_plato = comandas.id_plato 
+    where mesa = 1 and comandas.estado = 'DEVUELTO');
+
 /* 32. Se quiere mostrar una lista con todos los ingredientes en una columna, y en otra columna la suma de la cantidad empleada por cada ingrediente en los distintos platos. */
+SELECT i.nombre, SUM(ip.cantidad) FROM ingredientes i JOIN ingredientes_platos ip ON i.id = ip.id_ingrediente GROUP BY i.nombre;
+--SOLUCION PROFESOR
+select nombre,sum(cantidad) from ingredientes_platos join ingredientes on ingredientes.id = ingredientes_platos.id_ingrediente group by nombre;
 
 
 
