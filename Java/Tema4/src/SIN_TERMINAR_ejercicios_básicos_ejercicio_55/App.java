@@ -2,8 +2,7 @@
 EJERCICIO 55
 
 Necesitamos un programa para registrar las notas de todos los alumnos. Para ello, crea una
-clase que se llame Evaluacion que tenga dentro un mapa de String --> BigDecimal.
-
+clase que se llame Evaluacion que tenga dentro un mapa de String --> BigDecimal
 La clase tendrá estos métodos:
 
 1. addNota() que reciba el dni del alumno, su nota, y lo añada al mapa. Si ya tenemos
@@ -47,118 +46,32 @@ Luego, realiza un programa que use la clase anterior:
 7. Obtén e imprime la lista de suspensos
 8. Borra los aprobados. Comprueba que funciona bien volviendo a imprimir la evaluación. 
 */
-package ejercicios_básicos_ejercicio_55;
+package SIN_TERMINAR_ejercicios_básicos_ejercicio_55;
 
 import java.math.BigDecimal;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
-public class Evaluacion {
-	
-	private String dni;
-	private BigDecimal nota;
-	Map<String, BigDecimal> mapNotas;
-	
-	public Evaluacion() {
+public class App {
+
+	public static void main(String[] args) {		
+		Evaluacion evaluacion1 = new Evaluacion("53279139F", new BigDecimal(71));	
 		
-		 mapNotas = new HashMap<String, BigDecimal>();
+		evaluacion1.getMapNotas().put("25885289D", new BigDecimal(66));
+		evaluacion1.getMapNotas().put("33333333S", null);
 		
-	}
-	
-/* 1. addNota() que reciba el dni del alumno, su nota, y lo añada al mapa. Si ya tenemos
-	  registrada una nota para el mismo alumno, no haremos nada (no sobrescribimos). El
-	  método debe devolver un booleano indicando si finalmente hemos añadido o no algo
-	  al mapa. */
-	
-	public Boolean addNota(String dni, BigDecimal nota) {		
-		if (mapNotas.containsKey(dni)) {
-			return false;
-		} else {
-			mapNotas.put(dni, nota);
-			return true;
-		}
-	}
+		evaluacion1.corregirNota("33333333S", new BigDecimal(32));
 		
-/*	2. corregirNota() que reciba el dni del alumno y su nota. Si ya tenemos para el alumno
-	   una nota, la cambiamos. Si no tenemos ninguna, no hacemos nada. El método debe
-	   devolver un booleano indicando si finalmente hemos corregido algo o no en el mapa. */
-		
-	public Boolean corregirNota(String dni, BigDecimal nota) {
-		if (mapNotas.containsKey(dni)) {
-			mapNotas.put(dni, nota);
-			return true;			
-		} else {
-			return false;
-		}		
-	}
-	
-/*	3. obtenerNotaAlumno() que recibe un dni y devuelve la nota de ese alumno. Si no la
-	   tuviéramos registrada, devolveremos un 0. */
-	
-	public BigDecimal obtenerNotaAlumno(String dni) {
-		if (!mapNotas.containsKey(dni) || mapNotas.get(dni) == null) {
-			return new BigDecimal(0);
-		} else {
-			return mapNotas.get(dni);
-		}
-	}
-	
-/*	4. obtenerNotaMedia() que no recibe nada y devuelve un BigDecimal con la nota media
-	   calculada de todos los alumnos. */
-	
-	public BigDecimal obtenerNotaMedia() {
-		
-		BigDecimal sumaTotal = BigDecimal.ZERO;
-		
-		Collection<BigDecimal> valores = mapNotas.values();
-		for (BigDecimal suma : valores) {
-			sumaTotal = sumaTotal.add(nota);
+		Set<Entry<String, BigDecimal>> pares = evaluacion1.getMapNotas().entrySet();
+		for (Entry<String, BigDecimal> par : pares) {
+			System.out.println("Clave: " + par.getKey());
+			System.out.println("Valor: " + par.getValue());
 		}
 		
-		
-		
+		System.out.println(evaluacion1.obtenerNotaMedia()); 
 		
 		
 		
 	}
-	
-	
-				
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public String getDni() {
-		return dni;
-	}
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
-	public Double getNota() {
-		return nota;
-	}
-	public void setNota(Double nota) {
-		this.nota = nota;
-	}
-	
 
 }
