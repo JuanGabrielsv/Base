@@ -82,12 +82,7 @@ public class App {
 		for (Entry<String, BigDecimal> par : pares2) {
 			System.out.println("Clave: " + par.getKey());
 			System.out.println("Valor: " + par.getValue());
-		}
-		
-		
-		
-		
-		
+		}		
 	}
 
 }
