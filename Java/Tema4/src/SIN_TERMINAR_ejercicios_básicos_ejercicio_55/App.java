@@ -54,8 +54,84 @@ import java.util.Set;
 
 public class App {
 
-	public static void main(String[] args) {		
-		Evaluacion evaluacion1 = new Evaluacion("53279139F", new BigDecimal(8));		
+	public static void main(String[] args) {
+		
+		/* 1. Crea un objeto evaluación */
+		
+		Evaluacion evaluacion1 = new Evaluacion();
+		
+		/* 2. Introduce 5 notas de distintos valores e imprime la evaluación */
+		
+		evaluacion1.addNota("53279139F", new BigDecimal(5.25));
+		evaluacion1.addNota("25283529D", new BigDecimal(3.64));
+		evaluacion1.addNota("32215541J", new BigDecimal(8));
+		evaluacion1.addNota("23956854N", new BigDecimal(6.15));
+		evaluacion1.addNota("52654125K", new BigDecimal(2.12));
+		
+		/* 3. Intenta volver a introducir una nota para un alumno repetido. Comprueba que no se
+		   modifique imprimiendo la evaluación de nuevo. */
+		
+		evaluacion1.addNota("53279139F", new BigDecimal(7.00));
+		
+		Set<Entry<String, BigDecimal>> pares = evaluacion1.getMapNotas().entrySet();
+		for (Entry<String, BigDecimal> par : pares) {
+			System.out.println("Clave: " + par.getKey());
+			System.out.println("Valor: " + par.getValue());
+		}
+		
+		System.out.println(evaluacion1.getMapNotas().size());
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*Evaluacion evaluacion1 = new Evaluacion("53279139F", new BigDecimal(8));		
 		evaluacion1.getMapNotas().put("25885289D", new BigDecimal(5));
 		evaluacion1.getMapNotas().put("33333333S", new BigDecimal(4));
 		evaluacion1.getMapNotas().put("98654321L", new BigDecimal(3));
@@ -84,7 +160,7 @@ public class App {
 			System.out.println("Valor: " + par.getValue());
 		}
 		
-		System.out.println(evaluacion1.getMapNotas());
+		System.out.println(evaluacion1.getMapNotas());*/
 	}
 
 }

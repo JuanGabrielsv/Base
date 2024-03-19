@@ -67,9 +67,9 @@ public class Evaluacion {
 	private Map<String, BigDecimal> mapNotas;
 	private static final BigDecimal APROBADO = new BigDecimal(5);
 
-	public Evaluacion(String dni, BigDecimal nota) {
+	public Evaluacion() {
 		mapNotas = new HashMap<String, BigDecimal>();
-		mapNotas.put(dni, nota);
+		
 	}
 
 	/*
@@ -84,7 +84,7 @@ public class Evaluacion {
 			mapNotas.put(dni, nota);
 			return true;
 		} else {
-			return false;
+			return false;			
 		}
 	}
 
@@ -234,6 +234,8 @@ public class Evaluacion {
 	
 	@Override
 	public String toString() {
+		
+		
 		return "Evaluacion [mapNotas=" + mapNotas + "]";
 	}
 	
