@@ -216,6 +216,8 @@ public class Evaluacion {
 	public Map<String, BigDecimal> getMapNotas() {
 		return mapNotas;
 	}
+
+	
 	
 // TO STRING
 	
@@ -230,6 +232,9 @@ public class Evaluacion {
 	*	 2913853R (4,9)
 	*/
 	
-	
+	@Override
+	public String toString() {
+		return "Evaluacion [mapNotas=" + mapNotas + "]";
+	}
 	
 }
