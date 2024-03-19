@@ -176,7 +176,6 @@ public class Evaluacion {
 	 */
 
 	public void borrarAprobados(Map<String, BigDecimal> mapNotas) {
-
 		Iterator<Map.Entry<String, BigDecimal>> iterador = mapNotas.entrySet().iterator();
 		while (iterador.hasNext()) {
 			Map.Entry<String, BigDecimal> pares = iterador.next();
