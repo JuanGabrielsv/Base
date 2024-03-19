@@ -216,5 +216,17 @@ public class Evaluacion {
 	public Map<String, BigDecimal> getMapNotas() {
 		return mapNotas;
 	}
-
+	
+// TO STRING
+	
+	/* 8. toString() que imprima el listado con este formato:
+	*	
+	*	Aprobados:
+	*	 2332323D (7,2)
+	*	 6332363F (5,2)
+	*	 0912399Z (9,1)
+	*	Suspensos:
+	*	 7561323B (3,2)
+	*	 2913853R (4,9)
+	*/
 }
