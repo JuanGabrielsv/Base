@@ -51,9 +51,13 @@ package SIN_TERMINAR_ejercicios_básicos_ejercicio_55;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class Evaluacion {
@@ -61,6 +65,7 @@ public class Evaluacion {
 	// private String dni;
 	// private BigDecimal nota;
 	private Map<String, BigDecimal> mapNotas;
+	private static final BigDecimal APROBADO = new BigDecimal(5);
 
 	public Evaluacion(String dni, BigDecimal nota) {
 		mapNotas = new HashMap<String, BigDecimal>();
@@ -131,10 +136,86 @@ public class Evaluacion {
 		return sumaDeNotas.divide(new BigDecimal(mapNotas.size()), 2, RoundingMode.HALF_DOWN);
 	}
 
+	/*
+	 * 5. obtenerCantidadAprobados() que devuelva un entero con la cantidad de
+	 * alumnos que tengan al menos un 5
+	 */
+
+	public Integer obtenerCantidadAprobados() {
+		Integer sumaNumAlumnosAprobados = 0;
+
+		Collection<BigDecimal> values = mapNotas.values();
+		for (BigDecimal val : values) {
+			if (val.compareTo(APROBADO) >= 0) {
+				sumaNumAlumnosAprobados++;
+			}
+		}
+		return sumaNumAlumnosAprobados;
+	}
+
+	/*
+	 * 6. obtenerSuspensos() que devuelva una lista con todos los DNIs de los
+	 * alumnos suspensos
+	 */
+
+	public List<String> obtenerSuspensos() {
+		List<String> listaAlumnosSuspensos = new ArrayList<>();
+
+		Set<Entry<String, BigDecimal>> pares = mapNotas.entrySet();
+		for (Entry<String, BigDecimal> par : pares) {
+			if (par.getValue().compareTo(APROBADO) == -1) {
+				listaAlumnosSuspensos.add(par.getKey());
+			}
+		}
+		return listaAlumnosSuspensos;
+	}
+
+	/*
+	 * 7. borrarAprobados() que borre todos los alumnos del mapa que estén
+	 * aprobados.
+	 */
+
+	public void borrarAprobados(Map<String, BigDecimal> mapNotas) {
+
+		Iterator<Map.Entry<String, BigDecimal>> iterador = mapNotas.entrySet().iterator();
+		while (iterador.hasNext()) {
+			Map.Entry<String, BigDecimal> pares = iterador.next();
+			if (pares.getValue().compareTo(APROBADO) >= 0) {
+				iterador.remove();
+			}
+		}
+
+		/*
+		 * ESTE ASÍ NO DA ERROR.... Iterator<Map.Entry<String, BigDecimal>> iterador =
+		 * mapNotas.entrySet().iterator(); while (iterador.hasNext()) {
+		 * Map.Entry<String, BigDecimal> pares = iterador.next(); if
+		 * (pares.getValue().compareTo(APROBADO) == 0 ||
+		 * pares.getValue().compareTo(APROBADO) == 1) { mapNotas.remove(pares); } }
+		 */
+
+		/*
+		 * Iterator<Map.Entry<String, BigDecimal>> iterador =
+		 * mapNotas.entrySet().iterator(); while (iterador.hasNext()) {
+		 * Map.Entry<String, BigDecimal> pares = iterador.next(); if
+		 * (pares.getValue().compareTo(APROBADO) >= 0) {
+		 * mapNotas.remove(pares.getKey()); }
+		 * 
+		 * }
+		 */
+
+		/*
+		 * Iterator<Map.Entry<String, BigDecimal>> iterador =
+		 * mapNotas.entrySet().iterator(); while (iterador.hasNext()) {
+		 * Map.Entry<String, BigDecimal> entry = iterador.next(); if
+		 * (entry.getValue().compareTo(APROBADO) >= 0) {
+		 * mapNotas.remove(entry.getKey()); } }
+		 */
+	}
+
 // MÉTODOS GET A SETS
 
 	public Map<String, BigDecimal> getMapNotas() {
-		return mapNotas; 
+		return mapNotas;
 	}
 
 }

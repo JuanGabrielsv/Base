@@ -55,12 +55,13 @@ import java.util.Set;
 public class App {
 
 	public static void main(String[] args) {		
-		Evaluacion evaluacion1 = new Evaluacion("53279139F", new BigDecimal(71));	
+		Evaluacion evaluacion1 = new Evaluacion("53279139F", new BigDecimal(8));		
+		evaluacion1.getMapNotas().put("25885289D", new BigDecimal(5));
+		evaluacion1.getMapNotas().put("33333333S", new BigDecimal(4));
+		evaluacion1.getMapNotas().put("98654321L", new BigDecimal(3));
+		evaluacion1.getMapNotas().put("21654852P", new BigDecimal(5));		
 		
-		evaluacion1.getMapNotas().put("25885289D", new BigDecimal(66));
-		evaluacion1.getMapNotas().put("33333333S", null);
-		
-		evaluacion1.corregirNota("33333333S", new BigDecimal(32));
+		evaluacion1.corregirNota("33333333S", new BigDecimal(2));		
 		
 		Set<Entry<String, BigDecimal>> pares = evaluacion1.getMapNotas().entrySet();
 		for (Entry<String, BigDecimal> par : pares) {
@@ -68,7 +69,22 @@ public class App {
 			System.out.println("Valor: " + par.getValue());
 		}
 		
-		System.out.println(evaluacion1.obtenerNotaMedia()); 
+		System.out.println("OBTENER NOTA MEDIA DE TODOS LOS ALUMNOS: " + evaluacion1.obtenerNotaMedia());
+		System.out.println("NÚMERO DE APROBADOS: " + evaluacion1.obtenerCantidadAprobados());
+		
+		for (String cadena : evaluacion1.obtenerSuspensos()) {
+			System.out.println(cadena);
+		}
+		
+		evaluacion1.borrarAprobados(evaluacion1.getMapNotas());
+		
+		Set<Entry<String, BigDecimal>> pares2 = evaluacion1.getMapNotas().entrySet();
+		for (Entry<String, BigDecimal> par : pares2) {
+			System.out.println("Clave: " + par.getKey());
+			System.out.println("Valor: " + par.getValue());
+		}
+		
+		
 		
 		
 		
