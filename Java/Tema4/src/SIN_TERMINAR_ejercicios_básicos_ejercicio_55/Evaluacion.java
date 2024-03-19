@@ -134,7 +134,7 @@ public class Evaluacion {
 // MÉTODOS GET A SETS
 
 	public Map<String, BigDecimal> getMapNotas() {
-		return mapNotas;
+		return mapNotas; 
 	}
 
 }
