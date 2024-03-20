@@ -51,6 +51,7 @@ package SIN_TERMINAR_ejercicios_básicos_ejercicio_55;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -208,8 +209,24 @@ public class Evaluacion {
 	*/
 	
 	@Override
-	public String toString() {		
-		return "";
+	public String toString() {
+		
+		DecimalFormat ft = new DecimalFormat("#.0");
+		String aprobados = "Aprobados:\n";
+		String suspensos = "Suspensos:|n";
+		
+		Set<String> dnis = mapNotas.keySet();
+		for (String dni : dnis) {
+			String linea = "\t" + dni + " (" + ft.format(mapNotas.get(dni)) + ")\n";
+			if (mapNotas.get(dni).compareTo(APROBADO) >= 0) {
+				aprobados += linea;
+			} else {
+				suspensos += linea;
+			}
+			
+		}
+		
+		return aprobados + "\n" + suspensos;
 	}
 	
 }
