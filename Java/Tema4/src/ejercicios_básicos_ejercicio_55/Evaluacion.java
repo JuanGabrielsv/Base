@@ -219,9 +219,9 @@ public class Evaluacion {
 		for (String dni : dnis) {
 			String linea = "\t" + dni + " (" + ft.format(mapNotas.get(dni)) + ")\n";
 			if (mapNotas.get(dni).compareTo(APROBADO) >= 0) {
-				aprobados += linea;
+				aprobados = aprobados + linea;
 			} else {
-				suspensos += linea;
+				suspensos = suspensos + linea;
 			}			
 		}		
 		return aprobados + "\n" + suspensos;

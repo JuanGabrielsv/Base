@@ -71,11 +71,7 @@ public class App {
 		evaluacion1.addNota("23956854N", new BigDecimal(6.15));
 		evaluacion1.addNota("52654125K", new BigDecimal(2.12));
 		
-		Set<Entry<String, BigDecimal>> pares1 = evaluacion1.getMapNotas().entrySet();
-		for (Entry<String, BigDecimal> par : pares1) {
-			System.out.println("Clave: " + par.getKey());
-			System.out.println("Valor: " + par.getValue().setScale(2, RoundingMode.HALF_DOWN));			
-		}		
+		System.out.println(evaluacion1);
 		
 		/* 3. Intenta volver a introducir una nota para un alumno repetido. Comprueba que no se
 		   modifique imprimiendo la evaluación de nuevo. */
@@ -84,11 +80,7 @@ public class App {
 		
 		evaluacion1.addNota("53279139F", new BigDecimal(7.00));
 		
-		Set<Entry<String, BigDecimal>> pares2 = evaluacion1.getMapNotas().entrySet();
-		for (Entry<String, BigDecimal> par : pares2) {
-			System.out.println("Clave: " + par.getKey());
-			System.out.println("Valor: " + par.getValue().setScale(2, RoundingMode.HALF_DOWN));			
-		}
+		System.out.println(evaluacion1);
 		
 		/* 4. Intenta corregir dos notas, una de un alumno que esté ya registrado y otra de un
    		   alumno no registrado. Comprueba que funciona correctamente imprimiendo de nuevo la evaluación. */
@@ -98,11 +90,7 @@ public class App {
 		evaluacion1.corregirNota("53279139F", new BigDecimal(8.75));
 		evaluacion1.corregirNota("65913782G", new BigDecimal(5.32));
 		
-		Set<Entry<String, BigDecimal>> pares3 = evaluacion1.getMapNotas().entrySet();
-		for (Entry<String, BigDecimal> par : pares3) {
-			System.out.println("Clave: " + par.getKey());
-			System.out.println("Valor: " + par.getValue().setScale(2, RoundingMode.HALF_DOWN));			
-		}
+		System.out.println(evaluacion1);
 		
 		/* 5. Obtén la nota de algún alumno y la nota media de todos. Imprímelas formateando
 		   correctamente los decimales. */
