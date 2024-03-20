@@ -213,7 +213,7 @@ public class Evaluacion {
 		
 		DecimalFormat ft = new DecimalFormat("#.0");
 		String aprobados = "Aprobados:\n";
-		String suspensos = "Suspensos:|n";
+		String suspensos = "Suspensos:\n";
 		
 		Set<String> dnis = mapNotas.keySet();
 		for (String dni : dnis) {
@@ -222,10 +222,8 @@ public class Evaluacion {
 				aprobados += linea;
 			} else {
 				suspensos += linea;
-			}
-			
-		}
-		
+			}			
+		}		
 		return aprobados + "\n" + suspensos;
 	}
 	
