@@ -191,16 +191,8 @@ public class Evaluacion {
 				iterador.remove();
 			}
 		}
-	}
-	
-	public void imprimirAprobados() {
-		Set<Entry<String, BigDecimal>> pares = mapNotas.entrySet();
-		for (Entry<String, BigDecimal> par : pares) {
-			if (par.getValue().compareTo(APROBADO) >= 0) {
-				System.out.println("good");
-			}
-		}
-	}
+	}	
+
 	
 // TO STRING
 	
@@ -216,14 +208,7 @@ public class Evaluacion {
 	*/
 	
 	@Override
-	public String toString() {
-		
-		
-		
-				
-		
-		
-		
+	public String toString() {		
 		return "";
 	}
 	
