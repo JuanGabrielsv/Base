@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ESTABLECE EL JUEGO DE CARÁCTERES -->
+    <meta charset="UTF-8">
+    <!-- ETIQUETA PARA HACER RESPONSIVE LA PÁGINA, ADAPTACIÓN DE ESCALAS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ESTABLECE UNA DESCRIPCIÓN DE LA PÁGINA -->
+    <meta name="description" content="Curso Html Tema 14">
+    <!-- ESTABLECE PALABRAS CLAVE PARA SER LOCALIZADA LA PÁGINA POR LOS MOTORES DE BÚSQUEDA -->
+    <meta name="keywords" content="HTML, CSS, JavaScript, Meta, Responsive">
+    <!-- ESTABLECE EL AUTOR DEL ARCHIVO -->
+    <meta name="author" content="Juan Gabriel Sánchez">
+    <title>Tema 14</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- ICONO DE VENTANA -->
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <!-- PONEMOS URL BASE -->
+    <!-- <base href="https://www.diariodesevilla.es/" target="_blank"> -->
+    <base href="paginastema14/" target="_blank">
+    <style>
+        * {
+        box-sizing: border-box;
+        }
+        .left {
+        background-color: #2196F3;
+        padding: 20px;
+        float: left;
+        width: 20%; /* Ancho a 20% por defecto */
+        }
+        .main {
+        background-color: #f1f1f1;
+        padding: 20px;
+        float: left;
+        width: 60%; /* Ancho a 60% por defecto */
+        }
+        .right {
+        background-color: #04AA6D;
+        padding: 20px;
+        float: left;
+        width: 20%; /* Ancho a 20% por defecto */
+        }
+        /* Uso de media query para añadir un cambio cuando se llega a 800px o
+        menos: */
+        @media screen and (max-width: 800px) {
+        .left, .main, .right {
+        width: 100%; /*Pone en vertical las cajas cuando baja o llega a
+        los 800px la resolución de pantalla */
+        }
+        }
+    </style>
+</head>
+<body>
+    <!-- LINK EXTERNOS ABSOLUTOS -->
+    <!--<a href="">Abrir diario de Sevilla</a>
+    <hr>
+    <a href="aljarafe">Abrir diario de Sevilla noticias aljarafe</a>
+    <hr>
+    <a href="economia">Abrir diario de Sevilla apartado economía</a>
+    <hr>-->
+
+    <!-- LINK RELATIVOS -->
+    <a href="tema14_1.html">Abrir Tema 14_1</a>
+    <hr>
+    <a href="tema14_2.html">Abrir Tema 14_2</a>
+    <hr>
+    <!-- USO RESPONSIVE DE IMÁGENES -->
+    <img src="tema14_paisaje.jpg" style="max-width: 100%;" alt="Se puede ver en la imagen un paisaje de un lago juntoaun bosque.">    
+    <!-- TEXTO EN PIXELES -->
+    <h1 style="font-size: 16px;">TEXTO NORMAL EN PIXELES</h1>
+    <p style="font-size: 12px;">Este párrafo está en tamaño de 12 pixeles.</p>
+    <!-- TEXTO EN VIEWPORT WIDTH -->
+    <h1 style="font-size: 10vw;">TEXTO RESPONSIVE EN VIEWPORT WIDTH</h1>
+    <p style="font-size: 5vw;">Este párrafo está en responsive a 12 viewport width.</p>
+    <!-- USO DE MEDIA QUERIE -->
+    <h2>Media Queries</h2>
+    <p>Escala el ancho del navegador</p>
+    <p>Mira lo que pasa cuando se alcanza 800px.</p>
+    <hr>
+    <div class="left">
+        <p>PARTE IZQUIERDA</p>
+    </div>
+    <div class="main">
+        <p>PARTE CENTRAL</p>
+    </div>
+    <div class="right">
+        <p>PARTE DERECHA</p>
+    </div>
+</body>
+</html>
