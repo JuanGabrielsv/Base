@@ -46,7 +46,7 @@ Luego, realiza un programa que use la clase anterior:
 7. Obtén e imprime la lista de suspensos.
 8. Borra los aprobados. Comprueba que funciona bien volviendo a imprimir la evaluación. 
 */
-package SIN_TERMINAR_ejercicios_básicos_ejercicio_55;
+package ejercicios_básicos_ejercicio_55;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
