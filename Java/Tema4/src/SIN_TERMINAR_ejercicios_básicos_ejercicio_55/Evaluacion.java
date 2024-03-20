@@ -68,9 +68,14 @@ public class Evaluacion {
 	private static final BigDecimal APROBADO = new BigDecimal(5);
 
 	public Evaluacion() {
-		mapNotas = new HashMap<String, BigDecimal>();
-		
+		mapNotas = new HashMap<String, BigDecimal>();		
 	}
+	
+	// MÉTODOS GET A SETS
+
+		public Map<String, BigDecimal> getMapNotas() {
+			return mapNotas;
+		}
 
 	/*
 	 * 1. addNota() que reciba el dni del alumno, su nota, y lo añada al mapa. Si ya
@@ -83,8 +88,11 @@ public class Evaluacion {
 		if (mapNotas.containsKey(dni) && mapNotas.get(dni) == null) {
 			mapNotas.put(dni, nota);
 			return true;
+		} else if (!mapNotas.containsKey(dni)) {
+			mapNotas.put(dni, nota);
+			return true;
 		} else {
-			return false;			
+			return false;
 		}
 	}
 
@@ -96,7 +104,7 @@ public class Evaluacion {
 	 */
 
 	public Boolean corregirNota(String dni, BigDecimal nota) {
-		if (mapNotas.containsKey(dni) && mapNotas.get(dni) != null) {
+		if (mapNotas.containsKey(dni)) {
 			mapNotas.put(dni, nota);
 			System.out.println("SE HA CAMBIADO LA NOTA");
 			return true;
@@ -160,7 +168,7 @@ public class Evaluacion {
 
 	public List<String> obtenerSuspensos() {
 		List<String> listaAlumnosSuspensos = new ArrayList<>();
-
+		
 		Set<Entry<String, BigDecimal>> pares = mapNotas.entrySet();
 		for (Entry<String, BigDecimal> par : pares) {
 			if (par.getValue().compareTo(APROBADO) == -1) {
@@ -183,41 +191,16 @@ public class Evaluacion {
 				iterador.remove();
 			}
 		}
-
-		/*
-		 * ESTE ASÍ NO DA ERROR.... Iterator<Map.Entry<String, BigDecimal>> iterador =
-		 * mapNotas.entrySet().iterator(); while (iterador.hasNext()) {
-		 * Map.Entry<String, BigDecimal> pares = iterador.next(); if
-		 * (pares.getValue().compareTo(APROBADO) == 0 ||
-		 * pares.getValue().compareTo(APROBADO) == 1) { mapNotas.remove(pares); } }
-		 */
-
-		/*
-		 * Iterator<Map.Entry<String, BigDecimal>> iterador =
-		 * mapNotas.entrySet().iterator(); while (iterador.hasNext()) {
-		 * Map.Entry<String, BigDecimal> pares = iterador.next(); if
-		 * (pares.getValue().compareTo(APROBADO) >= 0) {
-		 * mapNotas.remove(pares.getKey()); }
-		 * 
-		 * }
-		 */
-
-		/* 
-		 * Iterator<Map.Entry<String, BigDecimal>> iterador =
-		 * mapNotas.entrySet().iterator(); while (iterador.hasNext()) {
-		 * Map.Entry<String, BigDecimal> entry = iterador.next(); if
-		 * (entry.getValue().compareTo(APROBADO) >= 0) {
-		 * mapNotas.remove(entry.getKey()); } }
-		 */
 	}
-
-// MÉTODOS GET A SETS
-
-	public Map<String, BigDecimal> getMapNotas() {
-		return mapNotas;
-	}
-
 	
+	public void imprimirAprobados() {
+		Set<Entry<String, BigDecimal>> pares = mapNotas.entrySet();
+		for (Entry<String, BigDecimal> par : pares) {
+			if (par.getValue().compareTo(APROBADO) >= 0) {
+				System.out.println("good");
+			}
+		}
+	}
 	
 // TO STRING
 	
@@ -236,7 +219,12 @@ public class Evaluacion {
 	public String toString() {
 		
 		
-		return "Evaluacion [mapNotas=" + mapNotas + "]";
+		
+				
+		
+		
+		
+		return "";
 	}
 	
 }

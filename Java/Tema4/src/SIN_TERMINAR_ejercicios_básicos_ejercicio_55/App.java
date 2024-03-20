@@ -41,14 +41,15 @@ Luego, realiza un programa que use la clase anterior:
    alumno no registrado. Comprueba que funciona correctamente imprimiendo de nuevo
    la evaluación.
 5. Obtén la nota de algún alumno y la nota media de todos. Imprímelas formateando
-   correctamente los decimales
-6. Obtén e imprime la cantidad de aprobados
-7. Obtén e imprime la lista de suspensos
+   correctamente los decimales.
+6. Obtén e imprime la cantidad de aprobados.
+7. Obtén e imprime la lista de suspensos.
 8. Borra los aprobados. Comprueba que funciona bien volviendo a imprimir la evaluación. 
 */
 package SIN_TERMINAR_ejercicios_básicos_ejercicio_55;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -62,74 +63,79 @@ public class App {
 		
 		/* 2. Introduce 5 notas de distintos valores e imprime la evaluación */
 		
+		System.out.println("PUNTO 2 -----------------------------" + "\n");
+		
 		evaluacion1.addNota("53279139F", new BigDecimal(5.25));
 		evaluacion1.addNota("25283529D", new BigDecimal(3.64));
 		evaluacion1.addNota("32215541J", new BigDecimal(8));
 		evaluacion1.addNota("23956854N", new BigDecimal(6.15));
 		evaluacion1.addNota("52654125K", new BigDecimal(2.12));
 		
+		Set<Entry<String, BigDecimal>> pares1 = evaluacion1.getMapNotas().entrySet();
+		for (Entry<String, BigDecimal> par : pares1) {
+			System.out.println("Clave: " + par.getKey());
+			System.out.println("Valor: " + par.getValue().setScale(2, RoundingMode.HALF_DOWN));			
+		}		
+		
 		/* 3. Intenta volver a introducir una nota para un alumno repetido. Comprueba que no se
 		   modifique imprimiendo la evaluación de nuevo. */
 		
+		System.out.println("\n" + "PUNTO 3: ---------------------------- " + "\n");
+		
 		evaluacion1.addNota("53279139F", new BigDecimal(7.00));
 		
-		Set<Entry<String, BigDecimal>> pares = evaluacion1.getMapNotas().entrySet();
-		for (Entry<String, BigDecimal> par : pares) {
+		Set<Entry<String, BigDecimal>> pares2 = evaluacion1.getMapNotas().entrySet();
+		for (Entry<String, BigDecimal> par : pares2) {
 			System.out.println("Clave: " + par.getKey());
-			System.out.println("Valor: " + par.getValue());
+			System.out.println("Valor: " + par.getValue().setScale(2, RoundingMode.HALF_DOWN));			
 		}
 		
-		System.out.println(evaluacion1.getMapNotas().size());
+		/* 4. Intenta corregir dos notas, una de un alumno que esté ya registrado y otra de un
+   		   alumno no registrado. Comprueba que funciona correctamente imprimiendo de nuevo la evaluación. */
 		
+		System.out.println("\n" + "PUNTO 4: ---------------------------- " + "\n");
 		
+		evaluacion1.corregirNota("53279139F", new BigDecimal(8.75));
+		evaluacion1.corregirNota("65913782G", new BigDecimal(5.32));
 		
+		Set<Entry<String, BigDecimal>> pares3 = evaluacion1.getMapNotas().entrySet();
+		for (Entry<String, BigDecimal> par : pares3) {
+			System.out.println("Clave: " + par.getKey());
+			System.out.println("Valor: " + par.getValue().setScale(2, RoundingMode.HALF_DOWN));			
+		}
 		
+		/* 5. Obtén la nota de algún alumno y la nota media de todos. Imprímelas formateando
+		   correctamente los decimales. */
 		
+		System.out.println("\n" + "PUNTO 5: ---------------------------- " + "\n");
 		
+		System.out.println("NOTA DEL ALUMNO: " + evaluacion1.obtenerNotaAlumno("53279139F"));
+		System.out.println("MEDIA DE NOTAS DE TODOS LOS ALUMNOS: " + evaluacion1.obtenerNotaMedia());
 		
+		/* 6. Obtén e imprime la cantidad de aprobados. */
 		
+		System.out.println("\n" + "PUNTO 6: ---------------------------- " + "\n");		
+		System.out.println("NÚMERO DE APROBADOS: " + evaluacion1.obtenerCantidadAprobados());
 		
+		/* 7. Obtén e imprime la lista de suspensos. */
 		
+		System.out.println("\n" + "PUNTO 7: ---------------------------- " + "\n");		
+		System.out.println("NÚMEROS DE SUSPENSOS: " + evaluacion1.obtenerSuspensos());
 		
+		/* 8. Borra los aprobados. Comprueba que funciona bien volviendo a imprimir la evaluación. */
 		
+		System.out.println("\n" + "PUNTO 8: ---------------------------- " + "\n");
+		evaluacion1.borrarAprobados(evaluacion1.getMapNotas());
 		
+		Set<Entry<String, BigDecimal>> pares4 = evaluacion1.getMapNotas().entrySet();
+		for (Entry<String, BigDecimal> par : pares4) {
+			System.out.println("Clave: " + par.getKey());
+			System.out.println("Valor: " + par.getValue().setScale(2, RoundingMode.HALF_DOWN));			
+		}
 		
+		/* 9. To string. */
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		System.out.println(evaluacion1);
 		
 		/*Evaluacion evaluacion1 = new Evaluacion("53279139F", new BigDecimal(8));		
 		evaluacion1.getMapNotas().put("25885289D", new BigDecimal(5));
