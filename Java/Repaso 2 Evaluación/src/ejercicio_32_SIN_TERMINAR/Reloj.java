@@ -24,6 +24,28 @@ public class Reloj {
 		this.segundos = segundos;
 		this.formato24Horas = true;
 	}
+	
+	// MÉTODOS GET AND SETS
+
+		public void setFormato24Horas(Boolean formato24Horas) {
+			this.formato24Horas = formato24Horas;
+		}
+
+		public Integer getHoras() {
+			return horas;
+		}
+
+		public Integer getMinutos() {
+			return minutos;
+		}
+
+		public Integer getSegundos() {
+			return segundos;
+		}
+
+		public Boolean getFormato24Horas() {
+			return formato24Horas;
+		}
 
 	// MÉTODOS
 
@@ -58,28 +80,6 @@ public class Reloj {
 		}
 
 		return true;
-	}
-
-	// MÉTODOS GET AND SETS
-
-	public void setFormato24Horas(Boolean formato24Horas) {
-		this.formato24Horas = formato24Horas;
-	}
-
-	public Integer getHoras() {
-		return horas;
-	}
-
-	public Integer getMinutos() {
-		return minutos;
-	}
-
-	public Integer getSegundos() {
-		return segundos;
-	}
-
-	public Boolean getFormato24Horas() {
-		return formato24Horas;
 	}
 
 }
