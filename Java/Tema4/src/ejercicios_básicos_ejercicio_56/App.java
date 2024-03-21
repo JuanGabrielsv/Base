@@ -8,6 +8,7 @@ imaginemos que el usuario nos va diciendo estos números:
 3, 6, 8, 3, 2, 3, 4, 6, 3, 8, 0
 
 El programa, al terminar, tendrá que imprimir algo así:
+
 Total números indicados: 10
 Distribución:
 	> Número 3: 4 veces
@@ -40,7 +41,7 @@ public class App {
 
 		do {
 
-			System.out.println("INTRODUCE UN NÚMERO ENTERO: \n");
+			System.out.println("INTRODUCE UN NÚMERO ENTERO: ");
 			entradaUsuario = sc.nextInt();
 
 			if (entradaUsuario != 0 && !mapNumeros.containsKey(entradaUsuario)) {
@@ -58,28 +59,37 @@ public class App {
 		System.out.println(mapNumeros);
 
 		sc.close();
+		
+		/* El programa, al terminar, tendrá que imprimir algo así:
+		 
+		Total números indicados: 10
+		Distribución:
+			> Número 3: 4 veces
+			> Número 4: 1 vez
+			> Número 6: 2 veces
+			> Número 8: 2 veces
+			> Numero 2: 1 vez */	
+		
+		Integer sumaValores = 0;
+		String cabecera = "Distribución: \n";
+		String linea = "";
+		/*Collection<Integer> valores = mapNumeros.values();
+		for (Integer val : valores) {
+			sumaValores = sumaValores + val;
+			
+		}*/
+		
+		Collection<Integer> keys = mapNumeros.keySet();
+		
+		System.out.println("Total número indicados: " + sumaValores);
+		
+		
+		
+		
 
 	}
 
 	
-	/* El programa, al terminar, tendrá que imprimir algo así:
-	Total números indicados: 10
-	Distribución:
-		> Número 3: 4 veces
-		> Número 4: 1 vez
-		> Número 6: 2 veces
-		> Número 8: 2 veces
-		> Numero 2: 1 vez */
-	
-	@Override
-	public String toString() {
 		
-		Integer totalNumerosIdicados = 0;
-		
-		Collection<Integer> valores = mapNumeros.values();
-		
-		return "App []";
-	}
-	
 
 }
