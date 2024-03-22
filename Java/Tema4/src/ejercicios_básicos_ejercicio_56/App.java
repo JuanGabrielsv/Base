@@ -52,11 +52,7 @@ public class App {
 				check = false;
 			}
 
-		} while (check);
-		
-		System.out.println(mapNumeros.size());
-
-		System.out.println(mapNumeros);
+		} while (check);		
 
 		sc.close();
 		
@@ -71,25 +67,22 @@ public class App {
 			> Numero 2: 1 vez */	
 		
 		Integer sumaValores = 0;
-		String cabecera = "Distribución: \n";
-		String linea = "";
-		/*Collection<Integer> valores = mapNumeros.values();
-		for (Integer val : valores) {
-			sumaValores = sumaValores + val;
-			
-		}*/
+		String cabecera = "Distribución: \n";		
 		
 		Collection<Integer> keys = mapNumeros.keySet();
+		for (Integer claveNum : keys) {
+			sumaValores += mapNumeros.get(claveNum);
+			if (mapNumeros.get(claveNum) > 1) {
+				String linea = "\t > Número " + claveNum + ": " + mapNumeros.get(claveNum) + " veces \n";
+				cabecera += linea;
+			} else if (mapNumeros.get(claveNum) <= 1) {
+				String linea = "\t > Número " + claveNum + ": " + mapNumeros.get(claveNum) + " vez \n";
+				cabecera += linea;
+			}				
+		}		
 		
 		System.out.println("Total número indicados: " + sumaValores);
-		
-		
-		
-		
+		System.out.println(cabecera);		
 
 	}
-
-	
-		
-
 }
