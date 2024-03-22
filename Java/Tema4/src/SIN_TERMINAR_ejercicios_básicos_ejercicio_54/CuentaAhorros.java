@@ -36,13 +36,65 @@ Crea un programa que haga lo siguiente:
 6. Imprime los ingresos
 7. Imprime las retiradas 
 */
-package ejercicios_básicos_ejercicio_54;
+package SIN_TERMINAR_ejercicios_básicos_ejercicio_54;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CuentaAhorros {
-	
-	private Integer numero;
+
+	private String numeroCuenta;
 	private List<Movimiento> movimientos;
+
+	// CONSTRUCTORES
+	// Constructor de la clase CuentaAhorros que reciba el número de cuenta.
+
+	public CuentaAhorros(String numeroCuenta) {
+		this.numeroCuenta = numeroCuenta;
+		this.movimientos = new ArrayList<>();
+	}
+
+	// GETTERS AND SETTERS
+
+	public String getNumeroCuenta() {
+		return numeroCuenta;
+	}
+
+	public void setNumeroCuenta(String numeroCuenta) {
+		this.numeroCuenta = numeroCuenta;
+	}
+
+	// MÉTODOS
+	// Método para añadir un movimiento a la cuenta.
+
+	public void addMovimiento(Movimiento movimiento) {
+		this.movimientos.add(movimiento);
+	}
+
+	// Método para obtener el total de dinero en la cuenta
+
+	public BigDecimal getTotal() {
+		BigDecimal sumaTotal = BigDecimal.ZERO;
+		for (Movimiento movimiento : movimientos) {
+			if (movimiento.getTipo().equals("I")) {
+				sumaTotal = sumaTotal.add(movimiento.getImporte());
+			} else {
+				sumaTotal = sumaTotal.subtract(movimiento.getImporte());
+			}
+		}
+		return sumaTotal.setScale(2, RoundingMode.HALF_UP);
+	}
+	
+	/* Método para obtener una lista de cadenas que muestre todos los movimientos de la cuenta. */
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

@@ -36,13 +36,58 @@ Crea un programa que haga lo siguiente:
 6. Imprime los ingresos
 7. Imprime las retiradas 
 */
-package ejercicios_básicos_ejercicio_54;
+package SIN_TERMINAR_ejercicios_básicos_ejercicio_54;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class App {
 
 	public static void main(String[] args) {
 		
-
+		/* 1. Crea una cuenta corriente e imprime el dinero que tenemos */
+		
+		CuentaAhorros cuenta1 = new CuentaAhorros("01234");
+		System.out.println("PASO 1: " + cuenta1.getTotal());
+		
+		/* 2. Añade 2 cargos, 2 ingresos y 1 retirada */
+		
+		MovimientoCargo cargo1 = new MovimientoCargo();
+		cargo1.setFecha(LocalDate.of(2024, 03, 22));
+		cargo1.setCif("53279139F");
+		cargo1.setImporte(new BigDecimal(135));
+		MovimientoCargo cargo2 = new MovimientoCargo();
+		cargo2.setFecha(LocalDate.of(2024, 02, 18));
+		cargo2.setCif("27283529D");
+		cargo2.setImporte(new BigDecimal(75));
+		
+		MovimientoIngreso ingreso1 = new MovimientoIngreso();
+		ingreso1.setFecha(LocalDate.of(2024, 01, 12));
+		ingreso1.setImporte(new BigDecimal(1234.73));
+		ingreso1.setDescripcion("Ingreso de la nómina de enero");
+		MovimientoIngreso ingreso2 = new MovimientoIngreso();
+		ingreso2.setFecha(LocalDate.of(2024, 02, 8));
+		ingreso2.setImporte(new BigDecimal(110.17));
+		ingreso2.setDescripcion("Devolución de la renta");
+		
+		MovimientoRetirada retirada1 = new MovimientoRetirada();
+		retirada1.setFecha(LocalDate.of(2024, 04, 2));
+		retirada1.setImporte(new BigDecimal(55.63));
+		
+		cuenta1.addMovimiento(retirada1);
+		cuenta1.addMovimiento(ingreso1);
+		cuenta1.addMovimiento(ingreso2);
+		cuenta1.addMovimiento(cargo1);
+		cuenta1.addMovimiento(cargo2);
+		System.out.println("PASO 2: Añadidos 2 cargos, 2 ingresos y 1 retirada.");
+		
+		/* 3. Imprime el dinero que tenemos */
+		
+		System.out.println("PASO 3: " + cuenta1.getTotal());
+		
+		/* 4. Imprime todos los movimientos */
+		
+		
 	}
 
 }

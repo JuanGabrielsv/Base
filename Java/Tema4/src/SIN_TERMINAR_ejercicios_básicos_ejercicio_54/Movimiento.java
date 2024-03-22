@@ -36,14 +36,42 @@ Crea un programa que haga lo siguiente:
 6. Imprime los ingresos
 7. Imprime las retiradas 
 */
-package ejercicios_básicos_ejercicio_54;
+package SIN_TERMINAR_ejercicios_básicos_ejercicio_54;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Movimiento {
-	
+public abstract class Movimiento {
+
+	public static final String TIPO_INGRESO = "I";
+	public static final String TIPO_CARGO = "C";
+	public static final String TIPO_RETIRADA = "R";
+
 	private LocalDate fecha;
 	private BigDecimal importe;
+	
+	// GETTERS Y SETTERS
+	
+	public LocalDate getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(LocalDate fecha) {
+		this.fecha = fecha;
+	}
+
+	public BigDecimal getImporte() {
+		return importe;
+	}
+
+	public void setImporte(BigDecimal importe) {
+		this.importe = importe;
+	}
+	
+	//MÉTODOS
+	
+	public abstract String getTipo();
+
+	
 
 }
