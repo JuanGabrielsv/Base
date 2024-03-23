@@ -189,6 +189,8 @@ select ingredientes.nombre,sum(cantidad) from ingredientes_platos join platos on
 
 /* 5. Se quiere saber la segunda palabra de los ingredientes. En caso de que no tengan, no debe aparecer el registro (no muestres null).
       Si tiene más de dos palabras, se quiere solo la segunda, el resto de palabras no deben aparecer. Ej.: De Aceite de oliva virgen extra debería mostrarse la palabra "de". */
+
+      
 /* 6. ¿Cuántos ingredientes tienen en su nombre más de 10 letras?. */
 /* 7. Se quiere mostrar el nombre de los platos que empiecen por una de las siguientes letras: P, R, A, S o T. 
       El resultado debe mostrarse con todas las letras en minúsculas, y deben ser los platos cuyo precio sea inferior a 10 euros y el tiempo de preparación mayor de 7. */
