@@ -36,7 +36,7 @@ Crea un programa que haga lo siguiente:
 6. Imprime los ingresos
 7. Imprime las retiradas 
 */
-package SIN_TERMINAR_ejercicios_básicos_ejercicio_54;
+package ejercicios_básicos_ejercicio_54;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -81,12 +81,41 @@ public class App {
 		cuenta1.addMovimiento(cargo2);
 		System.out.println("PASO 2: Añadidos 2 cargos, 2 ingresos y 1 retirada.");
 		
-		/* 3. Imprime el dinero que tenemos */
+		/* 3. Imprime el dinero que tenemos. */
 		
 		System.out.println("PASO 3: " + cuenta1.getTotal());
 		
-		/* 4. Imprime todos los movimientos */
+		/* 4. Imprime todos los movimientos. */		
 		
+		System.out.println("PASO4: ");		
+		for (String mov : cuenta1.getMovimientosString()) {
+			System.out.println(mov);			
+		}		
+		System.out.println(cuenta1.getMovimientosString()); // Vale igual pero lo hace en una sola línea.
+		
+		/* 5. Imprime los cargos. */
+		
+		System.out.println("PASO 5: ");
+		for (String mov : cuenta1.getCargos()) {
+			System.out.println(mov);			
+		}
+		System.out.println(cuenta1.getCargos()); // Vale igual pero lo hace en una sola línea.
+		
+		/* 6. Imprime los ingresos. */
+		
+		System.out.println("PASO 6: ");
+		for (String mov : cuenta1.getIngresos()) {
+			System.out.println(mov);			
+		}
+		System.out.println(cuenta1.getIngresos()); // Vale igual pero lo hace en una sola línea.
+		
+		/* 7. Imprime las retiradas. */
+		
+		System.out.println("PASO 7: ");
+		for (String mov : cuenta1.getRetiradas()) {
+			System.out.println(mov);			
+		}
+		System.out.println(cuenta1.getRetiradas()); // Vale igual pero lo hace en una sola línea.	
 		
 	}
 

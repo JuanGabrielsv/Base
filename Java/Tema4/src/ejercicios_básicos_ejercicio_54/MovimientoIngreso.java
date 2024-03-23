@@ -36,21 +36,35 @@ Crea un programa que haga lo siguiente:
 6. Imprime los ingresos
 7. Imprime las retiradas 
 */
-package SIN_TERMINAR_ejercicios_básicos_ejercicio_54;
+package ejercicios_básicos_ejercicio_54;
 
-public class MovimientoRetirada extends Movimiento {
+public class MovimientoIngreso extends Movimiento {
 
-	@Override
-	public String getTipo() {		
-		return TIPO_RETIRADA;
+	private String descripcion;
+	
+	//GETTERS AND SETTERS
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 	
-	/* Retiradas (llevan un importe). Las retiradas se imprimen así:
-		  [R - Fecha - Importe]. Por ejemplo: [R - 18/02/2022 - 12,00 €] */
+	//MÉTODOS
+
+	@Override
+	public String getTipo() {
+		return TIPO_INGRESO;
+	}
 	
+	/* Ingresos (llevan un importe y una descripción). Los ingresos se imprimen así:
+		  [I - Fecha - Importe - descripción]. Por ejemplo: [I - 18/02/2022 - 3,21 € - Ejemplo] */
+
 	@Override
 	public String toString() {
-		return "[" + getTipo() + " - " + getFecha() + " - " + getImporte() + "]";
+		return "[" + super.toString() + " - " + descripcion + "]";
 	}
 
 }

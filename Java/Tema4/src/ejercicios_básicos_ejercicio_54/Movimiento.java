@@ -36,10 +36,12 @@ Crea un programa que haga lo siguiente:
 6. Imprime los ingresos
 7. Imprime las retiradas 
 */
-package SIN_TERMINAR_ejercicios_básicos_ejercicio_54;
+package ejercicios_básicos_ejercicio_54;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public abstract class Movimiento {
 
@@ -49,9 +51,9 @@ public abstract class Movimiento {
 
 	private LocalDate fecha;
 	private BigDecimal importe;
-	
+
 	// GETTERS Y SETTERS
-	
+
 	public LocalDate getFecha() {
 		return fecha;
 	}
@@ -67,11 +69,17 @@ public abstract class Movimiento {
 	public void setImporte(BigDecimal importe) {
 		this.importe = importe;
 	}
-	
-	//MÉTODOS
-	
+
+	// MÉTODOS
+
 	public abstract String getTipo();
 
-	
+	@Override
+	public String toString() {
+		DecimalFormat formatoImporte = new DecimalFormat("#,###.##");
+		DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+		return getTipo() + " - " + formatoFecha.format(fecha) + " - " + formatoImporte.format(importe);
+	}
 
 }
