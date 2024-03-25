@@ -24,7 +24,7 @@ PISTA: Utiliza un Map donde la clave sea un String (la letra) y el valor sea una
 palabras). Es la última pista relativas a Map que te doy… 
 */
 
-package SIN_TERMINAR_ejercicios_básicos_ejercicio_57;
+package ejercicios_básicos_ejercicio_57;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,7 +40,6 @@ public class App {
 		String entradaUsuario;
 		Boolean check = true;
 		Map<String, List<String>> mapPalabras = new HashMap<>();
-		
 
 		do {
 			System.out.println("INTRODUCE UNA PALABRA: ");
@@ -55,29 +54,34 @@ public class App {
 				listaPalabras.add(entradaUsuario);
 				mapPalabras.put(key, listaPalabras);
 			} else if (mapPalabras.containsKey(key)) {
-				mapPalabras.get(key).add(entradaUsuario);				
+				mapPalabras.get(key).add(entradaUsuario);
 			}
 
 		} while (check);
-		
+
 		do {
 			System.out.println("INTRODUCE UNA LETRA: ");
 			entradaUsuario = sc.nextLine();
 			String minus = entradaUsuario.toLowerCase();
 			check = true;
-			
+
 			if (entradaUsuario.equalsIgnoreCase("fin")) {
+				System.out.println("¡¡GRACIAS POR JUGAR CON NOSOTROS!!");
 				check = false;
 			} else if (mapPalabras.containsKey(minus)) {
-				System.out.println("HAY " + mapPalabras.get(minus).size() + " PALABRA QUE EMPIEZA POR " + minus);
-				System.out.println(mapPalabras.get(minus));
+				List<String> nuevaLista = new ArrayList<String>();
+				nuevaLista = mapPalabras.get(minus);
+				System.out.println("HAY " + mapPalabras.get(minus).size() + " PALABRAS QUE EMPIEZA POR " + minus);
+				for (String palabra : nuevaLista) {
+					System.out.println("\t > " + palabra);
+				}
+			} else {
+				System.out.println("NO HAY PALABRAS QUE EMPIECE POR " + minus);
 			}
-			
-			
-			
-		} while (check);
 
-		System.out.println(mapPalabras);
+		} while (check);
+		
+		sc.close();
 
 	}
 
