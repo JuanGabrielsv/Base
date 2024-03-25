@@ -1,14 +1,3 @@
-/* BORRADO DE TABLAS */
-
-/*BEGIN
-FOR cur_rec IN (SELECT table_name FROM user_tables)
-LOOP
-EXECUTE IMMEDIATE 'DROP TABLE ' || cur_rec.table_name || ' CASCADE CONSTRAINTS';
-END LOOP;
-END;*/
-
-/* BD RESTAURANTE */
-
 create table platos (
     id int primary key,
     nombre varchar(100) not null,
@@ -49,8 +38,6 @@ alter table comandas
 add foreign key (id_cliente) references clientes(id);
 alter table comandas
 add foreign key (id_plato) references platos(id);
-
-alter session set nls_date_format='DD-MM-YYYY HH24:MI:SS';
 
 insert into platos values (1,'Plato Arroz caldoso',12.50,25);
 insert into platos values (2,'Plato Calamares con patatas',7.50,15);
@@ -164,90 +151,103 @@ insert into comandas values (30,1,3,3,'COBRADO','02-03-2021','21:55');
 insert into comandas values (31,1,3,2,'COBRADO','02-03-2021','21:55');
 insert into comandas values (32,1,3,5,'COBRADO','02-03-2021','21:55');
 
-/* Examen T4 2ºEVAL SEMANA VERDE DAW */
+--1
+SELECT hora FROM comandas WHERE mesa = 2;
 
-/* 1. Muestra la hora de todas las comandas que se hayan SERVIDO en la mesa 2. */
-SELECT hora FROM comandas WHERE estado = 'SERVIDO' AND mesa = 2;
---SOLUCIÓN PROFESOR:
-select hora from comandas where estado = 'SERVIDO' and mesa = 2;
+--2
+SELECT MAX(COUNT(localidad)) FROM clientes c JOIN comandas co ON c.id = co.id_cliente GROUP BY localidad;
 
-/* 2. ¿Cuál es la localidad de los clientes que más comandas han pedido? */
---SOLUCION PROFESOR:
-select localidad from comandas join clientes on clientes.id = comandas.id_cliente group by localidad having count(*) = (select max(count(*)) from comandas join clientes on clientes.id = comandas.id_cliente
-    group by localidad);
+--3
+SELECT DISTINCT(telefono) FROM clientes c JOIN comandas co ON c.id = co.id_cliente WHERE hora = '21:27' AND estado = 'SERVIDO';
 
-/* 3. Necesitamos una lista con el teléfono del cliente, sin repetir, al que se le haya SERVIDO una comanda a las 21:27 horas. */
-SELECT DISTINCT(telefono) FROM clientes c JOIN comandas co ON c.id = co.id_cliente WHERE co.estado = 'SERVIDO' AND co.hora = '21:27';
---SOLUCIÓN PROFESOR:
-select distinct telefono from comandas join clientes on clientes.id = comandas.id_cliente where estado = 'SERVIDO' and hora = '21:27';
+--4
+SELECT i.nombre, ip.cantidad FROM ingredientes i JOIN ingredientes_platos ip ON i.id = ip.id_ingrediente WHERE ip.cantidad BETWEEN 100 AND 200 ORDER BY cantidad DESC;
 
-/* 4. Indica la lista de ingredientes (NOMBRE) que se usan (suma de sus cantidades) entre 100 y 200 ordenados de mayor a menor suma de cantidades. */
-SELECT i.nombre, SUM(cantidad) FROM ingredientes i JOIN ingredientes_platos ip ON i.id = ip.id_ingrediente GROUP BY i.nombre HAVING SUM(cantidad) BETWEEN 100 AND 200 ORDER BY SUM(cantidad) DESC;
---SOLUCIÓN PROFESOR:
-select ingredientes.nombre,sum(cantidad) from ingredientes_platos join platos on platos.id = ingredientes_platos.id_plato join ingredientes on ingredientes.id = ingredientes_platos.id_ingrediente
-    group by ingredientes.nombre having sum(cantidad) between 100 and 200 order by 2 desc;
+--5
+SELECT SUBSTR(nombre, INSTR(nombre, ' ', 1), INSTR(nombre, ' ', 2)) FROM ingredientes;
 
-/* 5. Se quiere saber la segunda palabra de los ingredientes. En caso de que no tengan, no debe aparecer el registro (no muestres null).
-      Si tiene más de dos palabras, se quiere solo la segunda, el resto de palabras no deben aparecer. Ej.: De Aceite de oliva virgen extra debería mostrarse la palabra "de". */
-SELECT SUBSTR(nombre, INSTR(nombre, ' ', 1, 1) + 1, INSTR(nombre || ' ', ' ', 1, 2) - INSTR(nombre, ' ', 1, 1) -1) FROM ingredientes
-    WHERE SUBSTR(nombre, INSTR(nombre, ' ', 1, 1) + 1, INSTR(nombre || ' ', ' ', 1, 2) - INSTR(nombre, ' ', 1, 1) -1) IS NOT NULL;
---SOLUCIÓN PROFESOR:
-select substr(nombre,instr(nombre,' ',1,1)+1,instr(nombre||' ',' ',1,2)-instr(nombre,' ',1,1)-1) from ingredientes
-    where substr(nombre,instr(nombre,' ',1,1)+1,instr(nombre||' ',' ',1,2)-instr(nombre,' ',1,1)-1) is not null;
-    
-/* 6. ¿Cuántos ingredientes tienen en su nombre más de 10 letras?. */
-SELECT COUNT(LENGTH(nombre)) FROM ingredientes WHERE LENGTH(nombre) > 10;
---SOLUCIÓN PROFESOR:
-select count(*) from ingredientes where length(nombre) > 10;
+--6
+SELECT COUNT(nombre) FROM ingredientes WHERE LENGTH(nombre) > 10;
 
-/* 7. Se quiere mostrar el nombre de los platos que empiecen por una de las siguientes letras: P, R, A, S o T.
-      El resultado debe mostrarse con todas las letras en minúsculas, y deben ser los platos cuyo precio sea inferior a 10 euros y el tiempo de preparación mayor de 7. */
-SELECT LOWER(nombre) FROM platos WHERE REGEXP_LIKE(nombre, '^[PRAST]') AND precio < 10 AND tiempo_preparacion > 7;      
---SOLUCIÓN PROFESOR:
-select lower(nombre) from platos where substr(nombre,1,1) in ('P','R','A','S','T') and precio < 10 and tiempo_preparacion > 7;
-      
-/* 8. Indica el precio del plato que se ha SERVIDO el 01-03-2021 a las 21:10 en la mesa 1. */
-SELECT precio FROM platos p JOIN comandas co ON p.id = co.id_plato WHERE co.estado = 'SERVIDO' AND fecha = '01-03-2021' AND hora = '21:10' AND mesa = 1;
---SOLUCIÓN PROFESOR:
-select precio from comandas join platos on platos.id = comandas.id_plato where estado = 'SERVIDO' and fecha = '01-03-2021' and hora = '21:10' and mesa = 1;
+--7
+SELECT LOWER(nombre) FROM platos WHERE REGEXP_LIKE(nombre, '^[PRAST]') AND precio < 10 AND tiempo_preparacion > 7;
 
-/* 9. Se quiere mostrar el nombre de los ingredientes en mayúsculas y sin espacios entre las palabras, pero solo de aquellos ingredientes que están en estado "LIQUIDO". */
-SELECT REPLACE(UPPER(nombre), ' ') FROM ingredientes WHERE estado = 'LIQUIDO';
---SOLUCIÓN PROFESOR:
-select upper(replace(nombre,' ')) from ingredientes where estado = 'LIQUIDO';
+--8
+SELECT p.precio FROM comandas co JOIN platos p ON co.id_plato = p.id WHERE hora = '21:10' AND fecha = '01/03/21' AND mesa = 1;
 
-/* 10. Se quiere saber los nombres de los clientes y los nombres de los platos que pidieron cuyas comandas han sido las más recientes (fecha más cercana a hoy en día y hora). */
---SOLUCIÓN PROFESOR:
-select clientes.nombre,platos.nombre from comandas join clientes on clientes.id = comandas.id_cliente join platos on platos.id = comandas.id_plato
-    where fecha = (select max(fecha) from comandas) and hora = (select max(hora) from comandas where fecha = (select max(fecha) from comandas));
+--9
+SELECT REPLACE(UPPER(nombre),' ','') FROM ingredientes WHERE estado = 'LIQUIDO';
 
-/* 11. Se quiere saber cuánto se ha COBRADO en las comandas (suma de los importes de los platos). El resultado no debe tener decimales. */
+--10
 
 
-/* 12. Se quiere mostrar el nombre del ingrediente que tiene más letras. Debes mostrar el siguiente mensaje sustituyendo el nombre del ingrediente
-       por el que sea: "El ingrediente con más letras es NOMBREINGREDIENTE". En una segunda columna debes devolver el número de letras de dicho ingrediente. */
-/* 13. Indica el nombre de los platos que usan ingredientes de la categoría 'VERDURA'. */
-/* 14. ¿Qué nombres de clientes pidieron una comanda el 1 de marzo de 2021 entre las 21:20 y las 21:40 horas y el estado fue COCINA? Devuelve el nombre del cliente todo en mayúsculas. */
-/* 15. Se quiere una lista de los nombres de los platos con la primera letra en mayúscula de cada palabra y que el precio esté entre 5 y 8. */
-/* 16. Indica las categorías de los ingredientes, sin repetir, que se usan en el plato "Plato Calamares con patatas". */
-/* 17. Se quiere saber todos los estados, sin repetir, de las comandas. Debes devolver todas las letras en minúsculas y que el orden de los resultados sea por dicho estado de la z a la a. */
-/* 18. Indica el nombre de los ingredientes que empiezan por "G" o "P" sin usar LIKE. */
-/* 19. Se quiere saber cuántos ingredientes son de la categoría VERDURA y el nombre del ingrediente empieza por P. */
-/* 20. Indica los nombres de los platos en los que está el ingrediente "Cebolla" y la cantidad que llevan del ingrediente.
-       El nombre de los platos debe tener el alias "Plato" y la cantidad debe tener el alias "Cant". */
-/* 21. Indica cuántas comandas se han hecho entre las 21:00 y las 21:10 del día 01-03-2021. */
-/* 22. ¿Cuál es el precio de plato más caro que se ha SERVIDO el 01-03-2021?. */
-/* 23. Se quiere saber cuántos ingredientes tiene cada plato. Muestra una lista con todos los nombres de los platos y en otra columna el número de ingredientes que tiene.
-       Ordena el resultado empezando por el plato que tiene más ingredientes y terminando por el que menos tiene. */
-/* 24. Indica el valor medio de las cantidades de los ingredientes con redondeo de tres decimales. */
-/* 25. ¿Cuál es el nombre del plato que entró por comanda en estado SERVIDO el 01/03/21 a las 21:25? Usa solo subconsultas. */
-/* 26. Indica el tiempo de preparación del plato más barato. */
-/* 27. Devuelve el NOMBRE y la localidad de los clientes cuyo nombre termine en "n". */
-/* 28. ¿Cuántas comandas han sido en LUNES?. */
-/* 29. ¿Cuál es el NOMBRE del ingrediente que se usa en el plato "Entrante Crema de zanahorias" cuya cantidad es 60?. */
-/* 30. ¿Cuántas comandas ha hecho "Jose Miguel"?. */
-/* 31. Indica el nombre de todos los ingredientes que sean de la categoría CONDIMENTO, sustituyendo la letra a por - y la letra e por _ estén en mayúsculas o en minúsculas. */
-/* 32. Devuelve la posición del primer 0 en cantidad de los ingredientes en los platos. Si dicha cantidad no tiene 0, muestra la palabra 'no'. */
+--11
+SELECT ROUND(SUM(precio), 0) FROM comandas co JOIN platos p ON co.id_plato = p.id WHERE estado = 'COBRADO'; --FORMA UNA (YA QUE NO SE INDICA TIPO DE REDONDEO)
+SELECT FLOOR(SUM(precio)) FROM comandas co JOIN platos p ON co.id_plato = p.id WHERE estado = 'COBRADO'; --FORMA DOS (YA QUE NO SE INDICA TIPO DE REDONDEO)
+
+--12
+SELECT 'El ingrediente con más letras es ' || UPPER(nombre), LENGTH(nombre) FROM ingredientes WHERE LENGTH(nombre) = (SELECT MAX(LENGTH(nombre)) FROM ingredientes);
+
+--13
+SELECT DISTINCT(p.nombre) FROM platos p JOIN ingredientes_platos ip ON p.id = ip.id_plato JOIN ingredientes i ON ip.id_ingrediente = i.id WHERE categoria = 'VERDURA';
+
+--14
+SELECT UPPER(c.nombre) FROM clientes c JOIN comandas co ON c.id = co.id_cliente WHERE co.estado = 'COCINA' AND co.fecha = '01/03/21' AND co.hora BETWEEN '21:20' AND '21:40';
+
+--15
+SELECT INITCAP(nombre) FROM platos WHERE precio BETWEEN 5 AND 8;
+
+--16
+SELECT DISTINCT(i.categoria) FROM ingredientes i JOIN ingredientes_platos ip ON i.id = ip.id_ingrediente JOIN platos p ON ip.id_plato = p.id WHERE LOWER(p.nombre) = 'plato calamares con patatas';
+
+--17
+SELECT LOWER(estado) FROM comandas GROUP BY estado ORDER BY estado DESC;
+
+--18
+
+
+--19
+SELECT COUNT(*) FROM ingredientes WHERE categoria = 'VERDURA' AND nombre LIKE 'P%';
+
+--20
+SELECT p.nombre AS "Plato", ip.cantidad AS "Cant" FROM platos p JOIN ingredientes_platos ip ON p.id = ip.id_plato JOIN ingredientes i ON ip.id_ingrediente = i.id WHERE LOWER(i.nombre) = 'cebolla';
+
+--21
+SELECT COUNT(*) FROM comandas WHERE fecha = '01/03/21' AND hora BETWEEN '21:00' AND '21:10';
+
+--22
+SELECT MAX(p.precio) FROM comandas co JOIN platos p ON co.id_plato = p.id WHERE estado = 'SERVIDO' AND fecha = '01/03/21';
+
+--23
+SELECT p.nombre, COUNT(ip.id_ingrediente) FROM platos p JOIN ingredientes_platos ip ON p.id = ip.id_plato GROUP BY p.nombre ORDER BY COUNT(ip.id_ingrediente) DESC;
+
+--24
+SELECT ROUND(AVG(cantidad), 3) FROM ingredientes_platos;
+
+--25
+
+--26
+SELECT tiempo_preparacion FROM platos WHERE precio = (SELECT MIN(precio) FROM platos);
+
+--27
+SELECT nombre, localidad FROM clientes WHERE nombre LIKE '%n';
+
+--28
+SELECT COUNT(*) FROM comandas WHERE TRIM(TO_CHAR(fecha, 'Day')) = 'Lunes';
+
+--29
+SELECT i.nombre FROM ingredientes i JOIN platos p ON i.id = p.id JOIN ingredientes_platos ip ON p.id = ip.id_plato WHERE LOWER(p.nombre) = 'entrante crema de zanahorias' AND ip.cantidad = 60;
+
+--30
+SELECT COUNT(DISTINCT(co.id_plato)) FROM comandas co JOIN clientes c ON co.id_cliente = c.id WHERE c.nombre = 'Jose Miguel';
+
+--31
+SELECT REPLACE(REPLACE(REPLACE(REPLACE(nombre, 'a', '-'), 'e', '_'), 'A', '-'), 'E', '_') FROM ingredientes WHERE categoria = 'CONDIMENTO';
+
+--32
+SELECT DECODE(INSTR(cantidad, 0),0,'NO',INSTR(cantidad, 0)) FROM ingredientes_platos;
+
+
 
 
 
