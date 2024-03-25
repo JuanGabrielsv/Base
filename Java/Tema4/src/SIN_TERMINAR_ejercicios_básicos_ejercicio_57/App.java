@@ -26,11 +26,43 @@ palabras). Es la última pista relativas a Map que te doy…
 
 package SIN_TERMINAR_ejercicios_básicos_ejercicio_57;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
 public class App {
 
 	public static void main(String[] args) {
 
+		Scanner sc = new Scanner(System.in);
+		String entradaUsuario;
+		Boolean check = true;
+		Map<String, List<String>> mapPalabras = new HashMap<>();
 		
+
+		do {
+			System.out.println("INTRODUCE UNA PALABRA: ");
+			entradaUsuario = sc.nextLine();
+			String minus = entradaUsuario.toLowerCase();
+			String key = minus.substring(0, 1);
+			List<String> listaPalabras = new ArrayList<>();
+
+			if (entradaUsuario.equalsIgnoreCase("fin")) {
+				check = false;
+			}
+
+			if (!mapPalabras.containsKey(minus.substring(0, 1))) {
+				listaPalabras.add(entradaUsuario);
+				mapPalabras.put(key, listaPalabras);
+			} else if (mapPalabras.containsKey(key)) {
+				mapPalabras.get(key).add(entradaUsuario);				
+			}
+
+		} while (check);
+
+		System.out.println(mapPalabras);
 
 	}
 
