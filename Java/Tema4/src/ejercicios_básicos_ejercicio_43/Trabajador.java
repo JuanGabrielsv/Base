@@ -46,14 +46,52 @@ programa que haga lo siguiente:
 */
 package ejercicios_básicos_ejercicio_43;
 
-public class Trabajador {
-	
+public abstract class Trabajador {
+
 	protected static final Integer SUELDO_ACTOR = 100000;
 	protected static final Integer SUELDO_GUIONISTA = 50000;
 	protected static final Integer SUELDO_DIRECTOR = 200000;
-	
+
 	private String nombre = "";
 	private Integer anoNacimiento = 0;
 	private String nacionalidad = "";
+
+	// CONSTRUCTOR
+
+	public Trabajador(String nombre, String nacionalidad, Integer anoNacimiento) {
+		this.nombre = nombre;
+		this.nacionalidad = nacionalidad;
+		this.anoNacimiento = anoNacimiento;
+	}
+
+	// GETTERS AND SETTERS
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Integer getAnoNacimiento() {
+		return anoNacimiento;
+	}
+
+	public void setAnoNacimiento(Integer anoNacimiento) {
+		this.anoNacimiento = anoNacimiento;
+	}
+
+	public String getNacionalidad() {
+		return nacionalidad;
+	}
+
+	public void setNacionalidad(String nacionalidad) {
+		this.nacionalidad = nacionalidad;
+	}
+
+	// MÉTODOS
+
+	public abstract Integer getSueldo();
 
 }

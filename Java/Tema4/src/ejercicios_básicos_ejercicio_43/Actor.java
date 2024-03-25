@@ -46,6 +46,21 @@ programa que haga lo siguiente:
 */
 package ejercicios_básicos_ejercicio_43;
 
-public class Actor extends Trabajador {	
+public class Actor extends Trabajador {
+
+	public Actor(String nombre, String nacionalidad, Integer anoNacimiento) {
+		super(nombre, nacionalidad, anoNacimiento);
+	}
+
+	@Override
+	public Integer getSueldo() {
+		return SUELDO_ACTOR;
+	}
+
+	@Override
+	public String toString() {
+		return "Actor [getNombre()=" + getNombre() + ", getAnoNacimiento()=" + getAnoNacimiento()
+				+ ", getNacionalidad()=" + getNacionalidad() + "]";
+	}
 
 }

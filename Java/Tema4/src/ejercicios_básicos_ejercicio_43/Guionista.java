@@ -46,6 +46,15 @@ programa que haga lo siguiente:
 */
 package ejercicios_básicos_ejercicio_43;
 
-public class Guionista {
-	
+public class Guionista extends Trabajador {
+
+	public Guionista(String nombre, String nacionalidad, Integer anoNacimiento) {
+		super(nombre, nacionalidad, anoNacimiento);
+	}
+
+	@Override
+	public Integer getSueldo() {
+		return SUELDO_GUIONISTA;
+	}
+
 }

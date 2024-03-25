@@ -53,42 +53,60 @@ public class Pelicula {
 
 	private Integer anoEstreno = 0;
 	private String titulo = "";
-	private List<String> actores = new ArrayList<>();
+	private List<Actor> listaActores;
 	private Guionista guionista;
 	private Director director;
-	
-//MÉTODOS GET Y SET
-	
+
+	public Pelicula() {
+		this.listaActores = new ArrayList<>();
+	}
+
+	// MÉTODOS GET Y SET
+
 	public Integer getAnoEstreno() {
 		return anoEstreno;
 	}
+
 	public void setAnoEstreno(Integer anoEstreno) {
 		this.anoEstreno = anoEstreno;
 	}
+
 	public String getTitulo() {
 		return titulo;
 	}
+
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public List<String> getActores() {
-		return actores;
-	}
-	public void setActores(List<String> actores) {
-		this.actores = actores;
-	}
+
 	public Guionista getGuionista() {
 		return guionista;
 	}
+
 	public void setGuionista(Guionista guionista) {
 		this.guionista = guionista;
 	}
+
 	public Director getDirector() {
 		return director;
 	}
+
 	public void setDirector(Director director) {
 		this.director = director;
 	}
 
+	public List<Actor> getListaActores() {
+		return listaActores;
+	}
+
+	public void setListaActores(List<Actor> listaActores) {
+		this.listaActores = listaActores;
+	}
+
+	@Override
+	public String toString() {
+		return "Pelicula [anoEstreno=" + anoEstreno + ", titulo=" + titulo + ", listaActores=" + listaActores
+				+ ", guionista=" + guionista + ", director=" + director + "]";
+	}
 
 }
