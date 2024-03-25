@@ -51,15 +51,30 @@ public class App {
 
 			if (entradaUsuario.equalsIgnoreCase("fin")) {
 				check = false;
-			}
-
-			if (!mapPalabras.containsKey(minus.substring(0, 1))) {
+			} else if (!mapPalabras.containsKey(minus.substring(0, 1))) {
 				listaPalabras.add(entradaUsuario);
 				mapPalabras.put(key, listaPalabras);
 			} else if (mapPalabras.containsKey(key)) {
 				mapPalabras.get(key).add(entradaUsuario);				
 			}
 
+		} while (check);
+		
+		do {
+			System.out.println("INTRODUCE UNA LETRA: ");
+			entradaUsuario = sc.nextLine();
+			String minus = entradaUsuario.toLowerCase();
+			check = true;
+			
+			if (entradaUsuario.equalsIgnoreCase("fin")) {
+				check = false;
+			} else if (mapPalabras.containsKey(minus)) {
+				System.out.println("HAY " + mapPalabras.get(minus).size() + " PALABRA QUE EMPIEZA POR " + minus);
+				System.out.println(mapPalabras.get(minus));
+			}
+			
+			
+			
 		} while (check);
 
 		System.out.println(mapPalabras);
