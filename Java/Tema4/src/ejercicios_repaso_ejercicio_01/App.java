@@ -34,9 +34,21 @@ Añade los siguientes métodos:
 */
 package ejercicios_repaso_ejercicio_01;
 
+import java.math.BigDecimal;
+
 public class App {
 
 	public static void main(String[] args) {
+		
+		Smartphone movil1 = new Smartphone();
+		
+		movil1.setPrecio(new BigDecimal(235));
+		movil1.desactivar();
+		movil1.activar();
+		movil1.getEdad();
+		movil1.cambiarMarcaModelo("Huawei", "S22");
+		
+		System.out.println(movil1);
 		
 		
 		

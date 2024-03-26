@@ -34,7 +34,6 @@ Añade los siguientes métodos:
 */
 package ejercicios_repaso_ejercicio_01;
 
-import java.awt.image.SampleModel;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
@@ -176,8 +175,17 @@ public class Smartphone {
 
 	@Override
 	public String toString() {
-
-		return marca + " (" + modelo + ") " + " - " + activo.equals(true);
+		
+		String resultado = this.marca + " (" + this.modelo + ") ";
+		
+		if (this.activo == true) {
+			resultado = resultado + " - ACTIVO";
+		}
+		
+		
+		
+		
+		return resultado;
 	}
 
 }
