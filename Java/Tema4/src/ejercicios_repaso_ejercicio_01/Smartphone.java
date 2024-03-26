@@ -34,14 +34,13 @@ Añade los siguientes métodos:
 */
 package ejercicios_repaso_ejercicio_01;
 
+import java.awt.image.SampleModel;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.Period;
 
 public class Smartphone {
-	
-	
 
 	private String marca;
 	private String modelo;
@@ -50,7 +49,7 @@ public class Smartphone {
 	private LocalDate fechaFabricacion;
 	private Boolean activo;
 
-	// Constructor por defecto.	
+	// Constructor por defecto.
 
 	public Smartphone() {
 		this.activo = true;
@@ -75,6 +74,12 @@ public class Smartphone {
 		this.modelo = inputModelo;
 	}
 
+	// GETTERS ANS SETTERS
+
+	public String getImei() {
+		return imei;
+	}
+
 	// setPrecio() -> permite cambiar el precio del Smartphone.
 
 	public void setPrecio(BigDecimal precio) {
@@ -93,36 +98,41 @@ public class Smartphone {
 		this.activo = false;
 	}
 
-	// getEdad() -> devuelve los años transcurridos desde el 1 de abril del 2000 hasta la fecha de fabricación del Smartphone.
+	// getEdad() -> devuelve los años transcurridos desde el 1 de abril del 2000
+	// hasta la fecha de fabricación del Smartphone.
 
 	public Integer getEdad() {
 		LocalDate fecha2000 = LocalDate.of(2000, Month.APRIL, 1);
 		Period periodo = fecha2000.until(fechaFabricacion);
 		return periodo.getYears();
 	}
-	
-	// cambiarMarcaModelo() -> recibe una marca y modelo para cambiar los delSmartphone.
-	
-	public void cambiarMarcaModelo (String marca, String modelo) {
+
+	// cambiarMarcaModelo() -> recibe una marca y modelo para cambiar los
+	// delSmartphone.
+
+	public void cambiarMarcaModelo(String marca, String modelo) {
 		this.marca = marca;
 		this.modelo = modelo;
 	}
-	
-	// establecerFabricacion() -> recibe y cambia la fecha de fabricación del Smartphone.
-	
-	public void establecerFabricacion (LocalDate fecha) {
+
+	// establecerFabricacion() -> recibe y cambia la fecha de fabricación del
+	// Smartphone.
+
+	public void establecerFabricacion(LocalDate fecha) {
 		this.fechaFabricacion = fecha;
 	}
-	
-	// getPrecioMasIva() -> devuelve el precio del Smartphone sumándole el IVA (21%).
-	
-	public BigDecimal getPrecioMasIva () {		
+
+	// getPrecioMasIva() -> devuelve el precio del Smartphone sumándole el IVA
+	// (21%).
+
+	public BigDecimal getPrecioMasIva() {
 		return this.precio.multiply(new BigDecimal(1.21));
 	}
-	
+
 	// isAltaGama() -> recibe un precio base y devolverá un booleano indicando si el
-	// Smartphone es de alta gama o no. Los Smartphone de alta gama son aquellos cuyo precio es mayor al precio base recibido
-	
+	// Smartphone es de alta gama o no. Los Smartphone de alta gama son aquellos
+	// cuyo precio es mayor al precio base recibido
+
 	public Boolean isAltaGama(BigDecimal precioBase) {
 		if (this.precio.compareTo(precioBase) > 0) {
 			return true;
@@ -130,8 +140,44 @@ public class Smartphone {
 			return false;
 		}
 	}
-	
-	// isDatosCompletos() -> devuelve un booleano indicando si los datos del Smartphone están completos. 
-	// Para que lo estén, al menos el imai debe no estar vacío ni contener sólo espacios en blanco, y el precio no puede ser null.
+
+	// isDatosCompletos() -> devuelve un booleano indicando si los datos del
+	// Smartphone están completos.
+	// Para que lo estén, al menos el imai debe no estar vacío ni contener sólo
+	// espacios en blanco, y el precio no puede ser null.
+
+	public Boolean isDatosCompletos() {
+		if (this.imei == null || this.imei.isBlank() || this.imei.isEmpty() || this.precio == null) {
+			return false;
+		}
+		return true;
+	}
+
+	// isGratis() -> devuelve si el precio del Smartphone es o no es 0 euros.
+
+	public Boolean isGratis() {
+		if (this.precio.equals(BigDecimal.ZERO)) {
+			return true;
+		}
+		return false;
+	}
+
+	// rebajar() -> modifica el precio del Smartphone restándole 10 euros.
+
+	public void rebajar() {
+		this.precio.subtract(BigDecimal.TEN);
+	}
+
+	// toString() -> sobrescribe el método toString de Object. Debe devolver una
+	// cadena con
+	// el formato “marca (modelo)”. Si el Smartphone además está inactivo, la cadena
+	// será
+	// así “marca (modelo) – INACTIVO”.
+
+	@Override
+	public String toString() {
+
+		return marca + " (" + modelo + ") " + " - " + activo.equals(true);
+	}
 
 }
