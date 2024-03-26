@@ -40,6 +40,8 @@ import java.time.Month;
 import java.time.Period;
 
 public class Smartphone {
+	
+	
 
 	private String marca;
 	private String modelo;
@@ -48,25 +50,22 @@ public class Smartphone {
 	private LocalDate fechaFabricacion;
 	private Boolean activo;
 
-// Constructor por defecto.	
+	// Constructor por defecto.	
 
 	public Smartphone() {
-
 		this.activo = true;
 		this.precio = BigDecimal.ZERO;
-
 	}
 
-// Constructor que reciba e inicialice el imei
+	// Constructor que reciba e inicialice el imei.
 
 	public Smartphone(String inputImei) {
-
 		this.imei = inputImei;
 		this.activo = true;
 		this.precio = BigDecimal.ZERO;
 	}
 
-// Constructor que reciba e inicialice el imei, la marca y el modelo
+	// Constructor que reciba e inicialice el imei, la marca y el modelo.
 
 	public Smartphone(String inputImei, String inputMarca, String inputModelo) {
 		this.imei = inputImei;
@@ -76,31 +75,63 @@ public class Smartphone {
 		this.modelo = inputModelo;
 	}
 
-// setPrecio() -> permite cambiar el precio del Smartphone
+	// setPrecio() -> permite cambiar el precio del Smartphone.
 
 	public void setPrecio(BigDecimal precio) {
 		this.precio = precio;
 	}
 
-// activar -> activa el Smartphone
+	// activar -> activa el Smartphone.
 
 	public void activar() {
 		this.activo = true;
 	}
 
-// desactivar -> inactiva el Smartphone
+	// desactivar -> inactiva el Smartphone.
 
 	public void desactivar() {
 		this.activo = false;
 	}
 
-//  getEdad() -> devuelve los años transcurridos desde el 1 de abril del 2000 hasta la fecha de fabricación del Smartphone.
+	// getEdad() -> devuelve los años transcurridos desde el 1 de abril del 2000 hasta la fecha de fabricación del Smartphone.
 
 	public Integer getEdad() {
 		LocalDate fecha2000 = LocalDate.of(2000, Month.APRIL, 1);
 		Period periodo = fecha2000.until(fechaFabricacion);
 		return periodo.getYears();
-
 	}
+	
+	// cambiarMarcaModelo() -> recibe una marca y modelo para cambiar los delSmartphone.
+	
+	public void cambiarMarcaModelo (String marca, String modelo) {
+		this.marca = marca;
+		this.modelo = modelo;
+	}
+	
+	// establecerFabricacion() -> recibe y cambia la fecha de fabricación del Smartphone.
+	
+	public void establecerFabricacion (LocalDate fecha) {
+		this.fechaFabricacion = fecha;
+	}
+	
+	// getPrecioMasIva() -> devuelve el precio del Smartphone sumándole el IVA (21%).
+	
+	public BigDecimal getPrecioMasIva () {		
+		return this.precio.multiply(new BigDecimal(1.21));
+	}
+	
+	// isAltaGama() -> recibe un precio base y devolverá un booleano indicando si el
+	// Smartphone es de alta gama o no. Los Smartphone de alta gama son aquellos cuyo precio es mayor al precio base recibido
+	
+	public Boolean isAltaGama(BigDecimal precioBase) {
+		if (this.precio.compareTo(precioBase) > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	// isDatosCompletos() -> devuelve un booleano indicando si los datos del Smartphone están completos. 
+	// Para que lo estén, al menos el imai debe no estar vacío ni contener sólo espacios en blanco, y el precio no puede ser null.
 
 }

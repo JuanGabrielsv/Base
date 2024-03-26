@@ -24,12 +24,12 @@ import java.util.Map;
 
 public class Diccionario {
 
-	private Map<String, List<String>> mapPalabras;
+	private Map<String, List<String>> diccionario;
 
 	// CONTRUCTOR
 
 	public Diccionario() {
-		this.mapPalabras = new HashMap<>();
+		this.diccionario = new HashMap<>();
 	}
 	
 	// MÉTODOS
@@ -38,6 +38,7 @@ public class Diccionario {
 	   de palabras que se quieren cargar (habrá palabras que empiecen por diferentes letras). */
 
 	public void cargarDiccionario (List<String> lista) {
+		
 		
 	}
 }
