@@ -35,6 +35,7 @@ Añade los siguientes métodos:
 package ejercicios_repaso_ejercicio_01;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.Period;
@@ -125,7 +126,8 @@ public class Smartphone {
 	// (21%).
 
 	public BigDecimal getPrecioMasIva() {
-		return this.precio.multiply(new BigDecimal(1.21));
+		//return this.precio.multiply(new BigDecimal(1.21));
+		return this.precio.multiply(new BigDecimal(1.21).setScale(2, RoundingMode.HALF_UP));
 	}
 
 	// isAltaGama() -> recibe un precio base y devolverá un booleano indicando si el

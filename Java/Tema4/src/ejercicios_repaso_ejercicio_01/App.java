@@ -35,23 +35,32 @@ Añade los siguientes métodos:
 package ejercicios_repaso_ejercicio_01;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class App {
 
 	public static void main(String[] args) {
-		
+
 		Smartphone movil1 = new Smartphone();
-		
+		Smartphone movil2 = new Smartphone("654854G542L", "Samsung", "S34");
+
 		movil1.setPrecio(new BigDecimal(235));
 		movil1.desactivar();
 		movil1.activar();
+		movil1.establecerFabricacion(LocalDate.of(2023, 5, 26));
 		movil1.getEdad();
 		movil1.cambiarMarcaModelo("Huawei", "S22");
+		movil1.isDatosCompletos();
+		
+		movil2.setPrecio(new BigDecimal(199));
 		
 		System.out.println(movil1);
-		
-		
-		
+		System.out.println(movil1.getEdad());
+		System.out.println(movil1.getPrecioMasIva());
+		System.out.println(movil1.isAltaGama(new BigDecimal(300)));
+		System.out.println(movil1.isDatosCompletos());
+		System.out.println(movil2.isDatosCompletos());
+		System.out.println(movil2);
 
 	}
 
