@@ -222,20 +222,69 @@ select clientes.nombre,platos.nombre from comandas join clientes on clientes.id 
     where fecha = (select max(fecha) from comandas) and hora = (select max(hora) from comandas where fecha = (select max(fecha) from comandas));
 
 /* 11. Se quiere saber cuánto se ha COBRADO en las comandas (suma de los importes de los platos). El resultado no debe tener decimales. */
-
+SELECT ROUND(SUM(precio)) FROM comandas JOIN platos ON platos.id = comandas.id_plato WHERE comandas.estado = 'COBRADO';
+--SOLUCION PROFESOR:
+select round(sum(precio)) from comandas join platos on platos.id = comandas.id_plato where estado = 'COBRADO'; 
 
 /* 12. Se quiere mostrar el nombre del ingrediente que tiene más letras. Debes mostrar el siguiente mensaje sustituyendo el nombre del ingrediente
        por el que sea: "El ingrediente con más letras es NOMBREINGREDIENTE". En una segunda columna debes devolver el número de letras de dicho ingrediente. */
+SELECT 'El ingrediente con más letras es ' || UPPER(nombre), LENGTH(nombre) FROM ingredientes WHERE LENGTH(nombre) = (SELECT MAX(LENGTH(nombre)) FROM ingredientes);
+--SOLUCIÓN PROFESOR:
+select 'El ingrediente con más letras es ' || (select nombre from ingredientes where length(nombre) = (select max(length(nombre)) from ingredientes)),
+    (select length(nombre) from ingredientes where length(nombre) = (select max(length(nombre)) from ingredientes))
+    from dual;
+    
 /* 13. Indica el nombre de los platos que usan ingredientes de la categoría 'VERDURA'. */
+SELECT platos.nombre FROM platos JOIN ingredientes_platos ON ingredientes_platos.id_plato = platos.id JOIN ingredientes ON ingredientes.id = ingredientes_platos.id_ingrediente WHERE ingredientes.categoria =
+    'VERDURA' GROUP BY platos.nombre;
+--SOLUCIÓN PROFESOR:
+select distinct platos.nombre from ingredientes_platos join platos on platos.id = ingredientes_platos.id_plato join ingredientes on ingredientes.id = ingredientes_platos.id_ingrediente
+    where categoria = 'VERDURA';
+
 /* 14. ¿Qué nombres de clientes pidieron una comanda el 1 de marzo de 2021 entre las 21:20 y las 21:40 horas y el estado fue COCINA? Devuelve el nombre del cliente todo en mayúsculas. */
+SELECT UPPER(clientes.nombre) FROM clientes JOIN comandas ON comandas.id_cliente = clientes.id WHERE fecha = '01/03/2021' AND hora BETWEEN '21:20' AND '21:40' AND estado = 'COCINA';
+--SOLUCIÓN PROFESOR:
+select upper(clientes.nombre) from comandas join clientes on clientes.id = comandas.id_cliente where fecha = '01-03-2021' and hora between '21:20' and '21:40' and estado = 'COCINA';
+
 /* 15. Se quiere una lista de los nombres de los platos con la primera letra en mayúscula de cada palabra y que el precio esté entre 5 y 8. */
+SELECT INITCAP(nombre) FROM platos WHERE precio BETWEEN 5 AND 8;
+--SOLUCIÓN PROFESOR:
+select initcap(nombre) from platos where precio between 5 and 8;
+
 /* 16. Indica las categorías de los ingredientes, sin repetir, que se usan en el plato "Plato Calamares con patatas". */
+SELECT DISTINCT(ingredientes.categoria) FROM ingredientes JOIN ingredientes_platos ON ingredientes_platos.id_ingrediente = ingredientes.id JOIN platos ON platos.id = ingredientes_platos.id_plato WHERE platos.nombre = 
+    'Plato Calamares con patatas';
+--SOLUCIÓN PROFESOR:
+select distinct ingredientes.categoria from ingredientes_platos join ingredientes on ingredientes.id = ingredientes_platos.id_ingrediente join platos on platos.id = ingredientes_platos.id_plato 
+    where platos.nombre = 'Plato Calamares con patatas';
+
 /* 17. Se quiere saber todos los estados, sin repetir, de las comandas. Debes devolver todas las letras en minúsculas y que el orden de los resultados sea por dicho estado de la z a la a. */
+SELECT LOWER(estado) FROM comandas GROUP BY estado ORDER BY estado DESC;
+--SOLUCIÓN PROFESOR:
+select distinct lower(estado) from comandas order by lower(estado) desc;
+
 /* 18. Indica el nombre de los ingredientes que empiezan por "G" o "P" sin usar LIKE. */
+--SOLUCIÓN PROFESOR:
+SELECT nombre FROM ingredientes WHERE SUBSTR(nombre, 1, 1) IN ('G', 'P');
+
 /* 19. Se quiere saber cuántos ingredientes son de la categoría VERDURA y el nombre del ingrediente empieza por P. */
+SELECT * FROM ingredientes WHERE categoria = 'VERDURA' AND nombre LIKE 'P%';
+--SOLUCIÓN PROFESOR:
+select * from ingredientes where categoria = 'VERDURA' and nombre like 'P%';
+
 /* 20. Indica los nombres de los platos en los que está el ingrediente "Cebolla" y la cantidad que llevan del ingrediente.
        El nombre de los platos debe tener el alias "Plato" y la cantidad debe tener el alias "Cant". */
+SELECT platos.nombre AS "Plato", ingredientes_platos.cantidad AS "Cant" FROM platos JOIN ingredientes_platos ON platos.id = ingredientes_platos.id_plato 
+    JOIN ingredientes ON ingredientes.id = ingredientes_platos.id_ingrediente WHERE ingredientes.nombre = 'Cebolla';
+--SOLUCIÓN PROFESOR:
+select platos.nombre "Plato", cantidad "Cant" from ingredientes_platos join ingredientes on ingredientes.id = ingredientes_platos.id_ingrediente 
+    join platos on platos.id = ingredientes_platos.id_plato where ingredientes.nombre = 'Cebolla';
+       
 /* 21. Indica cuántas comandas se han hecho entre las 21:00 y las 21:10 del día 01-03-2021. */
+SELECT COUNT(*) FROM comandas WHERE hora BETWEEN '21:00' AND '21:10' AND fecha = '01/03/2021';
+--SOLUCIÓN PROFESOR:
+select count(*) from comandas where fecha = '01-03-2021' and hora between '21:00' and '21:10';
+
 /* 22. ¿Cuál es el precio de plato más caro que se ha SERVIDO el 01-03-2021?. */
 /* 23. Se quiere saber cuántos ingredientes tiene cada plato. Muestra una lista con todos los nombres de los platos y en otra columna el número de ingredientes que tiene.
        Ordena el resultado empezando por el plato que tiene más ingredientes y terminando por el que menos tiene. */
