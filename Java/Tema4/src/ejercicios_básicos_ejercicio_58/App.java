@@ -19,11 +19,32 @@ métodos.
 
 package ejercicios_básicos_ejercicio_58;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
 
 	public static void main(String[] args) {
 		
-
+		List<String> palabras = new ArrayList<String>();		
+		
+		palabras.add("Tomate");
+		palabras.add("todo");
+		palabras.add("lechuga");
+		palabras.add("Luna");
+		palabras.add("Pared");
+		palabras.add("pelo");
+		
+		Diccionario diccionario = new Diccionario();		
+		diccionario.cargarDiccionario(palabras);
+		
+		System.out.println(diccionario);
+		
+		diccionario.imprimirPalabras("L");
+		
+		//System.out.println(diccionario.imprimirPalabras("t"));
+		
+		diccionario.borrarDiccionario();	
 	}
 
 }
