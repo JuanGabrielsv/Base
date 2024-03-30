@@ -38,25 +38,42 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class T3_ejercicios_repaso_10 {
-	
-	
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
-		Integer entradaUsuario;
-		
+		Integer arraySize;
+		String nombreAlumnos[];
+		Integer mediaNotas[];
+		Integer mediaAlumnos = 0;
+		Integer resultadoMedia = 0;
+
 		System.out.println("CUÁNTOS ALUMNOS HAY EN CLASE: ");
-		entradaUsuario = sc.nextInt();
+		arraySize = Integer.parseInt(sc.nextLine());
+		nombreAlumnos = new String[arraySize];
+		mediaNotas = new Integer[arraySize];
+
+		for (int i = 0; i < nombreAlumnos.length; i++) {
+			Integer sumaNotas = 0;
+			System.out.println("DIME EL NOMBRE DEL ALUMNO " + (i + 1));
+			nombreAlumnos[i] = sc.nextLine();
+			for (int j = 0; j < 3; j++) {
+				System.out.println("¿Cuál es la nota de " + nombreAlumnos[i] + " para el examen " + (j + 1) + "?");
+				sumaNotas += Integer.parseInt(sc.nextLine());
+			}
+			mediaNotas[i] = sumaNotas / 3;
+		}
+
+		System.out.println("\nLISTADO DE NOTAS");
 		
-		for (int i = 0; i < entradaUsuario; i++) {
-			//String nombreAlumno;
-			ArrayList<Integer> nombreAlumno;
-			System.out.println("DIME EL NOMBRE DEL ALUMNO " + i);
-			nombreAlumno = sc.();
-			
+		for (int i = 0; i < nombreAlumnos.length; i++) {
+			System.out.print("\tAlumno: " + nombreAlumnos[i] + " - Nota media: " + mediaNotas[i] + "\n");			
+			mediaAlumnos += mediaNotas[i];
 		}
 		
+		resultadoMedia = mediaAlumnos / nombreAlumnos.length;
+		System.out.println("Media de los Alumnos: " + resultadoMedia);
+		sc.close();
 
 	}
 
