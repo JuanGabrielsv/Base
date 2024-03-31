@@ -1,4 +1,4 @@
-package ejercicio_a;
+package examen_A;
 
 import java.time.LocalDate;
 import java.util.Scanner;
