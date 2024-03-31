@@ -1,4 +1,4 @@
-package tema2;
+package t2_depuracion_entregable;
 import java.util.Scanner;
 
 public class T2_depuracion_entregable {
@@ -49,7 +49,7 @@ public class T2_depuracion_entregable {
 		}
 		
 		for (x = 1; x <= 10; x++) {
-			System.out.println(mayor + " X " + x + " = " + (mayor + x)); 
+			System.out.println(mayor + " X " + x + " = " + (mayor * x)); 
 			sc.close();
 		}
 	

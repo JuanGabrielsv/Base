@@ -36,7 +36,7 @@ public class App {
 			Boolean dniCorrecto = false;		
 			
 			do {
-				System.out.println("Dime el DNI del Alumno1: ");
+				System.out.println("Dime el DNI del Alumno" + numAlumno + ": ");
 				String dni = sc.nextLine();
 				alumno = new Alumno(dni);
 				if (!alumno.validarDNI()) {
