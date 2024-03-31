@@ -58,7 +58,7 @@ Cuando tengas todas las clases terminadas, crea un programa que haga lo siguient
 5. Añade al equipo visitante un jugador con el dorsal 99 y nombre “Blas infiltrado”. Imprime el equipo visitante.
 6. Cambia el capitán del equipo local para que sea el último jugador de la lista de sus jugadores. Imprime el equipo local. 
 */
-package ejercicios_básicos_ejercicio_41;
+package ejercicios_básicos_ejercicio_41_SIN_TERMINAR;
 
 import java.util.Objects;
 

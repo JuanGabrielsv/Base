@@ -61,7 +61,7 @@ partido.
 6. Cambia el capitán del equipo local para que sea el último jugador de la lista de sus jugadores. Imprime el equipo local. 
 */
 
-package ejercicios_básicos_ejercicio_41;
+package ejercicios_básicos_ejercicio_41_SIN_TERMINAR;
 
 public class App {
 
