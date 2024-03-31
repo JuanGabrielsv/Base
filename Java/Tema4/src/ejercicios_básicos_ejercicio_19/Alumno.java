@@ -13,7 +13,7 @@ public class Alumno {
 	private Double nota;
 	
 	public void aprobar() {
-		this.nota = 10.0;
+		this.nota = 5.0;
 	}
 
 	public String getDni() {

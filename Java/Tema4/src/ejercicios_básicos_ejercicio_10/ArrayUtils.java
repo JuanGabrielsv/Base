@@ -10,7 +10,7 @@ package ejercicios_básicos_ejercicio_10;
 public class ArrayUtils {
 	
 	public static String obtenerPalabra(String array[], Integer num) {
-		if (num > array.length + 1 || num < array.length) {
+		if (num >= array.length || num <= 0 ) {
 			System.out.println("no data");
 		}
 		else {
@@ -23,4 +23,7 @@ public class ArrayUtils {
 		return null;
 		
 	}
+	
+	
+	
 }
