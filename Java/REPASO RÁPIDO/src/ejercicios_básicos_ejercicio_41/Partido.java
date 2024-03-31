@@ -63,7 +63,7 @@ public class Partido {
 	
 	@Override
 	public String toString() {
-		return equipoLocal + " vs " + equipoVisitante + " [" + resultado + "]";
+		return equipoLocal.getNombreEquipo() + " vs " + equipoVisitante.getNombreEquipo() + " [" + resultado + "]";
 	}
 	
 	// MÉTODOS.

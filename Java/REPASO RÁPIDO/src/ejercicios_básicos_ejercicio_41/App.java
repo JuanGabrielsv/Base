@@ -70,8 +70,7 @@ public class App {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		String nombre;
-		Integer dorsal;
+		
 
 		// 1. Crea dos equipos con al menos 3 jugadores cada uno. Solicitando los datos al usuario.
 		// Designa al capitán de cada equipo (será el primer jugador indicado). Cuando los
@@ -79,21 +78,35 @@ public class App {
 
 		System.out.println("DIME EL NOMBRE DEL PRIMER EQUIPO: ");
 		Equipo equipo1 = new Equipo(sc.nextLine());
-		cargarJugadores(equipo1);		
+		cargarJugadores(sc, equipo1);		
 
 		System.out.println("DIME EL NOMBRE DEL SEGUNDO EQUIPO: ");
 		Equipo equipo2 = new Equipo(sc.nextLine());
-		cargarJugadores(equipo2);
+		cargarJugadores(sc, equipo2);
 		
 		System.out.println(equipo1);
 		System.out.println(equipo2);
 		
-		sc.close();
+		// 2. Crea un partido para estos dos equipos. Establece el resultado en 0 a 0. Imprime el partido.
+		
+		Partido partido1 = new Partido();
+		Resultado resultado1 = new Resultado();		
+		partido1.setEquipoLocal(equipo1);
+		partido1.setEquipoVisitante(equipo2);
+		partido1.setResultado(resultado1);
+		System.out.println(partido1);
+		
+		// 3. Pregunta al usuario por el resultado y cámbialo. Imprime el partido.
+		
+		System.out.println(partido1.getEquipoGanador());
+		
+		
+
+		
 
 	}
 
-	private static void cargarJugadores(Equipo equipo) {
-		Scanner sc = new Scanner(System.in);
+	private static void cargarJugadores(Scanner sc, Equipo equipo) {
 		for (int i = 0; i < 3; i++) {
 			System.out.println("INTRODUCE EL DORSAL: ");
 			Integer dorsal = Integer.parseInt(sc.nextLine());
@@ -103,8 +116,6 @@ public class App {
 			equipo.getJugadores().add(jugador);
 		}
 		equipo.setCapitan(equipo.getJugadores().get(0));
-		
 	}
-	
 
 }
