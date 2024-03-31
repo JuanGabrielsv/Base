@@ -25,8 +25,8 @@ son las siguiente:
 	
 • Resultado.
 	o Atributos privados con métodos get y set:
-		• golesLocales  Integer
-		• golesVisitante  Integer
+		• golesLocales -> Integer
+		• golesVisitante -> Integer
 	o Constructor por defecto que inicializa el resultado a 0
 	o Método equals que compare los dos atributos
 	o Método toString para que se imprima algo tal que así: 0 – 0

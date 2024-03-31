@@ -12,6 +12,7 @@
 
 package ejercicios_básicos_ejercicio_41;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -30,6 +31,7 @@ public class Equipo {
 	
 	public Equipo (String nombre) {
 		this.nombreEquipo = nombre;
+		jugadores = new ArrayList<>();
 	}
 	
 	// GETTERS AND SETTERS.
