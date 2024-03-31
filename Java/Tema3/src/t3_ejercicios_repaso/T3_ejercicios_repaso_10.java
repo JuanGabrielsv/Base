@@ -34,7 +34,6 @@ Media de los alumnos: 6
 */
 package t3_ejercicios_repaso;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class T3_ejercicios_repaso_10 {
