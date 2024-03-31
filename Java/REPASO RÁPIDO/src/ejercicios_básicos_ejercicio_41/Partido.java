@@ -57,5 +57,30 @@ public class Partido {
 	public Partido() {
 		
 	}
+	
+	// Método toString para que se imprima algo tal que así:
+	// Real Madrid C.F. vs F.C.Barcelona [0 – 0]
+	
+	@Override
+	public String toString() {
+		return equipoLocal + " vs " + equipoVisitante + " [" + resultado + "]";
+	}
+	
+	// MÉTODOS.
+	// getEquipoGanador() que devuelve el Equipo que haya ganado. Si hay empate, devolverá null.
+	
+	public Equipo getEquipoGanador() {
+		if (this.getResultado().getGolesLocales() > this.getResultado().getGolesVisitante()) {
+			return this.getEquipoLocal();
+		} else if (this.getResultado().getGolesLocales() < this.getResultado().getGolesVisitante()) {
+			return this.getEquipoVisitante();
+		} else {
+			return null;
+		}
+	}
+	
+	
+	
+	
 
 }

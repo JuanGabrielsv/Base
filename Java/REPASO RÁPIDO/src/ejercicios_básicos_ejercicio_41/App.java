@@ -63,11 +63,48 @@ Cuando tengas todas las clases terminadas, crea un programa que haga lo siguient
 
 package ejercicios_básicos_ejercicio_41;
 
+import java.util.Scanner;
+
 public class App {
 
 	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		String nombre;
+		Integer dorsal;
+
+		// 1. Crea dos equipos con al menos 3 jugadores cada uno. Solicitando los datos al usuario.
+		// Designa al capitán de cada equipo (será el primer jugador indicado). Cuando los
+		// tengas, imprime los equipos por consola.
+
+		System.out.println("DIME EL NOMBRE DEL PRIMER EQUIPO: ");
+		Equipo equipo1 = new Equipo(sc.nextLine());
+		cargarJugadores(equipo1);		
+
+		System.out.println("DIME EL NOMBRE DEL SEGUNDO EQUIPO: ");
+		Equipo equipo2 = new Equipo(sc.nextLine());
+		cargarJugadores(equipo2);
 		
+		System.out.println(equipo1);
+		System.out.println(equipo2);
+		
+		sc.close();
 
 	}
+
+	private static void cargarJugadores(Equipo equipo) {
+		Scanner sc = new Scanner(System.in);
+		for (int i = 0; i < 3; i++) {
+			System.out.println("INTRODUCE EL DORSAL: ");
+			Integer dorsal = Integer.parseInt(sc.nextLine());
+			System.out.println("INTRODUCE EL NOMBRE DE JUGADOR: ");
+			String nombre = sc.nextLine();
+			Jugador jugador = new Jugador(nombre, dorsal);
+			equipo.getJugadores().add(jugador);
+		}
+		equipo.setCapitan(equipo.getJugadores().get(0));
+		
+	}
+	
 
 }
