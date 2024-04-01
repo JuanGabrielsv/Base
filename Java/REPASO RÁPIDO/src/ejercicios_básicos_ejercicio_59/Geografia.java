@@ -54,6 +54,71 @@ A continuación:
 */
 package ejercicios_básicos_ejercicio_59;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Geografia {
+
+	private Map<String, String> paises;
+
+	// CONSTRUCTOR.
+
+	public Geografia() {
+		this.paises = new HashMap<String, String>();
+	}
+	
+	// GETTERS AND SETTERS.
+
+	public Map<String, String> getPaises() {
+		return paises;
+	}
+
+	public void setPaises(Map<String, String> paises) {
+		this.paises = paises;
+	}
+	
+	//MÉTODOS.
+	/* 1. agregarPais. Recibe un país y su capital y lo añade al mapa. El país lo guardará siempre
+	      en mayúsculas y la capital la guardará con la primera letra sólo en mayúsculas. Si el país
+	      ya está en el mapa, actualizará la nueva capital. Devolverá true si el país estaba en el
+	      mapa y false si no estaba. */
+	
+	public Boolean agregarPais(String pais, String capital) {
+		if (this.getPaises().containsKey(pais.toUpperCase())) {
+			this.getPaises().put(pais.toUpperCase(), capital.substring(0, 1).toUpperCase() + capital.substring(1).toLowerCase());
+			System.out.println("true");
+			return true;			
+		} else {
+			this.getPaises().put(pais.toUpperCase(), capital.substring(0, 1).toUpperCase() + capital.substring(1).toLowerCase());
+			System.out.println("false");
+			return false;
+		}
+	}
+	
+	/* 2. obtenerCapital. Recibe un país y devuelve la capital de dicho país. En caso de que no
+	   exista el pais en el mapa, devolverá la cadena vacía. OJO: el país puede que lo recibas
+	   en minúsculas. */
+	
+	public String obtenerCapital (String key) {
+		if (this.getPaises().containsKey(key.toUpperCase())) {
+			return this.getPaises().get(key.toUpperCase());
+		} else {
+			return "";
+		}		
+	}
+	
+	/* 3. imprimirPaises: imprime el mapa de la siguiente manera: PAIS: “país” – CAPITAL:
+	   “capital” (uno en cada línea). */
+	
+	public void imprimirPaises() {
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Geografia paises = " + paises;
+	}
+	
+	
 
 }
