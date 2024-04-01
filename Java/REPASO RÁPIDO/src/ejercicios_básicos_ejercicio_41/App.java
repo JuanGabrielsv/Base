@@ -98,11 +98,28 @@ public class App {
 		
 		// 3. Pregunta al usuario por el resultado y cámbialo. Imprime el partido.
 		
+		System.out.println("DIME LOS GOLES PARA EL EQUIPO " + equipo1.getNombreEquipo());
+		partido1.getResultado().setGolesLocales(Integer.parseInt(sc.nextLine()));
+		System.out.println("DIME LOS GOLES PARA EL EQUIPO " + equipo2.getNombreEquipo());
+		partido1.getResultado().setGolesVisitante(Integer.parseInt(sc.nextLine()));
+		System.out.println(partido1);
+		
+		// 4. Imprime el equipo ganador.
+		
 		System.out.println(partido1.getEquipoGanador());
 		
+		// 5. Añade al equipo visitante un jugador con el dorsal 99 y nombre “Blas infiltrado”. Imprime el equipo visitante.
 		
-
+		Jugador infiltrado = new Jugador("Blas infiltrado", 99);
+		equipo2.getJugadores().add(infiltrado);
+		System.out.println(equipo2);
 		
+		// 6. Cambia el capitán del equipo local para que sea el último jugador de la lista de sus jugadores. Imprime el equipo local.
+		
+		equipo1.setCapitan(equipo1.getJugadores().get(equipo1.getJugadores().size() - 1));
+		System.out.println(equipo1);
+		
+		sc.close();
 
 	}
 

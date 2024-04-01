@@ -105,13 +105,6 @@ public class Resultado {
 		} else {
 			return false;
 		}
-	}
-	
-	
-	
-	
-	
-	
-	
+	}	
 
 }

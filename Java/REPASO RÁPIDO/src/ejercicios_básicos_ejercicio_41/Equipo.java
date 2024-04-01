@@ -85,10 +85,6 @@ public class Equipo {
 	@Override
 	public String toString() {
 		return nombreEquipo + " - Capitán: " + capitan.getNombre() + " - Jugadores: " + jugadores;
-	}
-	
-	
-	
-	
+	}	
 
 }
