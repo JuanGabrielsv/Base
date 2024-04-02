@@ -245,3 +245,102 @@ BEGIN
 END;
 /
 
+/* EJERCICIO 8
+Crea un programa que realiza la suma de dos números enteros, num1 y num2, si num1 es
+mayor que num2. En caso contrario que no haga nada.
+Asigna por ejemplo los valores 7 y 3 a los números.
+*/
+DECLARE
+    num1 INT := 7;
+    num2 INT := 3;
+    suma INT;
+BEGIN
+    IF num1 > num2 THEN
+        suma := num1 + num2;
+        dbms_output.put_line(suma);    
+    END IF;    
+END;
+/
+
+/*
+EJERCICIO 9 modificado
+Crea una función llamada restarNumEnteros que reciba dos parámetros, num1 y num2, y si num1 es mayor que num2, devuelva
+la resta de ambos números. En caso contrario, muestra por pantalla "Num1 es menor o igual que num2" y devuelva -1.
+Llama a dicha función desde un bloque de código anónimo con los valores 7 y 3, en primer lugar, y 4 y 8 en segundo lugar.
+*/
+CREATE OR REPLACE FUNCTION restarNumEnteros(num1 INT, num2 INT) RETURN INT
+IS
+    resta INT;
+BEGIN
+    IF num1 > num2 THEN
+        resta := num1 - num2;
+        RETURN resta;
+    ELSE 
+        RETURN -1;
+    END IF;
+END;
+/
+
+DECLARE
+BEGIN
+    dbms_output.put_line(restarNumEnteros(7, 3));
+    dbms_output.put_line(restarNumEnteros(4, 8));
+END;
+/
+
+/* 
+EJERCICIO 10
+Crea un programa que tome pida una variable al usuario para que la introduzca por teclado (tiene
+que ser un número), y según sea su valor entre 0 y 10, devuelva por pantalla el valor de la nota:
+SUSPENSO, APROBADO, BIEN, NOTABLE, SOBRESALIENTE. En caso contrario, que devuelva ‘El valor introducido es incorrecto’.
+*/
+DECLARE
+    nota NUMBER(3,1) := &nota;
+BEGIN
+    IF nota < 5 AND nota >= 0 THEN
+        dbms_output.put_line('SUSPENSO');
+    ELSIF nota >=5 AND nota < 6 THEN
+        dbms_output.put_line('APROBADO');
+    ELSIF nota >=6 AND nota < 7 THEN
+        dbms_output.put_line('BIEN');
+    ELSIF nota >=7 AND nota < 9 THEN
+        dbms_output.put_line('NOTABLE');
+    ELSIF nota >=9 AND nota <= 10 THEN
+        dbms_output.put_line('SOBRESALIENTE');
+    ELSE
+        dbms_output.put_line('El valor introducido es incorrecto');
+    END IF;
+END;
+/
+
+/*
+EJERCICIO 11
+Realiza el mismo ejercicio 11 pero utilizando CASE en lugar de IF | ELSIF | END IF.
+*/
+DECLARE
+    nota NUMBER(3,1) := &nota;
+BEGIN
+    CASE
+    WHEN nota < 5 AND nota >= 0 THEN
+        dbms_output.put_line('SUSPENSO');
+    WHEN nota >=5 AND nota < 6 THEN
+        dbms_output.put_line('APROBADO');
+    WHEN nota >=6 AND nota < 7 THEN
+        dbms_output.put_line('BIEN');
+    WHEN nota >=7 AND nota < 9 THEN
+        dbms_output.put_line('NOTABLE');
+    WHEN nota >=9 AND nota <= 10 THEN
+        dbms_output.put_line('SOBRESALIENTE');
+    ELSE
+        dbms_output.put_line('El valor introducido es incorrecto');
+    END CASE;
+END;
+/
+
+/*
+EJERCICIO 12
+Realiza un programa que lea por teclado dos números enteros. El primero será los goles del
+equipo de casa, y el segundo los goles del equipo de fuera.
+Se quiere devolver por pantalla quién ha ganado “El equipo de casa/visitante ha ganado”. 
+En casode empate se indicará “El resultado del partido hasido de empate”.
+*/
