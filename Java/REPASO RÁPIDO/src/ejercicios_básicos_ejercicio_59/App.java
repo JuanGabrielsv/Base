@@ -8,6 +8,7 @@ public class App {
 		
 		geo1.agregarPais("brasil", "rio de JAneiro");
 		geo1.agregarPais("brasil", "paris");
+		geo1.agregarPais("españa", "madrid");
 		
 		System.out.println(geo1);
 		
