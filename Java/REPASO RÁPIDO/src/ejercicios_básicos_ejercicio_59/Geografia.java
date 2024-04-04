@@ -56,6 +56,8 @@ package ejercicios_básicos_ejercicio_59;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public class Geografia {
 
@@ -107,10 +109,27 @@ public class Geografia {
 		}		
 	}
 	
-	/* 3. imprimirPaises: imprime el mapa de la siguiente manera: PAIS: “país” – CAPITAL:
-	   “capital” (uno en cada línea). */
+	/* 3. imprimirPaises: imprime el mapa de la siguiente manera: 
+	   PAIS: “país” – CAPITAL: “capital” (uno en cada línea). */
 	
-	public void imprimirPaises() {
+	public String imprimirPaises() {
+		String key;
+		String val;
+		String linea = "";
+		
+		Set<Entry<String, String>> pares = paises.entrySet();
+		for (Entry<String, String> par : pares) {
+			key = "PAIS: " + par.getKey() + " ";
+			val = "- CAPITAL: " + par.getValue() + "\n";
+			linea = linea + key + val;
+		}
+		return linea;			
+	}
+	
+	/*4. eliminarPais: Recibe un país y borra la entrada del mapa de dicho país si existe. OJO: el
+	     país puede que lo recibas en minúsculas. */
+	   
+	public void eliminarPais(String pais) {
 		
 	}
 

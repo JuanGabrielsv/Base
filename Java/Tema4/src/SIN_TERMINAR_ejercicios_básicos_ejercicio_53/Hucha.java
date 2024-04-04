@@ -31,13 +31,47 @@ imprime siempre la hucha):
 	8. Llama a romperHucha(). Lo que devuelva, mételo en la hucha de nuevo. Debe imprimir
 	   260,00 € */
 
-package ejercicios_básicos_ejercicio_53;
+package SIN_TERMINAR_ejercicios_básicos_ejercicio_53;
 
-public class Main {
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
-	public static void main(String[] args) {
-		
+public class Hucha {
 
+	private BigDecimal dinero;
+
+	public Hucha() {
+		this.dinero = BigDecimal.ZERO;
 	}
+
+	public BigDecimal sacarDinero() {
+		return dinero;
+	}
+
+	public BigDecimal meterDinero(BigDecimal dinero) {
+		this.dinero = this.dinero.add(dinero).setScale(2, RoundingMode.HALF_DOWN);
+		return this.dinero;
+	}
+
+	public BigDecimal sacarDinero(BigDecimal sacar) {
+		if (sacar.compareTo(dinero) > 0) {
+			BigDecimal sacado = dinero;
+			dinero = BigDecimal.ZERO;
+			return sacado;
+		}
+		dinero = dinero.subtract(sacar).setScale(2, RoundingMode.HALF_DOWN);
+		return sacar;
+	}
+	
+	public BigDecimal contarDinero() {
+		return dinero;
+	}
+	public BigDecimal romperHucha() {
+		return sacarDinero(dinero);
+	}
+
+	
+	
+	
 
 }
