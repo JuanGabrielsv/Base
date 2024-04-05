@@ -22,7 +22,6 @@ public class App {
 		System.out.println(geo1.imprimirPaises());
 		System.out.println(geo1.getPaises().size());
 		System.out.println(geo1.calcularLongitudMediaPaises());
-
 	}
 
 }

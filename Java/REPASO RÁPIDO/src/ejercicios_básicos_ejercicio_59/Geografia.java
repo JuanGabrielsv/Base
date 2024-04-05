@@ -55,6 +55,7 @@ A continuación:
 package ejercicios_básicos_ejercicio_59;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -127,7 +128,7 @@ public class Geografia {
 		return linea;			
 	}
 	
-	/*4. eliminarPais: Recibe un país y borra la entrada del mapa de dicho país si existe. OJO: el
+	/* 4. eliminarPais: Recibe un país y borra la entrada del mapa de dicho país si existe. OJO: el
 	     país puede que lo recibas en minúsculas. */
 	   
 	public void eliminarPais(String pais) {
@@ -149,13 +150,15 @@ public class Geografia {
 			longitud = new BigDecimal(key.length());
 			suma = suma.add(longitud);
 		}
-		resultado = suma.divide(tamanoMap);
-		return resultado;
-		
-		
+		resultado = suma.divide(tamanoMap, 2, RoundingMode.HALF_UP);
+		return resultado;		
 	}
 	
+	/* 6. eliminarPaisConCapitalLetra: Recibe una letra, y elimina del mapa la entrada donde la
+	   capital comience por letra especificada. Eliminará sólo la primera ocurrencia del mapa
+	   que coincida. */
 	
+		
 
 	@Override
 	public String toString() {
