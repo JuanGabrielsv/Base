@@ -9,6 +9,7 @@ public class App {
 		geo1.agregarPais("brasil", "rio de JAneiro");
 		geo1.agregarPais("brasil", "paris");
 		geo1.agregarPais("españa", "madrid");
+		geo1.agregarPais("federicogarcialorca", "barcelona");
 		
 		System.out.println(geo1);
 		
@@ -16,9 +17,11 @@ public class App {
 		
 		System.out.println(geo1.imprimirPaises());
 		
-		geo1.eliminarPais("españa");
+		//geo1.eliminarPais("esPaña");
 		
 		System.out.println(geo1.imprimirPaises());
+		System.out.println(geo1.getPaises().size());
+		System.out.println(geo1.calcularLongitudMediaPaises());
 
 	}
 

@@ -54,8 +54,8 @@ A continuación:
 */
 package ejercicios_básicos_ejercicio_59;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -131,9 +131,31 @@ public class Geografia {
 	     país puede que lo recibas en minúsculas. */
 	   
 	public void eliminarPais(String pais) {
+		this.paises.remove(pais.toUpperCase());		
+	}
+	
+	/* 5. calcularLongitudMediaPaises. Devuelve la media del número de caracteres que tiene el
+	   nombre de los países. Es decir, la suma total de caracteres de todos los nombres de los
+	   países entre la cantidad. Si no tenemos países, debe devolver 0. */
+	
+	public BigDecimal calcularLongitudMediaPaises() {
+		BigDecimal suma = BigDecimal.ZERO;
+		BigDecimal tamanoMap = new BigDecimal(this.paises.size());
+		BigDecimal resultado = BigDecimal.ZERO;
+		
+		Set<String> keys = paises.keySet();
+		for (String key : keys) {
+			BigDecimal longitud = BigDecimal.ZERO;
+			longitud = new BigDecimal(key.length());
+			suma = suma.add(longitud);
+		}
+		resultado = suma.divide(tamanoMap);
+		return resultado;
 		
 		
 	}
+	
+	
 
 	@Override
 	public String toString() {
