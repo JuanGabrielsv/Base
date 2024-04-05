@@ -1,6 +1,13 @@
 package ejemplo;
 
 public class Alumno extends Persona {
+	
+	/** Esta clase representa a un alumno.
+	 * @author TECH
+	 * @version 1.0
+	 * @since 05/04/2024	 
+	 */
+	
 	private String dni;
 	private Double nota;
 

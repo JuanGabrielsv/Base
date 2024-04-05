@@ -3,6 +3,14 @@ package ejemplo;
 import java.util.Scanner;
 
 public class App {
+	
+	/** Esta clase es la ejecución del programa.
+	 * @author TECH
+	 * @version 1.0
+	 * @since 05/04/2024
+	 * @param args
+	 */
+	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
