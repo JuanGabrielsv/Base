@@ -15,6 +15,10 @@ public class App {
 		System.out.println(geo1.obtenerCapital("brasi"));
 		
 		System.out.println(geo1.imprimirPaises());
+		
+		geo1.eliminarPais("españa");
+		
+		System.out.println(geo1.imprimirPaises());
 
 	}
 

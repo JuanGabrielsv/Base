@@ -55,6 +55,7 @@ A continuación:
 package ejercicios_básicos_ejercicio_59;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -130,6 +131,7 @@ public class Geografia {
 	     país puede que lo recibas en minúsculas. */
 	   
 	public void eliminarPais(String pais) {
+		
 		
 	}
 
