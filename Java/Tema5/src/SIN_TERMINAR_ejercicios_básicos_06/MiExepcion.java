@@ -1,4 +1,4 @@
-package ejercicios_básicos_06;
+package SIN_TERMINAR_ejercicios_básicos_06;
 
 public class MiExepcion extends Exception {
 	
