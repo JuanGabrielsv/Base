@@ -1,12 +1,13 @@
-package ejemplo;
+package SIN_TERMINAR_ejemplo;
 
+
+/** Esta clase representa a un alumno.
+ * @author TECH
+ * @version 1.0
+ * @since 05/04/2024	 
+ */
 public class Alumno extends Persona {
 	
-	/** Esta clase representa a un alumno.
-	 * @author TECH
-	 * @version 1.0
-	 * @since 05/04/2024	 
-	 */
 	
 	private String dni;
 	private Double nota;
@@ -15,6 +16,11 @@ public class Alumno extends Persona {
 		super();
 		this.dni = dni;		
 	}
+	/**
+	 * 
+	 * @return .
+	 * 
+	 */
 	public String getDni() {
 		return dni;
 	}
@@ -27,8 +33,12 @@ public class Alumno extends Persona {
 	}
 	public void setNota(Double nota) {
 		this.nota = nota;
-	}
+	}	
 	
+	
+	/**
+	 * 
+	 */
 	public void aprobar() {
 		nota = 5.0;
 	}	

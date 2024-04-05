@@ -1,4 +1,4 @@
-package ejemplo;
+package SIN_TERMINAR_ejemplo;
 
 public class Persona {
 	
