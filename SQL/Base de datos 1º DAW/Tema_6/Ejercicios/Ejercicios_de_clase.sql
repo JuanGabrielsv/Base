@@ -318,18 +318,18 @@ EJERCICIO 11
 Realiza el mismo ejercicio 11 pero utilizando CASE en lugar de IF | ELSIF | END IF.
 */
 DECLARE
-    nota NUMBER(3,1) := &nota;
+    nota NUMBER(3, 1) := &nota;
 BEGIN
     CASE
     WHEN nota < 5 AND nota >= 0 THEN
         dbms_output.put_line('SUSPENSO');
-    WHEN nota >=5 AND nota < 6 THEN
+    WHEN nota >= 5 AND nota < 6 THEN
         dbms_output.put_line('APROBADO');
-    WHEN nota >=6 AND nota < 7 THEN
+    WHEN nota >= 6 AND nota < 7 THEN
         dbms_output.put_line('BIEN');
-    WHEN nota >=7 AND nota < 9 THEN
+    WHEN nota >= 7 AND nota < 9 THEN
         dbms_output.put_line('NOTABLE');
-    WHEN nota >=9 AND nota <= 10 THEN
+    WHEN nota >= 9 AND nota <= 10 THEN
         dbms_output.put_line('SOBRESALIENTE');
     ELSE
         dbms_output.put_line('El valor introducido es incorrecto');
@@ -344,3 +344,192 @@ equipo de casa, y el segundo los goles del equipo de fuera.
 Se quiere devolver por pantalla quién ha ganado “El equipo de casa/visitante ha ganado”. 
 En casode empate se indicará “El resultado del partido hasido de empate”.
 */
+
+/*
+EJERCICIO 3
+? Utilizando las dos variables declaradas en el
+ejercicio 2, asígnales los valores siguientes:
+? Primer caso: el valor del campo ENAME
+cuando EMPNO vale 7839.
+? Segundo caso: la fila completa cuando EMPNO
+vale 7698. 
+*/
+
+/*
+EJERCICIO 13
+Realiza un programa que ejecute un bucle LOOP
+y se salga con un EXIT WHEN. Para ello crea una
+variable entero inicializada a 0 y que se vaya
+incrementando en el bucle, además de mostrar
+por pantalla su valor; la condición de salida será
+cuando dicha variable valga más de 20.
+*/
+
+declare
+    i int := 0;
+begin
+    loop
+        if i < 10 then
+            dbms_output.put_line(i);
+        elsif i = 10 then
+            exit;
+        end if;
+        i := i+1; --i++ no, i+=1
+    end loop;
+end;
+/
+declare
+    i int := 0;
+begin
+    loop
+        dbms_output.put_line(i);        
+        i := i+1; --i++ no, i+=1
+        exit when i >= 1;
+    end loop;
+end;
+/
+ 
+--Ejercicio 13
+declare
+    num1 int := 0;
+begin
+    loop
+        num1 := num1+1;
+        dbms_output.put_line(num1);
+        exit when num1>20;
+    end loop;
+end;
+/
+ 
+--Ejercicio 14
+declare
+    num1 int := 0;
+begin
+    loop
+        num1 := num1+1;
+        dbms_output.put_line(num1);
+        if num1>20 then
+            exit;
+        end if;
+    end loop;
+end;
+/
+ 
+--Ejercicio 15
+declare
+    num1 int := 0;
+begin
+    while num1 <= 20 loop
+        num1 := num1+1;
+        dbms_output.put_line(num1);
+    end loop;
+end;
+/
+ 
+--Ejercicio 16
+declare 
+begin
+    for i in reverse 1..20 loop
+        dbms_output.put_line(i);
+    end loop;
+end;
+/
+ 
+--Ejercicio 17
+declare
+begin
+    dbms_output.put_line('');
+end;
+/
+ 
+--Ejercicio 18
+declare
+    i int;
+begin
+    for indice in 0..40 loop
+    --for indice in 1..40 loop
+        i := mod(indice, 2);
+        --if i = 0 and indice != 0 then --CONDICIÓN PARES
+        if i != 0 then --CONDICIÓN IMPARES
+            dbms_output.put_line(indice);
+        end if;
+    end loop;
+end;
+/
+ 
+--Ejercicio 19
+declare
+begin
+    dbms_output.put_line('');
+end;
+/
+
+// REGISTROS Y TABLAS
+/* EJERCICIO 1
+Declarar un tipo registro Tpersona con los
+siguientes campos: un código de tipo numérico, un
+nombre de tipo cadena de 100 caracteres y la
+edad integer. Asignarle valor a una variable de tipo
+Tpersona e imprimirlo por pantalla. */
+
+DECLARE
+    TYPE Tpersona IS RECORD (
+        codigo NUMBER(38),
+        nombre VARCHAR2(100),
+        edad INT
+    );
+    persona1 Tpersona;
+BEGIN
+    persona1.codigo := 1;
+    persona1.nombre := 'Pedro';
+    persona1.edad := 25;
+    dbms_output.put_line('Mostrar los datos');
+    dbms_output.put_line(persona1.codigo || persona1.nombre || persona1.edad);
+END;
+/
+
+--Ejercicio1
+declare
+    type tPersona is record(
+        codigo number,
+        nombre varchar(100),
+        edad int
+    );
+    persona1 tPersona;
+    persona2 tPersona;
+begin
+    persona1.codigo := 1;
+    persona1.nombre := 'Pedro';
+    persona1.edad := 25;
+    dbms_output.put_line('Mostrar los datos');
+    dbms_output.put_line(persona1.codigo||'|'||persona1.nombre||'|'||persona1.edad);
+    dbms_output.put_line(persona2.codigo||'|'||persona2.nombre||'|'||persona2.edad);
+end;
+/
+
+--Quiero que me hagáis un registro que se llame tDept con la estructura de la tabla tDept.
+
+DECLARE
+    TYPE tDept IS RECORD (
+        deptno dept.deptno%type,
+        dname dept.dname%type,
+        loc dept.loc%type
+    );
+BEGIN
+    dbms_output.put_line('');
+END;
+/
+
+/* EJERCICIO 2
+2.1. Crea un registro tpersona igual que el del
+ejemplo de teoría. Después, crea otro registro
+alumno que tenga como campos nombre varchar
+100, y profesor tpersona.
+
+2.2. Crea una variable alumno1 del tipo alumno,
+dale valores a todos sus campos y muéstralos por
+la salida.
+
+2.3. Crea una variable alumno2 del tipo alumno,
+dale valores solo a nombre y código de profesor, y
+saca los datos por la salida. */

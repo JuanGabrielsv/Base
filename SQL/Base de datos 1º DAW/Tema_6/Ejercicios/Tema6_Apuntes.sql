@@ -79,11 +79,19 @@ BEGIN
 END;
 /
 
-/*
-EJERCICIO 3
-? Utilizando las dos variables declaradas en el
-ejercicio 2, asígnales los valores siguientes:
-? Primer caso: el valor del campo ENAME
-cuando EMPNO vale 7839.
-? Segundo caso: la fila completa cuando EMPNO
-vale 7698.
+//BUCLES
+
+DECLARE
+    i INT := 0;
+BEGIN
+    LOOP
+        IF i < 10 THEN
+            dbms_output.put_line(i);
+        ELSIF i = 10 THEN
+            EXIT;
+        END IF;
+        i := i + 1;
+    END LOOP;
+END;
+/
+
