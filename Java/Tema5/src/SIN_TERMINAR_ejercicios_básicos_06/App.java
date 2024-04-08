@@ -21,7 +21,9 @@ public class App {
 
 	public static void main(String[] args) {
 
+		Persona a = new Persona();
 		
+		a.setGenero("M");
 
 	}
 
