@@ -41,4 +41,11 @@ public class Persona {
 		this.fecha = fecha;
 	}
 
+	@Override
+	public String toString() {
+		return "Persona [nombre = " + nombre + ", apellidos = " + apellidos + ", dni = " + dni + ", fecha = " + fecha + "]";
+	}
+	
+	
+
 }
