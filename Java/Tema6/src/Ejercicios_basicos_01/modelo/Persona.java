@@ -43,7 +43,7 @@ public class Persona {
 
 	@Override
 	public String toString() {
-		return "Persona [nombre = " + nombre + ", apellidos = " + apellidos + ", dni = " + dni + ", fecha = " + fecha + "]";
+		return "Persona [NOMBRE = " + nombre + ", APELLIDOS = " + apellidos + ", DNI = " + dni + ", FECHA = " + fecha + "]";
 	}
 	
 	
