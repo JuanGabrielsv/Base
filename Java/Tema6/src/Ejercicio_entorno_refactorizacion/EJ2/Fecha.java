@@ -4,12 +4,12 @@ public class Fecha {
 
 	private int DIA;
 	private int mes;
-	private int a�o;
+	private int ano;
 
-	public Fecha(int dia, int mes, int a�o) {
+	public Fecha(int dia, int mes, int ano) {
 		this.DIA = dia;
 		this.mes = mes;
-		this.a�o = a�o;
+		this.ano = ano;
 	}
 
 	public boolean valida() {
@@ -38,8 +38,8 @@ public class Fecha {
 			diasMes = 30;
 			break;
 		case 2: // a�o bisiesto
-			if ((a�o % 400 == 0) ||
-					((a�o % 4 == 0) && (a�o % 100 != 0)))
+			if ((ano % 400 == 0) ||
+					((ano % 4 == 0) && (ano % 100 != 0)))
 				diasMes = 29;
 			else
 				diasMes = 28;
