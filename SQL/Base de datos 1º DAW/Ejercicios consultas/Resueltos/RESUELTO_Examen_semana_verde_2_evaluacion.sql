@@ -286,10 +286,25 @@ SELECT COUNT(*) FROM comandas WHERE hora BETWEEN '21:00' AND '21:10' AND fecha =
 select count(*) from comandas where fecha = '01-03-2021' and hora between '21:00' and '21:10';
 
 /* 22. ¿Cuál es el precio de plato más caro que se ha SERVIDO el 01-03-2021?. */
+SELECT p.precio FROM platos p JOIN comandas co ON p.id = co.id_plato WHERE fecha = '01-03-2021' AND precio = 
+    (SELECT MAX(p.precio) FROM platos p JOIN comandas co ON p.id = co.id_plato WHERE estado = 'SERVIDO' AND fecha = '01-03-2021') GROUP BY p.precio;
+--SOLUCIÓN PROFESOR:
+select precio from comandas join platos on platos.id = comandas.id_plato where estado = 'SERVIDO' and fecha = '01-03-2021' and precio = (select max(precio) from comandas join platos on platos.id = comandas.id_plato where estado = 'SERVIDO' and fecha = '01-03-2021'); 
+
 /* 23. Se quiere saber cuántos ingredientes tiene cada plato. Muestra una lista con todos los nombres de los platos y en otra columna el número de ingredientes que tiene.
        Ordena el resultado empezando por el plato que tiene más ingredientes y terminando por el que menos tiene. */
+SELECT p.nombre, COUNT(ip.id_ingrediente) FROM platos p JOIN ingredientes_platos ip ON p.id = ip.id_plato GROUP BY p.nombre ORDER BY COUNT(ip.id_ingrediente) DESC;
+--SOLUCIÓN PROFESOR:
+select platos.nombre,count(*) from ingredientes_platos join platos on platos.id = ingredientes_platos.id_plato group by platos.nombre order by 2 desc;
+       
 /* 24. Indica el valor medio de las cantidades de los ingredientes con redondeo de tres decimales. */
+SELECT ROUND(AVG(cantidad), 3) FROM ingredientes_platos;
+--SOLUCIÓN PROFESOR:
+select round(avg(cantidad),3) from ingredientes_platos;
+
 /* 25. ¿Cuál es el nombre del plato que entró por comanda en estado SERVIDO el 01/03/21 a las 21:25? Usa solo subconsultas. */
+
+
 /* 26. Indica el tiempo de preparación del plato más barato. */
 /* 27. Devuelve el NOMBRE y la localidad de los clientes cuyo nombre termine en "n". */
 /* 28. ¿Cuántas comandas han sido en LUNES?. */
