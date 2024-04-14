@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="REPASO RÁPIDO/src"/>
+	<classpathentry kind="src" path="Tema1/src"/>
+	<classpathentry kind="src" path="Tema2/src"/>
+	<classpathentry kind="src" path="Tema3/src"/>
+	<classpathentry kind="src" path="Tema4/src"/>
+	<classpathentry kind="src" path="Tema5/src"/>
+	<classpathentry kind="src" path="Tema6_ejercicios_basicos_01/src"/>
+	<classpathentry kind="src" path="Tema6/src"/>
+	<classpathentry kind="output" path="REPASO RÁPIDO/bin"/>
+</classpath>

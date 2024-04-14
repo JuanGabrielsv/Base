@@ -25,10 +25,8 @@ public class App {
 		try {
 			do {
 				try {
-
 					System.out.println("INTRODUCE UN NÚMERO ENTERO: ");
 					entradaUsuario = Integer.parseInt(sc.nextLine());
-
 					if (entradaUsuario.equals(-1)) {
 						check = false;
 					} else {

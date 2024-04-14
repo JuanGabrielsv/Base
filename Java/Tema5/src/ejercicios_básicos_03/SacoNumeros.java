@@ -10,7 +10,7 @@ EJERCICIO 3
 • Haz que tu programa pregunte al usuario qué números quiere ver solicitando posiciones y se
   los muestre. Hasta que el usuario indique la posición -1. En tal caso, dejarás de preguntarle. 
 */
-package SIN_TERMINAR_ejercicios_básicos_03;
+package ejercicios_básicos_03;
 
 import java.util.ArrayList;
 import java.util.List;
