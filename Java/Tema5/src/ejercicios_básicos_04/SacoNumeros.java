@@ -46,7 +46,7 @@ public class SacoNumeros {
 	// Una vez que lo tengas modificado, añade otro método que sea getNumero() que recibe un
 	// Integer que será la posición y devuelve el número que está en dicha posición.
 	
-	public Integer getNumero(Integer posicion) throws IndexOutOfBoundsException {
+	public Integer getNumero(Integer posicion) {
 		try {
 			return this.listaNumeros.get(posicion);			
 		} catch (IndexOutOfBoundsException e) {
