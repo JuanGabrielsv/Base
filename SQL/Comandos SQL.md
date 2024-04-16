@@ -15,6 +15,10 @@ LOOP
 EXECUTE IMMEDIATE 'DROP TABLE ' || cur_rec.table_name || ' CASCADE CONSTRAINTS';
 END LOOP;
 END;
+
+- Permitir la compilación de procedure o function -
+
+GRANT CREATE PROCEDURE TO nombreUsuario;
 ```
 Crear tabla:
 ```
