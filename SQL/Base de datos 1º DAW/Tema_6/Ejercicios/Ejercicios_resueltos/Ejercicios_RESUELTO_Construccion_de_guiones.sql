@@ -112,8 +112,9 @@ END;
 /
 
 /* EJERCICIO 8 y 9
-Crea un programa que realiza la suma de dos números enteros, num1 y num2, si
-num1 es mayor que num2. En caso contrario que no haga nada.
+Crea un programa que realiza la resta de dos números enteros, num1 y num2,
+si num1 es mayor que num2. En caso contrario, que muestre por pantalla
+‘num1 es menor que num2’, sustituyendo num1 y num2 por sus valores.
 Asigna por ejemplo los valores 7 y 3 a los números. */
 
 DECLARE
@@ -155,3 +156,117 @@ BEGIN
     END IF;
 END;
 /
+
+/* EJERCICIO 11
+Realiza el mismo ejercicio 10 pero utilizando CASE en lugar de
+IF | ELSIF | END IF.  */
+
+DECLARE
+    nota NUMBER(38, 2) := &Nota;
+BEGIN
+    CASE
+    WHEN nota < 5 AND nota >= 0 THEN
+        dbms_output.put_line('SUSPENSO');
+    WHEN nota >=5 AND nota < 6 THEN
+        dbms_output.put_line('APROBADO');
+    WHEN nota >=6 AND nota < 7 THEN
+        dbms_output.put_line('BIEN');
+    WHEN nota >=7 AND nota < 9 THEN
+        dbms_output.put_line('NOTABLE');
+    WHEN nota >=9 AND nota <= 10 THEN
+        dbms_output.put_line('SOBRESALIENTE');
+    ELSE
+        dbms_output.put_line('El valor introducido es incorrecto');
+    END CASE;
+END;
+/
+
+/* EJERCICIO 12
+Realiza un programa que lea por teclado dos números enteros. El primero será los
+goles del equipo de casa, y el segundo los goles del equipo de fuera.
+Se quiere devolver por pantalla quién ha ganado: “El equipo de casa/visitante ha
+ganado”. En caso de empate se indicará “El resultado del partido ha sido de
+empate”. */
+
+DECLARE
+    num1 NUMBER(38, 2) := &GolesLocales;
+    num2 NUMBER(38, 2) := &GolesVisitante;
+BEGIN
+    IF num1 > 0 AND num2 > 0 THEN
+        IF num1 > num2 THEN
+            dbms_output.put_line('El equipo local');
+        ELSIF num1 < num2 THEN
+            dbms_output.put_line('el equipo visitante');
+        ELSE
+            dbms_output.put_line('Empate');
+        END IF;
+    ELSE
+        dbms_output.put_line('Datos introducidos incorrectos');
+    END IF;
+END;
+/
+-- FORMA DOS
+DECLARE
+    num1 NUMBER(38, 2) := &GolesLocales;
+    num2 NUMBER(38, 2) := &GolesVisitante;
+BEGIN
+    CASE
+    WHEN num1 > 0 AND num2 > 0 THEN
+        IF num1 > num2 THEN
+            dbms_output.put_line('El equipo local');
+        ELSIF num1 < num2 THEN
+            dbms_output.put_line('el equipo visitante');
+        ELSE
+            dbms_output.put_line('Empate');
+        END IF;
+    ELSE
+        dbms_output.put_line('Datos introducidos incorrectos');
+    END CASE;
+END;
+/
+-- FORMA TRES
+DECLARE
+    num1 NUMBER(38, 2) := &GolesLocales;
+    num2 NUMBER(38, 2) := &GolesVisitante;
+BEGIN
+    IF num1 > 0 AND num2 > 0 THEN
+        CASE
+        WHEN num1 > num2 THEN
+            dbms_output.put_line('El equipo local');
+        WHEN num1 < num2 THEN
+            dbms_output.put_line('el equipo visitante');
+        ELSE
+            dbms_output.put_line('Empate');
+        END CASE;
+    ELSE
+        dbms_output.put_line('Datos introducidos incorrectos');
+    END IF;
+END;
+/
+-- FORMA CUATRO
+DECLARE
+    num1 NUMBER(38, 2) := &GolesLocales;
+    num2 NUMBER(38, 2) := &GolesVisitantes;
+BEGIN
+    CASE
+    WHEN num1 > 0 AND num2 > 0 THEN
+        CASE
+        WHEN num1 > num2 THEN
+            dbms_output.put_line('El equipo local');
+        WHEN num1 < num2 THEN
+            dbms_output.put_line('El equipo visitante');
+        ELSE 
+            dbms_output.put_line('Empate');
+        END CASE;
+    ELSE
+        dbms_output.put_line('Datos introducidos erroneos');
+    END CASE;
+END;
+/
+
+/* EJERCICIO 13
+Realiza un programa que ejecute un bucle LOOP y se salga con un EXIT WHEN. Para
+ello crea una variable entero inicializada a 0 y que se vaya incrementando en el
+bucle, además de mostrar por pantalla su valor; la condición de salida será
+cuando dicha variable valga más de 20. */
+

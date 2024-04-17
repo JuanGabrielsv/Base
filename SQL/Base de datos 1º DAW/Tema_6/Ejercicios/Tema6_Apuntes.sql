@@ -12,6 +12,14 @@ BEGIN
 END;
 /
 
+/* DECLARAR UNA CONSTANTE */
+DECLARE
+    variableConstante CONSTANT INT := 5;
+BEGIN
+    dbms_output.put_line(variableConstante);
+END;
+/
+
 /* ESTRUCTURA DE UN PROCEDIMIENTO */
 CREATE OR REPLACE PROCEDURE nombreDeLaProcedure(fecha DATE)
 IS
@@ -36,6 +44,40 @@ END;
 /* BORRAR UN PROCEDURE Y FUNCTION */
 DROP PROCEDURE nombreDeLaProcedure;
 DROP FUNCTION nombreDeLaFuncion;
+
+/* ESTRUCTURA IF */
+DECLARE
+    variable1 INT := &NÚMERO;
+BEGIN
+    IF variable1 > 5 THEN
+        dbms_output.put_line('Es mayor');
+    ELSIF variable1 = 5 THEN
+        dbms_output.put_line('Es igual');
+    ELSIF variable1 < 5 THEN
+        dbms_output.put_line('Es menor');
+    ELSE
+        dbms_output.put_line('Datos introducidos incorrectos');
+    END IF;
+END;
+/
+
+/* ESTRUCTURA CASE */
+DECLARE
+    variable1 INT := &NUMERO;
+    varConstante CONSTANT INT := 5;
+BEGIN
+    CASE
+    WHEN variable1 > varConstante THEN
+        dbms_output.put_line('Es mayor');
+    WHEN variable1 < varConstante THEN
+        dbms_output.put_line('Es menor');
+    WHEN variable1 = varConstante THEN 
+        dbms_output.put_line('Es igual');
+    ELSE
+        dbms_output.put_line('Datos introducidos erroneos');
+    END CASE;
+END;
+/
 
 //BUCLES
 
