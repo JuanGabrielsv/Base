@@ -520,21 +520,6 @@ BEGIN
 END;
 /
 
-/* EJERCICIO 2
-2.1. Crea un registro tpersona igual que el del
-ejemplo de teoría. Después, crea otro registro
-alumno que tenga como campos nombre varchar
-100, y profesor tpersona.
-
-2.2. Crea una variable alumno1 del tipo alumno,
-dale valores a todos sus campos y muéstralos por
-la salida.
-
-2.3. Crea una variable alumno2 del tipo alumno,
-dale valores solo a nombre y código de profesor, y
-saca los datos por la salida. */
-
-
 /* EJERCICIO 6
 Se quieren guardar los datos deptno y loc del departamento cuyo deptno es 40 en una variable
 del tipo %rowtype llamada filacompleta2. Muestrapor la salida el valor de los dos campos de
