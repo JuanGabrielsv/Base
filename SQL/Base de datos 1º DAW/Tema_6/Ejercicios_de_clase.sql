@@ -645,7 +645,7 @@ declare
     valor2 emp.empno%type := &empno2;
     type tTabla1 is table of emp.empno%type index by binary_integer;
     tabla1 tTabla1;
-    type tTabla2 is table of emp%rowtype index by binary_integer;
+    type tTabla2 is table of emp%rowtype index by binary_i nteger;
     tabla2 tTabla2;
 begin
     tabla1(1) := valor1;
@@ -665,4 +665,6 @@ begin
     end loop;
 end;
 /
+
+-- EXCEPCIONES
 
