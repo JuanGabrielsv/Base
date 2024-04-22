@@ -33,7 +33,8 @@ public class App {
 			Persona p = service.consultarPersona(vDni);
 			
 			if (p == null) {
-				System.out.println("No existe persona con los datos solicitados");
+				System.out.println("No existe persona con los datos"
+						+ " solicitados");
 			} else {
 				System.out.println(p);
 			}
