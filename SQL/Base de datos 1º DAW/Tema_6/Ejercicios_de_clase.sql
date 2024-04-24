@@ -668,3 +668,62 @@ end;
 
 -- EXCEPCIONES
 
+/*Ejercicio 4.
+Definir un cursor explícito que seleccione el nombre, apellidos y DNI de la 
+tabla ESTUDIANTES por ORDEN ALFABÉTICO DE APELLIDO, y en caso de coincidir, 
+orden ALFABÉTICO DE NOMBRE. 
+Recorrerlo y mostrar todos los datos recuperados. 
+Escribir al final el número de filas recuperadas en total.
+*/
+declare
+    --cursor datosEstudiantes is select * from estudiantes;
+    --filaEstudiante estudiantes%rowtype;
+    cursor datosEstudiantes is 
+        select nombre,apellidos,dni 
+            from estudiantes
+            order by apellidos,nombre;
+    nombreEstudiante estudiantes.nombre%type;
+    apellidosEstudiante estudiantes.apellidos%type;
+    dniEstudiante estudiantes.dni%type;
+begin
+    open datosEstudiantes;
+    loop
+        fetch datosEstudiantes into nombreEstudiante,apellidosEstudiante,dniEstudiante;
+        exit when datosEstudiantes%notfound;
+        dbms_output.put_line(apellidosEstudiante||', '||nombreEstudiante||', DNI: '||dniEstudiante);      
+    end loop;
+    dbms_output.put_line('Total de estudiantes: '||datosEstudiantes%rowcount);
+    close datosEstudiantes;
+end;
+/
+
+/*
+Ejercicio 5.
+Definir un cursor explícito que seleccione el nombre y la fecha de nacimiento de la tabla
+ESTUDIANTES. Recorrerlo y mostrar todos los datos recuperados con WHILE LOOP.
+Escribir al final el número de filas recuperadas en total.
+*/
+declare
+    cursor datos is select * from estudiantes;
+    fila estudiantes%rowtype; --fila.nombre, fila.fecha_nacimiento
+    contador int := 0;
+begin
+    open datos;
+    fetch datos into fila;
+    while datos%found loop
+        contador := contador + 1;
+        dbms_output.put_line(fila.nombre||'-'||fila.fecha_nacimiento);
+        fetch datos into fila;
+    end loop;
+    close datos;
+    dbms_output.put_line('Total = ' || contador);
+end;
+/
+
+DECLARE
+
+BEGIN
+
+END;
+/
+
