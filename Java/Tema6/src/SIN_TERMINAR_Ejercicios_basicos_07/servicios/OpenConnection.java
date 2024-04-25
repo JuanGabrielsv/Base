@@ -16,7 +16,8 @@ public class OpenConnection {
 		try {
 			Class.forName(driverClass);
 		} catch (ClassNotFoundException e) {
-			System.err.println("No se encuentra el driver JDBC. Revisa su configuración");
+			System.err.println("No se encuentra el driver JDBC. Revisa su "
+					+ "configuración");
 			throw new RuntimeException(e);
 		}
 		
