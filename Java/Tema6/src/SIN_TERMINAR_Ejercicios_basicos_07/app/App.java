@@ -13,11 +13,8 @@ package SIN_TERMINAR_Ejercicios_basicos_07.app;
 
 import Ejercicios_basicos_01.modelo.Persona;
 import Ejercicios_basicos_01.servicios.*;
-//import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Scanner;
-
-
 
 public class App {
 
