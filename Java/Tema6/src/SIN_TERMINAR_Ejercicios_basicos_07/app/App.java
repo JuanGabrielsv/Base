@@ -1,12 +1,13 @@
-/* EJERCICIO 2
-Completa el ejercicio anterior solicitando después al usuario un filtro para
-buscar personas.
-Consulta en la BBDD todas las personas cuyo nombre o apellidos contengan este
-filtro. Luego muestra al usuario el listado de los resultados encontrados.
-Tendrás que crear un método en PersonasService llamado buscarPersonas() que
-reciba el filtro y devuelva una lista de personas. Trata los errores del mismo
-modo. Intenta dividir tu clase App en método para que no esté todo “apiñado” en
-el main */
+/* EJERCICIO 7
+Crea en PersonasService un método que permita insertar una lista de Personas en la BBDD. Se
+llamará insertarPersonas() y recibirá una lista.
+Importante: si hay algún error al guardar alguna persona, la transacción debe deshacerse por
+completo. Es decir, si hay algún error, no se debe insertar ninguna persona (tendrás que hacer
+un rollback)
+Pruébalo creando una clase Test que cree 3 personas y llame al servicio. Prueba también a hacer
+que la segunda o tercera persona tenga un nombre muy largo para que provoque un error en la
+base de datos y verificar que no se inserta ninguna persona. 
+*/
 package SIN_TERMINAR_Ejercicios_basicos_07.app;
 
 import Ejercicios_basicos_01.modelo.Persona;
