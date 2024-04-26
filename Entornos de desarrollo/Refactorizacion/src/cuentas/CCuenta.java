@@ -27,7 +27,12 @@ public class CCuenta {
 			throw new Exception("No se puede ingresar una cantidad negativa");
 		saldo = saldo + cantidad;
 	}
-
+	
+	/**
+	 * 
+	 * @param cantidad
+	 * @throws Exception
+	 */
 	public void retirar(double cantidad) throws Exception {
 		if (cantidad <= 0)
 			throw new Exception("No se puede retirar una cantidad negativa");
