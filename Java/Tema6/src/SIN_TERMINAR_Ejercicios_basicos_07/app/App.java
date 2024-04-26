@@ -1,21 +1,20 @@
-/* EJERCICIO 3
-Amplía el programa anterior para que, después de la última parte, solicite al usuario los datos
-de una persona y lo inserte en BBDD. Tendrás que crear en PersonasService un método llamado
-insertarPersona() que reciba una Persona y la inserte. Trata los errores con la BBDD del mismo
-modo.
-Antes de intentar insertar, debes asegurar que todos los datos están completos. Para ello, crea
-un método “validar()” en la clase Persona que lance una excepción si no es así. Por ejemplo,
-DatosIncompletosException. Si salta la excepción, contrólala y vuelve a pedir los datos al
-usuario. */
-package SIN_TERMINAR_Ejercicios_basicos_03.app;
+/* EJERCICIO 7
+Crea en PersonasService un método que permita insertar una lista de Personas en
+la BBDD. Se llamará insertarPersonas() y recibirá una lista. 
+Importante: si hay algún error al guardar alguna persona, la transacción debe
+deshacerse por completo. Es decir, si hay algún error, no se debe insertar
+ninguna persona (tendrás que hacer un rollback).
+Pruébalo creando una clase Test que cree 3 personas y llame al servicio. 
+Prueba también a hacer que la segunda o tercera persona tenga un nombre muy
+largo para que provoque un error en la base de datos y verificar que no se
+inserta ninguna persona. 
+*/
+package SIN_TERMINAR_Ejercicios_basicos_07.app;
 
 import Ejercicios_basicos_01.modelo.Persona;
 import Ejercicios_basicos_01.servicios.*;
-//import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Scanner;
-
-
 
 public class App {
 
