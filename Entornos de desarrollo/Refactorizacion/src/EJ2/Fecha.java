@@ -1,4 +1,4 @@
-package Ejercicio_entorno_refactorizacion.EJ2;
+package EJ2;
 
 public class Fecha {
 
@@ -37,9 +37,8 @@ public class Fecha {
 		case 11:
 			diasMes = 30;
 			break;
-		case 2: // a�o bisiesto
-			if ((ano % 400 == 0) ||
-					((ano % 4 == 0) && (ano % 100 != 0)))
+		case 2: // año bisiesto
+			if ((ano % 400 == 0) || ((ano % 4 == 0) && (ano % 100 != 0)))
 				diasMes = 29;
 			else
 				diasMes = 28;
@@ -47,8 +46,7 @@ public class Fecha {
 		}
 		if (DIA > diasMes) {
 			return false;
-		}
-		else {
+		} else {
 			return true;
 		}
 
