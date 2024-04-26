@@ -1,4 +1,4 @@
-package Refactorizacion;
+package refactorizacion;
 
 public class Fecha {
 
