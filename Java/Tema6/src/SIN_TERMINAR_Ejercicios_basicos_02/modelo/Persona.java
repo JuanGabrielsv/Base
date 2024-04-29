@@ -44,8 +44,8 @@ public class Persona {
 
 	@Override
 	public String toString() {
-		return "Persona [NOMBRE = " + nombre + ", APELLIDOS = " + apellidos +
-				", DNI = " + dni + ", FECHA = " + fechaNacimiento + "]";
+		return "Persona [NOMBRE = " + nombre + ", APELLIDOS = " + apellidos + ", DNI = " + dni + ", FECHA = "
+				+ fechaNacimiento + "]";
 	}
 
 	@Override
@@ -64,6 +64,5 @@ public class Persona {
 		Persona other = (Persona) obj;
 		return Objects.equals(dni, other.dni);
 	}
-		
 
 }
