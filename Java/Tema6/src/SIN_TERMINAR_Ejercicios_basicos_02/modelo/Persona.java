@@ -1,13 +1,14 @@
 package SIN_TERMINAR_Ejercicios_basicos_02.modelo;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Persona {
 
 	private String nombre;
 	private String apellidos;
 	private String dni;
-	private LocalDate fecha;
+	private LocalDate fechaNacimiento;
 
 	public String getNombre() {
 		return nombre;
@@ -33,19 +34,36 @@ public class Persona {
 		this.dni = dni;
 	}
 
-	public LocalDate getFecha() {
-		return fecha;
+	public LocalDate getFechaNacimiento() {
+		return fechaNacimiento;
 	}
 
-	public void setFecha(LocalDate fecha) {
-		this.fecha = fecha;
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	@Override
 	public String toString() {
-		return "Persona [NOMBRE = " + nombre + ", APELLIDOS = " + apellidos + ", DNI = " + dni + ", FECHA = " + fecha + "]";
+		return "Persona [NOMBRE = " + nombre + ", APELLIDOS = " + apellidos +
+				", DNI = " + dni + ", FECHA = " + fechaNacimiento + "]";
 	}
-	
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(dni);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		return Objects.equals(dni, other.dni);
+	}
+		
 
 }

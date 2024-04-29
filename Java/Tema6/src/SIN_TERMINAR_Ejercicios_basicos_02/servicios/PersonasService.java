@@ -14,36 +14,12 @@ public class PersonasService {
 		openConn = new OpenConnection();
 	}
 	
-	/*public Persona consultarPersona(String dni) throws SQLException{
-		
-		String sql = "SELECT * FROM PERSONAS WHERE DNI = '" + dni + "'";
-		
-		try(Connection conn = openConn.getNewConnection();
-				Statement stmt = conn.createStatement()){
-			
-			ResultSet rs = stmt.executeQuery(sql);
-			
-			while (rs.next()) {
-				String dni1 = rs.getString("DNI");
-				if (dni1.equals(dni)) {
-					
-				}
-				String nombre = rs.getString("NOMBRE");
-				
-			}
-			
-		}
-		
-	}*/
-	
 	public Persona consultarPersona(String dni) throws SQLException {
-		
-		Connection conn = null;
-		Statement stmt = null;
+					
 		ResultSet rs = null;
-		try {			
-			conn = openConn.getNewConnection();			
-			stmt = conn.createStatement();
+		
+		try (Connection conn = openConn.getNewConnection();			
+			Statement stmt = conn.createStatement()) {
 			
 			String sql = "SELECT * FROM PERSONAS WHERE DNI = '" + dni + "'";
 			System.out.println(sql);
@@ -54,17 +30,12 @@ public class PersonasService {
 				p.setNombre(rs.getString("NOMBRE"));
 				p.setDni(rs.getString("DNI"));				
 				p.setApellidos(rs.getString("APELLIDOS"));
-				p.setFecha(rs.getDate("FECHA_NACIMIENTO").toLocalDate());
+				p.setFechaNacimiento(rs.getDate("FECHA_NACIMIENTO").toLocalDate());
 				return p;
 			} else {
 				return null;	
-			}	
-			
-		} finally {
-			System.out.println("");
-			conn.close();
-			stmt.close();
-		}
+			}			
+		} 
 	}
 
 }
