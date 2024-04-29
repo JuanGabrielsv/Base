@@ -43,7 +43,7 @@ public class PersonasService {
 	// reciba el filtro y devuelva una lista de personas.
 
 	public List<Persona> buscarPersonas(String filtro) {
-		return null;
+		
 	}
 
 }
