@@ -236,18 +236,22 @@ Usa por ejemplo empno 7839 y 7698. */
 DECLARE
     entradaUsuario1 INTEGER(38) := &Numero1;
     entradaUsuario2 INTEGER(38) := &Numero2;
-    TYPE tablaEntradaUsuario IS TABLE OF emp.empno%TYPE INDEX BY BINARY_INTEGER;
+    TYPE tablaDeIntegers IS TABLE OF integer INDEX BY BINARY_INTEGER;
     TYPE tablaEmp IS TABLE OF emp%ROWTYPE INDEX BY BINARY_INTEGER;
-    t1EntradaUsuario tablaEntradaUsuario;
+    t1TablaDeIntegers tablaDeIntegers;
     t1Emp tablaEmp;
 BEGIN
-    t1EntradaUsuario(1) := entradaUsuario1;
-    t1EntradaUsuario(2) := entradaUsuario2;
+    t1TablaDeIntegers(1) := entradaUsuario1;
+    t1TablaDeIntegers(2) := entradaUsuario2;
     
-    FOR i IN t1EntradaUsuario.FIRST..t1EntradaUsuario.LAST
+    FOR i IN t1TablaDeIntegers.FIRST..t1TablaDeIntegers.LAST
         LOOP
             SELECT * INTO t1Emp(i) FROM emp 
-                WHERE emp.empno = t1EntradaUsuario(i);
+                WHERE emp.empno = t1TablaDeIntegers(i);
+                dbms_output.put_line(t1Emp(i).empno || ' ' || t1Emp(i).ename ||
+                ' ' || t1Emp(i).job || ' ' || t1Emp(i).mgr || ' ' ||
+                t1Emp(i).hiredate || ' ' || t1Emp(i).sal ||
+                t1Emp(i).comm || ' ' || t1Emp(i).deptno);
         END LOOP;
     dbms_output.put_line('');
 END;
