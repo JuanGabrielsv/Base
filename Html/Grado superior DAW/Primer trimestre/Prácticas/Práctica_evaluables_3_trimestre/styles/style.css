@@ -1,0 +1,73 @@
+*, *::before,*::after {
+    box-sizing: border-box;
+    width: 100%;
+}
+  
+* {
+    margin: 0;
+    padding: 0;
+    border: 0 solid transparent;
+}
+
+body {
+    background-color: #0C151D;
+    color: white;    
+}
+
+.head {
+    background-color: #171F26;
+    padding: 1em 1em 1em 1em;
+    position: sticky;
+    font-size: 24px;
+}
+
+main {
+    max-width: 560px;
+    height: auto;
+    margin: auto;    
+    padding: 1em 1em 1em 1em;
+}
+
+.inicio {
+    display: flex;  
+    margin-top: 3em;      
+}
+
+.inicio-img {
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;    
+}
+
+.inicio-div {
+    width: 100%;    
+    display: flexbox;
+    margin-left: 1em;   
+    
+}
+
+.inicio-div-p-email {    
+    font-size: 12px;
+    padding-top: 0.5em;  
+    
+}
+
+.inicio-div-socials {
+    display: flex; 
+    padding-top: 0.5em;
+  
+    
+}
+
+.inicio-div-socials-img1 {
+    width: 2em;
+    
+    
+}
+
+.inicio-div-socials-img {
+    width: 2em;
+    margin-left: 1em;
+    
+}
+
