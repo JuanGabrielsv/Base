@@ -8,23 +8,20 @@ mensaje "Registro insertado correctamente". En caso de que ese empno exista en
 la tabla emp, se debe devolver en una variable el mensaje "No se puede crear,
 ya existe".
 */
-
-CREATE OR REPLACE FUNCTION insertarEmpleado(empno NUMBER, ename VARCHAR2, 
-    job VARCHAR2, mgr NUMBER, hiredate DATE, sal NUMBER, comm NUMBER,
-    deptno NUMBER) RETURN VARCHAR2
+CREATE OR REPLACE FUNCTION insertaEmpleado(vempno emp.empno%TYPE, 
+    vename emp.ename%TYPE, vjob emp.job%TYPE, vmgr emp.mgr%TYPE, 
+    vhiredate emp.hiredate%TYPE, vsal emp.sal%TYPE, vcomm emp.comm%TYPE, 
+    vdeptno emp.deptno%TYPE) RETURN VARCHAR
 IS
-    total NUMBER := 0;
+    existe emp.empno%TYPE;
 BEGIN
-    IF empno THEN
-    
-END;
-/
-
-DECLARE
-    TYPE tablaEmp IS TABLE OF emp%ROWTYPE INDEX BY BINARY_INTEGER;
-    tabla1 := tablaEmp;
-BEGIN
-    SELECT * INTO tabla1 FROM emp WHERE emp.empno = 8585;
+    SELECT empno INTO existe FROM emp WHERE empno = vempno;    
+        return 'No se puede crear, ya existe';    
+EXCEPTION
+    WHEN no_data_found THEN
+        INSERT INTO emp VALUES (vempno, vename, vjob, vmgr, vhiredate, vsal, 
+            vcomm, vdeptno);
+        RETURN 'Registro insertado correctamente';
 END;
 /
 
@@ -42,3 +39,20 @@ dicha función. Haz un ejemplo con los siguientes datos:
 - comm: 0
 - deptno: 10
 */
+DECLARE
+    vempno emp.empno%TYPE := &empno;
+    vename emp.ename%TYPE := '&ename';
+    vjob emp.job%TYPE := '&job';
+    vmgr emp.mgr%TYPE := &mgr;
+    vhiredate emp.hiredate%TYPE := '&hiredate';
+    vsal emp.sal%TYPE := &sal;
+    vcomm emp.comm%TYPE := &comm;
+    vdeptno emp.deptno%TYPE := &deptno;
+    mensaje VARCHAR(200);
+BEGIN 
+    mensaje := insertaEmpleado(vempno, vename, vjob, vmgr, vhiredate, vsal, 
+        vcomm, vdeptno);
+    dbms_output.put_line(mensaje);
+END;
+/
+ 
