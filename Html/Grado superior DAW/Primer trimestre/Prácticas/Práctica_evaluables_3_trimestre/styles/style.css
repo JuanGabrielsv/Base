@@ -39,31 +39,51 @@ main {
     width: 8em;
     height: 8em;
     border-radius: 50%; 
-    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 50); 
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 100); 
 }
 
-.inicio-div-p-email {    
-    font-size: 14px;
-          
-}
-
-.inicio-div-socials {
-    display: flex; 
-    padding-top: 0.5em;   
-}
-
-.inicio-div-socials-img1 {
-    width: 2em;    
-}
-
-.inicio-div-socials-img {
-    width: 2em;
-    margin-left: 1em;   
+.font14 {    
+    font-size: 14px;          
 }
 
 .flexRow {
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;  
+    justify-content: flex-start;     
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;  
+    width: fit-content; 
+    margin-top: 10px;     
+}
+
+.socialsImgD {
+    margin-left: 15px;
+}
+
+.verde {
+    color: rgb(151, 224, 41);
+}
+
+p {
+    color: rgb(230, 230, 230);
+}
+
+.colorParrafo {
+    color: rgb(230, 230, 230);
+}
+
+a {
+    text-decoration: none;
+    list-style: none;    
+}
+
+
+
+.socialsTamano {
+    width: 2em;    
 }
 
 .flexColumnCenter {
@@ -74,6 +94,12 @@ main {
 }
 
 .flexColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flexColumn2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
