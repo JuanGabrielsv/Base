@@ -1,3 +1,8 @@
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins-Light.ttf);
+}
+
 *, *::before,*::after {
     box-sizing: border-box;
     width: 100%;
@@ -7,6 +12,7 @@
     margin: 0;
     padding: 0;
     border: 0 solid transparent;
+    font-family: poppins;
 }
 
 body {
@@ -17,7 +23,7 @@ body {
 .head {
     background-color: #171F26;
     padding: 1em 1em 1em 1em;
-    position: sticky;
+    position: fixed;    
     font-size: 24px;
 }
 
@@ -25,49 +31,67 @@ main {
     max-width: 560px;
     height: auto;
     margin: auto;    
-    padding: 1em 1em 1em 1em;
+    padding: 8em 1em 1em 1em;
 }
 
-.inicio {
-    display: flex;  
-    margin-top: 3em;      
-}
-
-.inicio-img {
+.avatar {
+    border: 5px solid rgb(0, 162, 255);
     width: 6em;
     height: 6em;
-    border-radius: 50%;    
+    border-radius: 50%;  
 }
 
 .inicio-div {
     width: 100%;    
     display: flexbox;
-    margin-left: 1em;   
-    
+    margin-left: 1em;       
 }
 
 .inicio-div-p-email {    
     font-size: 12px;
-    padding-top: 0.5em;  
-    
+    padding-top: 0.5em;      
 }
 
 .inicio-div-socials {
     display: flex; 
-    padding-top: 0.5em;
-  
-    
+    padding-top: 0.5em;   
 }
 
 .inicio-div-socials-img1 {
-    width: 2em;
-    
-    
+    width: 2em;    
 }
 
 .inicio-div-socials-img {
     width: 2em;
-    margin-left: 1em;
-    
+    margin-left: 1em;   
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;    
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;      
+}
+
+.margin-top {
+    margin-top: 3em;
+}
+
+.margin-top2 {
+    margin-top: 6em;
+}
+
+.hrBorde {
+    border: 0.5em solid #171F26;
+    border-radius: 15px;    
+}
+
+.tamanoPequeno {
+    width: 55px;
 }
 
