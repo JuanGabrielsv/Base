@@ -31,25 +31,20 @@ main {
     max-width: 560px;
     height: auto;
     margin: auto;    
-    padding: 8em 1em 1em 1em;
+    padding: 5em 1em 1em 1em;
 }
 
 .avatar {
     border: 5px solid rgb(0, 162, 255);
-    width: 6em;
-    height: 6em;
-    border-radius: 50%;  
-}
-
-.inicio-div {
-    width: 100%;    
-    display: flexbox;
-    margin-left: 1em;       
+    width: 8em;
+    height: 8em;
+    border-radius: 50%; 
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 50); 
 }
 
 .inicio-div-p-email {    
-    font-size: 12px;
-    padding-top: 0.5em;      
+    font-size: 14px;
+          
 }
 
 .inicio-div-socials {
@@ -71,11 +66,17 @@ main {
     flex-direction: row;    
 }
 
-.flexColumn {
+.flexColumnCenter {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;      
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .margin-top {
@@ -92,6 +93,10 @@ main {
 }
 
 .tamanoPequeno {
-    width: 55px;
+    width: 45px;
+}
+
+.marginLeft {
+    margin-left: 1em;
 }
 
