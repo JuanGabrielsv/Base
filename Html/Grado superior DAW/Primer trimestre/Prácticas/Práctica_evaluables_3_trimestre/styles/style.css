@@ -135,6 +135,7 @@ p {
     align-items: center;
     padding: 1em;    
     cursor: pointer;
+    height: 8em;
 }
 
 .fontSizeLarge {

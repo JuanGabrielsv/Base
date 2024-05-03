@@ -3,7 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- ESTABLECE UNA DESCRIPCIÓN DE LA PÁGINA -->
+        <meta name="description" content="Portfolio de Juan Gabriel Sánchez Vivero desarrollador de aplicaciones Web">
+        <!-- ESTABLECE PALABRAS CLAVE PARA SER LOCALIZADA LA PÁGINA POR LOS MOTORES DE BÚSQUEDA -->
+        <meta name="keywords" content="HTML, CSS, Java, desarrollador frontend, curriculum, portfolio">
+        <!-- ESTABLECE EL AUTOR DEL ARCHIVO -->
+        <meta name="author" content="Juan Gabriel Sánchez Vivero">
         <title>Juan Gabriel Portfolio</title>
+        <link rel="icon" type="image/png" href="img/favicon32.png">
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
@@ -93,7 +100,7 @@
                 <br>
                 <h2>PROYECTOS</h2>
                 <br>
-                <p>A continuación puedes visitar las web que he creado como proyectos:</p>
+                <p>A continuación puedes visitar las web de mi proyectos mas recientes:</p>
                 <a href="https://www.elcorteingles.es/" target="_blank">
                     <button class="boton flexRow boton5 margenTop">                    
                         <img class="tamanoMediano marginLeft" src="img/LogoCorteIngles.png" alt="Imagen del logotipo de el corte inglés">
@@ -105,7 +112,7 @@
                 </a>                
                 <a href="https://www.nasa.gov/" target="_blank">
                     <button class="boton flexRow boton5 margenTop">                    
-                        <img class="tamanoMediano marginLeft" src="img/NASAlogo.png" alt="Imagen del logotipo de la NASA">
+                        <img class="tamanoMediano marginLeft" style="width: 7em;" src="img/NASAlogo.png" alt="Imagen del logotipo de la NASA">
                         <div class="flexColumn">                        
                             <p class="fontSizeLarge white">Sitio web de la NASA</p>
                             <p class="white">Hecha por mí en una semana</p>                    
@@ -121,6 +128,29 @@
                         </div>                
                     </button>
                 </a>
+            </section>
+            <br>
+            <hr class="hrBorde">
+            <section>
+                <br>                
+                <h2>SUGERENCIAS</h2>
+                <br>
+                <form class="flexColumn" action="">
+                    <label for="">Nombre</label>
+                    <input style="border-radius: 0.5em; height: 2em; padding: 0.5em;" type="text">
+                    <label class="margenTop" for="">Apellidos</label>
+                    <input type="text">
+                    <label for="">Dirección</label>
+                    <input type="text">
+                    <label for="">Teléfono</label>
+                    <input type="text">
+                    <label for="">Email</label>
+                    <input type="text">
+                    <label for="">sexo</label>
+                    <input type="radio" id="Mujer" name="Mujer" value="Mujer">
+                    <label for="Mujer">Mujer</label>
+                </form>
+                
             </section>
         </main>
     </body>
