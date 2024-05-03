@@ -35,7 +35,7 @@ main {
 }
 
 .avatar {
-    border: 5px solid rgb(0, 162, 255);
+    border: 5px solid rgb(0, 195, 255);
     width: 8em;
     height: 8em;
     border-radius: 50%; 
@@ -68,19 +68,16 @@ main {
 }
 
 p {
-    color: rgb(230, 230, 230);
+    color: rgb(230, 230, 230);    
 }
 
 .colorParrafo {
     color: rgb(230, 230, 230);
 }
 
-a {
-    text-decoration: none;
-    list-style: none;    
+.blue {
+    color: rgb(0, 119, 255);
 }
-
-
 
 .socialsTamano {
     width: 2em;    
@@ -102,7 +99,10 @@ a {
 .flexColumn2 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+}
+
+.margenTop {
+    margin-top: 1em;
 }
 
 .margin-top {
@@ -113,6 +113,10 @@ a {
     margin-top: 6em;
 }
 
+.marginLeft {
+    margin-left: 1em;
+}
+
 .hrBorde {
     border: 0.5em solid #171F26;
     border-radius: 15px;    
@@ -121,8 +125,35 @@ a {
 .tamanoPequeno {
     width: 45px;
 }
+.tamanoMediano {
+    width: 120px;
+}
 
-.marginLeft {
-    margin-left: 1em;
+.boton {
+    background-color: #363636;
+    border-radius: 1em;
+    align-items: center;
+    padding: 1em;    
+    cursor: pointer;
+}
+
+.fontSizeLarge {
+    font-size: large;
+}
+
+.white {
+    color: white;
+}
+
+.boton5:hover {
+    box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
+    outline-color: rgba(49, 138, 172, 0);
+    outline-offset: 80px;
+    text-shadow: 1px 1px 6px #fff;
+    background-color: blue;     
+}
+
+a {
+    text-decoration: none;
 }
 
