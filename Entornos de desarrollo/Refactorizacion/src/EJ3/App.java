@@ -1,4 +1,4 @@
-package ejercicio3;
+package EJ3;
 
 public class App {
 
@@ -6,7 +6,7 @@ public class App {
 		 // Crear un objeto Producto
         Producto producto = new Producto("Camiseta", 20.99, 50);
 
-        // Mostrar información del producto
+        // Mostrar informaciï¿½n del producto
         System.out.println("Nombre del producto: " + producto.Nombre);
         System.out.println("Precio del producto: $" + producto.precio);
         System.out.println("Cantidad disponible: " + producto.cantidadDisponible);
@@ -15,7 +15,7 @@ public class App {
         producto.aumentarCantidad(10);
         producto.reducirCantidad(5);
 
-        // Calcular el total para una cantidad específica
+        // Calcular el total para una cantidad especï¿½fica
         int cantidad = 3;
         double total = producto.calcularTotal(cantidad);
         System.out.println("Total para " + cantidad + " productos: $" + total);

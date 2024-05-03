@@ -1,4 +1,4 @@
-package ejercicio3;
+package EJ3;
 
 public class Producto {
     public String Nombre;
