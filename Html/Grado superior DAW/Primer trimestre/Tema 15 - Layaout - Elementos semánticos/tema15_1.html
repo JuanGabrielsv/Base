@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ESTABLECE EL JUEGO DE CARÁCTERES -->
+    <meta charset="UTF-8">
+    <!-- ETIQUETA PARA HACER RESPONSIVE LA PÁGINA, ADAPTACIÓN DE ESCALAS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ESTABLECE UNA DESCRIPCIÓN DE LA PÁGINA -->
+    <meta name="description" content="Tema15 - Layaout y elementos semánticos">
+    <!-- ESTABLECE PALABRAS CLAVE PARA SER LOCALIZADA LA PÁGINA POR LOS MOTORES DE BÚSQUEDA -->
+    <meta name="keywords" content="HTML, layaout, semantica">
+    <!-- ESTABLECE EL AUTOR DEL ARCHIVO -->
+    <meta name="author" content="Juan Gabriel Sánchez">
+    <!-- TÍTULO DE LA WEB PESTAÑA DEL NAVEGADOR-->
+    <title>Tema15_1 - Layaout y elementos semánticos</title>
+    <!-- ENLACE AL ARCHIVO DE ESTILOS-->
+    <link rel="stylesheet" href="estilos/estilostema15_1.css">
+    <!-- ICONO DE VENTANA -->
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Noticias Deportivas</h1>
+    </header>
+    <aside>
+        <h2>Secciones</h2>
+        <ul>
+            <li><a href="#futbol">Fútbol</a></li>
+            <li><a href="#baloncesto">Baloncesto</a></li>
+            <li>Tenis</li>
+        </ul>
+    </aside>
+    <article>
+        <h2>Última noticia: Lionel Messi firma con un nuevo club</h2>
+        <figure>
+            <img src="https://acortar.link/uixLFC" alt="Lionel Messi">
+            <figcaption>Lionel Messi</figcaption>
+        </figure>
+        <p>El Sevilla club de fútbol contrata a Meddi para la siguiente temporada de la liga española de fútbol.</p>
+    </article>
+    <section>
+        <h2>Otras noticias</h2>
+        <article id="futbol">
+            <details>
+                <summary>Real Madrid gana la copa del Rey</summary>
+                <figure>
+                    <img src="https://acortar.link/9p1c81" alt="Real Madrid">
+                    <figcaption>Real Madrid</figcaption>
+                </figure>
+                <p>El Real Madrid se impuso por 4 goles a 2 a la Real Sociedad para imponerse en la final de la copa del Rey</p>
+            </details>
+        </article>
+        <article id="Baloncesto">
+            <details>
+                <summary> Golden Statr Warriors gana el campeonato de la NBA</summary>
+                <figure>
+                    <img src="https://acortar.link/iHjWMo" alt="Golden State Warriors">
+                    <figcaption>Golden State Warriors</figcaption>                    
+                </figure>
+                <p>En el último partido de la liga NBA los Golden State Warriors aplastaron en la final a los Chicago Bulls 
+                    por un marcador de 112 a 82.
+                </p>
+            </details>
+        </article>
+    </section>
+    <footer>
+        <p>&copy; 2024 Noticias Deportivas. Todos los derechos reservados.</p>
+        <p>&#128516; Welcome</p>
+    </footer> 
+</body>
+</html>
