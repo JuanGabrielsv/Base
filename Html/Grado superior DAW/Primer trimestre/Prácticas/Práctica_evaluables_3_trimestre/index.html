@@ -9,6 +9,8 @@
         <title>Juan Gabriel Portfolio</title>
         <link rel="icon" type="image/png" href="img/favicon32.png">
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/mediaquery.css">
+
         <script>            
             function actualizaTexto(texto) {
                 document.getElementById("idMuestraRango").value = texto;                
@@ -19,10 +21,20 @@
         </script>
     </head>
     <body>
-        <header class="head">
-            <p>portfolio</p>
+        <header class="head"> 
+            <nav>
+                <ul class="nav">
+                    <a href="#inicio"><li>INICIO</li></a>
+                    <a href="#sobremi"><li>SOBRE MÍ</li></a>
+                    <a href="#formacion"><li>FORMACIÓN</li></a>
+                    <a href="#experiencia"><li>EXPERIENCIA</li></a>
+                    <a href="#proyectos"><li>PROYECTOS</li></a>
+                    <a href="#sugerencias"><li>SUGERENCIAS</li></a>
+                    <a href="#encuesta"><li>ENCUESTA</li></a>
+                </ul>
+            </nav>           
         </header>
-        <main>
+        <main  id="inicio">
             <section class="margin-top">            
                     <div class="flexRow">
                         <img class="avatar" src="img/foto.webp" alt="Se observa fotografía de la persona">
@@ -49,7 +61,7 @@
             <br>
             <br>
             <hr class="hrBorde">
-            <section>
+            <section id="sobremi">
                 <br>
                 <h2>SOBRE MÍ</h2>
                 <br>
@@ -76,7 +88,7 @@
                 <br>                 
             </section>
             <hr class="hrBorde">  
-            <section class="flexColumn">
+            <section id="formacion" class="flexColumn">
                 <br>
                 <h2>FORMACIÓN</h2>                
                 <article>
@@ -90,7 +102,7 @@
             </section>
             <br>
             <hr class="hrBorde">
-            <section>
+            <section id="experiencia">
                 <br>
                 <h2>EXPERIENCIA</h2>
                 <article>
@@ -101,7 +113,7 @@
             </section>
             <br>
             <hr class="hrBorde">
-            <section>
+            <section id="proyectos">
                 <br>
                 <h2>PROYECTOS</h2>
                 <br>
@@ -136,7 +148,7 @@
             </section>
             <br>
             <hr class="hrBorde">
-            <section>
+            <section id="sugerencias">
                 <br>                
                 <h2>SUGERENCIAS</h2>
                 <br>
@@ -210,12 +222,12 @@
             <br>
             <hr class="hrBorde">
             <br>            
-            <section>                
+            <section id="encuesta">                
                 <article>
                     <h2>ENCUESTA</h2>
                     <br>
                     <p>Háganos saber en que podemos mejorar:</p>
-                    <div class="flexRow margenTop">
+                    <div id="mediaEncuesta" class="flexRow margenTop">
                         <form class="marginColumn" action="https://www.w3schools.com/action_page.php" target="_blank" method="get">
                             <label for="idPregunta1">1. Puntua la web del 1 al 5:</label>
                             <br>
@@ -229,7 +241,7 @@
                             <br><br>
                             <label for="idPregunta2">2. Puntua el diseño de 1 a 100:</label>
                             <br>
-                            <input class="width100" type="number" id="idPregunta2" min="0" max="100" step="10">
+                            <input class="width100" type="number" id="idPregunta2" name="idPregunta2" min="0" max="100" step="10">
                             <br><br>
                             <label for="idPregunta3">3. ¿Qué le ha parecido los colores?</label>
                             <br>

@@ -2,38 +2,32 @@
     font-family: poppins;
     src: url(../fonts/Poppins-Light.ttf);
 }
-
 *, *::before,*::after {
     box-sizing: border-box;
     width: 100%;
-}
-  
+}  
 * {
     margin: 0;
     padding: 0;
     border: 0 solid transparent;
     font-family: poppins;
 }
-
 body {
     background-color: #0C151D;
-    color: white;    
+    color: white;  
 }
-
 .head {
     background-color: #171F26;
     padding: 1em 1em 1em 1em;
     position: fixed;    
     font-size: 24px;
 }
-
 main {
     max-width: 560px;
     height: auto;
     margin: auto;    
     padding: 5em 1em 1em 1em;
 }
-
 .avatar {
     border: 5px solid rgb(0, 195, 255);
     width: 8em;
@@ -41,94 +35,75 @@ main {
     border-radius: 50%; 
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 100); 
 }
-
 .font14 {    
     font-size: 14px;          
 }
-
 .flexRow {
     display: flex;
     flex-direction: row;  
     justify-content: flex-start;     
 }
-
 .socials {
     display: flex;
     flex-direction: row;  
     width: fit-content; 
     margin-top: 10px;     
 }
-
 .socialsImgD {
     margin-left: 15px;
 }
-
 .verde {
     color: rgb(151, 224, 41);
 }
-
 p {
     color: rgb(230, 230, 230);    
 }
-
 .colorParrafo {
     color: rgb(230, 230, 230);
 }
-
 .blue {
     color: rgb(0, 119, 255);
 }
-
 .socialsTamano {
     width: 2em;    
 }
-
 .flexColumnCenter {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;      
 }
-
 .flexColumn {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .flexColumn2 {
     display: flex;
     flex-direction: column;
 }
-
 .margenTop {
     margin-top: 1em;
 }
-
 .margin-top {
     margin-top: 3em;
 }
-
 .margin-top2 {
     margin-top: 6em;
 }
-
 .marginLeft {
     margin-left: 1em;
 }
-
 .hrBorde {
     border: 0.5em solid #171F26;
     border-radius: 15px;    
 }
-
 .tamanoPequeno {
     width: 45px;
 }
 .tamanoMediano {
     width: 120px;
 }
-
 .boton {
     background-color: #363636;
     border-radius: 1em;
@@ -137,15 +112,12 @@ p {
     cursor: pointer;
     height: 8em;
 }
-
 .fontSizeLarge {
     font-size: large;
 }
-
 .white {
     color: white;
 }
-
 .boton5:hover {
     box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
     outline-color: rgba(49, 138, 172, 0);
@@ -153,14 +125,14 @@ p {
     text-shadow: 1px 1px 6px #fff;
     background-color: blue;     
 }
-a {
+header ul a{
     text-decoration: none;
+    color: white;    
 }
 input {
     border-radius: 0.5em;    
     padding: 0.5em;  
-    width: auto;
-    /*box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 100);      */
+    width: auto;    
 }
 .width100 {
     width: 100%;
@@ -206,4 +178,12 @@ footer {
     padding: 20px;
     clear: both;    
 }
-
+li {
+    list-style: none;
+    font-size: 14px;    
+}
+.nav {    
+    display: flex;
+    flex-direction: row;    
+    text-align: center;     
+}
