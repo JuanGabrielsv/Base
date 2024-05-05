@@ -11,7 +11,10 @@
         <link rel="stylesheet" href="styles/style.css">
         <script>            
             function actualizaTexto(texto) {
-                document.getElementById("idMuestraRango").value = texto;
+                document.getElementById("idMuestraRango").value = texto;                
+            }
+            function actualizaTexto2(texto) {
+                document.getElementById("idMuestraRango2").value = texto;                
             }
         </script>
     </head>
@@ -198,9 +201,9 @@
                     <label for="idFile">Mándame un fichero:</label>
                     <input type="file" id="idFile" name="idFile">
                     <br><br>
-                    <div style="display: flex;">
-                        <input style="width: 100%; margin: 0.5em;" type="reset" value="Resetear">
-                        <input style="width: 100%; margin: 0.5em;" type="submit" value="Enviar">              
+                    <div class="flexRow">
+                        <input class="inputEspecial" type="reset" value="Resetear">
+                        <input class="inputEspecial" type="submit" value="Enviar">              
                     </div>
                 </form>                
             </section>
@@ -208,12 +211,80 @@
             <hr class="hrBorde">
             <br>            
             <section>                
-                <article class="flexRow">
-                    <form action="https://www.w3schools.com/action_page.php" target="_blank" method="get"></form>
-                    <form action="https://www.w3schools.com/action_page.php" target="_blank" method="get"></form>
+                <article>
+                    <h2>ENCUESTA</h2>
+                    <br>
+                    <p>Háganos saber en que podemos mejorar:</p>
+                    <div class="flexRow margenTop">
+                        <form class="marginColumn" action="https://www.w3schools.com/action_page.php" target="_blank" method="get">
+                            <label for="idPregunta1">1. Puntua la web del 1 al 5:</label>
+                            <br>
+                            <select class="radius" name="idPregunta1" id="idPregunta1">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <br><br>
+                            <label for="idPregunta2">2. Puntua el diseño de 1 a 100:</label>
+                            <br>
+                            <input class="width100" type="number" id="idPregunta2" min="0" max="100" step="10">
+                            <br><br>
+                            <label for="idPregunta3">3. ¿Qué le ha parecido los colores?</label>
+                            <br>
+                            <input type="checkbox" id="idPregunta3" name="idPregunta3" value="Buenos">
+                            <label for="bueno">Bueno</label>
+                            <input class="marginLeft" type="checkbox" id="idPregunta3" name="idPregunta3" value="Malos">
+                            <label for="Malos">Malos</label>
+                            <br><br>
+                            <label for="idPregunta4">4. ¿Ha sido la lectura fácil?</label>
+                            <br>
+                            <input type="radio" id="idPregunta4" name="idPregunta4" value="si">
+                            <label for="si">SI</label>
+                            <input class="marginLeft" type="radio" id="idPregunta4" name="idPregunta4" value="no">
+                            <label for="no">NO</label>
+                            <br><br>
+                            <div class="flexRow">
+                                <input class="inputEspecial" type="reset" value="Resetear">
+                                <input class="inputEspecial" type="submit" value="Enviar">              
+                            </div>
+                        </form>
+                        <form class="marginColumn" action="https://www.w3schools.com/action_page.php" target="_blank" method="get">
+                            <label for="idPregunta5">5. Escribe que podemos mejorar:</label>
+                            <textarea name="idPregunta5" id="idPregunta5"></textarea>
+                            <br>
+                            <label for="idPregunta6">6. Seleccione que secciones le ha interesado mas:</label>
+                            <select class="radius padding05" name="idPregunta6" id="idPregunta6" size="3" multiple>
+                                <option value="formacion">Formación</option>
+                                <option value="experiencia">Experiencia</option>
+                                <option value="proyectos">Proyectos</option>
+                            </select>
+                            <br><br>
+                            <label for="idPregunta7">7. Puntue el tipo de fuente:</label>
+                            <br>
+                            <input type="range" id="idValora2" name="idValora2" min="1" max="10" step="1" onchange="actualizaTexto2(this.value);">
+                            <input type="text" id="idMuestraRango2" value="5" readonly size="1">
+                            <br><br>
+                            <label for="idPregunta8">8. Recomendaría esta Web?</label>
+                            <br>
+                            <select class="radius padding05" name="idPregunta8" id="idPregunta8" size="2">
+                                <option value="si">Si</option>
+                                <option value="no">No</option>
+                            </select>
+                            <br><br>
+                            <div class="flexRow">
+                                <input class="inputEspecial" type="reset" value="Resetear">
+                                <input class="inputEspecial" type="submit" value="Enviar">              
+                            </div>
+                        </form>
+                    </div>
                 </article>
-
             </section>
         </main>
+        <footer>
+            <p>&copy; 2024 Proyecto de PortFolio. Todos los derechos reservados y los izquierdos también</p>
+            <p>&#128516; Realizado por Juan Gabriel Sánchez Vivero</p>
+        </footer>
     </body>
 </html>
