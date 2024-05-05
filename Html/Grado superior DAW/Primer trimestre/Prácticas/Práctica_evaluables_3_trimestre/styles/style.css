@@ -153,13 +153,37 @@ p {
     text-shadow: 1px 1px 6px #fff;
     background-color: blue;     
 }
-
 a {
     text-decoration: none;
 }
 input {
     border-radius: 0.5em;    
-    padding: 0.5em;    
+    padding: 0.5em;  
+    width: auto;
+    /*box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 100);      */
+}
+.width100 {
+    width: 100%;
+}
+form {
+    background-color: rgb(68, 68, 68);
+    padding: 1em;
+    border-radius: 0.5em;
+}
+textarea {
+    padding: 1em;
+    border-radius: 0.5em;
+    max-width: 100%;
+    min-width: 100%;    
+}
+.selectA {
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+input[type="submit"]:hover, input[type="reset"]:hover {
+    transition-duration: 0.2s;
+    background-color: #ffffff;
+    cursor: pointer;    
 }
 
 

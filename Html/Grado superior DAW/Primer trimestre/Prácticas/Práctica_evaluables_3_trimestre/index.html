@@ -9,6 +9,11 @@
         <title>Juan Gabriel Portfolio</title>
         <link rel="icon" type="image/png" href="img/favicon32.png">
         <link rel="stylesheet" href="styles/style.css">
+        <script>            
+            function actualizaTexto(texto) {
+                document.getElementById("idMuestraRango").value = texto;
+            }
+        </script>
     </head>
     <body>
         <header class="head">
@@ -109,7 +114,7 @@
                 </a>                
                 <a href="https://www.nasa.gov/" target="_blank">
                     <button class="boton flexRow boton5 margenTop">                    
-                        <img class="tamanoMediano marginLeft" style="width: 7em;" src="img/NASAlogo.png" alt="Imagen del logotipo de la NASA">
+                        <img class="tamanoMediano marginLeft" src="img/NASAlogo.png" alt="Imagen del logotipo de la NASA">
                         <div class="flexColumn">                        
                             <p class="fontSizeLarge white">Sitio web de la NASA</p>
                             <p class="white">Hecha por mí en una semana</p>                    
@@ -132,21 +137,82 @@
                 <br>                
                 <h2>SUGERENCIAS</h2>
                 <br>
+                <p>Si tienes alguna sugerencia rellena el siguiente formulario:</p>
                 <form action="https://www.w3schools.com/action_page.php" target="_blank" method="get">
                     <label for="idNombre">Nombre *</label>
-                    <input type="text" id="idNombre" name="idNombre" maxlength="20" required>
+                    <input class="width100" type="text" id="idNombre" name="idNombre" maxlength="20" required>
+                    <br><br>
                     <label for="idApellidos">Apellidos *</label>
-                    <input type="text" id="idApellidos" name="idApellidos" maxlength="50" required>                    
+                    <input class="width100" type="text" id="idApellidos" name="idApellidos" maxlength="50" required>
+                    <br><br>                  
                     <label for="idDireccion">Dirección</label>
-                    <input type="text" id="idDireccion" name="idDireccion">
+                    <input class="width100" type="text" id="idDireccion" name="idDireccion">
+                    <br><br>
                     <label for="idTelefono">Teléfono *</label>
-                    <input type="tel" id="idTelefono" name="idTelefono" pattern="[0-9]{9}" required>
+                    <input class="width100" type="tel" id="idTelefono" name="idTelefono" pattern="[0-9]{9}" required>
+                    <br><br>
                     <label for="idEmail">Email *</label>
-                    <input type="email" id="idEmail" name="idEmail" required>
-                    <label for="">Selecciona tu sexo</label>
+                    <input class="width100" type="email" id="idEmail" name="idEmail" required> 
+                    <br><br>                 
+                    <label for="">Selecciona tu sexo:</label>
+                    <br>                                            
                     <input type="radio" id="idMujer" name="idMujer" value="Mujer">
-                    
+                    <label for="idMujer">Mujer</label>
+                    <input class="marginLeft" type="radio" id="idhombre" name="idhombre" value="Hombre">
+                    <label for="idhombre">Hombre</label>
+                    <br><br>
+                    <label for="idAficiones">Aficiones:</label>
+                    <br>
+                    <select class="selectA" name="idAficiones" id="idAficiones" size="6" multiple>
+                        <option value="Deporte">Deporte</option>
+                        <option value="Cine">Cine</option>
+                        <option value="Teatro">Teatro</option>
+                        <option value="Ver television">Ver televisión</option>
+                        <option value="Musica">Música</option>
+                        <option value="Estudiar">Estudiar</option>
+                    </select>
+                    <br><br>
+                    <label for="idFechaNacimiento">Fecha de nacimiento</label>
+                    <input type="date" id="idFechaNacimiento" name="idFechaNacimiento">
+                    <br><br>
+                    <label for="idValora">¿Qué puntuación se merece la web?</label>
+                    <br>
+                    <input type="range" id="idValora" name="idValora" min="1" max="10" step="1" onchange="actualizaTexto(this.value);">
+                    <input type="text" id="idMuestraRango" value="5" readonly size="1">
+                    <br><br>
+                    <label for="isProvincia">Selecciona de la lista tu Provincia:</label>
+                    <br>
+                    <select name="idListaProvincia" id="idListaProvincia">
+                        <option value="Huelva">Huelva</option>
+                        <option value="Sevilla">Sevilla</option>
+                        <option value="Malaga">Málaga</option>
+                        <option value="Cordoba">Córdoba</option>
+                        <option value="Jaen">Jaén</option>
+                        <option value="Granada">Granada</option>
+                        <option value="Cadiz">Cádiz</option>
+                        <option value="Almería">Almería</option>
+                    </select>
+                    <br><br>
+                    <textarea name="idMensaje" id="idMensaje" rows="10">Déjanos tu comentario...</textarea>
+                    <br><br>
+                    <label for="idFile">Mándame un fichero:</label>
+                    <input type="file" id="idFile" name="idFile">
+                    <br><br>
+                    <div style="display: flex;">
+                        <input style="width: 100%; margin: 0.5em;" type="reset" value="Resetear">
+                        <input style="width: 100%; margin: 0.5em;" type="submit" value="Enviar">              
+                    </div>
                 </form>                
+            </section>
+            <br>
+            <hr class="hrBorde">
+            <br>            
+            <section>                
+                <article class="flexRow">
+                    <form action="https://www.w3schools.com/action_page.php" target="_blank" method="get"></form>
+                    <form action="https://www.w3schools.com/action_page.php" target="_blank" method="get"></form>
+                </article>
+
             </section>
         </main>
     </body>
