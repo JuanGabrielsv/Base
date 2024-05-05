@@ -157,4 +157,9 @@ p {
 a {
     text-decoration: none;
 }
+input {
+    border-radius: 0.5em;    
+    padding: 0.5em;    
+}
+
 

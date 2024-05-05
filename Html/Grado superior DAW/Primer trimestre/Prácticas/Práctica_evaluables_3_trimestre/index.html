@@ -132,22 +132,21 @@
                 <br>                
                 <h2>SUGERENCIAS</h2>
                 <br>
-                <form class="flexColumn" action="">
-                    <label for="">Nombre</label>
-                    <input style="border-radius: 0.5em; height: 2em; padding: 0.5em;" type="text">
-                    <label class="margenTop" for="">Apellidos</label>
-                    <input type="text">
-                    <label for="">Dirección</label>
-                    <input type="text">
-                    <label for="">Teléfono</label>
-                    <input type="text">
-                    <label for="">Email</label>
-                    <input type="text">
-                    <label for="">sexo</label>
-                    <input type="radio" id="Mujer" name="Mujer" value="Mujer">
-                    <label for="Mujer">Mujer</label>
-                </form>
-                
+                <form action="https://www.w3schools.com/action_page.php" target="_blank" method="get">
+                    <label for="idNombre">Nombre *</label>
+                    <input type="text" id="idNombre" name="idNombre" maxlength="20" required>
+                    <label for="idApellidos">Apellidos *</label>
+                    <input type="text" id="idApellidos" name="idApellidos" maxlength="50" required>                    
+                    <label for="idDireccion">Dirección</label>
+                    <input type="text" id="idDireccion" name="idDireccion">
+                    <label for="idTelefono">Teléfono *</label>
+                    <input type="tel" id="idTelefono" name="idTelefono" pattern="[0-9]{9}" required>
+                    <label for="idEmail">Email *</label>
+                    <input type="email" id="idEmail" name="idEmail" required>
+                    <label for="">Selecciona tu sexo</label>
+                    <input type="radio" id="idMujer" name="idMujer" value="Mujer">
+                    
+                </form>                
             </section>
         </main>
     </body>
