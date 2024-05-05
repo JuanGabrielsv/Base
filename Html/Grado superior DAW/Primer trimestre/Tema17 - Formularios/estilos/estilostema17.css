@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    padding: 5px;
+}
+h2 {
+    color: #4d77ca;
+    text-align: center;
+}
+textarea, button, .form-submit-button {
+    padding: 10px;
+    background-color: rgb(25,78,78);
+    color: white;
+    border-radius: 10px;
+    border: solid;
+}
+input[type="submit"] {
+    padding: 10px;
+    background-color: rgb(71, 25, 9);
+    color: white;
+    border-radius: 10px;
+    border: solid 5px rgb(241, 243, 172);
+}
+fieldset, legend {
+    padding: 10px;
+    background-color: rgb(217, 237, 237);
+    color: rgb(51, 48, 79);
+    border-radius: 10px;
+    border: solid 1px rgb(113, 64, 29);
+}
+input[type="text"] {
+    padding: 10px;
+    background-color: rgb(86, 142, 162);
+    color: white;
+    border-radius: 10px;
+    border: solid 1px rgb(64, 49, 177);
+}

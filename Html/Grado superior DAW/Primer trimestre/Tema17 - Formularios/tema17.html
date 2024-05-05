@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ESTABLECE EL JUEGO DE CARÁCTERES -->
+    <meta charset="UTF-8">
+    <!-- ETIQUETA PARA HACER RESPONSIVE LA PÁGINA, ADAPTACIÓN DE ESCALAS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ESTABLECE UNA DESCRIPCIÓN DE LA PÁGINA -->
+    <meta name="description" content="Tema17 - Formularios">
+    <!-- ESTABLECE PALABRAS CLAVE PARA SER LOCALIZADA LA PÁGINA POR LOS MOTORES DE BÚSQUEDA -->
+    <meta name="keywords" content="HTML, formularios, tema17">
+    <!-- ESTABLECE EL AUTOR DEL ARCHIVO -->
+    <meta name="author" content="Juan Gabriel Sánchez">
+    <!-- TÍTULO DE LA WEB PESTAÑA DEL NAVEGADOR-->
+    <title>Tema17 - Formularios</title>
+    <!-- ENLACE AL ARCHIVO DE ESTILOS-->
+    <link rel="stylesheet" href="estilos/estilostema17.css">
+    <!-- ICONO DE VENTANA -->
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <script>
+        function mostrar_mensaje(mensaje)
+        {
+            alert(mensaje);
+        }
+    </script>
+</head>
+<body>
+    <h2>FORMULARIO CON CAMPO DE ENTRADA MÚLTIPLES LÍNEAS (ÁREA DE TEXTO)</h2>
+    <form action="https://www.w3schools.com/action_page.php" target="_blank" method="get">
+        <textarea name="idMensaje" rows="10" cols="50">Escribe aquí tus datos personales:</textarea>
+        <br><br>
+        <label for="idMensaje2">Escribe una historia</label>
+        <textarea name="idMensaje2" id="idMensaje2" style="width: 100%; height: 100%;"></textarea>
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <h2>FORMULARIO CON BOTONES</h2>
+    <form action="https://www.w3schools.com/action_page.php" target="_blank" method="get">
+        <button type="button" onclick="alert('Hola, has pulsado el botón!')">
+            Púlsame!
+        </button>
+        <button type="button" onclick="mostrar_mensaje('Hola, has pulsado el botón que llama a la función');">Púlsame también!</button>
+        <br><br>
+        <input type="submit" value="Enviar" class="form-submit-button">
+    </form>
+    <h2>FORMULARIO CON AGRUPACIÓN DE CAMPOS</h2>
+    <form action="https://www.w3schools.com/action_page.php" target="_blank" method="get">
+        <fieldset>
+            <legend>Datos Personales:</legend>
+            <label for="idNombre">Nombre:</label><br>
+            <input type="text" id="idNombre" name="idNombre" value="Default"><br><br>
+            <label for="idApellidos">Apellidos</label><br>
+            <input type="text" id="idApellidos" name="idApellidos" value="Default">
+            <br><br>
+            <label for="idCursos">Selección un curso:</label><br>
+            <input list="cursos">
+            <datalist id="cursos">
+                <option value="Lenguaje de Marcas">
+                <option value="Sistemas Operativos">
+                <option value="Inglés">
+                <option value="Interfaces">
+                <option value="Programación">
+            </datalist>
+        </fieldset>
+        <br>
+        <input type="submit" value="Enviar" class="form-submit-button">
+    </form>
+</body>
+</html>
