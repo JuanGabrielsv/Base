@@ -676,8 +676,8 @@ Recorrerlo y mostrar todos los datos recuperados.
 Escribir al final el número de filas recuperadas en total.
 */
 declare
-    --cursor datosEstudiantes is select * from estudiantes;
-    --filaEstudiante estudiantes%rowtype;
+    /*--cursor datosEstudiantes is select * from estudiantes;*/
+    /*--filaEstudiante estudiantes%rowtype;*/
     cursor datosEstudiantes is 
         select nombre,apellidos,dni 
             from estudiantes
@@ -705,7 +705,7 @@ Escribir al final el número de filas recuperadas en total.
 */
 declare
     cursor datos is select * from estudiantes;
-    fila estudiantes%rowtype; --fila.nombre, fila.fecha_nacimiento
+    fila estudiantes%rowtype; /*--fila.nombre, fila.fecha_nacimiento*/
     contador int := 0;
 begin
     open datos;
@@ -720,10 +720,75 @@ begin
 end;
 /
 
-DECLARE
-
-BEGIN
-
-END;
+/*
+Ejercicio 2
+Sobre la tabla Estudiantes. Escribir un bloque que muestre el número total de
+estudiantes y lanzar una excepción NO_ALUMNOS si el número es igual a 0,
+indicando con un mensaje que no hay alumnos.
+*/
+declare
+    totalEstudiantes int;
+    no_alumnos exception; --1. Crear una variable con el nombre de la excepción del tipo EXCEPTION
+begin
+    select count(*) into totalEstudiantes from estudiantes;
+    if totalEstudiantes = 0 then
+        raise no_alumnos; --2. Queremos interrumpir la ejecución del programa e ir a mi excepción
+    else
+        dbms_output.put_line('Total: ' || totalEstudiantes);
+    end if;
+exception
+    when no_alumnos then --3. Desarrollar cómo tratamos la excepción, qué hacemos cuando se produzca
+        dbms_output.put_line('no hay alumnos');
+end;
 /
+
+/*
+Ejercicio 3
+Incorporar una nueva excepción MUCHOS_ALUMNOS, si el total de alumnos es mayor
+o igual que 5.
+*/
+declare
+    totalEstudiantes int;
+    no_alumnos exception; --1. Crear una variable con el nombre de la excepción del tipo EXCEPTION
+    MUCHOS_ALUMNOS EXCEPTION;
+begin
+    select count(*) into totalEstudiantes from estudiantes;
+    if totalEstudiantes = 0 then
+        raise no_alumnos; --2. Queremos interrumpir la ejecución del programa e ir a mi excepción
+    elsif totalEstudiantes >= 5 THEN
+        RAISE MUCHOS_ALUMNOS;
+    else
+        dbms_output.put_line('Total: ' || totalEstudiantes);
+    end if;
+exception
+    when no_alumnos then --3. Desarrollar cómo tratamos la excepción, qué hacemos cuando se produzca
+        dbms_output.put_line('no hay alumnos');
+    WHEN MUCHOS_ALUMNOS THEN
+        dbms_output.put_line('Hay muchos alumnos');
+end;
+/
+
+/*
+Ejercicio 4
+apliccation error
+*/
+declare
+    totalEstudiantes int;
+    no_alumnos exception; --1. Crear una variable con el nombre de la excepción del tipo EXCEPTION
+    
+begin
+    select count(*) into totalEstudiantes from estudiantes;
+    if totalEstudiantes = 0 then
+        raise no_alumnos; --2. Queremos interrumpir la ejecución del programa e ir a mi excepción
+    elsif totalEstudiantes >= 5 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'QUE PASA TOMASA');
+    else
+        dbms_output.put_line('Total: ' || totalEstudiantes);
+    end if;
+exception
+    when no_alumnos then --3. Desarrollar cómo tratamos la excepción, qué hacemos cuando se produzca
+        dbms_output.put_line('no hay alumnos');    
+end;
+/
+
 

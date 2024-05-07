@@ -163,6 +163,31 @@ END;
 
 -- EXCEPCIONES.
 
+/* ESTRUCTURA PARA CONTROLAR UNA EXCEPCIÓN */
+DECLARE
+
+BEGIN
+    dbms_output.put_line(' ');
+EXCEPTION
+    WHEN OTHERS THEN
+        dbms_output.put_line(' ');
+END;
+/
+
+/* ESTRUCTURA PARA DECLARAR UNA EXCEPCIÓN */
+
+DECLARE
+    miExcepcion EXCEPTION;
+BEGIN
+    RAISE miExcepcion;
+EXCEPTION
+    WHEN miExcepcion THEN
+        dbms_output.put_line('conseguido');
+END;
+/
+
+
+
 
 
 
