@@ -186,7 +186,19 @@ EXCEPTION
 END;
 /
 
+/* ESTRUCTURA PARA DECLARAR UN PAQUETE */
 
+CREATE OR REPLACE PACKAGE miPaquete
+IS
+    PROCEDURE is_today;
+    PROCEDURE nombreProcedure(valor1 INT, valor2 INT);
+END;
+/
+CREATE OR REPLACE PACKAGE BODY miPaquete
+IS
+    PROCEDURE nombreProcedure(
+END;
+/
 
 
 

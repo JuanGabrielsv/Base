@@ -791,4 +791,44 @@ exception
 end;
 /
 
+/* EJERCICIO 1 - PROCEDURES
+Crea un procedimiento que se llame consultarEmpleado. Debe tomar una variable de
+entrada v_empno con el tipo de dato del campo empno de la tabla emp. Debe tomar 
+como variables de salida v_ename y v_job, cuyos tipos de datos deben coincidir 
+con los de los campos ename y job de la tabla emp.
+Controla con una excepción que no se encuentre ningún dato con el valor de 
+v_empno de entrada, mostrando el mensaje “No se encontraron datos”. */
 
+create or replace procedure consultarEmpleado(
+    v_empno emp.empno%type,
+    v_ename out emp.ename%type,
+    v_job out emp.job%type)
+is
+    noHayDatos exception; --opción3
+begin
+    select empno into numEmp from emp where empno = v_empno; --opción 2
+    select ename,job into v_ename,v_job from emp where empno = v_empno; --opción 2
+    select count(*) into contador from emp where empno = v_empno; --opción 3
+    if contador = 0 then --opción 3
+        raise noHayDatos;
+    else
+        select ename,job into v_ename,v_job from emp where empno = v_empno;
+    end if;
+    select ename,job into v_ename,v_job from emp where empno = v_empno; --opción 1
+exception
+    when no_data_found then --opción 1 / opción 2
+        dbms_output.put_line('No se encontraron datos');
+    when noHayDatos then --opción 3
+        dbms_output.put_line('No se encontraron datos');
+end;
+/
+declare
+    v_empno emp.empno%type;
+    v_ename emp.ename%type;
+    v_job emp.job%type;
+begin
+    v_empno := 1111;
+    consultarEmpleado(v_empno,v_ename,v_job);
+    dbms_output.put_line(v_ename||'|'||v_job);
+end;
+/
