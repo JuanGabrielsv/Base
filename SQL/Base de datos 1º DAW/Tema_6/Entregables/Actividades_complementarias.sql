@@ -137,13 +137,41 @@ medio junto al resultado del 21% de ese importe y para finalizar, poner la suma
 del salario medio junto al 21% de dicho valor. Ej.: Importe de salario medio
 1000, con 210 del 21% y total 1210. */
 
+SELECT ROUND(AVG(sal), 0), 'con ' || ROUND(AVG(sal) * 1.21 - AVG(sal)) 
+    ||' del 21% ','total ' || ROUND(AVG(sal) * 1.21) FROM emp;
+
 /* 3. Muestra por la salida el nombre y salario de los empleados que hayan sido
 contratados en septiembre.*/
+
+SELECT emp.ename, emp.sal FROM emp WHERE TO_CHAR(hiredate, 'MM') = 09;
 
 /* 4. Pide por la entrada de teclado un determinado mes y devuelve por la salida
 el nombre del empleado que haya sido contratado en dicho mes. En el caso de que
 no haya ninguno, mostrar el mensaje "No hay empleados que hayan sido contratados
 en ese mes". */
+
+DECLARE
+    entradaUsuario VARCHAR(10);
+    nombreEmpleado emp.ename%TYPE;
+    noSeEncuentra EXCEPTION;
+    CURSOR c_empleados IS
+        SELECT emp.ename FROM emp WHERE to_char(HIREDATE, 'MM') = &entradaUsuario;
+BEGIN
+    OPEN c_empleados;
+        LOOP
+            FETCH c_empleados INTO nombreEmpleado;
+            EXIT WHEN c_empleados%NOTFOUND;
+            dbms_output.put_line(nombreEmpleado);
+        END LOOP;
+    CLOSE c_empleados; 
+    IF nombreEmpleado IS NULL THEN
+        RAISE noSeEncuentra;
+    END IF;
+EXCEPTION
+    WHEN noSeEncuentra THEN
+        dbms_output.put_line('No se encuentra');        
+END;
+/
 
 /* 5. Se quiere hacer un bloque de código anónimo que pida todos los campos de
 la tabla emp e introduzca dicho registro en la tabla. */
