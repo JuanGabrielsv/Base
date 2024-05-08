@@ -176,6 +176,24 @@ END;
 /* 5. Se quiere hacer un bloque de código anónimo que pida todos los campos de
 la tabla emp e introduzca dicho registro en la tabla. */
 
+DECLARE
+    r_datos emp%ROWTYPE;    
+BEGIN
+    r_datos.empno := &empno;
+    r_datos.ename := '&ename';
+    r_datos.job := '&job';
+    r_datos.mgr := &mgr;
+    r_datos.hiredate := '&hiredate';
+    r_datos.sal := &sal;
+    r_datos.comm := &comm;
+    r_datos.deptno := &deptno;
+    INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)
+    VALUES (r_datos.empno, r_datos.ename, r_datos.job, 
+        r_datos.mgr, r_datos.hiredate, r_datos.sal, r_datos.comm, 
+        r_datos.deptno);
+END;
+/
+
 /* 6. Se quiere un código de bloque anónimo que borre registros de la tabla emp.
 Para ello pedirá un código empno por teclado, y si una vez comprobado que
 existe, se borrará de la tabla. Se debe mostrar un mensaje “No hay registros con
