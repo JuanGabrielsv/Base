@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+    color: white;    
+}
+
+body {
+    background-color: rgb(163, 185, 209);
+}
+
+p {
+    font-size: 1vw;
+}
+
+input {
+    border-radius: 0.5em;
+    
+}
+
+#menu {
+    float: left;
+    background-color: rgb(186, 217, 235);
+    padding: 1vw;
+    border-radius: 0.5vw;        
+}
+
+#menu p {
+    text-align: center;
+    padding: 0.5vw;
+    font-size: 1vw;
+}
+
+#menu ul {
+    background-color: rgb(59, 78, 118);
+    border-radius: 0.5vw;
+    padding: 1vw;
+    list-style: none;
+    margin: 0.5vw 0 0.5vw 0;
+    font-size: 1vw;
+}
+
+#S_Noticias {
+    background-color: rgb(115, 157, 171);
+    width: 100%;    
+    border-radius: 0.5vw;    
+}
+
+#S_Noticias h2, h3 {
+    text-align: center;
+    padding: 1vw 1vw 1vw 1vw;
+}
+
+#S_Noticias p {    
+    padding: 1vw; 
+}
+
+#S_Noticias figure {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#S_Noticias img {
+    width: 30vw;
+    border-radius: 1vw;
+    margin: 1em 0 0 0;
+}
+
+#S_Noticias figcaption {
+    font-size: 0.5vw;
+    
+}
+#divBase {
+    padding: 2vw 2vw 0 2vw;        
+}
+
+#divFigureCaption {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#form1 {
+    padding: 1vw 2vw 0 2vw;
+}
+
+.textoCentrado {
+    text-align: center;
+}
+

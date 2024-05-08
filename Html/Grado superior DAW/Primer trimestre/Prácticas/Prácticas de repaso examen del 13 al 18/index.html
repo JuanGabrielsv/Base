@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <meta name="description" content="Práctica de repaso para el examen del tercer trimestre">        
+        <meta name="keywords" content="practica, repaso, examen, html, css, javascript">        
+        <meta name="author" content="Juan Gabriel Sánchez Vivero">
+        <title>Repaso examen 3º Trimestre</title>
+        <link rel="icon" type="image/png" href="img/favicon32.png">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/fonts.css">
+    </head>
+    <body>
+        <div id="divBase">
+            <aside id="menu">
+                <nav>
+                    <p>MENU</p>
+                    <ul>
+                        <li><a href="#menu">NOTICIAS</a></li>
+                        <li>REGISTRO</li>
+                        <li>ACCESO A SEDE</li>
+                    </ul>
+                </nav>
+            </aside> 
+            <section id="S_Noticias">
+                <h2>NOTICIAS</h2>
+                <article>
+                    <h3>Asiste como testigo a la boda de su mejor amigo y acaba casado con la novia</h3>                    
+                        <figure style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="img/boda.jpg" alt="Imagen de la boda de Shaun y Lea en the good doctor">
+                            <figcaption>Shaun y Lea en la serie The Good doctor</figcaption>
+                        </figure>
+                    <br>
+                    <p>El caso, del todo real, ha dado pie a toda una lluvia de anécdotas de personas que han sufrido errores administrativos similares y peores. Después de firmar correctamente cada uno en su lugar, llega la administración y cambia el orden de los nombres. Esto ha pasado en Argentina. El error ya resuelto, ha pillado por sorpresa a todo el mundo</p>
+                </article>
+            </section>
+        </div>
+        <form id="form1" action="">
+            <fieldset>
+                <legend>Registro</legend>
+                <label for="nombre">* Nombre:</label>
+                <input type="text" id="nombre" name="nombre" value="Default" required>
+                <br>
+                <label for="apellidos">* Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" value="Default" required>
+                <br>
+                <label for="email">* Email:</label>
+                <input type="email" id="email" name="email" value="Default" required>
+
+            </fieldset>
+        </form>
+    </body>
