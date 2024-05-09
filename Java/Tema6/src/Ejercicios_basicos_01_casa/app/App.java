@@ -33,12 +33,10 @@ Realiza el programa organizado en las siguientes clases:
 Si hay algún error al conectar con la BBDD o ejecutar la consulta, tendrás que mostrárselo al
 usuario con un texto amigable.
 */
-package Ejercicios_basicos_01.app;
+package Ejercicios_basicos_01_casa.app;
 
-import Ejercicios_basicos_01.modelo.Persona;
-import Ejercicios_basicos_01.servicios.*;
-
-//import java.sql.Connection;
+import Ejercicios_basicos_01_casa.modelo.Persona;
+import Ejercicios_basicos_01_casa.servicios.*;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -66,10 +64,9 @@ public class App {
 			System.out.println("Exepción en main: " + e.getMessage());
 		} finally {
 			sc.close();
-		}	
+		}		
 		
-		// PRUEBA DE CONEXIÓN
-		
+		// PRUEBA DE CONEXIÓN		
 		/*OpenConnection prueba = new OpenConnection();
 		try {
 			Connection c = prueba.getNewConnection();

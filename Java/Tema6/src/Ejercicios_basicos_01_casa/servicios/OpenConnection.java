@@ -1,4 +1,4 @@
-package Ejercicios_basicos_01.servicios;
+package Ejercicios_basicos_01_casa.servicios;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
