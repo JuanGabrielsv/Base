@@ -201,11 +201,51 @@ ese código” cuando no haya empleados con ese empno. Si se borra el registro,
 debes indicarlo por la pantalla con el mensaje “Se haborrado adecuadamente el
 empleado”. */
 
+DECLARE
+    entradaUsuario INT;
+    empleado emp.ename%TYPE;
+BEGIN    
+    entradaUsuario := &empno;
+    
+    SELECT ename INTO empleado FROM emp WHERE empno = entradaUsuario;
+    DELETE FROM emp WHERE empno = entradaUsuario;
+    dbms_output.put_line(empleado ||' BORRADO');
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        dbms_output.put_line(' No se ha encontrado empleado ');
+END;
+/
+
 /* 7. Se quiere saber el nombre de los empleados que hayan sido contratados en
 un determinado mes. Para ello debes crear un bloque de código anónimo que pida
 un mes por el teclado con letras. Con esa información debes obtener todos los
 registros de la tabla emp cuyo hiredate haya sido en dicho mes, recuperar el
 nombre y mostrarlo por la salida. */
+
+DECLARE
+    mes VARCHAR2(99);
+    empleado emp.ename%TYPE;
+    noEncontrado EXCEPTION;
+    CURSOR c_empleados IS
+        SELECT emp.ename FROM emp 
+            WHERE UPPER(trim(to_char(hiredate, 'MONTH'))) = UPPER('&mes');
+BEGIN    
+    OPEN c_empleados;
+        LOOP
+            FETCH c_empleados INTO empleado;            
+            EXIT WHEN c_empleados%NOTFOUND;
+            dbms_output.put_line(empleado);            
+        END LOOP;
+    CLOSE c_empleados;
+    IF empleado IS NULL THEN
+        RAISE noEncontrado;
+    END IF;
+EXCEPTION
+    WHEN noEncontrado THEN
+        dbms_output.put_line( ' ' );
+        dbms_output.put_line('NO SE HA ENCONTRADO REGISTROS PARA ESE MES');
+END;
+/
 
 /* 8. Se quiere saber cuántos empleados hay en cada departamento. Para ello crea
 un bloque de código anónimo que pida por teclado el código de departamento
@@ -219,6 +259,33 @@ e indicarlo en un mensaje como el que sigue “Hay xx empleados en ese
 departamento”, donde xx es el número obtenido del total de empleados de ese
 departamento. */
 
+DECLARE
+    v_entradaUsuario dept.deptno%TYPE := &deptno_code;
+    v_empno dept.deptno%TYPE;
+    CURSOR c_empno IS
+        SELECT d.dname, COUNT(*) FROM emp e JOIN dept d ON e.deptno = d.deptno 
+        GROUP BY d.dname;
+BEGIN
+    OPEN c_empno;
+        LOOP
+            FETCH c_empno INTO v_empno;
+            EXIT WHEN c_empno%NOTFOUND;            
+        END LOOP;
+        IF v_empno IS NULL THEN
+            dbms_output.put_line('****** NO EXISTE ESE CÓDIGO DE DEPARTAMENTO 
+            *******');
+        ELSE
+            dbms_output.put_line('***** EXISTE *****');
+        END IF;
+            
+    
+    dbms_output.put_line(v_entradaUsuario);
+END;
+/
+
+SELECT d.dname, COUNT(*) FROM emp e JOIN dept d ON e.deptno = d.deptno 
+    GROUP BY d.dname;
+
 /* 9. Se quiere saber el número de veces de cierta vocal que tienen los nombres
 de los empleados. Para ello se pedirá al usuario por teclado una vocal, que
 habrá que comprobar inicialmente si realmente lo es o no. Si es vocal, se 
@@ -231,4 +298,5 @@ con el número de veces que aparece la vocal introducida. */
 nombre más largo y el que tiene el nombre más corto. En caso de coincidencia en 
 el tamaño de los nombres, se pondrán todos. */
 
-SELECT * FROM PERSONAS WHERE DNI = '53279139F';
+SELECT emp.ename FROM emp WHERE trim(to_char(hiredate, 'MONTH')) = 'MAYO';
+SELECT to_char(hiredate, 'MONth') FROM emp;
