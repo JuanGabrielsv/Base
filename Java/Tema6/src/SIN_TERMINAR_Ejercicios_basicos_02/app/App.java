@@ -15,11 +15,11 @@ Intenta dividir tu clase App en método para que no esté todo “apiñado” en
 */
 package SIN_TERMINAR_Ejercicios_basicos_02.app;
 
-import Ejercicios_basicos_01.modelo.Persona;
-import Ejercicios_basicos_01.servicios.*;
 //import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Scanner;
+import SIN_TERMINAR_Ejercicios_basicos_02.modelo.Persona;
+import SIN_TERMINAR_Ejercicios_basicos_02.servicios.PersonasService;
 
 public class App {
 

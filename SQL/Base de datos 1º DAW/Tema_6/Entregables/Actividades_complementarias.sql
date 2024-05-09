@@ -231,3 +231,4 @@ con el número de veces que aparece la vocal introducida. */
 nombre más largo y el que tiene el nombre más corto. En caso de coincidencia en 
 el tamaño de los nombres, se pondrán todos. */
 
+SELECT * FROM PERSONAS WHERE DNI = '53279139F';

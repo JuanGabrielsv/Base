@@ -4,9 +4,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
+//import java.util.List;
 
-import Ejercicios_basicos_01.modelo.Persona;
+import SIN_TERMINAR_Ejercicios_basicos_02.modelo.Persona;
+
+
 
 public class PersonasService {
 
