@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 import Ejercicios_basicos_01.modelo.Persona;
 
 public class PersonasService {
@@ -33,7 +34,7 @@ public class PersonasService {
 				p.setFechaNacimiento(rs.getDate("FECHA_NACIMIENTO").toLocalDate());
 				return p;
 			} else {
-				return null;	
+				return null;
 			}			
 		} 
 	}

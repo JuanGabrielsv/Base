@@ -35,12 +35,11 @@ usuario con un texto amigable.
 */
 package Ejercicios_basicos_01.app;
 
-import Ejercicios_basicos_01.modelo.Persona;
-import Ejercicios_basicos_01.servicios.*;
-
-//import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Scanner;
+
+import Ejercicios_basicos_01.modelo.Persona;
+import Ejercicios_basicos_01.servicios.*;
 
 public class App {
 
@@ -66,10 +65,9 @@ public class App {
 			System.out.println("Exepción en main: " + e.getMessage());
 		} finally {
 			sc.close();
-		}	
+		}		
 		
-		// PRUEBA DE CONEXIÓN
-		
+		// PRUEBA DE CONEXIÓN		
 		/*OpenConnection prueba = new OpenConnection();
 		try {
 			Connection c = prueba.getNewConnection();

@@ -1,4 +1,19 @@
-package Ejercicios_basicos_01_casa.modelo;
+/*
+EJERCICIO 3
+
+Amplía el programa anterior para que, después de la última parte, solicite al 
+usuario los datos de una persona y lo inserte en BBDD.
+ 
+Tendrás que crear en PersonasService un método llamado insertarPersona() que 
+reciba una Persona y la inserte. Trata los errores con la BBDD del mismo modo.
+
+Antes de intentar insertar, debes asegurar que todos los datos están completos.
+Para ello, crea un método “validar()” en la clase Persona que lance una 
+excepción si no es así. 
+Por ejemplo, DatosIncompletosException. Si salta la excepción, contrólala y 
+vuelve a pedir los datos al usuario.
+*/
+package Ejercicios_basicos_03.modelo;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -44,8 +59,8 @@ public class Persona {
 
 	@Override
 	public String toString() {
-		return "Persona [NOMBRE = " + nombre + ", APELLIDOS = " + apellidos +
-				", DNI = " + dni + ", FECHA = " + fechaNacimiento + "]";
+		return "Persona [NOMBRE = " + nombre + ", APELLIDOS = " + apellidos + ", DNI = " + dni + ", FECHA = "
+				+ fechaNacimiento + "]";
 	}
 
 	@Override
@@ -64,6 +79,5 @@ public class Persona {
 		Persona other = (Persona) obj;
 		return Objects.equals(dni, other.dni);
 	}
-		
 
 }

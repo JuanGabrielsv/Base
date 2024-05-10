@@ -1,4 +1,4 @@
-package SIN_TERMINAR_Ejercicios_basicos_03.servicios;
+package Ejercicios_basicos_03.servicios;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class OpenConnection {
 	
 	public Connection getNewConnection() throws SQLException {
-		String user = "jgsanchez";
-		String password = "123456";
+		String user = "juangabrielsv";
+		String password = "cra6Trek";
 		
 		String url = "jdbc:oracle:thin:@//localhost:1521/XE";
 		String driverClass = "oracle.jdbc.driver.OracleDriver";
