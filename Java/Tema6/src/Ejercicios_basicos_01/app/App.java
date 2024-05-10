@@ -37,7 +37,6 @@ package Ejercicios_basicos_01.app;
 
 import java.sql.SQLException;
 import java.util.Scanner;
-
 import Ejercicios_basicos_01.modelo.Persona;
 import Ejercicios_basicos_01.servicios.*;
 
