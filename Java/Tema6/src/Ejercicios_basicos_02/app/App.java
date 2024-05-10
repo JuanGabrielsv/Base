@@ -13,14 +13,15 @@ reutilizarlo.
 Trata los errores del mismo modo.
 Intenta dividir tu clase App en método para que no esté todo “apiñado” en el main 
 */
-package SIN_TERMINAR_Ejercicios_basicos_02.app;
+package Ejercicios_basicos_02.app;
 
 //import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
-import SIN_TERMINAR_Ejercicios_basicos_02.modelo.Persona;
-import SIN_TERMINAR_Ejercicios_basicos_02.servicios.PersonasService;
+
+import Ejercicios_basicos_02.modelo.Persona;
+import Ejercicios_basicos_02.servicios.PersonasService;
 
 public class App {
 

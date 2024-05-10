@@ -1,4 +1,4 @@
-package SIN_TERMINAR_Ejercicios_basicos_02.modelo;
+package Ejercicios_basicos_02.modelo;
 
 import java.time.LocalDate;
 import java.util.Objects;

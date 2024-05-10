@@ -1,4 +1,4 @@
-package SIN_TERMINAR_Ejercicios_basicos_02.servicios;
+package Ejercicios_basicos_02.servicios;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 //import java.util.List;
 import java.util.List;
 
-import SIN_TERMINAR_Ejercicios_basicos_02.modelo.Persona;
+import Ejercicios_basicos_02.modelo.Persona;
 
 
 
