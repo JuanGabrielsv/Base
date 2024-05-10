@@ -33,7 +33,7 @@ public class PersonasService {
 				p.setFechaNacimiento(rs.getDate("FECHA_NACIMIENTO").toLocalDate());
 				return p;
 			} else {
-				return null;	
+				return null;
 			}			
 		} 
 	}

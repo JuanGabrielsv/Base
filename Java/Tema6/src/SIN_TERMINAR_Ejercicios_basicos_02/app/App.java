@@ -17,6 +17,7 @@ package SIN_TERMINAR_Ejercicios_basicos_02.app;
 
 //import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 import SIN_TERMINAR_Ejercicios_basicos_02.modelo.Persona;
 import SIN_TERMINAR_Ejercicios_basicos_02.servicios.PersonasService;
@@ -40,6 +41,14 @@ public class App {
 				System.out.println("No existe persona con los datos solicitados");
 			} else {
 				System.out.println(p);
+			}
+			
+			System.out.println("Indica el filtro: ");
+			String filtro = sc.nextLine();
+			
+			List<Persona> lista = service.buscarPersona(filtro);
+			for (Persona persona : lista) {
+				System.out.println(persona);
 			}
 
 		} catch (SQLException e) {

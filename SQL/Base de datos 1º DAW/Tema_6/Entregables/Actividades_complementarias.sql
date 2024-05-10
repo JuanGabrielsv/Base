@@ -277,14 +277,9 @@ BEGIN
         ELSE
             dbms_output.put_line('***** EXISTE *****');
         END IF;
-            
-    
     dbms_output.put_line(v_entradaUsuario);
 END;
 /
-
-SELECT d.dname, COUNT(*) FROM emp e JOIN dept d ON e.deptno = d.deptno 
-    GROUP BY d.dname;
 
 /* 9. Se quiere saber el número de veces de cierta vocal que tienen los nombres
 de los empleados. Para ello se pedirá al usuario por teclado una vocal, que
@@ -294,9 +289,28 @@ mensaje como el que sigue: “KING tiene 1 vez la vocal i” donde se debe haber
 introducido inicialmente por teclado “i”. Deben mostrarse todos los empleados 
 con el número de veces que aparece la vocal introducida. */
 
+DECLARE
+    v_entradaUsuario emp.ename%TYPE := UPPER(TRIM('&vocal'));
+    v_contador INT := 0;
+BEGIN
+    IF v_entradaUsuario IN ('A', 'E', 'I', 'O', 'U') THEN
+        FOR r_empEname IN (SELECT ename FROM emp) LOOP  
+            v_contador := 0;
+            FOR i IN 1..LENGTH(r_empEname.ename) LOOP
+                IF UPPER(SUBSTR(r_empEname.ename, i, 1)) = v_entradaUsuario THEN
+                    v_contador := v_contador + 1;
+                END IF;
+            END LOOP;
+            dbms_output.put_line(r_empEname.ename ||' X '|| v_contador);            
+        END LOOP;      
+    ELSE
+        dbms_output.put_line('####### INTRODUCE UN CARACTER #######');
+    END IF;    
+END;
+/
+
 /* 10. Se quiere un bloque de código anónimo que busque el empleado que tiene el 
 nombre más largo y el que tiene el nombre más corto. En caso de coincidencia en 
 el tamaño de los nombres, se pondrán todos. */
 
-SELECT emp.ename FROM emp WHERE trim(to_char(hiredate, 'MONTH')) = 'MAYO';
-SELECT to_char(hiredate, 'MONth') FROM emp;
+
