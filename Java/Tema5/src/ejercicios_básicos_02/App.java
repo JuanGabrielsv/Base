@@ -33,7 +33,7 @@ public class App {
 						listaNumeros.add(entradaUsuario);
 					}
 				} catch (NumberFormatException e) {
-					System.out.println("Debes introducir un número entero, no valen letras");
+					System.err.println("Debes introducir un número entero, no valen letras.");
 				}
 
 			} while (check);

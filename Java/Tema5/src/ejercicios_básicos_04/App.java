@@ -48,10 +48,7 @@ public class App {
 					}
 				} catch (NumberFormatException y) {
 					System.err.println("NO SE ADMITE INTRODUCIR UN ESPACIO EN BLANCO o NO INTRODUCIR NADA");
-				} catch (IndexOutOfBoundsException e) {
-					System.out.println("kjhdf");
-					check = false;				
-				}
+				} 
 			} while (check);
 		} finally {
 			sc.close();

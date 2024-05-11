@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+import Ejercicio_repaso_final_B.Servicios.LibreriaService;
 import Ejercicio_repaso_final_B.modelo.Libreria;
 import Ejercicio_repaso_final_B.modelo.Libro;
 import Ejercicio_repaso_final_B.modelo.LibroNuevo;
@@ -13,9 +14,15 @@ public class App {
 
 	public static void main(String[] args) {
 		
+		//LibreriaService servicio = new LibreriaService();
+		LibreriaService servicio;
+		
+		servicio = new LibreriaService();
+		
 		Libreria libreria = new Libreria();
-		Map<String, Libro> mLibros = new HashMap<String, Libro>();
+		Map<String, Libro> mLibros = new HashMap<String, Libro>();		
 		libreria.setNombre("Página desiertas");
+		
 		
 		libreria.setmLibros(mLibros);
 		
@@ -54,6 +61,8 @@ public class App {
 		System.out.println(libreria.getPrecioMedio());
 		System.out.println(libreria.getLibrosBaratos());
 		System.out.println(libreria.recorrerPrecio());
+		
+		servicio.insertarLibro(libro3);
 		
 		
 		
