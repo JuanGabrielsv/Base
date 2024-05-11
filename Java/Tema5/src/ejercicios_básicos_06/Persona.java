@@ -18,38 +18,38 @@ el mensaje de error correspondiente.
 package ejercicios_básicos_06;
 
 import java.math.BigDecimal;
-import java.util.Scanner;
 
-public class App {
+public class Persona {
 
-	public static void main(String[] args) {
+	private String genero;
+	private BigDecimal altura;
 
-		Scanner sc = new Scanner(System.in);
+	public String getGenero() {
+		return genero;
+	}
 
-		try {
-			Persona persona = new Persona();
-			while (true) {
-				try {
-					System.out.println("Indícame los datos de la persona. Empieza con el género (H/M)");
-					String genero = sc.nextLine();
-					persona.setGenero(genero);
-					System.out.println("Dime la altura: ");
-					BigDecimal altura = sc.nextBigDecimal();
-					sc.nextLine();
-					persona.setAltura(altura);
-					System.out.println("Tu persona: " + persona);
-					System.out.println("¿Quieres salir? (S)");
-					if (sc.nextLine().equals("S")) {
-						break;
-					}
-				} catch (ParametroIncorrectoException e) {
-					System.out.println(e.getMessage());
-				}
-			}
-		} finally {
-			sc.close();
+	public void setGenero(String genero) throws ParametroIncorrectoException {
+		this.genero = genero.toUpperCase();
+		if (!genero.equals("H") && !genero.equals("M")) {
+			throw new ParametroIncorrectoException("El género tiene que ser H o M");
 		}
 
+	}
+
+	public BigDecimal getAltura() {
+		return altura;
+	}
+
+	public void setAltura(BigDecimal altura) {
+		if (!(altura.compareTo(new BigDecimal(3)) == -1))  {
+			this.altura = altura;
+		}
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Persona [genero=" + genero + ", altura=" + altura + "]";
 	}
 
 }
