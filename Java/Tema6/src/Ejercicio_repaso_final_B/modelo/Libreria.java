@@ -92,6 +92,13 @@ public class Libreria {
 		
 	}
 
+	@Override
+	public String toString() {
+		return "Libreria [nombre=" + nombre + ", mLibros=" + mLibros + "]";
+	}
+	
+	
+
 
 
 }

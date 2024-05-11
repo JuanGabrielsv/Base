@@ -40,8 +40,10 @@ public class Persona {
 		return altura;
 	}
 
-	public void setAltura(BigDecimal altura) {
-		if (!(altura.compareTo(new BigDecimal(3)) == -1))  {
+	public void setAltura(BigDecimal altura) throws ParametroIncorrectoException {
+		if (altura.compareTo(new BigDecimal(3)) == 1 || altura.compareTo(new BigDecimal(0)) == -1)  {
+			throw new ParametroIncorrectoException("El valor debe estar entre 0 y 3 incluidos");
+		} else {
 			this.altura = altura;
 		}
 		

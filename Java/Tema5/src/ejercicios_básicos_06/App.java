@@ -43,7 +43,7 @@ public class App {
 						break;
 					}
 				} catch (ParametroIncorrectoException e) {
-					System.out.println(e.getMessage());
+					System.err.println(e.getMessage());
 				}
 			}
 		} finally {
