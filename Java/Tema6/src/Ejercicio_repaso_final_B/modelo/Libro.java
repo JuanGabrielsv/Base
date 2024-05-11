@@ -5,8 +5,8 @@ import java.util.Objects;
 
 public abstract class Libro {
 
-	public static final String SEGUNDA_MANO = "";
-	public static final String NUEVO = "";
+	public static final String SEGUNDA_MANO = "SM";
+	public static final String NUEVO = "N";
 
 	private String titulo;
 	private String autor;
@@ -63,6 +63,13 @@ public abstract class Libro {
 		Libro other = (Libro) obj;
 		return Objects.equals(isbn, other.isbn);
 	}
+
+	@Override
+	public String toString() {
+		return "Libro [titulo=" + titulo + ", autor=" + autor + ", isbn=" + isbn + ", precio=" + precio + "]";
+	}
+	
+	
 	
 	
 

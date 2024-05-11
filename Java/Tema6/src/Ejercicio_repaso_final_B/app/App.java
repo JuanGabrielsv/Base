@@ -40,7 +40,7 @@ public class App {
 		Libro libro4 = new LibroSegundaMano();
 		libro4.setIsbn("03");
 		libro4.setAutor("Lorca");
-		libro4.setPrecio(new BigDecimal(100));
+		libro4.setPrecio(new BigDecimal(9));
 		libro4.setTitulo("Poeta en Nueva York");
 		
 		
@@ -51,6 +51,9 @@ public class App {
 		mLibros.put("03", libro4);
 		
 		System.out.println(libreria.getTasacionCompleta());
+		System.out.println(libreria.getPrecioMedio());
+		System.out.println(libreria.getLibrosBaratos());
+		System.out.println(libreria.recorrerPrecio());
 		
 		
 		
