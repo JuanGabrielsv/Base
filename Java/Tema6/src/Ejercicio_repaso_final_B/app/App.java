@@ -3,7 +3,11 @@ package Ejercicio_repaso_final_B.app;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.Set;
+import Ejercicio_repaso_final_B.Servicios.LibreriaService;
+import Ejercicio_repaso_final_B.Servicios.LibroException;
 import Ejercicio_repaso_final_B.modelo.Libreria;
 import Ejercicio_repaso_final_B.modelo.Libro;
 import Ejercicio_repaso_final_B.modelo.LibroNuevo;
@@ -12,7 +16,25 @@ public class App {
 
 	public static void main(String[] args) {
 
-		System.out.println(solicitarLibreria());
+		LibreriaService servicio = new LibreriaService();
+
+		Libreria libreria = solicitarLibreria();
+
+		try {
+			Set<Entry<String, Libro>> pares = libreria.getmLibros().entrySet();
+			for (Entry<String, Libro> entry : pares) {
+				if (entry.getValue().getPrecio().compareTo(new BigDecimal(10)) == -1) {
+					servicio.insertarLibro(entry.getValue());
+				}
+			}
+		} catch (LibroException e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage() + e.getCause() + e.getClass() + e.getStackTrace());
+
+		} finally {
+
+		}
+
 	}
 
 	private static Libreria solicitarLibreria() {
@@ -41,14 +63,15 @@ public class App {
 				if (salir.equalsIgnoreCase("fin")) {
 					break;
 				}
-
 			}
 
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();
+			System.out.println(e.getMessage() + e.getCause() + e.getClass() + e.getStackTrace());
 		} finally {
 			sc.close();
 		}
+
 		libreria.setmLibros(mLibros);
 		return libreria;
 
