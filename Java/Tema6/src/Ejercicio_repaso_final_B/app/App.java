@@ -17,6 +17,11 @@ public class App {
 	public static void main(String[] args) {
 
 		LibreriaService servicio = new LibreriaService();
+		
+		System.out.println(servicio.consultarLibro());
+		System.out.println(servicio.consultaPorIsbn("02"));
+		System.out.println(servicio.borrarFila());
+		servicio.borrarFilaPorIsbn("07");
 
 		Libreria libreria = solicitarLibreria();
 
