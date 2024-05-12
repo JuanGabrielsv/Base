@@ -96,36 +96,36 @@ public class PersonasService {
 	public void insertarPersonaOld(Persona p) throws SQLException, DatosIncompletosException {
 
 		try (Connection conn = openConn.getNewConnection(); Statement stmt = conn.createStatement()) {
-			
-			p.validar();
 
 			String sql = "INSERT INTO personas VALUES ('" + p.getDni() + "', " + "'" + p.getNombre() + "', " + "'"
 					+ p.getApellidos() + "', " + "'" + Date.valueOf(p.getFechaNacimiento()) + "')";
-			
+
 			System.out.println(sql);
 			stmt.execute(sql);
 		}
 	}
-	
-	public void insertarPersona(Persona p) throws SQLException, DatosIncompletosException {
-		p.validar();
-		String sql = "INSERT INTO personas VALUES(?, ?, ?, ?);";
+
+	public void insertarPersona(Persona p) {
+
+		String sql = "INSERT INTO personas VALUES (?, ?, ?, ?)";
 		
-		try (Connection conn = openConn.getNewConnection(); PreparedStatement stmt = conn.prepareStatement(sql);) {
+
+		try (Connection conn = openConn.getNewConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
 			
+			p.validar();
+
 			stmt.setString(1, p.getDni());
-			stmt.setString(1, p.getNombre());
-			stmt.setString(1, p.getApellidos());
-			stmt.setDate(1, Date.valueOf(p.getFechaNacimiento()));
-			
-			System.out.println(stmt.executeQuery());
-			stmt.executeQuery();
-			System.out.println(stmt.execute());
+			stmt.setString(2, p.getNombre());
+			stmt.setString(3, p.getApellidos());
+			stmt.setDate(4, Date.valueOf(p.getFechaNacimiento()));
+
+			System.out.println(sql);
 			stmt.execute();
-			
-			
-		} catch (Exception e) {
-			// TODO: handle exception
+
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		} catch (DatosIncompletosException e) {
+			System.out.println("DatoIncompletosExection " + e.getMessage());
 		}
 	}
 

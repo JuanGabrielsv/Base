@@ -66,7 +66,7 @@ public class Persona {
 	 */
 
 	public Boolean validar() throws DatosIncompletosException {
-		if (this.dni.isEmpty() || this.apellidos.isEmpty() || this.nombre.isEmpty() || this.fechaNacimiento == null) {
+		if (this.dni.isEmpty() || this.nombre.isEmpty() || this.apellidos.isEmpty() || this.fechaNacimiento == null) {
 			throw new DatosIncompletosException();
 		}
 		return true;

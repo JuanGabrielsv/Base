@@ -20,7 +20,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 import Ejercicios_basicos_03.modelo.Persona;
-import Ejercicios_basicos_03.servicios.DatosIncompletosException;
 import Ejercicios_basicos_03.servicios.PersonasService;
 
 public class App {
@@ -54,17 +53,17 @@ public class App {
 			
 			Persona pe = new Persona();
 			
-			pe.setDni("99999999");
-			pe.setNombre("Cuñao");
-			pe.setApellidos("Martín");
-			pe.setFechaNacimiento(LocalDate.of(2022, 02, 22));
+			pe.setDni("44444444");
+			pe.setNombre("Pedro");
+			pe.setApellidos("Pericó");		
+			pe.setFechaNacimiento(LocalDate.of(2024, 02, 22));
 			
 			service.insertarPersona(pe);
+			
+			System.out.println("Se ha insertado persona");			
 
 		} catch (SQLException e) {
-			System.out.println("Exepción en main: " + e.getMessage());
-		} catch (DatosIncompletosException e) {
-			
+			System.out.println("Exepción en main: " + e.getMessage());		
 		} finally {
 			sc.close();
 		}
