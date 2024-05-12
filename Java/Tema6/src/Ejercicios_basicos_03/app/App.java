@@ -16,9 +16,11 @@ vuelve a pedir los datos al usuario.
 package Ejercicios_basicos_03.app;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 import Ejercicios_basicos_03.modelo.Persona;
+import Ejercicios_basicos_03.servicios.DatosIncompletosException;
 import Ejercicios_basicos_03.servicios.PersonasService;
 
 public class App {
@@ -49,9 +51,20 @@ public class App {
 			for (Persona persona : lista) {
 				System.out.println(persona);
 			}
+			
+			Persona pe = new Persona();
+			
+			pe.setDni("99999999");
+			pe.setNombre("Cuñao");
+			pe.setApellidos("Martín");
+			pe.setFechaNacimiento(LocalDate.of(2022, 02, 22));
+			
+			service.insertarPersona(pe);
 
 		} catch (SQLException e) {
 			System.out.println("Exepción en main: " + e.getMessage());
+		} catch (DatosIncompletosException e) {
+			
 		} finally {
 			sc.close();
 		}

@@ -18,6 +18,8 @@ package Ejercicios_basicos_03.modelo;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import Ejercicios_basicos_03.servicios.DatosIncompletosException;
+
 public class Persona {
 
 	private String nombre;
@@ -55,6 +57,19 @@ public class Persona {
 
 	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	/*
+	 * Antes de intentar insertar, debes asegurar que todos los datos están
+	 * completos. Para ello, crea un método “validar()” en la clase Persona que
+	 * lance una excepción si no es así.
+	 */
+
+	public Boolean validar() throws DatosIncompletosException {
+		if (this.dni.isEmpty() || this.apellidos.isEmpty() || this.nombre.isEmpty() || this.fechaNacimiento == null) {
+			throw new DatosIncompletosException();
+		}
+		return true;
 	}
 
 	@Override
