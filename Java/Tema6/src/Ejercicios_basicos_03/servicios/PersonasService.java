@@ -125,7 +125,7 @@ public class PersonasService {
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		} catch (DatosIncompletosException e) {
-			System.out.println("DatoIncompletosExection " + e.getMessage());
+			System.err.println("DatoIncompletosExection " + e.getMessage());
 		}
 	}
 
