@@ -50,20 +50,20 @@ public class App {
 			for (Persona persona : lista) {
 				System.out.println(persona);
 			}
-			
+
 			Persona pe = new Persona();
-			
+
 			pe.setDni("44444444");
 			pe.setNombre("Pedro");
-			pe.setApellidos("Pericó");		
+			pe.setApellidos("Pericó");
 			pe.setFechaNacimiento(LocalDate.of(2024, 02, 22));
-			
+
 			service.insertarPersona(pe);
-			
-			System.out.println("Se ha insertado persona");			
+
+			System.out.println("Se ha insertado persona");
 
 		} catch (SQLException e) {
-			System.out.println("Exepción en main: " + e.getMessage());		
+			System.out.println("Exepción en main: " + e.getMessage());
 		} finally {
 			sc.close();
 		}

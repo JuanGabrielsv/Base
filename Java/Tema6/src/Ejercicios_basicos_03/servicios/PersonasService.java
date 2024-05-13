@@ -108,10 +108,9 @@ public class PersonasService {
 	public void insertarPersona(Persona p) {
 
 		String sql = "INSERT INTO personas VALUES (?, ?, ?, ?)";
-		
 
 		try (Connection conn = openConn.getNewConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-			
+
 			p.validar();
 
 			stmt.setString(1, p.getDni());
