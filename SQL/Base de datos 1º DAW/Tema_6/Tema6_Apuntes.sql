@@ -21,15 +21,24 @@ END;
 /
 
 /* ESTRUCTURA DE UN PROCEDIMIENTO */
-CREATE OR REPLACE PROCEDURE nombreDeLaProcedure(fecha DATE)
-IS
-    variables DATE := fecha - 1;
-    variables2 INT;    
-BEGIN
-    variables2 := 8;
-    dbms_output.put_line('');        
-END;
-/
+    CREATE OR REPLACE PROCEDURE nombreDeLaProcedure(fecha DATE)
+    IS
+        variables DATE := fecha - 1;
+        variables2 INT;    
+    BEGIN
+        variables2 := 8;
+        dbms_output.put_line('');        
+    END;
+    /
+/*###############################################################*/
+    CREATE OR REPLACE PROCEDURE prueba
+    
+    IS
+    
+    BEGIN
+        dbms_output.put_line('Hola');
+    END;
+    /
 
 /* ESTRUCTURA DE UNA FUNCIÓN */
 CREATE OR REPLACE FUNCTION nombreDeLaFuncion(base INT, altura INT) RETURN NUMBER
@@ -40,6 +49,18 @@ BEGIN
     RETURN total;
 END;
 /
+/*######################################################################*/
+CREATE OR REPLACE FUNCTION calcular_area(lado NUMBER) RETURN VARCHAR2
+IS
+    area NUMBER;
+    resultado VARCHAR2(100);
+BEGIN
+    area := lado * lado;
+    resultado := TO_CHAR(area);
+    
+    RETURN resultado;
+    --RETURN area;
+END;
 
 /* BORRAR UN PROCEDURE Y FUNCTION */
 DROP PROCEDURE nombreDeLaProcedure;
@@ -194,12 +215,55 @@ IS
     PROCEDURE nombreProcedure(valor1 INT, valor2 INT);
 END;
 /
+
 CREATE OR REPLACE PACKAGE BODY miPaquete
 IS
-    PROCEDURE nombreProcedure(
+    
 END;
 /
 
+/* ESTRUCTURA FETCH */
+
+DECLARE
+    rTF futbolistas%ROWTYPE;    
+    CURSOR consulta IS
+        SELECT * FROM futbolistas;
+BEGIN
+    OPEN consulta;
+        LOOP
+            FETCH consulta INTO rTF;
+            dbms_output.put_line(rTF.id ||' '|| rTF.nombre ||' '|| rTF.apellidos
+                ||' '|| rTF.fecha_nacimiento ||' '|| rTF.posicion 
+                ||' '|| rTF.salario ||' '|| rTF.id_equipo
+                ||' '|| rTF.altura ||' '|| rTF.peso);            
+            EXIT WHEN consulta%NOTFOUND;
+        END LOOP;
+END;
+/
+
+/* HACER UNA CONSULTA */
+CREATE OR REPLACE FUNCTION obtenerFutbolistasPorAnosDos(anno1 VARCHAR2, anno2 VARCHAR2) RETURN NUMBER IS
+  total_futbolistas NUMBER := 0;
+BEGIN
+  FOR futbolista IN (SELECT f.nombre AS guay, e.nombre AS e_nombre 
+                    FROM futbolistas f 
+                    JOIN equipos e ON e.id = f.id_equipo 
+                    WHERE TO_CHAR(f.fecha_nacimiento, 'yyyy') BETWEEN anno1 AND anno2) LOOP
+    DBMS_OUTPUT.PUT_LINE('Futbolista: ' || futbolista.guay || ', Equipo: ' || futbolista.e_nombre );
+    total_futbolistas := total_futbolistas + 1;
+  END LOOP;
+  
+  RETURN total_futbolistas;
+END;
+/
+
+DECLARE
+
+BEGIN
+    dbms_output.put_line(obtenerFutbolistasPorAnosDos('1984', '1989'));    
+    dbms_output.put_line(obtenerFutbolistasPorAnosDos(1984, 2024));
+END;
+/
 
 
 

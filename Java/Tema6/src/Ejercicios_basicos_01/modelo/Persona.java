@@ -2,7 +2,12 @@ package Ejercicios_basicos_01.modelo;
 
 import java.time.LocalDate;
 import java.util.Objects;
-
+/**
+ * Clase que define a un objeto Persona
+ * @version 1.0
+ * @author Juan Gabriel
+ * @since 15/05/2024
+ */
 public class Persona {
 
 	private String nombre;

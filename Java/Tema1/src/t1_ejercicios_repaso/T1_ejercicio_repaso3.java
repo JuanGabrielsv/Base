@@ -6,11 +6,17 @@ PISTA: Tendrás que aplicar una conversión de tipos. */
 package t1_ejercicios_repaso;
 import java.util.Scanner;
 
+/**
+ * Clase que multiplica dos números
+ * @version 1.0
+ * @author Juan Gabriel
+ * @since 15/05/2024
+ */
 public class T1_ejercicio_repaso3 {
 	public static void main(String[] args) {
 		
-/* DECLARACIÓN DE VARIABLES */
-		String numero1;
+/* DECLARACIÓN DE VARIABLES */		
+		String numero1;		
 		String numero2;
 		Long multiplicacion;
 		Long num1;

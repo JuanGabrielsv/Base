@@ -6,15 +6,27 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import Ejercicios_basicos_01.modelo.Persona;
-
+/**
+ * Clase que realiza servicios sobre una Persona
+ * @version 1.0
+ * @author Juan Gabriel
+ * @since 15/05/2024
+ */
 public class PersonasService {
 	
 	private OpenConnection openConn;
-	
+	/**
+	 * Constructor por defecto que abre una conexión.
+	 */
 	public PersonasService() {
 		openConn = new OpenConnection();
 	}
-	
+	/**
+	 * Método que consulta una persona.
+	 * @param dni esto es una descripció?
+	 * @return Persona Retorna una persona
+	 * @throws SQLException Lanza excepción de la base de datos
+	 */
 	public Persona consultarPersona(String dni) throws SQLException {
 					
 		ResultSet rs = null;
