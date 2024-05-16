@@ -2,7 +2,9 @@ package examen_3Trimestre_A.examen.modelo;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
+import java.util.Objects;
 
 public class Proyecto {
 
@@ -13,6 +15,11 @@ public class Proyecto {
 	private BigDecimal presupuestoProyecto;
 	private BigDecimal costeActualProyecto;
 	private List<Programador> listaProgramadoresProyecto;
+
+	public Proyecto(String codigo, String descripcion) {
+		this.codigoProyecto = codigo;
+		this.descripcionProyecto = descripcion;
+	}
 
 	public String getCodigoProyecto() {
 		return codigoProyecto;
@@ -68,6 +75,30 @@ public class Proyecto {
 
 	public void setListaProgramadoresProyecto(List<Programador> listaProgramadoresProyecto) {
 		this.listaProgramadoresProyecto = listaProgramadoresProyecto;
+	}
+
+	public Integer getDuracion() {
+		Period periodo = this.fechaInicioProyecto.until(fechaEntregaProyecto);
+		Integer meses = periodo.getYears() * 12;
+		meses += periodo.getMonths();
+		return meses;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(codigoProyecto);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Proyecto other = (Proyecto) obj;
+		return Objects.equals(codigoProyecto, other.codigoProyecto);
 	}
 
 }
