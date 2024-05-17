@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <meta name="description" content="Examen final de html 1 de Daw">        
+        <meta name="keywords" content="html, css, javascript, examen, ceu, daw, dam">        
+        <meta name="author" content="Juan Gabriel Sánchez Vivero">
+        <title>Examen 3º Trimestre</title>
+        <link rel="icon" type="image/png" href="imagenes/favicon32.png">
+        <link rel="stylesheet" href="estilos/estilos.css"> 
+    </head>
+    <body>
+        <header>
+            <nav class="blue f-white">
+                <ul class="ls-none flex flex-row p-1 m-rigth">
+                    <li><a href="#noticias">Noticias</a></li>
+                    <li><a href="#Cuestionario">Cuestionario</a></li>
+                    <li><a href="#configuracion">Configuración</a></li>
+                    <li><a href="#sugerencia">Sugerencias</a></li>
+                    <li><a href="#loginn">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="noticias">
+                <article>
+                    <h2>Rafael Nadal vuelve a competir en Barcelona</h2>
+                    <figure>
+                        <img class="t-250-200" src="https://www.cronicabalear.es/access/public/img/noticias/upload/0_1713291379.jpg" alt="Se puede observar al jugador Rafa Nadal con la mano levantada">
+                        <figcaption>Rafael Nadal en el Godó</figcaption>
+                    </figure>
+                    <p>El tenista español, Rafa Nadal, muestra su alegría al finalizar su
+                        partido de primera ronda del Barcelona Open Banc Sabadell - Trofeo Conde
+                        de Godó de tenis disputado este martes ante el italiano Flavio Cobolli.
+                        Rafael Nadal ganó (2-6 y 3-6).
+                    </p>
+                </article>
+                <div class="flex flex-row">
+                    <article class="w-50percent">
+                        <h2>Comienza la Feria de Abril de Sevilla</h2>
+                        <figure>
+                        <img class="t-250-200" src="https://s3.abcstatics.com/abc/www/multimedia/sevilla/2024/04/13/portada_iluminada-U60867637123dC-RWEhRjatrQxE9EM3LcT35vJ-1200x840@diario_abc.jpeg" alt="Se ve en la imagen una foto aerea de la Protada de la feria de Sevilla">
+                        <figcaption>Feria de Abril de Sevilla</figcaption>
+                        </figure>
+                        <p>A las doce en punto de la noche, las 25.000 bombillas de la portada
+                            de la Feria de Abril de Sevilla se encenderán en el real de Los Remedios
+                            con la prueba del Alumbrado para dar comienzo a una fiesta universal, que
+                            fue declarada de interés turístico internacional en 1980. Antes muchos
+                            sevillanos y visitantes habrán disfrutado ya de la tradicional cena del
+                            Pescaíto, en la que los socios de las casetas vuelven a reencontrarse, a
+                            saborear la típica gastronomía feriante y a vivir una de las mejores
+                            semanas del año.                            
+                        </p>
+                    </article>
+                    <article class="w-50percent">
+                        <h2>La fortuna del chico de oro de la televisión</h2>
+                        <figure>
+                        <img class="t-250-200" src="https://content20.lecturas.com/medio/2024/04/16/david-broncano_72686e85_240416101036_1280x720.jpg" alt="Se puede observar al presentador David Broncano">
+                        <figcaption>David Broncano</figcaption>
+                        </figure>
+                        <p>Ha firmado por dos años por TVE a cambio de 28 millones para
+                            competir con Pablo Motos. Su suculento contrato se sumará a su buen
+                            Patrimonio: tiene dos áticos en Madrid y una productora de éxito.                            
+                        </p>
+                    </article>
+                </div>
+            </section>
+            <section id="Cuestionario" style="background-color: rgb(68, 189, 222);">
+                <form id="form1" action="https://www.w3schools.com/action_page.php">
+                    <fieldset>
+                        <legend>Cuestionario (Datos Personales)</legend>
+                        <label for="nombre">* Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" value="" required>
+                        <br><br>
+                        <label for="apellidos">* Apellidos:</label>
+                        <input type="text" id="apellidos" name="apellidos" size="100" value="" required>
+                        <br><br>
+                        <label for="date">* Fecha de Nacimiento</label>
+                        <input type="date" id="date" min="1900-01-01" name="date" value="" required>
+                        <br><br>
+                        <label for="direccion">* Apellidos:</label>
+                        <input type="text" id="direccion" name="direccion" size="120" value="" required>
+                        <br><br>
+                        <label for="email">* Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                        <br><br>
+                        <label for="telefono">* Teléfono (xxxxxxxxx)</label>
+                        <input type="tel" id="telefono" name="telefono" max="9" pattern="[0-9]{9}" required>
+                        <br><br>
+                        <label for="codigoPostal">Codigo Postal (xxxxx)</label>
+                        <input type="text" id="codigoPostal" pattern="[0-9]{5}" name="codigoPostal" required>
+                        <br><br>
+                        <label for="">Sexo:</label>
+                        <input type="radio" id="idMujer" name="idMujer" value="Mujer">
+                        <label for="idMujer">Mujer</label>
+                        <input class="marginLeft" type="radio" id="idhombre" name="idhombre" value="Hombre">
+                        <label for="idhombre">Hombre</label>
+                        <br>
+                        <br>
+                        <label for="idPregunta3">Idiomas:</label>
+                        <input type="checkbox" id="ingles" name="idPregunta3" value="">
+                        <label for="ingles">Inglés</label>
+                        <input class="marginLeft" type="checkbox" id="frances" name="ingles" value="Malos">
+                        <label for="frances">Francés</label>
+                        <input class="marginLeft" type="checkbox" id="aleman" name="frances" value="Malos">
+                        <label for="aleman">Alemán</label>
+                        <input class="marginLeft" type="checkbox" id="italiano" name="aleman" value="Malos">
+                        <label for="italiano">Italiano</label>
+                        <input class="marginLeft" type="checkbox" id="otros" name="italiano" value="Malos">
+                        <label for="otros">Otros</label>
+                        <br><br>
+                        <input class="inputEspecial" type="submit" value="Enviar">
+                        <input class="inputEspecial" type="reset" value="Limpiar">              
+                    </fieldset>
+                </form>
+            </section>
+            <br>
+            <section id="configuracion" style="background-color: rgb(223, 195, 131)">
+                <form id="form1" action="https://www.w3schools.com/action_page.php">
+                    <fieldset>
+                        <legend>Configuración</legend>
+                        <label for="idFile">Subir Imagen:</label>
+                        <input type="file" id="idFile" name="idFile">                        
+                        <br><br>
+                        <label for="idColor">Seleccione color de fondo:</label>
+                        <input type="color" id="idColor" name="idColor">
+                        <br><br>
+                        <label for="idVolumen">Seleccion el contraste (entre 0 y 100):</label>
+                        <br>
+                        <input type="range" id="idVolumen" name="idVolumen" min="0" max="100" step="5">
+                        <input type="text" id="idMuestraRango" value="5" readonly size="3">
+                        <br><br>
+                        <label for="refresco">Introduzca un número de refresco: (entre 0 y 100)</label>
+                        <input type="number" id="refresco" name="refresco" min="0" max="10" value="" required>
+                        <br><br>
+                        <input class="inputEspecial" type="submit" value="Enviar">
+                        <input class="inputEspecial" type="reset" value="Limpiar">         
+                    </fieldset>
+                </form>
+            </section>
+            <br>
+            <section id="sugerencia" style="background-color: rgb(111, 152, 100)">
+                <form id="form1" action="https://www.w3schools.com/action_page.php">
+                    <fieldset>
+                        <legend>Sugerencias</legend>
+                        Escribe cualquier sugerencia:
+                        <br>                       
+                        <textarea name="idMensaje" id="idMensaje" rows="10" cols="50"></textarea>
+                        <br><br>
+                        <input class="inputEspecial" type="submit" value="Enviar">
+                        <input class="inputEspecial" type="reset" value="Limpiar">         
+                    </fieldset>
+                </form>
+            </section>
+            <br>
+            <section id="loginn" style="background-color: rgb(213, 118, 96)">
+                <form id="form1" action="https://www.w3schools.com/action_page.php">
+                    <fieldset>
+                        <legend>Login</legend>
+                        <label for="nombre">* Usuario:</label>
+                        <input type="text" id="nmbre" name="nombre" value="" required>
+                        <br><br>
+                        <label for="apellidos">* Contraseña:</label>
+                        <input type="text" id="apellidos" name="apellidos" value="" required>
+                        <br><br>
+                        <input class="inputEspecial" type="submit" value="Iniciar sesión">
+                        <input class="inputEspecial" type="reset" value="Limpiar">         
+                    </fieldset>
+                </form>
+            </section>
+            <br>
+            <footer style="background-color: rgb(37, 53, 78); color: white; padding: 1em; text-align: center;">
+                <p>© 2024 Mi página web (Nombre y apellidos del alumno). Todos los derechos reservados</p>
+            </footer>
+        </main>       
+    </body>
+</html>
