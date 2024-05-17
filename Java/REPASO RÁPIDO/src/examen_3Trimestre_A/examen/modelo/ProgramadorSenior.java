@@ -1,6 +1,7 @@
 package examen_3Trimestre_A.examen.modelo;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class ProgramadorSenior extends Programador {	
 
@@ -21,7 +22,7 @@ public class ProgramadorSenior extends Programador {
 	public BigDecimal getSueldoFinal() {
 		BigDecimal sueldoFinal = this.getSueldoBaseProgramador().add(new BigDecimal(1000)
 				.multiply(new BigDecimal(this.anoAntiguedadProgramadorSenior)));
-		return sueldoFinal;
+		return sueldoFinal.setScale(2, RoundingMode.HALF_DOWN);
 	}
 
 }

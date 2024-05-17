@@ -1,8 +1,10 @@
 package examen_3Trimestre_A.examen.modelo;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -19,6 +21,7 @@ public class Proyecto {
 	public Proyecto(String codigo, String descripcion) {
 		this.codigoProyecto = codigo;
 		this.descripcionProyecto = descripcion;
+		this.listaProgramadoresProyecto = new ArrayList<Programador>();
 	}
 
 	public String getCodigoProyecto() {
@@ -82,6 +85,22 @@ public class Proyecto {
 		Integer meses = periodo.getYears() * 12;
 		meses += periodo.getMonths();
 		return meses;
+	}
+
+	public BigDecimal getPresupuestoRestante() {
+		BigDecimal vPresupuestoRestanteProyecto = BigDecimal.ZERO;
+		if (this.getPresupuestoProyecto().compareTo(getCosteActualProyecto()) == -1) {
+			return BigDecimal.ZERO;
+		}
+		vPresupuestoRestanteProyecto = this.getPresupuestoProyecto().subtract(getCosteActualProyecto());
+		return vPresupuestoRestanteProyecto;
+	}
+
+	@Override
+	public String toString() {
+		DecimalFormat formato = new DecimalFormat("#,##0.00");
+		return this.codigoProyecto + "-" + this.descripcionProyecto + " // Presupueesto: "
+				+ formato.format(this.presupuestoProyecto) + " (" + formato.format(this.costeActualProyecto) + ")";
 	}
 
 	@Override

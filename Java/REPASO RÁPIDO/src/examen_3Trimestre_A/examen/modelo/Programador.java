@@ -1,6 +1,7 @@
 package examen_3Trimestre_A.examen.modelo;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Objects;
 
 public class Programador {
@@ -33,7 +34,7 @@ public class Programador {
 		/*BigDecimal sueldoBase = BigDecimal.ZERO;
 		sueldoBase = this.sueldoBaseProgramador;
 		return sueldoBase;*/
-		return this.getSueldoBaseProgramador();
+		return this.getSueldoBaseProgramador().setScale(2, RoundingMode.HALF_DOWN);
 
 	}
 
