@@ -7,7 +7,7 @@ import examen_3Trimestre_A.examen.modelo.Empresa;
 import examen_3Trimestre_A.examen.modelo.ProgramadorJunior;
 import examen_3Trimestre_A.examen.modelo.ProgramadorSenior;
 import examen_3Trimestre_A.examen.modelo.Proyecto;
-import examen_3Trimestre_A.examen.modelo.ProyectoNotFoundException;
+import examen_3Trimestre_A.examen.services.ProyectoNotFoundException;
 
 public class App {
 

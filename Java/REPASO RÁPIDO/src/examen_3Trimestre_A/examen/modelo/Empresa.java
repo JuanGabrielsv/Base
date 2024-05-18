@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import examen_3Trimestre_A.examen.services.ProyectoNotFoundException;
+
 public class Empresa {
 
 	private String nombreComercialEmpresa;
@@ -109,7 +111,7 @@ public class Empresa {
 	@Override
 	public String toString() {
 		String mensaje = "------------------------\n";
-		mensaje += this.getNombreComercialEmpresa() + "\n";
+		mensaje += this.getNombreComercialEmpresa() + "\n" + mensaje;
 		mensaje += "------------------------\nProyectos:\n\t";
 		for (Proyecto proyecto : listaProyectosEmpresa) {
 			mensaje += proyecto.getCodigoProyecto() + "-" + proyecto.getDescripcionProyecto() + " // Presupuesto: "

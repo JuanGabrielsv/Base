@@ -80,7 +80,7 @@ public class LibreriaService {
 			return libro;
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 
 		return null;
@@ -107,7 +107,7 @@ public class LibreriaService {
 			return libro;
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 		return null;
 	}
@@ -123,7 +123,7 @@ public class LibreriaService {
 			return hecho;
 						
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 		return true;
 	}
@@ -139,7 +139,7 @@ public class LibreriaService {
 			System.out.println("Se ha borrado la línea correctamente");
 						
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 	}
 

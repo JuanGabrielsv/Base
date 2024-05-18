@@ -30,12 +30,8 @@ public class Programador {
 		this.sueldoBaseProgramador = sueldoBaseProgramador;
 	}
 
-	public BigDecimal getSueldoFinal() {
-		/*BigDecimal sueldoBase = BigDecimal.ZERO;
-		sueldoBase = this.sueldoBaseProgramador;
-		return sueldoBase;*/
+	public BigDecimal getSueldoFinal() {		
 		return this.getSueldoBaseProgramador().setScale(2, RoundingMode.HALF_DOWN);
-
 	}
 
 	@Override

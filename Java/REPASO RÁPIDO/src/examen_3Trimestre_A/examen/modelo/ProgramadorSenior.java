@@ -19,6 +19,7 @@ public class ProgramadorSenior extends Programador {
 		this.anoAntiguedadProgramadorSenior = anoAntiguedadProgrmadorSenior;
 	}	
 	
+	@Override
 	public BigDecimal getSueldoFinal() {
 		BigDecimal sueldoFinal = this.getSueldoBaseProgramador().add(new BigDecimal(1000)
 				.multiply(new BigDecimal(this.anoAntiguedadProgramadorSenior)));

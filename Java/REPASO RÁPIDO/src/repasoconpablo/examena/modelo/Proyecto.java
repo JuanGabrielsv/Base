@@ -1,6 +1,7 @@
-package examen_3Trimestre_A.examen.modelo;
+package repasoconpablo.examena.modelo;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.Period;
@@ -15,13 +16,14 @@ public class Proyecto {
 	private LocalDate fechaInicioProyecto;
 	private LocalDate fechaEntregaProyecto;
 	private BigDecimal presupuestoProyecto;
-	private BigDecimal costeActualProyecto;
-	private List<Programador> listaProgramadoresProyecto;
+	private BigDecimal costeActualProyectos;
+	private List<Programador> listaProgramadorProyectos;
 
-	public Proyecto(String codigo, String descripcion) {
-		this.codigoProyecto = codigo;
-		this.descripcionProyecto = descripcion;
-		this.listaProgramadoresProyecto = new ArrayList<Programador>();
+	public Proyecto(String codigoProyecto, String descripcionProyecto) {
+		super();
+		this.codigoProyecto = codigoProyecto;
+		this.descripcionProyecto = descripcionProyecto;
+		this.listaProgramadorProyectos = new ArrayList<Programador>();
 	}
 
 	public String getCodigoProyecto() {
@@ -64,43 +66,42 @@ public class Proyecto {
 		this.presupuestoProyecto = presupuestoProyecto;
 	}
 
-	public BigDecimal getCosteActualProyecto() {
-		return costeActualProyecto;
+	public BigDecimal getCosteActualProyectos() {
+		return costeActualProyectos;
 	}
 
-	public void setCosteActualProyecto(BigDecimal costeActualProyecto) {
-		this.costeActualProyecto = costeActualProyecto;
+	public void setCosteActualProyectos(BigDecimal costeActualProyectos) {
+		this.costeActualProyectos = costeActualProyectos;
 	}
 
-	public List<Programador> getListaProgramadoresProyecto() {
-		return listaProgramadoresProyecto;
+	public List<Programador> getListaProgramadorProyectos() {
+		return listaProgramadorProyectos;
 	}
 
-	public void setListaProgramadoresProyecto(List<Programador> listaProgramadoresProyecto) {
-		this.listaProgramadoresProyecto = listaProgramadoresProyecto;
+	public void setListaProgramadorProyectos(List<Programador> listaProgramadorProyectos) {
+		this.listaProgramadorProyectos = listaProgramadorProyectos;
 	}
 
 	public Integer getDuracion() {
+
+		if (this.getFechaInicioProyecto() == null || this.getFechaEntregaProyecto() == null) {
+			return 0;
+		}
+
 		Period periodo = this.fechaInicioProyecto.until(fechaEntregaProyecto);
-		Integer meses = periodo.getYears() * 12;
-		meses += periodo.getMonths();
+		Integer meses = periodo.getMonths() + (periodo.getYears() * 12);
 		return meses;
+
 	}
 
 	public BigDecimal getPresupuestoRestante() {
-		BigDecimal vPresupuestoRestanteProyecto = BigDecimal.ZERO;
-		if (this.getPresupuestoProyecto().compareTo(getCosteActualProyecto()) == -1) {
+		
+		if (this.getCosteActualProyectos().compareTo(getPresupuestoProyecto()) == 1) {
 			return BigDecimal.ZERO;
 		}
-		vPresupuestoRestanteProyecto = this.getPresupuestoProyecto().subtract(getCosteActualProyecto());
-		return vPresupuestoRestanteProyecto;
-	}
 
-	@Override
-	public String toString() {
-		DecimalFormat formato = new DecimalFormat("#,##0.00");
-		return this.codigoProyecto + "-" + this.descripcionProyecto + " // Presupuesto: "
-				+ formato.format(this.presupuestoProyecto) + " (" + formato.format(this.costeActualProyecto) + ")";
+		return this.getPresupuestoProyecto().subtract(getCosteActualProyectos()).setScale(2, RoundingMode.HALF_DOWN);
+
 	}
 
 	@Override
@@ -118,6 +119,15 @@ public class Proyecto {
 			return false;
 		Proyecto other = (Proyecto) obj;
 		return Objects.equals(codigoProyecto, other.codigoProyecto);
+	}
+	
+	@Override
+	public String toString() {
+		DecimalFormat formato = new DecimalFormat("#,##0.00€");
+	
+		return this.getCodigoProyecto() + "-" + this.getDescripcionProyecto() + " // Presupuesto: " 
+				+ formato.format(this.getPresupuestoProyecto()) + " " 
+				+ "(" + formato.format(this.getCosteActualProyectos()) + ")";				
 	}
 
 }

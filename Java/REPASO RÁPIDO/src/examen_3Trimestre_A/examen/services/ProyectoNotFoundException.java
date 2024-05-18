@@ -1,4 +1,4 @@
-package examen_3Trimestre_A.examen.modelo;
+package examen_3Trimestre_A.examen.services;
 
 public class ProyectoNotFoundException extends Exception {
 
