@@ -14,7 +14,7 @@ import Ejercicio_repaso_final_B.modelo.LibroNuevo;
 
 public class App {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		LibreriaService servicio = new LibreriaService();
 		
@@ -36,6 +36,8 @@ public class App {
 			e.printStackTrace();
 			System.out.println(e.getMessage() + e.getCause() + e.getClass() + e.getStackTrace());
 
+		} catch (Exception e) {
+			
 		} finally { 
 
 		}

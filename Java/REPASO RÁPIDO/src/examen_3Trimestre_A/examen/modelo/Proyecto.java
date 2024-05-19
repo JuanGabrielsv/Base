@@ -98,7 +98,7 @@ public class Proyecto {
 
 	@Override
 	public String toString() {
-		DecimalFormat formato = new DecimalFormat("#,##0.00");
+		DecimalFormat formato = new DecimalFormat("#,##0.00 €");
 		return this.codigoProyecto + "-" + this.descripcionProyecto + " // Presupuesto: "
 				+ formato.format(this.presupuestoProyecto) + " (" + formato.format(this.costeActualProyecto) + ")";
 	}

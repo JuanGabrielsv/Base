@@ -62,7 +62,7 @@ public class LibreriaService {
 		}
 	}
 
-	public Libro consultarLibro() {
+	public Libro consultarLibro() throws Exception {
 
 		String sql = "SELECT * FROM libros WHERE isbn = 00";
 
@@ -81,7 +81,8 @@ public class LibreriaService {
 
 		} catch (Exception e) {
 			
-		}
+			
+		} 
 
 		return null;
 
