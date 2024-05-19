@@ -2,6 +2,7 @@ package examen_3Trimestre_A.examen.modelo;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -110,13 +111,13 @@ public class Empresa {
 
 	@Override
 	public String toString() {
+		DecimalFormat formato = new DecimalFormat("#,##0.00€");
 		String mensaje = "------------------------\n";
-		mensaje += this.getNombreComercialEmpresa() + "\n" + mensaje;
-		mensaje += "------------------------\nProyectos:\n\t";
+		mensaje += this.getNombreComercialEmpresa() + "\n" + mensaje + "\n\t";		
 		for (Proyecto proyecto : listaProyectosEmpresa) {
 			mensaje += proyecto.getCodigoProyecto() + "-" + proyecto.getDescripcionProyecto() + " // Presupuesto: "
-					+ proyecto.getPresupuestoProyecto() + " ("
-					+ proyecto.getCosteActualProyecto().setScale(2, RoundingMode.HALF_DOWN) + ")\n\t";
+					+ formato.format(proyecto.getPresupuestoProyecto()) + " ("
+					+ formato.format(proyecto.getCosteActualProyecto().setScale(2, RoundingMode.HALF_DOWN)) + ")\n\t";
 		}
 
 		return mensaje;

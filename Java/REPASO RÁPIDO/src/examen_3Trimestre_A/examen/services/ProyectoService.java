@@ -20,7 +20,8 @@ public class ProyectoService {
 		openConn = new OpenConnection();
 	}
 
-	public List<Proyecto> buscarProyecto(LocalDate fecha1, LocalDate fecha2) throws ProyectoErrorException {
+	public List<Proyecto> buscarProyecto(LocalDate fecha1, LocalDate fecha2) throws ProyectoErrorException, 
+		ProyectoNotFoundException {
 
 		List<Proyecto> listaResultadoProyectos = new ArrayList<Proyecto>();
 		String sql = "SELECT * FROM proyectos WHERE inicio BETWEEN ? AND ?";
@@ -48,11 +49,11 @@ public class ProyectoService {
 			return listaResultadoProyectos;
 
 		} catch (ProyectoNotFoundException e) {
-			System.out.println("No hay proyectos para estas fechas");
+			throw new ProyectoNotFoundException("No hay proyectos para estas fechas");
 		} catch (SQLException e) {
-			throw new ProyectoErrorException("Error consultando proyectos\n" + e.getMessage());			
+			throw new ProyectoErrorException(e.getMessage());			
 		} 
-		return null;
+		
 
 	}
 }
