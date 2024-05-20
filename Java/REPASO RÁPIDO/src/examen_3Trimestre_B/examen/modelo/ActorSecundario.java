@@ -1,6 +1,7 @@
-package examen_3TrimestreB.examen.modelo;
+package examen_3Trimestre_B.examen.modelo;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class ActorSecundario extends Actor {
 
@@ -17,10 +18,11 @@ public class ActorSecundario extends Actor {
 	public void setPorcentajeDedicacionActorSecundario(Integer porcentajeDedicacionActorSecundario) {
 		this.porcentajeDedicacionActorSecundario = porcentajeDedicacionActorSecundario;
 	}
-
-	public BigDecimal getCoste() {		
+	
+	@Override
+	public BigDecimal getCoste() {
 		return new BigDecimal(this.getPorcentajeDedicacionActorSecundario()).multiply(getCacheActor())
-				.divide(new BigDecimal(100));		 
+				.divide(new BigDecimal(100)).setScale(2, RoundingMode.HALF_DOWN);
 	}
 
 }

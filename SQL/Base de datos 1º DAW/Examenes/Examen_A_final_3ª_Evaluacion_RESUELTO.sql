@@ -464,6 +464,8 @@ apellidos y años que tienen los futbolistas que, A DÍA DE HOY YA HAYAN CUMPLIDO
 AÑOS, es decir, que en lo que va de año hasta HOY ya fue su cumpleaños. 
 No muestres los futbolistas que no han cumplido años todavía. */
 
+SELECT * FROM futbolistas;
+
 
 
 

@@ -1,4 +1,4 @@
-package examen_3TrimestreB.examen.modelo;
+package examen_3Trimestre_B.examen.modelo;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -8,16 +8,16 @@ public class Actor {
 	private String nombreArtisticoActor;
 	private BigDecimal cacheActor;
 
-	public Actor(String nombre) {		
+	public Actor(String nombre) {
 		this.cacheActor = BigDecimal.ZERO;
 	}
 
-	public String getNombreArtisticoActor() {
+	public String getNombreActor() {
 		return nombreArtisticoActor;
 	}
 
-	public void setNombreArtisticoActor(String nombreArtisticoActor) {
-		this.nombreArtisticoActor = nombreArtisticoActor;
+	public void setNombreActor(String nombreActor) {
+		this.nombreArtisticoActor = nombreActor;
 	}
 
 	public BigDecimal getCacheActor() {
@@ -27,9 +27,10 @@ public class Actor {
 	public void setCacheActor(BigDecimal cacheActor) {
 		this.cacheActor = cacheActor;
 	}
-	
-	public BigDecimal getCoste() {		
-		return this.cacheActor;				
+
+	public BigDecimal getCoste() {
+		return this.cacheActor;
+
 	}
 
 	@Override
@@ -48,7 +49,5 @@ public class Actor {
 		Actor other = (Actor) obj;
 		return Objects.equals(nombreArtisticoActor, other.nombreArtisticoActor);
 	}
-	
-	
 
 }

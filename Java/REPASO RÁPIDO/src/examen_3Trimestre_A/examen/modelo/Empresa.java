@@ -113,7 +113,7 @@ public class Empresa {
 	public String toString() {
 		DecimalFormat formato = new DecimalFormat("#,##0.00€");
 		String mensaje = "------------------------\n";
-		mensaje += this.getNombreComercialEmpresa() + "\n" + mensaje + "\n\t";		
+		mensaje += this.getNombreComercialEmpresa() + "\n" + mensaje + "Proyectos: \n\t";		
 		for (Proyecto proyecto : listaProyectosEmpresa) {
 			mensaje += proyecto.getCodigoProyecto() + "-" + proyecto.getDescripcionProyecto() + " // Presupuesto: "
 					+ formato.format(proyecto.getPresupuestoProyecto()) + " ("
