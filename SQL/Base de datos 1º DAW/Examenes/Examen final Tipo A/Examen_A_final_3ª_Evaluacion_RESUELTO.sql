@@ -153,7 +153,6 @@ EXCEPTION
 END;
 /
 /* PROBAMOS EL MÉTODO */
-DECLARE
     
 BEGIN
     dbms_output.put_line(insertarFutbolista('F00320', 'Juan Gabriel', 
@@ -329,37 +328,37 @@ END;
 /
 CREATE OR REPLACE PACKAGE BODY funcFutbolistas
 IS
-    function insertarFutbolista(
-        vid futbolistas.id%type,
-        vnombre futbolistas.nombre%type,
-        vapellidos futbolistas.apellidos%type,
-        vfecha_nacimiento futbolistas.fecha_nacimiento%type,
-        vposicion futbolistas.posicion%type,
-        vsalario futbolistas.salario%type,
-        vid_equipo futbolistas.id_equipo%type,
-        valtura futbolistas.altura%type,
-        vpeso futbolistas.peso%type) return int
-    is
-        existe futbolistas.id%type;
-    begin
-        select id into existe from futbolistas where id = vid;
+    FUNCTION insertarFutbolista(
+        vid futbolistas.id%TYPE,
+        vnombre futbolistas.nombre%TYPE,
+        vapellidos futbolistas.apellidos%TYPE,
+        vfecha_nacimiento futbolistas.fecha_nacimiento%TYPE,
+        vposicion futbolistas.posicion%TYPE,
+        vsalario futbolistas.salario%TYPE,
+        vid_equipo futbolistas.id_equipo%TYPE,
+        valtura futbolistas.altura%TYPE,
+        vpeso futbolistas.peso%TYPE) RETURN INT
+    IS
+        existe futbolistas.id%TYPE;
+    BEGIN
+        SELECT ID INTO existe FROM futbolistas WHERE id = vid;
         dbms_output.put_line('Ese ID ya existe');
-        return 0;
-    exception
-        when no_data_found then
-            if length(vid) = 6 and substr(vid,1,1) = 'F' 
-                and (to_number(substr(vid,2,3)) between 0 and 999) 
-                and (to_number(substr(vid,5,2)) = 20) 
-            then
-                insert into futbolistas values (vid,vnombre,vapellidos,
+        RETURN 0;
+    EXCEPTION
+        WHEN no_data_found THEN
+            IF LENGTH(vid) = 6 AND SUBSTR(vid,1,1) = 'F' 
+                AND (TO_NUMBER(substr(vid,2,3)) BETWEEN 0 AND 999) 
+                AND (TO_NUMBER(substr(vid,5,2)) = 20) 
+            THEN
+                INSERT INTO futbolistas VALUES (vid,vnombre,vapellidos,
                 vfecha_nacimiento,vposicion,vsalario,vid_equipo,valtura,vpeso);
                 dbms_output.put_line('Futbolista creado correctamente');
-                return 1;
-            else
+                RETURN 1;
+            ELSE
                 dbms_output.put_line('ID no válido');
-                return -1;
-            end if;
-    end;
+                RETURN -1;
+            END IF;
+    END;
     
     FUNCTION actualizaFutbolista (
         vId futbolistas.id%TYPE,
@@ -413,9 +412,10 @@ IS
             WHERE e.nombre = vNombre;
     BEGIN
         dbms_output.put_line('Futbolistas en ' || vNombre);
-        FOR consulta IN cConsulta LOOP
-            dbms_output.put_line(consulta.nombre ||' '|| consulta.apellidos);
-        END LOOP;
+        FOR consulta IN cConsulta 
+            LOOP
+                dbms_output.put_line(consulta.nombre ||' '|| consulta.apellidos);
+            END LOOP;
     END;
     
     PROCEDURE mostrarFutbolistasEquipo(vNombre equipos.nombre%TYPE)
@@ -457,6 +457,11 @@ BEGIN
 END;
 /
 
+SELECT nombre, apellidos, fecha_nacimiento FROM futbolistas 
+        WHERE TO_DATE(TO_CHAR(fecha_nacimiento, 'dd') || '/' || 
+        TO_CHAR(fecha_nacimiento, 'mm') || '/' || TO_CHAR(SYSDATE, 'YYYY'))
+        < SYSDATE;
+
 /* ### EJERCICIO 2
 
 Se quiere crear un programa que muestre por la salida de la consola el nombre, 
@@ -464,8 +469,128 @@ apellidos y años que tienen los futbolistas que, A DÍA DE HOY YA HAYAN CUMPLIDO
 AÑOS, es decir, que en lo que va de año hasta HOY ya fue su cumpleaños. 
 No muestres los futbolistas que no han cumplido años todavía. */
 
-SELECT * FROM futbolistas;
+DECLARE
+    edad INT;
+    CURSOR datos IS 
+        SELECT nombre, apellidos, fecha_nacimiento FROM futbolistas 
+        WHERE TO_DATE(TO_CHAR(fecha_nacimiento, 'dd') || '/' || 
+        TO_CHAR(fecha_nacimiento, 'mm') || '/' || TO_CHAR(SYSDATE, 'YYYY'))
+        < SYSDATE;
+BEGIN
+    FOR fila IN datos
+        LOOP
+            edad := TO_CHAR(SYSDATE, 'yyyy') - TO_CHAR(fila.fecha_nacimiento, 'yyyy');
+            dbms_output.put_line(fila.nombre || ' ' || fila.apellidos || ' - ' || edad || ' años');
+        END LOOP;
+END;
+/
 
+/* ### EJERCICIO 3
+
+1. Crea una función llamada obtenerFutbolistasPorAnyo que reciba como parámetros
+dos años con cuatro dígitos (ej.: 2021 y 2019). Debes mostrar por la salida el 
+nombre del futbolista y el nombre del equipo en el que juega de aquellos 
+futbolistas nacidos entre esos dos años pasados por parámetro (ambos inclusives).
+NOTA: los años deben poder meterse con cualquier orden, da igual que el primero 
+sea mayor que el segundo, al revés, o que ambos sean iguales, debe funcionar 
+indistintamente. Se devolverá un número con el total de futbolistas mostrados. 
+Debe devolver 1 si lo hace correctamente, es decir, hay futbolistas, y -1 si no 
+los hay. */
+CREATE OR REPLACE FUNCTION obtenerFutbolistasPorAnyo(anyo1 INT, anyo2 INT) RETURN INT
+IS
+    vContador INT := 0;
+    CURSOR cDatos IS SELECT futbolistas.nombre AS nombreFut, equipos.nombre AS nombreEqui, fecha_nacimiento FROM futbolistas JOIN equipos ON equipos.id = futbolistas.id_equipo;
+BEGIN
+    FOR vFila IN cDatos
+        LOOP
+            IF anyo1 > anyo2 THEN
+                IF TO_NUMBER(TO_CHAR(vFila.fecha_nacimiento, 'yyyy')) BETWEEN anyo2 AND anyo1 THEN
+                    dbms_output.put_line(vFila.nombreFut || ' ' || vFila.nombreEqui);
+                    vContador := vContador + 1;
+                END IF;
+            ELSIF anyo1 < anyo2 THEN
+                IF TO_NUMBER(TO_CHAR(vFila.fecha_nacimiento, 'yyyy')) BETWEEN anyo1 AND anyo2 THEN
+                    dbms_output.put_line(vFila.nombreFut || ' ' || vFila.nombreEqui);
+                    vContador := vContador + 1;
+                END IF;
+            ELSE
+                IF TO_NUMBER(TO_CHAR(vFila.fecha_nacimiento, 'yyyy')) = anyo2 THEN
+                    dbms_output.put_line(vFila.nombreFut || ' ' || vFila.nombreEqui);
+                    vContador := vContador + 1;
+                END IF;
+            END IF;
+        END LOOP;
+        IF vContador = 0 THEN
+            RETURN -1;
+        ELSE
+            RETURN vContador;
+        END IF;
+END;
+/
+
+/* 2. Crea un programa que llame a obtenerFutbolistasPorAnyo con estos tres supuestos (respeta el orden de los parámetros):
+2.1. 1990 y 1985.
+2.2. 2000 y 2000.
+2.3. 2005 y 2007. */
+BEGIN
+    dbms_output.put_line(obtenerFutbolistasPorAnyo(1990, 1985));
+    dbms_output.put_line(obtenerFutbolistasPorAnyo(2000, 2000));
+    dbms_output.put_line(obtenerFutbolistasPorAnyo(2005, 2007));
+END;
+/
+
+
+/*
+                  .-.
+                 (   )
+                  '-'
+                  J L
+                  | |
+                 J   L
+                 |   |
+                J     L
+              .-'.___.'-.
+             /___________\
+        _.-""'           `bmw._
+      .'                       `.
+    J                            `.
+   F                               L
+  J                                 J
+ J                                  `
+ |                                   L
+ |                                   |
+ |                                   |
+ |                                   J
+ |                                    L
+ |                                    |
+ |             ,.___          ___....--._
+ |           ,'     `""""""""'           `-._
+ |          J           _____________________`-.
+ |         F         .-'   `-88888-'    `Y8888b.`.
+ |         |       .'         `P'         `88888b \
+ |         |      J       #     L      #    q8888b L
+ |         |      |             |           )8888D )
+ |         J      \             J           d8888P P
+ |          L      `.         .b.         ,88888P /
+ |           `.      `-.___,o88888o.___,o88888P'.'
+ |             `-.__________________________..-'
+ |                                    |
+ |         .-----.........____________J
+ |       .' |       |      |       |
+ |      J---|-----..|...___|_______|
+ |      |   |       |      |       |
+ |      Y---|-----..|...___|_______|
+ |       `. |       |      |       |
+ |         `'-------:....__|______.J
+ |                                  |
+  L___                              |
+      """----...______________....--'
+
+
+
+*/
+                    
+        
 
 
 
