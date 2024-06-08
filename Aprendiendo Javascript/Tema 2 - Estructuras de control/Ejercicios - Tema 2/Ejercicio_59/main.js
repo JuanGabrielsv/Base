@@ -19,10 +19,9 @@ cadena = prompt("Introduce un texto: ");
 cadena = cadena.toLowerCase().trim();
 
 for (let i = 0; i < cadena.length; i++) {
-
     if (cadena.substring(i, i + 1) === " ") {
-        //cadenaCamel += cadena.substring(i + 1, i + 2).toUpperCase();
-        
+        cadenaCamel += cadena.substring(i + 1, i + 2).toUpperCase();
+        i++;        
     } else {
         cadenaCamel += cadena.substring(i, i + 1);
     }
