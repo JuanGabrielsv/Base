@@ -16,3 +16,55 @@ Realiza un programa para que puedas jugar contra el ordenador a los chinos. La d
     6. Al terminar el juego se pregunte al usuario si quiere otra partida. En caso afirmativo, repetir.
        Cuando el usuario no quiera más partidas, mostrar el marcador final. 
 */
+
+let manoMaquina;
+let check = true;
+let apuestaJugador;
+let apuestaMaquina;
+let manoJugador;
+let contadorGanadas = 0;
+let contadorPerdidas = 0;
+let contadorEmpatadas = 0;
+let puntuacionMaquina = 0;
+let puntuacionJugador = 0;
+
+do {
+   apuestaJugador = prompt("¿Cuánto apuestas? 1, 2, 3, 4 o 5");
+   if (apuestaJugador > 0 && apuestaJugador < 6) {
+      apuestaMaquina = Math.floor(Math.random() * 5) + 1;
+      while (apuestaJugador == apuestaMaquina) {
+         apuestaMaquina = Math.floor(Math.random() * 5) + 1;
+      }
+      alert("Apuesta de la máquina: " + apuestaMaquina + "\nApuesta del jugador: " + apuestaJugador);
+      manoJugador = prompt("¿Cuántas chinas tienes en la mano?");
+      while (manoJugador > 3 || manoJugador < 0) {
+         alert("Has introducido una mentira, repite...");
+         manoJugador = prompt("¿Cuántas chinas tienes en la mano?");
+      }
+      manoMaquina = Math.floor(Math.random() * 4);
+      if (manoJugador > manoMaquina) {
+         contadorGanadas++;
+         puntuacionJugador += apuestaMaquina;
+         puntuacionMaquina = puntuacionMaquina - apuestaMaquina;
+         alert("HAS GANADO\n\nChinas de la máquina: " + manoMaquina + "\nChinas en tu mano: " + manoJugador);
+      } else if (manoJugador < manoMaquina) {
+         contadorPerdidas++;
+         puntuacionJugador = puntuacionJugador - apuestaJugador;
+         puntuacionMaquina += apuestaJugador;
+         alert("HAS PERDIDO\n\nChinas de la máquina: " + manoMaquina + "\nChinas en tu mano: " + manoJugador);
+      } else {
+         contadorEmpatadas++;
+         alert("EMPATE\n\nChinas de la máquina: " + manoMaquina + "\nChinas en tu mano: " + manoJugador);
+      }
+      check = confirm("¿Quieres jugar otra partida?");
+      if (check === false) {
+         alert("RESULTADO\n\nPartidas ganadas: " + contadorGanadas + "\nPartida empatadas: " + contadorEmpatadas + "\nPartidas perdidas: " 
+            + contadorPerdidas + "\n\nPuntuación máquina: " + puntuacionMaquina + "\nPuntuación Jugador: " + puntuacionJugador);
+      }
+   } else if (apuestaJugador === null) {
+      check = false;
+   }
+   else {
+      alert("Has introducido una opción no válida");
+   }
+} while (check);
