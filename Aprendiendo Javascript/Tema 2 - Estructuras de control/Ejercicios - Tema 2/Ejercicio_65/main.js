@@ -16,10 +16,32 @@ Turno de “Jugador”. Pulse ENTER para tirar el dado.
 - Si te pasas del 60 debes retroceder. Es decir, si estoy en el 58 y me toca un 5, debo ir a la
   posición 57 (59, 60, 59, 58 y 57).
 - Si a un jugador le toca en el dado un 6 repetirá turno.
-- Si un jugador cae en alguna casilla múltiplo de 5, podrá avanza (de oca a oca y tiro
+- Si un jugador cae en alguna casilla múltiplo de 5, podrá avanzar (de oca a oca y tiro
   porque me toca) a la siguiente casilla que sea múltiplo de 5. Cuando ocurra algo así, avisa al usuario de lo ocurrido.
 - Si caes en la casilla de la posición 19, pierdes un turno.
 - Si caes en la casilla de la posición 31, pierdes dos turnos.
 - Si caes en la casilla de la posición 56, pierdes tres turnos.
 Cuando ocurra algo así, debes avisar al usuario de lo ocurrido.
 */
+
+import { tirarDado } from "./funciones.js";
+
+let posicionJugador = 0;
+let posicionMaquina = 0;
+let numeroSacado = 0;
+let check = true;
+
+
+
+do {
+  alert("\nJugador: posicion " + posicionJugador + "\nMáquina: posicion " + posicionMaquina + "\n\nTurno del JUGADOR. Pulse ENTER para tirar el dado.");
+  numeroSacado = tirarDado();
+  if (numeroSacado === 6) {
+    posicionJugador += numeroSacado;
+    alert("HAS SACADO UN " + numeroSacado + "!!\n\nAvanzas a la posición: " + posicionJugador);
+    
+  }
+  
+  
+  check = false;
+} while (check);
