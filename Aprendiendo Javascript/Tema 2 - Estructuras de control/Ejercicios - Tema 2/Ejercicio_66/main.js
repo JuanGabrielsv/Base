@@ -87,7 +87,7 @@ while (numeroDeIntentos > 0) {
 if (acertado === true) {
   alert("Has acertado, GANAS LA PARTIDA");
 } else {
-  alert("Te quedastes sin intentos y no has acertado, eres un pringad@ bye!");
+  alert("Te quedastes sin intentos y no has acertado, eres un pringad@ bye!\n\nEl número era el: " + numeroRandom);
 }
 
 
