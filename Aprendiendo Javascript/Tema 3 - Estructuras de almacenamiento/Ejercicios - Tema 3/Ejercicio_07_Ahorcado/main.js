@@ -39,9 +39,7 @@ let arrayPalabraSecreta = [];
 let numeroRandom;
 let palabraElegida;
 let entradaUsuario;
-let letraSubstring;
-let intentos = 5;
-let check = true;
+let intentos = 10;
 let existe = false;
 let mensaje = 'Adivina la palabra: ';
 
@@ -53,15 +51,12 @@ arrayPalabraSecreta = Array.from(palabraElegida);
 const arrayPalabraAcertada = new Array(arrayPalabraSecreta.length);
 
 for (let i = 0; i < arrayPalabraAcertada.length; i++) {
-    arrayPalabraAcertada[i] = '_';    
+    arrayPalabraAcertada[i] = '_';
 }
 
-
-
 while (intentos > 0) {
-    
     existe = false;
-    entradaUsuario = prompt('Introduce un letra');
+    entradaUsuario = prompt(mensaje + arrayPalabraAcertada + '\nIntentos: ' + intentos + '\nIntroduce un letra: ');
 
     // VALIDACIÓN DE LETRA INTRODUCIDA
     if (entradaUsuario !== null && entradaUsuario !== '' && entradaUsuario.length === 1 && entradaUsuario != 0) {
@@ -70,7 +65,7 @@ while (intentos > 0) {
         alert('Datos incorrectos');
         continue;
     }
-    
+
     // COMPROBAMOS SI LA LETRA ESTÁ EN LA PALABRA
     if (!palabraElegida.includes(entradaUsuario)) {
         alert("La letra no está en la palabra");
@@ -80,7 +75,7 @@ while (intentos > 0) {
 
     // COMPROBAMOS SI LA LETRA YA SE HA DICHO
     for (let i = 0; i < arrayLetrasDelUsuario.length; i++) {
-        if (arrayLetrasDelUsuario[i] === entradaUsuario.toUpperCase()) {
+        if (arrayLetrasDelUsuario[i] === entradaUsuario) {
             existe = true;
             break;
         }
@@ -91,7 +86,7 @@ while (intentos > 0) {
     }
 
     // SE HA PASADO TODAS LAS VALIDACIONES, AÑADIMOS LA LETRA AL ARRAY DE LETRAS DICHAS
-    arrayLetrasDelUsuario.push(entradaUsuario.toUpperCase());
+    arrayLetrasDelUsuario.push(entradaUsuario);
 
     for (let i = 0; i < arrayPalabraSecreta.length; i++) {
         if (arrayPalabraSecreta[i] === entradaUsuario) {
@@ -99,10 +94,12 @@ while (intentos > 0) {
         }
     }
 
+    if (arrayPalabraSecreta.toString() === arrayPalabraAcertada.toString()) {
+        alert('Has acertado la palabra\n' + 'Palabra: ' + palabraElegida + '\n¡¡HAS GANADO!! ');
+        break;
+    }
+}
 
-
-
-
-    alert(arrayPalabraAcertada);
-
+if (intentos === 0) {
+    alert('No has acertado la palabra...\nPalabra: ' + palabraElegida + '\n¡¡HAS PERDIDO!!');
 }
