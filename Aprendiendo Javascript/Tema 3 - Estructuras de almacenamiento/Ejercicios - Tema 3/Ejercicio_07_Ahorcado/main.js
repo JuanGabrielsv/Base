@@ -29,53 +29,80 @@ estén descubiertas.
 
 /* 1. Crea un array que contenga estas 10 palabras:        
        (azulejo, tenedor, saltamontes, carretilla, molinero, sofisticado, terremoto, culinario, teclado, primavera). */
-const aPosiblesPalabras = ['azulejo', 'tenedor', 'saltamontes', 'carretilla', 'molinero', 'sofisticado', 'terremoto', 'culinario', 'teclado', 'primavera'];
+const arrayPosiblesPalabras = ['azulejo', 'tenedor', 'saltamontes', 'carretilla', 'molinero', 'sofisticado', 'terremoto', 'culinario', 'teclado', 'primavera'];
 
 /* 2. Al empezar el juego, la máquina debe elegir una palabra al azar del array. 
       Para ello, obtén un aleatorio entre 0 y 9. */
+const arrayLetrasDelUsuario = new Array();
+
+let arrayPalabraSecreta = [];
 let numeroRandom;
 let palabraElegida;
-let palabraAcertada = '';
 let entradaUsuario;
 let letraSubstring;
+let intentos = 5;
 let check = true;
+let existe = false;
 let mensaje = 'Adivina la palabra: ';
 
+/* ELEGIMOS LA PALABRA SECRETA POR NÚMERO RANDOM */
 numeroRandom = Math.floor(Math.random() * 10);
-palabraElegida = aPosiblesPalabras[numeroRandom];
+palabraElegida = arrayPosiblesPalabras[numeroRandom];
 
-for (let i = 0; i < palabraElegida.length; i++) {
-    if (i === palabraElegida.length - 1) {
-        palabraAcertada += '_';
-    } else {
-        palabraAcertada += '_ '
-    }
+arrayPalabraSecreta = Array.from(palabraElegida);
+const arrayPalabraAcertada = new Array(arrayPalabraSecreta.length);
+
+for (let i = 0; i < arrayPalabraAcertada.length; i++) {
+    arrayPalabraAcertada[i] = '_';    
 }
-console.log(mensaje + palabraAcertada);
 
 
-do {
-    entradaUsuario = prompt("Introduce una vocal o consonante: ").toLowerCase();
+
+while (intentos > 0) {
     
-    if (palabraAcertada.includes(entradaUsuario)) {
+    existe = false;
+    entradaUsuario = prompt('Introduce un letra');
+
+    // VALIDACIÓN DE LETRA INTRODUCIDA
+    if (entradaUsuario !== null && entradaUsuario !== '' && entradaUsuario.length === 1 && entradaUsuario != 0) {
+        entradaUsuario = entradaUsuario.toLowerCase().trim();
+    } else {
+        alert('Datos incorrectos');
+        continue;
+    }
+    
+    // COMPROBAMOS SI LA LETRA ESTÁ EN LA PALABRA
+    if (!palabraElegida.includes(entradaUsuario)) {
+        alert("La letra no está en la palabra");
+        intentos--;
+        continue;
+    }
+
+    // COMPROBAMOS SI LA LETRA YA SE HA DICHO
+    for (let i = 0; i < arrayLetrasDelUsuario.length; i++) {
+        if (arrayLetrasDelUsuario[i] === entradaUsuario.toUpperCase()) {
+            existe = true;
+            break;
+        }
+    }
+    if (existe) {
         alert("Ya has dicho esa letra");
         continue;
-    } else if (!palabraElegida.includes(entradaUsuario)) {
-        alert("Esa letra no está en la plabra");
-        continue;
     }
 
-    for (let i = 0; i < palabraElegida.length; i++) {
-        
-        letraSubstring = palabraElegida.substring(i, i + 1);
-        
-        if (letraSubstring === entradaUsuario) {
-            
+    // SE HA PASADO TODAS LAS VALIDACIONES, AÑADIMOS LA LETRA AL ARRAY DE LETRAS DICHAS
+    arrayLetrasDelUsuario.push(entradaUsuario.toUpperCase());
+
+    for (let i = 0; i < arrayPalabraSecreta.length; i++) {
+        if (arrayPalabraSecreta[i] === entradaUsuario) {
+            arrayPalabraAcertada[i] = (arrayPalabraSecreta[i]);
         }
-        
-            
-        
     }
-    console.log(mensaje + palabraAcertada);
-    
-} while (check);
+
+
+
+
+
+    alert(arrayPalabraAcertada);
+
+}
