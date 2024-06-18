@@ -1,0 +1,7 @@
+/*
+
+*/
+
+
+
+document.documentElement('Hola mundo');
