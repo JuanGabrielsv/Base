@@ -1,17 +1,21 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #1c1e26;
+    background-color: #171717;
 }
 
-#ejercicios {
-    background-color: lightseagreen;
+#seccion1 {
+    background-color: #18181b;
     width: 35em;
     height: 35em;
-    border-radius: 1%;
-    padding: 2em;
+    border-radius: 0.75em;
+    padding: 2em;    
+    border: solid 1px #27272a;
+    margin: 1em 0 0 1em;
 }
 
 p {

@@ -1,11 +1,5 @@
-/*
-
-*/
-
 const arrayNumeros = [10, 25, 15, 8, 6];
 
-let cacatuaElemento = document.getElementById('ejercicios');
+let seccion1 = document.getElementById('seccion1');
 
-
-
-cacatuaElemento.innerHTML = '<p>Hola Mundo !</p>' + '<H1>' + arrayNumeros + '</H1>';
+seccion1.innerHTML = '<p>Hola Mundo !</p>' + '<H1>' + arrayNumeros + '</H1>';
