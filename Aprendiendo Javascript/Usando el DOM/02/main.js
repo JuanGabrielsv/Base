@@ -1,5 +1,6 @@
 let primerNumero = 'no recogido';
 let segundoNumero = 'no recogido';
+let salida = document.getElementById('salida');
 let primerPasoOk = false;
 let check = true;
 
@@ -39,9 +40,15 @@ function nose() {
             segundoNumero = 'no recogido';
             return document.getElementById('salida').innerHTML = 'El número no puede ser 0 <br><br> Introduce el segundo número';
         }
-    } 
+    }
+}
 
-    
+function sise() {
+
+    salida.innerHTML = 'Introduce el primer número';
+    primerNumero = 'no recogido';
+    segundoNumero = 'no recogido';
+
 }
 
 
