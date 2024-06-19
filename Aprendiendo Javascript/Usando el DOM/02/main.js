@@ -33,11 +33,11 @@ function nose() {
 
         } else if (isNaN(segundoNumero)) {
             segundoNumero = 'no recogido';
-            return document.getElementById('salida').innerHTML = 'El número no puede ser una letra <br><br> Introduce el primer número';
+            return document.getElementById('salida').innerHTML = 'El número no puede ser una letra <br><br> Introduce el segundo número';
 
         } else if (segundoNumero === 0) {
             segundoNumero = 'no recogido';
-            return document.getElementById('salida').innerHTML = 'El número no puede ser 0 <br><br> Introduce el primer número';
+            return document.getElementById('salida').innerHTML = 'El número no puede ser 0 <br><br> Introduce el segundo número';
         }
     } 
 
