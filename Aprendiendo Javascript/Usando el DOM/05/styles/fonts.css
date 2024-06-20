@@ -1,9 +1,6 @@
 @font-face {
-  font-family: 'OpenSansRegular';
-  src: url(../fonts/OpenSans/static/OpenSans-Regular.ttf);   
+  font-family: 'Open Sans';
+  src: url(../fonts/OpenSans/static/OpenSans-Regular.ttf);
+  font-weight: 300 800;
 }
 
-@font-face {
-  font-family: 'OpenSansBold';
-  src: url(../fonts/OpenSans/static/OpenSans-Bold.ttf);
-}
