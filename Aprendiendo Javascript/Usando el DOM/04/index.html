@@ -5,38 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios DOM</title>
-    <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <script defer src="main.js"></script>
 
 </head>
 
-<body class="bodyStyle">
-    <form class="formStyle">
-        <h2 class="iniciarSesion">Iniciar sesión</h2>
-        <div class="buttons">
-            <a class="aFacebook" href="#" target="_blank" rel="noopener noreferrer">
-                <figure>
-                    <img class="logoFacebook" src="./img/logos/facebook.svg" alt="logotipo de facebook">
-                </figure>
-                <p class="aFacebook-p">Facebook</p>
-            </a>
-            <a class="aGoogle" href="#" target="_blank" rel="noopener noreferrer">
-                <figure>
-                    <img class="logoGoogle" src="https://colorlib.com/etc/lf/Login_v5/images/icons/icon-google.png"
-                        alt="logotipo de google">
-                </figure>
-                <p class="aGoogle-p">Google</p>
-            </a>
+<body class="fullTamano colorFondo03 flexColumn justifyContentCenter marginTop30">
+    <section class="flexColumn borderRadius10">
+        <div class="fullTamano borderRadius10 size300 padding16 borderSolid1emWhite colorFondo04">Hola</div>
+        <input class="colorFondo03 borderSolid1emWhite borderRadius10 heigth50 padding16 marginTop10" type="text" name="input" id="input">
+        <div class="flexRow marginTop10">
+            <button class="colorFondo02 borderRadius10 heigth50 widthFull borderNone fontSize16 marginRight10" type="submit">Enviar</button>
+            <button class="colorFondo01 borderRadius10 heigth50 widthFull borderNone fontSize16" type="submit">Reiniciar</button>
         </div>
-        <label class="labelNombreUsuario" for="username">Nombre de usuario</label>
-        <input class="inputUserName" type="text" name="username" id="username">
-        <label class="labelContraseña" for="password">Contraseña</label>
-        <input class="inputContraseña" type="password" name="password" id="contraseña">
-        <button class="botonLogin" type="submit" name="">Entrar</button>
-        
-        
-    </form>
+
+    </section>
+   
 </body>
 
 </html>
