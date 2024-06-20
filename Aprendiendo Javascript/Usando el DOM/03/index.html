@@ -11,12 +11,32 @@
 
 </head>
 
-<body class="body-style">
-    <main class="main-style">
-        <h2>Iniciar sesión</h2>
-        <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="aGoogle"><figure><img src="https://colorlib.com/etc/lf/Login_v5/images/icons/icon-google.png" alt=""></figure>Google</a>
-    </main>
+<body class="bodyStyle">
+    <form class="formStyle">
+        <h2 class="iniciarSesion">Iniciar sesión</h2>
+        <div class="buttons">
+            <a class="aFacebook" href="#" target="_blank" rel="noopener noreferrer">
+                <figure>
+                    <img class="logoFacebook" src="./img/logos/facebook.svg" alt="logotipo de facebook">
+                </figure>
+                <p class="aFacebook-p">Facebook</p>
+            </a>
+            <a class="aGoogle" href="#" target="_blank" rel="noopener noreferrer">
+                <figure>
+                    <img class="logoGoogle" src="https://colorlib.com/etc/lf/Login_v5/images/icons/icon-google.png"
+                        alt="logotipo de google">
+                </figure>
+                <p class="aGoogle-p">Google</p>
+            </a>
+        </div>
+        <label class="labelNombreUsuario" for="username">Nombre de usuario</label>
+        <input class="inputUserName" type="text" name="username" id="username">
+        <label class="labelContraseña" for="password">Contraseña</label>
+        <input class="inputContraseña" type="password" name="password" id="contraseña">
+        <button class="botonLogin" type="submit" name="">Entrar</button>
+        
+        
+    </form>
 </body>
 
 </html>

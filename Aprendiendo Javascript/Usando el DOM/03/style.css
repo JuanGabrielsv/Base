@@ -3,13 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     color: #fff;
+    font-family: 'Open Sans';
 }
 
 a {
     text-decoration: none;
 }
 
-.body-style {
+.bodyStyle {
     background-color: #0E2F44;
     display: flex;
     flex-direction: row;
@@ -20,13 +21,100 @@ a {
     height: 100%;
 }
 
-.main-style {
+.formStyle {
+    display: flex;
+    flex-direction: column;
     background-color: #0E2F44;
     border: 0.1em solid white;
     border-radius: 0.65em;
+    border-color: #e2e2e2;
+    padding: 1em;
+
+}
+
+.formStyle label {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 0 0.25em 0;
+
+}
+
+.formStyle input {
+    background-color: #0e2f44;
+    border: solid 0.1em white;
+    border-radius: 10px;
+    height: 50px;
+    margin: 0 0 1em 0;
+}
+
+.iniciarSesion {
+    padding: 0 0 1em 0;
+    text-align: center;
+}
+
+.aFacebook {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans';
+    font-style: normal;
+    width: 200px;
+    height: 70px;
+    background-color: #315a95;
+    border-radius: 0.65em;
+}
+
+.aFacebook-p {
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 0 0.45em;
+}
+
+.logoFacebook {
+    width: 40px;
 }
 
 .aGoogle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     font-family: 'Open Sans';
     font-style: normal;
+    width: 200px;
+    height: 70px;
+    background-color: #ffffff;
+    border-radius: 0.65em;
+    margin: 0 0 0 1em;
+}
+
+.aGoogle-p {
+    color: #545a60;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 0 0.5em;
+}
+
+.logoGoogle {
+    width: 29px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 1.5em 0;
+}
+
+.buttons figure {
+    display: flex;
+}
+
+.botonLogin {
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff0000;
 }
