@@ -1,0 +1,13 @@
+Tenemos una lista con todas las notas de la clase. Lo tenemos en este array. Parte de él para 
+hacer los siguientes ejercicios (copia la declaración del array tal cual está en tu código al principio 
+de cada ejercicio):
+
+const arrayNotas = [7, 9, 8, 4, 0, 6, 3, 4, 1, 7, 3, 1, 9, 10];
+
+EJERCICIO 06
+
+1. Los alumnos que estén suspensos los vamos a aprobar.
+2. Todas las notas que sean menores a 5, pasarán a ser un 5. 
+3. Imprime la lista. 
+
+El resultado tendría que ser: "Lista notas: 7 9 8 5 5 6 5 5 5 7 5 5 9 10"
