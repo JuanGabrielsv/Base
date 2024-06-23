@@ -14,12 +14,25 @@
     <script src="./js/main.js"></script>
 </head>
 
-<body>
-    <div class="paletaColores">
-        <div class="color1"></div>
-        <div class="color2"></div>
-        <div class="color3"></div>
-        <div class="color4"></div>
+<body class="body">
+
+    <div class="enunciado">
+        <h2 class="enunciado-h2">EJERCICIO 06</h2>
+        <hr class="enunciado-hr">
+        <ol class="enunciado-ol">
+            <li>Los alumnos que estén suspensos los vamos a aprobar.</li>
+            <li>Todas las notas que sean menores a 5, pasarán a ser un 5.</li>
+            <li>Imprime la lista.</li>
+        </ol>
+        <p class="enunciado-p">El resultado tendría que ser: "Lista notas: 7 9 8 5 5 6 5 5 5 7 5 5 9 10".</p>
     </div>
 
+    <div id="pantalla" class="pantalla">Hola esto es una prueba</div>
+    <div class="botones">
+        <button id="enviar" class="botones-enviar" type="submit" onclick="iniciarPrograma()">Enviar</button>
+        <button class="botones-reiniciar" type="reset" onclick="reiniciar()">Reiniciar</button>
+    </div>
+    <button class="botonModo" type="button" onclick="cambiarModo()">Cambiar</button>
+
 </body>
+</html>
