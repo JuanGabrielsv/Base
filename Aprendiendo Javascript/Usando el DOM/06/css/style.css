@@ -89,13 +89,31 @@ body {
 
 .dark-mode {
     background-color: #090110;
-    color: #090110;
+
     .enunciado {
-        background-color: #6f653d;
+        border-color: #3d3e32;
+
     }
+
     .pantalla {
-        border:0.3rem solid #3d3e32;
+        border: 0.3rem solid #6f653d;
         background-color: #090110;
         color: #6f653d;
+    }
+
+    .botones-enviar,
+    .botones-reiniciar,
+    .botonModo {
+        color: #6f653d;
+        background-color: #090110;
+        border: 0.2rem solid #6f653d;
+    }
+
+    .botones-enviar:hover,
+    .botones-reiniciar:hover,
+    .botonModo:hover {
+        background-color: #6f653d;
+        color: #090110;
+        border-color: #1a1e25;
     }
 }
