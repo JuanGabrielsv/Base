@@ -18,6 +18,6 @@ public class palindromo {
 			
 		}
 		
-		return name;
+		return name;d
 	}
 }
