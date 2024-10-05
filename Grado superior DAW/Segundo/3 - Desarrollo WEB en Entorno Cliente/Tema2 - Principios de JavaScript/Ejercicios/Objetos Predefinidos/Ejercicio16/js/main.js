@@ -20,8 +20,10 @@ document.body.style.backgroundColor=’xxx’;
       NOTA3: Para que una ventana se muestre por encima de otra, hay que poner el foco en dicha ventana: 
 ventana.focus() */
 
+let vSegundaVentana;
+
 function botonUno() {
-    let vSegundaVentana = window.open(
+    vSegundaVentana = window.open(
         "segunda.html",
         "Segunda",
         "width=300, height=400, top=400, left=400 toolbar=0, location=0, resizable=0, status=0, menubar=0, scrollbars=0");
@@ -30,7 +32,7 @@ function botonUno() {
     vSegundaVentana.moveTo(400, 400) //Esto es para que vuando se vuelva a pulsar el botón recupere su posición si este cambió anteriormente.
 }
 function botonDos() {
-    let vSegundaVentana = window.open(
+    vSegundaVentana = window.open(
         "segunda.html",
         "Segunda",
         "width=300, height=400, top=400, left=400, toolbar=0, location=0, resizable=0, status=0, menubar=0, scrollbars=0");
@@ -38,7 +40,7 @@ function botonDos() {
     vSegundaVentana.moveBy(200, 100);
 }
 function botonTres() {
-    let vSegundaVentana = window.open(
+    vSegundaVentana = window.open(
         "segunda.html",
         "Segunda",
         "width=300, height=400, top=400, left=400, toolbar=0, location=0, resizable=0, status=0, menubar=0, scrollbars=0");
@@ -46,7 +48,7 @@ function botonTres() {
     vSegundaVentana.moveTo(500, 200);
 }
 function botonCuatro() {
-    let vSegundaVentana = window.open(
+    vSegundaVentana = window.open(
         "segunda.html",
         "Segunda",
         "width=300, height=400, top=400, left=400, toolbar=0, location=0, resizable=0, status=0, menubar=0, scrollbars=0");
@@ -54,7 +56,7 @@ function botonCuatro() {
     vSegundaVentana.resizeBy(100, 100);
 }
 function botonCinco() {
-    let vSegundaVentana = window.open(
+    vSegundaVentana = window.open(
         "segunda.html",
         "Segunda",
         "width=300, height=400, top=400, left=400, toolbar=0, location=0, resizable=0, status=0, menubar=0, scrollbars=0");
@@ -75,3 +77,12 @@ function segundaBotonDos() {
 }
 
 //Botón 3. Cerrar la ventana segunda.html.
+function segundaBotonTres() {
+    window.close();
+}
+
+//▪Botón 4: cerrará la ventana secundaria y a continuación la ventana principal.
+function segundaBotonCuatro() {
+    window.close();
+    window.opener.close();
+}
