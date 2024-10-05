@@ -9,6 +9,7 @@ let nuevaVentana;
 
 if (eleccionUsuario === true) {
     nuevaVentana = window.open("", "Prueba", caracteristicas);
+    nuevaVentana.document.write(`<p>Entorno cliente</p>`);
 }
 console.log(eleccionUsuario);
 
