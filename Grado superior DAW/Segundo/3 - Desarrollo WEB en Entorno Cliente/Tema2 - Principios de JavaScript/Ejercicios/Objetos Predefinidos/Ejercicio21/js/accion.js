@@ -35,3 +35,57 @@ function botonDos() {
     ventanaUno.close();
     ventanaDos.close();
 }
+
+//3.Botón para cambiar el fondo de la primera ventana a: #FFECA1.
+
+function botonTres() {
+    ventanaUno.focus();
+    ventanaDos.focus();
+    ventanaUno = window.open("", "ventana1", "");
+    ventanaDos = window.open("", "ventana2", "");
+    ventanaUno.document.body.style.background = "#FFECA1";
+}
+
+//4.Botón para cambiar el fondo de la segunda ventana a: #EFC3CA.
+
+function botonCuatro() {
+    ventanaUno.focus();
+    ventanaDos.focus();
+    ventanaUno = window.open("", "ventana1", "");
+    ventanaDos = window.open("", "ventana2", "");
+    ventanaDos.document.body.style.background = "#EFC3CA";
+}
+
+//ventana1.html tiene dos botones:
+//5.Botón para enviar a la ventana2 el mensaje: “La ventana 1 te saluda”.
+
+function botonCinco() {
+    ventanaUno = window.open("", "ventana1", "");
+    ventanaDos = window.open("", "ventana2", "");
+    ventanaDos.document.body.innerHTML += (`<p>La ventana1 te saluda</p>`);
+}
+
+//6.Botón para cambiar el fondo de la segunda ventana a: #7DDA58
+
+function botonSeis() {
+    ventanaUno = window.open("", "ventana1", "");
+    ventanaDos = window.open("", "ventana2", "");
+    ventanaDos.document.body.style.backgroundColor = "#7DDA58";
+}
+
+//ventana2.html tiene dos botones:
+//7.Botón para enviar a la ventana1 el mensaje: “La ventana 2 te saluda”.
+
+function botonSiete() {
+    ventanaUno = window.open("", "ventana1", "");
+    ventanaDos = window.open("", "ventana2", "");
+    ventanaUno.document.body.innerHTML += (`<p>La ventana2 te saluda</p>`);
+}
+
+//8.Botón para cambiar el fondo de la segunda ventana a: #5DE2E7 */
+
+function botonOcho() {
+    ventanaUno = window.open("", "ventana1", "");
+    ventanaDos = window.open("", "ventana2", "");
+    ventanaDos.document.body.style.backgroundColor = "#5DE2E7";
+}
