@@ -5,5 +5,6 @@ const cDireccionGoogle = "https://www.google.com";
 document.write(`Nos vamos!`);
 
 let vTemporizador = setTimeout(function () {
-    document.location.href = cDireccionGoogle;
+    window.open(cDireccionGoogle);
+    window.location.href = cDireccionGoogle;
 }, 5000);

@@ -17,21 +17,18 @@ NOTA2: Usar funciones dentro de los temporizadores.
 */
 
 //1. Mostrar el mensaje ‘En un lugar de la Mancha’ por consola cada 2 segundos.
-
 let vTemporizadorUno = setInterval(function () {
     console.log("En un lugar de la Mancha\n");
 }, 2000);
 
 /*2. Usar un botón en la página  para parar el temporizador anterior:
      <input type="button" onclick="para()" > */
-
 function para() {
     clearInterval(vTemporizadorUno);
 }
 
 /*3. Usar otro botón en la página para mostrar por consola el  mensaje ‘Han pasado 3 segundos’ después de
      3 segundos, una sóla vez. */
-
 function haPasado() {
     setTimeout(function () {
         console.log("Han pasado 3 segundos")
@@ -41,7 +38,6 @@ function haPasado() {
 /*4. Usar otro botón para abrir una ventana nueva de 300x300 y escribir  un texto con <p> en su interior
      desde js. Esta ventana nueva debe mostrar la hora actual en formato HH:MM:SS. Se tiene que
      actualizar continuamente como un reloj. */
-
 function nuevaVentana() {
     let vNuevaVentana = window.open("", "nuevaVentana", "width=300, height=300");
     vNuevaVentana.document.body.innerHTML = `<p>${new Date().toLocaleTimeString()}</p>`
@@ -52,13 +48,11 @@ function nuevaVentana() {
     }, 1000);
 
     //5. Parar el reloj a los 5 segundos.
-
     let vTemporizadorTres = setTimeout(function () {
         clearInterval(vTemporizadorDos);
     }, 5000);
 
     //6. Cerrarla tras 10 segundos.
-
     let vTemporizadorCuatro = setTimeout(function () {
         vNuevaVentana.close();
     }, 10000);
