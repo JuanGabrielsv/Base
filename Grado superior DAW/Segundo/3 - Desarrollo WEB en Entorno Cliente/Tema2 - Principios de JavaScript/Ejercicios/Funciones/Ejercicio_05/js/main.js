@@ -17,21 +17,65 @@ let numFilas;
 let colorBorde;
 let bordeEntreCadaCelda = "1px";
 let bordeExterior = "3px";
+let contadorTablas = 0;
+
 let dibujarTabla = (numFilas = 10, numColumnas = 4, colorBorde = "black") => {
 
-    document.body.innerHTML = `<table id="tablita" style = "border: ${colorBorde} 3px solid; width:100%;"></table>`;
-    document.getElementById("tablita").innerHTML = `<tbody id="bodisito"></tbody>`;
+    contadorTablas++;
+
+    document.body.innerHTML += `<table id="tablita${contadorTablas}" style = "border: ${colorBorde} 3px solid; width:100%;"></table>`;
+    document.getElementById(`tablita${contadorTablas}`).innerHTML += `<tbody id="bodisito${contadorTablas}"></tbody>`;
 
     for (let i = 0; i < numFilas; i++) {
-        document.getElementById("bodisito").innerHTML += `<tr id="filita${i}"></tr>`;
+        document.getElementById(`bodisito${contadorTablas}`).innerHTML += `<tr id="filita${contadorTablas}${i}"></tr>`;
         for (let j = 0; j < numColumnas; j++) {
-            document.getElementById(`filita${i}`).innerHTML += `<td style = "border: black 1px solid; height:10px;"></td>`;
+            document.getElementById(`filita${contadorTablas}${i}`).innerHTML += `<td style = "border: black 1px solid; height:10px;"></td>`;
         }
     }
 }
 
-dibujarTabla(18, 4, "black");
-dibujarTabla(14, 4, "black");
+dibujarTabla(10, 4, "black");
+document.body.innerHTML += `<br>`;
+
+dibujarTabla(20, 10);
+document.body.innerHTML += `<br>`;
+
+dibujarTabla(5, 4, "green");
+document.body.innerHTML += `<br>`;
+
+dibujarTabla(5, 4, "green");
+document.body.innerHTML += `<br>`;
+
+dibujarTabla(5, 4, "green");
+document.body.innerHTML += `<br>`;
+
+dibujarTabla(5, 4, "green");
+document.body.innerHTML += `<br>`;
+
+dibujarTabla(5, 4, "green");
+document.body.innerHTML += `<br>`;
+
+dibujarTabla(5, 4, "green");
+document.body.innerHTML += `<br>`;
+
+dibujarTabla(5, 4, "green");
+document.body.innerHTML += `<br>`;
+
+dibujarTabla(5, 4, "green");
+document.body.innerHTML += `<br>`;
+
+dibujarTabla(5, 4, "green");
+document.body.innerHTML += `<br>`;
+
+dibujarTabla(5, 4, "green");
+document.body.innerHTML += `<br>`;
+
+
+
+
+
+
+console.log(contadorTablas);
 
 
 
