@@ -38,9 +38,9 @@ nav {
   width: 4rem;
 }
 
-#primeraSeccion #{
-    width: 4rem;
-  }
+#primeraSeccion {
+  width: 100%;
+}
 
 #primeraSeccion p {
   font-size: 4rem;
