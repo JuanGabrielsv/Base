@@ -2,23 +2,23 @@ package com.example.demo.modelo;
 
 public class Cliente {
 	
-	private Integer id;
+	private String id;
 	private String nombre;
 	private String username;
 	private String password;	
 	
-	public Cliente(Integer id, String nombre, String username, String password) {
+	public Cliente(String id, String nombre, String username, String password) {
 		this.id = id;
 		this.nombre = nombre;
 		this.username = username;
 		this.password = password;
 	}
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
