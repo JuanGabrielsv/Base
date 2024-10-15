@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.modelo.Cliente;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 public class ClienteController {
@@ -27,12 +30,12 @@ public class ClienteController {
 
 	}
 	
-	@GetMapping("/clientes")
+	@GetMapping("clientes")
 	public List<Cliente> listaClientes(){
 		return clientes;
 	}
 
-	@GetMapping("/clientes/{username}")
+	@GetMapping("clientes/{username}")
 	public ResponseEntity<Cliente> saberCliente(@PathVariable String username) {
 
 		for (Cliente cliente : clientes) {
@@ -44,4 +47,11 @@ public class ClienteController {
 		return ResponseEntity.notFound().build();
 
 	}
+	
+	@PostMapping("clientes")
+	public Cliente introducirCliente(@RequestBody Cliente cliente) {		
+		clientes.add(cliente);		
+		return cliente;
+	}
+	
 }
