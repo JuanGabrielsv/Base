@@ -1,25 +1,19 @@
 * {
   padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+  margin: 0;   
 }
 
 header {
   background-color: black;
   display: flex;
-  align-items: center;
   justify-content: end;
-  height: 8vh;
+  height: 5em;
   border-bottom: solid rgb(219, 219, 219) 0.35rem;
 }
 
-nav {
-  margin: 0 1rem 0 0;
-}
-
-#iconoMenu {
-  width: 38px;
-  height: 38px;
+header img {
+  margin: 0 1.5em 0 0;
+  width: 2em;
 }
 
 #primeraSeccion {
@@ -27,27 +21,39 @@ nav {
   padding: 2rem;
 }
 
-#primeraSeccion div {
-  display: flex;
-  align-items: end;
-  width: 30vw;
-  padding: 3rem;
-}
-
-#primeraSeccion img {
-  width: 4rem;
-}
-
-#primeraSeccion {
-  width: 100%;
-}
-
 #primeraSeccion p {
-  font-size: 4rem;
-  width: 70vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 75%;
+  font-size: 3.25rem;  
   font-weight: bold;
   padding: 3rem;
 }
+
+.iconos {
+  display: flex;
+  align-items: end;
+  padding: 2rem;
+  width: 25%;   
+}
+
+.iconos img {
+  width: 3.5em;  
+}
+
+.iconos :last-child {  
+  margin-left: auto;  
+}
+
+
+
+
+
+
+
+
+
+
+
 
 #seccionParrafos {
   display: flex;
