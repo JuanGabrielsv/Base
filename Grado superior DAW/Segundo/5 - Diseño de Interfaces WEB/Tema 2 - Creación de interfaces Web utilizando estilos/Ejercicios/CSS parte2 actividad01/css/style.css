@@ -13,7 +13,7 @@
   width: 75%;
 }
 .width95 {
-    width: 93%;
+  width: 93%;
 }
 .hidden {
   overflow: hidden;
@@ -40,21 +40,19 @@
   font-size: 34px;
 }
 .margin {
-    margin: 1em 4.5em 1em 4.5em;
+  margin: 1em 4.5em 1em 4.5em;
 }
 
 .margincentrado {
-    margin: 0 auto 0 auto;
+  margin: 0 auto 0 auto;
 }
 
 .padding {
-    padding:1em;
+  padding: 1em;
 }
 .aligncenter {
-    align-content: center;
+  align-content: center;
 }
-
-
 
 @media (max-width: 375px) {
 }
