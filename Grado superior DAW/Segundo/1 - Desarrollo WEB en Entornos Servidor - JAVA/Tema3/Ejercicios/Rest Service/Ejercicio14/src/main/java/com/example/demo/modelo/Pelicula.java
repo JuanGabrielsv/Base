@@ -12,12 +12,14 @@ public class Pelicula {
 	private Integer duracion;
 	private List<Actor> listaActores;
 
-	public Pelicula(String id, String titulo, String director, LocalDate fechaLanzamiento, Integer duracion) {
+	public Pelicula(String id, String titulo, String director, LocalDate fechaLanzamiento, Integer duracion,
+			List<Actor> listaActores) {
 		this.id = id;
 		this.titulo = titulo;
 		this.director = director;
 		this.fechaLanzamiento = fechaLanzamiento;
 		this.duracion = duracion;
+		this.listaActores = listaActores;
 	}
 
 	public String getId() {
@@ -60,6 +62,12 @@ public class Pelicula {
 		this.duracion = duracion;
 	}
 
-	
+	public List<Actor> getListaActores() {
+		return listaActores;
+	}
+
+	public void setListaActores(List<Actor> listaActores) {
+		this.listaActores = listaActores;
+	}
 
 }
