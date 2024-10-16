@@ -1,5 +1,60 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
+.width100 {
+  width: 100%;
+}
+.width25 {
+  width: 25%;
+}
+.width75 {
+  width: 75%;
+}
+.width95 {
+    width: 93%;
+}
+.hidden {
+  overflow: hidden;
+}
+.cover {
+  object-fit: contain;
+}
+.flex {
+  display: flex;
+}
+.fontsegoe {
+  font-family: "segoe UI";
+}
+.lineheight20 {
+  line-height: 20px;
+}
+.lineheight40 {
+  line-height: 40px;
+}
+.fontsize15 {
+  font-size: 15px;
+}
+.fontsize34 {
+  font-size: 34px;
+}
+.margin {
+    margin: 1em 4.5em 1em 4.5em;
+}
+
+.margincentrado {
+    margin: 0 auto 0 auto;
+}
+
+.padding {
+    padding:1em;
+}
+.aligncenter {
+    align-content: center;
+}
+
+
+
+@media (max-width: 375px) {
+}
