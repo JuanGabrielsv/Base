@@ -53,6 +53,23 @@
 .aligncenter {
   align-content: center;
 }
+.negrita {
+  font-weight: bold;
+}
+
+.grishr {
+  border: 0;  
+  height: 1px;
+  background-color: #dbdbdb;
+}
+
+.azulchill {
+  color: rgb(0, 162, 255);
+}
 
 @media (max-width: 375px) {
+
+  .ocultar {
+    display: none;
+  }
 }
