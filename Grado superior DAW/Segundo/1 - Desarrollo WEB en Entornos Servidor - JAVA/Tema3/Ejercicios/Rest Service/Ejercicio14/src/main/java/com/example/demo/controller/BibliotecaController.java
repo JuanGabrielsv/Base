@@ -2,10 +2,14 @@
 package com.example.demo.controller;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.example.demo.modelo.Pelicula;
 
 public class BibliotecaController {
+	
+	List<Pelicula> listaPeliculas = new ArrayList<>();
 	
 	public BibliotecaController() {		
 		
@@ -14,6 +18,12 @@ public class BibliotecaController {
 		Pelicula pelicula3 = new Pelicula( "3", "Hola Caracola", "Steven Spielberg", LocalDate.of(1988, 8, 1), 110);
 		Pelicula pelicula4 = new Pelicula( "4", "Que hace rayos lase", "Steven Spielberg", LocalDate.of(1988, 1, 25), 60);
 		Pelicula pelicula5 = new Pelicula( "5", "E.T2", "Steven Spielberg", LocalDate.of(1988, 3, 29), 120);
+		
+		listaPeliculas.add(pelicula1);
+		listaPeliculas.add(pelicula2);
+		listaPeliculas.add(pelicula3);
+		listaPeliculas.add(pelicula4);
+		listaPeliculas.add(pelicula5);
 		
 	}
 	

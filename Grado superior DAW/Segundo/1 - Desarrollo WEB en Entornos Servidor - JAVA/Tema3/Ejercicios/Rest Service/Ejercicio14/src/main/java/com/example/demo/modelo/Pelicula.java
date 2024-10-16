@@ -2,6 +2,7 @@
 package com.example.demo.modelo;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Pelicula {
 	private String id;
@@ -9,6 +10,7 @@ public class Pelicula {
 	private String director;
 	private LocalDate fechaLanzamiento;
 	private Integer duracion;
+	private List<Actor> listaActores;
 
 	public Pelicula(String id, String titulo, String director, LocalDate fechaLanzamiento, Integer duracion) {
 		this.id = id;
