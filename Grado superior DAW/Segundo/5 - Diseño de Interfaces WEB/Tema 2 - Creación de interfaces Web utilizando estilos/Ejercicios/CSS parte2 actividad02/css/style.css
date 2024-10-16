@@ -22,7 +22,7 @@ header img {
 }
 
 #primeraSeccion p {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 75%;
   font-size: 3.25rem;  
   font-weight: bold;
@@ -43,17 +43,6 @@ header img {
 .iconos :last-child {  
   margin-left: auto;  
 }
-
-
-
-
-
-
-
-
-
-
-
 
 #seccionParrafos {
   display: flex;
@@ -114,4 +103,8 @@ footer div {
 
 #footer-div-4 img {
   width: 2rem;
+}
+
+#seccionParrafos {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
