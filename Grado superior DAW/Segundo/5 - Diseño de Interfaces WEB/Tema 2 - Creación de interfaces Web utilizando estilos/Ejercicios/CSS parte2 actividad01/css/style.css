@@ -6,39 +6,51 @@
 .width100 {
   width: 100%;
 }
+
 .width25 {
   width: 25%;
 }
+
 .width75 {
   width: 75%;
 }
+
 .width95 {
   width: 93%;
 }
+
 .hidden {
   overflow: hidden;
 }
+
 .cover {
   object-fit: contain;
 }
+
 .flex {
   display: flex;
 }
+
 .fontsegoe {
   font-family: "segoe UI";
 }
+
 .lineheight20 {
   line-height: 20px;
 }
+
 .lineheight40 {
   line-height: 40px;
 }
+
 .fontsize15 {
   font-size: 15px;
 }
+
 .fontsize34 {
   font-size: 34px;
 }
+
 .margin {
   margin: 1em 4.5em 1em 4.5em;
 }
@@ -50,15 +62,17 @@
 .padding {
   padding: 1em;
 }
+
 .aligncenter {
   align-content: center;
 }
+
 .negrita {
   font-weight: bold;
 }
 
 .grishr {
-  border: 0;  
+  border: 0;
   height: 1px;
   background-color: #dbdbdb;
 }
@@ -68,7 +82,6 @@
 }
 
 @media (max-width: 375px) {
-
   .ocultar375 {
     display: none;
   }
