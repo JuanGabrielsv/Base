@@ -5,9 +5,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.example.demo.modelo.Actor;
+import com.example.demo.modelo.Cliente;
 import com.example.demo.modelo.Pelicula;
 
+@RestController
 public class BibliotecaController {
 	
 	List<Pelicula> listaPeliculas = new ArrayList<>();
@@ -43,6 +48,11 @@ public class BibliotecaController {
 		listaPeliculas.add(pelicula4);
 		listaPeliculas.add(pelicula5);
 		
+	}
+	
+	@GetMapping("clientes")
+	public List<Pelicula> listaPeliculas(){
+		return listaPeliculas;
 	}
 	
 
