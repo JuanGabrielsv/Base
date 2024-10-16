@@ -1,18 +1,16 @@
 //un id, titulo, director, fecha de lanzamiento, duración (en minutos), y una lista de actores.
 package com.example.demo.modelo;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
 
 public class Pelicula {
 	private String id;
 	private String titulo;
 	private String director;
-	private Date fechaLanzamiento;
+	private LocalDate fechaLanzamiento;
 	private Integer duracion;
 
-	public Pelicula(String id, String titulo, String director, Date fechaLanzamiento, Integer duracion) {
+	public Pelicula(String id, String titulo, String director, LocalDate fechaLanzamiento, Integer duracion) {
 		this.id = id;
 		this.titulo = titulo;
 		this.director = director;
@@ -44,11 +42,11 @@ public class Pelicula {
 		this.director = director;
 	}
 
-	public Date getFechaLanzamiento() {
+	public LocalDate getFechaLanzamiento() {
 		return fechaLanzamiento;
 	}
 
-	public void setFechaLanzamiento(Date fechaLanzamiento) {
+	public void setFechaLanzamiento(LocalDate fechaLanzamiento) {
 		this.fechaLanzamiento = fechaLanzamiento;
 	}
 

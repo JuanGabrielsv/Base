@@ -2,8 +2,8 @@
 Crear una aplicación para gestionar una biblioteca de películas. 
 Cada película consta de:
 un id, titulo, director, fecha de lanzamiento, duración (en minutos), y una lista de actores. 
-De cada actor guardaremos su id, nombre y nacionalidad. Se pide obtener los siguientes CRUD
-endpoints:
+De cada actor guardaremos su id, nombre y nacionalidad. 
+Se pide obtener los siguientes CRUD endpoints:
 
 * Mostrar todas las películas
 * Consultar una película por su título
