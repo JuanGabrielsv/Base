@@ -67,6 +67,10 @@
   align-content: center;
 }
 
+.centrado {
+  margin: auto;
+}
+
 .negrita {
   font-weight: bold;
 }
