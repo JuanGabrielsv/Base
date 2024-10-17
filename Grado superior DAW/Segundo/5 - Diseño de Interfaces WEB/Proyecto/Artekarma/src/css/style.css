@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {    
+    background-color: red;    
+}
+
+.contenedor {    
+    background-color: aqua;
+    max-width: 1400px;
+    height: 4000px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    background-color: green;
+    width: 87.5em;
+    height: 3.56em;
+    margin: auto;
+}

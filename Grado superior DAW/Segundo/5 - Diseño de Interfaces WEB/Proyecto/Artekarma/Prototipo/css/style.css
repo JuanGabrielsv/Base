@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 32px;
+  text-decoration: none;
+}
+
+a {
+  color: rgb(0, 0, 0);
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(201, 201, 201);
+  width: 1400px;
+  height: 57px;
+}
+
+#slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(236, 236, 236);
+  width: 1400px;
+  height: 320px;
+  margin-top: 16px;
+}
+
+#contenedorTarjetas {
+  display: flex;
+  flex-direction: row;
+  width: 1400px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(201, 201, 201);
+  width: 330px;
+  height: 460px;
+  margin-top: 16px;
+}
+
+#panelInformativoCategoria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(236, 236, 236);
+  width: 1400px;
+  height: 400px;
+  margin-top: 16px;
+}
+
+#footer {
+  background-color: rgb(201, 201, 201);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1400px;
+  height: 300px;
+  margin-top: 16px;
+}
+
+#textoNuestrosMateriales {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+#tarjetaMaterial {
+  background-color: rgb(236, 236, 236);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1200px;
+  height: 400px;
+  margin-top: 16px;
+}
+
+#contenedorMateriales {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1400px;
+}
