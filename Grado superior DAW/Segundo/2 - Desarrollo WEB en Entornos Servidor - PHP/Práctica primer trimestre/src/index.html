@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aquí no se vende Cruzcampo</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Inserción de Ceverzas</h1>
+    </header>
+    <main>
+      <p>Introduzaca los datos de las Cervezas</p>
+
+      <fieldset>
+        <form action="resultado.php" method="post">
+          <label for="tipocerveza">Tipo de Cerveza:</label>
+          <select name="tipocerveza" id="tipocerveza">
+            <option value="Lager">Lager</option>
+            <option value="Pale Lager">Pale Lager</option>
+            <option value="Marzen Block">Marzen block</option>
+            <option value="American Lager">American Lager</option>
+            <option value="Ale">Ale</option>
+            <option value="Pale Ale">Pale Ale</option>
+            <option value="IPA">IPA</option>
+            <option value="Bitter">Bitter</option>
+            <option value="Brown Ale">Brow Ale</option>
+            <option value="Poter">Poter</option>
+            <option value="Stout">Stout</option>
+            <option value="Transpenses">Transpenses</option>
+            <option value="Abadia">Abadia</option>
+            <option value="WeisBier">WeisBier</option>
+            <option value="Witbier">Witbier</option>            
+          </select>
+          
+          <label for="denominacionalimento">Denominación del alimento:</label>                    
+          <select name="denominacionalimento" id="denominacionalimento">
+            <option value="Botellín">Botellín</option>
+            <option value="Tercio">Tercio</option>
+            <option value="Medio Litro">Medio Litro</option>
+            <option value="Litro">Litro</option>
+            <option value="DosLitros">2 Litros</option>
+            <option value="Barril25litros">Barril 25 Litros</option>            
+          </select>
+          
+
+        </form>
+      </fieldset>
+    </main>
+  </body>
+</html>
