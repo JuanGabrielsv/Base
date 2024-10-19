@@ -11,11 +11,10 @@
       <h1>Inserción de Ceverzas</h1>
     </header>
     <main>
-      <p>Introduzaca los datos de las Cervezas</p>
-
+      <p>Introduzca los datos de las Cervezas</p>
       <fieldset>
-        <form action="resultado.php" method="post">
-          <label for="tipocerveza">Tipo de Cerveza:</label>
+        <form action="php/resultado.php" method="post">
+          <p>Tipo de Cerveza:</p>
           <select name="tipocerveza" id="tipocerveza">
             <option value="Lager">Lager</option>
             <option value="Pale Lager">Pale Lager</option>
@@ -31,20 +30,71 @@
             <option value="Transpenses">Transpenses</option>
             <option value="Abadia">Abadia</option>
             <option value="WeisBier">WeisBier</option>
-            <option value="Witbier">Witbier</option>            
+            <option value="Witbier">Witbier</option>
           </select>
-          
-          <label for="denominacionalimento">Denominación del alimento:</label>                    
+          <div class="salto-de-linea"></div>
+          <p>Denominación del alimento:</p>
           <select name="denominacionalimento" id="denominacionalimento">
             <option value="Botellín">Botellín</option>
             <option value="Tercio">Tercio</option>
             <option value="Medio Litro">Medio Litro</option>
             <option value="Litro">Litro</option>
-            <option value="DosLitros">2 Litros</option>
-            <option value="Barril25litros">Barril 25 Litros</option>            
+            <option value="Lata">Lata 33cl</option>
           </select>
-          
-
+          <div class="salto-de-linea"></div>
+          <p>Tipo de embase:</p>
+          <input type="radio" name="tipoenvase" value="Botellín" />
+          <label for="tipoenvase">Botellín</label>
+          <input type="radio" name="tipoenvase" value="Tercio" />
+          <label for="tipoenvase">Tercio</label>
+          <input type="radio" name="tipoenvase" value="1/2 Litro" />
+          <label for="tipoenvase">1/2 Litro</label>
+          <input type="radio" name="tipoenvase" value="Litro" />
+          <label for="tipoenvase">Litro</label>
+          <input type="radio" name="tipoenvase" value="Lata" />
+          <label for="tipoenvase">Lata</label>
+          <div class="salto-de-linea"></div>
+          <p>Cantidad neta:</p>
+          <select name="cantidadneta" id="cantidadneta">
+            <option value="25cl">25cl</option>
+            <option value="33cl">33cl</option>
+            <option value="Litro">Litro</option>
+            <option value="doslitros">2 Litros</option>
+            <option value="mediolitro">1/2 Litro</option>
+            <option value="barril25litros">Barril 25 Litros</option>
+          </select>
+          <div class="salto-de-linea"></div>
+          <p>Marca del producto:</p>
+          <input type="text" name="marcaproducto" />
+          <div class="salto-de-linea"></div>
+          <p>Advertencia sobre el abuso en el consumo de alcohol:</p>
+          <input type="text" name="advertencia" />
+          <div class="salto-de-linea"></div>
+          <p>Fecha de Consumo Preferente:</p>
+          <input type="date" name="fechaconsumo" />
+          <div class="salto-de-linea"></div>
+          <p>Indicar sustancias que pueden causar alergias:</p>
+          <input type="checkbox" name="alergenos" value="Gluten" />
+          <label for="alergenos">Gluten</label>
+          <input type="checkbox" name="alergenos" value="Huevo" />
+          <label for="alergenos">Huevo</label>
+          <input type="checkbox" name="alergenos" value="Cacahuete" />
+          <label for="alergenos">Cacahuete</label>
+          <input type="checkbox" name="alergenos" value="Soja" />
+          <label for="alergenos">Soja</label>
+          <input type="checkbox" name="alergenos" value="Lacteo" />
+          <label for="alergenos">Lácteo</label>
+          <input type="checkbox" name="alergenos" value="Sulfitos" />
+          <label for="alergenos">Sulfitos</label>
+          <input type="checkbox" name="alergenos" value="Frutos con cascara" />
+          <label for="alergenos">Frutos con cáscara</label>
+          <input type="checkbox" name="alergenos" value="Sin Alergenos" />
+          <label for="alergenos">Sin Alergenos</label>
+          <div class="salto-de-linea"></div>
+          <p class="align-self-start">Observaciones:</p>
+          <textarea name="observaciones" rows="10" cols="50"></textarea>
+          <div class="salto-de-linea"></div>
+          <input type="submit" value="Insertar Cerveza" size="20" />
         </form>
       </fieldset>
     </main>
