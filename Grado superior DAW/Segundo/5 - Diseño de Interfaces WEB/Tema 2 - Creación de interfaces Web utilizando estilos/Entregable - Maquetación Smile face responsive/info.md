@@ -1,4 +1,4 @@
-# CSS PARTE2 - Maquetación 'Smile face' responsive.
+# CSS PARTE2 - Maquetación emoticón responsive.
 
 ```
 Para este ejercicio he usado flex y clases de utilidad para definir los estilos.
