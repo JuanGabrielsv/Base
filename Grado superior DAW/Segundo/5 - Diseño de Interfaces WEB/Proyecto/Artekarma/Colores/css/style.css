@@ -1,5 +1,5 @@
 * {
-  font-family: Cambria, "Segoe UI";
+  font-family: Cambria, "Segoe UI";  
 }
 
 body {
@@ -16,7 +16,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   height: 100%;
 }
 
@@ -47,6 +47,7 @@ main {
 
 .color-cuatro {
   background-color: #e6e6e6;
+  border: 1px solid #000000;
   p {
     color: #000000;
     font-size: 2em;
@@ -91,9 +92,8 @@ footer {
   flex-wrap: wrap;
   hr {
     width: 100%;
-  }  
+  }
   p {
     margin: 0;
-    
   }
 }
