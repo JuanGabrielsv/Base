@@ -49,9 +49,6 @@ ciudadSevilla.forEach(persona => {
     document.body.innerHTML += `${persona.nombre}<br>`;
 });
 
-
-
-
 /*let contador = 0;
 aPersonas.forEach(persona => {
     if (persona.edad >= 18) {
