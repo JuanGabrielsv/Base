@@ -23,21 +23,14 @@ let snack = {
     categoria: "patatas"
 }
 
-let aObjetos = [bebida, comida, , , , snack];
-let aNombreObjetos = [];
+let aObjetos = [bebida, comida, snack];
 
-/*for (let i in aObjetos) {
-    aNombreObjetos.push(aObjetos[i].nombre.toUpperCase());    
-}
-document.body.innerHTML = aNombreObjetos;*/
 
-/*let aNombreObjetos = aObjetos.map(elemento => elemento.nombre.toUpperCase());
-document.body.innerHTML = aNombreObjetos;*/
+let aNombreObjetos = aObjetos.map(elemento => elemento.nombre.toUpperCase());
+document.body.innerHTML = aNombreObjetos.join(" - ");
 
-aObjetos.forEach(element => {
-    aNombreObjetos.push(element.nombre.toUpperCase());    
-});
-document.body.innerHTML = aNombreObjetos;
+
+
 
 
 

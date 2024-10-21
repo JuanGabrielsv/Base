@@ -12,7 +12,7 @@ let factura = {
     subtotal: 12.55,
     iva: 21,
 
-    total: function(){        
+    total: function () {
         let ivaAPagar = (this.iva / 100) * this.subtotal;
         return this.subtotal + ivaAPagar;
     }
