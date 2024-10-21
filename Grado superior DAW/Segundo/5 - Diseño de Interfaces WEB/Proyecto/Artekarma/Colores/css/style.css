@@ -5,6 +5,7 @@
 body {
   display: flex;
   flex-direction: column;
+  background-color: #f3f3f3;
 }
 
 header {
@@ -84,7 +85,7 @@ h2 {
 }
 
 footer {
-  margin-top: 5em;
+  margin-top: 7em;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
