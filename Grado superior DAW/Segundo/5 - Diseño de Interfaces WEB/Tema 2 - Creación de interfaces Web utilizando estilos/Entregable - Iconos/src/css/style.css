@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "nunito-sans";
+  src: url(../fonts/NunitoSans_10pt-Regular.ttf) format("truetype");
+}
+
+* {
+  font-family: "nunito-sans";
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.texto {
+  padding-top: 1em;
+}
+
+@media (max-width: 475px) {
+  main {
+    flex-direction: column;
+  }
+  .contenedor {
+  }
+  .globo {
+    order: 1;
+  }
+  .libro-negro {
+    order: 1;
+    background-color: rgb(233, 233, 233);
+  }
+  .icono {
+    padding-top: 1em;
+  }
+  .texto {
+    padding-bottom: 2em;
+  }
+}
