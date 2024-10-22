@@ -70,66 +70,62 @@ main {
   align-items: center;
 }
 
-.texto {
-  padding-top: 1em;
-}
-
 @media (max-width: 1024px) {
   main {
     display: flex;
     flex-wrap: wrap;
-    
   }
+  
   .libro-negro {
     order: 1;
   }
+
   .globo {
     width: 100%;
     border: solid 2px black;
     order: 2;
-    margin-top: 1em;
+    padding-top: 0.2em;
   }
+
   .globo .texto {
     margin-bottom: 1em;
   }
 
-  .libro-negro, .libro-blanco {
+  .libro-negro,
+  .libro-blanco {
     width: 50%;
   }
-  
 }
 
 @media (max-width: 475px) {
-  
   main {
-    flex-direction: column;    
+    flex-direction: column;
   }
+
   .contenedor {
     width: auto;
   }
-  
+
   .globo {
     order: 1;
     border: unset;
-    width: 100%;
-    margin:0;    
   }
-  .globo .texto {
-    
-    margin: 0;
-  }
-  .libro-negro {    
+
+  .libro-negro {
+    margin-bottom: 0;
     order: 1;
     background-color: rgb(233, 233, 233);
   }
-  .icono {
+
+  i {
     padding-top: 1em;
   }
-  .texto {
-    padding-bottom: 2em;
-    
+
+  p {
+    padding: 0.3em 0 1em 0;
   }
 }
+
 
 ```
 
