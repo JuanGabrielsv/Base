@@ -43,16 +43,26 @@
           </select>
           <div class="salto-de-linea"></div>
           <p>Tipo de embase:</p>
-          <input type="radio" name="tipoenvase" value="Botellín" />
-          <label for="tipoenvase">Botellín</label>
-          <input type="radio" name="tipoenvase" value="Tercio" />
-          <label for="tipoenvase">Tercio</label>
-          <input type="radio" name="tipoenvase" value="1/2 Litro" />
-          <label for="tipoenvase">1/2 Litro</label>
-          <input type="radio" name="tipoenvase" value="Litro" />
-          <label for="tipoenvase">Litro</label>
-          <input type="radio" name="tipoenvase" value="Lata" />
-          <label for="tipoenvase">Lata</label>
+          <input
+            type="radio"
+            name="tipoenvase"
+            value="Botellín"
+            id="botellin"
+          />
+          <label for="botellin">Botellín</label>
+          <input type="radio" name="tipoenvase" value="Tercio" id="tercio" />
+          <label for="tercio">Tercio</label>
+          <input
+            type="radio"
+            name="tipoenvase"
+            value="1/2 Litro"
+            id="medio-litro"
+          />
+          <label for="medio-litro">1/2 Litro</label>
+          <input type="radio" name="tipoenvase" value="Litro" id="litro" />
+          <label for="litro">Litro</label>
+          <input type="radio" name="tipoenvase" value="Lata" id="lata" />
+          <label for="lata">Lata</label>
           <div class="salto-de-linea"></div>
           <p>Cantidad neta:</p>
           <select name="cantidadneta" id="cantidadneta">
@@ -74,22 +84,42 @@
           <input type="date" name="fechaconsumo" />
           <div class="salto-de-linea"></div>
           <p>Indicar sustancias que pueden causar alergias:</p>
-          <input type="checkbox" name="alergenos" value="Gluten" />
-          <label for="alergenos">Gluten</label>
-          <input type="checkbox" name="alergenos" value="Huevo" />
-          <label for="alergenos">Huevo</label>
-          <input type="checkbox" name="alergenos" value="Cacahuete" />
-          <label for="alergenos">Cacahuete</label>
-          <input type="checkbox" name="alergenos" value="Soja" />
-          <label for="alergenos">Soja</label>
-          <input type="checkbox" name="alergenos" value="Lacteo" />
-          <label for="alergenos">Lácteo</label>
-          <input type="checkbox" name="alergenos" value="Sulfitos" />
-          <label for="alergenos">Sulfitos</label>
-          <input type="checkbox" name="alergenos" value="Frutos con cascara" />
-          <label for="alergenos">Frutos con cáscara</label>
-          <input type="checkbox" name="alergenos" value="Sin Alergenos" />
-          <label for="alergenos">Sin Alergenos</label>
+          <input type="checkbox" name="alergenos" value="Gluten" id="gluten" />
+          <label for="gluten">Gluten</label>
+          <input type="checkbox" name="alergenos" value="Huevo" id="huevo" />
+          <label for="huevo">Huevo</label>
+          <input
+            type="checkbox"
+            name="alergenos"
+            value="Cacahuete"
+            id="cacahuete"
+          />
+          <label for="cacahuete" id="waka">Cacahuete</label>
+          <input type="checkbox" name="alergenos" value="Soja" id="soja" />
+          <label for="soja">Soja</label>
+          <input type="checkbox" name="alergenos" value="Lacteo" id="lacteo" />
+          <label for="lacteo">Lácteo</label>
+          <input
+            type="checkbox"
+            name="alergenos"
+            value="Sulfitos"
+            id="sulfitos"
+          />
+          <label for="sulfitos">Sulfitos</label>
+          <input
+            type="checkbox"
+            name="alergenos"
+            value="Frutos con cascara"
+            id="frutos-con-cascara"
+          />
+          <label for="frutos-con-cascara">Frutos con cáscara</label>
+          <input
+            type="checkbox"
+            name="alergenos"
+            value="Sin Alergenos"
+            id="sin-alergenos"            
+          />
+          <label for="sin-alergenos">Sin Alergenos</label>
           <div class="salto-de-linea"></div>
           <p class="align-self-start">Observaciones:</p>
           <textarea name="observaciones" rows="10" cols="50"></textarea>

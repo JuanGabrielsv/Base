@@ -1,12 +1,8 @@
-* {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
 fieldset {
   width: auto;
 }
 
-fieldset form {  
+fieldset form {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -34,4 +30,3 @@ label {
 .align-self-start {
   align-self: flex-start;
 }
-
