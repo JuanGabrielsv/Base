@@ -16,7 +16,7 @@ main {
   justify-content: space-evenly;
 }
 
-.contenedor {
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +27,7 @@ main {
     display: flex;
     flex-wrap: wrap;
   }
-  
+
   .libro-negro {
     order: 1;
   }
@@ -39,7 +39,7 @@ main {
     padding-top: 0.2em;
   }
 
-  .globo .texto {
+  .globo p {
     margin-bottom: 1em;
   }
 
@@ -54,19 +54,20 @@ main {
     flex-direction: column;
   }
 
-  .contenedor {
-    width: auto;
-  }
-
   .globo {
     order: 1;
     border: unset;
   }
 
   .libro-negro {
+    width: 100%;
     margin-bottom: 0;
     order: 1;
     background-color: rgb(233, 233, 233);
+  }
+
+  .libro-blanco {
+    width: 100%;
   }
 
   i {

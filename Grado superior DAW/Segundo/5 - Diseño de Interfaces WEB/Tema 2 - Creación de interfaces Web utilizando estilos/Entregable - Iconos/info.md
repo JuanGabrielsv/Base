@@ -1,6 +1,12 @@
-# Entregable Iconos responsive.
+# Entregable iconos responsive.
 
 ## Autor: <span style="color: #00a300;"> Juan Gabriel Sánchez - jsanchez8979 </span>
+
+### Descargas
+
+- [index.html](src/index.html)
+- [style.css](src/css/style.css)
+
 
 **Fichero HTML**
 
@@ -25,18 +31,18 @@
       <h1>Tipografías</h1>
     </header>
     <main>
-      <div class="contenedor libro-negro">
-        <div class="icono"><i class="fa-solid fa-book"></i></div>
-        <div class="texto">¡Qué empiezen los juegos!</div>
-      </div>
-      <div class="contenedor globo">
-        <div class="icono"><i class="fa-solid fa-globe"></i></div>
-        <div class="texto">¡Qué empiezen los juegos!</div>
-      </div>
-      <div class="contenedor libro-blanco">
-        <div class="icono"><i class="fa-regular fa-file-lines"></i></div>
-        <div class="texto">¡Qué empiezen los juegos!</div>
-      </div>
+      <section class="libro-negro">
+        <i class="fa-solid fa-book"></i>
+        <p class="texto">¡Qué empiezen los juegos!</p>
+      </section>
+      <section class="globo">
+        <i class="fa-solid fa-globe"></i>
+        <p class="texto">¡Qué empiezen los juegos!</p>
+      </section>
+      <section class="libro-blanco">
+        <i class="fa-regular fa-file-lines"></i>
+        <p class="texto">¡Qué empiezen los juegos!</p>
+      </section>
     </main>
   </body>
 </html>
@@ -64,7 +70,7 @@ main {
   justify-content: space-evenly;
 }
 
-.contenedor {
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,7 +81,7 @@ main {
     display: flex;
     flex-wrap: wrap;
   }
-  
+
   .libro-negro {
     order: 1;
   }
@@ -87,7 +93,7 @@ main {
     padding-top: 0.2em;
   }
 
-  .globo .texto {
+  .globo p {
     margin-bottom: 1em;
   }
 
@@ -102,19 +108,20 @@ main {
     flex-direction: column;
   }
 
-  .contenedor {
-    width: auto;
-  }
-
   .globo {
     order: 1;
     border: unset;
   }
 
   .libro-negro {
+    width: 100%;
     margin-bottom: 0;
     order: 1;
     background-color: rgb(233, 233, 233);
+  }
+
+  .libro-blanco {
+    width: 100%;
   }
 
   i {
@@ -126,10 +133,5 @@ main {
   }
 }
 
-
 ```
 
-### Descargas
-
-- [index.html](src/index.html)
-- [style.css](src/css/style.css)
