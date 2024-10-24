@@ -47,16 +47,21 @@ select {
   padding: auto 0;
   font-size: 1em;
 }
+input {
+  font-size: 0.88em;
+}
 span {
-  color: red;  
+  color: red;
 }
 
 h2 {
   font-weight: normal;
 }
+
 .exito {
   color: rgb(0, 212, 0);
 }
+
 .nobold {
   font-weight: normal;
   color: black;
