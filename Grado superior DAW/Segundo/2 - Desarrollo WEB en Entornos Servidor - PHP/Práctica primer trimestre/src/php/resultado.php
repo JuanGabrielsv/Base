@@ -6,20 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aquí no se vende cruzcampo</title>
     <link rel="stylesheet" href="../css/style.css">
-
 </head>
-<header>
-    <h1>Informe de inserción de cerveza</h1>
-</header>
+
 
 <body>
-
-
-
+<header>
+    <h1>Inserción de Ceverzas</h1>
+</header>
 </body>
-
 </html>
 <?php
+
 while (
     !isset($_REQUEST["tipoenvase"]) ||
     $_REQUEST["marcaproducto"] == "" ||
@@ -27,26 +24,29 @@ while (
     $_REQUEST["fechaconsumo"] == "" ||
     !isset($_REQUEST["alergenos"])
 ) {
-    print "<h2><span>ERROR</span> - hay algunos campos que no se han rellenado</h2>";
+    print "<p>No se ha podido realizar la inserción debido a los siguientes errores</p>";
+    print ("<ul>");
     if (!isset($_REQUEST["tipoenvase"])) {
-        print "<p>No se ha marcado el tipo de envase</p>";
+        print "<li>No se ha marcado el tipo de envase</li>";
     }
 
     if (($_REQUEST["marcaproducto"]) == "") {
-        print "<p>Falta la marca del producto</p>";
+        print "<li>Falta la marca del producto</li>";
     }
 
     if (($_REQUEST["advertencia"]) == "") {
-        print "<p>No se ha indicado si el producto lleva o no advertencia por el consumo</p>";
+        print "<li>No se ha indicado si el producto lleva o no advertencia por el consumo</li>";
     }
 
     if (($_REQUEST["fechaconsumo"]) == "") {
-        print "<p>No se ha indicado fecha de consumo preferente.</p>";
+        print "<li>No se ha indicado fecha de consumo preferente.</li>";
     }
 
     if (!isset($_REQUEST["alergenos"])) {
-        print "<p>No se ha indicado trazas de alergenos.</p>";
+        print "<li>No se ha indicado trazas de alergenos.</li>";
     }
+    print "</ul>";
+    print "<a href=" . "../index.html" . ">[Volver]</a>";
     break;
 }
 
@@ -66,6 +66,15 @@ while (
     $fechaConsumo = $_REQUEST["fechaconsumo"];
     $alergenos = $_REQUEST["alergenos"];
     $observaciones = $_REQUEST["observaciones"];
+    $alergenosString = "";
+
+    for ($i = 0; $i < count($alergenos); $i++) {
+        if ($i == 0) {
+            $alergenosString .= $alergenos[$i];
+        } else {
+            $alergenosString .= ", " . $alergenos[$i];
+        }
+    }
 
     print "<h2><span class=" . "exito" . ">EXITO</span> - Cerveza registrada correctamente.</h2>";
     print "<p>Tipo de cerveza: <span class=" . "nobold" . ">$tipoCerveza</p>";
@@ -75,17 +84,10 @@ while (
     print "<p>Marca del producto: <span class=" . "nobold" . ">$marcaProducto</p>";
     print "<p>Advertencia sobre el abuso: <span class=" . "nobold" . ">$advertencia</p>";
     print "<p>Fecha de consumo: <span class=" . "nobold" . ">$fechaConsumo</p>";
-    print "<p>Alergenos: <span class=" . "nobold" . ">$alergenos</p>";
+    print "<p>Alergenos: <span class=" . "nobold" . ">$alergenosString</p>";
     print "<p>Observaciones: <span class=" . "nobold" . ">$observaciones</p>";
+
+    print "<br><a href=" . "../index.html" . ">[Volver]</a>";
     break;
 }
-
-/*
-
-
-
-*/
-
-
-
 ?>

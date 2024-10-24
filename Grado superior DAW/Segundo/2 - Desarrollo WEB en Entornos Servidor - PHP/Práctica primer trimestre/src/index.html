@@ -42,7 +42,7 @@
             <option value="Lata">Lata 33cl</option>
           </select>
           <div class="salto-de-linea"></div>
-          <p>Tipo de emvase:</p>
+          <p>Tipo de envase:</p>
           <input
             type="radio"
             name="tipoenvase"
@@ -83,43 +83,55 @@
           <p>Fecha de Consumo Preferente:</p>
           <input type="date" name="fechaconsumo" />
           <div class="salto-de-linea"></div>
+
           <p>Indicar sustancias que pueden causar alergias:</p>
-          <input type="checkbox" name="alergenos" value="Gluten" id="gluten" />
+          <input
+            type="checkbox"
+            name="alergenos[]"
+            value="Gluten"
+            id="gluten"
+          />
           <label for="gluten">Gluten</label>
-          <input type="checkbox" name="alergenos" value="Huevo" id="huevo" />
+          <input type="checkbox" name="alergenos[]" value="Huevo" id="huevo" />
           <label for="huevo">Huevo</label>
           <input
             type="checkbox"
-            name="alergenos"
+            name="alergenos[]"
             value="Cacahuete"
             id="cacahuete"
           />
           <label for="cacahuete" id="waka">Cacahuete</label>
-          <input type="checkbox" name="alergenos" value="Soja" id="soja" />
+          <input type="checkbox" name="alergenos[]" value="Soja" id="soja" />
           <label for="soja">Soja</label>
-          <input type="checkbox" name="alergenos" value="Lacteo" id="lacteo" />
+          <input
+            type="checkbox"
+            name="alergenos[]"
+            value="Lacteo"
+            id="lacteo"
+          />
           <label for="lacteo">Lácteo</label>
           <input
             type="checkbox"
-            name="alergenos"
+            name="alergenos[]"
             value="Sulfitos"
             id="sulfitos"
           />
           <label for="sulfitos">Sulfitos</label>
           <input
             type="checkbox"
-            name="alergenos"
+            name="alergenos[]"
             value="Frutos con cascara"
             id="frutos-con-cascara"
           />
           <label for="frutos-con-cascara">Frutos con cáscara</label>
           <input
             type="checkbox"
-            name="alergenos"
+            name="alergenos[]"
             value="Sin Alergenos"
-            id="sin-alergenos"            
+            id="sin-alergenos"
           />
           <label for="sin-alergenos">Sin Alergenos</label>
+
           <div class="salto-de-linea"></div>
           <p class="align-self-start">Observaciones:</p>
           <textarea name="observaciones" rows="10" cols="50"></textarea>
