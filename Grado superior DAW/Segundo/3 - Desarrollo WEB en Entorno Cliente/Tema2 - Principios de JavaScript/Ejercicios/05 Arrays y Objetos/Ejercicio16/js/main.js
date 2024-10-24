@@ -46,7 +46,7 @@ function obtenerProductosCategoriaElectronica(parametro) {
 
     let arrayProductosCategoriaElectronica = parametro.filter(element => element.categoria.nombre === "Electrónica");
     return arrayProductosCategoriaElectronica;
-    
+        
 }
 
 obtenerProductosCategoriaElectronica(arrayProductos).forEach((element) => {
