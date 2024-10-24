@@ -3,4 +3,6 @@ número. Escribir el resultado con string template en una etiqueta <div> en curs
 
 let numeroUsuario = prompt("Introduce un número");
 
-document.write(`El número ${numeroUsuario} tiene ${numeroUsuario.length} cifras`);
+document.write(
+  `<div style="font-style: italic; cursive; color: blue;">El número ${numeroUsuario} tiene ${numeroUsuario.length} cifras</div>`
+);

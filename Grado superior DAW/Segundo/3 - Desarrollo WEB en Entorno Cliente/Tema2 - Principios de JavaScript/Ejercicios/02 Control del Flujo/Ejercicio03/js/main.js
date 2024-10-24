@@ -31,5 +31,5 @@ if (toppingUsuario === OREO) {
 } else if (toppingUsuario === LACASITOS) {
     document.write(`El precio del helado es de ${(PRECIOHELADO + PRECIOLACASITOS).toFixed(2)}€`);
 } else {
-    document.write(`Ningún topping seleccionado, el precio es de  ${PRECIOHELADO}€`);
+    document.write(`Ningún topping seleccionado, el precio es de ${PRECIOHELADO}€`);
 }
