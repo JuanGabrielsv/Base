@@ -4,7 +4,10 @@ package com.example.demo.controller;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
+
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -89,6 +92,28 @@ public class BibliotecaController {
 		}
 
 		return ResponseEntity.notFound().build();
+	}
+	
+	//ELIMINAR una película por su id.
+	@DeleteMapping("/borrarpelicula/{id}")
+	public ResponseEntity<List<Pelicula>> eliminiarPeliculaPorId(@PathVariable String id) {
+		Boolean peliculaEliminada = false;
+		Iterator<Pelicula> iterador = listaPeliculas.iterator();
+		while (iterador.hasNext()) {
+			Pelicula pelicula = iterador.next();
+			if(pelicula.getId().equals(id)) {
+				iterador.remove();
+				peliculaEliminada = true;
+				break;				
+			}
+		}
+		
+		if(peliculaEliminada == true) {
+			return ResponseEntity.ok(listaPeliculas);
+		} else {
+			return ResponseEntity.notFound().build();
+		}		
+		
 	}
 
 }
