@@ -1,8 +1,10 @@
 package com.example.demo.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -104,6 +106,28 @@ public class ClienteController {
 			}
 		}
 		return ResponseEntity.notFound().build();
+	}
+
+	/*
+	 * # Ejercicio 5.
+	 * 
+	 * • Crear un nuevo endpoint para eliminar un cliente de la lista de clientes. 
+	 * • El método debe recibir el id de un cliente. 
+	 * • Una vez eliminado, debe devolver el cliente eliminado. 
+	 * • La petición es: localhost:8080/clientes
+	 */	
+	
+	@DeleteMapping("/{parametroId}")
+	public ResponseEntity<Cliente> eliminarCliente(@PathVariable String parametroId){
+		Iterator<Cliente> iterator = clientes.iterator();
+		while(iterator.hasNext()) {
+			Cliente cliente = iterator.next();
+			if(cliente.getId().equals(parametroId)) {
+				iterator.remove();
+				return ResponseEntity.ok(cliente); 
+			}
+		}
+		return null;
 	}
 
 }

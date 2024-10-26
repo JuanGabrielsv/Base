@@ -10,7 +10,6 @@ import com.example.demo.modelo.Cliente;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
 @RestController
 public class ClienteController {
 
@@ -29,9 +28,9 @@ public class ClienteController {
 		clientes.add(cliente4);
 
 	}
-	
+
 	@GetMapping("clientes")
-	public List<Cliente> listaClientes(){
+	public List<Cliente> listaClientes() {
 		return clientes;
 	}
 
@@ -47,11 +46,20 @@ public class ClienteController {
 		return ResponseEntity.notFound().build();
 
 	}
-	
+
+	/*
+	 * # Ejercicio 3
+	 * 
+	 * Crear un nuevo endpoint en el controlador anterior para añadir un nuevo
+	 * cliente a la lista de clientes. Utilizar una petición de tipo POST. El método
+	 * debe devolver el nuevo cliente insertado. La petición es:
+	 * localhost:8080/clientes
+	 */
+
 	@PostMapping("clientes")
-	public Cliente introducirCliente(@RequestBody Cliente cliente) {		
-		clientes.add(cliente);		
+	public Cliente introducirCliente(@RequestBody Cliente cliente) {
+		clientes.add(cliente);
 		return cliente;
 	}
-	
+
 }
