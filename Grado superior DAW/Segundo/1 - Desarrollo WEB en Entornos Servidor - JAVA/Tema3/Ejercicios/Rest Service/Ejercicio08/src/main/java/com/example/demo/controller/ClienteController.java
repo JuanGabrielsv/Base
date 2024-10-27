@@ -58,7 +58,6 @@ public class ClienteController {
 		for (Cliente cliente : clientes) {
 			if (cliente.getId().equals(parametroCliente.getId())) {
 				Cliente yaExiste = new Cliente("Ya existe cliente con ese id", null, null, null);
-
 				return ResponseEntity.ok(yaExiste);
 			}
 		}

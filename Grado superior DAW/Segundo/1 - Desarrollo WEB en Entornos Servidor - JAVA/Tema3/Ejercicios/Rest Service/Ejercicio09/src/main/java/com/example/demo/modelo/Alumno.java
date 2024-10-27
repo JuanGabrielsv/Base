@@ -2,23 +2,25 @@ package com.example.demo.modelo;
 
 public class Alumno {
 
-	private String id;
+	private Integer id;
 	private String nombre;
 	private String email;
-	private String edad;
+	private Integer edad;
+	private String curso;
 
-	public Alumno(String id, String nombre, String email, String edad) {
+	public Alumno(Integer id, String nombre, String email, Integer edad, String curso) {
 		this.id = id;
 		this.nombre = nombre;
 		this.email = email;
 		this.edad = edad;
+		this.curso = curso;
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -38,12 +40,20 @@ public class Alumno {
 		this.email = email;
 	}
 
-	public String getEdad() {
+	public Integer getEdad() {
 		return edad;
 	}
 
-	public void setEdad(String edad) {
+	public void setEdad(Integer edad) {
 		this.edad = edad;
+	}
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
 	}
 
 }
