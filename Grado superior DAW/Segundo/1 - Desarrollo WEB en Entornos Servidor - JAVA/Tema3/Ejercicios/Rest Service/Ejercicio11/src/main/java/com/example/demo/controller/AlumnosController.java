@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.modelo.Alumno;
+import com.example.demo.modelo.Direccion;
+
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
@@ -25,20 +27,24 @@ public class AlumnosController {
 
 	public AlumnosController() {
 
-		lAlumnos.add(new Alumno(1, "nombre1", "email1", 17, "curso1"));
-		lAlumnos.add(new Alumno(2, "nombre2", "email2", 22, "curso2"));
-		lAlumnos.add(new Alumno(3, "nombre3", "email3", 46, "curso3"));
-		lAlumnos.add(new Alumno(4, "nombre4", "email4", 18, "curso4"));
+		lAlumnos.add(
+				new Alumno(1, "nombre1", "email1", 17, "curso1", new Direccion("calle1", "codigoPostal1", "ciudad1")));
+		lAlumnos.add(
+				new Alumno(2, "nombre2", "email2", 22, "curso2", new Direccion("calle2", "codigoPostal2", "ciudad2")));
+		lAlumnos.add(
+				new Alumno(3, "nombre3", "email3", 46, "curso3", new Direccion("calle3", "codigoPostal3", "ciudad3")));
+		lAlumnos.add(
+				new Alumno(4, "nombre4", "email4", 18, "curso4", new Direccion("calle4", "codigoPostal4", "ciudad4")));
 
 	}
 
-	// 1 Mostrar todos los alumnos
+	// Mostrar todos los alumnos
 	@GetMapping
 	public ResponseEntity<List<Alumno>> mostrarTodosLosAlumnos() {
 		return ResponseEntity.ok(lAlumnos);
 	}
 
-	// 2 Consultar un alumno por su email
+	// Consultar un alumno por su email
 	@GetMapping("/{parametroEmail}")
 	public ResponseEntity<Alumno> consultarAlumnoPorEmail(@PathVariable String parametroEmail) {
 
@@ -51,7 +57,7 @@ public class AlumnosController {
 		return ResponseEntity.notFound().build();
 	}
 
-	// 3 Crear un nuevo alumno
+	// Crear un nuevo alumno
 	@PostMapping("/crear")
 	public ResponseEntity<List<Alumno>> crearAlumno(@RequestBody Alumno parametroAlumno) {
 
@@ -66,7 +72,7 @@ public class AlumnosController {
 
 	}
 
-	// 4 Modificar la información de manera parcial.
+	// Modificar la información de manera parcial.
 	@PatchMapping
 	public ResponseEntity<Alumno> modificarParcialmente(@RequestBody Alumno parametroAlumno) {
 
@@ -91,7 +97,7 @@ public class AlumnosController {
 		return ResponseEntity.notFound().build();
 	}
 
-	// 4.1 Modificar la información de un alumno de manera total.
+	// Modificar la información de un alumno de manera total.
 	@PutMapping
 	public ResponseEntity<Alumno> modificarTotalmente(@RequestBody Alumno parametroAlumno) {
 
@@ -109,7 +115,7 @@ public class AlumnosController {
 		return ResponseEntity.notFound().build();
 	}
 
-	// 5 Eliminar un alumno por su id.
+	// Eliminar un alumno por su id.
 	@DeleteMapping
 	public ResponseEntity<Alumno> eliminarAlumno(@RequestBody Alumno parametroAlumno) {
 		Iterator<Alumno> iterator = lAlumnos.iterator();
@@ -123,5 +129,48 @@ public class AlumnosController {
 
 		return ResponseEntity.notFound().build();
 
+	}
+
+	// Añade un método getDirecciones, que devuelva la lista de todas las
+	// direcciones de todos los alumnos.
+	@GetMapping("/direcciones")
+	public ResponseEntity<List<Direccion>> getDirecciones() {
+		List<Direccion> direcciones = new ArrayList<>();
+		for (Alumno alumno : lAlumnos) {
+			direcciones.add(alumno.getDireccion());
+		}
+		return ResponseEntity.ok(direcciones);
+	}
+	
+	// Añade un método obtenerDireccionesPorCodigoPostal, que devuelva la lista de todas las 
+	// direcciones de los alumnos que coincidan con un código postal que se pasa por URL.
+	@GetMapping("/direcciones-por-codigo-postal/{parametroCodigoPostal}")
+	public ResponseEntity<List<Direccion>> obtenerDireccionesPorCodigoPostal(@PathVariable String parametroCodigoPostal) {
+		List<Direccion> direccionesPorCodigoPostal = new ArrayList<>();
+		for (Alumno alumno : lAlumnos) {
+			if(alumno.getDireccion().getCodigoPostal().equalsIgnoreCase(parametroCodigoPostal)) {
+				direccionesPorCodigoPostal.add(alumno.getDireccion());
+			}
+		}
+		
+		if(direccionesPorCodigoPostal.isEmpty()) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		return ResponseEntity.ok(direccionesPorCodigoPostal);
+		
+	}
+	
+	// Añade un método contarAlumnosPorCiudad, que dada una ciudad, devuelva el número de alumnos de dicha ciudad.
+	@GetMapping("/contar-alumnos-por-ciudad/{parametroCiudad}")
+	public ResponseEntity<Integer> contarAlumnosPorCiudad(@PathVariable String parametroCiudad) {
+		Integer contador = 0;
+		for (Alumno alumno : lAlumnos) {
+			if(alumno.getDireccion().getCiudad().equalsIgnoreCase(parametroCiudad)) {
+				contador++;
+			}
+		}		
+		
+		return ResponseEntity.ok(contador);
 	}
 }
