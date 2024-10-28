@@ -1,4 +1,3 @@
-/* latin */
 @font-face {
   font-family: "MiSans Latin";
   font-style: normal;
@@ -8,27 +7,43 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   font-family: "MiSans Latin", sans-serif;
 }
 
-header {
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
   display: flex;
   flex-direction: column;
+  background-color: brown;
 }
 
 .header-mensaje {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  height: 40px;
   background-color: black;
+  height: 2.5em;
+  align-items: center;
 }
 
-.header-cruz-cerrar{
-    width: 20px;
-    
+.mensaje-p {
+  color: white;
+  margin-left: auto;
+  font-size: 14px;
+}
+
+.mensaje-divimagen {
+  display: flex;
+  margin: 0 1.3% 0 25.5%;
+}
+
+/* HEADER NAV */
+
+.header-nav {
+  display: flex;
+  background-color: turquoise;
+  height: 20px;
 }
 
