@@ -1,8 +1,13 @@
 package com.example.demo.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,9 +35,9 @@ public class BibliotecaController {
 				List.of("genero1", "genero2", "genero3", "genero4")));
 		lLibros.add(new Libro(3, "Titulo3", "Autor3", "Editorial3", "Isbn3", 2021,
 				List.of("genero1", "novela", "genero3", "genero4")));
-		lLibros.add(new Libro(4, "Titulo4", "Autor4", "Editorial4", "Isbn4", 1983,
+		lLibros.add(new Libro(4, "Titulo4", "Autor3", "Editorial4", "Isbn4", 1983,
 				List.of("genero1", "genero2", "genero3", "genero4")));
-		lLibros.add(new Libro(5, "Titulo5", "Autor5", "Editorial5", "Isbn5", 2012,
+		lLibros.add(new Libro(5, "Titulo5", "Autor3", "Editorial5", "Isbn5", 2012,
 				List.of("genero1", "genero2", "genero3", "genero4")));
 
 	}
@@ -181,4 +186,42 @@ public class BibliotecaController {
 
 	}
 
+	// ObtenerAutoresConMasDeXLibros: devuelve un mapa de <String,Integer>, donde la
+	// clave
+	// es el autor, y el valor el numero de libros que ha escrito a partir del
+	// atributo numLibro que se pasará por la URL.
+	@GetMapping("/{parametro}")
+	public ResponseEntity<Map<String, Integer>> obtenerAutoresConMasDeXLibros(@PathVariable Integer parametro) {
+		
+		Map<String, Integer> mAutoresCantidadLibros = new HashMap<>();
+		Map<String, Integer> mResultadoBusqueda = new HashMap<>();
+		for (Libro libro : lLibros) {
+			if (!mAutoresCantidadLibros.containsKey(libro.getAutor())) {				
+				Integer numLibros = 0;
+				for (Libro libro2 : lLibros) {					
+					if (libro2.getAutor().equals(libro.getAutor())) {
+						numLibros++;
+						mAutoresCantidadLibros.put(libro.getAutor(), numLibros);
+					}
+
+				}
+			}
+		}
+		
+		Set<Entry<String, Integer>> pares = mAutoresCantidadLibros.entrySet();
+		for (Entry<String, Integer> par : pares) {
+			String key = par.getKey();
+			Integer val = par.getValue();
+			if(par.getValue().equals(parametro)) {
+				mResultadoBusqueda.put(key, val);
+			}
+			
+		}
+		
+		if(mResultadoBusqueda.isEmpty()) {
+			return ResponseEntity.notFound().build();
+		}		
+
+		return ResponseEntity.ok(mResultadoBusqueda);
+	}
 }
