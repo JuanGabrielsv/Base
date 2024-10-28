@@ -6,5 +6,16 @@ EJERCICIO01.
 • Usar función flecha. 
 • Utilizar addEventListener.
 */
+var $nombre;
 
-document.getElementById("campoNombre").addEventListener('click',)
+convertirMayusculas = () => {
+    $nombre.value = $nombre.value.toUpperCase();
+    $nombre.select();
+}
+
+inicio = () => {
+    $nombre = document.getElementById("nombre");
+    $nombre.addEventListener("blur", convertirMayusculas);
+}
+
+windows.addEventListener("DOMcontentLoaded", inicio);

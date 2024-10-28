@@ -28,7 +28,7 @@ function dibujarFigura(base, altura) {
           if (columna == 0 || columna == base - 1) {
             document.body.innerHTML += `*`;
           } else {
-            document.body.innerHTML += ` . `;
+            document.body.innerHTML += ` &nbsp`;
           }
         }
       }
