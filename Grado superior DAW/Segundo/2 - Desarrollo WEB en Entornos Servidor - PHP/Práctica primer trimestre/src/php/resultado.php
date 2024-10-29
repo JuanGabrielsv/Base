@@ -24,6 +24,9 @@ while (
     $_REQUEST["fechaconsumo"] == "" ||
     !isset($_REQUEST["alergenos"])
 ) {
+
+    print_r($_REQUEST);
+
     print "<p>No se ha podido realizar la inserción debido a los siguientes errores</p>";
     print ("<ul>");
     if (!isset($_REQUEST["tipoenvase"])) {
@@ -57,6 +60,7 @@ while (
     $_REQUEST["fechaconsumo"] !== "" &&
     isset($_REQUEST["alergenos"])
 ) {
+    print_r($_REQUEST);
     $tipoCerveza = $_REQUEST["tipocerveza"];
     $denominacionAlimento = $_REQUEST["denominacionalimento"];
     $tipoEnvase = $_REQUEST["tipoenvase"];

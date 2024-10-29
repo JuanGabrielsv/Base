@@ -13,7 +13,7 @@
     <main>
       <p>Introduzca los datos de las Cervezas</p>
       <fieldset>
-        <form action="php/resultado.php" method="post">
+        <form action="php/resultado.php" method="post" enctype="multipart/form-data">
           <p>Tipo de Cerveza:</p>
           <select name="tipocerveza">
             <option value="Lager">Lager</option>
@@ -132,6 +132,9 @@
           />
           <label for="sin-alergenos">Sin Alergenos</label>
 
+          <div class="salto-de-linea"></div>
+          <p>Foto:</p>
+          <input type="file" name="foto" id="foto">
           <div class="salto-de-linea"></div>
           <p class="align-self-start">Observaciones:</p>
           <textarea name="observaciones" rows="10" cols="50"></textarea>
