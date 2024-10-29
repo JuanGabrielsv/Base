@@ -40,10 +40,90 @@ body {
 }
 
 /* HEADER NAV */
-
 .header-nav {
+  height: 3em;
+  width: 100%;
   display: flex;
-  background-color: turquoise;
-  height: 20px;
+  align-items: center;
 }
 
+.logo {
+  display: flex;
+  padding-left: 2.5em;
+}
+
+nav {
+  height: 3em;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-ulizq {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-ulizq li {
+  padding: 0 1em 0 1em;
+}
+
+/* HEADER NAV DERECHA */
+
+.iconos {
+  display: flex;
+  align-items: center;
+}
+
+.nav-ulderecha {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 2em;
+}
+
+.nav-ulderecha li {
+  padding: 0 1em 0 1em;
+}
+
+/* PRIMERA SECCIÓN */
+
+.primera-seccion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(235, 235, 235);
+  width: 100%;
+}
+
+.left-arrow {
+  padding-left: 3em;
+}
+
+.right-arrow {
+  padding-right: 3em;
+}
+
+.imagen {
+  display: flex;
+  align-items: center;
+}
+
+.imagen img {
+  width: 900px;
+}
+
+.primera-seccion h2 {
+  font-size: 46px;
+  margin: 38px 0 15px 0;
+
+}
+
+.precio {
+  font-size: 32px;
+  
+}
