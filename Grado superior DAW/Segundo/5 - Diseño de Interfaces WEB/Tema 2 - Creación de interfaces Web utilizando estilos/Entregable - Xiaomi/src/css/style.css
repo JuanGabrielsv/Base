@@ -1,20 +1,19 @@
 @font-face {
   font-family: "MiSans Latin";
   font-style: normal;
-  font-weight: 100 400;
+  font-weight: normal;
   font-display: fallback;
   src: url("../fonts/MiSans-Latin.woff2") format("woff2");
 }
 
 * {
-  box-sizing: border-box;
   font-family: "MiSans Latin", sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #ebebeb;
+  background-color: #f7f7f7;
 }
 
 header {
@@ -172,7 +171,7 @@ nav {
 }
 
 .tarjeta-uno {
-  margin-left: 10em;
+  margin-left: 6em;
 }
 
 .parrafo-tarjeta-uno {
@@ -182,3 +181,94 @@ nav {
 
 /* SEGUNDA SECCIÓN */
 
+.seccion-h2 {
+  font-size: 30px;
+  margin: 3em 0 1.6em 0;
+  text-align: center;
+}
+.segunda-seccion .pestanas {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.segunda-seccion .pestanas p {
+  font-size: 16px;
+  margin: 0 2em 0 2em;
+  padding: 0 0 1em 0;
+}
+
+.pestanas p:first-child {
+  border-bottom: 2px solid orangered;
+  color: orangered;
+  font-weight: bold;
+}
+
+article {
+    width: 80%;
+    background-color: white;
+    padding: 2em 2em 0 2em;
+    display: flex;    
+    margin: auto;
+    border-radius: 1em 1em 0 0;
+}
+
+article img {
+    width: 50%;
+    border-radius: 1em 0 0 0;
+}
+
+article div {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    background-color: #f9f9f9;
+    border-radius: 0 1em 0 1em;
+}
+
+.article-h2 {    
+    font-size: 30px;
+    margin: 0;
+    
+}
+
+article div p:nth-child(2) {
+    font-weight: bold;
+    margin: 0.6em 0 0 0;    
+}
+
+article div p:nth-child(3){    
+    margin: 1.1em 0 0 0;
+}
+
+article div p:nth-child(4){
+    margin: 0 0 0 0;
+}
+
+.article-precio {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #191919;
+    color: #898989;
+    margin: 3em 0 0 0;
+}
+
+footer h3{
+color: white;
+font-size: 16px;
+}
+
+.footer-contenedor1 {    
+    padding: 3.5em 2.5em 2em 2.5em;
+    display: flex;    
+}
+
+.footer-contenedor1 * {
+    width: 100%;
+}
