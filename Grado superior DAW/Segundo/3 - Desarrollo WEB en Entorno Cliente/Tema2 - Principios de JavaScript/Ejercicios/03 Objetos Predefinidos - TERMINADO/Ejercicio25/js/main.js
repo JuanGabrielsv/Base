@@ -41,7 +41,7 @@ function abrirVentana() {
 
         if(segundos == 0){
             ventanaAbierta.close();
-            window.opener.getElementById("resultado")
+            document.getElementById("resultado").innerHTML = `Ya han pasado ${$segundos.value} segundos y se ha cerrado.`;
         }
 
     }, 1000);
