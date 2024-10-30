@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio25 - Objetos Predefinidos</title>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <h1>Ventana Emergente con Temporizador Personalizado</h1>
+    <p>
+      Ingresa el número de segundos para que la ventana emergente se cierre
+      automáticamente.
+    </p>
+    <label for="segundos">Número de segundos: </label>
+    <input
+      type="text"
+      id="segundos"
+      min="1"
+      placeholder="Escribe el tiempo en segundos"
+    />
+    <button onclick="abrirVentana()">Abrir Ventana Emergente</button>
+    <p id="resultado"></p>
+    <!--Aquí se mostrará el mensaje cuando la ventana se cierrre -->
+  </body>
+</html>
