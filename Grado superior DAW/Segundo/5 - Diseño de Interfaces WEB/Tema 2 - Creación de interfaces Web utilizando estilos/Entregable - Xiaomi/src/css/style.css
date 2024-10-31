@@ -7,6 +7,7 @@
 }
 
 * {
+  box-sizing: border-box;
   font-family: "MiSans Latin", sans-serif;
 }
 
@@ -204,71 +205,145 @@ nav {
 }
 
 article {
-    width: 80%;
-    background-color: white;
-    padding: 2em 2em 0 2em;
-    display: flex;    
-    margin: auto;
-    border-radius: 1em 1em 0 0;
+  width: 80%;
+  background-color: white;
+  padding: 2em 2em 0 2em;
+  display: flex;
+  margin: auto;
+  border-radius: 1em 1em 0 0;
 }
 
 article img {
-    width: 50%;
-    border-radius: 1em 0 0 0;
+  width: 50%;
+  border-radius: 1em 0 0 0;
 }
 
-article div {    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 50%;
-    background-color: #f9f9f9;
-    border-radius: 0 1em 0 1em;
+article div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  background-color: #f9f9f9;
+  border-radius: 0 1em 0 1em;
 }
 
-.article-h2 {    
-    font-size: 30px;
-    margin: 0;
-    
+.article-h2 {
+  font-size: 30px;
+  margin: 0;
 }
 
 article div p:nth-child(2) {
-    font-weight: bold;
-    margin: 0.6em 0 0 0;    
+  font-weight: bold;
+  margin: 0.6em 0 0 0;
 }
 
-article div p:nth-child(3){    
-    margin: 1.1em 0 0 0;
+article div p:nth-child(3) {
+  margin: 1.1em 0 0 0;
 }
 
-article div p:nth-child(4){
-    margin: 0 0 0 0;
+article div p:nth-child(4) {
+  margin: 0 0 0 0;
 }
 
 .article-precio {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* FOOTER */
 
 footer {
-    background-color: #191919;
-    color: #898989;
-    margin: 3em 0 0 0;
+  background-color: #191919;
+  color: #898989;
+  margin: 3em 0 0 0;
 }
 
-footer h3{
-color: white;
-font-size: 16px;
+footer h3 {
+  color: white;
+  font-size: 16px;
 }
 
-.footer-contenedor1 {    
-    padding: 3.5em 2.5em 2em 2.5em;
-    display: flex;    
+.footer-contenedor1 {
+  padding: 3.5em 2.5em 2em 2.5em;
+  display: flex;
 }
 
-.footer-contenedor1 * {
-    width: 100%;
+.footer-contenedor1 div {
+  width: 100%;
+}
+
+.redes-sociales {
+  display: flex;
+  align-items: center;
+}
+.redes-sociales img:nth-child(1) {
+  margin-right: 1.2em;
+}
+
+.redes-sociales img:nth-child(2) {
+  margin-right: 1.4em;
+}
+
+.redes-sociales img:nth-child(3),
+.redes-sociales img:nth-child(4),
+.redes-sociales img:nth-child(5) {
+  margin-right: 1.6em;
+}
+
+.logo-mi {
+  height: 32px;
+  background-color: #f7f7f7;
+  border-radius: 0.4em;
+}
+
+footer form {
+  display: flex;
+  flex-direction: column;
+}
+footer form label {
+  margin: 1.5em 0 0 0;
+  color: white;
+  font-weight: bold;
+}
+footer form input {
+  background-color: #191919;
+  border: 0;
+  width: 100%;
+  color: white;
+  border-radius: 0.7em;
+  font-size: 16px;
+}
+
+footer form input:focus {
+  outline: none;
+}
+
+footer form input::placeholder {
+  color: white;
+  font-size: 15px;
+}
+
+footer form button {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0;
+  background-color: #191919;
+  border: none;
+}
+
+.footer-correo {
+  margin: 1em 0 0 0;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 0.7em;
+  padding: 0.5em;
+}
+
+
+
+.footer-qr-contenedor {
+    display: flex;
 }
