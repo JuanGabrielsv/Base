@@ -5,42 +5,35 @@
   font-display: fallback;
   src: url("../fonts/MiSans-Latin.woff2") format("woff2");
 }
-
 * {
   box-sizing: border-box;
   font-family: "MiSans Latin", sans-serif;
 }
-
 body {
   margin: 0;
   padding: 0;
   background-color: #f7f7f7;
 }
-
 header {
   display: flex;
   flex-direction: column;
   background-color: white;
 }
-
 .header-mensaje {
   display: flex;
   background-color: black;
   height: 2.5em;
   align-items: center;
 }
-
 .mensaje-p {
   color: white;
   margin-left: auto;
   font-size: 14px;
 }
-
 .mensaje-divimagen {
   display: flex;
   margin: 0 1.3% 0 25.5%;
 }
-
 /* HEADER NAV */
 .header-nav {
   height: 3em;
@@ -49,12 +42,10 @@ header {
   align-items: center;
   box-shadow: 0px 5px 26px 0px rgb(0, 0, 0, 0.05);
 }
-
 .logo {
   display: flex;
   padding-left: 2.5em;
 }
-
 nav {
   height: 3em;
   width: 100%;
@@ -63,25 +54,20 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
-
 .nav-ulizq {
   list-style: none;
   display: flex;
   flex-direction: row;
   margin: 0;
 }
-
 .nav-ulizq li {
   padding: 0 1em 0 1em;
 }
-
 /* HEADER NAV DERECHA */
-
 .iconos {
   display: flex;
   align-items: center;
 }
-
 .nav-ulderecha {
   display: flex;
   list-style: none;
@@ -90,13 +76,10 @@ nav {
   padding-right: 2em;
   margin: 0;
 }
-
 .nav-ulderecha li {
   padding: 0 1em 0 1em;
 }
-
 /* PRIMERA SECCIÓN */
-
 .primera-seccion {
   display: flex;
   justify-content: space-between;
@@ -105,40 +88,32 @@ nav {
   width: 100%;
   padding: 4em 0 1em 0;
 }
-
 .left-arrow {
   padding-left: 3em;
 }
-
 .right-arrow {
   padding-right: 3em;
 }
-
 .imagen {
   display: flex;
   align-items: center;
   padding: 0 0 0 5em;
 }
-
 .imagen img {
   width: 850px;
 }
-
 .primera-seccion h2 {
   font-size: 48px;
   margin: 0 0 0 0;
 }
-
 .primera-seccion h3 {
   font-size: 24px;
   margin: 0.3em 0 0 0;
 }
-
 .precio {
   font-size: 30px;
   margin: 2em 0 0.3em 0;
 }
-
 .primera-seccion button {
   background-color: black;
   color: white;
@@ -148,40 +123,32 @@ nav {
   font-size: 16px;
   border-style: none;
 }
-
 .primera-seccion a {
   margin: 0 0 0 1em;
   text-decoration: none;
   color: black;
   display: flex;
 }
-
 .primera-seccion img {
   padding: 0.23em 0 0 0.2em;
 }
-
 .tarjeta-footer {
   display: flex;
   align-items: center;
 }
-
 .imagen-carga-slider {
   background-color: white;
   text-align: center;
   padding: 0 0 0.5em 0;
 }
-
 .tarjeta-uno {
   margin-left: 6em;
 }
-
 .parrafo-tarjeta-uno {
   font-size: 20px;
   margin: 0.5em 0 0 0;
 }
-
 /* SEGUNDA SECCIÓN */
-
 .seccion-h2 {
   font-size: 30px;
   margin: 3em 0 1.6em 0;
@@ -197,13 +164,11 @@ nav {
   margin: 0 2em 0 2em;
   padding: 0 0 1em 0;
 }
-
 .pestanas p:first-child {
   border-bottom: 2px solid orangered;
   color: orangered;
   font-weight: bold;
 }
-
 article {
   width: 80%;
   background-color: white;
@@ -212,12 +177,10 @@ article {
   margin: auto;
   border-radius: 1em 1em 0 0;
 }
-
 article img {
   width: 50%;
   border-radius: 1em 0 0 0;
 }
-
 article div {
   display: flex;
   flex-direction: column;
@@ -227,52 +190,43 @@ article div {
   background-color: #f9f9f9;
   border-radius: 0 1em 0 1em;
 }
-
 .article-h2 {
   font-size: 30px;
   margin: 0;
 }
-
 article div p:nth-child(2) {
   font-weight: bold;
   margin: 0.6em 0 0 0;
 }
-
 article div p:nth-child(3) {
   margin: 1.1em 0 0 0;
 }
-
 article div p:nth-child(4) {
   margin: 0 0 0 0;
 }
-
 .article-precio {
   font-size: 18px;
   font-weight: bold;
 }
-
 /* FOOTER */
-
 footer {
+  display: flex;
+  flex-direction: column;
   background-color: #191919;
   color: #898989;
   margin: 3em 0 0 0;
+  padding: 3em 2.5em 0 2.5em;
 }
-
 footer h3 {
   color: white;
   font-size: 16px;
 }
-
 .footer-contenedor1 {
-  padding: 3.5em 2.5em 2em 2.5em;
   display: flex;
 }
-
 .footer-contenedor1 div {
   width: 100%;
 }
-
 .redes-sociales {
   display: flex;
   align-items: center;
@@ -280,23 +234,19 @@ footer h3 {
 .redes-sociales img:nth-child(1) {
   margin-right: 1.2em;
 }
-
 .redes-sociales img:nth-child(2) {
   margin-right: 1.4em;
 }
-
 .redes-sociales img:nth-child(3),
 .redes-sociales img:nth-child(4),
 .redes-sociales img:nth-child(5) {
   margin-right: 1.6em;
 }
-
 .logo-mi {
   height: 32px;
   background-color: #f7f7f7;
   border-radius: 0.4em;
 }
-
 footer form {
   display: flex;
   flex-direction: column;
@@ -314,16 +264,13 @@ footer form input {
   border-radius: 0.7em;
   font-size: 16px;
 }
-
 footer form input:focus {
   outline: none;
 }
-
 footer form input::placeholder {
-  color: white;
+  color: #898989;
   font-size: 15px;
 }
-
 footer form button {
   display: flex;
   align-items: center;
@@ -332,18 +279,86 @@ footer form button {
   background-color: #191919;
   border: none;
 }
-
 .footer-correo {
   margin: 1em 0 0 0;
   display: flex;
   align-items: center;
-  border: 1px solid white;
+  border: 2px solid #898989;
   border-radius: 0.7em;
   padding: 0.5em;
 }
-
-
-
-.footer-qr-contenedor {
-    display: flex;
+.footer-contenedor2 {
+  padding: 0.8em;
+  display: flex;
+  border: 2px solid #898989;
+  margin: 2em 0 0 0;
+  align-items: center;
+  border-radius: 0.7em 0.7em 0 0;
+  border-bottom: none;
+}
+.footer-contenedor2 img {
+  height: 70px;
+}
+.footer-contenedor2 span {
+  color: white;
+  font-size: bold;
+}
+.footer-contenedor2 p {
+  padding: 0;
+  margin: 0 0 0 1em;
+}
+.footer-footer-qr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #898989;
+  border-radius: 0 0 0.7em 0.7em;
+  color: white;
+  font-size: 14px;
+}
+.footer-footer-qr p {
+  margin-left: 1em;
+}
+hr {
+  margin: 2.5em 0 0 0;
+  width: 100%;
+  border: 0;
+  height: 1px;
+  background-color: #777777;
+}
+.contenedor-pie {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+.izq {
+  display: flex;
+  align-items: center;
+}
+.izq p {
+  padding: 0 0.6em;
+  color: #cecece;
+  font-weight: bold;
+}
+.izq p:nth-child(3),
+.izq p:nth-child(5) {
+  font-weight: normal;
+  font-size: 22px;
+  color: #898989;
+}
+.derecha {
+  display: flex;
+  align-items: center;
+  color: #cecece;
+  font-weight: bold;
+}
+.derecha img {
+  width: 18px;
+  margin-left: 1em;
+}
+.derecha p {
+  margin: auto 0;
+}
+.izq p:nth-child(1) {
+  padding-left: 0;
 }
