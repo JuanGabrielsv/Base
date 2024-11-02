@@ -9,3 +9,13 @@ EJERCICIO 05.
     Pista: crear los eventos con un bucle for. 
 */
 
+window.addEventListener("DOMContentLoaded", () => {
+
+    for (let i = 0; i <= 9; i++) {
+        document.getElementById(`input-boton${i}`).addEventListener("click", () => {
+            document.getElementById("resultado").innerHTML = `<div>${i}</div>`;
+            console.log(`${i}`);
+        });
+    }
+
+});

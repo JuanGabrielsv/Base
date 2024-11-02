@@ -1,12 +1,12 @@
 <!--
-EJERCICIO04.
+EJERCICIO 05. 
 
-• Crear una página con dos botones: uno ‘Sumar’ y otro ‘Restar’. 
-• Debajo hay un div que inicialmente muestra un 5. 
-• Al pulsar el botón Sumar, se sumará uno, y al pulsar el botón restar, se restará uno. 
-• El div tendrá que actualizarse en cada operación. 
-• Cuando se llegue al valor 3, el div debe mostrar un mensaje que indique ‘Alcanzado valor 3’. 
-• Cuando vuelva a ser distinto de 3, el mensaje debe desaparecer. 
+• Crear un estilo llamado boton que tenga una altura y anchura de 50px.
+• El formulario tendrá 10 botones con ese estilo creado y con values del 0 al 9 respectivamente.
+• Crear para todos ellos un evento tal que al pulsarlo muestre en una etiqueta div el valor del boton pulsado.
+    
+    NOTA: Para crear estilos: .boton {}
+    Pista: crear los eventos con un bucle for. 
 -->
 <!DOCTYPE html>
 <html lang="es">
@@ -14,18 +14,30 @@ EJERCICIO04.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio03 - Tema 3.Gestión de eventos</title>
+    <title>EJERCICIO05 - Tema 3.Gestión de eventos</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
 </head>
 
 <body>
     <header>
-        <h1>EJERCICIO 03 - Tema 3.Gestión de eventos</h1>
+        <h1>EJERCICIO 05 - Tema 3.Gestión de eventos</h1>
         <p>jsanchez8979 - Desarrollo WEB en entorno cliente</p>
     </header>
     <main>
-        
+        <form id="formulario" action="#" method="post">
+            <input type="button" value="0" class="boton" id="input-boton0">
+            <input type="button" value="1" class="boton" id="input-boton1">
+            <input type="button" value="2" class="boton" id="input-boton2">
+            <input type="button" value="3" class="boton" id="input-boton3">
+            <input type="button" value="4" class="boton" id="input-boton4">
+            <input type="button" value="5" class="boton" id="input-boton5">
+            <input type="button" value="6" class="boton" id="input-boton6">
+            <input type="button" value="7" class="boton" id="input-boton7">
+            <input type="button" value="8" class="boton" id="input-boton8">
+            <input type="button" value="9" class="boton" id="input-boton9">
+        </form>
+        <div class="div-resultado" id="resultado"></div>
     </main>
     <footer></footer>
 </body>
