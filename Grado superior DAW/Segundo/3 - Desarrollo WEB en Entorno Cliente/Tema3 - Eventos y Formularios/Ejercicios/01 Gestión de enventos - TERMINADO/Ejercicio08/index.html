@@ -1,0 +1,59 @@
+<!--
+EJERCICIO 08. 
+
+• Validar el formulario antes de enviarlo. 
+• Comprobar que el nombre, apellidos y edad tienen valor (no se dejan en blanco). 
+• La edad debe ser un número y sus valores deben estar comprendidos entre 0 y 105. 
+• Validar que se ha seleccionado alguna provincia.
+
+    Si se cumplen todas las validaciones:
+
+• Preguntar al usuario con un mensaje si deseas enviar el formulario.
+• En caso afirmativo, se enviará. 
+• En caso negativo no hará nada.
+• Se mostrará sólo el primer error que no cumpla la validación.
+• Cuando no se cumpla alguna validación debe aparecer el mensaje correspondiente en la etiqueta div (id=”resultado”) del final en color rojo. 
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO08 - Tema 3.Gestión de eventos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>EJERCICIO 08 - Tema 3.Gestión de eventos</h1>
+        <p>jsanchez8979 - Desarrollo WEB en entorno cliente</p>
+    </header>
+    <main>
+        <form name="formulario" id="formulario" action="https://www.w3schools.com/action_page.php" method="get">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" />
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" name="apellidos" id="apellidos" />
+            <label for="edad">Edad:</label>
+            <input name="edad" type="text" id="edad" maxlength="3" />
+            <label for="provincia">Provincia:</label>
+            <select name="provincia" id="provincia">
+                <option value="0" selected="selected">Seleccione Provincia</option>
+                <option value="H">Huesca</option>
+                <option value="ZA">Zaragoza</option>
+                <option value="T">Teruel</option>
+            </select>
+            <fieldset>
+                <div id="resultado"></div>
+                <input type="reset" name="limpiar" id="limpiar" value="Limpiar" />
+                <input type="submit" name="enviar" id="enviar" value="Enviar" />
+            </fieldset>
+        </form>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
