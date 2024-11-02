@@ -1,0 +1,112 @@
+@font-face {
+    font-family: "Inter-roman";
+    src: url(../fonts/inter-roman-latin.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter-roman";
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr 0.08fr;
+    background-color: #1b1b1f;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid #000000;
+    padding: 0.5em;
+}
+
+header h1 {
+    all: unset;
+    color: #a8b1ff;
+}
+
+header p {
+    color: #a8b1ff;
+    font-size: 12px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main form label {
+    color: #fffff5;
+}
+
+main form input {
+    border: none;
+    outline: none;
+    height: 30px;
+    border-radius: 7px;
+    margin-bottom: 1em;
+    padding: 0 0.5em;
+}
+
+main button {
+    height: 40px;
+    width: 100px;
+    border-radius: 7px;
+    border: 0;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+.checkbox {
+    width: 30px;
+    height: 30px;
+}
+
+#div-numero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202127;
+    border-radius: 7px;
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+    color: white;
+    font-size: 64px;
+}
+
+.boton {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.div-resultado {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    color: #fffff5;
+    margin-left: 1em;
+    background-color: #202127;
+    border-radius: 7px;
+    padding: 0.5em;
+}
+
+footer {
+    border-top: 1px solid #000000;
+}

@@ -1,12 +1,9 @@
 /*
-EJERCICIO 06.
+EJERCICIO 07. 
 
-• Crear un formulario con 2 input de tipo de texto: Nombre y Apellidos. Y un botón validar.
-• Se tiene que cumplir que:
-    1. El nombre comienza por vocal.
-    2. Los apellidos tienen 2 o más de dos palabras.
-• Poner debajo de cada input un mensaje en caso de no cumplir su validación.
-• Una vez hecho, añadir que el mensaje aparezca con letra de color rojo. 
+• Sobre el ejercicio anterior, modificar lo necesario para que una vez que se pulsa el botón, si se cumplen
+  las dos validaciones, el formulario debe redirigir a la página de: https://ceu.es.
+• En caso contrario, el comportamiento debe ser igual al ejercicio anterior. 
 */
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -22,6 +19,8 @@ window.addEventListener("DOMContentLoaded", () => {
         let valueNombreUsuario = String($inputNombreUsuario.value);
         let arrayValueApellidos = String($inputApellidos.value).trim().split(` `);
         let tamanoArrayApellidos = arrayValueApellidos.length;
+        let checkNombre = false;
+        let checkApellidos = false;
 
         console.log(arrayValueApellidos);
         console.log(tamanoArrayApellidos);
@@ -31,17 +30,23 @@ window.addEventListener("DOMContentLoaded", () => {
             $mensajeInputNombreUsuario.style.color = `red`;
         } else {
             $mensajeInputNombreUsuario.innerHTML = ``;
+            checkNombre = true;
         }
 
-        if (tamanoArrayApellidos != 2 || tamanoArrayApellidos < 2) {
-            $mensajeInputApellidos.innerHTML = `Debes introducir los dos apellidos`;
-            $mensajeInputApellidos.style.color = `red`;
-        } else {
+        if (tamanoArrayApellidos >= 2) {
             $mensajeInputApellidos.innerHTML = ``;
+            checkApellidos = true;
+            
+        } else {
+            $mensajeInputApellidos.innerHTML = `Debes introducir los dos apellidos`;
+            $mensajeInputApellidos.style.color = `red`;            
+        }
+
+        if (checkNombre == true && checkApellidos == true) {
+            window.open("https://ceu.es");
         }
 
     });
 
 });
-
 
