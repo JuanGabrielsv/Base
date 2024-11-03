@@ -1,3 +1,10 @@
+<!--
+EJERCICIO 01 
+
+• Crea un archivo HTML con un párrafo (<p>) con el texto: “Texto Original”. 
+• Preguntar al usuario si quiere cambiar texto y en caso afirmativo, cambiar su texto a “Texto Cambiado”. 
+• En caso negativo, preguntar si quiere cambiar el color de la letra. En caso afirmativo, cambiar la letra a color naranja.
+-->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,21 +14,9 @@
     <title>EJERCICIO 01 - Tema3.Gestión de eventos</title>
     <script src="js/main.js"></script>
 </head>
-
 <body>
-    <form action="segunda.html" method="get" enctype="multipart/form-data" name="formulario"> <br />
-        Nombre:<input type="text" name="nombre" value="" size="42" maxlength="30" />
-        Apellidos:<input type="text" name="ape" value="" size="40" maxlength="80" />
-        DNI:<input type="text" name="dni" value="" size="10" maxlength="9" />
-        Sexo:
-        <input type="radio" name="sexo" value="hombre” checked=" checked” />Hombre
-        <input type="radio" name="sexo" value="mujer" />Mujer
-        Incluir mi foto: <input type="file" name="foto" /> <br />
-        <input name="publ" type="checkbox" value="publicidad" checked="checked" />
-        Enviar publicidad
-        <input type="submit" name="enviar" value="Guardar cambios" />
-        <input type="reset" name="limpiar" value="Borrar los datos introducidos" />
-    </form>
+    <main>
+        <p id="texto">Texto Original</p>
+    </main>
 </body>
-
 </html>
