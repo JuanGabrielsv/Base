@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 01 - Tema3.Gestión de eventos</title>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <form action="segunda.html" method="get" enctype="multipart/form-data" name="formulario"> <br />
+        Nombre:<input type="text" name="nombre" value="" size="42" maxlength="30" />
+        Apellidos:<input type="text" name="ape" value="" size="40" maxlength="80" />
+        DNI:<input type="text" name="dni" value="" size="10" maxlength="9" />
+        Sexo:
+        <input type="radio" name="sexo" value="hombre” checked=" checked” />Hombre
+        <input type="radio" name="sexo" value="mujer" />Mujer
+        Incluir mi foto: <input type="file" name="foto" /> <br />
+        <input name="publ" type="checkbox" value="publicidad" checked="checked" />
+        Enviar publicidad
+        <input type="submit" name="enviar" value="Guardar cambios" />
+        <input type="reset" name="limpiar" value="Borrar los datos introducidos" />
+    </form>
+</body>
+
+</html>
