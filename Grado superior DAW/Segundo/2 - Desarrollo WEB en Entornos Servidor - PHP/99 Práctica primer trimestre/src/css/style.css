@@ -1,0 +1,68 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+fieldset {
+  width: auto;
+}
+
+fieldset form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+}
+
+h1 {
+  color: rgb(0, 119, 255);
+}
+
+form p {
+  width: 25%;
+  font-weight: bold;
+  margin: 0;
+}
+
+.salto-de-linea {
+  width: 100%;
+  height: 0.3em;
+}
+
+label {
+  margin-right: 1em;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+
+p {
+  font-weight: bold;
+  margin: 0;
+}
+
+select {
+  border: 1px solid #abadb3;
+  margin: 0;
+  padding: auto 0;
+  font-size: 1em;
+}
+input {
+  font-size: 0.88em;
+}
+span {
+  color: red;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+.exito {
+  color: rgb(0, 212, 0);
+}
+
+.nobold {
+  font-weight: normal;
+  color: black;
+}
