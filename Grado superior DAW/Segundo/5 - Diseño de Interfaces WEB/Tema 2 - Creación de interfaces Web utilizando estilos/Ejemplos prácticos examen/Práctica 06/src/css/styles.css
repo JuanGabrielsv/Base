@@ -1,0 +1,161 @@
+/********************************* TEMPLATE PARA EJERCICIOS *********************************/
+
+body {
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1e25;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+main {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightslategrey;
+    z-index: 0;
+
+}
+
+header {
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: #a8b1ff;
+    border: 1px solid black;
+
+}
+
+footer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a8b1ff;
+    border-top: 1px solid black;
+    text-align: center;
+
+}
+
+/******************************* CONTENERDOR/BARRAS SPECTRUM ********************************/
+
+:root {
+
+    --ancho-barras-spectrum: 11px;
+
+}
+
+.contenedor-spectrum {
+
+    display: flex;
+    position: absolute;
+    background-color: #1a1e25;
+    width: fit-content;
+    height: 130px;
+    left: 94vw;
+    top: -24px;
+    transform: rotate(25deg);
+    overflow: hidden;
+
+}
+
+.contenedor-spectrum div:first-child {
+
+    width: var(--ancho-barras-spectrum);
+    height: 130px;
+    background-color: #ff0000;
+
+}
+
+.contenedor-spectrum div:nth-child(2) {
+
+    width: var(--ancho-barras-spectrum);
+    height: 125px;
+    background-color: #ffff00;
+
+}
+
+.contenedor-spectrum div:nth-child(3) {
+
+    width: var(--ancho-barras-spectrum);
+    height: 120px;
+    background-color: #00ff00;
+
+}
+
+.contenedor-spectrum div:nth-child(4) {
+
+    width: var(--ancho-barras-spectrum);
+    height: 115px;
+    background-color: #00ffff;
+
+}
+
+/******************************* EJERCICIOS/ESTILOS NO FIJOS ********************************/
+
+.contenedor-general {
+
+    display: flex;
+    background-color: ghostwhite;
+    width: 1240px;
+    height: 605px;
+}
+
+.contenedor-general article{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    background-color: #3ad985;
+
+}
+
+.contenedor-general article p:first-child {
+    margin-bottom: 0;
+    margin-top: 6.4rem;
+    margin-left: 1.56rem;
+    width: 230px;;
+    color:white;
+    font-weight: bold;
+    font-size: 32px;   
+
+}
+
+.contenedor-general article p:nth-child(2) {
+    
+    font-size: 15px;
+    margin-bottom: 1rem;
+    margin-left: 1.56rem;
+    width: 255px;;
+    color:white;    
+
+}
+
+.contenedor-general article p:last-child {
+    
+    font-size: 15px;
+    margin-left: 1.56rem;
+    width: 255px;;
+    color:white;    
+
+}
+
+.contenedor-general article p:first-child span {
+
+    color: #fff301;
+
+}
+
+/**************************************** RESPONSIVE ****************************************/
+
+@media (max-width: 465px) {
+
+}
