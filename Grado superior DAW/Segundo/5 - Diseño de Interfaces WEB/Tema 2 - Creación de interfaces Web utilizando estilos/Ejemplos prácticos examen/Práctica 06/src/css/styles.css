@@ -1,7 +1,7 @@
 /********************************* TEMPLATE PARA EJERCICIOS *********************************/
 
 body {
-
+    
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
@@ -103,11 +103,11 @@ footer {
 
     display: flex;
     background-color: ghostwhite;
-    width: 1240px;
-    height: 605px;
+    width: 77.5rem;
+    height: 37.81rem;
 }
 
-.contenedor-general article{
+.contenedor-general article {
 
     display: flex;
     flex-direction: column;
@@ -118,33 +118,42 @@ footer {
 
 }
 
+.contenedor-general article div {
+
+    margin-left: 50px;
+
+}
+
 .contenedor-general article p:first-child {
-    margin-bottom: 0;
+
+    margin-bottom: 0rem;
     margin-top: 6.4rem;
     margin-left: 1.56rem;
-    width: 230px;;
-    color:white;
-    font-weight: bold;
-    font-size: 32px;   
+    width: 230px;
+    color: white;
+    font-weight: 700;
+    font-size: 32px;
 
 }
 
 .contenedor-general article p:nth-child(2) {
-    
+
     font-size: 15px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.3rem;
     margin-left: 1.56rem;
-    width: 255px;;
-    color:white;    
+    width: 255px;
+    ;
+    color: white;
 
 }
 
 .contenedor-general article p:last-child {
-    
+
     font-size: 15px;
     margin-left: 1.56rem;
-    width: 255px;;
-    color:white;    
+    width: 255px;
+    ;
+    color: white;
 
 }
 
@@ -156,6 +165,4 @@ footer {
 
 /**************************************** RESPONSIVE ****************************************/
 
-@media (max-width: 465px) {
-
-}
+@media (max-width: 465px) {}

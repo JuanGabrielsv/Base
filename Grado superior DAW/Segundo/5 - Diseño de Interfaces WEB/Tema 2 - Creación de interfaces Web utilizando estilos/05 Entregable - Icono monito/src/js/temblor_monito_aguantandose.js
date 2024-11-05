@@ -1,6 +1,8 @@
-const input = document.getElementById("contrasena");
+
 
 window.addEventListener("DOMContentLoaded", () => {
+    
+    const input = document.getElementById("contrasena");
 
     input.addEventListener('keydown', function () {
         input.classList.add("temblor");
