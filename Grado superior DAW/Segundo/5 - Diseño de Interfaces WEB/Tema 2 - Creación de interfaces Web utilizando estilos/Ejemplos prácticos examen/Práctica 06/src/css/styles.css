@@ -1,7 +1,9 @@
+/********************************************************************************************/
 /********************************* TEMPLATE PARA EJERCICIOS *********************************/
+/********************************************************************************************/
 
 body {
-    
+
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
@@ -43,7 +45,9 @@ footer {
 
 }
 
+/********************************************************************************************/
 /******************************* CONTENERDOR/BARRAS SPECTRUM ********************************/
+/********************************************************************************************/
 
 :root {
 
@@ -97,17 +101,20 @@ footer {
 
 }
 
+/********************************************************************************************/
 /******************************* EJERCICIOS/ESTILOS NO FIJOS ********************************/
+/********************************************************************************************/
 
-.contenedor-general {
+section {
 
-    display: flex;
+    display: flex;    
     background-color: ghostwhite;
     width: 77.5rem;
     height: 37.81rem;
+    color: #49423a;
 }
 
-.contenedor-general article {
+section article {
 
     display: flex;
     flex-direction: column;
@@ -118,13 +125,13 @@ footer {
 
 }
 
-.contenedor-general article div {
+section article div {
 
     margin-left: 50px;
 
 }
 
-.contenedor-general article p:first-child {
+section article p:first-child {
 
     margin-bottom: 0rem;
     margin-top: 6.4rem;
@@ -136,33 +143,61 @@ footer {
 
 }
 
-.contenedor-general article p:nth-child(2) {
+section article p:nth-child(2) {
 
     font-size: 15px;
     margin-bottom: 1.3rem;
     margin-left: 1.56rem;
-    width: 255px;
-    ;
+    width: 15.93rem;
     color: white;
 
 }
 
-.contenedor-general article p:last-child {
+section article p:last-child {
 
     font-size: 15px;
     margin-left: 1.56rem;
-    width: 255px;
-    ;
+    width: 15.93rem;
     color: white;
 
 }
 
-.contenedor-general article p:first-child span {
+section article p:first-child span {
 
     color: #fff301;
 
 }
 
+section form {    
+    
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;
+    width: 28.12rem;
+    width: 60%;    
+
+}
+
+section form input {
+
+    border: none;
+    border-bottom: 1px solid #939393;
+    background-color: ghostwhite;
+
+}
+
+section form p a {
+
+    color: #574940;
+    font-weight: bold;
+    
+}
+
+
+
+/********************************************************************************************/
 /**************************************** RESPONSIVE ****************************************/
+/********************************************************************************************/
 
 @media (max-width: 465px) {}
