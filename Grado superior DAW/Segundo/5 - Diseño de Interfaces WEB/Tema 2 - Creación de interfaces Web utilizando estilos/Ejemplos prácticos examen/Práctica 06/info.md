@@ -1,4 +1,4 @@
-# Entregable - Checkbox.
+# Práctica 6 Opcional.
 
 ## Autor: <span style="color: #00a300;"> Juan Gabriel Sánchez - jsanchez8979 </span>
 
