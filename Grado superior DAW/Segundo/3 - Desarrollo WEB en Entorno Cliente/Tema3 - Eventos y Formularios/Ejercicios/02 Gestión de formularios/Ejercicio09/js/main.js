@@ -11,16 +11,16 @@ EJERCICIO09
 */
 
 window.addEventListener("DOMContentLoaded", () => {
+
     const $botonActivar = document.getElementById("boton-activar");
     const $inputNombre = document.getElementById("nombre");
     const $divResultado = document.getElementById("resultado");
 
     $botonActivar.addEventListener("click", () => {
-        let valorTexto = $inputNombre.value;
 
+        let valorTexto = $inputNombre.value;
         $divResultado.setAttribute("class", "resultado");
         $divResultado.innerText = valorTexto;
-
         $inputNombre.value = "";
         $inputNombre.focus();
 
