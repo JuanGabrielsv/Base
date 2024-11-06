@@ -2,6 +2,13 @@
 /********************************* TEMPLATE PARA EJERCICIOS *********************************/
 /********************************************************************************************/
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
 
     display: grid;
@@ -31,6 +38,7 @@ header {
     justify-content: center;
     color: #a8b1ff;
     border: 1px solid black;
+    padding: 1%;
 
 }
 
@@ -43,6 +51,7 @@ footer {
     color: #a8b1ff;
     border-top: 1px solid black;
     text-align: center;
+    padding: 0.5%;
 
 }
 
@@ -59,7 +68,7 @@ footer {
 .contenedor-spectrum {
 
     display: flex;
-    position: absolute;
+    position: absolute;    
     background-color: #1a1e25;
     width: fit-content;
     height: 130px;
@@ -70,7 +79,7 @@ footer {
 
 }
 
-.contenedor-spectrum div:first-child {
+.contenedor-spectrum :first-child {
 
     width: var(--ancho-barras-spectrum);
     height: 130px;
@@ -78,7 +87,7 @@ footer {
 
 }
 
-.contenedor-spectrum div:nth-child(2) {
+.contenedor-spectrum :nth-child(2) {
 
     width: var(--ancho-barras-spectrum);
     height: 125px;
@@ -86,7 +95,7 @@ footer {
 
 }
 
-.contenedor-spectrum div:nth-child(3) {
+.contenedor-spectrum :nth-child(3) {
 
     width: var(--ancho-barras-spectrum);
     height: 120px;
@@ -94,7 +103,7 @@ footer {
 
 }
 
-.contenedor-spectrum div:nth-child(4) {
+.contenedor-spectrum :nth-child(4) {
 
     width: var(--ancho-barras-spectrum);
     height: 115px;
@@ -169,6 +178,8 @@ section article p:first-child span {
 
 }
 
+/*************************************** PARTE DERECHA **************************************/
+
 section form {
 
     display: flex;
@@ -216,7 +227,7 @@ section form :nth-child(3) {
 
     position: relative;
     display: inline-block;
-    background-image: url(../assets/eye-password.svg);
+    background-image: url(../assets/svg/eye-password.svg);
     background-repeat: no-repeat;
     background-position: right;
     background-position-y: -3px;
