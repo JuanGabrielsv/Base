@@ -24,8 +24,8 @@ main {
 
 header {
 
-    text-align: center;
     display: flex;
+    text-align: center;
     justify-content: center;
     color: #a8b1ff;
     border: 1px solid black;
@@ -55,11 +55,11 @@ footer {
 
     display: flex;
     position: absolute;
+    top: -24px;
+    left: 94vw;
     background-color: #1a1e25;
     width: fit-content;
     height: 130px;
-    left: 94vw;
-    top: -24px;
     transform: rotate(25deg);
     overflow: hidden;
 
@@ -181,6 +181,7 @@ input[type=checkbox]:checked {
     }
 
     footer {
+
         flex-direction: column;
     }
 

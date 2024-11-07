@@ -1,6 +1,10 @@
 <?php
 session_start();
-$_SESSION['numero1'] = $_POST['numero'];
+$_SESSION['arrayNumeros'] = [];
+array_push($_SESSION['arrayNumeros'], $_POST['numero']);
+
+
+//$_SESSION['numero1'] = $_POST['numero'];
 
 ?>
 <!DOCTYPE html>
@@ -17,9 +21,6 @@ $_SESSION['numero1'] = $_POST['numero'];
         <input type="text" name="numero" id="numero">
         <button type="submit">Enviar</button>
     </form>
-    
-    
-
 </body>
 
 </html>
