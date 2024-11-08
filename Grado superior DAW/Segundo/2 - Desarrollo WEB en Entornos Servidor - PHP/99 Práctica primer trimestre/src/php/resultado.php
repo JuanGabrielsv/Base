@@ -10,10 +10,11 @@
 
 
 <body>
-<header>
-    <h1>Inserción de Ceverzas</h1>
-</header>
+    <header>
+        <h1>Inserción de Ceverzas</h1>
+    </header>
 </body>
+
 </html>
 <?php
 
@@ -28,7 +29,7 @@ while (
     print_r($_REQUEST);
 
     print "<p>No se ha podido realizar la inserción debido a los siguientes errores</p>";
-    print ("<ul>");
+    print("<ul>");
     if (!isset($_REQUEST["tipoenvase"])) {
         print "<li>No se ha marcado el tipo de envase</li>";
     }

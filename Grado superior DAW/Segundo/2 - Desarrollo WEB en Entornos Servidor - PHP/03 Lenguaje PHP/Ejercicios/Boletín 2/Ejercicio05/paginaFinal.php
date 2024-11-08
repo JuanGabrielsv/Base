@@ -9,7 +9,7 @@ print 'mayor: ' . $arrayNumeros[5] . '<br>';
 
 print 'contenido del arrayNumeros recogido: ';
 foreach ($arrayNumeros as $numero) {
-    print $numero;
+    print $numero . ' ';
 }
 
 foreach ($arrayNumeros as $numero) {

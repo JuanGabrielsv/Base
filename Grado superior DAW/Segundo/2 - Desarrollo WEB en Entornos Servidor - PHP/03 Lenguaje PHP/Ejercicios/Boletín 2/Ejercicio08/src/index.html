@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio08 - Boletín 2</title>
+    </head>
+    <body>
+        <form action="php/ejercicio08.php" method="post">
+            <fieldset>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+                <br>
+                <label for="apellidos">Apellidos</label>
+                <input type="text" name="apellidos" id="apellidos">
+                <br>
+                <span>Sexo</span>
+                <input type="radio" name="sexo" id="hombre" value="Hombre" checked>
+                <label for="hombre">Hombre</label>
+                <input type="radio" name="sexo" id="mujer" value="Mujer">
+                <label for="mujer">Mujer</label>
+                <br>
+                <label for="email">Correo electrónico</label>
+                <input type="email" name="email" id="email"
+                    autocomplete="micorreo@email.com">
+                <br>
+                <label for="numero-contacto">Número de contacto</label>
+                <input type="text" name="numero-contacto" id="numero-contacto" autocomplete="No aporta">
+                <br>
+                <label for="experiencia-laboral">Experiencia laboral</label>
+                <textarea name="experiencia-laboral" id="experiencia-laboral"
+                    rows="5"></textarea>
+                <br>
+                <label for="estudios">Estudios</label>
+                <textarea name="estudios" id="estudios" rows="5"></textarea>
+                <br>
+                <label for="jornada-laboral">Jornada laboral</label>
+                <select name="jornada-laboral" id="jornada-laboral">
+                    <option value="Indiferente">Indiferente</option>
+                </select>
+                <br>
+                <span>Idiomas</span>
+                <input type="checkbox" name="idiomas[]" id="ingles" value="Inglés">
+                <label for="ingles">Inglés</label>
+                <input type="checkbox" name="idiomas[]" id="frances" value="Francés">
+                <label for="frances">Francés</label>
+                <input type="checkbox" name="idiomas[]" id="aleman" value="Alemán">
+                <label for="aleman">Alemán</label>
+                <input type="checkbox" name="idiomas[]" id="otros" value="Otros">
+                <label for="otros">Otros</label>
+            </fieldset>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpiar</button>
+        </form>
+
+    </body>
+</html>
