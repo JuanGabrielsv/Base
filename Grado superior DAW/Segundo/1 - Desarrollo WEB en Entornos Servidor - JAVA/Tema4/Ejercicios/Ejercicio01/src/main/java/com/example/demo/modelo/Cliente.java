@@ -21,7 +21,7 @@ public class Cliente {
 	private String apellidos;
 
 	public Cliente() {
-		super();
+		
 	}
 
 	public Cliente(String nombre, String apellidos) {

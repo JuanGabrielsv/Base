@@ -1,11 +1,24 @@
 package com.example.demo.repository;
 
-import com.example.demo.modelo.Cliente;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.List;
-import org.springframework.data.jpa.repository.JpaRepository;
+
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
+import com.example.demo.modelo.Cliente;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
-	List<Cliente> getClientes(String nombre);
+public class ClienteRepository {
+	
+	@PersistenceContext
+	private EntityManager entityManager;
+	
+	public List<Cliente> obtenerClientes() {
+		Query<Cliente> query = (Query<Cliente>) entityManager.createQuery("select c from Cliente c", Cliente.class);
+		List<Cliente> listaCliente = query.getResultList();
+		return listaCliente;
+	}
+	
+	
 }
