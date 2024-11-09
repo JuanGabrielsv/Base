@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    
+
     display: flex;
     justify-content: center;
     color: #a8b1ff;
@@ -38,19 +38,19 @@ main {
     justify-content: center;
     align-items: center;
     background-color: lightslategrey;
-    
+
 
 }
 
 footer {
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
     color: #a8b1ff;
-    border-top: 1px solid black;    
+    border-top: 1px solid black;
     padding: 1%;
-    
+
 }
 
 /********************************************************************************************/
@@ -67,16 +67,16 @@ footer {
 
     display: flex;
     position: absolute;
-    background-color: #1a1e25;    
-    left: 81vw;
     top: -25px;
-    transform: rotate(25deg);    
+    left: 81vw;
+    background-color: #1a1e25;
+    transform: rotate(25deg);
     width: 2.5%;
     background-color: blue;
 
 }
 
-.contenedor-spectrum :first-child {    
+.contenedor-spectrum :first-child {
 
     width: var(--ancho-barras-spectrum);
     height: 150px;
@@ -112,7 +112,139 @@ footer {
 /******************************* EJERCICIOS/ESTILOS NO FIJOS ********************************/
 /********************************************************************************************/
 
+section {
 
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 23.06rem;
+    height: 34.56rem;
+    padding: 0 2.1rem 0 1.6rem;
+
+}
+
+.logo-aws {
+
+    height: 5.2rem;
+    width: fit-content;
+
+}
+
+.iniciar-sesion-text {
+
+    font-weight: 600;
+    color: #433f3e;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.1rem;
+
+}
+
+.contenedor1 {
+
+    display: flex;
+    background-color: #f0f9ff;
+    align-items: start;
+    width: 100%;
+    height: 5rem;
+    border: 1px solid #5f7e9d;
+    padding: 0.5rem;
+    margin-bottom: 0.65rem;
+
+}
+
+.contenedor-input {
+
+    margin-top: 0.2rem;
+
+}
+
+.contenedor-div {
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.2rem;
+
+}
+
+.contenedor-div-p1 {
+
+    color: #433f3e;
+    font-weight: bold;
+    font-size: 0.94rem;
+
+}
+
+.contenedor-div-p2 {
+
+    color: #433f3e;
+    font-size: 0.8rem;
+
+}
+
+.contenedor-div-p2-a {
+
+    text-decoration: none;
+    color: #3267da;
+
+}
+
+.contenedor2 {
+
+    display: flex;
+    background-color: #ffffff;
+    align-items: start;
+    width: 100%;
+    height: 5rem;
+    border: 1px solid #cbcbcb;
+    padding: 0.5rem;
+    margin-bottom: 1.2rem;
+
+}
+
+#email {
+
+    margin-top: 0.7em;
+    border: 1px solid #cbcbcb;
+    padding: 0.47rem;
+    border-radius: 0.3rem;
+    margin-bottom: 1.3rem;
+
+}
+
+#email::placeholder {
+
+    font-size: 0.9rem;
+    font-style: italic;
+
+}
+
+.boton {
+
+    font-size: 0.85rem;
+    text-shadow: 1px 1px 2px rgb(41, 41, 41);
+    background-color: #2886e6;
+    border: 1px solid #425b83;
+    font-weight: bold;
+    color: white;
+    padding: 0.45rem;
+    border-radius: 0.2rem;
+    margin-bottom: 1rem;
+
+}
+
+.parrafo-final {
+
+    color: #433f3e;
+    font-size: 0.78rem;
+
+}
+
+.parrafo-final a {
+
+    text-decoration: none;
+    color: #1e61a5;
+}
 
 /********************************************************************************************/
 /**************************************** RESPONSIVE ****************************************/
@@ -127,8 +259,10 @@ footer {
     }
 
     footer {
+
         display: flex;
         flex-direction: column;
+
     }
 
 }
@@ -140,11 +274,13 @@ footer {
         font-size: 100%;
 
     }
-    
+
     footer {
-        text-align: center;
+
         display: flex;
+        text-align: center;
         flex-direction: column;
+
     }
 
 }
@@ -156,12 +292,13 @@ footer {
         font-size: 79%;
 
     }
-    
+
     footer {
 
-        text-align: center;
         display: flex;
+        text-align: center;
         flex-direction: column;
+
     }
 
 }

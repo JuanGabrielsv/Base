@@ -1,4 +1,4 @@
-# Práctica 6 Opcional.
+# Práctica 1 Opcional.
 
 ## Autor: <span style="color: #00a300;"> Juan Gabriel Sánchez - jsanchez8979 </span>
 
