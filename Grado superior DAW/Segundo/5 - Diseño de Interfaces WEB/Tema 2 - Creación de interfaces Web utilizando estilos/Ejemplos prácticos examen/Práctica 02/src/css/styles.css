@@ -1,0 +1,225 @@
+/********************************************************************************************/
+/********************************* TEMPLATE PARA EJERCICIOS *********************************/
+/********************************************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1e25;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    color: #a8b1ff;
+    border: 1px solid black;
+    padding: 1%;
+    z-index: -10;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightslategrey;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a8b1ff;
+    border-top: 1px solid black;
+    padding: 1%;
+}
+
+/********************************************************************************************/
+/******************************* CONTENERDOR/BARRAS SPECTRUM ********************************/
+/********************************************************************************************/
+
+:root {
+    --ancho-barras-spectrum: 1rem;
+}
+
+.contenedor-spectrum {
+    display: flex;
+    position: absolute;
+    top: -25px;
+    left: 81vw;
+    background-color: #1a1e25;
+    transform: rotate(25deg);
+    width: 2.5%;
+    background-color: blue;
+}
+
+.contenedor-spectrum :first-child {
+    width: var(--ancho-barras-spectrum);
+    height: 150px;
+    background-color: #ff0000;
+}
+
+.contenedor-spectrum :nth-child(2) {
+    width: var(--ancho-barras-spectrum);
+    height: 150px;
+    background-color: #ffff00;
+}
+
+.contenedor-spectrum :nth-child(3) {
+    width: var(--ancho-barras-spectrum);
+    height: 150px;
+    background-color: #00ff00;
+}
+
+.contenedor-spectrum :nth-child(4) {
+    width: var(--ancho-barras-spectrum);
+    height: 150px;
+    background-color: #00ffff;
+}
+
+/********************************************************************************************/
+/******************************* EJERCICIOS/ESTILOS NO FIJOS ********************************/
+/********************************************************************************************/
+
+:root {
+    --sec1-ancho: 63.375rem;
+    --sec1-alto: 28.8125rem;
+    --sec1-div2-input-ancho: 30rem;
+}
+
+.sec1 {
+    display: flex;
+    flex-direction: column;
+    width: var(--sec1-ancho);
+    height: var(--sec1-alto);
+    background-color: white;
+    padding: 0.8rem 1.5rem 0.5rem 1rem;    
+}
+
+.sec1-dv1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #c4c4c4;
+    padding-bottom: 0.78rem;    
+    margin: 0 0 2rem 0;
+}
+
+.sec1-dv1-1 {
+    color: #292929;
+    font-weight: 600;
+    font-size: 1.29rem;
+}
+
+.sec1-div1-2 {
+    font-size: 0.8rem;
+    color: #a8a8a8;
+}
+
+.sec1-div2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.sec1-div2-1 {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0.89em;
+    border: 1px solid #d8d8d8;
+    padding: 0.6rem 0.7rem 0.6rem 0.7rem;
+    margin-bottom: 0.8rem;    
+}
+
+.sec1-div2-p1 {
+    color: #525252;
+    font-size: 1.1rem;
+    margin-bottom: 2.6rem;
+}
+
+.sec1-div2-input {
+    outline: none;
+    padding: 1.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid #757575;    
+    width: var(--sec1-div2-input-ancho);
+    background-image: url(../assets/svg/arrow-circle-right-.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 1.6rem; 
+    background-position-x: 27.5rem;   
+    margin-bottom: 1rem;    
+}
+
+.sec1-div2-input::placeholder {    
+    font-size: 0.9rem;
+}
+
+.link-pass-forgot {
+    display: flex;  
+    margin-bottom: 0.8rem;  
+}
+
+.link-pass-forgot a {
+    color: #3c76ad;
+    text-decoration: none;    
+}
+
+.parrafo-footer {
+    text-align: center;
+    width: 21rem;
+    font-size: 0.79rem;
+}
+
+.parrafo-footer a {
+    text-decoration: none;
+    color: #0063c0;
+}
+
+/********************************************************************************************/
+/**************************************** RESPONSIVE ****************************************/
+/********************************************************************************************/
+
+@media (max-width: 1055px) {
+    header h1 {
+        font-size: 150%;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 780px) {
+    header h1 {
+        font-size: 100%;
+    }
+
+    footer {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 465px) {
+    header h1 {
+        font-size: 79%;
+    }
+
+    footer {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+    }
+}
