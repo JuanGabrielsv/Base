@@ -1,0 +1,121 @@
+@font-face {
+    font-family: robototo;
+    src: url(../assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf) format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    font-family: robototo;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+section {
+    display: flex;
+    background-color: #f1f1f1;
+    width: 81.56rem;
+    height: 32.43rem;
+}
+
+.izquierda,
+.derecha {
+    width: 50%;
+    height: 100%;
+}
+
+.izquierda {
+    display: flex;
+    flex-direction: column;    
+    margin-left: 6.5rem;
+}
+
+.derecha {
+    background-color: red;
+}
+
+.contenedor-input-izq {
+    background-color: white;
+    width: 33.18rem;
+    height: 14.31rem;
+    border-radius: 1rem;
+}
+
+.izquierda h1 {
+    font-style: none;
+    margin-top: 2.6rem;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+.izquierda p {
+    margin: 0 0 2rem 0;
+    font-size: 1.2rem;
+
+
+}
+
+.label1 {
+    font-size: 0.8rem;
+}
+
+.formulario-izq {
+    margin: 2rem 1rem 1rem 1rem;
+}
+
+.input-correo {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.7rem;
+    border: 1px solid black;
+}
+
+.label-contraseña {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.input-contraseña {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    outline: none;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.7rem;
+    border: 1px solid black;
+    background-image: url(../assets/svg/eye-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    
+}
+
+.olvidado-contrasena {
+    margin-left: auto;
+}
+
+.final-input {
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.boton-iniciarsesion {
+    background-color: red;
+    color: white;
+    padding: 1rem;    
+    border: none;
+    border-radius: 1rem;
+}
