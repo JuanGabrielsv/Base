@@ -1,6 +1,6 @@
 @font-face {
     font-family: robototo;
-    src: url(../assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf) format('truetype');
+    src: url(../assets/fonts/RobotoCondensed-VariableFont_wght.ttf) format('truetype');
 }
 
 * {
@@ -22,8 +22,8 @@ main {
 section {
     display: flex;
     background-color: #f1f1f1;
-    width: 81.56rem;
-    height: 32.43rem;
+    width: 76.125rem;
+    height: 31.75rem;
 }
 
 .izquierda,
@@ -34,46 +34,36 @@ section {
 
 .izquierda {
     display: flex;
-    flex-direction: column;    
-    margin-left: 6.5rem;
+    flex-direction: column;
+    padding-left: 3.4rem;
+    padding-right: 1rem;
 }
 
-.derecha {
-    background-color: red;
-}
-
-.contenedor-input-izq {
-    background-color: white;
-    width: 33.18rem;
-    height: 14.31rem;
-    border-radius: 1rem;
-}
-
-.izquierda h1 {
-    font-style: none;
+.izquierda h1,
+.derecha h1 {
     margin-top: 2.6rem;
     font-size: 2.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.2rem;
 }
 
-.izquierda p {
-    margin: 0 0 2rem 0;
+.izquierda p,
+.derecha p {
+    margin: 0 0 1.9rem 0;
     font-size: 1.2rem;
-
-
 }
 
 .label1 {
     font-size: 0.8rem;
 }
 
-.formulario-izq {
-    margin: 2rem 1rem 1rem 1rem;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 .input-correo {
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
     outline: none;
     padding: 0.5rem;
     width: 100%;
@@ -97,7 +87,7 @@ section {
     background-image: url(../assets/svg/eye-svgrepo-com.svg);
     background-repeat: no-repeat;
     background-position: right;
-    
+    background-origin: content-box;
 }
 
 .olvidado-contrasena {
@@ -109,13 +99,35 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .boton-iniciarsesion {
-    background-color: red;
-    color: white;
-    padding: 1rem;    
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    border: 1px solid;
+    border-radius: 2rem;
+    width: 9rem;
+    margin: auto;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+fieldset {
+    padding: 2rem 1rem 0 1rem;
+    background-color: white;
+    border-radius: 1rem;
     border: none;
+    margin-bottom: 1rem;
+}
+
+.div-derecha-blanco {
+    display: flex;
+    flex-direction: column;    
+    background-color: white;
     border-radius: 1rem;
 }
+
+
+
