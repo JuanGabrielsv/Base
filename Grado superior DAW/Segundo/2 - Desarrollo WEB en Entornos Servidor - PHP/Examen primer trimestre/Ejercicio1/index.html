@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EJERCICIO 1</title>
+    </head>
+    <body>
+        <form action="php/formulario2.php" method="post">
+            <h1>TABLA DE UNA FILA CON CASILLAS DE VERIFICACIÓN (FORMULARIO
+                1).</h1>
+            <p>Escriba un número (0 < número &le; 20) y mostraré una tabla de
+                una
+                fila de ese tamaño con casillas de verificación en cada
+                celda.</p>
+            <label for="cantidad">Tamaño de la tabla</label>
+            <input type="number" name="cantidad" id="cantidad" min="1" max="20"
+                required>
+            <br>
+            <button type="submit">Mostrar</button>
+            <button type="reset">Borrar</button>
+        </form>
+    </body>
+</html>
