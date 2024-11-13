@@ -13,10 +13,23 @@ public class ClienteRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public List<Cliente> obtenerClientes() {
+	//getClientes: obtiene la lista de todos los clientes
+	public List<Cliente> getClientes() {
 		Query<Cliente> query = (Query<Cliente>) entityManager.createQuery("select c from Cliente c", Cliente.class);
 		List<Cliente> listaCliente = query.getResultList();
 		return listaCliente;
-	}	
+	}
+	
+	//getCliente: dado un id, obtiene sus datos de clientes.
+	public Cliente getCliente(int id) {
+		Cliente cliente = entityManager.find(Cliente.class, id);
+		return cliente;
+	}
+	
+	// insertaCliente: inserta los datos de un cliente.
+	public void insertarCliente(Cliente nuevoCliente) {
+		entityManager.persist(nuevoCliente);
+		
+	}
 	
 }
