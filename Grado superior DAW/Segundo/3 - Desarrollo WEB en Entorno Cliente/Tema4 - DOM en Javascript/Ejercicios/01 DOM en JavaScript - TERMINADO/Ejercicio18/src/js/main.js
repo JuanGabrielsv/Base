@@ -55,4 +55,30 @@ window.addEventListener('DOMContentLoaded', () => {
         $tBody.appendChild($fila);
     }
 
+    /*EJERCICIO18.
+
+• Sobre el ejercicio anterior, cuando pulsemos el botón, añadir desde Javascript una columna nueva, que será un checkbox. 
+• Cada checkbox tiene un id diferente: “checkbox1”, “checkbox2”,… y un name con el valor “marcar.”*/
+
+    const $botonAnadir = document.getElementById('boton-anadir');
+    const $nuevaFila = document.createElement('th');
+    $nuevaFila.textContent = 'hola';
+
+    $botonAnadir.addEventListener('click', () => {
+        const $trTheadTable = document.querySelector('table thead tr');
+        $trTheadTable.insertBefore($nuevaFila, $trTheadTable.firstChild);
+
+        $filasTbody = document.querySelectorAll('table tbody tr');
+
+        $filasTbody.forEach((element, index) => {
+            const $nuevaCelda = document.createElement('td');
+            const $checkbox = document.createElement('input');
+            $checkbox.type = 'checkbox';
+            $checkbox.id = `chekbox${index + 1}`;
+            $checkbox.name = 'marcar';
+            $nuevaCelda.insertBefore($checkbox, $nuevaCelda.firstChild);
+            element.insertBefore($nuevaCelda, element.firstChild);
+        });
+
+    });
 });

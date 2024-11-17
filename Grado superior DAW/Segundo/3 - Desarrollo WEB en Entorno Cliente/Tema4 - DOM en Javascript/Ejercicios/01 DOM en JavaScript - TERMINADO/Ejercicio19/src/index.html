@@ -1,0 +1,38 @@
+<!--
+EJERCICIO19.
+
+Continuamos con el ejercicio anterior. En la página HTML, debajo de la tabla, habrá 3 botones:
+
+    • Uno que seleccione todos los checkbox de la tabla
+    • Otro que deseleccione todos los checks marcados de la tabla
+    • Otro que elimine aquellas filas que estén marcadas con el checkbox.
+-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio19 - DOM en Javascript</title>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <h1>Tabla HTML dibujada con JS</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Código</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+            </tbody>
+        </table>
+        <button id="boton-anadir">Añadir</button>
+        <br>
+        <br>
+        <button type="button" id="boton-seleccionar">Seleccionar</button>
+        <button type="button" id="boton-deseleccionar">Deseleccionar</button>
+        <button type="button" id="boton-borrar">Borrar fila marcada</button>
+    </body>
+</html>

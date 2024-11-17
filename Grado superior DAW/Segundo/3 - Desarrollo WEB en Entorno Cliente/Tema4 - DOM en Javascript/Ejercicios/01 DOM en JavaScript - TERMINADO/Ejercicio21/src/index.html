@@ -1,0 +1,44 @@
+<!--
+EJERCICIO21.
+
+• Continuamos con el ejercicio anterior para que cuando se pase por una fila de la tabla, ponga su fondo de color amarillo.
+-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio21 - DOM en Javascript</title>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <h1>Tabla HTML dibujada con JS</h1>
+        <div>
+            <input type="text" id="nombreN"
+                placeholder="Por favor escriba el nombre del producto">
+            <input type="text" id="precioN"
+                placeholder="Por favor escriba su precio">
+            <input type="text" id="codigoN"
+                placeholder="Por favor escriba su codigo">
+            <input type="button" id="add" value="Añadir">
+        </div>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Código</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+            </tbody>
+        </table>
+        <button id="boton-anadir">Añadir</button>
+        <br>
+        <br>
+        <button type="button" id="boton-seleccionar">Seleccionar</button>
+        <button type="button" id="boton-deseleccionar">Deseleccionar</button>
+        <button type="button" id="boton-borrar">Borrar fila marcada</button>
+    </body>
+</html>
