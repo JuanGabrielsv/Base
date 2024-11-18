@@ -20,12 +20,15 @@
         } elseif ($type !== "" && $type !== []) {
             trigger_error("Error2", E_USER_ERROR);
         }
+
         $tmp = $type;
         if (isset($_REQUEST[$key])) {
+
             if (!is_array($_REQUEST[$key]) && !is_array($type)) {
                 $tmp = trim(htmlspecialchars($_REQUEST[$key]));
             } elseif (is_array($_REQUEST[$key]) && is_array($type)) {
                 $tmp = $_REQUEST[$key];
+
                 array_walk_recursive($tmp, function (&$value) {
                     $value = trim(htmlspecialchars($value));
                 });
