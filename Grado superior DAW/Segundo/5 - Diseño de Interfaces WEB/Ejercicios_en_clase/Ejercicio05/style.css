@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+#contenedor {
+    background-color: lightgray;
+    min-height: 400px;
+    display: grid;
+    grid-template-areas:
+        "logo menu"
+        "categorias seccion";
+    grid-template-columns: 25%;
+    gap: 10px;
+    padding: 10px;
+}
+
+.logo {
+    background-color: aqua;
+}
+
+.menu {
+    background-color: bisque;
+}
+
+.categoria {
+    background-color: brown;
+}
+
+.productos {
+    background-color: blueviolet;
+}
+
+.logo,
+.menu,
+.categoria,
+.productos {
+    border: 5px solid darkblue;
+    padding: 10px;
+}
