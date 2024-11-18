@@ -1,9 +1,14 @@
 <?php
+//INICIAMOS LA SESIÓN
+session_name('ejercicio1');
 session_start();
+
+//RECOGEMOS LOS DATOS
 $cantidadDeFilas = $_REQUEST['cantidad'];
+$_SESSION['cantidadDeFilas'] = $cantidadDeFilas;
 
 
-session_destroy();
+
 ?>
 
 <!DOCTYPE html>
@@ -16,14 +21,18 @@ session_destroy();
 </head>
 
 <body>
-    <form action="php/formulario2.php" method="post">
+    <form action="formulario3.php" method="post">
         <h1>TABLA DE UNA FILA CON CASILLAS DE VERIFICACIÓN (FORMULARIO 2).</h1>
         <p>Marque las casillas de verificación que quiera y contaré cuántas ha marcado.</p>
+
+        <!--IMPRIMIMOS EL RESULTADO-->
+
         <?php
-        for ($i=1; $i < $cantidadDeFilas+1; $i++) { 
-            print '<input type="checkbox"><label>'.$i. '</label>';
-        } ?>  
-        <br>  
+        for ($i = 1; $i < $cantidadDeFilas + 1; $i++) {
+            print '<input type="checkbox" name=' . $i . '><label>' . $i . '</label>';
+        } ?>
+
+        <br><br>
         <button type="submit">Contar</button>
         <button type="reset">Borrar</button>
         <br>
@@ -32,4 +41,3 @@ session_destroy();
 </body>
 
 </html>
-
