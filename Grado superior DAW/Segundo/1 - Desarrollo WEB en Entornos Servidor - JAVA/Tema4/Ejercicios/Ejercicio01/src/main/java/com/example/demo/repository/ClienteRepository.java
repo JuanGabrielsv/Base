@@ -32,4 +32,15 @@ public class ClienteRepository {
 		
 	}
 	
+	//deleteCliente: dado un id de un cliente, lo elimina.
+	public Boolean deleteCliente(Integer id) {
+		
+		Cliente c = getCliente(id);
+		if (c != null) {
+			entityManager.remove(c);
+			return true;
+		}
+		return false;
+	}
+	
 }

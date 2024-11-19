@@ -29,5 +29,11 @@ public class ClienteService {
 	public void insertarCliente(Cliente nuevoCliente) {
 		repository.insertarCliente(nuevoCliente);
 	}
+	
+	//deleteCliente: dado un id de un cliente, lo elimina.
+	@Transactional
+	public Boolean deleteCliente(Integer id) {
+		return repository.deleteCliente(id);
+	}
 
 }
