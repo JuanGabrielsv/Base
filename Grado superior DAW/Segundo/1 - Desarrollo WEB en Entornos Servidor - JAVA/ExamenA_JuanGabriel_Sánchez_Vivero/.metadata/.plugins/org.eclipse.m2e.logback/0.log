@@ -1,0 +1,243 @@
+2024-11-19 15:00:58,403 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
+2024-11-19 15:06:10,426 [Worker-5: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.examenA:ExamenA_JuanGabriel_sanchez:0.0.1-SNAPSHOT @ C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\pom.xml.
+2024-11-19 15:06:14,076 [Worker-5: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ExamenA_JuanGabriel_sanchez/src/main/java
+2024-11-19 15:06:14,077 [Worker-5: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ExamenA_JuanGabriel_sanchez/src/main/resources
+2024-11-19 15:06:14,086 [Worker-5: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ExamenA_JuanGabriel_sanchez/src/main/resources
+2024-11-19 15:06:14,094 [Worker-5: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ExamenA_JuanGabriel_sanchez/src/test/java
+2024-11-19 15:06:14,095 [Worker-5: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ExamenA_JuanGabriel_sanchez/src/test/resources
+2024-11-19 15:06:17,650 [Worker-5: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 10 sec
+2024-11-19 15:06:17,654 [Worker-5: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-11-19 15:06:17,967 [Worker-5: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.examenA:ExamenA_JuanGabriel_sanchez:0.0.1-SNAPSHOT @ C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\pom.xml.
+2024-11-19 15:06:18,639 [Worker-5: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ExamenA_JuanGabriel_sanchez/src/main/java
+2024-11-19 15:06:18,641 [Worker-5: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ExamenA_JuanGabriel_sanchez/src/main/resources
+2024-11-19 15:06:18,642 [Worker-5: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ExamenA_JuanGabriel_sanchez/src/main/resources
+2024-11-19 15:06:18,643 [Worker-5: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ExamenA_JuanGabriel_sanchez/src/test/java
+2024-11-19 15:06:18,644 [Worker-5: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ExamenA_JuanGabriel_sanchez/src/test/resources
+2024-11-19 15:06:19,485 [Worker-5: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0,00 sec, refresh facades takes 0,00 sec, update config takes 0,00 sec 
+2024-11-19 15:06:20,612 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:06:20,638 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:06:20,649 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:07:33,776 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:07:33,789 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:07:33,801 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:16:48,713 [Worker-21: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-11-19 15:16:49,319 [Worker-21: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.examenA:ExamenA_JuanGabriel_sanchez:0.0.1-SNAPSHOT @ C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\pom.xml.
+2024-11-19 15:16:49,927 [Worker-21: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ExamenA_JuanGabriel_sanchez/src/main/java
+2024-11-19 15:16:49,927 [Worker-21: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ExamenA_JuanGabriel_sanchez/src/main/resources
+2024-11-19 15:16:49,928 [Worker-21: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ExamenA_JuanGabriel_sanchez/src/main/resources
+2024-11-19 15:16:49,928 [Worker-21: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ExamenA_JuanGabriel_sanchez/src/test/java
+2024-11-19 15:16:49,928 [Worker-21: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ExamenA_JuanGabriel_sanchez/src/test/resources
+2024-11-19 15:16:50,214 [Worker-21: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0,00 sec, refresh facades takes 1,00 sec, update config takes 0,00 sec 
+2024-11-19 15:16:50,603 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:16:50,616 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:16:50,622 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:16:55,486 [Worker-22: Launching ExamenA_JuanGabriel_sanchez - ExamenAJuanGabrielSanchezApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:16:55,502 [Worker-22: Launching ExamenA_JuanGabriel_sanchez - ExamenAJuanGabrielSanchezApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:16:55,506 [Worker-22: Launching ExamenA_JuanGabriel_sanchez - ExamenAJuanGabrielSanchezApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:19:28,599 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:19:28,603 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:19:28,607 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:20:00,607 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:20:00,612 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:20:00,613 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:20:12,337 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:20:12,342 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:20:12,344 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:21:43,824 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:21:43,828 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:21:43,830 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:22:02,813 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:22:02,831 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:22:02,833 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:22:42,516 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:22:42,520 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:22:42,521 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:22:50,368 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:22:50,380 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:22:50,382 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:23:28,320 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:23:28,329 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:23:28,331 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:33:13,064 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:33:13,069 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:33:13,071 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:33:47,301 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:33:47,309 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:33:47,311 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:35:17,500 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:35:17,506 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:35:17,508 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:35:48,632 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:35:48,636 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:35:48,638 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:38:47,140 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:38:47,144 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:38:47,146 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:39:43,051 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:39:43,057 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:39:43,059 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:40:04,982 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:40:04,986 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:40:04,988 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:43:40,771 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:43:40,780 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:43:40,783 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:44:55,559 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:44:55,562 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:44:55,564 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:45:09,450 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:45:09,454 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:45:09,456 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:45:51,435 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:45:51,439 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:45:51,441 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:45:57,661 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:45:57,664 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:45:57,666 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:49:07,916 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:49:07,921 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:49:07,923 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:50:16,159 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:50:16,165 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:50:16,167 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:51:04,138 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:51:04,144 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:51:04,146 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:53:15,959 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:53:15,966 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:53:15,968 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:53:23,489 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:53:23,493 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:53:23,494 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:55:26,668 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:55:26,677 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:55:26,679 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:56:58,723 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:56:58,727 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:56:58,729 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 15:57:06,976 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 15:57:06,980 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 15:57:06,982 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:00:10,474 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:00:10,484 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:00:10,485 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:02:16,210 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:02:16,215 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:02:16,217 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:02:21,316 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:02:21,320 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:02:21,323 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:08:21,852 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:08:21,859 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:08:21,862 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:08:45,390 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:08:45,394 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:08:45,396 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:09:35,238 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:09:35,242 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:09:35,244 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:09:42,085 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:09:42,093 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:09:42,094 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:10:17,757 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:10:17,761 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:10:17,763 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:11:42,758 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:11:42,763 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:11:42,765 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:11:46,855 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:11:46,860 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:11:46,861 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:13:36,244 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:13:36,254 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:13:36,261 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:16:59,127 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:16:59,134 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:16:59,136 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:17:30,692 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:17:30,700 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:17:30,701 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:18:06,862 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:18:06,867 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:18:06,869 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:18:19,388 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:18:19,391 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:18:19,393 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:18:56,312 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:18:56,322 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:18:56,324 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:19:11,292 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:19:11,296 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:19:11,298 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:19:33,405 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:19:33,410 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:19:33,411 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:26:28,504 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:26:28,514 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:26:28,516 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:31:34,730 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:31:34,736 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:31:34,737 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:31:46,564 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:31:46,571 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:31:46,573 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:32:01,913 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:32:01,922 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:32:01,923 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:41:49,127 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:41:49,132 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:41:49,134 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:44:27,193 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:44:27,202 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:44:27,203 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:48:44,902 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:48:44,912 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:48:44,918 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:49:00,161 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:49:00,168 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:49:00,174 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:51:12,613 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:51:12,618 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:51:12,621 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:51:43,739 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:51:43,745 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:51:43,749 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:53:11,513 [Worker-76: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:53:11,518 [Worker-76: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:53:11,521 [Worker-76: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:53:53,268 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:53:53,276 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:53:53,279 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:54:09,024 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:54:09,032 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:54:09,035 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:54:47,951 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:54:47,965 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:54:47,969 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:54:58,514 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:54:58,518 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:54:58,520 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:55:30,270 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:55:30,281 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:55:30,288 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:56:25,631 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:56:25,635 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:56:25,639 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:57:25,916 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:57:25,920 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:57:25,922 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 16:58:08,898 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 16:58:08,903 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 16:58:08,906 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 17:01:37,919 [Worker-81: Launching ExamenA_JuanGabriel_sanchez - ExamenAJuanGabrielSanchezApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 17:01:37,933 [Worker-81: Launching ExamenA_JuanGabriel_sanchez - ExamenAJuanGabrielSanchezApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 17:01:37,936 [Worker-81: Launching ExamenA_JuanGabriel_sanchez - ExamenAJuanGabrielSanchezApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 17:04:26,115 [Worker-86: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 17:04:26,119 [Worker-86: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 17:04:26,121 [Worker-86: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 18:04:22,798 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 18:04:22,807 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 18:04:22,810 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
+2024-11-19 18:05:02,125 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-19 18:05:02,134 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-11-19 18:05:02,136 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jsanchez8979\Desktop\ExamenA_JuanGabriel_Sánchez_Vivero\ExamenA_JuanGabriel_sanchez\src\test\resources
