@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
 import com.example.demo.modelo.Entrada;
 import com.example.demo.servicio.EntradaServicio;
 
@@ -85,6 +83,7 @@ public class EntradaControlador {
 	public ResponseEntity<Map<String, Integer>> obtenerMapaNombreCliente() {		 
 		List<Entrada> entradas = entradaServicio.obtenerEntradas();
 		Map<String, Integer> mapaNombreClienteCantidad = new HashMap<>();
+		
 		return ResponseEntity.ok(mapaNombreClienteCantidad);
 	}
 
