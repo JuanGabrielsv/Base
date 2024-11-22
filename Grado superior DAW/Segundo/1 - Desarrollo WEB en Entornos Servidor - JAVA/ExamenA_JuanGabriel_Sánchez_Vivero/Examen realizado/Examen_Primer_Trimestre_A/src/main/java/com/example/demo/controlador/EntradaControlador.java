@@ -76,14 +76,17 @@ public class EntradaControlador {
 			@PathVariable String horario) {
 		return ResponseEntity.ok(entradaServicio.modificarPeliculaPorVariables(id, pelicula, horario));
 	}
-	
+
 	// H)
-	
+
 	@GetMapping("/mapaClientes")
-	public ResponseEntity<Map<String, Integer>> obtenerMapaNombreCliente() {		 
+	public ResponseEntity<Map<String, Integer>> obtenerMapaNombreCliente() {
 		List<Entrada> entradas = entradaServicio.obtenerEntradas();
 		Map<String, Integer> mapaNombreClienteCantidad = new HashMap<>();
-		
+		for (Entrada entrada : entradas) {
+			mapaNombreClienteCantidad.put(entrada.getNombreComprador(),
+					mapaNombreClienteCantidad.getOrDefault(entrada.getNombreComprador(), 0) + 1);
+		}
 		return ResponseEntity.ok(mapaNombreClienteCantidad);
 	}
 
