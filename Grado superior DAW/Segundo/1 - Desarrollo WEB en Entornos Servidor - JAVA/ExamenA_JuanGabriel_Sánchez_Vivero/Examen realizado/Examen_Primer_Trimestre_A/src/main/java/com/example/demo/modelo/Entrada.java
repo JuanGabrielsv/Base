@@ -117,5 +117,10 @@ public class Entrada {
 	public void setPrecioTotal(Double precioTotal) {
 		this.precioTotal = precioTotal;
 	}
+	
+	@Override
+	public String toString() {
+		return "Entrada ID: " + id + " - Número de entradas: " + numeroEntradas + " - Pelicula: " + pelicula;
+	}
 
 }

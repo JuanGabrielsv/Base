@@ -74,5 +74,37 @@ public class EntradaServicio {
 		}
 		return "No se encuentra ninguna entrada con el id: " + id;
 	}
-	
+
+	// I)
+
+	public Entrada masCara() {
+		List<Entrada> entradas = entradaRepositorio.obtenerEntradas();
+		Entrada entradaMasCara = entradas.get(0);
+		for (Entrada entrada : entradas) {
+			if (entrada.getPrecioTotal() > entradaMasCara.getPrecioTotal()) {
+				entradaMasCara = entrada;
+			}
+		}
+		return entradaMasCara;
+	}
+
+	// J)
+
+	public List<String> obtenerEntradasMultiples(Integer numEntradas) {
+		List<Entrada> entradas = entradaRepositorio.obtenerEntradas(); // Nos traemos todas las entradas de la BD.
+
+		List<Entrada> entradasFiltradas = entradas.stream() // Iniciamos el Stream devolverá todas las entradas.
+				.filter(e -> e.getNumeroEntradas() > numEntradas && e.getTaquilla() == true).toList(); // Aplicamos el filtro con sus condiciones
+		
+		entradasFiltradas.forEach(System.out::println); // Mostrar todas las entradas por consola.
+		
+		
+
+		return entradasFiltradas.stream()
+				.limit(2) // Limitamos la busque a las dos primeras
+				.map(Entrada::toString)
+				.toList();
+
+	}
+
 }

@@ -89,5 +89,21 @@ public class EntradaControlador {
 		}
 		return ResponseEntity.ok(mapaNombreClienteCantidad);
 	}
+	
+	// I)
+	
+	@GetMapping("/masCara")
+	public ResponseEntity<Entrada> masCara() {
+		return ResponseEntity.ok(entradaServicio.masCara());		
+	}
+	
+	// J)
+	
+	@GetMapping("/entradasMultiples/{numEntradas}")
+	public ResponseEntity<List<String>> obtenerEntradasMultiples(@PathVariable Integer numEntradas) {
+		return ResponseEntity.ok(entradaServicio.obtenerEntradasMultiples(numEntradas)); 
+		
+	}
+	
 
 }
