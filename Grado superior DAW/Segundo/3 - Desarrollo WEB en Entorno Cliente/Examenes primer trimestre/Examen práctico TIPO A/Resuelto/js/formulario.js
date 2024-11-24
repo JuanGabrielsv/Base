@@ -47,6 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
             divError.innerHTML = 'Contraseña tiene que tener mas de 8 caracteres';
         } else {
             sorpresa.setAttribute('style', 'display: block;');
+
             quieroSorpresa.addEventListener('click', () => {
                 var numeroRandom = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
                 console.log(numeroRandom);
@@ -54,10 +55,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 if (numeroRandom == 1) {
                     var imgElement = document.createElement('img');
                     imgElement.setAttribute('src', '../sorpresa1.jpg');
+                    imgElement.setAttribute('style', 'width: 650px; height: 350px');
                     sorpresaId.appendChild(imgElement);
                 } else {
                     var imgElement = document.createElement('img');
                     imgElement.setAttribute('src', '../sorpresa2.jpg');
+                    imgElement.setAttribute('style', 'width: 650px; height: 350px');
                     sorpresaId.appendChild(imgElement);
                 }
             });
@@ -66,13 +69,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 const temporizador = setTimeout(() => {
                     var imgElement = document.createElement('img');
                     imgElement.setAttribute('src', '../sorpresaNO.jpg');
+                    imgElement.setAttribute('style', 'width: 650px; height: 350px');
                     sorpresaId.appendChild(imgElement);
                 }, 3000);
             });
 
         }
-
-
 
     });
 
