@@ -118,4 +118,10 @@ public class Reserva {
 		this.codigoVenta = codigoVenta;
 	}
 
+	@Override
+	public String toString() {
+		return "Reserva ID: " + this.id + " - Número de noches: " + this.numeroNoches + " - Código venta: "
+				+ this.codigoVenta;
+	}
+
 }
