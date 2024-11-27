@@ -1,8 +1,11 @@
 package com.example.demo.servicio;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.modelo.Entrada;
 import com.example.demo.repositorio.EntradaRepositorio;
 
 import jakarta.transaction.Transactional;
@@ -13,5 +16,9 @@ public class EntradaServicio {
 	
 	@Autowired
 	private EntradaRepositorio entradaRepositorio;
+	
+	public List<Entrada> getTodasLasEntradas() {		
+		return entradaRepositorio.getTodasLasEntradas();
+	}
 
 }

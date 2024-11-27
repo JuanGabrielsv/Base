@@ -18,7 +18,7 @@ public class Entrada {
 	@Column(name = "nombre_comprador", nullable = false)
 	private String nombreComprador;
 
-	@Column(name = "pelicual", nullable = false)
+	@Column(name = "pelicula", nullable = false)
 	private String pelicula;
 
 	@Column(name = "horario", nullable = false)
@@ -27,7 +27,7 @@ public class Entrada {
 	@Column(name = "numero_entradas", nullable = false)
 	private Integer numeroEntradas;
 
-	@Column(name = "precio_por_entradas", nullable = false)
+	@Column(name = "precio_por_entrada", nullable = false)
 	private Double precioPorEntrada;
 
 	@Column(name = "taquilla")
@@ -36,9 +36,7 @@ public class Entrada {
 	@Column(name = "precio_total")
 	private Double precioTotal;
 
-	public Entrada() {
-
-	}
+	public Entrada() {}
 
 	public Entrada(Long id, String nombreComprador, String pelicula, String horario, Integer numeroEntradas,
 			Double precioPorEntrada, Boolean taquilla, Double precioTotal) {
