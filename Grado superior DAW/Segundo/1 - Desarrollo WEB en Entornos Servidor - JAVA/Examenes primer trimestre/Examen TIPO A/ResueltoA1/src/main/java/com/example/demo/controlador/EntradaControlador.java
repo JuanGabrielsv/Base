@@ -1,8 +1,6 @@
 package com.example.demo.controlador;
 
 import java.util.List;
-
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,14 +18,14 @@ public class EntradaControlador {
 	@Autowired
 	private EntradaServicio entradaServicio;
 
-// A)
+	// A)
 
 	@PostMapping
-	public ResponseEntity<Entrada> postNuevaCompraEntrada(@RequestBody Entrada nuevaEntrada) {
-		Entrada entrada = postNuevaCompraEntrada
+	public ResponseEntity<Entrada> postNuevaEntrada(@RequestBody Entrada nuevaEntrada) {		
+		return ResponseEntity.ok(entradaServicio.postNuevaEntrada(nuevaEntrada));
 	}
 
-// B)
+	// B)
 
 	@GetMapping
 	public ResponseEntity<List<Entrada>> getTodasLasEntradas() {

@@ -33,14 +33,13 @@ public class Entrada {
 	@Column(name = "taquilla")
 	private Boolean taquilla = true;
 
-	@Column(name = "precio_total")
+	@Column(name = "precio_total", nullable = false)
 	private Double precioTotal;
 
 	public Entrada() {}
 
 	public Entrada(Long id, String nombreComprador, String pelicula, String horario, Integer numeroEntradas,
 			Double precioPorEntrada, Boolean taquilla, Double precioTotal) {
-
 		this.id = id;
 		this.nombreComprador = nombreComprador;
 		this.pelicula = pelicula;
@@ -113,6 +112,13 @@ public class Entrada {
 
 	public void setPrecioTotal(Double precioTotal) {
 		this.precioTotal = precioTotal;
+	}
+	
+	public void calcularPrecioTotal() {
+		this.precioTotal = this.precioPorEntrada * this.numeroEntradas;
+		if(!this.taquilla) {
+			this.precioTotal *= 1.02;
+		}
 	}
 
 }

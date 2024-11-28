@@ -11,10 +11,19 @@ import jakarta.persistence.PersistenceContext;
 
 @Repository
 public class EntradaRepositorio {
-	
+
 	@PersistenceContext
 	private EntityManager entityManager;
+
+	// A)
 	
+	public Entrada postNuevaEntrada(Entrada nuevaEntrada) {
+		entityManager.persist(nuevaEntrada);
+		return nuevaEntrada;
+	}
+
+	// B)
+
 	public List<Entrada> getTodasLasEntradas() {
 		return entityManager.createQuery("SELECT e FROM Entrada e", Entrada.class).getResultList();
 	}
