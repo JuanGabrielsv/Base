@@ -8,18 +8,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="clientes")
+@Table(name = "clientes")
 public class Cliente {
 
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer id;
-    
-    @Column
-    private String nombre;
-    
-    @Column
-    private String apellidos;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+
+	@Column
+	private String nombre;
+
+	@Column
+	private String apellidos;
 
 	public Cliente() {
 		super();
@@ -54,5 +54,5 @@ public class Cliente {
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-    
+
 }
