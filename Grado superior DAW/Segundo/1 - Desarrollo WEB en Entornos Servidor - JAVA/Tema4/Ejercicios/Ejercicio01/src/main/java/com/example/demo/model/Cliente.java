@@ -1,4 +1,4 @@
-package com.example.demo.modelo;
+package com.example.demo.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,20 +8,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "clientes")
+@Table(name="clientes")
 public class Cliente {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private int id;
-	@Column(name = "nombre")
-	private String nombre;
-	@Column(name = "apellidos")
-	private String apellidos;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id;
+    
+    @Column
+    private String nombre;
+    
+    @Column
+    private String apellidos;
 
 	public Cliente() {
-		
+		super();
 	}
 
 	public Cliente(String nombre, String apellidos) {
@@ -30,11 +31,11 @@ public class Cliente {
 		this.apellidos = apellidos;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -53,5 +54,5 @@ public class Cliente {
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-
+    
 }
