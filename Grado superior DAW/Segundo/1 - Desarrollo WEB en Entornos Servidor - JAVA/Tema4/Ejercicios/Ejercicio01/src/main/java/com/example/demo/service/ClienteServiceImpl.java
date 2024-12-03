@@ -40,7 +40,6 @@ public class ClienteServiceImpl {
 
 	public List<Cliente> getClientesNombre(String nombre) {
 		List<Cliente> clientes = cliente.getClientesNombre(nombre);
-
 		return clientes;
 	}
 }
