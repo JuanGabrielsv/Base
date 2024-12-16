@@ -3,27 +3,27 @@
         {
             "id": 1,
             "nombre": "nombre1",
-            "notas": [5, 5, 5, 5]
+            "notas": [3, 8, 5, 5]
         },
         {
             "id": 2,
             "nombre": "nombre2",
-            "notas": [5, 5, 5, 5]
+            "notas": [6, 10, 8, 9]
         },
         {
             "id": 3,
             "nombre": "nombre3",
-            "notas": [5, 5, 5, 5]
+            "notas": [5, 2, 4, 7]
         },
         {
             "id": 4,
             "nombre": "nombre4",
-            "notas": [5, 5, 5, 5]
+            "notas": [10, 9, 10, 8]
         },
         {
             "id": 5,
             "nombre": "nombre5",
-            "notas": [5, 5, 5, 5]
+            "notas": [4, 10, 0, 7]
         }
     ]
 }
