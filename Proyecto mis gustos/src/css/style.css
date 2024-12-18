@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr 0.1fr;
+    height: 100vh;
+}
+
+header {
+    background-color: #1a1f29;
+    font-family: 'Roboto';
+    color: white;
+}
+
+main {
+    background-color: #293241;
+}
+footer {
+    background-color: #293241;
+}
