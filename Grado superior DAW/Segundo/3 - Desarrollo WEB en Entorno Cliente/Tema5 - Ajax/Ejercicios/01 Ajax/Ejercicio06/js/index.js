@@ -6,25 +6,36 @@ EJERCICIO 06.
 3. En html tenéis una etiqueta div para poner el conjunto de datos insertados. 
 4. Hacer la petición con Fetch y await. 
 */
+const datosParaInsertar = {
+    userId: 83,
+    title: 'Datos insertados',
+    body: 'Que pasa tomasa que te va la guasa'
+}
+
 inicioPrograma = () => {
 
-    const div1 = document.getElementById('conjunto-insertado');
-    const datosParaInsertar = {
-        userId: 83,
-        title: 'Datos insertados',
-        body: 'Que pasa tomasa que te va la guasa'
-    }
-
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        body: JSON.stringify(datosParaInsertar),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        }
-    })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+    introducirDatos('https://jsonplaceholder.typicode.com/posts', datosParaInsertar);
 
 };
+
+async function introducirDatos(url, objeto) {
+    const div1 = document.getElementById('conjunto-insertado');
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(objeto),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        div1.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+    } catch (error) {
+        console.error('Error al realizar la solicitud:', error);
+    }
+}
 
 window.addEventListener('DOMContentLoaded', inicioPrograma);
