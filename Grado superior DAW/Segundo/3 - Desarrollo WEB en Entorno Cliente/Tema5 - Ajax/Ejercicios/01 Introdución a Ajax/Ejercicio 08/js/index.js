@@ -16,30 +16,29 @@ iniciar = () => {
         .then((response) => response.json())
         .then((data) =>
             data.results.forEach((element) => {
-
                 if (idUsuario > 10) {
                     idUsuario = 1
                 }
 
                 let boton = document.createElement('button')
-                boton.textContent = 'Cambiar'
-                boton.id = `usuario${idUsuario}`
-
                 let divUsuario = document.createElement('div')
-                divUsuario.style = 'text-align: center; margin-top: 2rem'
-                divUsuario.id = `id-usuario${idUsuario}`
                 let imagen = document.createElement('img')
-                imagen.src = `${element.picture.large}`
                 let parrafo = document.createElement('p')
 
-
-                parrafo.innerHTML = `${element.name.title} 
-                ${element.name.first} 
-                ${element.name.last} <br> 
-                ${element.email} <br>
-                ${element.location.street.name},
-                ${element.location.street.number} <br>
-                ${element.location.city} ${element.location.country}`
+                boton.textContent = 'Cambiar'
+                boton.id = `usuario${idUsuario}`
+                divUsuario.style = 'text-align: center; margin-top: 2rem'
+                divUsuario.id = `id-usuario${idUsuario}`
+                imagen.src = `${element.picture.large}`
+                parrafo.innerHTML = `
+                ${element.name.title}
+                ${element.name.first}
+                ${element.name.last}
+                <br>
+                ${element.email}
+                <br>
+                ${element.location.street.name}, ${element.location.street.number}<br>
+                ${element.location.city} (${element.location.country})`
 
                 divUsuario.appendChild(imagen)
                 divUsuario.appendChild(parrafo)
@@ -54,22 +53,18 @@ iniciar = () => {
                     fetch('https://randomuser.me/api/?results=1')
                         .then((response) => response.json())
                         .then((data) => data.results.forEach((element) => {
-
                             let cambiarUsuario = document.getElementById(`id-${boton.id}`)
-                            console.log(cambiarUsuario)
+                            console.log(cambiarUsuario.id)
+                            imagen.src = element.picture.large
 
                         }))
                         .catch((error) => console.log('Error:', error))
 
-                    console.log(boton.id)
+
                 })
-
-
             })
         )
         .catch((error) => console.log('Error:', error))
-
-
 }
 
 window.addEventListener('DOMContentLoaded', iniciar)
