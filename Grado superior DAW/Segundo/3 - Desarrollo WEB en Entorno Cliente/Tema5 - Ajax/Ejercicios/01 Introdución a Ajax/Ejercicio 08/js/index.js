@@ -47,20 +47,23 @@ iniciar = () => {
 
                 idUsuario++
 
-                console.log(element)
-
                 boton.addEventListener('click', () => {
                     fetch('https://randomuser.me/api/?results=1')
                         .then((response) => response.json())
                         .then((data) => data.results.forEach((element) => {
                             let cambiarUsuario = document.getElementById(`id-${boton.id}`)
-                            console.log(cambiarUsuario.id)
                             imagen.src = element.picture.large
-
+                            parrafo.innerHTML = `
+                            ${element.name.title}
+                            ${element.name.first}
+                            ${element.name.last}
+                            <br>
+                            ${element.email}
+                            <br>
+                            ${element.location.street.name}, ${element.location.street.number}<br>
+                            ${element.location.city} (${element.location.country})`
                         }))
                         .catch((error) => console.log('Error:', error))
-
-
                 })
             })
         )
