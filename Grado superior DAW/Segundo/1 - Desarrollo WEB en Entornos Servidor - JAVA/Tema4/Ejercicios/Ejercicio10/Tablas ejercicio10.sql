@@ -1,11 +1,7 @@
-SET FOREIGN_KEY_CHECKS = 0;
+-- SET FOREIGN_KEY_CHECKS = 0;
+-- SET FOREIGN_KEY_CHECKS = 1;
 
-
-DROP TABLE oficina;
-DROP TABLE reservas;
-DROP TABLE empleado;
-
-/*CREATE TABLE `oficina` (
+CREATE TABLE `oficina` (
 `id` INT NOT NULL AUTO_INCREMENT,
  `ubicacion` VARCHAR(255) NOT NULL,
 `telefono` VARCHAR(20) NOT NULL, PRIMARY
@@ -19,4 +15,4 @@ CREATE TABLE `empleado`
 `oficina_id` INT,
 PRIMARY KEY (`id`),
 FOREIGN KEY (`oficina_id`) REFERENCES
-`oficina`(`id`) ON DELETE SET NULL);*/
+`oficina`(`id`) ON DELETE SET NULL);
