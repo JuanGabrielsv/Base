@@ -90,16 +90,40 @@
 
 body {
     display: grid;
-    grid-template-rows: 0.1fr 1fr 0.1fr;
+    grid-template-rows: 0.08fr 1fr 0.1fr;
     height: 100vh;
+    color: #000;
 }
 
+/*************************** HEADER ***************************/
 header {
-    background-color: gray;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
 }
+
+#logo {
+    background-color: #000;
+    color: #f1f1f1;
+    border-radius: 1rem;
+    padding: 0.1rem 0.5rem;
+    margin-right: 2rem;
+    font-weight: lighter;
+    font-family: Open-Sans;
+}
+
+/**************************** MAIN ****************************/
 
 main {
-    background-color: green;
+    background-color: #fff;
+}
+
+#titulo {
+    font-family: Open-Sans;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 3rem;
 }
 
 footer {
