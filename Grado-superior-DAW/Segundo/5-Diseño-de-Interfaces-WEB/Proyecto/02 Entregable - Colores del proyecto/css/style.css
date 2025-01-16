@@ -1,99 +1,105 @@
 * {
-  font-family: Cambria, "Segoe UI";  
+    font-family: Cambria, "Segoe UI";
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
 }
 
 header {
-  text-align: center;
+    text-align: center;
 }
 
 main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .color-uno {
-  background-color: #000000;
-  p {
-    color: #ffffff;
-    font-size: 2em;
-  }
+    background-color: #000000;
+
+    p {
+        color: #ffffff;
+        font-size: 2em;
+    }
 }
 
 .color-dos {
-  background-color: #ffffff;
-  border: 1px solid #000000;
-  p {
-    color: #000000;
-    font-size: 2em;
-  }
+    background-color: #ffffff;
+    border: 1px solid #000000;
+
+    p {
+        color: #000000;
+        font-size: 2em;
+    }
 }
 
 .color-tres {
-  background-color: #00a300;
-  p {
-    color: #ffffff;
-    font-size: 2em;
-  }
+    background-color: #00a300;
+
+    p {
+        color: #ffffff;
+        font-size: 2em;
+    }
 }
 
 .color-cuatro {
-  background-color: #e6e6e6;
-  border: 1px solid #000000;
-  p {
-    color: #000000;
-    font-size: 2em;
-  }
+    background-color: #e6e6e6;
+    border: 1px solid #000000;
+
+    p {
+        color: #000000;
+        font-size: 2em;
+    }
 }
 
 .tamano {
-  width: 17em;
-  height: 17em;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1em;
+    display: flex;
+    width: 17em;
+    height: 17em;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
 }
 
 .salto-de-linea {
-  width: 100%;
-  height: 1em;
+    width: 100%;
+    height: 1em;
 }
 
 .explicacion {
-  width: 73.7%;
-  font-size: 1.25em;
+    width: 73.7%;
+    font-size: 1.25em;
 }
 
 .autor {
-  font-size: 1.5em;
-  margin-right: 0.5em;
-  font-weight: bold;
+    font-size: 1.5em;
+    margin-right: 0.5em;
+    font-weight: bold;
 }
 
 h2 {
-  font-weight: normal;
-  color: blue;
+    font-weight: normal;
+    color: blue;
 }
 
 footer {
-  margin-top: 7em;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  hr {
-    width: 100%;
-  }
-  p {
-    margin: 0;
-  }
+    display: flex;
+    margin-top: 7em;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    hr {
+        width: 100%;
+    }
+
+    p {
+        margin: 0;
+    }
 }
