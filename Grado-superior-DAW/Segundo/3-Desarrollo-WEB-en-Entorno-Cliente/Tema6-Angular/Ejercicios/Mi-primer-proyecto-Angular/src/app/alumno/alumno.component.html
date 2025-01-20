@@ -1,0 +1,10 @@
+<h1 [class]="rojo">Componente Alumno</h1>
+<p>{{nombre}}</p>
+<p>{{apellido}}</p>
+<p>{{edad}}</p>
+<p>{{dni}}</p>
+<div>{{edad*5}}</div>
+<p>{{edad > 18 ? 'Mayor de edad' : 'Menor de edad'}}</p>
+
+<input type="text" #nuevoDni (keyup)="(0)" />
+<p>{{nuevoDni.value}}</p>

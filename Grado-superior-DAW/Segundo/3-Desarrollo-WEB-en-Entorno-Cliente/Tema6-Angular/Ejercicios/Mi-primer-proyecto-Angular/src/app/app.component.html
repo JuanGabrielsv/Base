@@ -5,3 +5,23 @@
 <h2>{{title}}</h2>
 <h3>{{nombre}}</h3>
 <p>{{getEdad() < 18 ? "menor de edad" : "mayor de edad" }} </p>
+
+        <app-user-profile></app-user-profile>
+
+        <p [class]="naranja">Hola, mi nombre es {{name}}</p>
+        <p [innerHTML]="name"></p>
+
+        Imagen: <img class="imagen" [src]="imgUrl" />
+        <br>
+        Imagen2: <img class="imagen" src="{{imgUrl}}" />
+        <br>
+
+        <input type="checkbox" [checked]="chekeado">
+        <br>
+        <input type="text" [value]="name" [disabled]="deshabilitado">
+        <br>
+        <br>
+        <div>{{asignatura.nombre}}</div>
+        <div>{{asignatura.codigo}}</div>
+
+        <app-alumno></app-alumno>
