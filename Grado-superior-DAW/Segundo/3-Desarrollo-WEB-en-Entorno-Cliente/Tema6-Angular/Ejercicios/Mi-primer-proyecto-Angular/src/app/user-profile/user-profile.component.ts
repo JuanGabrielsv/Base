@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-user-profile',
@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
     styleUrl: './user-profile.component.css'
 })
 export class UserProfileComponent {
+    @Input()
     name: string = 'Tom Hanks';
+    @Input()
     role: string = 'Juan Gabriel';
     titulo: string = 'Components User';
 }
