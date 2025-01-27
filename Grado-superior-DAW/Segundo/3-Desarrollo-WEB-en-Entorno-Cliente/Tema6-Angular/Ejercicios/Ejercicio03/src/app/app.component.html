@@ -1,0 +1,36 @@
+<!-- Sobre el componente creado app.component, definir dos parámetros y mostrarlos en la vista.
+Uno que se llame name con vuestro nombre y otro que se llame imgUrl y tenga la URL de la
+imagen que ya está en el componente. Crear la imagen en la vista para que la url sea ese valor
+que le estáis pasando desde el componente. Hacerlo de las dos formas vistas. -->
+<img [src]="imgUrl" alt="Dibujo de una lanza de hielo">
+<br>
+<img src="{{imgUrl}}" alt="Dibujo de una lanza de hielo">
+
+<!-- Sobre el componente creado app.component, crear un párrafo con vuestro nombre, con una clase
+de estilo “naranja” que ponga el color naranja. Hacedlo usando el método Property Binding. -->
+<p [style.color]="naranja">{{name}}</p>
+<p [class]="orange">{{name}}</p>
+
+<!-- Sobre la vista app.component.html, crear un checkbox que inicialmente esté marcado. Para ello
+crear una propiedad marcado = true en el componente y que desde la vista pueda leer dicha
+propiedad. -->
+<label for="checkbox">Inicialmente marcado</label>
+<input type="checkbox" [checked]="marcado" name="checkbox" id="checkbox">
+<br>
+
+<!-- Sobre la vista app.component.html, crear un input de type text que muestre vuestro nombre y
+que esté deshabilitado. Creando una propiedad que se llame deshabilitado. -->
+<label for="checkbox2">Mi nombre deshabilitado</label>
+<input type="text" name="checkbox2" id="checkbox2" value="Juan Gabriel" [disabled]="deshabilitado">
+<br>
+
+<!-- Crear en el componente un registro (objeto literal) que se llame asignatura. Tendrá los campos:
+nombre y codigo. Darles valores y mostrarlos desde la vista dentro de dos div. -->
+<div>{{asignatura.nombre}}</div>
+<div>{{asignatura.codigo}}</div>
+
+<!-- Crear un componente nuevo alumno (carpeta alumno) e invocarlo desde el componente
+ppal. Crear propiedades para todo lo que se pide: -->
+<app-alumno></app-alumno>
+
+<!--  Mostrar un título (h1): ‘Componente Alumno’ de color rojo -->
