@@ -3,22 +3,76 @@
 
 <!-- Que tenga las siguientes propiedades: Nombre, apellido, edad y dni. Dar valores y mostrarlos en
 la vista o plantilla (html) con etiquetas <p>. -->
-<p>{{nombre}}</p>
-<p>{{apellido}}</p>
-<p>{{edad}}</p>
-<p>{{dni}}</p>
+<p>{{ nombre }}</p>
+<p>{{ apellido }}</p>
+<p>{{ edad }}</p>
+<p>{{ dni }}</p>
 
 <!-- Mostrar además en la vista otro párrafo p con la edad del alumno multiplicado por 5. -->
-<p>{{edad*5}}</p>
+<p>{{ edad * 5 }}</p>
 
 <!-- Además, si el alumno es mayor de edad, mostrar el mensaje ‘Mayor de edad’ y si es menor de
 edad ‘Menor de edad’. Pista: usar operador ternario en la interpolación. -->
-<p>El alumno es: {{edad < 18 ? 'menor de edad' : 'mayor de edad' }}</p>
+<p>El alumno es: {{ edad < 18 ? "menor de edad" : "mayor de edad" }}</p>
 
-		<!-- A continuación creamos un texto: ‘Introducir DNI’ y un input de tipo de texto de forma que
+<!-- A continuación creamos un texto: ‘Introducir DNI’ y un input de tipo de texto de forma que
 cuando levantemos la tecla, el valor introducido en el input se vea un nuevo campo div dni.
 Usar el siguiente elemento: # hace que se pueda referenciar ese elemento.
 <input type=”text” #nuevoDni (keyup) =”(0)” /> -->
-		<label for="dni">Introducir DNI: </label>
-		<input type="text" name="dni" id="dni" #nuevoDni (keyup)="(0)">
-		<div id="nuevoDni">{{nuevoDni.value}}</div>
+<label for="dni">Introducir DNI: </label>
+<input type="text" name="dni" id="dni" #nuevoDni (keyup)="(0)" />
+<div id="nuevoDni">{{ nuevoDni.value }}</div>
+
+<!-- ¿Qué tengo que cambiar si quiero que el cuadro de texto estará deshabilitado(disabled)?. Usar
+property binding. -->
+<label for="dni2">Introducir DNI: </label>
+<input
+  type="text"
+  name="dni2"
+  id="dni2"
+  #nuevoDni
+  (keyup)="(0)"
+  [disabled]="deshabilitado"
+/>
+
+<!-- Crear en la vista un checkbox que esté marcado si la edad del alumno es menor de 18 años.
+Probad cambiando el valor de la edad del componente -->
+<p>Edad del alumno: {{ edad }}</p>
+<label for="checkbox">Marcado si la edad del alumno es menor de edad</label>
+<input type="checkbox" name="checkbox" id="checkbox" [checked]="edad < 18" />
+<br />
+
+<!-- Crear en la vista otro checkbox que inicialmente esté desmarcado y cuando se marque, se
+muestre un mensaje alert con un mensaje. Probad a cambiar el valor del booleano en el
+componente.  -->
+<label for="checkbox2">Si lo marcas sale un alert</label>
+<input
+  type="checkbox"
+  name="checkbox2"
+  id="checkbox2"
+  [checked]="checked"
+  (click)="mostrarAlert()"
+/>
+<br />
+
+<!-- FORMA 2 -->
+<label for="checkbox2">Si lo marcas sale un alert</label>
+<input
+  type="checkbox"
+  name="checkbox3"
+  id="checkbox3"
+  onclick="if(this.checked) alert('Hola')"
+/>
+<br />
+
+<!-- Crear una propiedad en el componente con el texto ‘antes de pulsar’. Y que cuando el checkbox
+anterior sea pulsado, el texto cambie a: ‘check pulsado’ -->
+<label for="checkbox4">Si lo marcas sale un alert</label>
+<input
+  type="checkbox"
+  name="checkbox4"
+  id="checkbox4"
+  [checked]="checked"
+  (click)="mostrarMensaje()"
+/>
+<p>{{ texto }}</p>
