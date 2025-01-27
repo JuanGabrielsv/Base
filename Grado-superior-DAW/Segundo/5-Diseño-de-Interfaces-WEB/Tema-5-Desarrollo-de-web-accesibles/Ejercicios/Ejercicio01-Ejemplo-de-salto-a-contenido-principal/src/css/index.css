@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 0.08fr 1fr 0.1fr;
+  height: 100vh;
+  color: #000;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkcyan;
+}
+
+main {
+  background-color: darkgoldenrod;
+  padding: 1em;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkred;
+}
+
+p {
+  margin-top: 1em;
+}
+
+.enlace-salto {
+  position: absolute;
+  top: -50px;
+}
+
+.enlace-salto:focus {
+  top: 0;
+}
