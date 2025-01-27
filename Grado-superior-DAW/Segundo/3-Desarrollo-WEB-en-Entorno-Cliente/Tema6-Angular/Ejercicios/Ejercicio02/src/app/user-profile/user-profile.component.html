@@ -1,0 +1,27 @@
+<!-- En la vista de user-profile vamos a escribir un párrafo con el texto: Componente UserProfile.
+¿Lo vemos en nuestra página? ¿Por qué?
+(Por que no hemos registrado el componente y tampoco hemos puesto su etiqueta en el componente principal) -->
+<p>Componente UserProfile</p>
+
+<!-- En la vista del componente user-profile, creamos un div con dos etiquetas p, una para escribir un
+nombre de una persona y el otro para escribir el rol de dicha persona. -->
+<!-- Le damos estilos al div del componente con una class=”comp-user” que tenga: border 1 solid negro,
+padding 2em, margin 1em y width 20em. -->
+<!-- Le damos estilo al nombre, con una class=”name” y lo ponemos en negrita (font-weight:bold) y
+color azul. -->
+<!-- Le damos estilo al rol, con una class=”role” y lo ponemos en itálica (font-style: italic) -->
+<div class="comp-user">
+  <p class="name">Nombre: Juan Gabriel</p>
+  <p class="role">Rol: Desarrollador web</p>
+</div>
+<div class="comp-user">
+  <p class="name">Nombre: {{ name }}</p>
+  <p class="role">Rol: {{ role }}</p>
+</div>
+<h1>{{ titulo }}</h1>
+<h1 [class]="naranja">{{ titulo }}</h1>
+<label for="nombre">Nombre:</label>
+<input type="text" name="nombre" id="nombre" [value]="nombre" />
+<p [class.aviso]="num == 0">Prueba</p>
+<p [style.font-size]="tamano">Prueba</p>
+<p [style.color]="color">Prueba</p>

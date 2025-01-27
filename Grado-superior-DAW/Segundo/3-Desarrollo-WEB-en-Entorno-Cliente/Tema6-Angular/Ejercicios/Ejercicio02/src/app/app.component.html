@@ -1,0 +1,33 @@
+<!-- Sobre el proyecto que ya tenemos creado vamos a añadir un componente:
+• Crear un componente con el nombre UserProfile: ¿Cómo se genera?
+(Se genera con el comando "ng g c mi_componente")
+Vamos a la carpeta src/app/
+Vemos que se ha creado una carpeta user-profile:
+◦ user-profile.component.css
+◦ user-profile.component.html
+◦ user-profile.component.spec.css
+◦ user-profile.component.ts
+• Version<=16: Comprobamos que el componente se ha registrado en app.module.ts.
+• Version>16: Importar el componente donde lo vayamos a incluir. -->
+
+<!-- En la vista de user-profile vamos a escribir un párrafo con el texto: Componente UserProfile.
+¿Lo vemos en nuestra página? ¿Por qué?
+(Por que no hemos registrado el componente y tampoco hemos puesto su etiqueta en el componente principal) -->
+
+<!-- Incluimos el selector del componente : app-user-profile en el componente principal:
+app.component.html -->
+<app-user-profile></app-user-profile>
+
+<!-- ¿Podríamos poner el selector del componente varias veces? Probemos!
+(Si podríamos, este se repetiria tantas veces como lo pongamos) -->
+
+<!-- En la vista del componente user-profile, creamos un div con dos etiquetas p, una para escribir un
+nombre de una persona y el otro para escribir el rol de dicha persona. -->
+
+<!-- Le damos estilos al div del componente con una class=”comp-user” que tenga: border 1 solid negro,
+padding 2em, margin 1em y width 20em. -->
+
+<!-- Le damos estilo al nombre, con una class=”name” y lo ponemos en negrita (font-weight:bold) y
+color azul. -->
+
+<!-- Le damos estilo al rol, con una class=”role” y lo ponemos en itálica (font-style: italic) -->

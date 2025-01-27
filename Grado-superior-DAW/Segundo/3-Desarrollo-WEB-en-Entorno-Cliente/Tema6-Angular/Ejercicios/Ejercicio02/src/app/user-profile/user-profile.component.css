@@ -1,0 +1,28 @@
+/* Le damos estilos al div del componente con una class=”comp-user” que tenga: border 1 solid negro,
+padding 2em, margin 1em y width 20em. */
+.comp-user {
+  border: 1px solid #000000;
+  padding: 2em;
+  margin: 1em;
+  width: 20em;
+}
+
+/* Le damos estilo al nombre, con una class=”name” y lo ponemos en negrita (font-weight:bold) y
+color azul. */
+.name {
+  font-weight: bold;
+  color: #0000ff;
+}
+
+/* Le damos estilo al rol, con una class=”role” y lo ponemos en itálica (font-style: italic) */
+.role {
+  font-style: italic;
+}
+
+.naranja {
+  color: #ff8c00;
+}
+
+.aviso {
+  color: #0000ff;
+}

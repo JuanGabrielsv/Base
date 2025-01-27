@@ -1,0 +1,5 @@
+/* Duplicar otro mensaje con h1 pero ahora creamos mejor un estilo class=”azul”, con color de la letra
+azul. ¿Donde creamos el estilo? (En app.component.css) */
+.azul {
+    color: blue;
+}
