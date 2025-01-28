@@ -76,3 +76,25 @@ anterior sea pulsado, el texto cambie a: ‘check pulsado’ -->
   (click)="mostrarMensaje()"
 />
 <p>{{ texto }}</p>
+
+<!-- Crear dos radios. (sólo puede haber uno marcado, con el mismo name). Un radio que ponga
+Hombre y otro Mujer con value H y M respectivamente. Crear una función, de forma que si se
+pulsa el radio Hombre el texto anterior debe mostrar ‘Pulsado Hombre’ y si se pulsa Mujer,
+mostrará ‘Pulsada Mujer’. -->
+<label for="radio">Hombre</label>
+<input
+  type="radio"
+  name="radio"
+  id="radio"
+  value="H"
+  (click)="sexoPulsado($event)"
+/>
+<br />
+<label for="radio">Mujer</label>
+<input
+  type="radio"
+  name="radio"
+  id="radio"
+  value="M"
+  (click)="sexoPulsado($event)"
+/>

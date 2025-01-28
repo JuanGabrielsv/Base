@@ -1,0 +1,20 @@
+<!-- Crear un botón y un input de tipo text. Al pulsar el botón (click), muestre en el input, el nombre de
+vuestro compañero. Pista: Crear un método y un atributo en la clase para guardar el nombre de
+vuestro compañero. -->
+<button type="button" (click)="mostrarNombre()">Mostrar nombre</button>
+<input type="text" name="nombre" id="nombre" [value]="nombre" />
+<br />
+<br />
+
+<!-- Crear un input de tipo text. Cuando termine de escribir en él, con el evento keyup, mostrará una
+etiqueta con lo que haya escrito. Cada vez que lance el evento, los valores se irán concatenando con
+una coma. Pista: crear un método asociado al evento keyup y un atributo key para concatenar su
+valor al nuevo valor del input. Para acceder a dicho valor: event.target.value -->
+<label for="texto">Escribe: </label>
+<input
+  type="text"
+  name="texto"
+  id="texto"
+  (keyup)="concatenarLoEscrito($event)"
+/>
+<p>{{ key }}</p>

@@ -36,4 +36,12 @@ export class AlumnoComponent {
     alert('Check marcado');
     this.texto = 'Check pulsado';
   }
+
+  sexoPulsado(event: any) {
+    if (event.target.value == 'M') {
+      this.texto = 'Pulsado mujer';
+    } else {
+      this.texto = 'Pulsado hombre';
+    }
+  }
 }

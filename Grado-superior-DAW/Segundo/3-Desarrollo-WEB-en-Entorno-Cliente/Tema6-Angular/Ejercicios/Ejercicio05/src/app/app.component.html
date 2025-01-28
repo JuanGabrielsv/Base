@@ -1,0 +1,90 @@
+<!-- Crear un input de tipo text y un div, de tal forma que el contenido del input se muestre en el div.
+Primero usar la forma de One way Binding y event Binding.
+Después usar la forma de Two Way data binding -->
+<!-- One way Binding & event Binding -->
+<p>One way Binding & event Binding</p>
+<label for="input0">Muestra dentro de div lo que escribas: </label>
+<input
+  type="text"
+  name="input0"
+  id="input0"
+  (keyup)="mostrarTextoInput1($event)"
+/>
+<div>{{ texto0 }}</div>
+
+<!-- Two way data Binding [(ngModel)] -->
+<p>Two way data Binding [(ngModel)]</p>
+<label for="input1">Muestra dentro de div lo que escribas: </label>
+<input type="text" name="input1" id="input1" [(ngModel)]="texto1" />
+<div>{{ texto1 }}</div>
+
+<!-- Crear una tabla con cuatro filas y dos columnas: -->
+<table>
+  <thead></thead>
+  <tbody>
+    <!-- Fila 1: en la primera columna tiene un checkbox y en la segunda columna una capa div con el
+		mensaje Hola. El funcionamiento debe ser el siguiente: Si se marca el checkbox, la capa div
+		tendrá el estilo ‘fondo’:
+		.fondo { background: yellow; }
+		Si se desmarca, la capa div, no tendrá dicho estilo. -->
+    <tr>
+      <td>
+        <input
+          type="checkbox"
+          name="checkbox0"
+          id="checkbox0"
+          [(ngModel)]="marcadoDesmarcado"
+        />
+      </td>
+      <td>
+        <div [className]="ponerFondo()">Hola</div>
+      </td>
+    </tr>
+    <!-- Fila 2: crear una columna con colspan=2 para que ocupe las dos columnas. Tiene un enlace <a>
+		y queremos que el atributo href se le pase con un valor desde el componente, por ejemplo:
+		“https://ceuandalucia.es” -->
+    <tr>
+      <td colspan="2"><a [href]="enlace" target="_blank">enlace</a></td>
+    </tr>
+    <!-- Fila 3: En la primera columna crear un botón que inicialmente muestre el valor ‘Mostrar’ y
+		cuando se pulse, cambie el texto a ‘Ocultar’. Cuando esté en ‘Ocultar’, cambiará a ‘Mostrar’.
+		En la segunda columna, hay una capa div, con un texto ‘Visible’ que se ve cuando el botón de la
+		primera columna muestre ‘Mostrar’. Cuando se pulse el botón con texto ‘Ocultar’, la capa se
+		oculta (hidden).
+		Pista: crear un atributo mostrarCapa en el componente que inicialmente será true. Esto hará que
+		el botón muestre ‘Mostrar’ y la capa estará hidden. -->
+    <tr>
+      <td>
+        <button
+          type="button"
+          (click)="cambiarNombreBoton()"
+          (click)="ocultarDiv()"
+        >
+          {{ nombreBoton }}
+        </button>
+      </td>
+      <td><div [hidden]="ocultarMostrarDivFila3">Visible</div></td>
+    </tr>
+    <!-- Fila 4: En la primera columna hay un botón que podrá tener los valores ‘Habilitar’ o
+		‘Deshabilitar’. Inicialmente mostrará ‘Habilitar’. Cuando se pulse ‘Habilitar’, el botón de la
+		segunda columna con texto ‘Hola que tal’ se habilitará. Cuando el primer botón muestre
+		‘Deshabilitar’, el segundo botón se deshabilitará. -->
+    <tr>
+      <td>
+        <button
+          type="button"
+          (click)="cambiarNombreBotonFila4()"
+          (click)="habilitarDeshabilitarBoton()"
+        >
+          {{ nombreBotonFila4 }}
+        </button>
+      </td>
+      <td>
+        <button type="button" [disabled]="habilitadoDeshabilitado">
+          Hola que tal
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>
