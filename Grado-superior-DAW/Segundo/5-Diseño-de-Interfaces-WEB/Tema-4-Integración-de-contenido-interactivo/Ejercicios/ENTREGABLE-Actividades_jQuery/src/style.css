@@ -1,0 +1,25 @@
+:root {
+	--color-uno: #1b74e4;
+	--color-dos: #3c3c3c;
+	--color-tres: #757575;
+	--color-cuatro: #ffffff;
+	--color-cinco: #f2f2f2;
+	--color-seis: #b1b1b1;
+	--color-siete: #dfdfdf;
+	--color-ocho: #ff0000;
+	--color-nueve: #ffe4e4;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	height: 100vh;
+	font-family: 'Open Sans';
+	background-color: var(--color-cinco);
+}
