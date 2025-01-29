@@ -18,7 +18,7 @@
 		</div>
 	</header>
 	<main>
-		<form action="login.php" method="post">
+		<form action="./src/php/login.php" method="post">
 			<label for="nombre-usuario">Nombre usuario</label>
 			<input type="text" id="nombre-usuario" name="nombre-usuario" required>
 			<label for="contrasena">Contraseña</label>
@@ -34,8 +34,8 @@
 </html>
 
 <?php
-session_start();
-$host = 'localhost:3308';
+/*session_start();
+$host = 'localhost:3306';
 $user = 'root';
 $password = '';
 $dbname = 'app_cerveceria';
@@ -71,3 +71,41 @@ if ($stmt->execute()) {
 $stmt->close();
 $conn->close();
 ?>
+<?php
+session_start();
+$host = 'localhost:3306';
+$user = 'root';
+$password = '';
+$dbname = 'app_cerveceria';
+
+$conn = new mysqli($host, $user, $password, $dbname);
+
+if ($conn->connect_error) {
+	die("Conexión fallida: " . $conn->connect_error);
+}
+
+$correo = 'usuario@phpmola.com';
+$password = '12345';
+$edad = 18;
+$perfil = 'user';
+
+$hashed_password = md5($password);
+
+$query = "INSERT INTO usuario (correo, password, edad, perfil) VALUES (?, ?, ?, ?)";
+$stmt = $conn->prepare($query);
+
+if ($stmt === false) {
+	die("Error en la preparación de la consulta: " . $conn->error);
+}
+
+$stmt->bind_param("ssis", $correo, $hashed_password, $edad, $perfil);
+
+if ($stmt->execute()) {
+	echo "Usuario registrado exitosamente.";
+} else {
+	echo "Error al registrar el usuario: " . $stmt->error;
+}
+
+$stmt->close();
+$conn->close();
+?>*/
