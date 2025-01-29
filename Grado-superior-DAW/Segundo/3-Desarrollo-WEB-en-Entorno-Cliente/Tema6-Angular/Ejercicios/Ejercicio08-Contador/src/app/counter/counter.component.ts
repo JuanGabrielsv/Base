@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.css',
 })
-export class CounterComponent {}
+export class CounterComponent {
+  contador: number = 10;
+
+  incrementar() {
+    this.contador++;
+  }
+
+  decrementar() {
+    this.contador--;
+  }
+
+  resetarContador() {
+    this.contador = 10;
+  }
+}
