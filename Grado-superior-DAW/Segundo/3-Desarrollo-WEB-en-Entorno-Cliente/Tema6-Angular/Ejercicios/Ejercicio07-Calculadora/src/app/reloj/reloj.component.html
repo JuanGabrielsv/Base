@@ -1,0 +1,15 @@
+<label for="numero1">Número 1 </label>
+<input type="number" name="numero1" id="numero1" [(ngModel)]="numero1" />
+<br />
+<label for="numero1">Número 2 </label>
+<input type="number" name="numero2" id="numero2" [(ngModel)]="numero2" />
+<br />
+<br />
+<button (click)="sumar()">Sumar</button>
+<p>{{ resultadoSuma }}</p>
+<button (click)="restar()">Restar</button>
+<p>{{ resultadoResta }}</p>
+<button (click)="multiplicar()">Multiplicar</button>
+<p>{{ resultadoMultiplicar }}</p>
+<button (click)="dividir()">Dividir</button>
+<p>{{ resultadoDividir }}</p>
