@@ -1,1 +1,16 @@
-<p>reloj works!</p>
+<!-- Crear un proyecto cuyo componente principal llame a otra llamado reloj. Este componente reloj permitrá al
+usuario cambiar la hora utilizando input de texto. Por defecto mostrará: ‘12:00:00’ (string). Cuando se pulse
+un botón, se mostrará en un etiqueta p, la hora insertada en el input. 
+Además, tendremos otra etiqueta p donde se mostrará la hora actual (actualizándose cada 1000 ms). (Pista,
+necesitaremos Date, temporizador....) -->
+<label for="nuevaHora">Introduce la nueva hora: </label>
+<input
+  type="text"
+  name="nuevaHora"
+  id="nuevaHora"
+  [(ngModel)]="hora"
+  placeholder="Formato HH:mm:ss"
+/>
+<button type="button" (click)="cambiarHora()">Cambiar</button>
+<p>{{ horaModificada }}</p>
+<p>{{ horaActual }}</p>
