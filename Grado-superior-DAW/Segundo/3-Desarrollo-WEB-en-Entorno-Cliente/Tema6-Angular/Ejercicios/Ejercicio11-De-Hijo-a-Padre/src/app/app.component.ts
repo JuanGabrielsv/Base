@@ -10,5 +10,10 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  variablePadre: string = 'Soy el padre';
+  datoDelHijo: string = '';
+  title = 'Ejercicio11-De-Hijo-a-Padre';
+
+  seleccionar(event: any) {
+    this.datoDelHijo = event;
+  }
 }

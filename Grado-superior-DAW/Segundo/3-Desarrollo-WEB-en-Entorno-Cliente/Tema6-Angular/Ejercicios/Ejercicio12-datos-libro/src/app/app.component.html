@@ -1,0 +1,26 @@
+<!-- 
+• En el componente padre, escribir un texto y muestra el nombre del usuario asociado al botón
+	pulsado.
+• En el componente datos-libro, crear un array de dos objetos literales libros.
+• En el componente padre, crear un input de tipo text para escribir numero del libro que queremos
+	1 ó 2. Pasarle al componente hijo el número de libro.
+	El componente hijo tiene que recuperar ese valor y tendrá un botón que al pulsarlo, devolverá el
+	título del libro solicitado.
+• ¿Y si quiero pasarle al componente padre un objeto? Repetir el ejercicio anterior, pero el evento
+	al padre debe de enviar el objeto completo del libro, no sólo el titulo. Pista: crear una interfaz
+	libro. -->
+<button (click)="mostrarNombre()">Mostrar</button>
+<p>{{ nombre }}</p>
+
+<label for="numero-libros">Escribe el número de libro que quieres: </label>
+<input
+  type="text"
+  name="numero-libros"
+  id="numero-libros"
+  [(ngModel)]="numeroDeLibro"
+/>
+<p>El nombre del libro es: {{ nombreLibro }}</p>
+<app-datos-libro
+  [numeroDeLibroPadre]="numeroDeLibro"
+  (selected)="devolverLibroElegido($event)"
+></app-datos-libro>

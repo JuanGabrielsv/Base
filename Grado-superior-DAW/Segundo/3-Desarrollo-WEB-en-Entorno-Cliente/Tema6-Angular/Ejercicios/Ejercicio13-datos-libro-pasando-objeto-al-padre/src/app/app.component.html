@@ -1,0 +1,30 @@
+<!-- 
+• En el componente padre, escribir un texto y muestra el nombre del usuario asociado al botón
+	pulsado.
+• En el componente datos-libro, crear un array de dos objetos literales libros.
+• En el componente padre, crear un input de tipo text para escribir numero del libro que queremos
+	1 ó 2. Pasarle al componente hijo el número de libro.
+	El componente hijo tiene que recuperar ese valor y tendrá un botón que al pulsarlo, devolverá el
+	objeto del libro solicitado.
+	Pista: crear una interfaz	libro. -->
+<main>
+  <h1>Padre</h1>
+  <button (click)="mostrarNombre()">Mostrar nombre</button>
+  <p>
+    El nombre es: <span>{{ nombre }}</span>
+  </p>
+  <label for="libro">Introduce el número de libro que quieres (1 o 2): </label>
+  <input type="number" name="libro" id="libro" #inputLibro />
+  <button (click)="obtenerValorInputLibro(inputLibro.value)">
+    Obtener el libro
+  </button>
+  <p>
+    Aquí tienes el libro {{ numLibro }}: {{ libro?.titulo }},
+    {{ libro?.autor }},
+    {{ libro?.ano }}
+  </p>
+</main>
+<app-datos-libro
+  [numLibroDelPadre]="numLibro"
+  (selected)="pasarLibroAlPadre($event)"
+></app-datos-libro>

@@ -1,0 +1,19 @@
+<!-- Crear un proyecto llamado mensajes. El componente principal  tendrá un título:”Mensaje Padre”, y un
+input de type textarea. Llamará a un componente hijo: mensajeHijo. 
+Cuando en el componente padrese escriba el mensaje,   será enviado al hijo. El componente hijo
+mostrará dicho mensaje en una etiqueta <p>. Y tendrá un input de type textarea para enviar la respuesta
+al padre, cuando pulse un botón. Dicha respuesta será visualizada en el padre en una etiqueta p. -->
+<main>
+  <h1>Padre</h1>
+  <p>El mensaje del hijo es:</p>
+  <textarea
+    name="mensaje-padre"
+    id="mensaje-padre"
+    cols="50"
+    rows="10"
+    placeholder="Escribe algo para el hijo."
+  ></textarea>
+  <br />
+  <button>Enviar mensaje al hijo</button>
+  <app-hijo></app-hijo>
+</main>

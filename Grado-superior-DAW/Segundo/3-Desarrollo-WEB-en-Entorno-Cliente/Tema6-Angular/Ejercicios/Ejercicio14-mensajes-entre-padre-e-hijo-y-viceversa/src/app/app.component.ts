@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { HijoComponent } from './hijo/hijo.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UserProfileComponent],
+  imports: [RouterOutlet, HijoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  variablePadre: string = 'Soy el padre';
+  title = 'Ejercicio14-mensajes-entre-padre-e-hijo-y-viceversa';
 }
