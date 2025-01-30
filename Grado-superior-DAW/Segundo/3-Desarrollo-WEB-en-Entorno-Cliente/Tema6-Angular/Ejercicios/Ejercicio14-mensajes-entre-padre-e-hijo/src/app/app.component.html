@@ -4,15 +4,24 @@ Cuando en el componente padrese escriba el mensaje,   será enviado al hijo. El 
 mostrará dicho mensaje en una etiqueta <p>. Y tendrá un input de type textarea para enviar la respuesta
 al padre, cuando pulse un botón. Dicha respuesta será visualizada en el padre en una etiqueta p. -->
 <main>
-  <h1>Hijo</h1>
-  <p>Mensaje del padre:</p>
+  <h1>Padre</h1>
+  <p>
+    El mensaje del hijo es: <span>{{ mensajeDesdeElHijo }} </span>
+  </p>
   <textarea
-    name="texto-hijo"
-    id="texto-hijo"
-    rows="10"
+    name="mensaje-padre"
+    id="mensaje-padre"
     cols="50"
-    placeholder="Escribe algo para el padre."
+    rows="10"
+    placeholder="Escribe algo para el hijo."
+    #inputPadre
   ></textarea>
   <br />
-  <button>Enviar mensaje al padre</button>
+  <button (click)="enviarAlHijo(inputPadre.value)">
+    Enviar mensaje al hijo
+  </button>
+  <app-hijo
+    [mensajeDesdePadre]="mensajeParaElHijo"
+    (selected)="cogerMensajeDelHijo($event)"
+  ></app-hijo>
 </main>

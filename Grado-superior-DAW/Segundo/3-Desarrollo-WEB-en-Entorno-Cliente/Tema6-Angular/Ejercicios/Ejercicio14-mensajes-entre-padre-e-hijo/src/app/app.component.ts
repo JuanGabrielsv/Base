@@ -11,4 +11,14 @@ import { HijoComponent } from './hijo/hijo.component';
 })
 export class AppComponent {
   title = 'Ejercicio14-mensajes-entre-padre-e-hijo-y-viceversa';
+  mensajeParaElHijo: string | undefined;
+  mensajeDesdeElHijo!: string;
+
+  enviarAlHijo(mensajePadre: string) {
+    this.mensajeParaElHijo = mensajePadre;
+  }
+
+  cogerMensajeDelHijo(even: any) {
+    this.mensajeDesdeElHijo = even;
+  }
 }
