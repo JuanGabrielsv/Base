@@ -6,7 +6,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor],
+  imports: [RouterOutlet, NgIf, NgFor, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -14,6 +14,7 @@ export class AppComponent {
   title = 'Ejercicio15-directivas';
   usuarioAgregado: boolean = true;
   textoAltaNoAlta: string = 'Ninguna Alta';
+  botonPulsado: string = 'No ha seleccionado ningún botón';
   personas: Persona[] = [
     {
       nombre: 'Juan Gabriel',
@@ -29,6 +30,26 @@ export class AppComponent {
 
   agregarUsuario() {
     this.textoAltaNoAlta = 'Alta correcta de usuario';
+  }
+
+  cualBotonPulsado(opcion: String) {
+    if (opcion == 'a') {
+      this.botonPulsado = 'A';
+    } else if (opcion == 'b') {
+      this.botonPulsado = 'B';
+    } else {
+      this.botonPulsado = 'C';
+    }
+  }
+
+  cualBotonSoltado(opcion: String) {
+    if (opcion == 'a') {
+      this.botonPulsado = 'No ha seleccionado ningún botón';
+    } else if (opcion == 'b') {
+      this.botonPulsado = 'No ha seleccionado ningún botón';
+    } else {
+      this.botonPulsado = 'No ha seleccionado ningún botón';
+    }
   }
 }
 

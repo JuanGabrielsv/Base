@@ -12,6 +12,10 @@
 • Mostrar la lista con los datos en negrita. Añadimos en cada entrada de la lista el indice de cada
 	objeto (index).
 • A continuación mostrar sólo las personas cuya edad sea >=30.
+• Crear 3 botones con los valores A, B y C. Mostrar debajo del botón qué opción ha pulsado.
+	Además, si ha pulsado el botón A que indique el texto “Pulsado el botón A”, si ha pulsado el
+	botón B: “Ha pulsado el botón B” , si ha pulsado el botón C: “Ha pulsado el botón C” y si no
+	pulsa nada, por defecto que muestre, “No ha seleccionado ningún botón”
 -->
 <main>
   <h1>Padre</h1>
@@ -41,4 +45,15 @@
       <li *ngIf="persona.edad > 30">{{ persona.nombre }}</li>
     </ul>
   </form>
+  <br />
+  <button (mousedown)="cualBotonPulsado('a')" (mouseup)="cualBotonSoltado('a')">
+    Opción A
+  </button>
+  <button (mousedown)="cualBotonPulsado('b')" (mouseup)="cualBotonSoltado('b')">
+    Opción B
+  </button>
+  <button (mousedown)="cualBotonPulsado('c')" (mouseup)="cualBotonSoltado('c')">
+    Opción C
+  </button>
+  <p>{{ botonPulsado }}</p>
 </main>
