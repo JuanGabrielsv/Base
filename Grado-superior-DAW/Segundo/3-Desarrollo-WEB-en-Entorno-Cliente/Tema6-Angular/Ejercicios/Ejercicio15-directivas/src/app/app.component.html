@@ -1,0 +1,44 @@
+<!-- 
+• Crear un nuevo proyecto ‘directivas’.
+• Crear un formulario en el componente principal con el título “Alta de usuario”. Tendrá dos input
+	text: para el nombre y los apellidos, y un botón ‘Añadir’. Cuando se pulse el botón , debajo se
+	mostrará un párrafo con el mensaje: ‘Alta correcta del usuario XXX’. OJO: el párrafo sólo debe
+	aparecer cuando se haya pulsado el botón. Usar directiva *ngIf. 
+• Modificarlo para que si no se ha pulsado el bóton muestre el mensaje: ‘Ninguna alta’.
+• En el componente principal, crear una interfaz Persona con : nombre, apellidos y edad.
+• Crear un atributo de la clase: personas que es un array de la interfaz Persona.
+• Inicializar el array con dos objetos Persona.
+• Pintar en el html del componente una lista con los datos del array. Usar directiva *ngFor.
+• Mostrar la lista con los datos en negrita. Añadimos en cada entrada de la lista el indice de cada
+	objeto (index).
+• A continuación mostrar sólo las personas cuya edad sea >=30.
+-->
+<main>
+  <h1>Padre</h1>
+  <h2>Alta de usuario</h2>
+  <form action="#" method="get">
+    <label for="nombre">Nombre: </label>
+    <input type="text" name="nombre" id="nombre" />
+    <br />
+    <label for="apellidos">Apellidos: </label>
+    <input type="text" name="apellidos" id="apellidos" />
+    <br />
+    <button (click)="agregarUsuario()">Añadir</button>
+    <p *ngIf="usuarioAgregado">{{ textoAltaNoAlta }}</p>
+    <ul *ngFor="let persona of personas; let i = index">
+      <p>{{ i }}</p>
+      <li>
+        Nombre: <span>{{ persona.nombre }}</span>
+      </li>
+      <li>
+        Apellidos: <span>{{ persona.apellidos }}</span>
+      </li>
+      <li>
+        Edad: <span>{{ persona.edad }}</span>
+      </li>
+    </ul>
+    <ul *ngFor="let persona of personas; let i = index">
+      <li *ngIf="persona.edad > 30">{{ persona.nombre }}</li>
+    </ul>
+  </form>
+</main>
