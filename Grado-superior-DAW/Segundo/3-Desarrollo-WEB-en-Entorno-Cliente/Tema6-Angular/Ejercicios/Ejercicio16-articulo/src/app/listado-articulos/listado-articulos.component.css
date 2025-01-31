@@ -1,0 +1,11 @@
+main {
+	background-color: bisque;
+	padding: 1rem;
+	font-family: system-ui;
+	margin-top: 1rem;
+	width: fit-content;
+}
+
+span {
+	font-weight: bold;
+}

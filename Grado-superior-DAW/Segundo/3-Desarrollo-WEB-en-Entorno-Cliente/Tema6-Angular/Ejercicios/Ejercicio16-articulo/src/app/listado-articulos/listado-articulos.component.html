@@ -1,0 +1,20 @@
+<main>
+  <h1>Hijo de articulo - listado-articulos</h1>
+  <p>Lista de artículos que tenemos</p>
+  <ul *ngFor="let articulo of articulos; let i = index">
+    <p>{{ i }}</p>
+    <li>
+      Nombre: <span>{{ articulo.nombre }}</span>
+    </li>
+    <li>
+      Precio: <span>{{ articulo.precio }}€</span>
+    </li>
+    <li>
+      Unidades: <span>{{ articulo.unidades }}</span>
+    </li>
+  </ul>
+  <p>{{ valorInput }}</p>
+  <app-caracteristicas-articulo
+    (selected)="capturarValorInput($event)"
+  ></app-caracteristicas-articulo>
+</main>

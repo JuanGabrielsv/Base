@@ -1,0 +1,10 @@
+main {
+	background-color: chartreuse;
+	font-family: system-ui;
+	padding: 1rem;
+	margin-top: 1rem;
+}
+
+span {
+	font-weight: bold;
+}

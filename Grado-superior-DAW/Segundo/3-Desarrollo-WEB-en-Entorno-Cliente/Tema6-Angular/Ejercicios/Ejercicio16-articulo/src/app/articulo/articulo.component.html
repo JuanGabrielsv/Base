@@ -1,0 +1,18 @@
+<!-- • En la vista incluiremos un formulario con los campos: nombre, precio y unidades. Tendrá un botón Comprar.  -->
+<main>
+  <h1>Hijo - Componente artículo</h1>
+  <form action="#" method="get">
+    <label for="nombre">Nombre: </label>
+    <input type="text" name="nombre" id="nombre" [(ngModel)]="nombre" />
+    <br />
+    <label for="precio">Precio: </label>
+    <input type="text" name="precio" id="precio" [(ngModel)]="precio" />
+    <br />
+    <label for="unidades">Unidades:</label>
+    <input type="text" name="unidades" id="unidades" [(ngModel)]="unidades" />
+    <br />
+    <button (click)="guardarArticulo()">Comprar</button>
+  </form>
+
+  <app-listado-articulos [articulos]="articulos"></app-listado-articulos>
+</main>

@@ -1,0 +1,9 @@
+main {
+	background-color: #7fffd4;
+	padding: 1rem;
+	font-family: system-ui;
+}
+
+span {
+	font-weight: bold;
+}
