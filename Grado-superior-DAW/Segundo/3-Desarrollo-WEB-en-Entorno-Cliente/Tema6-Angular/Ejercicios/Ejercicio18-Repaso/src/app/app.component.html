@@ -1,0 +1,17 @@
+<main>
+  <h1>Padre, app-root</h1>
+  <p>
+    Nombre: <span>{{ nombre }}</span>
+  </p>
+  <p>
+    Nota en cliente: <span>{{ nota }}</span>
+  </p>
+  <label for="nombre">Nombre: </label>
+  <input type="text" name="nombre" id="nombre" #nombreInput />
+  <br />
+  <label for="nota">Nota: </label>
+  <input type="text" name="nota" id="nota" #notaInput />
+  <br />
+  <button (click)="cambiarNombre(nombreInput.value)">Cambiar nombre</button>
+  <button (click)="cambiarNota(notaInput.value)">Cambiar nota</button>
+</main>
