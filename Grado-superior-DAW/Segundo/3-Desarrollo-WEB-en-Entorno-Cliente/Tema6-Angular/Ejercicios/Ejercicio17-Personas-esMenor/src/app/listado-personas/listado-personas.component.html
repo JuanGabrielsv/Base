@@ -1,0 +1,40 @@
+<main>
+  <h1>Hijo - listadoPersonas</h1>
+  <p>{{ persona.nombre }}, {{ persona.apellidos }}, {{ persona.edad }}</p>
+  <p [ngStyle]="{ color: persona.edad < 18 ? 'red' : 'green' }">
+    {{ esMenor() ? "Menor de edad" : "Mayor de edad" }}
+  </p>
+  <input
+    type="radio"
+    name="persona"
+    id="persona"
+    (click)="personaSeleccionada(persona)"
+  />
+  <br />
+  <label for="nombre">Nombre: </label>
+  <input
+    type="text"
+    name="nombre"
+    id="nombre"
+    value="{{ persona.nombre }}"
+    [(ngModel)]="persona.nombre"
+  />
+  <br />
+  <label for="apellidos">Apellidos: </label>
+  <input
+    type="text"
+    name="apellidos"
+    id="apellidos"
+    value="{{ persona.apellidos }}"
+    [(ngModel)]="persona.apellidos"
+  />
+  <br />
+  <label for="edad">Edad: </label>
+  <input
+    type="text"
+    name="edad"
+    id="edad"
+    value="{{ persona.edad }}"
+    [(ngModel)]="persona.edad"
+  />
+</main>

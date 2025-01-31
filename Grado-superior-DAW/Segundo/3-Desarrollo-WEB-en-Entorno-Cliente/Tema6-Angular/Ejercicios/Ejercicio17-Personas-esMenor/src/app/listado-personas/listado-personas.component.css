@@ -1,0 +1,10 @@
+main {
+	font-family: system-ui;
+	padding: 1rem;
+	background-color: aquamarine;
+	margin-top: 1remi;
+}
+
+span {
+	font-weight: bold;
+}
