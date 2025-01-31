@@ -1,0 +1,15 @@
+main {
+	background-color: #f3ffff;
+	padding: 1rem;
+	border-radius: 1rem;
+	font-family: system-ui;
+	margin-top: 1rem;
+}
+
+h1 {
+	color: darkorange;
+}
+
+span {
+	font-weight: bold;
+}

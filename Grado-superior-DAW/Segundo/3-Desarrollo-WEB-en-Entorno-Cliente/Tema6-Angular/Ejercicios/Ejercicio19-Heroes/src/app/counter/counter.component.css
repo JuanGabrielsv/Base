@@ -1,0 +1,14 @@
+main {
+	background-color: #ddffff;
+	padding: 1rem;
+	border-radius: 1rem;
+	font-family: system-ui;
+}
+
+h1 {
+	color: blue;
+}
+
+span {
+	font-weight: bold;
+}

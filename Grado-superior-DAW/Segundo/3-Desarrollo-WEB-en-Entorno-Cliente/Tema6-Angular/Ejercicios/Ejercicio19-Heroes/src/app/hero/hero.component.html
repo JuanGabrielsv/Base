@@ -1,0 +1,15 @@
+<main>
+  <h1>{{ title }}</h1>
+  <ul>
+    <li>
+      Nombre: <span>{{ nombre }}</span>
+    </li>
+    <li>
+      Edad: <span>{{ edad }}</span>
+    </li>
+  </ul>
+  <button (click)="cambiarEdad18()">Cambiar edad</button>
+  <button *ngIf="nombre == 'Ironman'" (click)="cambiarNombre()">
+    Cambiar nombre
+  </button>
+</main>

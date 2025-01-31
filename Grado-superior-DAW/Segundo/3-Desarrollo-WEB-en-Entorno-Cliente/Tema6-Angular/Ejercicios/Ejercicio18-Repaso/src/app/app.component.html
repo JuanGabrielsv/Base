@@ -10,8 +10,14 @@
   <input type="text" name="nombre" id="nombre" #nombreInput />
   <br />
   <label for="nota">Nota: </label>
-  <input type="text" name="nota" id="nota" #notaInput />
+  <input type="number" name="nota" id="nota" #notaInput />
   <br />
   <button (click)="cambiarNombre(nombreInput.value)">Cambiar nombre</button>
   <button (click)="cambiarNota(notaInput.value)">Cambiar nota</button>
+  <app-hijo
+    [nombre]="nombre"
+    [nota]="nota"
+    (nombreHijo)="obtenerNombre($event)"
+    (notaHijo)="obtenerNota($event)"
+  ></app-hijo>
 </main>

@@ -1,0 +1,17 @@
+<main>
+  <h1>Hijo, app-hijo</h1>
+  <p>
+    Nombre: <span>{{ nombre }}</span>
+  </p>
+  <p>
+    Nota: <span>{{ nota }}</span>
+  </p>
+  <label for="nombre">Nombre: </label>
+  <input type="text" name="nombre" id="nombre" #nombreHijo />
+  <br />
+  <label for="nota">Nota: </label>
+  <input type="number" name="nota" id="nota" #notaHijo />
+  <br />
+  <button (click)="cambiarNombre(nombreHijo.value)">Cambiar nombre</button>
+  <button (click)="cambiaNota(notaHijo.value)">Cambiar nota</button>
+</main>
