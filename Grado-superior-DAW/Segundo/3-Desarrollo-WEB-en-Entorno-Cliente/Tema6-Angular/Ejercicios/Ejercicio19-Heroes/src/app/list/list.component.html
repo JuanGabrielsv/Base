@@ -2,6 +2,11 @@
   <ul>
     <li *ngFor="let heroe of heroes">{{ heroe }}</li>
   </ul>
-  <button (click)="borrarUltimoHeroe()">Borrar último heroe</button>
-  <p>{{ borrarHeroe() }}</p>
+  <button (click)="borrarUltimoHeroe()">{{ textoBoton }}</button>
+  <p *ngIf="heroeBorrado">
+    {{ textoHeroeBorrado }} <span>{{ heroeBorrado }}</span>
+  </p>
+  <p *ngIf="textoNingunHeroeBorrado.length !== 0">
+    {{ textoNingunHeroeBorrado }}
+  </p>
 </main>
