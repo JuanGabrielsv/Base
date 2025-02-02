@@ -1,0 +1,11 @@
+main {
+	background-color: aqua;
+	padding: 1em;
+	width: fit-content;
+	border-radius: 1em;
+	font-family: system-ui;
+}
+
+span {
+	font-weight: bold;
+}
