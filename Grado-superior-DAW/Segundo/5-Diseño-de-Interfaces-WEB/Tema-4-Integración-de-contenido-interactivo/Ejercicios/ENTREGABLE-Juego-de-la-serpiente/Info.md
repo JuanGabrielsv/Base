@@ -41,8 +41,12 @@ Control del botón inicar partida:
   (juego si iniciar) cuando presionemos el botón. Esto fue un problema al inicio
 	porque una vez iniciado el juego si volvias a clicar el botón aparecía otra serpiente
 	tantas veces como lo hicieras.
+
+Comida redonda en vez de cuadrada:
+• Ya sabía como generar un cuadrado por la serpiente y quise saber como generar un circulo, es
+  mucho mas complejo por que tienes que calcular el radio.
 ```
 
 ### Descargas
 
--   [index.html](src/index.html)
+-   [index.html](index.html)
