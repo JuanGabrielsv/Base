@@ -4,42 +4,45 @@
 
 ### Enunciado
 
-![Imagen de muestra](src/images/Imagen_muestra.png)
-
-Datos empleados:
+Hacer el juego de de la serpiente e teniendo en cuenta lo siguiente:
 
 <ul>
-<li><a href='https://fonts.google.com/specimen/Open+Sans' target=_blank>https://fonts.google.com/specimen/Open+Sans (Light 300).</a></li>
-<li><a href='https://pixabay.com/es/vectors/percolador-maceta-cafetera-34180/' target=_blank>Imagen cafetera</a></li>
-<li><a href='https://pixabay.com/es/vectors/caf%C3%A9-taza-beber-bebida-caliente-34251/' target=_blank>Imagen taza</a></li>
-<li><a href='https://pixabay.com/es/vectors/olla-de-cocci%c3%b3n-cacerola-de-la-salsa-146459/' target=_blank>Imagen cacerola</a></li>
+<li>Que aparezca un botón de inicio para empezar.</li>
+<li>Puedes hacer que las paredes impliquen la finalización del juego (muerte de la serpiente). Existe otra opción y es que pueda atravesarlas y aparecer por el extremo opuesto. En este segundo caso, debéis tener un contador de tiempo (1 minuto) que tras finalizar, acabe la partida.</li>
+<li>Que al finalizar, también aparezca un botón REINICIAR que permita volver a empezar (botón de inicio).</li>
 </ul>
 
-colores: #f1f1f1, #000, blue, #fff
+### Realización
 
-Realiza lo siguiente:
-
-<ul>
-<li>Incorpora un logo a la cabecera con fondo gris.</li>
-<li>¿Qué tamaño tienen las imágenes de las tres columnas?</li>
+![Imagen de muestra](src/img/Captura_de_pantalla_2025_02_03_124953.png)
 
 ```
-El tamaño de las imagenes es el mínimo que te permite la web descargartelas 640px de alto,
-con un ancho variable entre ellas, un tamaño excesivo para lo que se debe mostrar en la maquetación.
-Por otro lado he usado el formato svg y ajustar este tipo de elementos es complicado pero no
-imposible, aún así es mejor dedicar unos minutos en pasarlas a png con un tamaño fijo.
-```
+He usado canvas para generar el programa, tenía ganas de saber como se usa y conocer algunos de sus
+métodos.
 
-<li>Analiza los tamaños incorporados a todas las imágenes. ¿Es óptimo?</li>
+Añadida una funcionalidad:
+• Puntuación: Se crea una variable que hace de contador y cada vez que se come una comida se le suma
+  uno, lo mostramos en le Dom usando jQuery con la opción .text sobre el elemento seleccionado.
 
-```
-No sería óptimo porque ocupan más de lo que se va a mostrar por lo que las he redimensionado
-a una altura de 200px así reducimos el tamaño de las mismas optimizando la carga de las mismas.
-```
+Añadida una funcionalidad:
+• Pantalla de Game Over: Se crea una función y en vez de reiniciar el juego con "location.reload()"
+  se le pasa esta misma para dibujar el mensaje de Game over y la puntuación.
 
-</ul>
+Añadida una mecánica de juego:
+• Tiempo para comer: Se crea un intervalo de 5 segundos y cada vez que se come una comida se reseta
+  a su valor inicial. En las condiciones de derrota se añade que si esta variable de intervalo
+  llega a 0 se pierde la partida.
+
+Fondo decorativo background:
+• Generada con IA
+
+Control del botón inicar partida:
+• Creada una variable Boolean para que sólo se inicie el juego si esta está en false
+  (juego si iniciar) cuando presionemos el botón. Esto fue un problema al inicio
+	porque una vez iniciado el juego si volvias a clicar el botón aparecía otra serpiente
+	tantas veces como lo hicieras.
+```
 
 ### Descargas
 
 -   [index.html](src/index.html)
--   [style.css](src/css/style.css)
