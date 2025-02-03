@@ -1,3 +1,10 @@
+export interface Planetas {
+  count: number;
+  next: string;
+  previous: null;
+  results: Planeta[];
+}
+
 export interface Planeta {
   name: string;
   rotation_period: string;
@@ -8,9 +15,4 @@ export interface Planeta {
   terrain: string;
   surface_water: string;
   population: string;
-  residents: string[];
-  films: string[];
-  created: Date;
-  edited: Date;
-  url: string;
 }

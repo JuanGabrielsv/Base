@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { PlanetListComponent } from './planet-list/planet-list.component';
+import { PlanetDetailsComponent } from './planet-details/planet-details.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [PlanetListComponent],
+  imports: [PlanetListComponent, PlanetDetailsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
