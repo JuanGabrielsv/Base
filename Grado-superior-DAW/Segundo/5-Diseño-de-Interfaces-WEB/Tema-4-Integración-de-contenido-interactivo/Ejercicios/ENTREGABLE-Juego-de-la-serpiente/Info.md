@@ -45,6 +45,10 @@ Control del botón inicar partida:
 Comida redonda en vez de cuadrada:
 • Ya sabía como generar un cuadrado por la serpiente y quise saber como generar un circulo, es
   mucho mas complejo por que tienes que calcular el radio.
+
+Inicializada la sepiente con un tamaño de 3:
+• La serpiente inicia con un tamaño de 3 cabezas, tan sólo hay que añadir dos indices al array
+  de la serpiente.
 ```
 
 ### Descargas
