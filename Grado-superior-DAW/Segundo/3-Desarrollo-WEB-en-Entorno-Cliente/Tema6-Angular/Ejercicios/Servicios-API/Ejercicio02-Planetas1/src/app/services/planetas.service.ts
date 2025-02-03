@@ -7,8 +7,8 @@ import { Planeta, Planetas } from '../model/planet';
   providedIn: 'root',
 })
 export class PlanetasService {
-  private url = 'https://swapi.dev/api/planets/?Page=1';
-  private urlPlaneta = 'https://swapi.dev/api/planets/1';
+  private url = 'https://swapi.dev/api/planets/?page=1';
+  private urlPlaneta = 'https://swapi.dev/api/planets/7';
 
   constructor(private http: HttpClient) {}
 

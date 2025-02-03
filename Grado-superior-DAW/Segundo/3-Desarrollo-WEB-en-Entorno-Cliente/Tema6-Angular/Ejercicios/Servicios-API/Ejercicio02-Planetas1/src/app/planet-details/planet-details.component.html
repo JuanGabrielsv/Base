@@ -1,3 +1,32 @@
 <main>
   <h1>{{ texto1 }}, {{ texto2 }}</h1>
+  <ul>
+    <li *ngIf="planeta | async as planeta">
+      Nombre: <span>{{ planeta.name }}</span>
+    </li>
+    <li *ngIf="planeta | async as planeta">
+      Periodo de rotación: <span>{{ planeta.rotation_period }}</span>
+    </li>
+    <li *ngIf="planeta | async as planeta">
+      Periodo de orbita: <span>{{ planeta.orbital_period }}</span>
+    </li>
+    <li *ngIf="planeta | async as planeta">
+      Diametro: <span>{{ planeta.diameter }}</span>
+    </li>
+    <li *ngIf="planeta | async as planeta">
+      Clima: <span>{{ planeta.climate }}</span>
+    </li>
+    <li *ngIf="planeta | async as planeta">
+      Gravedad: <span>{{ planeta.gravity }}</span>
+    </li>
+    <li *ngIf="planeta | async as planeta">
+      Terreno: <span>{{ planeta.terrain }}</span>
+    </li>
+    <li *ngIf="planeta | async as planeta">
+      Superficie de Agua: <span>{{ planeta.surface_water }}</span>
+    </li>
+    <li *ngIf="planeta | async as planeta">
+      Población: <span>{{ planeta.population }}</span>
+    </li>
+  </ul>
 </main>

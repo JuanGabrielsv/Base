@@ -17,6 +17,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokemonList = this.servicioPokemon.getListaPokemon();
-    throw new Error('Method not implemented');
   }
 }

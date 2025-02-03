@@ -21,6 +21,5 @@ export class PlanetListComponent implements OnInit {
 
   ngOnInit(): void {
     this.planetasList = this.planetaService.getPlanets();
-    throw new Error('Method not implemented');
   }
 }
