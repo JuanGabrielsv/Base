@@ -1,0 +1,14 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.bloqueCookie {
+	background-color: orange;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	padding: 1rem;
+}
