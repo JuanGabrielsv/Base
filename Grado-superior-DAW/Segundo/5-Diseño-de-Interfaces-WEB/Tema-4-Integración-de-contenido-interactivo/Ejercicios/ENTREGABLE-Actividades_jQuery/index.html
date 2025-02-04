@@ -1,18 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="src/css/style.css" />
-        <script src="src/jquery/jquery.min.js"></script>
-        <script src="src/js/main.js"></script>
-        <title>Actividades jQuery</title>
-    </head>
-    <body>
-        <header></header>
-        <main>
-            <section>hola caracola</section>
-        </main>
-        <footer></footer>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="src/css/style.css" />
+		<script src="src/jquery/jquery.min.js"></script>
+		<script src="src/js/main.js"></script>
+		<title>Actividades jQuery</title>
+	</head>
+	<body>
+		<header>
+			<p>ENTREGABLE - Actividades jQuery</p>
+		</header>
+		<main>
+			<h1>Acceso</h1>
+			<section id="section1">
+				<p class="parrafo1">Inicia sesión con tu cuenta</p>
+				<p class="parrafo2">o crea una cuenta nueva</p>
+				<div class="contenedor1">
+					<div class="contenedor2">
+						<p class="contenedor2-p">¿Tienes ya una cuenta?</p>
+						<button id="iniciarSesion">Iniciar sesión</button>
+					</div>
+					<div class="contenedor3">
+						<p id="crearCuenta" class="contenedor3-p">
+							¿No tienes cuenta?
+						</p>
+						<button class="botonCuenta">Crear una cuenta</button>
+					</div>
+				</div>
+			</section>
+			<section id="section2">
+				<input
+					type="text"
+					name="email"
+					id="email"
+					placeholder="Correo electrónico o nombre de Acceso"
+					class="inputNombre"
+				/>
+				<input
+					type="password"
+					name="password"
+					id="password"
+					placeholder="Contraseña"
+					class="inputPassword"
+				/>
+				<div class="contenedor4">
+					<div class="contenedor5">
+						<img src="src/img/circulo-de-flecha.png" />
+						<p>¿Has olvidado la contraseña?</p>
+					</div>
+					<button id="iniciarSesion2">Iniciar sesión</button>
+				</div>
+				<div class="contenedor6">
+					<p class="contenedor6-p">Iniciar sesión con</p>
+					<button class="botonFacebook">
+						<img src="src/img/facebook.svg" />
+						<p>Facebook</p>
+					</button>
+					<button class="botonGoogle">
+						<img src="src/img/google.svg" />
+						<p>Google</p>
+					</button>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<p>Ejercicio realizado por jsanchez8979</p>
+		</footer>
+	</body>
 </html>
