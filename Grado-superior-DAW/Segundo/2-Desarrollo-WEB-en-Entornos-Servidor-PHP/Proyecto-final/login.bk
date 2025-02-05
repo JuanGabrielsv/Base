@@ -10,6 +10,9 @@ if ($conn->connect_error) {
 $username = $_POST['nombre-usuario'];
 $password = md5($_POST['password']);
 
+echo $username . '<br>';
+echo $password . '<br>';
+
 $sql = "SELECT * FROM usuario WHERE CORREO = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $username);
@@ -23,12 +26,13 @@ if ($result->num_rows > 0) {
 
 	if (($password == $user['PASSWORD'])) {
 		echo 'Inicio de sesión correcto';
-		$_SESSION['perfil'] = $user['PERFIL'];
+		$_SESSION['perfil'] = $user['username'];
 
-		if ($user['PERFIL'] == "admin") {
-			header("Location: admin.php");
+		if ($user['username'] == "admin") {
+			header("Location: admin.html");
 		} else {
-			header("Location: user.php");
+			//header("Location: user.html");
+			echo 'hola';
 		}
 		exit();
 	} else {

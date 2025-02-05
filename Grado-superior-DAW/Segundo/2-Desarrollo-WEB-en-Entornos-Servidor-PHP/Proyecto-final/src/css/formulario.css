@@ -38,10 +38,33 @@ main {
 	margin: auto;
 	width: 100%;
 	height: 100%;
+	justify-content: center;
+	align-items: center;
 }
 
 main form {
 	display: flex;
+}
+
+.section1 {
+	background-color: aqua;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.section-form {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-fila {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.form-select {
+	width: 150px;
 }
 
 
