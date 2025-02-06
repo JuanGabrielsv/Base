@@ -1,72 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="src/css/style.css" />
-		<script src="src/jquery/jquery.min.js"></script>
-		<script src="src/js/main.js"></script>
-		<title>Actividades jQuery</title>
-	</head>
-	<body>
-		<header>
-			<p>ENTREGABLE - Actividades jQuery</p>
-		</header>
-		<main>
-			<h1>Acceso</h1>
-			<section id="section1">
-				<p class="parrafo1">Inicia sesión con tu cuenta</p>
-				<p class="parrafo2">o crea una cuenta nueva</p>
-				<div class="contenedor1">
-					<div class="contenedor2">
-						<p class="contenedor2-p">¿Tienes ya una cuenta?</p>
-						<button id="iniciarSesion">Iniciar sesión</button>
-					</div>
-					<div class="contenedor3">
-						<p id="crearCuenta" class="contenedor3-p">
-							¿No tienes cuenta?
-						</p>
-						<button class="botonCuenta">Crear una cuenta</button>
-					</div>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="src/css/style.css" />
+	<script src="src/jquery/jquery.min.js"></script>
+	<script src="src/js/main.js"></script>
+	<title>Actividades jQuery</title>
+</head>
+
+<body>
+	<header>
+		<p>ENTREGABLE - Actividades jQuery</p>
+	</header>
+	<main>
+		<h1>Acceso</h1>
+		<section id="section1">
+			<p class="parrafo1">Inicia sesión con tu cuenta</p>
+			<p class="parrafo2">o crea una cuenta nueva</p>
+			<div class="contenedor1">
+				<div class="contenedor2">
+					<p class="contenedor2-p">¿Tienes ya una cuenta?</p>
+					<button id="iniciarSesion">Iniciar sesión</button>
 				</div>
-			</section>
-			<section id="section2">
-				<input
-					type="text"
-					name="email"
-					id="email"
-					placeholder="Correo electrónico o nombre de Acceso"
-					class="inputNombre"
-				/>
-				<input
-					type="password"
-					name="password"
-					id="password"
-					placeholder="Contraseña"
-					class="inputPassword"
-				/>
-				<div class="contenedor4">
-					<div class="contenedor5">
-						<img src="src/img/circulo-de-flecha.png" />
-						<p>¿Has olvidado la contraseña?</p>
-					</div>
-					<button id="iniciarSesion2">Iniciar sesión</button>
-				</div>
-				<div class="contenedor6">
-					<p class="contenedor6-p">Iniciar sesión con</p>
-					<button class="botonFacebook">
-						<img src="src/img/facebook.svg" />
-						<p>Facebook</p>
-					</button>
-					<button class="botonGoogle">
-						<img src="src/img/google.svg" />
-						<p>Google</p>
+				<div class="contenedor3">
+					<p id="crearCuenta" class="contenedor3-p">
+						¿No tienes cuenta?
+					</p>
+					<button class="botonCuenta" id="crearCuenta">
+						Crear una cuenta
 					</button>
 				</div>
-			</section>
-		</main>
-		<footer>
-			<p>Ejercicio realizado por jsanchez8979</p>
-		</footer>
-	</body>
+			</div>
+		</section>
+
+		<!---------------------------------- SECTION 2 ACCESO -------------------------------------------->
+
+		<section id="section2">
+			<input type="text" name="email" id="email" placeholder="Correo electrónico o nombre de Acceso" class="inputNombre"
+				required />
+			<input type="password" name="password" id="password" placeholder="Contraseña" class="inputPassword" required />
+			<div class="contenedor4">
+				<div class="contenedor5">
+					<img src="src/img/circulo-de-flecha.png" />
+					<p>¿Has olvidado la contraseña?</p>
+				</div>
+				<button id="iniciarSesion2">Iniciar sesión</button>
+			</div>
+			<div class="contenedor6">
+				<p class="contenedor6-p">Iniciar sesión con</p>
+				<button class="botonFacebook">
+					<img src="src/img/facebook.svg" />
+					<p>Facebook</p>
+				</button>
+				<button class="botonGoogle">
+					<img src="src/img/google.svg" />
+					<p>Google</p>
+				</button>
+			</div>
+		</section>
+
+		<!------------------------------ SECTION 3 PROVEEDOR // CLIENTE ---------------------------------->
+
+		<section id="section3">
+			<div class="contenedor7">
+				<div class="contenedor7-div1" id="proveedor">
+					<p>Eres proveedor</p>
+					<img src="src/img/right-arrow.svg" />
+				</div>
+				<div class="contenedor7-div2" id="clienteFinal">
+					<p>Eres cliente final</p>
+					<img src="src/img/right-arrow.svg" />
+				</div>
+			</div>
+		</section>
+
+		<!------------------------------ SECTION 4 REGISTRO PROVEEDOR ---------------------------------->
+
+		<section id="section4">
+			<form action="#" method="post">
+				<div class="partes">
+					<label for="nombre">█ &nbsp Nombre comercial</label>
+					<div>
+						<input type="text" name="nombre" id="nombre" class="input1" />
+						<br />
+						<small> Nota: No hace falta que coincida con el nombre legal. </small>
+					</div>
+				</div>
+				<div class="partes">
+					<label for="email">█ &nbsp Correo electrónico</label>
+					<input type="email" id="email2" class="input1" />
+				</div>
+				<div class="partes">
+					<label for="password">█ &nbsp Contraseña</label>
+					<input type="password" name="password" id="password2" class="input1" />
+				</div>
+				<div class="partes">
+					<label for="confirmacionPassword">█ &nbsp Confirmación contraseña</label>
+					<input type="password" name="confirmacionPassword" id="confirmacionPassword" class="input1" />
+				</div>
+				<div class="partes">
+					<label for="fechaNacimiento">█ &nbsp Fecha de nacimiento</label>
+					<div class="section4-select">
+						<select name="fechaNacimiento" id="anno">
+							<option value="2007">2007</option>
+						</select>
+						<select name="fechaNacimiento" id="mes">
+							<option value="10">10</option>
+						</select>
+						<select name="fechaNacimiento" id="dia">
+							<option value="15">15</option>
+						</select>
+						<br>
+						<small>No podrás cambiar tu fecha de nacimiento más adelante.</small>
+					</div>
+				</div>
+				<hr class="hr1">
+				<div class="contenedor-checkbox">
+					<input type="checkbox" name="terminos" id="terminos" class="checkbox">
+					<small>Confirmo que acepto los términos del contrato de la cuenta y que estoy de acuerdo con la política de
+						privacidad.</small>
+				</div>
+				<hr class="hr2">
+				<button class="botonCrear">Crear</button>
+			</form>
+		</section>
+
+		<!------------------------------ SECTION 5 REGISTRO CLIENTE ---------------------------------->
+
+		<section id="section5">
+			<form action="#" method="post">
+				<div class="partes">
+					<label for="nombre">█ &nbsp Nombre completo</label>
+					<input type="text" name="nombre" id="nombre2" class="input1" />
+				</div>
+				<div class="partes">
+					<label for="email">█ &nbsp Correo electrónico</label>
+					<input type="email" id="email3" class="input1" />
+				</div>
+				<div class="partes">
+					<label for="password">█ &nbsp Contraseña</label>
+					<input type="password" name="password" id="password3" class="input1" />
+				</div>
+				<div class="partes">
+					<label for="confirmacionPassword">█ &nbsp Confirmación contraseña</label>
+					<input type="password" name="confirmacionPassword" id="confirmacionPassword2" class="input1" />
+				</div>
+				</div>
+				<hr class="hr1">
+				<div class="contenedor-checkbox">
+					<input type="checkbox" name="terminos" id="terminos2" class="checkbox">
+					<small>Confirmo que acepto los términos del contrato de la cuenta y que estoy de acuerdo con la política de
+						privacidad.</small>
+				</div>
+				<hr class="hr2">
+				<button class="botonCrear">Crear</button>
+			</form>
+		</section>
+	</main>
+	<footer>
+		<p>Ejercicio realizado por jsanchez8979</p>
+	</footer>
+</body>
+
 </html>

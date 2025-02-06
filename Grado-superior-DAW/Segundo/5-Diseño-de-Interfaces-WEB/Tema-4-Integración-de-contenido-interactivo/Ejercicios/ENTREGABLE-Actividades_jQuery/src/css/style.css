@@ -49,7 +49,7 @@ header {
 	padding: 1rem;
 }
 
-/*************************** MAIN **************************/
+/*************************** MAIN ***************************/
 main {
 	display: flex;
 	flex-direction: column;
@@ -86,10 +86,6 @@ h1 {
 	padding: 0.7rem 6rem;
 	border-radius: 2rem;
 	cursor: pointer;
-}
-
-section p {
-	color: var(--color-tres);
 }
 
 .parrafo1 {
@@ -158,7 +154,7 @@ section p {
 	justify-content: space-between;
 	width: 100%;
 	margin-top: 1rem;
-	margin-bottom: 3rem;
+	margin-bottom: 2rem;
 }
 
 .contenedor5 {
@@ -188,20 +184,25 @@ section p {
 	display: flex;
 }
 
+#iniciarSesion2:disabled {
+	background-color: var(--color-seis);
+}
+
 .contenedor6 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: var(--color-cinco);
 	width: 100%;
-	padding: 2rem 0;
-	padding-top: ;
-	padding-bottom: 3rem;
+	padding-top: 1.5rem;
+	padding-bottom: 2.5rem;
 	border-radius: 0.4rem;
 }
 
 .contenedor6-p {
-	padding-bottom: 1rem;
+	padding-bottom: 1.5rem;
+	font-size: 0.8rem;
+
 }
 
 .botonFacebook,
@@ -213,6 +214,7 @@ section p {
 	width: 80%;
 	border-radius: 0.4rem;
 	padding: 0.4rem;
+	cursor: pointer;
 }
 
 .botonFacebook {
@@ -233,7 +235,130 @@ section p {
 	margin-top: 0.5rem;
 }
 
-/*************************** FOOTER ************************/
+.contenedor7 {
+	display: flex;
+	gap: 0.6rem;
+}
+
+.contenedor7-div1,
+.contenedor7-div2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--color-cuatro);
+	padding: 2rem 7.6rem;
+	border-radius: 0.5rem;
+}
+
+.contenedor7-div1 p,
+.contenedor7-div2 p {
+	margin-bottom: 1rem;
+	font-weight: bold;
+	color: var(--color-dos);
+	font-size: 1.1rem;
+}
+
+#section3 {
+	margin-bottom: 10rem;
+}
+
+#section4 {
+	display: flex;
+	align-items: center;
+	border: solid var(--color-cuatro) 10px;
+	padding-top: 3rem;
+	padding-bottom: 1rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	border-radius: 0.3rem;
+	width: fit-content;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	width: 60rem;
+}
+
+.partes {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1.5rem;
+}
+
+.input1 {
+	width: 40rem;
+	padding: 0.5rem;
+	border-radius: 0.2rem;
+	border: var(--color-siete) solid 2px;
+}
+
+.section4-select {
+	width: 40rem;
+}
+
+.section4-select select {
+	width: 6rem;
+}
+
+#section4 select {
+	padding: 0.4rem;
+	border-radius: 0.3rem;
+}
+
+.contenedor-checkbox {
+	display: flex;
+	align-items: center;
+}
+
+.checkbox {
+	margin-right: 0.5rem;
+	height: 1.2rem;
+	width: 1.2rem;
+}
+
+.hr1 {
+	margin-top: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.hr2 {
+	margin-top: 1.7rem;
+	margin-bottom: 2rem;
+}
+
+.botonCrear {
+	background-color: var(--color-uno);
+	border: none;
+	font-size: 1rem;
+	color: var(--color-cuatro);
+	padding: 0.7rem 4rem;
+	border-radius: 2rem;
+	cursor: pointer;
+	width: fit-content;
+	margin: auto;
+}
+
+#proveedor,
+#clienteFinal {
+	cursor: pointer;
+}
+
+#section5 {
+	display: flex;
+	align-items: center;
+	border: solid var(--color-cuatro) 10px;
+	padding-top: 3rem;
+	padding-bottom: 1rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	border-radius: 0.3rem;
+	width: fit-content;
+	margin-bottom: 5rem;
+}
+
+
+/*************************** FOOTER ***************************/
 footer {
 	background-color: var(--color-dos);
 }
