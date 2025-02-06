@@ -272,6 +272,7 @@ h1 {
 	padding-right: 2rem;
 	border-radius: 0.3rem;
 	width: fit-content;
+	margin-bottom: 8rem;
 }
 
 form {
@@ -355,6 +356,10 @@ form {
 	border-radius: 0.3rem;
 	width: fit-content;
 	margin-bottom: 5rem;
+}
+
+.error1 {
+	color: var(--color-ocho);
 }
 
 

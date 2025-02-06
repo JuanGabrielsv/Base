@@ -1,8 +1,9 @@
 $(function () {
+	$('#section1').hide()
 	$(section2).hide()
 	$(section3).hide()
-	$(section4).hide()
 	$(section5).hide()
+	$('#error1').hide()
 
 	$('#iniciarSesion').click(function (e) {
 		e.preventDefault()
@@ -43,20 +44,36 @@ $(function () {
 		})
 	})
 
-	$(proveedor).click(function (e) {
+	/********************* REGISTRO PROVEEDOR *********************/
+
+	$('#proveedor').click(function (e) {
 		e.preventDefault()
-		$(section3).fadeOut(function () {
-			$(section4).fadeIn()
+
+		$('#section3').fadeOut(function () {
+			$('#section4').fadeIn()
 		})
+
 		$('h1').fadeOut(function () {
 			$('h1').text('Crear una cuenta Proveedor').fadeIn()
 		})
 	})
 
-	$(clienteFinal).click(function (e) {
+	$('#nombre').blur(function (e) {
 		e.preventDefault()
-		$(section3).fadeOut(function () {
-			$(section5).fadeIn()
+		if ($('#nombre').val().trim() === '') {
+			$('#error1').show()
+			$('#br-error').hide()
+			$(this).css({
+				'background-color': '#f0c7c7',
+				border: 'solid 2px red',
+			})
+		}
+	})
+
+	$('#clienteFinal').click(function (e) {
+		e.preventDefault()
+		$('#section3').fadeOut(function () {
+			$('#section5').fadeIn()
 		})
 		$('h1').fadeOut(function () {
 			$('h1').text('Crear una cuenta Cliente').fadeIn()
