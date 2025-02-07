@@ -83,7 +83,7 @@
 				<div class="partes">
 					<label for="nombre">█ &nbsp Nombre comercial</label>
 					<div>
-						<input type="text" name="nombre" id="nombre" class="input1" />
+						<input type="text" name="nombre" id="nombre" class="input1" required />
 						<div id="error1">
 							<small class="error1">No se puede dejar en blanco</small>
 						</div>
@@ -93,15 +93,32 @@
 				</div>
 				<div class="partes">
 					<label for="email">█ &nbsp Correo electrónico</label>
-					<input type="email" id="email2" class="input1" />
+					<div>
+						<input type="email" id="email2" class="input1" required />
+						<div id="error2">
+							<small class="error1">No se puede dejar en blanco</small>
+						</div>
+					</div>
 				</div>
 				<div class="partes">
 					<label for="password">█ &nbsp Contraseña</label>
-					<input type="password" name="password" id="password2" class="input1" />
+					<div>
+						<input type="password" name="password" id="password2" class="input1" required />
+						<img src="./src/img/ojo_cerrado_contrasena.svg" class="ojo" id="ojo">
+						<div id="error3">
+							<small class="error1">No se puede dejar en blanco</small>
+						</div>
+					</div>
 				</div>
 				<div class="partes">
 					<label for="confirmacionPassword">█ &nbsp Confirmación contraseña</label>
-					<input type="password" name="confirmacionPassword" id="confirmacionPassword" class="input1" />
+					<div>
+						<input type="password" name="confirmacionPassword" id="confirmacionPassword" class="input1" required />
+						<img src="./src/img/ojo_cerrado_contrasena.svg" class="ojo" id="ojo2">
+						<div id="error4">
+							<small class="error1">No se puede dejar en blanco</small>
+						</div>
+					</div>
 				</div>
 				<div class="partes">
 					<label for="fechaNacimiento">█ &nbsp Fecha de nacimiento</label>
@@ -126,7 +143,7 @@
 						privacidad.</small>
 				</div>
 				<hr class="hr2">
-				<button class="botonCrear">Crear</button>
+				<button class="botonCrear" id="botonCrearProveedor">Crear</button>
 			</form>
 		</section>
 
@@ -136,29 +153,51 @@
 			<form action="#" method="post">
 				<div class="partes">
 					<label for="nombre">█ &nbsp Nombre completo</label>
-					<input type="text" name="nombre" id="nombre2" class="input1" />
+					<div>
+						<input type="text" name="nombre" id="nombre2" class="input1" required />
+						<div id="error5">
+							<small class="error1">No se puede dejar en blanco</small>
+						</div>
+					</div>
 				</div>
 				<div class="partes">
 					<label for="email">█ &nbsp Correo electrónico</label>
-					<input type="email" id="email3" class="input1" />
+					<div>
+						<input type="email" id="email3" class="input1" required />
+						<div id="error6">
+							<small class="error1">No se puede dejar en blanco</small>
+						</div>
+					</div>
 				</div>
 				<div class="partes">
 					<label for="password">█ &nbsp Contraseña</label>
-					<input type="password" name="password" id="password3" class="input1" />
+					<div>
+						<input type="password" name="password" id="password3" class="input1" required />
+						<img src="./src/img/ojo_cerrado_contrasena.svg" class="ojo" id="ojo3">
+						<div id="error7">
+							<small class="error1">No se puede dejar en blanco</small>
+						</div>
+					</div>
 				</div>
 				<div class="partes">
 					<label for="confirmacionPassword">█ &nbsp Confirmación contraseña</label>
-					<input type="password" name="confirmacionPassword" id="confirmacionPassword2" class="input1" />
+					<div>
+						<input type="password" name="confirmacionPassword" id="confirmacionPassword2" class="input1" required />
+						<img src="./src/img/ojo_cerrado_contrasena.svg" class="ojo" id="ojo4">
+						<div id="error8">
+							<small class="error1">No se puede dejar en blanco</small>
+						</div>
+					</div>
 				</div>
 				</div>
 				<hr class="hr1">
 				<div class="contenedor-checkbox">
-					<input type="checkbox" name="terminos" id="terminos2" class="checkbox">
+					<input type="checkbox" name="terminos" id="terminos2" class="checkbox" required>
 					<small>Confirmo que acepto los términos del contrato de la cuenta y que estoy de acuerdo con la política de
 						privacidad.</small>
 				</div>
 				<hr class="hr2">
-				<button class="botonCrear">Crear</button>
+				<button class="botonCrear" id="botonCrearCliente">Crear</button>
 			</form>
 		</section>
 	</main>

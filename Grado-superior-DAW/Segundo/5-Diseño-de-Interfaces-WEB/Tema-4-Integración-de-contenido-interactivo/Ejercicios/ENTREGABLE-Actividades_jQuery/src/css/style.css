@@ -312,10 +312,27 @@ form {
 	align-items: center;
 }
 
-.checkbox {
+input[type="checkbox"] {
+	appearance: none;
+	width: 1.3rem;
+	height: 1.3rem;
+	background-color: white;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	cursor: pointer;
 	margin-right: 0.5rem;
-	height: 1.2rem;
-	width: 1.2rem;
+}
+
+input[type="checkbox"]:checked {
+	background-color: var(--color-cuatro);
+}
+
+input[type="checkbox"]:checked::after {
+	position: absolute;
+	translate: 25% -10%;
+	content: '✔';
+	font-size: 14px;
+	color: gray;
 }
 
 .hr1 {
@@ -361,6 +378,28 @@ form {
 .error1 {
 	color: var(--color-ocho);
 }
+
+.errorInput {
+	background-color: #f0c7c7;
+	border: solid 2px red;
+}
+
+.ojo {
+	position: absolute;
+	translate: -150% 37%;
+	cursor: pointer;
+}
+
+#password2 {
+	position: relative;
+}
+
+#botonCrearProveedor:disabled,
+#botonCrearCliente:disabled {
+	background-color: var(--color-seis);
+}
+
+
 
 
 /*************************** FOOTER ***************************/
