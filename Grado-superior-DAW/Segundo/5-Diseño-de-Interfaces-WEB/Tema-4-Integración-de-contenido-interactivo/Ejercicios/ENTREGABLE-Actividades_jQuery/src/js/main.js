@@ -330,4 +330,42 @@ $(function () {
 			$(this).removeClass('errorInput')
 		}
 	})
+
+	/************************ FINAL DE LOS REGISTROS ***********************/
+
+	$('#botonCrearCliente').click(function (e) {
+		e.preventDefault()
+
+		$('#formCliente').slideUp(function () {
+			$('<p>Gracias por crear tu cuenta</p>')
+				.hide()
+				.appendTo('#mensajeCreado')
+				.fadeIn()
+		})
+		$('#section5').css({
+			width: '40%',
+			'justify-content': 'center',
+		})
+		$('#mensajeCreado').css({
+			'margin-bottom': '35px',
+		})
+	})
+
+	$('#botonCrearProveedor').click(function (e) {
+		e.preventDefault()
+
+		$('#formProveedor').slideUp(function () {
+			$('<p>Gracias por crear tu cuenta</p>')
+				.hide()
+				.appendTo('#mensajeCreado2')
+				.fadeIn()
+		})
+		$('#section4').css({
+			width: '40%',
+			'justify-content': 'center',
+		})
+		$('#mensajeCreado2').css({
+			'margin-bottom': '35px',
+		})
+	})
 })
