@@ -17,6 +17,16 @@ header {
 	background-color: #b16100;
 	font-family: system-ui;
 	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header button {
+	margin-right: 2rem;
+	padding: 0.5rem 1rem;
+	width: fit-content;
+	margin-left: 1rem;
 }
 
 header div {
@@ -29,12 +39,16 @@ header div h1 {
 	font-size: 18px;
 }
 
+header p {
+	color: greenyellow;
+}
+
 /******************************** MAIN ********************************/
 
 main {
 	display: flex;
 	flex-direction: column;
-	background-color: darkorange;
+	background-color: #ff8c00;
 	margin: auto;
 	width: 100%;
 	height: 100%;
@@ -47,10 +61,13 @@ main form {
 }
 
 .section1 {
-	background-color: aqua;
+	background-color: #ffd6a4;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding: 2rem;
+	border-radius: 0.5rem;
+
 }
 
 .section-form {
@@ -60,14 +77,68 @@ main form {
 
 .form-fila {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 0.6fr 1fr;
+	padding: 0.2rem;
 }
 
 .form-select {
 	width: 150px;
 }
 
+.form-precio {
+	display: flex;
+}
 
+.form-textarea {
+	width: fit-content;
+}
+
+#tipo {
+	gap: 1rem;
+}
+
+fieldset {
+	all: unset;
+}
+
+#botonInsertarCerveza {
+	width: 20%;
+}
+
+.botonActualizar,
+.botonCancelar {
+
+	width: 20%;
+	height: 25px;
+	margin: auto;
+	margin-top: 1rem;
+}
+
+.titulos-form-insertar-cerveza {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+input,
+select,
+input[type='date'],
+select,
+label {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 1rem;
+}
+
+.denominacion {
+	width: 200px;
+}
+
+.error {
+	color: red;
+	font-size: 14px;
+	margin-top: 5px;
+}
 
 /******************************** FOOTER ********************************/
 
@@ -79,7 +150,7 @@ footer {
 }
 
 footer p {
-	color: #000000;
+	color: #ffffff;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
 		Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
 		sans-serif;

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = new mysqli("localhost:3308", "root", "", "app_cerveceria");
+$conn = new mysqli("localhost:3306", "root", "", "app_cerveceria");
 
 if ($conn->connect_error) {
 	die("Error de conexión: " . $conn->connect_error);
@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
 		$_SESSION['perfil'] = $user['PERFIL'];
 
 		if ($user['PERFIL'] == "admin") {
-			header("Location: admin.php");
+			header("Location: formulario.php");
 		} else {
 			header("Location: user.php");
 		}

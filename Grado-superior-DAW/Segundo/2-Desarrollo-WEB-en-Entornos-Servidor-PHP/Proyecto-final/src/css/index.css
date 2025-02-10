@@ -30,6 +30,10 @@ header div h1 {
 	font-size: 18px;
 }
 
+header p {
+	color: greenyellow;
+}
+
 /******************************** MAIN ********************************/
 
 main {
