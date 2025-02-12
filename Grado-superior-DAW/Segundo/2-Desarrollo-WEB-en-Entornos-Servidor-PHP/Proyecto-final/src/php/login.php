@@ -28,7 +28,10 @@ if ($result->num_rows > 0) {
 		if ($user['PERFIL'] == "admin") {
 			header("Location: formulario.php");
 		} else {
-			header("Location: user.php");
+			// Después de verificar el usuario y la contraseña
+			$_SESSION['id_usuario'] = $user['ID']; // Corrección aquí
+
+			header("Location: articulos.php");
 		}
 		exit();
 	} else {

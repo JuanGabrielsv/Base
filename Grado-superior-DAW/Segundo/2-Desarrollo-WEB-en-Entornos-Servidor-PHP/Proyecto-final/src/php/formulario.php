@@ -68,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			<img src="../img/logotipo.svg" alt="logotipo de una jarra de cerveza">
 			<h1>APP - Aquí no vendemos cruzcampo.</h1>
 		</div>
+		<button onclick="window.location.href='buscador.php'">Buscar Producto</button>
 		<div>
 			<p>Perfil: <?php echo isset($_SESSION['perfil']) ? $_SESSION['perfil'] : 'Perfil no disponible'; ?></p>
 			<button onclick="window.location.href='logout.php'">Salir</button>
