@@ -33,4 +33,9 @@ export class AnillosService {
   removePersonaje(id: number): void {
     this.personajes = this.personajes.filter((p) => p.id !== id);
   }
+
+  agregarPersonaje(nombre: string, raza: string) {
+    let id = this.personajes.length + 1;
+    this.personajes.push({ id: id, nombre: nombre, raza: raza });
+  }
 }

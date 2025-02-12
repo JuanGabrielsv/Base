@@ -1,11 +1,11 @@
 <main>
 	<div>
 		<label for="nombre">Nombre: </label>
-		<input type="text" name="nombre" id="nombre">
+		<input type="text" name="nombre" id="nombre" [(ngModel)]="nombre">
 	</div>
 	<div>
 		<label for="raza">Raza: </label>
-		<input type="text" name="raza" id="raza">
+		<input type="text" name="raza" id="raza" [(ngModel)]="raza">
 	</div>
-	<button>Agregar personaje</button>
+	<button (click)="agregarPersonaje(nombre, raza)">Agregar personaje</button>
 </main>
