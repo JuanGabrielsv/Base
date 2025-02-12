@@ -1,0 +1,15 @@
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: azure;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	width: fit-content;
+	padding: 1rem;
+	border-radius: 0.5rem;
+}
+
+.contenedor-columnas {
+	display: flex;
+	flex-direction: row;
+}

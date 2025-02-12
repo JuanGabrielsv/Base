@@ -1,0 +1,8 @@
+<main>
+	<ul *ngFor="let personaje of personajes">
+		<li>{{personaje.id}} </li>
+		<li>{{personaje.nombre}}</li>
+		<li>{{personaje.raza}}</li>
+		<button (click)="removePersonaje(personaje.id)">Eliminar</button>
+	</ul>
+</main>

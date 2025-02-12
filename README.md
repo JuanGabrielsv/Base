@@ -1,2 +1,0 @@
-# BASE
-Repositorio personal.
