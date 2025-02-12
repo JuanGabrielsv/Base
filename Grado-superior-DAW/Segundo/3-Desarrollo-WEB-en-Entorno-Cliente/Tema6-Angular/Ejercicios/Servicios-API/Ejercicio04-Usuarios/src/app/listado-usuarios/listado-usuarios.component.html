@@ -1,0 +1,6 @@
+<main>
+	<h1>app-listado-usuarios</h1>
+	<ul *ngFor="let usuario of arrayUsuarios |async">
+		<li>{{usuario.name}}, {{usuario.username}}, {{usuario.email}}, {{usuario.phone}}, {{usuario.address.street}}</li>
+	</ul>
+</main>
