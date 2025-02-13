@@ -40,7 +40,8 @@ public class Persona {
 		this.nombre = nombre;
 		this.pasaporte = pasaporte;
 		this.proyectos = proyectos;
-	}
+	}	
+	
 
 	public Integer getId() {
 		return id;
