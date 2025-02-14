@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/clienteformulario}" th:object="${cliente}" method="post">
+		<input type="text" th:field="*{nombre}"></input>
+		<input type="text" th:field="*{direccion.calle}"></input>
+		<input type="text" th:field="*{direccion.ciudad}"></input>
+		<button type="submit">Guardar</button>
+	</form>
+</body>
+</html>
