@@ -40,8 +40,7 @@ public class Persona {
 		this.nombre = nombre;
 		this.pasaporte = pasaporte;
 		this.proyectos = proyectos;
-	}	
-	
+	}
 
 	public Integer getId() {
 		return id;
@@ -73,6 +72,18 @@ public class Persona {
 
 	public void setProyectos(Set<Proyecto> proyectos) {
 		this.proyectos = proyectos;
+	}
+
+	public void agregarProyecto(Proyecto pr) {
+		this.proyectos.add(pr);
+		//pr.getPersonas().add(this);
+
+	}
+
+	public void eliminarProyecto(Proyecto pr) {
+		this.proyectos.remove(pr);
+		pr.getPersonas().remove(this);
+
 	}
 
 }
