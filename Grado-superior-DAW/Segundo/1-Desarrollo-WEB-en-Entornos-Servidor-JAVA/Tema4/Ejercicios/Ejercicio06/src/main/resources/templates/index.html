@@ -20,10 +20,11 @@
 				<td th:text="${cliente.id}"></td>
 				<td th:text="${cliente.nombre}"></td>
 				<td th:text="${cliente.direccion.ciudad}"></td>
-			  	<td><a th:href="@{/clientedetalle/{id}(id=${cliente.id})}">Ver</a></td>
+				<td><a th:href="@{/clientedetalle/{id}(id=${cliente.id})}">Ver</a></td>
 			</tr>
 		</tbody>
 	</table>
 	<a th:href="@{/clienteformulario}">Añadir Cliente</a>
+	<a th:href="@{/clientes/buscarporprovincia}">Buscar por provincia</a>
 </body>
 </html>

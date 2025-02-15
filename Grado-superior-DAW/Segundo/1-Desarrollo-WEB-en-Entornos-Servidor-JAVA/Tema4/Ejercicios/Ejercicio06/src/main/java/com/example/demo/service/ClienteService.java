@@ -22,4 +22,6 @@ public interface ClienteService {
 
 	void modificarCliente(Cliente cliente, String nuevoNombre);
 
+	List<Cliente> buscarClientesPorCiudad(String ciudad);
+
 }

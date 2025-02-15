@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Ciudad encontrada</title>
+</head>
+<body>
+<p>Escribe la ciudad: </p>
+<form th:action="@{/clientes/buscarporprovincia}" method="get" >
+<input type="text" name="ciudad" id="ciudad" th:value="${ciudad}"></input>
+<button type="submit">Buscar</button>
+</form>
+<ul th:each="cliente: ${listaclientes}">
+<li th:text="${cliente.nombre}"></li>
+</ul>
+<a th:href="@{/clientes}">Volver</a>
+</body>
+</html>

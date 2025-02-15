@@ -25,7 +25,7 @@ public class Ejercicio06Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		Direccion direccion1 = new Direccion("Calle1", "Ciudad1");
-		Direccion direccion2 = new Direccion("Calle2", "Ciudad2");
+		Direccion direccion2 = new Direccion("Calle2", "Ciudad3");
 		Direccion direccion3 = new Direccion("Calle3", "Ciudad3");
 		Direccion direccion4 = new Direccion("Calle4", "Ciudad4");
 		Direccion direccion5 = new Direccion("Calle5", "Ciudad5");
@@ -56,7 +56,9 @@ public class Ejercicio06Application implements CommandLineRunner {
 		
 		Cliente clienteBuscado = service.buscarClientePorId(3);
 		
-		service.modificarCliente(cliente1, "nombre");		
+		service.modificarCliente(cliente1, "nombre");
+		
+		List<Cliente> listaClientesPorCiudad = service.buscarClientesPorCiudad("ciudad3");
 		
 		List<Cliente> listaClientes = service.obtenerListaTodosClientes();		
 		listaClientes.forEach(c -> {
@@ -64,6 +66,10 @@ public class Ejercicio06Application implements CommandLineRunner {
 		});
 		
 		System.out.println(clienteBuscado.getDireccion().getCalle());
+		
+		listaClientesPorCiudad.forEach(c -> {
+			System.out.println(c.getNombre() + " " + c.getDireccion().getCiudad());
+		});
 		
 		
 		

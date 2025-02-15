@@ -10,42 +10,44 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.example.demo.model.Cliente;
 import com.example.demo.service.ClienteService;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ControllerCliente {
-	
+
 	@Autowired
 	private ClienteService service;
-	
+
 	@GetMapping("/clientes")
-	public String cargarIndex(Model model) {		
-		
-		model.addAttribute("listaCliente", service.obtenerListaTodosClientes());		
+	public String cargarIndex(Model model) {
+		model.addAttribute("listaCliente", service.obtenerListaTodosClientes());
 		return "index";
 	}
-	
+
 	@GetMapping("/clientedetalle/{id}")
 	public String detalleCliente(Model model, @PathVariable Integer id) {
-		
 		model.addAttribute("detalleCliente", service.buscarClientePorId(id));
-		
 		return "cliente-detalle";
 	}
-	
+
 	@GetMapping("/clienteformulario")
 	public String formularioCliente(Model model) {
 		model.addAttribute("cliente", new Cliente());
 		return "cliente-formulario";
 	}
-	
+
 	@PostMapping("/clienteformulario")
 	public String formularioCliente(@ModelAttribute Cliente cliente) {
 		service.guardarCliente(cliente);
-		
 		return "redirect:/clientes";
 	}
-	
-	
+
+	@GetMapping("/clientes/buscarporprovincia")
+	public String buscarClientePorCiudad(
+			@RequestParam(required = false, defaultValue = "") String ciudad, Model model) {
+		model.addAttribute("ciudad", ciudad);
+		model.addAttribute("listaclientes", service.buscarClientesPorCiudad(ciudad));
+		return "ciudad";
+	}
 
 }

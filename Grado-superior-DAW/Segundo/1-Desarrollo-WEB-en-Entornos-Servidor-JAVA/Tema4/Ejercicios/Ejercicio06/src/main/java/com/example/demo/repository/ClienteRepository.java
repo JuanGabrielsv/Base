@@ -22,4 +22,6 @@ public interface ClienteRepository {
 
 	void modificarCliente(Cliente cliente, String nuevoNombre);
 
+	List<Cliente> buscarClientesPorCiudad(String ciudad);
+
 }

@@ -52,4 +52,10 @@ public class ClienteServiceImpl implements ClienteService {
 		
 	}
 
+	@Override
+	public List<Cliente> buscarClientesPorCiudad(String ciudad) {
+		return repositorio.buscarClientesPorCiudad(ciudad);
+		
+	}
+
 }
