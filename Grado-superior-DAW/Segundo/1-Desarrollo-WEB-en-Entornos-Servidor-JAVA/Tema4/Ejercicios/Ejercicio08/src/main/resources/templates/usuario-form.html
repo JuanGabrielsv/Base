@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Usuario form</title>
+</head>
+<body>
+	<form th:action="@{/usuarios}" th:object="${usuario}" method="post">	
+		<label for="nombre">Nombre:</label>
+		<input type="text" id="nombre" th:field="*{nombre}" required><br><br>
+		
+		<label for="email">Email:</label>
+		<input type="text" id="email" th:field="*{email}" required><br><br>
+		
+		<label for="bio">Biografía:</label>
+		<textarea id="bio" th:field="*{perfil.bio}" required></textarea><br><br>
+		
+		<label for="estado">Estado:</label>
+	    <input type="text" id="estado" th:field="*{perfil.estado}" required><br><br>
+		
+  		<div th:if="${usuario.id == null}">		   
+	        <button type="submit">Guardar</button>
+		</div>
+		<div th:if="${usuario.id != null}">		   
+		    <a th:href="@{/usuarios}">Volver</a>
+		</div>
+	</form>
+</body>
+</html>
