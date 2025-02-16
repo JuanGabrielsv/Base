@@ -36,28 +36,27 @@ public class RepositoryEmpleadoImpl implements RepositoryEmpleado {
 	@Override
 	public void eliminarEmpleadoPorId(Integer id) {
 		Empleado empleado = entity.find(Empleado.class, id);
-		 if (empleado != null) {
+		if (empleado != null) {
 
-		        Oficina oficina = entity.createQuery(
-		            "SELECT o FROM Oficina o JOIN o.listaEmpleados e WHERE e.id = :id", Oficina.class)
-		            .setParameter("id", id)
-		            .getSingleResult();		        
+			Oficina oficina = entity
+					.createQuery("SELECT o FROM Oficina o JOIN o.listaEmpleados e WHERE e.id = :id", Oficina.class)
+					.setParameter("id", id).getSingleResult();
 
-		        oficina.getListaEmpleados().remove(empleado);
-		        entity.merge(oficina);        
+			oficina.getListaEmpleados().remove(empleado);
+			entity.merge(oficina);
 
-		        entity.remove(empleado);
-		        entity.flush();
-		    } else {
-		        throw new RuntimeException("Empleado con ID " + id + " no encontrado");
-		    }
+			entity.remove(empleado);
+			entity.flush();
+		} else {
+			throw new RuntimeException("Empleado con ID " + id + " no encontrado");
+		}
 	}
 
 	@Override
 	public List<Empleado> buscarEmpleadoConPuestoEspecifico(String puesto) {
-		return entity.createQuery("SELECT e FROM Empleado e WHERE e.puesto LIKE :puesto", Empleado.class).setParameter("puesto", "%" + puesto + "%").getResultList();
-		
-		
+		return entity.createQuery("SELECT e FROM Empleado e WHERE e.puesto LIKE :puesto", Empleado.class)
+				.setParameter("puesto", "%" + puesto + "%").getResultList();
+
 	}
 
 }
