@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Primer usuario disponible</title>
+</head>
+<body>
+<ul>
+	<li th:if="${primerUsuarioDisponible != null}" th:text="|${primerUsuarioDisponible.nombre} ${primerUsuarioDisponible.email} ${primerUsuarioDisponible.perfil.bio}|"></li>
+	<p th:if="${primerUsuarioDisponible == null}">No hay usuarios disponibles</p>
+</ul>
+
+</body>
+</html>
