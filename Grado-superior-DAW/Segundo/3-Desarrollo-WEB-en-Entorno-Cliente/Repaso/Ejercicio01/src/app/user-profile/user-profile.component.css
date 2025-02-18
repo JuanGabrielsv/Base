@@ -1,0 +1,19 @@
+.comp-user {
+	border: 1px solid #000000;
+	padding: 2em;
+	margin: 1em;
+	width: 20em;
+}
+
+.name {
+	font-weight: bold;
+	color: blue;
+}
+
+.role {
+	font-style: italic;
+}
+
+.naranja {
+	color: orange;
+}

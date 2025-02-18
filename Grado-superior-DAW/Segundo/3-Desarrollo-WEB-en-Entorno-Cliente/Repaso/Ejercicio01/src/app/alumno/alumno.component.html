@@ -1,0 +1,11 @@
+<h1 style="color: red">Componente Alumno</h1>
+<p>{{ alumno.nombre }}</p>
+<p>{{ alumno.apellido }}</p>
+<p>{{ alumno.edad }}</p>
+<p>{{ alumno.dni }}</p>
+<p>{{alumno.edad * 5}}</p>
+<p>{{alumno.edad>18 ? 'mayor de edad' : 'menor de edad'}}</p>
+<p>Introducir Dni</p>
+<input type="text" name="dni" id="dni" #dni (keyup)="0">
+<div>{{dni.value}}</div>
+<input type="checkbox" name="edad" id="edad" [checked]="alumno.edad<18 ? false : true">

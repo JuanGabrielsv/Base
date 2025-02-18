@@ -1,0 +1,16 @@
+<p>user-profile works!</p>
+<div class="comp-user">
+	<p [class]="clase">Nombre: {{nombre}}</p>
+	<p [class.name]="num==0">Nombre: {{nombre}}</p>
+	<p [style.color]="red">Nombre: {{nombre}}</p>
+	<p class="role">Rol: {{role}}</p>
+	<input type="text" name="nombre" id="nombre" [value]="nombre">
+</div>
+<img [src]="urlArbol">
+<p [class]="naranja">Juan Gabriel Sánchez</p>
+<input type="checkbox" name="checkbox" id="checkbox" [checked]="marcado"><span>{{marcado}}</span><br>
+<input type="text" name="texto" id="texto" [disabled]="deshabilitado">
+
+<div>{{asignatura.nombre}}</div>
+<div>{{asignatura.codigo}}</div>
+<div></div>
