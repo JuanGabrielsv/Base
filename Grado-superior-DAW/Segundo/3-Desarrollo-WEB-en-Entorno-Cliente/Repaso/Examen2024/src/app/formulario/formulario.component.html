@@ -1,0 +1,16 @@
+<h1>Formulario valoración</h1>
+<form action="#" method="get" class="formulario">
+	<label for="serie">Serie</label>
+	<input type="text" name="serie" id="serie" [(ngModel)]="serie">
+	<label for="correo">Correo</label>
+	<input type="email" name="correo" id="correo" required [(ngModel)]="email">
+	<label for="nombre">Nombre</label>
+	<input type="text" name="nombre" id="nombre" [(ngModel)]="nombre">
+	<button type="button" (click)="validarFormulario()">Enviar</button>
+	<p *ngIf="serie == '' && boton == true">Debes introducir el nombre de la serie</p>
+	<p *ngIf="email == '' && boton == true">Debes introducir el email</p>
+	<p *ngIf="nombre == '' && boton == true">Debes introducir el nombre</p>
+	<p>{{valoracionHijo}}</p>
+	<app-formulario-hijo *ngIf="formularioOk" [serie]="datoSerie" [nombre]="datoNombre" [email]="datoEmail"
+		(selected)="cogerValoracion($event)"></app-formulario-hijo>
+</form>

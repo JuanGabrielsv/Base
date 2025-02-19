@@ -1,0 +1,9 @@
+.formulario {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+}
+
+.formulario button {
+	width: 10%;
+}

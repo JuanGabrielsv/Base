@@ -1,0 +1,16 @@
+img {
+	width: 900px;
+}
+
+span {
+	font-weight: bold;
+}
+
+table {
+	width: 80%;
+}
+
+.contenedor {
+	display: flex;
+	justify-content: center;
+}

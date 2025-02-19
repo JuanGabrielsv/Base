@@ -1,0 +1,19 @@
+<div class="contenedor">
+	<table *ngIf="(serie | async) as data">
+		<thead></thead>
+		<tbody>
+			<tr>
+				<td><img [src]="data.image.original" alt=""></td>
+				<td>
+					<h3>{{data.name}}</h3>
+					<p><span>Idioma: </span>{{data.language}}</p>
+					<p><span>Generos:</span></p>
+					<ul *ngFor="let genero of data.genres">
+						<li>{{genero}}</li>
+					</ul>
+					<p [innerHTML]="data.summary"></p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
