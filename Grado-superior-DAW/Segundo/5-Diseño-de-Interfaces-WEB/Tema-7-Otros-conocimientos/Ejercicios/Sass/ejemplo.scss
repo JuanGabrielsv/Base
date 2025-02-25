@@ -1,0 +1,53 @@
+$variable1:2rem;
+$negro: black;
+$verde: green;
+$gris-claro: #f1f1f1;
+
+$listaMargenes:(0px,80px,10px,20px);
+
+$mapaResponsive:('desktop':1200px, 'tablet': 1024px, 'mobile':600px);
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: $gris-claro;
+}
+
+h1 {
+	font-size: $variable1;
+	margin-top: nth($listaMargenes, 2);
+}
+
+
+
+p {
+	color: $negro
+}
+
+a {
+	color: $verde;
+}
+
+//Interpolación
+$etiqueta-error: 'error';
+h1.#{$etiqueta-error} {
+	font-size:3rem;
+}
+
+@media (max-width:map-get($mapaResponsive, 'desktop')) {
+	
+}
+
+@media (max-width:map-get($mapaResponsive, 'tablet')) {
+	
+}
+
+@media (max-width:map-get($mapaResponsive, 'mobile')) {
+	.noticias {
+		width:100%;
+	}
+}
+
+
+

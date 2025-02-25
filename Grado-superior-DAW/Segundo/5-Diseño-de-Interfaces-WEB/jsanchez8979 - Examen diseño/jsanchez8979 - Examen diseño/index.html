@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="src/css/style.css" />
+	<script src="src/jquery/jquery.min.js"></script>
+	<script src="src/js/main.js"></script>
+	<title>Actividades jQuery</title>
+</head>
+
+<body>
+	<a class="enlace-salto" href="#principal">
+		Saltar al contenido principal
+	</a>
+	<header>
+		<div class="header-logo">
+			<img src="src/img/logo.svg">
+			<h1>El taller de tus dientes</h1>
+		</div> <!--Home, Nosotros, Instalaciones, Tratamientos, Contacto y Noticias-->
+		<nav>
+			<ul class="header-nav-ul">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#nosotros">Nosotros</a></li>
+				<li><a href="">Instalaciones</a></li>
+				<li><a href="">Tratamientos</a></li>
+				<li><a href="">Contacto</a></li>
+				<li><a href="">Noticias</a></li>
+			</ul>
+		</nav>
+		<div>
+			<div class="logos-social">
+				<a href="#"><img src="src/img/instagram_logo.svg"
+						alt="Instagram logo enlaza con nuestro perfil web instagram"></a>
+				<a href="#"><img src="src/img/logo_X.svg" alt="X logo enlaza con nuestro perfil web de X"></a>
+				<a href="3"><img src="src/img/tiktok_logo.svg" alt="tiktok logo enlaza con nuestro perfil de tiktok"></a>
+			</div>
+		</div>
+	</header>
+	<main id="principal">
+		<img class="img-banner" src="src/img/banner.png" alt="imagen de nuestras instalaciones">
+		<section class="section1">
+			<img src="src/img/proceso_uno.png" alt="mujer pasándolo extraordinariamente bien en el dentista">
+			<div class="section1-tecuidamos">
+				<h2>Te cuidamos</h2>
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime labore iusto quisquam culpa numquam tempore
+					reiciendis nulla necessitatibus eveniet debitis. Rerum iure soluta sequi? Nemo reprehenderit ipsum sapiente
+					porro qui.</p>
+			</div>
+		</section>
+		<section class="section1 nosotros">
+			<h2 id="nosotros">NOSOTROS</h2>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus culpa praesentium, ea adipisci quidem
+				commodi qui quos facere asperiores labore atque quae optio necessitatibus quas doloribus, impedit modi vel esse?
+				dolor sit amet consectetur, adipisicing elit. Voluptatibus culpa praesentium, ea adipisci quidem
+				commodi qui quos facere asperiores labore atque quae optio necess
+				dolor sit amet consectetur, adipisicing elit. Voluptatibus culpa praesentium, ea adipisci quidem
+				commodi qui quos facere asperiores labore atque quae optio necess
+				dolor sit amet consectetur, adipisicing elit. Voluptatibus culpa praesentium, ea adipisci quidem
+				commodi qui quos facere asperiores labore atque quae optio necess
+				dolor sit amet consectetur, adipisicing elit. Voluptatibus culpa praesentium, ea adipisci quidem
+				commodi qui quos facere asperiores labore atque quae optio necess
+				dolor sit amet consectetur, adipisicing elit. Voluptatibus culpa praesentium, ea adipisci quidem
+				commodi qui quos facere asperiores labore atque quae optio necess
+				dolor sit amet consectetur, adipisicing elit. Voluptatibus culpa praesentium, ea adipisci quidem
+				commodi qui quos facere asperiores labore atque quae optio necess
+				dolor sit amet consectetur, adipisicing elit. Voluptatibus culpa praesentium, ea adipisci quidem
+				commodi qui quos facere asperiores labore atque quae optio necess
+			</p>
+		</section>
+		<section class="section-noticias">
+			<div class="noticia1 noticias">
+				<img src="src/img/noticia1.png" alt="imagen que muestra adornos en los dientes">
+				<h2>Noticia1</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus totam odit at vero id dolor, voluptate earum
+					eveniet, eos molestias distinctio illum nisi dignissimos vel maiores aperiam, fugit delectus blanditiis!</p>
+				<button>Leer mas</button>
+			</div>
+			<div class="noticia2 noticias">
+				<img src="src/img/noticia2.png" alt="imagen qu muestra un nuevo producto de limpieza para tus dientes">
+				<h2>Noticia2</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus totam odit at vero id dolor, voluptate earum
+					eveniet, eos molestias distinctio illum nisi dignissimos vel maiores aperiam, fugit delectus blanditiis!</p>
+				<button>Leer mas</button>
+			</div>
+		</section>
+		<!--- Una zona que se llame "CONTACTA CON NOSOTROS", donde haya un pequeño formulario con varios campos (mínimo nombre, email y botón enviar). R2-->
+		<section class="section-contacta">
+			<h2>CONTACTA CON NOSOTROS</h2>
+			<form action="#" method="post" aria-label="formulario para contactar" class="form1">
+				<div class="form-section">
+					<label for="nombre">Nombre:</label>
+					<input type="text" name="nombre" id="nombre" required>
+				</div>
+				<div class="form-section">
+					<label for="email">Email:</label>
+					<input type="email" name="email" id="email" required>
+				</div>
+				<button type="submit" id="botonenviar">Enviar</button>
+			</form>
+			<p id="mensajegracias">Gracias por tu solicitud, te contestaremos en breve.</p>
+		</section>
+		<section class="section-parrilla">
+			<h2>PARRILLA IMÁGENES</h2>
+			<div class="parrilla">
+				<div>
+					<div><img src="src/img/imagen1.jpg" alt="Una imagen sobre dientes"></div>
+					<div><img src="src/img/imagen2.jpg" alt="Una imagen sobre una boca"></div>
+				</div>
+				<div>
+					<div><img src="src/img/imagen3.jfif" alt="Dibujo de una imagen"></div>
+					<div><img src="src/img/imagen4.jpg" alt="Imagen sobre un niño sacandose una muela por comer chucherías"></div>
+				</div>
+				<div>
+					<div><img src="src/img/imagen5.jpg" alt="Imagen del interior de una boca"></div>
+					<div><img src="src/img/imagen6.jpg" alt="Imagen de una mujer con aparatos"></div>
+				</div>
+				<div>
+					<div><img src="src/img/imagen7.jpg" alt="Imagen de unos protectores bucales o correctores"></div>
+					<div><img src="src/img/imagen8.jfif" alt="Imagen de unos aparatos por dentro de la boca"></div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+	<div class="bloqueCookie" id="bloqueCookie">
+		<p>
+			Bloque cookies
+			<a href="src/html/politicacookies.html">acepta nuestra política de cookies</a>
+		</p>
+		<button id="botonAceptar">Aceptar</button>
+	</div>
+	<footer>
+		<p>Página web dental 2025</p>
+	</footer>
+</body>
+
+</html>

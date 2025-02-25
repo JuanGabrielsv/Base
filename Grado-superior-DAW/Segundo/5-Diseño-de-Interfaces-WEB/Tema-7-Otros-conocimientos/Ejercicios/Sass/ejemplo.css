@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f1f1f1;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 80px;
+}
+
+p {
+  color: black;
+}
+
+a {
+  color: green;
+}
+
+h1.error {
+  font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+  .noticias {
+    width: 100%;
+  }
+}/*# sourceMappingURL=ejemplo.css.map */
